@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.service.componentMode
+Bundle-Vendor: Servicerobotics Ulm
+Bundle-Version: 3.6.0
+Bundle-SymbolicName: org.xtext.service.componentMode; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.ecore.service.componentMode,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.service.componentMode.scoping,
+ org.xtext.service.componentMode.parser.antlr,
+ org.xtext.service.componentMode.generator,
+ org.xtext.service.componentMode,
+ org.xtext.service.componentMode.services,
+ org.xtext.service.componentMode.validation,
+ org.xtext.service.componentMode.formatting2,
+ org.xtext.service.componentMode.serializer,
+ org.xtext.service.componentMode.parser.antlr.internal
+Import-Package: org.apache.log4j

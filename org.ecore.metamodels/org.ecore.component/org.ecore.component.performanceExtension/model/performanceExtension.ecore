@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="performanceExtension" nsURI="http://www.ecore.org/component/PerformanceExtension"
+    nsPrefix="PerformanceExtension">
+  <eClassifiers xsi:type="ecore:EClass" name="ActivationConstraints" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//ActivityExtension">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configurable" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minActFreq" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxActFreq" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputLinkExtension" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//InputPortLink">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oversamplingOk" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="undersamplingOk" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefaultTrigger" abstract="true" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//ActivityExtension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DefaultInputTrigger" eSuperTypes="#//DefaultTrigger">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputLink" lowerBound="1"
+        eType="#//InputLinkExtension"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prescale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefaultPeriodicTimer" eSuperTypes="#//DefaultTrigger">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicActFreq" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefaultObservedElementTrigger" eSuperTypes="#//DefaultTrigger">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//ComponentSubNode"/>
+  </eClassifiers>
+</ecore:EPackage>

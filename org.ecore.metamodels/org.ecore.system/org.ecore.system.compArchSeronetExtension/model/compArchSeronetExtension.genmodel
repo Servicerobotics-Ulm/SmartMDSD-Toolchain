@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.ecore.system.compArchSeronetExtension/src-gen"
+    creationIcons="false" editDirectory="/org.ecore.system.compArchSeronetExtension.edit/src-gen"
+    editorDirectory="/org.ecore.system.compArchSeronetExtension.editor/src-gen" modelPluginID="org.ecore.system.compArchSeronetExtension"
+    modelName="CompArchSeronetExtension" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0"
+    copyrightFields="false" usedGenPackages="../../org.ecore.base.basicAttributes/model/basicAttributes.genmodel#//basicAttributes ../../org.ecore.service.communicationObject/model/communicationObject.genmodel#//communicationObject ../../org.ecore.service.communicationPattern/model/communicationPattern.genmodel#//communicationPattern ../../org.ecore.system.componentArchitecture/model/componentArchitecture.genmodel#//componentArchitecture ../../org.ecore.component.componentDefinition/model/componentDefinition.genmodel#//componentDefinition ../../org.ecore.service.coordinationPattern/model/coordinationPattern.genmodel#//coordinationPattern ../../org.ecore.service.parameterDefinition/model/parameterDefinition.genmodel#//parameterDefinition ../../org.ecore.service.roboticMiddleware/model/roboticMiddleware.genmodel#//roboticMiddleware ../../org.ecore.component.seronetExtension/model/seronetExtension.genmodel#//seronetExtension ../../org.ecore.service.serviceDefinition/model/serviceDefinition.genmodel#//serviceDefinition ../../org.ecore.base.stateMachine/model/stateMachine.genmodel#//stateMachine ../../org.ecore.system.activityArchitecture/model/activityArchitecture.genmodel#//activityArchitecture ../../org.ecore.service.componentMode/model/componentMode.genmodel#//componentMode"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>compArchSeronetExtension.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="CompArchSeronetExtension" basePackage="org.ecore.system" disposableProviderFactory="true"
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="compArchSeronetExtension.ecore#/">
+    <genClasses ecoreClass="compArchSeronetExtension.ecore#//OpcUaDeviceClientInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference compArchSeronetExtension.ecore#//OpcUaDeviceClientInstance/deviceClient"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compArchSeronetExtension.ecore#//OpcUaDeviceClientInstance/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compArchSeronetExtension.ecore#//OpcUaDeviceClientInstance/deviceURI"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

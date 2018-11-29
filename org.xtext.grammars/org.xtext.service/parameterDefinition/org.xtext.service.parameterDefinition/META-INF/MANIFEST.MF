@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.service.parameterDefinition
+Bundle-Vendor: Servicerobotics Ulm
+Bundle-Version: 3.4.0
+Bundle-SymbolicName: org.xtext.service.parameterDefinition; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.ecore.service.parameterDefinition,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.xtext.base.utils,
+ org.xtext.base.basicAttributes
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: defaultParameterLib,
+ org.xtext.service.parameterDefinition,
+ org.xtext.service.parameterDefinition.formatting2,
+ org.xtext.service.parameterDefinition.generator,
+ org.xtext.service.parameterDefinition.parser.antlr,
+ org.xtext.service.parameterDefinition.parser.antlr.internal,
+ org.xtext.service.parameterDefinition.scoping,
+ org.xtext.service.parameterDefinition.serializer,
+ org.xtext.service.parameterDefinition.services,
+ org.xtext.service.parameterDefinition.validation
+Import-Package: org.apache.log4j

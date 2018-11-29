@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Converter
+Bundle-SymbolicName: org.v2.to.v3.converter;singleton:=true
+Bundle-Version: 3.4.0
+Bundle-Vendor: Servicerobotics Ulm
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.core.resources,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

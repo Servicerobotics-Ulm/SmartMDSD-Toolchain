@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="basicAttributes" nsURI="http://www.ecore.org/base/BasicAttributes"
+    nsPrefix="BasicAttributes">
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//AbstractAttributeType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultvalue" eType="#//AbstractValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeRefinement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//AbstractValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+        eType="#//AttributeDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractAttributeType" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="array" eType="#//ArrayType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractValue" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType" eSuperTypes="#//AbstractAttributeType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" lowerBound="1"
+        eType="#//PRIMITIVE_TYPE_NAME"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleValue" eSuperTypes="#//AbstractValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayValue" eSuperTypes="#//AbstractValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+        eType="#//SingleValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="#//Cardinality"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Cardinality" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="PRIMITIVE_TYPE_NAME">
+    <eLiterals name="UInt8"/>
+    <eLiterals name="UInt16" value="1"/>
+    <eLiterals name="UInt32" value="2"/>
+    <eLiterals name="UInt64" value="3"/>
+    <eLiterals name="Int8" value="4"/>
+    <eLiterals name="Int16" value="5"/>
+    <eLiterals name="Int32" value="6"/>
+    <eLiterals name="Int64" value="7"/>
+    <eLiterals name="Float" value="8"/>
+    <eLiterals name="Double" value="9"/>
+    <eLiterals name="String" value="10"/>
+    <eLiterals name="Boolean" value="11"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FloatingPointValue" eSuperTypes="#//SingleValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntValue" eSuperTypes="#//SingleValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringValue" eSuperTypes="#//SingleValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoolValue" eSuperTypes="#//SingleValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InlineEnumerationType" eSuperTypes="#//AbstractAttributeType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enums" upperBound="-1"
+        eType="#//EnumerationElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationValue" eSuperTypes="#//SingleValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//EnumerationElement"/>
+  </eClassifiers>
+</ecore:EPackage>

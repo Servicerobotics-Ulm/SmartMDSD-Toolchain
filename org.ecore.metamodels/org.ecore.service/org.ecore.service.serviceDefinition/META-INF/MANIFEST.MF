@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.ecore.service.serviceDefinition;singleton:=true
+Bundle-Version: 3.4.0
+Bundle-ClassPath: .
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ org.ecore.service.communicationObject;visibility:=reexport,
+ org.eclipse.core.runtime,
+ org.ecore.service.communicationPattern;visibility:=reexport,
+ org.ecore.service.coordinationPattern;visibility:=reexport,
+ org.ecore.service.parameterDefinition;visibility:=reexport,
+ org.ecore.base.stateMachine;visibility:=reexport,
+ org.ecore.service.componentMode;visibility:=reexport,
+ org.ecore.base.basicAttributes;visibility:=reexport,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.jface
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Servicerobotics Ulm
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.ecore.service.serviceDefinition,
+ org.ecore.service.serviceDefinition.impl,
+ org.ecore.service.serviceDefinition.util
+Automatic-Module-Name: org.ecore.service.serviceDefinition

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentParameter" nsURI="http://www.ecore.org/component/ComponentParameter"
+    nsPrefix="ComponentParameter">
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//AbstractComponentParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="ecore:EClass ../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//ComponentDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractComponentParameter" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentParameterBase" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InternalParameter" eSuperTypes="#//AbstractComponentParameter #//ComponentParameterBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="ecore:EClass ../../org.ecore.base.basicAttributes/model/basicAttributes.ecore#//AttributeDefinition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendedParameter" eSuperTypes="#//AbstractComponentParameter #//ComponentParameterBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="ecore:EClass ../../org.ecore.base.basicAttributes/model/basicAttributes.ecore#//AttributeDefinition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendedTrigger" eSuperTypes="#//AbstractComponentParameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="ecore:EClass ../../org.ecore.base.basicAttributes/model/basicAttributes.ecore#//AttributeDefinition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterSetInstance" eSuperTypes="#//AbstractComponentParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterInstances" upperBound="-1"
+        eType="#//AbstractParameterInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paramSet" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.service.parameterDefinition/model/parameterDefinition.ecore#//ParameterSetDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" unsettable="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractParameterInstance" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TriggerInstance" eSuperTypes="#//AbstractParameterInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggerDef" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.service.parameterDefinition/model/parameterDefinition.ecore#//TriggerDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterInstance" eSuperTypes="#//AbstractParameterInstance #//ComponentParameterBase">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterDef" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.service.parameterDefinition/model/parameterDefinition.ecore#//ParameterDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="ecore:EClass ../../org.ecore.base.basicAttributes/model/basicAttributes.ecore#//AttributeRefinement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" unsettable="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentParamModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parametrization" eType="#//ComponentParameter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="ecore:EClass ../../org.ecore.service.parameterDefinition/model/parameterDefinition.ecore#//ParamDefRepoImport"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentParametersRef" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//DerivedComponentElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
+        eType="#//ComponentParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="slave" eType="ecore:EClass ../../org.ecore.component.coordinationExtension/model/coordinationExtension.ecore#//CoordinationSlavePort"/>
+  </eClassifiers>
+</ecore:EPackage>

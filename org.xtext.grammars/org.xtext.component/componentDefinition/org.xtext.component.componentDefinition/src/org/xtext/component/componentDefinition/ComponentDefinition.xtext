@@ -1,0 +1,279 @@
+//===================================================================================
+//
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//
+//        lotz@hs-ulm.de
+//        stampfer@hs-ulm.de
+//        lutz@hs-ulm.de
+//        schlegel@hs-ulm.de
+//
+//        Servicerobotik Ulm
+//        Christian Schlegel
+//        Ulm University of Applied Sciences
+//        Prittwitzstr. 10
+//        89075 Ulm
+//        Germany
+//
+//  This file is part of the SmartMDSD Toolchain V3. 
+//
+//  Redistribution and use in source and binary forms, with or without modification, 
+//  are permitted provided that the following conditions are met:
+//  
+//  1. Redistributions of source code must retain the above copyright notice, 
+//     this list of conditions and the following disclaimer.
+//  
+//  2. Redistributions in binary form must reproduce the above copyright notice, 
+//     this list of conditions and the following disclaimer in the documentation 
+//     and/or other materials provided with the distribution.
+//  
+//  3. Neither the name of the copyright holder nor the names of its contributors 
+//     may be used to endorse or promote products derived from this software 
+//     without specific prior written permission.
+//  
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
+//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
+//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
+//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
+//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
+//  OF THE POSSIBILITY OF SUCH DAMAGE.
+//
+//===================================================================================
+grammar org.xtext.component.componentDefinition.ComponentDefinition with org.xtext.service.roboticMiddleware.RoboticMiddleware
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://www.ecore.org/service/ServiceDefinition" as serviceDefinition
+import "http://www.ecore.org/service/ComponentMode" as modes
+import "http://www.ecore.org/component/ComponentDefinition" as component
+import "http://www.ecore.org/component/ComponentParameter" as parameter
+import "http://www.ecore.org/component/PerformanceExtension" as performance
+import "http://www.ecore.org/component/CoordinationExtension" as coordination
+import "http://www.ecore.org/component/SeronetExtension" as seronet
+import "http://www.ecore.org/base/StateMachine" as stateMach
+
+ComponentDefModel returns component::ComponentDefModel:
+	{component::ComponentDefModel}
+	(imports+=ServiceRepoImport)*
+	(component=ComponentDefinition)?
+;
+
+// imports can be optionally used to simplify names of objects from a remote repository
+ServiceRepoImport returns component::ServiceRepoImport:
+	'#import' importedNamespace=FQNW (';')?
+;
+
+ComponentDefinition returns component::ComponentDefinition:
+	'ComponentDefinition' name=ID ('logo' logo=STRING)?
+	'{'
+		(elements+=AbstractComponentElement)*
+	'}';
+
+AbstractComponentElement returns component::AbstractComponentElement: 
+	NamedComponentElement | DerivedComponentElement
+;
+
+DerivedComponentElement returns component::DerivedComponentElement: 
+	ComponentParametersRef
+;
+
+
+NamedComponentElement returns component::NamedComponentElement: 
+	ComponentSubNode | ComponentPort | CoordinationSlavePort | CoordinationMasterPort | PlainOpcUaPort
+;
+
+
+ComponentSubNode returns component::ComponentSubNode: 
+	Activity | InputHandler | RequestHandler
+;
+
+
+ComponentPort returns component::ComponentPort: 
+	InputPort | AnswerPort | OutputPort | RequestPort
+;
+
+
+RequestPort returns component::RequestPort: 
+	'RequestPort' name=ID 
+	'implements' service=[serviceDefinition::TwoWayCommunicationService|FQN] 
+	'{'
+		extensions+=ComponentPortExtension*
+	'}'
+;
+
+
+OutputPort returns component::OutputPort:
+	'OutputPort' name=ID 
+	'implements' service=[serviceDefinition::OneWayCommunicationService|FQN] 
+	'realizedBy' activity=[component::Activity|FQN]
+	'{'
+		extensions+=ComponentPortExtension*
+	'}'
+;
+
+AnswerPort returns component::AnswerPort: 
+	'AnswerPort' name=ID 'implements' service=[serviceDefinition::TwoWayCommunicationService|FQN] '{'
+		extensions+=ComponentPortExtension*
+	'}'
+;
+
+InputPort returns component::InputPort:
+	'InputPort' name=ID 'implements' service=[serviceDefinition::OneWayCommunicationService|FQN] '{'
+		extensions+=ComponentPortExtension*
+	'}'
+;
+
+ComponentPortExtension returns component::ComponentPortExtension: 
+	SupportedMiddleware
+;
+
+SupportedMiddleware returns seronet::SupportedMiddleware: 
+	'SupportedMiddleware' (default?='default')? middleware=RoboticMiddleware (';')?
+;
+
+Activity returns component::Activity:
+	'Activity' name=ID
+	'{'
+		links+=AbstractComponentLink*
+		extensions+=ActivityExtension*
+	'}'
+;
+
+InputHandler returns component::InputHandler:
+	'InputHandler' name=ID 'triggeredFrom' inputPort=[component::InputPort|FQN] (activeQueue?='activeQueue')? '{' 
+		links+=AbstractComponentLink*
+	'}'
+;
+
+RequestHandler returns component::RequestHandler:
+	'RequestHandler' name=ID 'triggeredFrom' answerPort=[component::AnswerPort|FQN] (activeQueue?='activeQueue')? '{'
+		links+=AbstractComponentLink*
+	'}'
+;
+
+AbstractComponentLink returns component::AbstractComponentLink: 
+	ComponentSubNodeObserver| RequestPortLink | InputLinkExtension | OpcUaClientLink
+;
+
+
+RequestPortLink returns component::RequestPortLink: 
+	'RequestPortLink' requestPort=[component::RequestPort|FQN] (';')?
+;
+
+OpcUaClientLink returns seronet::OpcUaClientLink: 
+	'OpcUaClientLink' client=[seronet::OpcUaDeviceClient|FQN] (';')?
+;
+
+
+/**
+ * Observer Pattern for component-internal activities<->upcalls interaction.
+ */
+ComponentSubNodeObserver returns component::ComponentSubNodeObserver: 
+	'Observe' subject=[component::ComponentSubNode|FQN] (';')?
+;
+ 
+/**
+ * InputLink extension(s):
+ * - Performance: InputLinkExtension
+ */
+InputLinkExtension returns performance::InputLinkExtension: 
+	{performance::InputLinkExtension}
+	'InputPortLink' inputPort=[component::InputPort|FQN]
+	'{'
+		((optional?='optional')? &
+		(oversamplingOk?='oversamplingOk')? &
+		(undersamplingOk?='undersamplingOk')?)
+	'}'	
+;
+
+/** 
+ * Activity extensions:
+ * - Performance: ActivationConstraints
+ * - Coordination: OperationModeBinding
+ * - DefaultTrigger
+ */
+ActivityExtension returns component::ActivityExtension:
+	ActivationConstraints | OperationModeBinding | DefaultTrigger
+;
+
+ActivationConstraints returns performance::ActivationConstraints:
+	{performance::ActivationConstraints}
+	'ActivationConstraints'
+	'{'
+		'configurable' '=' configurable=EBoolean (';')?
+		(('minActFreq' '=' minActFreq=EDouble 'Hz' (';')?)? &
+		('maxActFreq' '=' maxActFreq=EDouble 'Hz' (';')?)?)
+	'}';
+
+
+OperationModeBinding returns coordination::OperationModeBinding: 
+	'OperationModeBinding' mode=[coordination::PrivateOperationMode|FQN] (';')?
+;
+
+DefaultTrigger returns performance::DefaultTrigger: 
+	'DefaultTrigger' (DefaultInputTrigger | DefaultPeriodicTimer | DefaultObservedElementTrigger) (';')?
+;
+
+DefaultInputTrigger returns performance::DefaultInputTrigger: 
+	'InputPortTrigger' inputLink=[performance::InputLinkExtension|FQN] ('prescale' prescale=EInt)?
+;
+
+DefaultPeriodicTimer returns performance::DefaultPeriodicTimer: 
+	'PeriodicTimer' periodicActFreq=EDouble 'Hz'
+;
+
+DefaultObservedElementTrigger returns performance::DefaultObservedElementTrigger: 
+	'ObservedElement' element=[component::ComponentSubNode|FQN]
+;
+
+
+
+PlainOpcUaPort returns seronet::PlainOpcUaPort: 
+	OpcUaDeviceClient | OpcUaStatusServer
+;
+
+OpcUaDeviceClient returns seronet::OpcUaDeviceClient: 
+	'OpcUaDeviceClient' name=ID ( ('deviceURI' deviceURI=EString) & ('opcuaXmlFile' opcuaXmlFile=EString)? ) (';')?
+;
+
+OpcUaStatusServer returns seronet::OpcUaStatusServer: 
+	'OpcUaStatusServer' name=ID 'dataProviderPort' outPort=[component::OutputPort|FQN] (';')?
+;
+
+
+CoordinationSlavePort returns coordination::CoordinationSlavePort: 
+	'CoordinationSlavePort' name=ID 'implements' service=[serviceDefinition::CoordinationServiceDefinition|FQN] '{'
+		(elements+=AbstractCoordinationElement)*
+	'}'
+;
+
+AbstractCoordinationElement returns coordination::AbstractCoordinationElement: 
+	PublicOperationMode | PrivateOperationMode | CommunicationServiceUsageRealization
+;
+
+CommunicationServiceUsageRealization returns coordination::CommunicationServiceUsageRealization: 
+	'with' serviceUsage=[serviceDefinition::CommunicationServiceUsage|FQN] 'realizedBy' componentPort=[component::ComponentPort|FQN]
+;
+
+
+PublicOperationMode returns coordination::PublicOperationMode:
+	{coordination::PublicOperationMode}
+	(isDefaultInit?='default')? 'PublicOperationMode' mode=[modes::ComponentModeDefinition|FQN] '{'
+		('activates' '(' activates+=[coordination::PrivateOperationMode] (',' activates+=[coordination::PrivateOperationMode])* ')')?
+	'}'
+;
+
+PrivateOperationMode returns coordination::PrivateOperationMode: 
+	'PrivateOperationMode' name=ID (';')?
+;
+
+CoordinationMasterPort returns coordination::CoordinationMasterPort: 
+	'CoordinationMasterPort' name=ID 'implements' service=[serviceDefinition::CoordinationServiceDefinition|FQN] (';')?
+;
+
+
+ComponentParametersRef returns parameter::ComponentParametersRef: 
+	'ComponentParameters' parameter=[parameter::ComponentParameter|FQN] ('slave' slave=[coordination::CoordinationSlavePort|FQN])? (';')?
+;

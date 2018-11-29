@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SmartMDSD
+Bundle-SymbolicName: org.smartmdsd.branding;singleton:=true
+Bundle-Version: 3.7.0
+Bundle-Activator: org.smartmdsd.branding.Activator
+Require-Bundle: org.eclipse.ui,
+  org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: org.smartmdsd.branding
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Servicerobotics Ulm

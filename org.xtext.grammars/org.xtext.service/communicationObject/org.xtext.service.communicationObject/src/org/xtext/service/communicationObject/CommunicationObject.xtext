@@ -1,0 +1,105 @@
+//===================================================================================
+//
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//
+//        lotz@hs-ulm.de
+//        stampfer@hs-ulm.de
+//        lutz@hs-ulm.de
+//        schlegel@hs-ulm.de
+//
+//        Servicerobotik Ulm
+//        Christian Schlegel
+//        Ulm University of Applied Sciences
+//        Prittwitzstr. 10
+//        89075 Ulm
+//        Germany
+//
+//  This file is part of the SmartMDSD Toolchain V3. 
+//
+//  Redistribution and use in source and binary forms, with or without modification, 
+//  are permitted provided that the following conditions are met:
+//  
+//  1. Redistributions of source code must retain the above copyright notice, 
+//     this list of conditions and the following disclaimer.
+//  
+//  2. Redistributions in binary form must reproduce the above copyright notice, 
+//     this list of conditions and the following disclaimer in the documentation 
+//     and/or other materials provided with the distribution.
+//  
+//  3. Neither the name of the copyright holder nor the names of its contributors 
+//     may be used to endorse or promote products derived from this software 
+//     without specific prior written permission.
+//  
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
+//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
+//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
+//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
+//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
+//  OF THE POSSIBILITY OF SUCH DAMAGE.
+//
+//===================================================================================
+grammar org.xtext.service.communicationObject.CommunicationObject with org.xtext.base.basicAttributes.BasicAttributes
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://www.ecore.org/service/CommunicationObject" as comm
+import "http://www.ecore.org/base/BasicAttributes" as attr
+
+CommObjectModel returns comm::CommObjectModel:
+	imports+=CommRepositoryImport*
+	(repository=CommObjectsRepository)?
+;
+
+FQNW returns ecore::EString: FQN '.*'? ;
+
+// imports can be optionally used to simplify names of objects from a remote repository
+CommRepositoryImport returns comm::CommRepositoryImport:
+	'#import' importedNamespace=FQNW (';')?
+;
+
+// this is the main element in a model
+CommObjectsRepository returns comm::CommObjectsRepository:
+	'CommObjectsRepository' name=ID ('version' version=Version)? '{'
+		("Dependency" dependency=EString (';')?)?
+		elements+=AbstractCommElement*
+	'}'
+;
+
+Version returns comm::Version:
+	major=INT '.' minor=INT ('.' patch=INT)?
+;
+
+AbstractCommElement returns comm::AbstractCommElement:
+	Enumeration | CommunicationObject;
+
+
+CommunicationObject returns comm::CommunicationObject:
+	'CommObject' name=ID '{'
+		attributes+=AttributeDefinition*
+	'}'
+;
+
+Enumeration returns comm::Enumeration:
+	'Enumeration' name=ID '{'
+		enums+=EnumerationElement*
+	'}'
+;
+
+@Override
+AbstractAttributeType returns attr::AbstractAttributeType:
+	CommElementReference | super;
+
+
+
+CommElementReference returns comm::CommElementReference:
+	typeName=[comm::AbstractCommElement|FQN] (array=ArrayType)?
+;
+
+@Override 
+SingleValue returns attr::SingleValue:
+	{comm::CommElementValue} value=[comm::AbstractCommElement|FQN] '(' ')' // TODO: further constructor types could be defined in the future
+	| super 
+;

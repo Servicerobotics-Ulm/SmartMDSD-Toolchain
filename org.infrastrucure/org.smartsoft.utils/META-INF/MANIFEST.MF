@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SmartSoftUtils
+Bundle-SymbolicName: org.smartsoft.utils;singleton:=true
+Bundle-Version: 3.3.0
+Bundle-Activator: org.smartsoft.utils.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.debug.core,
+ org.eclipse.core.externaltools,
+ org.eclipse.debug.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Servicerobotics Ulm
+Export-Package: org.smartsoft.utils.commands

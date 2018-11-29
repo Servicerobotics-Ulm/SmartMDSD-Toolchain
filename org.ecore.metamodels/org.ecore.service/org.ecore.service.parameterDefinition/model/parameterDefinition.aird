@@ -1,0 +1,1404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis xmi:id="_M4vz0Kd9EeetnKhyfJn2UA" selectedViews="_M5970Kd9EeetnKhyfJn2UA" version="12.0.0.201704271200">
+    <semanticResources>parameterDefinition.ecore</semanticResources>
+    <semanticResources>parameterDefinition.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.ecore.service.basicAttributes/model/basicAttributes.ecore</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
+    <semanticResources>platform:/resource/org.ecore.service.basicAttributes/model/basicAttributes.genmodel</semanticResources>
+    <semanticResources>../src/org/ecore/service/parameterDefinition/ParameterDefinitionModelUtility.xtend</semanticResources>
+    <semanticResources>../src/org/ecore/service/parameterDefinition/ParameterDefinitionStyledLabelProvider.xtend</semanticResources>
+    <semanticResources>../src/org/ecore/service/parameterDefinition/ParameterDefinitionTypeConformance.xtend</semanticResources>
+    <semanticResources>platform:/resource/org.ecore.base.basicAttributes/model/basicAttributes.ecore</semanticResources>
+    <semanticResources>platform:/resource/org.ecore.base.basicAttributes/model/basicAttributes.genmodel</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.ArrayLiterals</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.annotations.GwtCompatible</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Object</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.Pure</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.Inline</semanticResources>
+    <semanticResources>java:/Primitives</semanticResources>
+    <semanticResources>java:/Objects/java.lang.annotation.Target</semanticResources>
+    <semanticResources>java:/Objects/java.lang.annotation.ElementType</semanticResources>
+    <semanticResources>java:/Objects/java.lang.annotation.Retention</semanticResources>
+    <semanticResources>java:/Objects/java.lang.annotation.RetentionPolicy</semanticResources>
+    <semanticResources>java:/Objects/java.lang.annotation.Documented</semanticResources>
+    <semanticResources>java:/Objects/java.lang.annotation.Annotation</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Enum</semanticResources>
+    <semanticResources>java:/Objects/java.lang.String</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Comparable</semanticResources>
+    <semanticResources>java:/Objects/java.io.Serializable</semanticResources>
+    <semanticResources>java:/Objects/java.lang.CloneNotSupportedException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Class</semanticResources>
+    <semanticResources>java:/Objects/java.io.ObjectInputStream</semanticResources>
+    <semanticResources>java:/Objects/java.io.IOException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.ClassNotFoundException</semanticResources>
+    <semanticResources>java:/Objects/java.io.ObjectStreamException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Exception</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Throwable</semanticResources>
+    <semanticResources>java:/Objects/java.io.PrintWriter</semanticResources>
+    <semanticResources>java:/Objects/java.io.PrintStream</semanticResources>
+    <semanticResources>java:/Objects/java.lang.StackTraceElement</semanticResources>
+    <semanticResources>java:/Objects/java.util.Set</semanticResources>
+    <semanticResources>java:/Objects/java.io.ObjectOutputStream</semanticResources>
+    <semanticResources>java:/Objects/java.util.List</semanticResources>
+    <semanticResources>java:/Objects/java.io.Writer</semanticResources>
+    <semanticResources>java:/Objects/java.io.OutputStream</semanticResources>
+    <semanticResources>java:/Objects/java.io.FileNotFoundException</semanticResources>
+    <semanticResources>java:/Objects/java.io.File</semanticResources>
+    <semanticResources>java:/Objects/java.nio.charset.Charset</semanticResources>
+    <semanticResources>java:/Objects/java.io.UnsupportedEncodingException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.CharSequence</semanticResources>
+    <semanticResources>java:/Objects/java.util.Locale</semanticResources>
+    <semanticResources>java:/Objects/java.util.Formatter</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Appendable</semanticResources>
+    <semanticResources>java:/Objects/java.io.Closeable</semanticResources>
+    <semanticResources>java:/Objects/java.io.Flushable</semanticResources>
+    <semanticResources>java:/Objects/java.lang.AutoCloseable</semanticResources>
+    <semanticResources>java:/Objects/java.security.SecureRandom</semanticResources>
+    <semanticResources>java:/Objects/java.net.URI</semanticResources>
+    <semanticResources>java:/Objects/java.io.FilenameFilter</semanticResources>
+    <semanticResources>java:/Objects/java.io.FileFilter</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.Path</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Deprecated</semanticResources>
+    <semanticResources>java:/Objects/java.net.MalformedURLException</semanticResources>
+    <semanticResources>java:/Objects/java.net.URL</semanticResources>
+    <semanticResources>java:/Objects/sun.misc.Unsafe</semanticResources>
+    <semanticResources>java:/Objects/java.io.FileSystem</semanticResources>
+    <semanticResources>java:/Objects/java.util.Random</semanticResources>
+    <semanticResources>java:/Objects/java.util.regex.Pattern</semanticResources>
+    <semanticResources>java:/Objects/java.security.SecureRandomSpi</semanticResources>
+    <semanticResources>java:/Objects/java.security.Provider</semanticResources>
+    <semanticResources>java:/Objects/java.security.NoSuchAlgorithmException</semanticResources>
+    <semanticResources>java:/Objects/java.security.NoSuchProviderException</semanticResources>
+    <semanticResources>java:/Objects/java.security.MessageDigest</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.Debug</semanticResources>
+    <semanticResources>java:/Objects/java.util.Spliterator</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.DoubleConsumer</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.LongConsumer</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.IntConsumer</semanticResources>
+    <semanticResources>java:/Objects/java.util.stream.DoubleStream</semanticResources>
+    <semanticResources>java:/Objects/java.util.stream.IntStream</semanticResources>
+    <semanticResources>java:/Objects/java.util.stream.LongStream</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.atomic.AtomicLong</semanticResources>
+    <semanticResources>java:/Objects/java.io.ObjectStreamField</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Double</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.Consumer</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Long</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Integer</semanticResources>
+    <semanticResources>java:/Objects/java.util.Comparator</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Number</semanticResources>
+    <semanticResources>java:/Objects/java.lang.NumberFormatException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.IllegalArgumentException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.RuntimeException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.FunctionalInterface</semanticResources>
+    <semanticResources>java:/Objects/java.math.BigInteger</semanticResources>
+    <semanticResources>java:/Objects/java.lang.StringBuilder</semanticResources>
+    <semanticResources>java:/Objects/java.lang.AbstractStringBuilder</semanticResources>
+    <semanticResources>java:/Objects/java.lang.StringBuffer</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.Function</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.ToDoubleFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.ToIntFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.ToLongFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.stream.BaseStream</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.DoublePredicate</semanticResources>
+    <semanticResources>java:/Objects/java.util.OptionalDouble</semanticResources>
+    <semanticResources>java:/Objects/java.util.stream.Stream</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.Supplier</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.ObjDoubleConsumer</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.BiConsumer</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.DoubleFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.DoubleSupplier</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.DoubleUnaryOperator</semanticResources>
+    <semanticResources>java:/Objects/java.util.PrimitiveIterator</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.DoubleToIntFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.DoubleToLongFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.DoubleBinaryOperator</semanticResources>
+    <semanticResources>java:/Objects/java.util.DoubleSummaryStatistics</semanticResources>
+    <semanticResources>java:/Objects/java.util.Iterator</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Runnable</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.Predicate</semanticResources>
+    <semanticResources>java:/Objects/java.util.stream.Collector</semanticResources>
+    <semanticResources>java:/Objects/java.util.Optional</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.UnaryOperator</semanticResources>
+    <semanticResources>java:/Objects/java.lang.SafeVarargs</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.BinaryOperator</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.BiFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.IntFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.IntPredicate</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.ObjIntConsumer</semanticResources>
+    <semanticResources>java:/Objects/java.util.OptionalInt</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.IntSupplier</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.IntUnaryOperator</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.IntToDoubleFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.IntToLongFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.IntBinaryOperator</semanticResources>
+    <semanticResources>java:/Objects/java.util.IntSummaryStatistics</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.LongPredicate</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.ObjLongConsumer</semanticResources>
+    <semanticResources>java:/Objects/java.util.OptionalLong</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.LongFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.LongSupplier</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.LongUnaryOperator</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.LongToDoubleFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.LongToIntFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.LongBinaryOperator</semanticResources>
+    <semanticResources>java:/Objects/java.util.LongSummaryStatistics</semanticResources>
+    <semanticResources>java:/Objects/java.lang.reflect.Field</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.CallerSensitive</semanticResources>
+    <semanticResources>java:/Objects/java.lang.reflect.AccessibleObject</semanticResources>
+    <semanticResources>java:/Objects/java.lang.reflect.Member</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.FieldAccessor</semanticResources>
+    <semanticResources>java:/Objects/java.util.Map</semanticResources>
+    <semanticResources>java:/Objects/java.lang.IllegalAccessException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.reflect.AnnotatedType</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.factory.GenericsFactory</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.repository.FieldRepository</semanticResources>
+    <semanticResources>java:/Objects/java.lang.reflect.Type</semanticResources>
+    <semanticResources>java:/Objects/java.lang.reflect.AnnotatedElement</semanticResources>
+    <semanticResources>java:/Objects/java.lang.SecurityException</semanticResources>
+    <semanticResources>java:/Objects/java.security.Permission</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.ReflectionFactory</semanticResources>
+    <semanticResources>java:/Objects/java.security.Guard</semanticResources>
+    <semanticResources>java:/Objects/java.security.PermissionCollection</semanticResources>
+    <semanticResources>java:/Objects/java.util.Enumeration</semanticResources>
+    <semanticResources>java:/Objects/java.security.PrivilegedAction</semanticResources>
+    <semanticResources>java:/Objects/java.lang.reflect.Constructor</semanticResources>
+    <semanticResources>java:/Objects/java.lang.reflect.Method</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.MethodHandle</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.ConstructorAccessor</semanticResources>
+    <semanticResources>java:/Objects/java.lang.reflect.Executable</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.MethodAccessor</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.LangReflectAccess</semanticResources>
+    <semanticResources>java:/Objects/java.io.OptionalDataException</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.repository.ConstructorRepository</semanticResources>
+    <semanticResources>java:/Objects/java.lang.reflect.TypeVariable</semanticResources>
+    <semanticResources>java:/Objects/java.lang.InstantiationException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.reflect.InvocationTargetException</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.repository.GenericDeclRepository</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.MethodTypeSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.repository.AbstractRepository</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.Signature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.visitor.Reifier</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.Tree</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.visitor.TypeTreeVisitor</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.TypeArgument</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.ArrayTypeSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.BooleanSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.BottomSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.ByteSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.CharSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.ClassTypeSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.DoubleSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.FloatSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.FormalTypeParameter</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.IntSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.LongSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.ShortSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.SimpleClassTypeSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.TypeVariableSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.VoidDescriptor</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.Wildcard</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.TypeTree</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.FieldTypeSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.TypeSignature</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.BaseType</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.ReturnType</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.visitor.Visitor</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.tree.ClassSignature</semanticResources>
+    <semanticResources>java:/Objects/java.lang.reflect.GenericDeclaration</semanticResources>
+    <semanticResources>java:/Objects/java.lang.ReflectiveOperationException</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.repository.MethodRepository</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.MethodType</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.LambdaForm</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.BoundMethodHandle</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.MemberName</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.MethodHandleImpl</semanticResources>
+    <semanticResources>java:/Objects/java.lang.ref.WeakReference</semanticResources>
+    <semanticResources>java:/Objects/java.lang.ref.ReferenceQueue</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.ConcurrentMap</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.MethodTypeForm</semanticResources>
+    <semanticResources>java:/Objects/java.lang.ClassLoader</semanticResources>
+    <semanticResources>java:/Objects/java.lang.TypeNotPresentException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.Invokers</semanticResources>
+    <semanticResources>java:/Objects/java.lang.IndexOutOfBoundsException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.Stable</semanticResources>
+    <semanticResources>java:/Objects/java.lang.ref.Reference</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Thread</semanticResources>
+    <semanticResources>java:/Objects/java.lang.ThreadGroup</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Boolean</semanticResources>
+    <semanticResources>java:/Objects/java.security.AccessControlContext</semanticResources>
+    <semanticResources>java:/Objects/sun.nio.ch.Interruptible</semanticResources>
+    <semanticResources>java:/Objects/java.lang.InterruptedException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.RuntimePermission</semanticResources>
+    <semanticResources>java:/Objects/java.lang.ThreadLocal</semanticResources>
+    <semanticResources>java:/Objects/sun.misc.Contended</semanticResources>
+    <semanticResources>java:/Objects/java.security.ProtectionDomain</semanticResources>
+    <semanticResources>java:/Objects/java.security.DomainCombiner</semanticResources>
+    <semanticResources>java:/Objects/java.security.AccessControlException</semanticResources>
+    <semanticResources>java:/Objects/sun.misc.JavaSecurityProtectionDomainAccess</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.ConcurrentHashMap</semanticResources>
+    <semanticResources>java:/Objects/java.lang.ref.SoftReference</semanticResources>
+    <semanticResources>java:/Objects/sun.misc.JavaSecurityAccess</semanticResources>
+    <semanticResources>java:/Objects/java.security.CodeSource</semanticResources>
+    <semanticResources>java:/Objects/java.security.Principal</semanticResources>
+    <semanticResources>java:/Objects/java.util.AbstractMap</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.ToIntBiFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.ToLongBiFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.ToDoubleBiFunction</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.atomic.AtomicReference</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Void</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.CountedCompleter</semanticResources>
+    <semanticResources>java:/Objects/java.util.Collection</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.locks.ReentrantLock</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.ForkJoinTask</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.Future</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.RunnableFuture</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.Callable</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.ExecutionException</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.TimeUnit</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.TimeoutException</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.ForkJoinPool</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.AbstractExecutorService</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.ForkJoinWorkerThread</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.ExecutorService</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.Executor</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Iterable</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.locks.Lock</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.locks.AbstractQueuedSynchronizer</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.locks.Condition</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.locks.AbstractOwnableSynchronizer</semanticResources>
+    <semanticResources>java:/Objects/java.util.Date</semanticResources>
+    <semanticResources>java:/Objects/java.lang.NullPointerException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Cloneable</semanticResources>
+    <semanticResources>java:/Objects/java.time.Instant</semanticResources>
+    <semanticResources>java:/Objects/sun.util.calendar.BaseCalendar</semanticResources>
+    <semanticResources>java:/Objects/java.time.temporal.Temporal</semanticResources>
+    <semanticResources>java:/Objects/java.time.temporal.TemporalAdjuster</semanticResources>
+    <semanticResources>java:/Objects/java.time.ZoneOffset</semanticResources>
+    <semanticResources>java:/Objects/java.time.OffsetDateTime</semanticResources>
+    <semanticResources>java:/Objects/java.time.ZoneId</semanticResources>
+    <semanticResources>java:/Objects/java.time.ZonedDateTime</semanticResources>
+    <semanticResources>java:/Objects/java.time.temporal.TemporalAccessor</semanticResources>
+    <semanticResources>java:/Objects/java.time.temporal.TemporalField</semanticResources>
+    <semanticResources>java:/Objects/java.time.temporal.TemporalUnit</semanticResources>
+    <semanticResources>java:/Objects/java.time.temporal.TemporalAmount</semanticResources>
+    <semanticResources>java:/Objects/java.time.Clock</semanticResources>
+    <semanticResources>java:/Objects/java.time.temporal.TemporalQuery</semanticResources>
+    <semanticResources>java:/Objects/java.time.temporal.ValueRange</semanticResources>
+    <semanticResources>java:/Objects/java.io.DataInput</semanticResources>
+    <semanticResources>java:/Objects/java.io.InvalidObjectException</semanticResources>
+    <semanticResources>java:/Objects/java.io.DataOutput</semanticResources>
+    <semanticResources>java:/Objects/java.time.zone.ZoneRules</semanticResources>
+    <semanticResources>java:/Objects/java.time.zone.ZoneOffsetTransition</semanticResources>
+    <semanticResources>java:/Objects/java.time.zone.ZoneOffsetTransitionRule</semanticResources>
+    <semanticResources>java:/Objects/java.time.LocalDateTime</semanticResources>
+    <semanticResources>java:/Objects/java.time.Duration</semanticResources>
+    <semanticResources>java:/Objects/java.time.Month</semanticResources>
+    <semanticResources>java:/Objects/java.time.DayOfWeek</semanticResources>
+    <semanticResources>java:/Objects/java.time.LocalTime</semanticResources>
+    <semanticResources>java:/Objects/java.time.format.TextStyle</semanticResources>
+    <semanticResources>java:/Objects/java.time.LocalDate</semanticResources>
+    <semanticResources>java:/Objects/java.time.OffsetTime</semanticResources>
+    <semanticResources>java:/Objects/java.time.format.DateTimeFormatter</semanticResources>
+    <semanticResources>java:/Objects/java.time.chrono.ChronoLocalDate</semanticResources>
+    <semanticResources>java:/Objects/java.time.chrono.IsoChronology</semanticResources>
+    <semanticResources>java:/Objects/java.time.chrono.Era</semanticResources>
+    <semanticResources>java:/Objects/java.time.Period</semanticResources>
+    <semanticResources>java:/Objects/java.time.chrono.ChronoLocalDateTime</semanticResources>
+    <semanticResources>java:/Objects/java.time.chrono.Chronology</semanticResources>
+    <semanticResources>java:/Objects/java.time.chrono.ChronoPeriod</semanticResources>
+    <semanticResources>java:/Objects/java.time.chrono.ChronoZonedDateTime</semanticResources>
+    <semanticResources>java:/Objects/java.time.temporal.ChronoField</semanticResources>
+    <semanticResources>java:/Objects/java.time.format.ResolverStyle</semanticResources>
+    <semanticResources>java:/Objects/java.time.chrono.AbstractChronology</semanticResources>
+    <semanticResources>java:/Objects/java.time.chrono.IsoEra</semanticResources>
+    <semanticResources>java:/Objects/java.io.ObjectInput</semanticResources>
+    <semanticResources>java:/Objects/java.io.ObjectOutput</semanticResources>
+    <semanticResources>java:/Objects/java.text.Format</semanticResources>
+    <semanticResources>java:/Objects/java.text.FieldPosition</semanticResources>
+    <semanticResources>java:/Objects/java.text.ParseException</semanticResources>
+    <semanticResources>java:/Objects/java.text.ParsePosition</semanticResources>
+    <semanticResources>java:/Objects/java.time.format.DateTimeFormatterBuilder</semanticResources>
+    <semanticResources>java:/Objects/java.time.format.DecimalStyle</semanticResources>
+    <semanticResources>java:/Objects/java.time.format.DateTimeParseException</semanticResources>
+    <semanticResources>java:/Objects/java.time.format.FormatStyle</semanticResources>
+    <semanticResources>java:/Objects/java.time.format.DateTimeParseContext</semanticResources>
+    <semanticResources>java:/Objects/java.text.AttributedCharacterIterator</semanticResources>
+    <semanticResources>java:/Objects/java.text.CharacterIterator</semanticResources>
+    <semanticResources>java:/Objects/java.time.format.DateTimePrintContext</semanticResources>
+    <semanticResources>java:/Objects/java.time.format.DateTimeTextProvider</semanticResources>
+    <semanticResources>java:/Objects/java.math.BigDecimal</semanticResources>
+    <semanticResources>java:/Objects/java.time.format.SignStyle</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Character</semanticResources>
+    <semanticResources>java:/Objects/java.math.MathContext</semanticResources>
+    <semanticResources>java:/Objects/java.math.RoundingMode</semanticResources>
+    <semanticResources>java:/Objects/java.math.MutableBigInteger</semanticResources>
+    <semanticResources>java:/Objects/java.util.HashMap</semanticResources>
+    <semanticResources>java:/Objects/java.util.LinkedHashMap</semanticResources>
+    <semanticResources>java:/Objects/java.util.AbstractSet</semanticResources>
+    <semanticResources>java:/Objects/java.util.AbstractCollection</semanticResources>
+    <semanticResources>java:/Objects/java.time.DateTimeException</semanticResources>
+    <semanticResources>java:/Objects/java.time.format.Parsed</semanticResources>
+    <semanticResources>java:/Objects/java.util.ArrayList</semanticResources>
+    <semanticResources>java:/Objects/java.util.AbstractList</semanticResources>
+    <semanticResources>java:/Objects/java.util.RandomAccess</semanticResources>
+    <semanticResources>java:/Objects/java.util.ListIterator</semanticResources>
+    <semanticResources>java:/Objects/sun.util.calendar.AbstractCalendar</semanticResources>
+    <semanticResources>java:/Objects/sun.util.calendar.CalendarDate</semanticResources>
+    <semanticResources>java:/Objects/java.util.TimeZone</semanticResources>
+    <semanticResources>java:/Objects/sun.util.calendar.CalendarSystem</semanticResources>
+    <semanticResources>java:/Objects/sun.util.calendar.Era</semanticResources>
+    <semanticResources>java:/Objects/java.util.Properties</semanticResources>
+    <semanticResources>java:/Objects/sun.util.calendar.Gregorian</semanticResources>
+    <semanticResources>java:/Objects/java.util.Hashtable</semanticResources>
+    <semanticResources>java:/Objects/java.io.InputStream</semanticResources>
+    <semanticResources>java:/Objects/java.util.InvalidPropertiesFormatException</semanticResources>
+    <semanticResources>java:/Objects/sun.util.spi.XmlPropertiesProvider</semanticResources>
+    <semanticResources>java:/Objects/java.io.Reader</semanticResources>
+    <semanticResources>java:/Objects/java.io.BufferedWriter</semanticResources>
+    <semanticResources>java:/Objects/java.util.Dictionary</semanticResources>
+    <semanticResources>java:/Objects/java.io.StreamCorruptedException</semanticResources>
+    <semanticResources>java:/Objects/java.io.NotSerializableException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Readable</semanticResources>
+    <semanticResources>java:/Objects/java.nio.CharBuffer</semanticResources>
+    <semanticResources>java:/Objects/java.nio.Buffer</semanticResources>
+    <semanticResources>java:/Objects/java.nio.ByteOrder</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.Certificate</semanticResources>
+    <semanticResources>java:/Objects/java.security.CodeSigner</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.CertificateFactory</semanticResources>
+    <semanticResources>java:/Objects/java.net.SocketPermission</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.CertificateEncodingException</semanticResources>
+    <semanticResources>java:/Objects/java.security.PublicKey</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.CertificateException</semanticResources>
+    <semanticResources>java:/Objects/java.security.InvalidKeyException</semanticResources>
+    <semanticResources>java:/Objects/java.security.SignatureException</semanticResources>
+    <semanticResources>java:/Objects/java.security.Key</semanticResources>
+    <semanticResources>java:/Objects/java.security.GeneralSecurityException</semanticResources>
+    <semanticResources>java:/Objects/java.security.KeyException</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.CertPath</semanticResources>
+    <semanticResources>java:/Objects/java.security.Timestamp</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.CertificateFactorySpi</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.CRLException</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.CRL</semanticResources>
+    <semanticResources>java:/Objects/java.net.UnknownHostException</semanticResources>
+    <semanticResources>java:/Objects/java.net.InetAddress</semanticResources>
+    <semanticResources>java:/Objects/sun.net.spi.nameservice.NameService</semanticResources>
+    <semanticResources>java:/Objects/java.net.NetworkInterface</semanticResources>
+    <semanticResources>java:/Objects/java.net.InetAddressImpl</semanticResources>
+    <semanticResources>java:/Objects/java.net.SocketException</semanticResources>
+    <semanticResources>java:/Objects/java.net.InterfaceAddress</semanticResources>
+    <semanticResources>java:/Objects/java.net.Inet4Address</semanticResources>
+    <semanticResources>java:/Objects/javax.security.auth.Subject</semanticResources>
+    <semanticResources>java:/Objects/javax.security.auth.AuthPermission</semanticResources>
+    <semanticResources>java:/Objects/java.util.LinkedList</semanticResources>
+    <semanticResources>java:/Objects/java.security.PrivilegedExceptionAction</semanticResources>
+    <semanticResources>java:/Objects/java.security.PrivilegedActionException</semanticResources>
+    <semanticResources>java:/Objects/java.security.BasicPermission</semanticResources>
+    <semanticResources>java:/Objects/java.util.AbstractSequentialList</semanticResources>
+    <semanticResources>java:/Objects/java.util.Deque</semanticResources>
+    <semanticResources>java:/Objects/java.util.Queue</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.atomic.AtomicInteger</semanticResources>
+    <semanticResources>java:/Objects/java.lang.ClassFormatError</semanticResources>
+    <semanticResources>java:/Objects/java.nio.ByteBuffer</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Package</semanticResources>
+    <semanticResources>java:/Objects/sun.misc.URLClassPath</semanticResources>
+    <semanticResources>java:/Objects/java.lang.AssertionStatusDirectives</semanticResources>
+    <semanticResources>java:/Objects/java.util.Vector</semanticResources>
+    <semanticResources>java:/Objects/java.util.Stack</semanticResources>
+    <semanticResources>java:/Objects/java.lang.LinkageError</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Error</semanticResources>
+    <semanticResources>java:/Objects/java.nio.DoubleBuffer</semanticResources>
+    <semanticResources>java:/Objects/java.nio.FloatBuffer</semanticResources>
+    <semanticResources>java:/Objects/java.nio.IntBuffer</semanticResources>
+    <semanticResources>java:/Objects/java.nio.LongBuffer</semanticResources>
+    <semanticResources>java:/Objects/java.nio.ShortBuffer</semanticResources>
+    <semanticResources>java:/Objects/java.util.jar.Manifest</semanticResources>
+    <semanticResources>java:/Objects/java.io.FilterInputStream</semanticResources>
+    <semanticResources>java:/Objects/java.util.jar.Attributes</semanticResources>
+    <semanticResources>java:/Objects/java.io.DataOutputStream</semanticResources>
+    <semanticResources>java:/Objects/java.io.FilterOutputStream</semanticResources>
+    <semanticResources>java:/Objects/sun.misc.Resource</semanticResources>
+    <semanticResources>java:/Objects/java.net.URLStreamHandler</semanticResources>
+    <semanticResources>java:/Objects/java.util.jar.JarFile</semanticResources>
+    <semanticResources>java:/Objects/java.util.jar.JarEntry</semanticResources>
+    <semanticResources>java:/Objects/sun.misc.JarIndex</semanticResources>
+    <semanticResources>java:/Objects/sun.misc.MetaIndex</semanticResources>
+    <semanticResources>java:/Objects/sun.misc.JavaUtilZipFileAccess</semanticResources>
+    <semanticResources>java:/Objects/java.net.URLStreamHandlerFactory</semanticResources>
+    <semanticResources>java:/Objects/java.net.URLConnection</semanticResources>
+    <semanticResources>java:/Objects/java.net.Proxy</semanticResources>
+    <semanticResources>java:/Objects/java.net.UnknownServiceException</semanticResources>
+    <semanticResources>java:/Objects/java.net.ContentHandler</semanticResources>
+    <semanticResources>java:/Objects/java.net.FileNameMap</semanticResources>
+    <semanticResources>java:/Objects/java.net.ContentHandlerFactory</semanticResources>
+    <semanticResources>java:/Objects/sun.net.www.MessageHeader</semanticResources>
+    <semanticResources>java:/Objects/java.net.SocketAddress</semanticResources>
+    <semanticResources>java:/Objects/java.util.zip.ZipFile</semanticResources>
+    <semanticResources>java:/Objects/java.util.zip.ZipEntry</semanticResources>
+    <semanticResources>java:/Objects/java.util.jar.JarVerifier</semanticResources>
+    <semanticResources>java:/Objects/java.util.zip.ZipConstants</semanticResources>
+    <semanticResources>java:/Objects/java.util.zip.InflaterInputStream</semanticResources>
+    <semanticResources>java:/Objects/java.util.zip.Inflater</semanticResources>
+    <semanticResources>java:/Objects/java.util.zip.ZipException</semanticResources>
+    <semanticResources>java:/Objects/java.util.zip.ZipCoder</semanticResources>
+    <semanticResources>java:/Objects/java.util.zip.DataFormatException</semanticResources>
+    <semanticResources>java:/Objects/java.util.zip.ZStreamRef</semanticResources>
+    <semanticResources>java:/Objects/java.nio.charset.CharsetDecoder</semanticResources>
+    <semanticResources>java:/Objects/java.nio.charset.CharsetEncoder</semanticResources>
+    <semanticResources>java:/Objects/java.nio.charset.CharacterCodingException</semanticResources>
+    <semanticResources>java:/Objects/java.nio.charset.CoderResult</semanticResources>
+    <semanticResources>java:/Objects/java.nio.charset.CodingErrorAction</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.attribute.FileTime</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.ManifestEntryVerifier</semanticResources>
+    <semanticResources>java:/Objects/java.io.ByteArrayOutputStream</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.ManifestDigester</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.SignatureFileVerifier</semanticResources>
+    <semanticResources>java:/Objects/java.util.jar.JarException</semanticResources>
+    <semanticResources>java:/Objects/sun.security.pkcs.SignerInfo</semanticResources>
+    <semanticResources>java:/Objects/sun.security.pkcs.PKCS7</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.DisabledAlgorithmConstraints</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.DerEncoder</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.DerInputStream</semanticResources>
+    <semanticResources>java:/Objects/sun.security.pkcs.ParsingException</semanticResources>
+    <semanticResources>java:/Objects/sun.security.x509.X500Name</semanticResources>
+    <semanticResources>java:/Objects/sun.security.x509.AlgorithmId</semanticResources>
+    <semanticResources>java:/Objects/sun.security.pkcs.PKCS9Attributes</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.DerOutputStream</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.X509Certificate</semanticResources>
+    <semanticResources>java:/Objects/sun.security.timestamp.TimestampToken</semanticResources>
+    <semanticResources>java:/Objects/java.security.CryptoPrimitive</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.DerInputBuffer</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.DerValue</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.ObjectIdentifier</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.BitArray</semanticResources>
+    <semanticResources>java:/Objects/java.io.ByteArrayInputStream</semanticResources>
+    <semanticResources>java:/Objects/java.lang.ArrayIndexOutOfBoundsException</semanticResources>
+    <semanticResources>java:/Objects/sun.security.x509.GeneralNameInterface</semanticResources>
+    <semanticResources>java:/Objects/sun.security.x509.RDN</semanticResources>
+    <semanticResources>java:/Objects/sun.security.x509.AVA</semanticResources>
+    <semanticResources>java:/Objects/javax.security.auth.x500.X500Principal</semanticResources>
+    <semanticResources>java:/Objects/java.lang.UnsupportedOperationException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Byte</semanticResources>
+    <semanticResources>java:/Objects/java.io.NotActiveException</semanticResources>
+    <semanticResources>java:/Objects/java.security.AlgorithmParameters</semanticResources>
+    <semanticResources>java:/Objects/java.security.AlgorithmParametersSpi</semanticResources>
+    <semanticResources>java:/Objects/java.security.spec.AlgorithmParameterSpec</semanticResources>
+    <semanticResources>java:/Objects/java.security.spec.InvalidParameterSpecException</semanticResources>
+    <semanticResources>java:/Objects/sun.security.pkcs.PKCS9Attribute</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.ByteArrayLexOrder</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.ByteArrayTagOrder</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.X509Extension</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.CertificateExpiredException</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.CertificateNotYetValidException</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.CertificateParsingException</semanticResources>
+    <semanticResources>java:/Objects/sun.security.pkcs.ContentInfo</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.X509CRL</semanticResources>
+    <semanticResources>java:/Objects/sun.security.timestamp.Timestamper</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.X509CRLEntry</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.CRLReason</semanticResources>
+    <semanticResources>java:/Objects/sun.security.timestamp.TSRequest</semanticResources>
+    <semanticResources>java:/Objects/sun.security.timestamp.TSResponse</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.AbstractAlgorithmConstraints</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.ConstraintsParameters</semanticResources>
+    <semanticResources>java:/Objects/java.security.cert.CertPathValidatorException</semanticResources>
+    <semanticResources>java:/Objects/java.text.SimpleDateFormat</semanticResources>
+    <semanticResources>java:/Objects/sun.security.util.AlgorithmDecomposer</semanticResources>
+    <semanticResources>java:/Objects/java.security.AlgorithmConstraints</semanticResources>
+    <semanticResources>java:/Objects/java.text.DateFormat</semanticResources>
+    <semanticResources>java:/Objects/java.text.DateFormatSymbols</semanticResources>
+    <semanticResources>java:/Objects/java.text.CalendarBuilder</semanticResources>
+    <semanticResources>java:/Objects/java.text.NumberFormat</semanticResources>
+    <semanticResources>java:/Objects/sun.util.locale.provider.LocaleProviderAdapter</semanticResources>
+    <semanticResources>java:/Objects/java.util.Calendar</semanticResources>
+    <semanticResources>java:/Objects/java.util.spi.LocaleServiceProvider</semanticResources>
+    <semanticResources>java:/Objects/java.text.spi.BreakIteratorProvider</semanticResources>
+    <semanticResources>java:/Objects/java.util.spi.CalendarDataProvider</semanticResources>
+    <semanticResources>java:/Objects/java.util.spi.CalendarNameProvider</semanticResources>
+    <semanticResources>java:/Objects/sun.util.spi.CalendarProvider</semanticResources>
+    <semanticResources>java:/Objects/java.text.spi.CollatorProvider</semanticResources>
+    <semanticResources>java:/Objects/java.util.spi.CurrencyNameProvider</semanticResources>
+    <semanticResources>java:/Objects/java.text.spi.DateFormatProvider</semanticResources>
+    <semanticResources>java:/Objects/java.text.spi.DateFormatSymbolsProvider</semanticResources>
+    <semanticResources>java:/Objects/java.text.spi.DecimalFormatSymbolsProvider</semanticResources>
+    <semanticResources>java:/Objects/java.util.spi.LocaleNameProvider</semanticResources>
+    <semanticResources>java:/Objects/sun.util.locale.provider.LocaleResources</semanticResources>
+    <semanticResources>java:/Objects/java.text.spi.NumberFormatProvider</semanticResources>
+    <semanticResources>java:/Objects/java.util.spi.TimeZoneNameProvider</semanticResources>
+    <semanticResources>java:/Objects/java.text.BreakIterator</semanticResources>
+    <semanticResources>java:/Objects/java.text.Collator</semanticResources>
+    <semanticResources>java:/Objects/java.text.CollationKey</semanticResources>
+    <semanticResources>java:/Objects/java.text.DecimalFormatSymbols</semanticResources>
+    <semanticResources>java:/Objects/java.util.Currency</semanticResources>
+    <semanticResources>java:/Objects/sun.util.locale.provider.LocaleServiceProviderPool</semanticResources>
+    <semanticResources>java:/Objects/java.io.DataInputStream</semanticResources>
+    <semanticResources>java:/Objects/java.util.HashSet</semanticResources>
+    <semanticResources>java:/Objects/sun.util.locale.provider.ResourceBundleBasedAdapter</semanticResources>
+    <semanticResources>java:/Objects/java.util.ResourceBundle</semanticResources>
+    <semanticResources>java:/Objects/sun.util.resources.LocaleData</semanticResources>
+    <semanticResources>java:/Objects/sun.util.locale.LocaleObjectCache</semanticResources>
+    <semanticResources>java:/Objects/sun.util.locale.BaseLocale</semanticResources>
+    <semanticResources>java:/Objects/java.util.spi.ResourceBundleControlProvider</semanticResources>
+    <semanticResources>java:/Objects/sun.util.resources.OpenListResourceBundle</semanticResources>
+    <semanticResources>java:/Objects/sun.util.resources.TimeZoneNamesBundle</semanticResources>
+    <semanticResources>java:/Objects/sun.util.resources.ParallelListResourceBundle</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.atomic.AtomicMarkableReference</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.ForceInline</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.DontInline</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.WrongMethodTypeException</semanticResources>
+    <semanticResources>java:/Objects/sun.invoke.util.Wrapper</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.LambdaFormEditor</semanticResources>
+    <semanticResources>java:/Objects/java.lang.ClassCastException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.LambdaFormBuffer</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.MethodVisitor</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.MethodHandles</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.AnnotationVisitor</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.Attribute</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.TypePath</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.Handle</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.Label</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.ClassWriter</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.ByteVector</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.ClassReader</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.ClassVisitor</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.Item</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.FieldVisitor</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.AnnotationWriter</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.FieldWriter</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.MethodWriter</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.Frame</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.Handler</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.Type</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.Context</semanticResources>
+    <semanticResources>java:/Objects/jdk.internal.org.objectweb.asm.Edge</semanticResources>
+    <semanticResources>java:/Objects/java.lang.NoSuchMethodException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.NoSuchFieldException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.DirectMethodHandle</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.MethodHandleInfo</semanticResources>
+    <semanticResources>java:/Objects/java.lang.ClassValue</semanticResources>
+    <semanticResources>java:/Objects/java.util.WeakHashMap</semanticResources>
+    <semanticResources>java:/Objects/java.lang.invoke.DelegatingMethodHandle</semanticResources>
+    <semanticResources>java:/Objects/sun.invoke.empty.Empty</semanticResources>
+    <semanticResources>java:/Objects/java.lang.reflect.Parameter</semanticResources>
+    <semanticResources>java:/Objects/java.lang.reflect.ParameterizedType</semanticResources>
+    <semanticResources>java:/Objects/java.lang.reflect.WildcardType</semanticResources>
+    <semanticResources>java:/Objects/java.util.regex.Matcher</semanticResources>
+    <semanticResources>java:/Objects/java.util.regex.UnicodeProp</semanticResources>
+    <semanticResources>java:/Objects/java.util.regex.PatternSyntaxException</semanticResources>
+    <semanticResources>java:/Objects/java.util.regex.MatchResult</semanticResources>
+    <semanticResources>java:/Objects/java.security.MessageDigestSpi</semanticResources>
+    <semanticResources>java:/Objects/java.security.DigestException</semanticResources>
+    <semanticResources>java:/Objects/java.net.URISyntaxException</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.Watchable</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.FileSystem</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.WatchService</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.WatchEvent</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.WatchKey</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.LinkOption</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.FileStore</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.PathMatcher</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.attribute.UserPrincipalLookupService</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.spi.FileSystemProvider</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.attribute.FileStoreAttributeView</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.attribute.FileAttributeView</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.attribute.AttributeView</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.attribute.GroupPrincipal</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.attribute.UserPrincipal</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.AccessMode</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.CopyOption</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.attribute.FileAttribute</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.OpenOption</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.AsynchronousFileChannel</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.SeekableByteChannel</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.DirectoryStream</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.FileChannel</semanticResources>
+    <semanticResources>java:/Objects/java.nio.file.attribute.BasicFileAttributes</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.AsynchronousChannel</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.FileLock</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.CompletionHandler</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.Channel</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.ByteChannel</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.ReadableByteChannel</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.WritableByteChannel</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.spi.AbstractInterruptibleChannel</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.GatheringByteChannel</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.ScatteringByteChannel</semanticResources>
+    <semanticResources>java:/Objects/java.nio.MappedByteBuffer</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.InterruptibleChannel</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.AsynchronousCloseException</semanticResources>
+    <semanticResources>java:/Objects/java.nio.channels.ClosedChannelException</semanticResources>
+    <semanticResources>java:/Objects/java.io.FileDescriptor</semanticResources>
+    <semanticResources>java:/Objects/java.io.SyncFailedException</semanticResources>
+    <semanticResources>java:/Objects/java.lang.SecurityManager</semanticResources>
+    <semanticResources>java:/Objects/java.net.UrlDeserializedState</semanticResources>
+    <semanticResources>java:/Objects/java.nio.charset.spi.CharsetProvider</semanticResources>
+    <semanticResources>java:/Objects/java.util.SortedMap</semanticResources>
+    <semanticResources>java:/Objects/sun.util.locale.InternalLocaleBuilder</semanticResources>
+    <semanticResources>java:/Objects/sun.util.locale.LocaleExtensions</semanticResources>
+    <semanticResources>java:/Objects/java.text.MessageFormat</semanticResources>
+    <semanticResources>java:/Objects/java.util.MissingResourceException</semanticResources>
+    <semanticResources>java:/Objects/sun.util.locale.LocaleSyntaxException</semanticResources>
+    <semanticResources>java:/Objects/sun.util.locale.LanguageTag</semanticResources>
+    <semanticResources>java:/Objects/sun.util.locale.ParseStatus</semanticResources>
+    <semanticResources>java:/Objects/sun.util.locale.StringTokenIterator</semanticResources>
+    <semanticResources>java:/Objects/sun.util.locale.Extension</semanticResources>
+    <semanticResources>java:/Objects/java.io.OutputStreamWriter</semanticResources>
+    <semanticResources>java:/Objects/sun.nio.cs.StreamEncoder</semanticResources>
+    <semanticResources>java:/Objects/java.io.ObjectStreamConstants</semanticResources>
+    <semanticResources>java:/Objects/java.io.ObjectStreamClass</semanticResources>
+    <semanticResources>java:/Objects/java.io.Externalizable</semanticResources>
+    <semanticResources>java:/Objects/java.io.SerialCallbackContext</semanticResources>
+    <semanticResources>java:/Objects/java.io.SerializablePermission</semanticResources>
+    <semanticResources>java:/Objects/java.io.InvalidClassException</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.annotation.AnnotationType</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.ConstantPool</semanticResources>
+    <semanticResources>java:/Objects/sun.reflect.generics.repository.ClassRepository</semanticResources>
+    <semanticResources>java:/Objects/sun.misc.ObjectInputFilter</semanticResources>
+    <semanticResources>java:/Objects/java.io.ObjectInputValidation</semanticResources>
+    <semanticResources>java:/Objects/sun.util.logging.PlatformLogger</semanticResources>
+    <semanticResources>java:/Objects/sun.misc.ObjectStreamClassValidator</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.annotations.Beta</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.CollectionLiterals</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.Pair</semanticResources>
+    <semanticResources>java:/Objects/java.util.LinkedHashSet</semanticResources>
+    <semanticResources>java:/Objects/java.util.TreeMap</semanticResources>
+    <semanticResources>java:/Objects/java.util.TreeSet</semanticResources>
+    <semanticResources>java:/Objects/java.util.NavigableMap</semanticResources>
+    <semanticResources>java:/Objects/java.util.NavigableSet</semanticResources>
+    <semanticResources>java:/Objects/java.util.SortedSet</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.InputOutput</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.ArrayExtensions</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.annotations.GwtIncompatible</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.BigDecimalExtensions</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.BigIntegerExtensions</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.BooleanExtensions</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.primitives.Booleans</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.ByteExtensions</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Math</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.CharacterExtensions</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.CollectionExtensions</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.Iterables</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ImmutableList</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ImmutableSet</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ImmutableSortedSet</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ImmutableMap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ImmutableSortedMap</semanticResources>
+    <semanticResources>java:/Objects/java.util.Collections</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.FluentIterable</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.base.Predicate</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.base.Function</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.base.Optional</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ImmutableCollection</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ImmutableListMultimap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.base.Joiner</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ImmutableMultiset</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ImmutableMultimap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ListMultimap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.Multimap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.AbstractMultimap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.UnmodifiableIterator</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.Serialization</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ImmutableSetMultimap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.Multiset</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.Multimaps</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.Maps</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.AbstractListMultimap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.base.Supplier</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.AbstractMapBasedMultimap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.AbstractSetMultimap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.AbstractSortedSetMultimap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.AbstractMultiset</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.Multisets</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.SetMultimap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ForwardingMultimap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.SortedSetMultimap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.FilteredMultimap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.FilteredSetMultimap</semanticResources>
+    <semanticResources>java:/Objects/java.util.EnumMap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.base.Converter</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.BiMap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ForwardingMap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.Ordering</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.Sets</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ForwardingSet</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.AbstractNavigableMap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.MapDifference</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.SortedMapDifference</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ForwardingCollection</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ForwardingSortedMap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.base.Equivalence</semanticResources>
+    <semanticResources>java:/Objects/java.util.IdentityHashMap</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.Range</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ForwardingObject</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.annotations.VisibleForTesting</semanticResources>
+    <semanticResources>java:/Objects/java.util.EnumSet</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.CartesianList</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ForwardingNavigableSet</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.Collections2</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ForwardingSortedSet</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.CopyOnWriteArraySet</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.AbstractIterator</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.CopyOnWriteArrayList</semanticResources>
+    <semanticResources>java:/Objects/java.util.function.BiPredicate</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.Cut</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.DiscreteDomain</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.BoundType</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ForwardingMultiset</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.SortedMultiset</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.SortedMultisetBridge</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.SortedIterable</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.UnmodifiableListIterator</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ImmutableSortedSetFauxverideShim</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.RegularImmutableSortedSet</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ImmutableMapEntry</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ImmutableEntry</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.AbstractMapEntry</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.ImmutableSortedMapFauxverideShim</semanticResources>
+    <semanticResources>java:/Objects/java.util.AbstractQueue</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.ComparableExtensions</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.DoubleExtensions</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.FloatExtensions</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Float</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.FunctionExtensions</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.Functions</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.Procedures</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.IntegerExtensions</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.ExclusiveRange</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.IntegerRange</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.IterableExtensions</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.IteratorExtensions</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.Iterators</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.MultitransformedIterator</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.collect.PeekingIterator</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.ListExtensions</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.LongExtensions</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.MapExtensions</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.ObjectExtensions</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.base.Objects</semanticResources>
+    <semanticResources>java:/Objects/com.google.common.base.ExtraObjectsMethodsForWeb</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.ProcedureExtensions</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.ShortExtensions</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Short</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.xtext.xbase.lib.StringExtensions</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.service.parameterDefinition.ParameterDefinition</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.service.parameterDefinition.AbstractParameter</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EObject</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.common.util.EList</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.AttributeDefinition</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.common.notify.Notifier</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.common.util.TreeIterator</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EClass</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EStructuralFeature</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EReference</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EOperation</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.resource.Resource</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.common.notify.Adapter</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.common.notify.Notification</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EClassifier</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EAttribute</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EGenericType</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.ENamedElement</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EPackage</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.ETypeParameter</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EModelElement</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EAnnotation</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.common.util.EMap</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EFactory</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EDataType</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.InternalEObject</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.common.notify.NotificationChain</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.common.util.URI</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.common.util.Pool</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.common.util.SegmentSequence</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.common.util.CommonUtil</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.common.util.WeakInterningHashSet</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.locks.ReentrantReadWriteLock</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.common.util.InterningSet</semanticResources>
+    <semanticResources>java:/Objects/java.util.concurrent.locks.ReadWriteLock</semanticResources>
+    <semanticResources>java:/Objects/java.lang.IllegalMonitorStateException</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.ETypedElement</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.util.FeatureMap</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.util.InternalEList</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.util.EContentsEList</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.util.AbstractSequentialInternalEList</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EParameter</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.resource.ResourceSet</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.common.notify.AdapterFactory</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.resource.URIConverter</semanticResources>
+    <semanticResources>java:/Objects/java.io.InputStreamReader</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.resource.ContentHandler</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.resource.URIHandler</semanticResources>
+    <semanticResources>java:/Objects/sun.nio.cs.StreamDecoder</semanticResources>
+    <semanticResources>java:/Objects/java.io.FileInputStream</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.AbstractValue</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.AbstractAttributeType</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.ArrayType</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.service.parameterDefinition.TriggerDefinition</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.service.parameterDefinition.ParameterSetDefinition</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.IntValue</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.SingleValue</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.FloatingPointValue</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.StringValue</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.BoolValue</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.EnumerationValue</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.EnumerationElement</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.ArrayValue</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.PrimitiveType</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.PRIMITIVE_TYPE_NAME</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.common.util.Enumerator</semanticResources>
+    <semanticResources>java:/Objects/java.lang.Override</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.InlineEnumerationType</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.BasicAttributesFactory</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.AttributeRefinement</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.base.basicAttributes.BasicAttributesPackage</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EEnum</semanticResources>
+    <semanticResources>java:/Objects/org.eclipse.emf.ecore.EEnumLiteral</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_M5970Kd9EeetnKhyfJn2UA">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_M6YykKd9EeetnKhyfJn2UA" name="parameterDefinition" repPath="#_M6YLgKd9EeetnKhyfJn2UA">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+        <target xmi:type="ecore:EPackage" href="parameterDefinition.ecore#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_M6YLgKd9EeetnKhyfJn2UA" name="parameterDefinition">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_M6YLgad9EeetnKhyfJn2UA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_M6YLgqd9EeetnKhyfJn2UA">
+        <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_wE2VMKd9EeetnKhyfJn2UA" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <labelFormat>bold</labelFormat>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+        </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_MCvjcad-EeetnKhyfJn2UA" sourceArrow="FillDiamond" routingStyle="manhattan">
+          <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_MCvjcqd-EeetnKhyfJn2UA" showIcon="false" labelExpression="service:render">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </centerLabelStyleDescription>
+          <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_MCvjc6d-EeetnKhyfJn2UA" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+          </endLabelStyleDescription>
+        </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_Hf4dQLiKEee1DtIKRD8p5g" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" iconPath="/org.ecore.service.parameterDefinition.edit/icons/full/obj16/ParamDefModel.gif" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='EClass']"/>
+        </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_Hf5EULiKEee1DtIKRD8p5g" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" iconPath="/org.ecore.service.parameterDefinition.edit/icons/full/obj16/ParameterSetRepository.gif" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='EClass']"/>
+        </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_Hf5rYbiKEee1DtIKRD8p5g" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" iconPath="/org.ecore.service.parameterDefinition.edit/icons/full/obj16/ParameterSetDefinition.gif" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='EClass']"/>
+        </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_Hf6ScLiKEee1DtIKRD8p5g" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" iconPath="/org.ecore.service.parameterDefinition.edit/icons/full/obj16/AbstractParameter.gif" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
+          <borderColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='Dark%20EClass']"/>
+          <labelFormat>italic</labelFormat>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='Abstract%20EClass']"/>
+        </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_Hf65gLiKEee1DtIKRD8p5g" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" iconPath="/org.ecore.service.parameterDefinition.edit/icons/full/obj16/ParameterDefinition.gif" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='EClass']"/>
+        </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_Hf65griKEee1DtIKRD8p5g" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" iconPath="/org.ecore.service.parameterDefinition.edit/icons/full/obj16/TriggerDefinition.gif" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='EClass']"/>
+        </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_Hf7gkbiKEee1DtIKRD8p5g" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" iconPath="/org.ecore.service.parameterDefinition.edit/icons/full/obj16/ParamDefRepoImport.gif" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='EClass']"/>
+        </computedStyleDescriptions>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_M6Yykad9EeetnKhyfJn2UA" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_M6Yykqd9EeetnKhyfJn2UA" type="Sirius" element="_M6YLgKd9EeetnKhyfJn2UA" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_Pi8wQKd9EeetnKhyfJn2UA" type="2003" element="_PixxIKd9EeetnKhyfJn2UA">
+          <children xmi:type="notation:Node" xmi:id="_Pi9XUKd9EeetnKhyfJn2UA" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_Pi9-YKd9EeetnKhyfJn2UA" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_Pi9-Yad9EeetnKhyfJn2UA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_Pi9-Yqd9EeetnKhyfJn2UA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Pi8wQad9EeetnKhyfJn2UA" fontName="Ubuntu" fontHeight="8" fillColor="8905185"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pi8wQqd9EeetnKhyfJn2UA" x="12" y="12" width="120" height="63"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_snVsgKd9EeetnKhyfJn2UA" type="2003" element="_snTQQKd9EeetnKhyfJn2UA">
+          <children xmi:type="notation:Node" xmi:id="_snVsg6d9EeetnKhyfJn2UA" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_snVshKd9EeetnKhyfJn2UA" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_uXPj4Kd9EeetnKhyfJn2UA" type="3010" element="_uXDWoKd9EeetnKhyfJn2UA">
+              <styles xmi:type="notation:FontStyle" xmi:id="_uXPj4ad9EeetnKhyfJn2UA" fontColor="2697711" fontName="Ubuntu" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_uXPj4qd9EeetnKhyfJn2UA"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_snVshad9EeetnKhyfJn2UA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_snVshqd9EeetnKhyfJn2UA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_snVsgad9EeetnKhyfJn2UA" fontName="Ubuntu" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_snVsgqd9EeetnKhyfJn2UA" x="240" y="12" width="147" height="63"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_5luOgKd9EeetnKhyfJn2UA" type="2003" element="_5llEkKd9EeetnKhyfJn2UA">
+          <children xmi:type="notation:Node" xmi:id="_5lu1kKd9EeetnKhyfJn2UA" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_5lu1kad9EeetnKhyfJn2UA" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_8IlM0Kd9EeetnKhyfJn2UA" type="3010" element="_8IiwkKd9EeetnKhyfJn2UA">
+              <styles xmi:type="notation:FontStyle" xmi:id="_8IlM0ad9EeetnKhyfJn2UA" fontColor="2697711" fontName="Ubuntu" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_8IlM0qd9EeetnKhyfJn2UA"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_5lu1kqd9EeetnKhyfJn2UA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_5lu1k6d9EeetnKhyfJn2UA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_5luOgad9EeetnKhyfJn2UA" fontName="Ubuntu" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5luOgqd9EeetnKhyfJn2UA" x="240" y="126" width="147" height="57"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="__ln7cKd9EeetnKhyfJn2UA" type="2003" element="__lfYkKd9EeetnKhyfJn2UA">
+          <children xmi:type="notation:Node" xmi:id="__loigKd9EeetnKhyfJn2UA" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="__lpJkKd9EeetnKhyfJn2UA" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_DUD8EKd-EeetnKhyfJn2UA" type="3010" element="_DUBf0Kd-EeetnKhyfJn2UA">
+              <styles xmi:type="notation:FontStyle" xmi:id="_DUEjIKd-EeetnKhyfJn2UA" fontColor="2697711" fontName="Ubuntu" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_DUEjIad-EeetnKhyfJn2UA"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_m1BeIK5YEeeQvfWIb2dR9A" type="3010" element="_m09MsK5YEeeQvfWIb2dR9A">
+              <styles xmi:type="notation:FontStyle" xmi:id="_m1BeIa5YEeeQvfWIb2dR9A" fontName="Ubuntu" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_m1BeIq5YEeeQvfWIb2dR9A"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="__lpJkad9EeetnKhyfJn2UA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="__lpJkqd9EeetnKhyfJn2UA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="__ln7cad9EeetnKhyfJn2UA" fontName="Ubuntu" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="__ln7cqd9EeetnKhyfJn2UA" x="492" y="12" width="147" height="75"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_FXTmMKd-EeetnKhyfJn2UA" type="2003" element="_FXQi4Kd-EeetnKhyfJn2UA">
+          <children xmi:type="notation:Node" xmi:id="_FXTmM6d-EeetnKhyfJn2UA" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_FXTmNKd-EeetnKhyfJn2UA" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_FXTmNad-EeetnKhyfJn2UA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_FXTmNqd-EeetnKhyfJn2UA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_FXTmMad-EeetnKhyfJn2UA" fontName="Ubuntu" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FXTmMqd-EeetnKhyfJn2UA" x="444" y="132" width="135" height="51"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HXnREKd-EeetnKhyfJn2UA" type="2003" element="_HXk00Kd-EeetnKhyfJn2UA">
+          <children xmi:type="notation:Node" xmi:id="_HXnRE6d-EeetnKhyfJn2UA" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_HXnRFKd-EeetnKhyfJn2UA" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_HXnRFad-EeetnKhyfJn2UA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_HXnRFqd-EeetnKhyfJn2UA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HXnREad-EeetnKhyfJn2UA" fontName="Ubuntu" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HXnREqd-EeetnKhyfJn2UA" x="588" y="132" width="120" height="51"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_t8DAMKd-EeetnKhyfJn2UA" visible="false" type="2003" element="_t785kKd-EeetnKhyfJn2UA">
+          <children xmi:type="notation:Node" xmi:id="_t8DAM6d-EeetnKhyfJn2UA" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_t8DnQKd-EeetnKhyfJn2UA" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_t8DnQ6d-EeetnKhyfJn2UA" visible="false" type="3010" element="_t79goad-EeetnKhyfJn2UA">
+              <styles xmi:type="notation:FontStyle" xmi:id="_t8DnRKd-EeetnKhyfJn2UA" fontName="Ubuntu" fontHeight="8" bold="true"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_t8DnRad-EeetnKhyfJn2UA"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_t8DnQad-EeetnKhyfJn2UA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_t8DnQqd-EeetnKhyfJn2UA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_t8DAMad-EeetnKhyfJn2UA" fontName="Ubuntu" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_t8DAMqd-EeetnKhyfJn2UA" x="288" y="132"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_l5UtMKf9EeesMeabCq1-bw" type="2003" element="_l44oUKf9EeesMeabCq1-bw">
+          <children xmi:type="notation:Node" xmi:id="_l5V7UKf9EeesMeabCq1-bw" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_l5WiYKf9EeesMeabCq1-bw" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_neyPIKf9EeesMeabCq1-bw" type="3010" element="_nd6scKf9EeesMeabCq1-bw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_neyPIaf9EeesMeabCq1-bw" fontColor="2697711" fontName="Ubuntu" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_neyPIqf9EeesMeabCq1-bw"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_l5WiYaf9EeesMeabCq1-bw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_l5WiYqf9EeesMeabCq1-bw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_l5UtMaf9EeesMeabCq1-bw" fontName="Ubuntu" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l5UtMqf9EeesMeabCq1-bw" x="12" y="120" width="99" height="75"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_M6Yyk6d9EeetnKhyfJn2UA"/>
+        <edges xmi:type="notation:Edge" xmi:id="_MCymwKd-EeetnKhyfJn2UA" type="4001" element="_MCvjcKd-EeetnKhyfJn2UA" source="_Pi8wQKd9EeetnKhyfJn2UA" target="_snVsgKd9EeetnKhyfJn2UA">
+          <children xmi:type="notation:Node" xmi:id="_MCymxKd-EeetnKhyfJn2UA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MCymxad-EeetnKhyfJn2UA" x="6" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_MCzN0Kd-EeetnKhyfJn2UA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MCzN0ad-EeetnKhyfJn2UA" x="1" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_MCzN0qd-EeetnKhyfJn2UA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MCzN06d-EeetnKhyfJn2UA" x="10" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_MCymwad-EeetnKhyfJn2UA" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_MCymwqd-EeetnKhyfJn2UA" fontColor="7490599" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MCymw6d-EeetnKhyfJn2UA" points="[0, 0, -110, 0]$[110, 0, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MCzN1Kd-EeetnKhyfJn2UA" id="(1.0,0.5901639344262295)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MCzN1ad-EeetnKhyfJn2UA" id="(0.0,0.5901639344262295)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_Pk730Kd-EeetnKhyfJn2UA" type="4001" element="_PkvDgKd-EeetnKhyfJn2UA" source="_snVsgKd9EeetnKhyfJn2UA" target="_5luOgKd9EeetnKhyfJn2UA">
+          <children xmi:type="notation:Node" xmi:id="_Pk8e4Kd-EeetnKhyfJn2UA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pk8e4ad-EeetnKhyfJn2UA" x="2" y="37" width="48" height="12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Pk8e4qd-EeetnKhyfJn2UA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pk8e46d-EeetnKhyfJn2UA" x="5" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Pk8e5Kd-EeetnKhyfJn2UA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pk8e5ad-EeetnKhyfJn2UA" x="15" y="-10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Pk730ad-EeetnKhyfJn2UA" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_Pk730qd-EeetnKhyfJn2UA" fontColor="7490599" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Pk7306d-EeetnKhyfJn2UA" points="[-60, 26, 73, -88]$[-60, 79, 73, -35]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Pk8e5qd-EeetnKhyfJn2UA" id="(0.9172413793103448,0.5737704918032787)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Pk8e56d-EeetnKhyfJn2UA" id="(0.0,0.6363636363636364)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_TcpwQKd-EeetnKhyfJn2UA" type="4001" element="_Tcc78Kd-EeetnKhyfJn2UA" source="_5luOgKd9EeetnKhyfJn2UA" target="__ln7cKd9EeetnKhyfJn2UA">
+          <children xmi:type="notation:Node" xmi:id="_TcpwRKd-EeetnKhyfJn2UA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TcpwRad-EeetnKhyfJn2UA" x="5" y="-9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_TcqXUKd-EeetnKhyfJn2UA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TcqXUad-EeetnKhyfJn2UA" x="-5" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_TcqXUqd-EeetnKhyfJn2UA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TcqXU6d-EeetnKhyfJn2UA" x="-6" y="7"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_TcpwQad-EeetnKhyfJn2UA"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_TcpwQqd-EeetnKhyfJn2UA" fontColor="7490599" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TcpwQ6d-EeetnKhyfJn2UA" points="[72, -53, -180, 134]$[179, -130, -73, 57]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TcqXVKd-EeetnKhyfJn2UA" id="(0.503448275862069,1.3272727272727274)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TcqXVad-EeetnKhyfJn2UA" id="(0.503448275862069,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_V7NdYKd-EeetnKhyfJn2UA" type="4001" element="_V6-z4Kd-EeetnKhyfJn2UA" source="_FXTmMKd-EeetnKhyfJn2UA" target="__ln7cKd9EeetnKhyfJn2UA">
+          <children xmi:type="notation:Node" xmi:id="_V7NdZKd-EeetnKhyfJn2UA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V7NdZad-EeetnKhyfJn2UA" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_V7NdZqd-EeetnKhyfJn2UA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V7NdZ6d-EeetnKhyfJn2UA" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_V7OEcKd-EeetnKhyfJn2UA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V7OEcad-EeetnKhyfJn2UA" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_V7NdYad-EeetnKhyfJn2UA" routing="Tree"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_V7NdYqd-EeetnKhyfJn2UA" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_V7NdY6d-EeetnKhyfJn2UA" points="[0, 0, -72, 59]$[72, -59, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_V7OEcqd-EeetnKhyfJn2UA" id="(0.45112781954887216,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_V7OEc6d-EeetnKhyfJn2UA" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_WfeoEKd-EeetnKhyfJn2UA" type="4001" element="_WfSa0Kd-EeetnKhyfJn2UA" source="_HXnREKd-EeetnKhyfJn2UA" target="__ln7cKd9EeetnKhyfJn2UA">
+          <children xmi:type="notation:Node" xmi:id="_WfeoFKd-EeetnKhyfJn2UA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WfeoFad-EeetnKhyfJn2UA" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_WfeoFqd-EeetnKhyfJn2UA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WfeoF6d-EeetnKhyfJn2UA" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_WfeoGKd-EeetnKhyfJn2UA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WfeoGad-EeetnKhyfJn2UA" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_WfeoEad-EeetnKhyfJn2UA" routing="Tree"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_WfeoEqd-EeetnKhyfJn2UA" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WfeoE6d-EeetnKhyfJn2UA" points="[0, 0, 59, 59]$[-59, -59, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WffPIKd-EeetnKhyfJn2UA" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WffPIad-EeetnKhyfJn2UA" id="(0.503448275862069,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_t8E1YKd-EeetnKhyfJn2UA" visible="false" type="4001" element="_t8BLAKd-EeetnKhyfJn2UA" source="__ln7cKd9EeetnKhyfJn2UA" target="_t8DAMKd-EeetnKhyfJn2UA">
+          <children xmi:type="notation:Node" xmi:id="_t8E1ZKd-EeetnKhyfJn2UA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_t8E1Zad-EeetnKhyfJn2UA" x="2" y="19"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_t8E1Zqd-EeetnKhyfJn2UA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_t8E1Z6d-EeetnKhyfJn2UA" x="28" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_t8E1aKd-EeetnKhyfJn2UA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_t8E1aad-EeetnKhyfJn2UA" x="5" y="-10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_t8E1Yad-EeetnKhyfJn2UA" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_t8E1Yqd-EeetnKhyfJn2UA" fontColor="7490599" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_t8E1Y6d-EeetnKhyfJn2UA" points="[-72, 0, 127, 6]$[-146, 0, 53, 6]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_t8FccKd-EeetnKhyfJn2UA" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_t8Fccad-EeetnKhyfJn2UA" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_SHHG8Kf9EeesMeabCq1-bw" type="4001" element="_SGSnkKf9EeesMeabCq1-bw" source="_5luOgKd9EeetnKhyfJn2UA" target="_5luOgKd9EeetnKhyfJn2UA">
+          <children xmi:type="notation:Node" xmi:id="_SHObsKf9EeesMeabCq1-bw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SHObsaf9EeesMeabCq1-bw" x="25" y="-5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_SHPCwKf9EeesMeabCq1-bw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SHPCwaf9EeesMeabCq1-bw" x="-9" y="11"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_SHQQ4Kf9EeesMeabCq1-bw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SHQQ4af9EeesMeabCq1-bw" x="-7" y="28"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_SHHG8af9EeesMeabCq1-bw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_SHHG8qf9EeesMeabCq1-bw" fontColor="7490599" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_SHHG86f9EeesMeabCq1-bw" points="[13, -19, 0, -6]$[36, -19, 23, -6]$[36, 29, 23, 42]$[-23, 29, -36, 42]$[-23, 6, -36, 19]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SHQ38Kf9EeesMeabCq1-bw" id="(0.9103448275862069,1.3272727272727274)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SHRfAKf9EeesMeabCq1-bw" id="(1.0,1.090909090909091)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_wLEp0Kf9EeesMeabCq1-bw" type="4001" element="_wKgCEKf9EeesMeabCq1-bw" source="_Pi8wQKd9EeetnKhyfJn2UA" target="_l5UtMKf9EeesMeabCq1-bw">
+          <children xmi:type="notation:Node" xmi:id="_wLEp1Kf9EeesMeabCq1-bw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wLFQ4Kf9EeesMeabCq1-bw" x="6" y="-16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_wLFQ4af9EeesMeabCq1-bw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wLFQ4qf9EeesMeabCq1-bw" x="4" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_wLFQ46f9EeesMeabCq1-bw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wLFQ5Kf9EeesMeabCq1-bw" x="-1" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_wLEp0af9EeesMeabCq1-bw" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_wLEp0qf9EeesMeabCq1-bw" fontColor="7490599" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wLEp06f9EeesMeabCq1-bw" points="[0, -12, 0, -47]$[0, 35, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wLFQ5af9EeesMeabCq1-bw" id="(0.4067796610169492,1.1967213114754098)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wLFQ5qf9EeesMeabCq1-bw" id="(0.4948453608247423,0.0)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_PixxIKd9EeetnKhyfJn2UA" name="ParamDefModel" tooltipText="" outgoingEdges="_MCvjcKd-EeetnKhyfJn2UA _wKgCEKf9EeesMeabCq1-bw" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="parameterDefinition.ecore#//ParamDefModel"/>
+      <semanticElements xmi:type="ecore:EClass" href="parameterDefinition.ecore#//ParamDefModel"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Hf4dQbiKEee1DtIKRD8p5g" iconPath="/org.ecore.service.parameterDefinition.edit/icons/full/obj16/ParamDefModel.gif" description="_Hf4dQLiKEee1DtIKRD8p5g" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" backgroundColor="225,225,135" foregroundColor="225,225,135">
+        <customFeatures>backgroundColor</customFeatures>
+        <customFeatures>foregroundColor</customFeatures>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_snTQQKd9EeetnKhyfJn2UA" name="ParameterSetRepository" tooltipText="" outgoingEdges="_PkvDgKd-EeetnKhyfJn2UA" incomingEdges="_MCvjcKd-EeetnKhyfJn2UA" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="parameterDefinition.ecore#//ParameterSetRepository"/>
+      <semanticElements xmi:type="ecore:EClass" href="parameterDefinition.ecore#//ParameterSetRepository"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Hf5rYLiKEee1DtIKRD8p5g" iconPath="org.ecore.service.parameterDefinition.edit/icons/full/obj16/ParameterSetRepository.gif" description="_Hf5EULiKEee1DtIKRD8p5g" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+        <customFeatures>iconPath</customFeatures>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_uXDWoKd9EeetnKhyfJn2UA" name="name : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="parameterDefinition.ecore#//ParameterSetRepository/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="parameterDefinition.ecore#//ParameterSetRepository/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_wE2VMad9EeetnKhyfJn2UA" labelAlignment="LEFT" description="_wE2VMKd9EeetnKhyfJn2UA">
+          <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_5llEkKd9EeetnKhyfJn2UA" name="ParameterSetDefinition" tooltipText="" outgoingEdges="_Tcc78Kd-EeetnKhyfJn2UA _SGSnkKf9EeesMeabCq1-bw" incomingEdges="_PkvDgKd-EeetnKhyfJn2UA _SGSnkKf9EeesMeabCq1-bw" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="parameterDefinition.ecore#//ParameterSetDefinition"/>
+      <semanticElements xmi:type="ecore:EClass" href="parameterDefinition.ecore#//ParameterSetDefinition"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Hf5rYriKEee1DtIKRD8p5g" iconPath="org.ecore.service.parameterDefinition.edit/icons/full/obj16/ParameterSetDefinition.gif" description="_Hf5rYbiKEee1DtIKRD8p5g" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+        <customFeatures>iconPath</customFeatures>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_8IiwkKd9EeetnKhyfJn2UA" name="name : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="parameterDefinition.ecore#//ParameterSetDefinition/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="parameterDefinition.ecore#//ParameterSetDefinition/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_9jMJoKd9EeetnKhyfJn2UA" labelAlignment="LEFT" description="_wE2VMKd9EeetnKhyfJn2UA">
+          <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="__lfYkKd9EeetnKhyfJn2UA" name="AbstractParameter" tooltipText="" outgoingEdges="_t8BLAKd-EeetnKhyfJn2UA" incomingEdges="_Tcc78Kd-EeetnKhyfJn2UA _V6-z4Kd-EeetnKhyfJn2UA _WfSa0Kd-EeetnKhyfJn2UA" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="parameterDefinition.ecore#//AbstractParameter"/>
+      <semanticElements xmi:type="ecore:EClass" href="parameterDefinition.ecore#//AbstractParameter"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Hf6ScbiKEee1DtIKRD8p5g" iconPath="/org.ecore.service.parameterDefinition.edit/icons/full/obj16/AbstractParameter.gif" description="_Hf6ScLiKEee1DtIKRD8p5g" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
+        <labelFormat>italic</labelFormat>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_DUBf0Kd-EeetnKhyfJn2UA" name="name : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="parameterDefinition.ecore#//AbstractParameter/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="parameterDefinition.ecore#//AbstractParameter/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_Eh0IoKd-EeetnKhyfJn2UA" labelAlignment="LEFT" description="_wE2VMKd9EeetnKhyfJn2UA">
+          <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_m09MsK5YEeeQvfWIb2dR9A" name=" attributes : AttributeDefinition" tooltipText="">
+        <target xmi:type="ecore:EReference" href="parameterDefinition.ecore#//AbstractParameter/attributes"/>
+        <semanticElements xmi:type="ecore:EReference" href="parameterDefinition.ecore#//AbstractParameter/attributes"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_m0-a0K5YEeeQvfWIb2dR9A" labelAlignment="LEFT" color="114,159,207">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_FXQi4Kd-EeetnKhyfJn2UA" name="ParameterDefinition" tooltipText="" outgoingEdges="_V6-z4Kd-EeetnKhyfJn2UA" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="parameterDefinition.ecore#//ParameterDefinition"/>
+      <semanticElements xmi:type="ecore:EClass" href="parameterDefinition.ecore#//ParameterDefinition"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Hf65gbiKEee1DtIKRD8p5g" iconPath="/org.ecore.service.parameterDefinition.edit/icons/full/obj16/ParameterDefinition.gif" description="_Hf65gLiKEee1DtIKRD8p5g" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216"/>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_HXk00Kd-EeetnKhyfJn2UA" name="TriggerDefinition" tooltipText="" outgoingEdges="_WfSa0Kd-EeetnKhyfJn2UA" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="parameterDefinition.ecore#//TriggerDefinition"/>
+      <semanticElements xmi:type="ecore:EClass" href="parameterDefinition.ecore#//TriggerDefinition"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Hf7gkLiKEee1DtIKRD8p5g" iconPath="/org.ecore.service.parameterDefinition.edit/icons/full/obj16/TriggerDefinition.gif" description="_Hf65griKEee1DtIKRD8p5g" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216"/>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_MCvjcKd-EeetnKhyfJn2UA" name="[0..1] repository" sourceNode="_PixxIKd9EeetnKhyfJn2UA" targetNode="_snTQQKd9EeetnKhyfJn2UA">
+      <target xmi:type="ecore:EReference" href="parameterDefinition.ecore#//ParamDefModel/repository"/>
+      <semanticElements xmi:type="ecore:EReference" href="parameterDefinition.ecore#//ParamDefModel/repository"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_MCwKgKd-EeetnKhyfJn2UA" description="_MCvjcad-EeetnKhyfJn2UA" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_MCwKgad-EeetnKhyfJn2UA" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_MCwKgqd-EeetnKhyfJn2UA" showIcon="false" labelColor="39,76,114">
+          <customFeatures>labelSize</customFeatures>
+        </endLabelStyle>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_PkvDgKd-EeetnKhyfJn2UA" name="[0..*] sets" sourceNode="_snTQQKd9EeetnKhyfJn2UA" targetNode="_5llEkKd9EeetnKhyfJn2UA">
+      <target xmi:type="ecore:EReference" href="parameterDefinition.ecore#//ParameterSetRepository/sets"/>
+      <semanticElements xmi:type="ecore:EReference" href="parameterDefinition.ecore#//ParameterSetRepository/sets"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_PkvqkKd-EeetnKhyfJn2UA" description="_MCvjcad-EeetnKhyfJn2UA" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_Pkvqkad-EeetnKhyfJn2UA" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_Pkvqkqd-EeetnKhyfJn2UA" showIcon="false" labelColor="39,76,114">
+          <customFeatures>labelSize</customFeatures>
+        </endLabelStyle>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_Tcc78Kd-EeetnKhyfJn2UA" name="[0..*] parameters" sourceNode="_5llEkKd9EeetnKhyfJn2UA" targetNode="__lfYkKd9EeetnKhyfJn2UA">
+      <target xmi:type="ecore:EReference" href="parameterDefinition.ecore#//ParameterSetDefinition/parameters"/>
+      <semanticElements xmi:type="ecore:EReference" href="parameterDefinition.ecore#//ParameterSetDefinition/parameters"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_TcdjAKd-EeetnKhyfJn2UA" description="_MCvjcad-EeetnKhyfJn2UA" sourceArrow="FillDiamond" strokeColor="0,0,0">
+        <customFeatures>routingStyle</customFeatures>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_TcdjAad-EeetnKhyfJn2UA" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_TcdjAqd-EeetnKhyfJn2UA" showIcon="false" labelColor="39,76,114">
+          <customFeatures>labelSize</customFeatures>
+        </endLabelStyle>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_V6-z4Kd-EeetnKhyfJn2UA" sourceNode="_FXQi4Kd-EeetnKhyfJn2UA" targetNode="__lfYkKd9EeetnKhyfJn2UA">
+      <target xmi:type="ecore:EClass" href="parameterDefinition.ecore#//ParameterDefinition"/>
+      <semanticElements xmi:type="ecore:EClass" href="parameterDefinition.ecore#//ParameterDefinition"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_V7BQIKd-EeetnKhyfJn2UA" targetArrow="InputClosedArrow" routingStyle="tree">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_V7BQIad-EeetnKhyfJn2UA" showIcon="false">
+          <labelFormat>italic</labelFormat>
+        </beginLabelStyle>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_V7BQIqd-EeetnKhyfJn2UA" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_WfSa0Kd-EeetnKhyfJn2UA" sourceNode="_HXk00Kd-EeetnKhyfJn2UA" targetNode="__lfYkKd9EeetnKhyfJn2UA">
+      <target xmi:type="ecore:EClass" href="parameterDefinition.ecore#//TriggerDefinition"/>
+      <semanticElements xmi:type="ecore:EClass" href="parameterDefinition.ecore#//TriggerDefinition"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_WfTB4Kd-EeetnKhyfJn2UA" targetArrow="InputClosedArrow" routingStyle="tree">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_WfTB4ad-EeetnKhyfJn2UA" showIcon="false">
+          <labelFormat>italic</labelFormat>
+        </beginLabelStyle>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_WfTB4qd-EeetnKhyfJn2UA" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_t785kKd-EeetnKhyfJn2UA" name="AttributeDefinition" visible="false" tooltipText="" incomingEdges="_t8BLAKd-EeetnKhyfJn2UA">
+      <target xmi:type="ecore:EClass" href="platform:/resource/org.ecore.service.basicAttributes/model/basicAttributes.ecore#//AttributeDefinition"/>
+      <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.ecore.service.basicAttributes/model/basicAttributes.ecore#//AttributeDefinition"/>
+      <decorations xmi:type="viewpoint:Decoration" xmi:id="_t79goKd-EeetnKhyfJn2UA">
+        <description xmi:type="description:SemanticBasedDecoration" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='External']"/>
+      </decorations>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_t785kad-EeetnKhyfJn2UA" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Related%20EClasses']/@containerMappings[name='EC%20External%20EClasses']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Related%20EClasses']/@containerMappings[name='EC%20External%20EClasses']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_t79goad-EeetnKhyfJn2UA" name="name : EString" visible="false" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="platform:/resource/org.ecore.service.basicAttributes/model/basicAttributes.ecore#//AttributeDefinition/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.ecore.service.basicAttributes/model/basicAttributes.ecore#//AttributeDefinition/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_t79goqd-EeetnKhyfJn2UA" labelAlignment="LEFT" description="_wE2VMKd9EeetnKhyfJn2UA">
+          <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_t8BLAKd-EeetnKhyfJn2UA" name="[0..*] attributes" visible="false" sourceNode="__lfYkKd9EeetnKhyfJn2UA" targetNode="_t785kKd-EeetnKhyfJn2UA">
+      <target xmi:type="ecore:EReference" href="parameterDefinition.ecore#//AbstractParameter/attributes"/>
+      <semanticElements xmi:type="ecore:EReference" href="parameterDefinition.ecore#//AbstractParameter/attributes"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_t8BLAad-EeetnKhyfJn2UA" description="_MCvjcad-EeetnKhyfJn2UA" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_t8BLAqd-EeetnKhyfJn2UA" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_t8BLA6d-EeetnKhyfJn2UA" showIcon="false" labelColor="39,76,114">
+          <customFeatures>labelSize</customFeatures>
+        </endLabelStyle>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_SGSnkKf9EeesMeabCq1-bw" name="[0..*] extends" sourceNode="_5llEkKd9EeetnKhyfJn2UA" targetNode="_5llEkKd9EeetnKhyfJn2UA">
+      <target xmi:type="ecore:EReference" href="parameterDefinition.ecore#//ParameterSetDefinition/extends"/>
+      <semanticElements xmi:type="ecore:EReference" href="parameterDefinition.ecore#//ParameterSetDefinition/extends"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_SGUcwKf9EeesMeabCq1-bw" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_SGUcwaf9EeesMeabCq1-bw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_SGUcwqf9EeesMeabCq1-bw" showIcon="false" labelColor="39,76,114">
+          <customFeatures>labelSize</customFeatures>
+        </endLabelStyle>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_l44oUKf9EeesMeabCq1-bw" name="ParamDefRepoImport" tooltipText="" incomingEdges="_wKgCEKf9EeesMeabCq1-bw" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="parameterDefinition.ecore#//ParamDefRepoImport"/>
+      <semanticElements xmi:type="ecore:EClass" href="parameterDefinition.ecore#//ParamDefRepoImport"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Hf7gkriKEee1DtIKRD8p5g" iconPath="org.ecore.service.parameterDefinition.edit/icons/full/obj16/ParamDefRepoImport.gif" description="_Hf7gkbiKEee1DtIKRD8p5g" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+        <customFeatures>iconPath</customFeatures>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_nd6scKf9EeesMeabCq1-bw" name="importedNamespace : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="parameterDefinition.ecore#//ParamDefRepoImport/importedNamespace"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="parameterDefinition.ecore#//ParamDefRepoImport/importedNamespace"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_rEbgIKf9EeesMeabCq1-bw" labelAlignment="LEFT" description="_wE2VMKd9EeetnKhyfJn2UA">
+          <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_wKgCEKf9EeesMeabCq1-bw" name="[0..*] imports" sourceNode="_PixxIKd9EeetnKhyfJn2UA" targetNode="_l44oUKf9EeesMeabCq1-bw">
+      <target xmi:type="ecore:EReference" href="parameterDefinition.ecore#//ParamDefModel/imports"/>
+      <semanticElements xmi:type="ecore:EReference" href="parameterDefinition.ecore#//ParamDefModel/imports"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_wKh3QKf9EeesMeabCq1-bw" description="_MCvjcad-EeetnKhyfJn2UA" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_wKh3Qaf9EeesMeabCq1-bw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_wKh3Qqf9EeesMeabCq1-bw" showIcon="false" labelColor="39,76,114">
+          <customFeatures>labelSize</customFeatures>
+        </endLabelStyle>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_M6YLhKd9EeetnKhyfJn2UA"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Icons%20Preview']"/>
+    <target xmi:type="ecore:EPackage" href="parameterDefinition.ecore#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

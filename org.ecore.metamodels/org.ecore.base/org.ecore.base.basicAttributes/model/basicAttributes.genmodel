@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.ecore.base.basicAttributes/src-gen" creationIcons="false"
+    editDirectory="/org.ecore.base.basicAttributes.edit/src-gen" editorDirectory="/org.ecore.base.basicAttributes.editor/src-gen"
+    modelPluginID="org.ecore.base.basicAttributes" modelName="BasicAttributes" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" importOrganizing="true">
+  <foreignModel>basicAttributes.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="BasicAttributes" basePackage="org.ecore.base" disposableProviderFactory="true"
+      extensibleProviderFactory="true" ecorePackage="basicAttributes.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="basicAttributes.ecore#//PRIMITIVE_TYPE_NAME">
+      <genEnumLiterals ecoreEnumLiteral="basicAttributes.ecore#//PRIMITIVE_TYPE_NAME/UInt8"/>
+      <genEnumLiterals ecoreEnumLiteral="basicAttributes.ecore#//PRIMITIVE_TYPE_NAME/UInt16"/>
+      <genEnumLiterals ecoreEnumLiteral="basicAttributes.ecore#//PRIMITIVE_TYPE_NAME/UInt32"/>
+      <genEnumLiterals ecoreEnumLiteral="basicAttributes.ecore#//PRIMITIVE_TYPE_NAME/UInt64"/>
+      <genEnumLiterals ecoreEnumLiteral="basicAttributes.ecore#//PRIMITIVE_TYPE_NAME/Int8"/>
+      <genEnumLiterals ecoreEnumLiteral="basicAttributes.ecore#//PRIMITIVE_TYPE_NAME/Int16"/>
+      <genEnumLiterals ecoreEnumLiteral="basicAttributes.ecore#//PRIMITIVE_TYPE_NAME/Int32"/>
+      <genEnumLiterals ecoreEnumLiteral="basicAttributes.ecore#//PRIMITIVE_TYPE_NAME/Int64"/>
+      <genEnumLiterals ecoreEnumLiteral="basicAttributes.ecore#//PRIMITIVE_TYPE_NAME/Float"/>
+      <genEnumLiterals ecoreEnumLiteral="basicAttributes.ecore#//PRIMITIVE_TYPE_NAME/Double"/>
+      <genEnumLiterals ecoreEnumLiteral="basicAttributes.ecore#//PRIMITIVE_TYPE_NAME/String"/>
+      <genEnumLiterals ecoreEnumLiteral="basicAttributes.ecore#//PRIMITIVE_TYPE_NAME/Boolean"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="basicAttributes.ecore#//Cardinality"/>
+    <genClasses ecoreClass="basicAttributes.ecore#//AttributeDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicAttributes.ecore#//AttributeDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference basicAttributes.ecore#//AttributeDefinition/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference basicAttributes.ecore#//AttributeDefinition/defaultvalue"/>
+    </genClasses>
+    <genClasses ecoreClass="basicAttributes.ecore#//AttributeRefinement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference basicAttributes.ecore#//AttributeRefinement/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicAttributes.ecore#//AttributeRefinement/attribute"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="basicAttributes.ecore#//AbstractAttributeType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference basicAttributes.ecore#//AbstractAttributeType/array"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="basicAttributes.ecore#//AbstractValue"/>
+    <genClasses ecoreClass="basicAttributes.ecore#//PrimitiveType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicAttributes.ecore#//PrimitiveType/typeName"/>
+    </genClasses>
+    <genClasses ecoreClass="basicAttributes.ecore#//SingleValue"/>
+    <genClasses ecoreClass="basicAttributes.ecore#//ArrayValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference basicAttributes.ecore#//ArrayValue/values"/>
+    </genClasses>
+    <genClasses ecoreClass="basicAttributes.ecore#//ArrayType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicAttributes.ecore#//ArrayType/length"/>
+    </genClasses>
+    <genClasses ecoreClass="basicAttributes.ecore#//FloatingPointValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicAttributes.ecore#//FloatingPointValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="basicAttributes.ecore#//IntValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicAttributes.ecore#//IntValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="basicAttributes.ecore#//StringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicAttributes.ecore#//StringValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="basicAttributes.ecore#//BoolValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicAttributes.ecore#//BoolValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="basicAttributes.ecore#//InlineEnumerationType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference basicAttributes.ecore#//InlineEnumerationType/enums"/>
+    </genClasses>
+    <genClasses ecoreClass="basicAttributes.ecore#//EnumerationElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicAttributes.ecore#//EnumerationElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicAttributes.ecore#//EnumerationElement/value"/>
+    </genClasses>
+    <genClasses ecoreClass="basicAttributes.ecore#//EnumerationValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicAttributes.ecore#//EnumerationValue/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

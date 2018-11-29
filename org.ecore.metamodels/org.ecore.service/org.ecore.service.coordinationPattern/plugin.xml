@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated coordinationPattern -->
+      <package
+            uri="http://www.ecore.org/service/CoordinationPattern"
+            class="org.ecore.service.coordinationPattern.CoordinationPatternPackage"
+            genModel="model/coordinationPattern.genmodel"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.service.communicationObject.ui
+Bundle-Vendor: Servicerobotics Ulm
+Bundle-Version: 3.4.0
+Bundle-SymbolicName: org.xtext.service.communicationObject.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.xtext.service.communicationObject,
+ org.xtext.service.communicationObject.ide,
+ org.ecore.service.communicationObject,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtend.lib;resolution:=optional,
+ org.eclipse.xtext.xbase.lib,
+ org.xtext.base.utils,
+ org.xtext.base.basicAttributes,
+ org.xtext.base.basicAttributes.ui
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.service.communicationObject.ui.quickfix,
+ org.xtext.service.communicationObject.ui.internal,
+ org.xtext.service.communicationObject.ui.contentassist
+Bundle-Activator: org.xtext.service.communicationObject.ui.internal.CommunicationObjectActivator

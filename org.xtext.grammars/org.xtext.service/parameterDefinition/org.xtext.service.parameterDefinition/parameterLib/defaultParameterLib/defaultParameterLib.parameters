@@ -1,0 +1,26 @@
+/**
+ * This is the default Parameter library that is automatically
+ * included by default and that each component needs to implement.
+ */
+ParameterSetRepository defaultParameterLib {
+	/**
+	 * If nothing else specified then the <b>EmptyDefaultParameterSet</b>
+	 * is automatically used by default. This ParameterSet has no
+	 * specific Parameters and only one standard trigger called 
+	 * <b>COMMIT</b>.
+	 */
+	ParameterSet EmptyDefaultParameterSet {
+		/**
+		 * The <b>COMMIT</b> Trigger is always available and can be called
+		 * for each component to copy the component's internal "commit-state"
+		 * into the component's "global-state". In this way, only consistent 
+		 * sets of parameter-updates are used within the component and no 
+		 * intermediate (potentially inconsistent) changes interfere with 
+		 * the component's regular operation. The idea is comparable with 
+		 * the commit protocol in a database where after updating individual 
+		 * tables a consistent bunch of data is updated at once (as a single
+		 * operation) by calling commit.
+		 */
+		Trigger COMMIT {}
+	}
+}

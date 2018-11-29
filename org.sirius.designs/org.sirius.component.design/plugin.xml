@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="org.sirius.component.design.Activator"
+               id="org.sirius.component.design"
+	       name="component">
+    </component>
+  </extension>
+  <extension
+        point="org.eclipse.ui.views">
+     <category
+           id="org.smartMDSD.category"
+           name="SmartMDSD Tools">
+     </category>
+     <view
+           category="org.smartMDSD.category"
+           class="org.sirius.component.design.ComponentParameterViewPart"
+           icon="icons/parameters16.png"
+           id="org.sirius.component.design.ComponentParamView"
+           name="Component Parameter Editor View"
+           restorable="true">
+     </view>
+  </extension>
+  <extension
+        point="org.eclipse.ui.perspectiveExtensions">
+     <perspectiveExtension
+           targetID="org.eclipse.sirius.ui.tools.perspective.modeling">
+        <view
+              id="org.sirius.component.design.ComponentParamView"
+              minimized="false"
+              relationship="right"
+              relative="org.eclipse.ui.views.ProblemView">
+        </view>
+     </perspectiveExtension>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="org.sirius.component.design.OpenComponentParameterEditorAction"
+           id="OpenComponentParameterEditor">
+     </javaActions>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="org.sirius.component.design.DeleteComponentParameterModelFileAction"
+           id="DeleteComponentParameterModelFile">
+     </javaActions>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="org.sirius.tools.ImportModelsAction"
+           id="ImportModels">
+     </javaActions>
+  </extension>
+</plugin>

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.ecore.base.stateMachine.edit;singleton:=true
+Bundle-Version: 3.4.0
+Bundle-ClassPath: .
+Bundle-Activator: org.ecore.base.stateMachine.provider.StateMachineEditPlugin$Implementation
+Bundle-Vendor: Servicerobotics Ulm
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.ecore.base.stateMachine.provider
+Require-Bundle: org.eclipse.core.runtime,
+ org.ecore.base.stateMachine;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Automatic-Module-Name: org.ecore.base.stateMachine.edit

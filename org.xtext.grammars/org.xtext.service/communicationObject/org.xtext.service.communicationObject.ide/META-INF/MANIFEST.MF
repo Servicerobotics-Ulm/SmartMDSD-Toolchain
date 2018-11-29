@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.service.communicationObject.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.service.communicationObject.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.xtext.service.communicationObject,
+ org.ecore.service.communicationObject,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime,
+ org.xtext.base.basicAttributes.ide,
+ org.xtext.base.basicAttributes
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.service.communicationObject.ide.contentassist.antlr.internal,
+ org.xtext.service.communicationObject.ide.contentassist.antlr
+

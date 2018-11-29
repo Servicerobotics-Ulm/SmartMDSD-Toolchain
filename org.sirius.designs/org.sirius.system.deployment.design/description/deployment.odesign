@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="deployment" version="12.0.0.2017041100">
+  <ownedViewpoints name="DeploymentViewpoint" modelFileExtension="deployment" icon="/org.sirius.system.deployment.design/icons/Deployment.gif">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="DeploymentDiagram" titleExpression="[self.getProjectName()+'Deployment'/]" initialisation="true" domainClass="deployment::DeploymentModel" enablePopupBars="true">
+      <metamodel href="../../org.ecore.system.deployment/model/deployment.ecore#/"/>
+      <metamodel href="../../org.ecore.system.targetPlatform/model/targetPlatform.ecore#/"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="DeployEdge" sourceMapping="//@ownedViewpoints[name='DeploymentViewpoint']/@ownedRepresentations[name='DeploymentDiagram']/@defaultLayer/@containerMappings[name='ComponentArtefactContainer'] //@ownedViewpoints[name='DeploymentViewpoint']/@ownedRepresentations[name='DeploymentDiagram']/@defaultLayer/@containerMappings[name='NamingServiceContainer']" targetMapping="//@ownedViewpoints[name='DeploymentViewpoint']/@ownedRepresentations[name='DeploymentDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformRefContainer']" targetFinderExpression="feature:to" sourceFinderExpression="[self.eContainer()/]" domainClass="deployment::Deployment" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="['Deployment'/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="TargetPlatformRefContainer" semanticCandidatesExpression="feature:elements" domainClass="deployment::TargetPlatformReference">
+          <subContainerMappings name="UploadDirectoryContainer" semanticCandidatesExpression="feature:directory" domainClass="deployment::UploadDirectory">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="feature:path" tooltipExpression="UploadFolder">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="LoginAccountContainer" semanticCandidatesExpression="feature:login" doubleClickDescription="//@ownedViewpoints[name='DeploymentViewpoint']/@ownedRepresentations[name='DeploymentDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='LoginAccountSelection']" domainClass="deployment::LoginAccountSelection">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="LoginAccount">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="NetworkInterfaceContainer" semanticCandidatesExpression="feature:host" doubleClickDescription="//@ownedViewpoints[name='DeploymentViewpoint']/@ownedRepresentations[name='DeploymentDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='HostInterfaceSelection']" domainClass="deployment::NetworkInterfaceSelection">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="HostInterface">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" tooltipExpression="ComputationPlatformReference" foregroundColor="//@userColorsPalettes[name='DeploymentColors']/@entries[name='LightBlue']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="ComponentArtefactContainer" semanticCandidatesExpression="feature:elements" domainClass="deployment::ComponentArtefact">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="ComponentArtefact">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="NamingServiceContainer" semanticCandidatesExpression="feature:elements" domainClass="deployment::NamingService">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="['NamingService'/]">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Deployment Tools" icon="/org.sirius.system.deployment.design/icons/Deployment.gif">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="TargetPlatformReference" containerMappings="//@ownedViewpoints[name='DeploymentViewpoint']/@ownedRepresentations[name='DeploymentDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformRefContainer']">
+            <variable name="container">
+              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="computationPlatforms" candidatesExpression="service:container.getAllComputationPlatforms()" multiple="true" message="Select one or several ComputationPlatforms to instantiate"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:For" expression="var:computationPlatforms" iteratorName="platform">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="deployment::TargetPlatformReference" referenceName="elements">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="platform" valueExpression="var:platform">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="[platform.name/]"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="LoginAccount" precondition="[container.login=null/]" containerMappings="//@ownedViewpoints[name='DeploymentViewpoint']/@ownedRepresentations[name='DeploymentDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformRefContainer']/@subContainerMappings[name='LoginAccountContainer']">
+            <variable name="container">
+              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="login" candidatesExpression="[container.platform.elements->filter(targetPlatform::LoginAccount)/]" message="Select a LoginAccount" userDocumentation="Select a LoginAccount"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="deployment::LoginAccountSelection" referenceName="login">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="login" valueExpression="var:login"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="UploadDirectory" containerMappings="//@ownedViewpoints[name='DeploymentViewpoint']/@ownedRepresentations[name='DeploymentDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformRefContainer']/@subContainerMappings[name='UploadDirectoryContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="deployment::UploadDirectory" referenceName="directory">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="path" valueExpression="['/tmp'/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="NetworkInterface" containerMappings="//@ownedViewpoints[name='DeploymentViewpoint']/@ownedRepresentations[name='DeploymentDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformRefContainer']/@subContainerMappings[name='NetworkInterfaceContainer']">
+            <variable name="container">
+              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="networkInterface" candidatesExpression="[container.platform.elements->filter(targetPlatform::NetworkInterface)/]" message="Select a NetworkInterface to be used for Deployment" userDocumentation="Select a NetworkInterface to be used for Deployment"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="deployment::NetworkInterfaceSelection" referenceName="host">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="network" valueExpression="var:networkInterface"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ComponentArtefact" containerMappings="//@ownedViewpoints[name='DeploymentViewpoint']/@ownedRepresentations[name='DeploymentDiagram']/@defaultLayer/@containerMappings[name='ComponentArtefactContainer']">
+            <variable name="container">
+              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="componentInstances" candidatesExpression="service:container.getAllComponentInstances()" multiple="true" message="Select one or several ComponentInstances as ComponentArtefacts"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:For" expression="var:componentInstances" iteratorName="componentInstance">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="deployment::ComponentArtefact" referenceName="elements" variableName="artefact">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="component" valueExpression="var:componentInstance"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="NamingService" containerMappings="//@ownedViewpoints[name='DeploymentViewpoint']/@ownedRepresentations[name='DeploymentDiagram']/@defaultLayer/@containerMappings[name='NamingServiceContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="deployment::NamingService" referenceName="elements">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="portNr" valueExpression="20002"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Deployment" edgeMappings="//@ownedViewpoints[name='DeploymentViewpoint']/@ownedRepresentations[name='DeploymentDiagram']/@defaultLayer/@edgeMappings[name='DeployEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="deployment::Deployment" referenceName="deploy">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="to" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="HostInterfaceSelection" mappings="//@ownedViewpoints[name='DeploymentViewpoint']/@ownedRepresentations[name='DeploymentDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformRefContainer']/@subContainerMappings[name='NetworkInterfaceContainer']">
+            <element name="element">
+              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="hostInterface" candidatesExpression="service:self.getNetworkInterfaces()" message="Select a NetworkInterface"/>
+            </element>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="interface" valueExpression="var:hostInterface"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="LoginAccountSelection" mappings="//@ownedViewpoints[name='DeploymentViewpoint']/@ownedRepresentations[name='DeploymentDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformRefContainer']/@subContainerMappings[name='LoginAccountContainer']">
+            <element name="element">
+              <subVariables xsi:type="tool_1:SelectModelElementVariable" name="login" candidatesExpression="service:self.getLoginAccounts()" message="Select a Login Account"/>
+            </element>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="login" valueExpression="var:login"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.sirius.system.deployment.design.Services"/>
+  </ownedViewpoints>
+  <userColorsPalettes name="DeploymentColors">
+    <entries xsi:type="description:UserFixedColor" red="200" green="230" blue="255" name="LightBlue"/>
+  </userColorsPalettes>
+</description:Group>

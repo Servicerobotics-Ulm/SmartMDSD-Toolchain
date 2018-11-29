@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PlainOPCUAGenerator
+Bundle-SymbolicName: org.xtend.plainOPCUA.generator;singleton:=true
+Bundle-Version: 3.7.0
+Automatic-Module-Name: org.xtend.plainOPCUA.generator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: Servicerobotics Ulm
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.core.resources,
+ org.ecore.component.componentDefinition,
+ org.ecore.component.seronetExtension,
+ org.open62541.xml.compiler,
+ com.google.inject,
+ org.eclipse.xtext.util,
+ org.eclipse.xtext.generator,
+ org.eclipse.xtext,
+ org.smartsoft.utils,
+ org.eclipse.core.commands,
+ org.eclipse.ui.workbench,
+ org.xtend.smartsoft.generator,
+ org.xtext.component.componentDefinition

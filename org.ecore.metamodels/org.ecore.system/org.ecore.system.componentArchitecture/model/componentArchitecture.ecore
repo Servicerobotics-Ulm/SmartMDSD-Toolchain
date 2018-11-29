@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentArchitecture" nsURI="http://www.ecore.org/system/ComponentArchitecture"
+    nsPrefix="ComponentArchitecture">
+  <eClassifiers xsi:type="ecore:EClass" name="SystemComponentArchitecture">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//ComponentInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extensions" upperBound="-1"
+        eType="#//SystemExtension" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connections" upperBound="-1"
+        eType="#//Connection" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activityArch" eType="ecore:EClass ../../org.ecore.system.activityArchitecture/model/activityArchitecture.ecore#//ActivityArchitectureModel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//ComponentDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+        eType="#//ServiceInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extensions" upperBound="-1"
+        eType="#//ComponentInstanceExtension" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceInstance" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" eType="ecore:EClass ../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//ComponentPort"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" unsettable="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequiredService" eSuperTypes="#//ServiceInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProvidedService" eSuperTypes="#//ServiceInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Connection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//ProvidedService"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//RequiredService"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="middlewareSelection" eType="ecore:EClass ../../org.ecore.service.roboticMiddleware/model/roboticMiddleware.ecore#//RoboticMiddleware"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" unsettable="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemExtension" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceExtension" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityConfigurationMapping" eSuperTypes="#//ComponentInstanceConfigurationElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" unsettable="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//Activity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="config" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.system.activityArchitecture/model/activityArchitecture.ecore#//ActivityNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputHandlerConfigurationMapping" eSuperTypes="#//ComponentInstanceConfigurationElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" unsettable="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="handler" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//InputHandler"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="config" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.system.activityArchitecture/model/activityArchitecture.ecore#//InputHandlerNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfigurationElement"
+      abstract="true" eSuperTypes="#//ComponentInstanceExtension"/>
+</ecore:EPackage>

@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.component.componentDefinition.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.component.componentDefinition.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.xtext.component.componentDefinition,
+ org.xtext.component.componentDefinition.ide,
+ org.ecore.component.componentDefinition,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtend.lib;resolution:=optional,
+ org.eclipse.xtext.xbase.lib,
+ org.xtext.base.utils,
+ org.ecore.component.performanceExtension,
+ org.ecore.component.seronetExtension,
+ org.xtext.service.roboticMiddleware.ui,
+ org.ecore.component.coordinationExtension
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.component.componentDefinition.ui.internal,
+ org.xtext.component.componentDefinition.ui.quickfix,
+ org.xtext.component.componentDefinition.ui.contentassist
+Bundle-Activator: org.xtext.component.componentDefinition.ui.internal.ComponentDefinitionActivator

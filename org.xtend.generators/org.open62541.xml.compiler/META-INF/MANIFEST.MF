@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OpcUaXmlCompiler
+Bundle-SymbolicName: org.open62541.xml.compiler
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Servicerobotics Ulm
+Automatic-Module-Name: org.open62541.xml.compiler
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: com.google.inject,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtext.util,
+ org.eclipse.xtext.generator,
+ org.eclipse.xtext,
+ org.apache.log4j,
+ org.eclipse.core.runtime
+Export-Package: org.open62541.xml.compiler

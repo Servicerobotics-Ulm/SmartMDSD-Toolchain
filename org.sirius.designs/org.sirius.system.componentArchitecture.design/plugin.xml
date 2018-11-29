@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="org.sirius.system.componentArchitecture.design.Activator"
+               id="org.sirius.system.componentArchitecture.design"
+	       name="componentArchitecture">
+    </component>
+  </extension>
+  <extension
+        point="org.eclipse.ui.perspectiveExtensions">
+     <perspectiveExtension
+           targetID="org.eclipse.sirius.ui.tools.perspective.modeling">
+        <view
+              id="org.sirius.system.componentArchitecture.design.SystemParamView"
+              minimized="false"
+              relationship="stack"
+              relative="org.sirius.system.componentArchitecture.design.SystemParamView">
+        </view>
+     </perspectiveExtension>
+  </extension>
+  <extension
+        point="org.eclipse.ui.views">
+     <view
+           category="org.smartMDSD.category"
+           class="org.sirius.system.componentArchitecture.design.SystemParameterViewPart"
+           icon="icons/Parameter.gif"
+           id="org.sirius.system.componentArchitecture.design.SystemParamView"
+           name="System Parameter Editor View"
+           restorable="true">
+     </view>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="org.sirius.system.componentArchitecture.design.OpenSystemParameterEditorAction"
+           id="OpenSystemParameterEditor">
+     </javaActions>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="org.sirius.tools.ImportModelsAction"
+           id="ImportModels">
+     </javaActions>
+  </extension>
+</plugin>

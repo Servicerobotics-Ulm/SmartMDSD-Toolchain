@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: BaseUtils
+Bundle-SymbolicName: org.xtext.base.utils
+Bundle-Version: 3.4.0
+Bundle-Vendor: Servicerobotics Ulm
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtext
+Export-Package: org.xtext.base.utils

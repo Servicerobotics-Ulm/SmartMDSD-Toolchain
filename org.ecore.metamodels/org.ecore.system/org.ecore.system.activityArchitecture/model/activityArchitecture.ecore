@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="activityArchitecture" nsURI="http://www.ecore.org/system/ActivityArchitecture"
+    nsPrefix="ActivityArchitecture">
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityArchitectureModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//AbstractActivityArchitectureElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractSourceNode" abstract="true"
+      eSuperTypes="#//AbstractActivityArchitectureElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityNode" eSuperTypes="#//AbstractSourceNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
+        eType="#//AbstractInputNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activationSource" eType="#//ActivationSource"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="executionTime" eType="#//ExecutionTime"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scheduler" eType="#//Scheduler"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affinity" eType="#//CPUCore"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputHandlerNode" eSuperTypes="#//AbstractSourceNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputNode" eType="#//TriggerInputNode"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prescale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractInputNode" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RegisterInputNode" eSuperTypes="#//AbstractInputNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TriggerInputNode" eSuperTypes="#//AbstractInputNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataFlow" eSuperTypes="#//AbstractActivityArchitectureElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//AbstractSourceNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destination" lowerBound="1"
+        eType="#//AbstractInputNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivationSource" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sporadic" eSuperTypes="#//ActivationSource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minActFreq" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxActFreq" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataTriggered" eSuperTypes="#//ActivationSource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prescale" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggerRef" lowerBound="1"
+        eType="#//TriggerInputNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PeriodicTimer" eSuperTypes="#//ActivationSource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicActFreq" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CPUCore" eSuperTypes="#//AbstractActivityArchitectureElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coreNumber" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scheduler">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//SchedulerType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionTime">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="minTime" lowerBound="1"
+        eType="#//TimeValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="maxTime" lowerBound="1"
+        eType="#//TimeValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1" eType="#//TimeUnit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TimeUnit">
+    <eLiterals name="SEC" literal="s"/>
+    <eLiterals name="MSEC" value="1" literal="ms"/>
+    <eLiterals name="USEC" value="2" literal="us"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SchedulerType">
+    <eLiterals name="DEFAULT"/>
+    <eLiterals name="FIFO" value="1"/>
+    <eLiterals name="RR" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractActivityArchitectureElement"
+      abstract="true"/>
+</ecore:EPackage>

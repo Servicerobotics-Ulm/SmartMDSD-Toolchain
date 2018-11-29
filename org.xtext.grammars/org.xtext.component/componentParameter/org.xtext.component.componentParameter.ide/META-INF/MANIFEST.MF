@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.component.componentParameter.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.component.componentParameter.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.xtext.component.componentParameter,
+ org.ecore.component.componentParameter,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime,
+ org.xtext.base.basicAttributes,
+ org.xtext.service.parameterDefinition,
+ org.xtext.service.parameterDefinition.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.component.componentParameter.ide.contentassist.antlr,
+ org.xtext.component.componentParameter.ide.contentassist.antlr.internal
+

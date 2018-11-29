@@ -1,0 +1,86 @@
+/**
+ * <p>This StateMachine implements the default <b>ComponentLifecycle</b>
+ * that each component needs to implement. While the top-level MainState(s)
+ * and the StateTransition(s) are fixed, the MainStateCollection <b>Alive</b>
+ * can be extended during two design steps:</p>
+ * <ol>
+ * <li><b>StateDefinition:</b> can specify <i>ExtendedMainStateCollection(s)</i>, each defining further <i>MainState(s)</i>.</li>
+ * <li><b>ComponentStates:</b> can specify yet other custom <i>MainState(s)</i> and also specify additional <i>SubState(s)</i>.</li>
+ * </ol>
+ * <p><b>Internal</b> StateTransitions need to be triggered by the component itself while the
+ * <b>public</b> StateTransitions can be triggered from within a component and
+ * from the outside of a component from a higher behavior coordination level.</p>
+ * <p>For more information see the technical report which can be found at:
+ * <a href="http://www.servicerobotik-ulm.de/drupal/sites/default/files/ZAFH-TR-01-2011-ISSN-1868-3452.pdf">ZAFH-TR-01-2011-ISSN-1868-3452.pdf</a></p>
+ */
+StateMachine ComponentLifecycle 
+{
+	/**
+	 * The first State that is automatically activated when a component
+	 * starts is "Init". Within this MainState the component performs all
+	 * the initialization procedures and while in this state, the component
+	 * is not yet ready to deliver its services.
+	 */
+	State Init;
+	
+	/**
+	 * Whenever the component completes its internal initialization
+	 * procedures, the component is then responsible to transit into
+	 * the "Alive" state which is a Collection of MainStates by itself.
+	 * This transition cannot be triggered from the outside of a component
+	 * because outside of a component no knowledge exists about the 
+	 * internal initialization procedure. 
+	 */
+	public StateTransition Init -> Alive;
+	
+	/**
+	 * <p>This is the default runtime <b>State</b> of the overall 
+	 * <b>ComponentLifecycle</b> StateMachine.
+	 * 
+	 * <p>For more information see the technical report which can be found at:
+	 * <a href="http://www.servicerobotik-ulm.de/drupal/sites/default/files/ZAFH-TR-01-2011-ISSN-1868-3452.pdf">ZAFH-TR-01-2011-ISSN-1868-3452.pdf</a></p>
+	 */
+	State Alive;
+	
+	/**
+	 * At the end of a component's lifecyle, a component needs to shutdown.
+	 * As this procedure might involve cleaning up the component's internal
+	 * resources, this procedure is not instant and might take some time.
+	 * The signal to shutdown a component can be either trigger from the 
+	 * outside of a component (hence the public flag) or from within a component.
+	 */
+	public StateTransition Alive -> Shutdown;
+	
+	State Shutdown;
+	
+	/**
+	 * The "FatalError" State is reserved for critical errors only that
+	 * cannot be handled by the component itself. In these cases the  component 
+	 * automatically transits into this MainState and waits for the higher 
+	 * behavior coordination level to eventually transit into the "Shutdown" 
+	 * MainState. This is important to implement robust system behavior where 
+	 * components do not disappear arbitrarily by their own, even if they suffer 
+	 * from severe internal errors. This MainState should be used as the last
+	 * resort and all the other errors that can be handled within a component
+	 * should also be handled there as a regular error-handling procedure.
+	 */
+	State FatalError;
+	
+	/**
+	 * The transition into the "FatalError" MainState can be triggered from
+	 * within both MainStates "Init" and "Alive" and is the internal 
+	 * responsibility of a component.
+	 */
+	private StateTransition Init -> FatalError;
+	private StateTransition Alive -> FatalError;
+	
+	/**
+	 * The only allowed exit from the "FatalError" MainState is
+	 * to transit into the "Shutdown" MainState which might be able
+	 * to at least cleanup some of the component's internal resources.
+	 * This transition should be triggered from a higher behavior 
+	 * coordination level whenever this level becomes ready to 
+	 * eventually stop the according component.
+	 */
+	public StateTransition FatalError -> Shutdown;
+}

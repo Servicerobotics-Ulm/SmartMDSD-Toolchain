@@ -1,0 +1,214 @@
+<UANodeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd"
+           xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd"
+           xmlns:s1="http://yourorganisation.org/example_nodeset/"
+           xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <NamespaceUris>
+        <Uri>http://http://opcfoundation.org/UA/SeRoNetJoystick/</Uri>
+    </NamespaceUris>
+    <Aliases>
+        <Alias Alias="Boolean">i=1</Alias>
+        <Alias Alias="Int32">i=6</Alias>
+        <Alias Alias="Double">i=11</Alias>
+        <Alias Alias="String">i=12</Alias>
+        <Alias Alias="HasModellingRule">i=37</Alias>
+        <Alias Alias="HasTypeDefinition">i=40</Alias>
+        <Alias Alias="HasSubtype">i=45</Alias>
+        <Alias Alias="HasProperty">i=46</Alias>
+        <Alias Alias="HasComponent">i=47</Alias>
+        <Alias Alias="Argument">i=296</Alias>
+    </Aliases>
+    <Extensions>
+        <Extension>
+            <ModelInfo Tool="UaModeler" Hash="Zs8w1AQI71W8P/GOk3k/xQ=="
+                       Version="1.3.4"/>
+        </Extension>
+    </Extensions>
+    <UAReferenceType NodeId="ns=1;i=4001" BrowseName="1:providesInputTo">
+        <DisplayName>providesInputTo</DisplayName>
+        <References>
+            <Reference ReferenceType="HasSubtype" IsForward="false">
+                i=33
+            </Reference>
+        </References>
+        <InverseName Locale="en-US">inputProcidedBy</InverseName>
+    </UAReferenceType>
+    <UAObjectType IsAbstract="true" NodeId="ns=1;i=1001"
+                  BrowseName="1:Joystick">
+        <DisplayName>Joystick</DisplayName>
+        <References>
+            <Reference ReferenceType="HasSubtype" IsForward="false">
+                i=58
+            <Reference ReferenceType="HasComponent">ns=1;i=8001</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=8002</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=8003</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=8004</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=8005</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=9000</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=9001</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=9002</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=9003</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=9004</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=9005</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=9006</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=9007</Reference>
+            </Reference>
+         </References>
+    </UAObjectType>
+    <UAVariable DataType="Int32" ParentNodeId="ns=1;i=1001"
+                NodeId="ns=1;i=8001" BrowseName="Xpos" UserAccessLevel="1"
+                AccessLevel="1">
+        <DisplayName>Xpos</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">
+                ns=1;i=1001
+            </Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="Int32" ParentNodeId="ns=1;i=1001"
+                NodeId="ns=1;i=8002" BrowseName="Ypos" UserAccessLevel="1"
+                AccessLevel="1">
+        <DisplayName>Ypos</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">
+                ns=1;i=1001
+            </Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="Int32" ParentNodeId="ns=1;i=1001"
+                NodeId="ns=1;i=8003" BrowseName="X2pos" UserAccessLevel="1"
+                AccessLevel="1">
+        <DisplayName>X2pos</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">
+                ns=1;i=1001
+            </Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="Int32" ParentNodeId="ns=1;i=1001"
+                NodeId="ns=1;i=8004" BrowseName="Y2pos" UserAccessLevel="1"
+                AccessLevel="1">
+        <DisplayName>Y2pos</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">
+                ns=1;i=1001
+            </Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="Int32" ParentNodeId="ns=1;i=1001"
+                NodeId="ns=1;i=8005" BrowseName="BUTTONS" UserAccessLevel="1"
+                AccessLevel="1">
+        <DisplayName>BUTTONS</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">
+                ns=1;i=1001
+            </Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="Boolean" ParentNodeId="ns=1;i=1001"
+                NodeId="ns=1;i=9000" BrowseName="BUTTON_0" UserAccessLevel="1"
+                AccessLevel="1">
+        <DisplayName>BUTTON_0</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">
+                ns=1;i=1001
+            </Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="Boolean" ParentNodeId="ns=1;i=1001"
+                NodeId="ns=1;i=9001" BrowseName="BUTTON_1" UserAccessLevel="1"
+                AccessLevel="1">
+        <DisplayName>BUTTON_1</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">
+                ns=1;i=1001
+            </Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="Boolean" ParentNodeId="ns=1;i=1001"
+                NodeId="ns=1;i=9002" BrowseName="BUTTON_2" UserAccessLevel="1"
+                AccessLevel="1">
+        <DisplayName>BUTTON_2</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">
+                ns=1;i=1001
+            </Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="Boolean" ParentNodeId="ns=1;i=1001"
+                NodeId="ns=1;i=9003" BrowseName="BUTTON_3" UserAccessLevel="1"
+                AccessLevel="1">
+        <DisplayName>BUTTON_3</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">
+                ns=1;i=1001
+            </Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="Boolean" ParentNodeId="ns=1;i=1001"
+                NodeId="ns=1;i=9004" BrowseName="BUTTON_4" UserAccessLevel="1"
+                AccessLevel="1">
+        <DisplayName>BUTTON_4</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">
+                ns=1;i=1001
+            </Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="Boolean" ParentNodeId="ns=1;i=1001"
+                NodeId="ns=1;i=9005" BrowseName="BUTTON_5" UserAccessLevel="1"
+                AccessLevel="1">
+        <DisplayName>BUTTON_5</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">
+                ns=1;i=1001
+            </Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="Boolean" ParentNodeId="ns=1;i=1001"
+                NodeId="ns=1;i=9006" BrowseName="BUTTON_6" UserAccessLevel="1"
+                AccessLevel="1">
+        <DisplayName>BUTTON_6</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">
+                ns=1;i=1001
+            </Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="Boolean" ParentNodeId="ns=1;i=1001"
+                NodeId="ns=1;i=9007" BrowseName="BUTTON_7" UserAccessLevel="1"
+                AccessLevel="1">
+        <DisplayName>BUTTON_7</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">
+                ns=1;i=1001
+            </Reference>
+        </References>
+    </UAVariable>
+</UANodeSet>

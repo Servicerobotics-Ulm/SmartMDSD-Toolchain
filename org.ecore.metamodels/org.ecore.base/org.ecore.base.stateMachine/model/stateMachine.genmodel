@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.ecore.base.stateMachine/src-gen" creationIcons="false"
+    editDirectory="/org.ecore.base.stateMachine.edit/src-gen" editorDirectory="/org.ecore.base.stateMachine.editor/src-gen"
+    modelPluginID="org.ecore.base.stateMachine" modelName="StateMachine" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>stateMachine.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="StateMachine" basePackage="org.ecore.base" disposableProviderFactory="true"
+      extensibleProviderFactory="true" ecorePackage="stateMachine.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="stateMachine.ecore#//VisibilityType">
+      <genEnumLiterals ecoreEnumLiteral="stateMachine.ecore#//VisibilityType/PUBLIC"/>
+      <genEnumLiterals ecoreEnumLiteral="stateMachine.ecore#//VisibilityType/PRIVATE"/>
+    </genEnums>
+    <genClasses ecoreClass="stateMachine.ecore#//StateTransition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference stateMachine.ecore#//StateTransition/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference stateMachine.ecore#//StateTransition/to"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute stateMachine.ecore#//StateTransition/visibility"/>
+    </genClasses>
+    <genClasses ecoreClass="stateMachine.ecore#//StateMachine">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference stateMachine.ecore#//StateMachine/elements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute stateMachine.ecore#//StateMachine/name"/>
+    </genClasses>
+    <genClasses ecoreClass="stateMachine.ecore#//AbstractMachineElement"/>
+    <genClasses ecoreClass="stateMachine.ecore#//AbstractStateElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute stateMachine.ecore#//AbstractStateElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="stateMachine.ecore#//State"/>
+  </genPackages>
+</genmodel:GenModel>

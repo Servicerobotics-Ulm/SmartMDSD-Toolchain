@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.ecore.service.communicationPattern/src-gen"
+    creationIcons="false" editDirectory="/org.ecore.service.communicationPattern.edit/src-gen"
+    editorDirectory="/org.ecore.service.communicationPattern.editor/src-gen" modelPluginID="org.ecore.service.communicationPattern"
+    modelName="CommunicationPattern" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="../../org.ecore.service.communicationObject/model/communicationObject.genmodel#//communicationObject ../../org.ecore.base.basicAttributes/model/basicAttributes.genmodel#//basicAttributes"
+    importOrganizing="true">
+  <foreignModel>communicationPattern.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="CommunicationPattern" basePackage="org.ecore.service" disposableProviderFactory="true"
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="communicationPattern.ecore#/">
+    <genClasses ecoreClass="communicationPattern.ecore#//CommunicationPattern"/>
+    <genClasses ecoreClass="communicationPattern.ecore#//PushPattern">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference communicationPattern.ecore#//PushPattern/dataType"/>
+    </genClasses>
+    <genClasses ecoreClass="communicationPattern.ecore#//QueryPattern">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference communicationPattern.ecore#//QueryPattern/requestType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference communicationPattern.ecore#//QueryPattern/answerType"/>
+    </genClasses>
+    <genClasses ecoreClass="communicationPattern.ecore#//EventPattern">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference communicationPattern.ecore#//EventPattern/eventType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference communicationPattern.ecore#//EventPattern/activationType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference communicationPattern.ecore#//EventPattern/eventStateType"/>
+    </genClasses>
+    <genClasses ecoreClass="communicationPattern.ecore#//SendPattern">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference communicationPattern.ecore#//SendPattern/dataType"/>
+    </genClasses>
+    <genClasses ecoreClass="communicationPattern.ecore#//ForkingPattern"/>
+    <genClasses ecoreClass="communicationPattern.ecore#//JoiningPattern"/>
+    <genClasses ecoreClass="communicationPattern.ecore#//RequestAnswerPattern"/>
+    <genClasses ecoreClass="communicationPattern.ecore#//OneWayCommunicationPattern"/>
+    <genClasses ecoreClass="communicationPattern.ecore#//TwoWayCommunicationPattern"/>
+  </genPackages>
+</genmodel:GenModel>

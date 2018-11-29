@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.ecore.system.activityArchitecture/src-gen"
+    creationIcons="false" editDirectory="/org.ecore.system.activityArchitecture.edit/src-gen"
+    editorDirectory="/org.ecore.system.activityArchitecture.editor/src-gen" modelPluginID="org.ecore.system.activityArchitecture"
+    modelName="ActivityArchitecture" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>activityArchitecture.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="ActivityArchitecture" basePackage="org.ecore.system" disposableProviderFactory="true"
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="activityArchitecture.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="activityArchitecture.ecore#//TimeUnit">
+      <genEnumLiterals ecoreEnumLiteral="activityArchitecture.ecore#//TimeUnit/SEC"/>
+      <genEnumLiterals ecoreEnumLiteral="activityArchitecture.ecore#//TimeUnit/MSEC"/>
+      <genEnumLiterals ecoreEnumLiteral="activityArchitecture.ecore#//TimeUnit/USEC"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="activityArchitecture.ecore#//SchedulerType">
+      <genEnumLiterals ecoreEnumLiteral="activityArchitecture.ecore#//SchedulerType/DEFAULT"/>
+      <genEnumLiterals ecoreEnumLiteral="activityArchitecture.ecore#//SchedulerType/FIFO"/>
+      <genEnumLiterals ecoreEnumLiteral="activityArchitecture.ecore#//SchedulerType/RR"/>
+    </genEnums>
+    <genClasses ecoreClass="activityArchitecture.ecore#//ActivityArchitectureModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activityArchitecture.ecore#//ActivityArchitectureModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activityArchitecture.ecore#//ActivityArchitectureModel/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="activityArchitecture.ecore#//AbstractSourceNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activityArchitecture.ecore#//AbstractSourceNode/name"/>
+    </genClasses>
+    <genClasses ecoreClass="activityArchitecture.ecore#//ActivityNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activityArchitecture.ecore#//ActivityNode/inputs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activityArchitecture.ecore#//ActivityNode/activationSource"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activityArchitecture.ecore#//ActivityNode/executionTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activityArchitecture.ecore#//ActivityNode/scheduler"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activityArchitecture.ecore#//ActivityNode/affinity"/>
+    </genClasses>
+    <genClasses ecoreClass="activityArchitecture.ecore#//InputHandlerNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activityArchitecture.ecore#//InputHandlerNode/inputNode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activityArchitecture.ecore#//InputHandlerNode/prescale"/>
+    </genClasses>
+    <genClasses ecoreClass="activityArchitecture.ecore#//AbstractInputNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activityArchitecture.ecore#//AbstractInputNode/name"/>
+    </genClasses>
+    <genClasses ecoreClass="activityArchitecture.ecore#//RegisterInputNode"/>
+    <genClasses ecoreClass="activityArchitecture.ecore#//TriggerInputNode"/>
+    <genClasses ecoreClass="activityArchitecture.ecore#//DataFlow">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activityArchitecture.ecore#//DataFlow/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activityArchitecture.ecore#//DataFlow/destination"/>
+    </genClasses>
+    <genClasses ecoreClass="activityArchitecture.ecore#//ActivationSource"/>
+    <genClasses ecoreClass="activityArchitecture.ecore#//Sporadic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activityArchitecture.ecore#//Sporadic/minActFreq"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activityArchitecture.ecore#//Sporadic/maxActFreq"/>
+    </genClasses>
+    <genClasses ecoreClass="activityArchitecture.ecore#//DataTriggered">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activityArchitecture.ecore#//DataTriggered/prescale"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activityArchitecture.ecore#//DataTriggered/triggerRef"/>
+    </genClasses>
+    <genClasses ecoreClass="activityArchitecture.ecore#//PeriodicTimer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activityArchitecture.ecore#//PeriodicTimer/periodicActFreq"/>
+    </genClasses>
+    <genClasses ecoreClass="activityArchitecture.ecore#//CPUCore">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activityArchitecture.ecore#//CPUCore/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activityArchitecture.ecore#//CPUCore/coreNumber"/>
+    </genClasses>
+    <genClasses ecoreClass="activityArchitecture.ecore#//Scheduler">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activityArchitecture.ecore#//Scheduler/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activityArchitecture.ecore#//Scheduler/priority"/>
+    </genClasses>
+    <genClasses ecoreClass="activityArchitecture.ecore#//ExecutionTime">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activityArchitecture.ecore#//ExecutionTime/minTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activityArchitecture.ecore#//ExecutionTime/maxTime"/>
+    </genClasses>
+    <genClasses ecoreClass="activityArchitecture.ecore#//TimeValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activityArchitecture.ecore#//TimeValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activityArchitecture.ecore#//TimeValue/unit"/>
+    </genClasses>
+    <genClasses ecoreClass="activityArchitecture.ecore#//AbstractActivityArchitectureElement"/>
+  </genPackages>
+</genmodel:GenModel>

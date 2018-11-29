@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.system.targetPlatform
+Bundle-Vendor: Servicerobotics Ulm
+Bundle-Version: 3.4.0
+Bundle-SymbolicName: org.xtext.system.targetPlatform; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.ecore.system.targetPlatform,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.xtext.service.roboticMiddleware
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.system.targetPlatform.validation,
+ org.xtext.system.targetPlatform.scoping,
+ org.xtext.system.targetPlatform.services,
+ org.xtext.system.targetPlatform.formatting2,
+ org.xtext.system.targetPlatform.generator,
+ org.xtext.system.targetPlatform.parser.antlr,
+ org.xtext.system.targetPlatform,
+ org.xtext.system.targetPlatform.serializer,
+ org.xtext.system.targetPlatform.parser.antlr.internal
+Import-Package: org.apache.log4j

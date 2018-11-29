@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="seronetExtension" nsURI="http://www.ecore.org/component/SeronetExtension"
+    nsPrefix="SeronetExtension">
+  <eClassifiers xsi:type="ecore:EClass" name="SupportedMiddleware" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//ComponentPortExtension">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="middleware" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.service.roboticMiddleware/model/roboticMiddleware.ecore#//RoboticMiddleware"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlainOpcUaPort" abstract="true" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//NamedComponentElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OpcUaDeviceClient" eSuperTypes="#//PlainOpcUaPort">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="opcuaXmlFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpcUaStatusServer" eSuperTypes="#//PlainOpcUaPort">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outPort" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//OutputPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpcUaClientLink" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//AbstractComponentLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="client" lowerBound="1"
+        eType="#//OpcUaDeviceClient"/>
+  </eClassifiers>
+</ecore:EPackage>

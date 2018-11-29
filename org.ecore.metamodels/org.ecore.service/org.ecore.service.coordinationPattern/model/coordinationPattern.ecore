@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="coordinationPattern" nsURI="http://www.ecore.org/service/CoordinationPattern"
+    nsPrefix="CoordinationPattern">
+  <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StatePattern" eSuperTypes="#//CoordinationPattern">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lifecycle" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.base.stateMachine/model/stateMachine.ecore#//StateMachine"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modes" eType="ecore:EClass ../../org.ecore.service.componentMode/model/componentMode.ecore#//ComponentModeCollection"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterPattern" eSuperTypes="#//CoordinationPattern">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterSet" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.service.parameterDefinition/model/parameterDefinition.ecore#//ParameterSetDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DynamicWiringPattern" eSuperTypes="#//CoordinationPattern">
+    <eOperations name="connect">
+      <eParameters name="sourceComponent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="sourcePort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="targetComponent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="targetPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="disconnect">
+      <eParameters name="sourceComponent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="sourcePort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MonitoringPattern" eSuperTypes="#//CoordinationPattern"/>
+</ecore:EPackage>

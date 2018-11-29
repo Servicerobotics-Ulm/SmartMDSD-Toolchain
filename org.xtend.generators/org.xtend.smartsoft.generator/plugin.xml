@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="ComponentGeneratorExtension" name="ComponentGeneratorExtension" schema="schema/ComponentGeneratorExtension.exsd"/>
+   <extension
+         point="org.xtext.service.communicationObject.CommunicationObjectGeneratorEP">
+      <generator
+            class="org.xtend.smartsoft.generator.commObj.CommObjGenerator2">
+      </generator>
+   </extension>
+   <extension
+         point="org.xtext.component.componentDefinition.ComponentDefinitionGeneratorEP">
+      <generator
+            class="org.xtend.smartsoft.generator.component.ComponentGenerator2">
+      </generator>
+   </extension>
+   <extension
+         point="org.xtext.component.componentParameter.ComponentParameterGeneratorEP">
+      <generator
+            class="org.xtend.smartsoft.generator.component.params.ComponentParamsGenerator2">
+      </generator>
+   </extension>
+   <extension
+         point="org.xtext.component.componentDocumentation.ComponentDocumentationGeneratorEP">
+      <generator
+            class="org.xtend.smartsoft.generator.component.docu.ComponentDocuGenerator2">
+      </generator>
+   </extension>
+   <extension
+         point="org.xtext.system.deployment.DeploymentGeneratorEP">
+      <generator
+            class="org.xtend.smartsoft.generator.deployment.DeploymentGenerator2">
+      </generator>
+   </extension>
+   <extension
+         point="org.xtext.system.systemParameter.SystemParameterGeneratorEP">
+      <generator
+            class="org.xtend.smartsoft.generator.system.params.SystemParameterGenerator2">
+      </generator>
+   </extension>
+   <extension
+         point="org.xtext.system.componentArchitecture.ComponentArchitectureGeneratorEP">
+      <generator
+            class="org.xtend.smartsoft.generator.system.SystemGenerator2">
+      </generator>
+   </extension>
+
+</plugin>

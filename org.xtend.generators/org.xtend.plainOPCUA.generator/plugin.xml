@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.xtend.smartsoft.generator.ComponentGeneratorExtension">
+      <ComponentGeneratorExtension
+            class="org.xtend.plainOPCUA.generator.ext.PlainOpcUaComponentGeneratorExtension">
+      </ComponentGeneratorExtension>
+      <ActivityGeneratorExtension
+            class="org.xtend.plainOPCUA.generator.ext.PlainOpcUaActivityGeneratorExtension">
+      </ActivityGeneratorExtension>
+   </extension>
+   <extension
+         point="org.xtext.component.componentDefinition.ComponentDefinitionGeneratorEP">
+      <generator
+            class="org.xtend.plainOPCUA.generator.PlainOpcUaGenerator2">
+      </generator>
+   </extension>
+
+</plugin>

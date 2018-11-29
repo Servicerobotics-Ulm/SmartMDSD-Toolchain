@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.ecore.component.componentDocumentation/src-gen"
+    creationIcons="false" editDirectory="/org.ecore.component.componentDocumentation.edit/src-gen"
+    editorDirectory="/org.ecore.component.componentDocumentation.editor/src-gen" modelPluginID="org.ecore.component.componentDocumentation"
+    modelName="ComponentDocumentation" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="../../org.ecore.base.basicAttributes/model/basicAttributes.genmodel#//basicAttributes ../../org.ecore.service.communicationObject/model/communicationObject.genmodel#//communicationObject ../../org.ecore.service.communicationPattern/model/communicationPattern.genmodel#//communicationPattern ../../org.ecore.component.componentDefinition/model/componentDefinition.genmodel#//componentDefinition ../../org.ecore.service.componentMode/model/componentMode.genmodel#//componentMode ../../org.ecore.component.coordinationExtension/model/coordinationExtension.genmodel#//coordinationExtension ../../org.ecore.service.coordinationPattern/model/coordinationPattern.genmodel#//coordinationPattern ../../org.ecore.service.parameterDefinition/model/parameterDefinition.genmodel#//parameterDefinition ../../org.ecore.service.serviceDefinition/model/serviceDefinition.genmodel#//serviceDefinition ../../org.ecore.base.stateMachine/model/stateMachine.genmodel#//stateMachine"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>componentDocumentation.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="ComponentDocumentation" basePackage="org.ecore.component" disposableProviderFactory="true"
+      ecorePackage="componentDocumentation.ecore#/">
+    <genClasses ecoreClass="componentDocumentation.ecore#//ComponentDocumentation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentDocumentation.ecore#//ComponentDocumentation/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentDocumentation.ecore#//ComponentDocumentation/purpose"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentDocumentation.ecore#//ComponentDocumentation/license"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentDocumentation.ecore#//ComponentDocumentation/hardware"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference componentDocumentation.ecore#//ComponentDocumentation/component"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentDocumentation.ecore#//ComponentDocumentation/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="componentDocumentation.ecore#//AbstractComponentDocuElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentDocumentation.ecore#//AbstractComponentDocuElement/description"/>
+    </genClasses>
+    <genClasses ecoreClass="componentDocumentation.ecore#//ComponentServiceDocu">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentDocumentation.ecore#//ComponentServiceDocu/states"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentDocumentation.ecore#//ComponentServiceDocu/port"/>
+    </genClasses>
+    <genClasses ecoreClass="componentDocumentation.ecore#//AbstractModeDocu"/>
+    <genClasses ecoreClass="componentDocumentation.ecore#//ComponentModeDocu">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentDocumentation.ecore#//ComponentModeDocu/mode"/>
+    </genClasses>
+    <genClasses ecoreClass="componentDocumentation.ecore#//NeutralModeDocu"/>
+    <genClasses ecoreClass="componentDocumentation.ecore#//CoordinationSlavePortDocu">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentDocumentation.ecore#//CoordinationSlavePortDocu/port"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentDocumentation.ecore#//CoordinationSlavePortDocu/dynamicWiring"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentDocumentation.ecore#//CoordinationSlavePortDocu/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentDocumentation.ecore#//CoordinationSlavePortDocu/state"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

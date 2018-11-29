@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.ecore.service.communicationObject/src-gen"
+    creationIcons="false" editDirectory="/org.ecore.service.communicationObject.edit/src-gen"
+    editorDirectory="/org.ecore.service.communicationObject.editor/src-gen" modelPluginID="org.ecore.service.communicationObject"
+    modelName="CommunicationObject" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="../../org.ecore.base.basicAttributes/model/basicAttributes.genmodel#//basicAttributes"
+    importOrganizing="true">
+  <foreignModel>communicationObject.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="CommunicationObject" basePackage="org.ecore.service" disposableProviderFactory="true"
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="communicationObject.ecore#/">
+    <genClasses ecoreClass="communicationObject.ecore#//CommObjectModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference communicationObject.ecore#//CommObjectModel/repository"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference communicationObject.ecore#//CommObjectModel/imports"/>
+    </genClasses>
+    <genClasses ecoreClass="communicationObject.ecore#//CommObjectsRepository">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute communicationObject.ecore#//CommObjectsRepository/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference communicationObject.ecore#//CommObjectsRepository/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference communicationObject.ecore#//CommObjectsRepository/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute communicationObject.ecore#//CommObjectsRepository/dependency"/>
+    </genClasses>
+    <genClasses ecoreClass="communicationObject.ecore#//AbstractCommElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute communicationObject.ecore#//AbstractCommElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="communicationObject.ecore#//CommRepositoryImport">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute communicationObject.ecore#//CommRepositoryImport/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="communicationObject.ecore#//Version">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute communicationObject.ecore#//Version/major"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute communicationObject.ecore#//Version/minor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute communicationObject.ecore#//Version/patch"/>
+    </genClasses>
+    <genClasses ecoreClass="communicationObject.ecore#//Enumeration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference communicationObject.ecore#//Enumeration/enums"/>
+    </genClasses>
+    <genClasses ecoreClass="communicationObject.ecore#//CommunicationObject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference communicationObject.ecore#//CommunicationObject/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="communicationObject.ecore#//CommElementValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference communicationObject.ecore#//CommElementValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="communicationObject.ecore#//CommElementReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference communicationObject.ecore#//CommElementReference/typeName"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

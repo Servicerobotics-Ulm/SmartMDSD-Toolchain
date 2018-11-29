@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.ecore.service.coordinationPattern/src-gen"
+    creationIcons="false" editDirectory="/org.ecore.service.coordinationPattern.edit/src-gen"
+    editorDirectory="/org.ecore.service.coordinationPattern.editor/src-gen" modelPluginID="org.ecore.service.coordinationPattern"
+    modelName="CoordinationPattern" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="../../org.ecore.base.basicAttributes/model/basicAttributes.genmodel#//basicAttributes ../../org.ecore.service.componentMode/model/componentMode.genmodel#//componentMode ../../org.ecore.service.parameterDefinition/model/parameterDefinition.genmodel#//parameterDefinition ../../org.ecore.base.stateMachine/model/stateMachine.genmodel#//stateMachine"
+    importOrganizing="true">
+  <foreignModel>coordinationPattern.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="CoordinationPattern" basePackage="org.ecore.service" disposableProviderFactory="true"
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="coordinationPattern.ecore#/">
+    <genClasses ecoreClass="coordinationPattern.ecore#//CoordinationPattern"/>
+    <genClasses ecoreClass="coordinationPattern.ecore#//StatePattern">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coordinationPattern.ecore#//StatePattern/lifecycle"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coordinationPattern.ecore#//StatePattern/modes"/>
+    </genClasses>
+    <genClasses ecoreClass="coordinationPattern.ecore#//ParameterPattern">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coordinationPattern.ecore#//ParameterPattern/parameterSet"/>
+    </genClasses>
+    <genClasses ecoreClass="coordinationPattern.ecore#//DynamicWiringPattern">
+      <genOperations ecoreOperation="coordinationPattern.ecore#//DynamicWiringPattern/connect">
+        <genParameters ecoreParameter="coordinationPattern.ecore#//DynamicWiringPattern/connect/sourceComponent"/>
+        <genParameters ecoreParameter="coordinationPattern.ecore#//DynamicWiringPattern/connect/sourcePort"/>
+        <genParameters ecoreParameter="coordinationPattern.ecore#//DynamicWiringPattern/connect/targetComponent"/>
+        <genParameters ecoreParameter="coordinationPattern.ecore#//DynamicWiringPattern/connect/targetPort"/>
+      </genOperations>
+      <genOperations ecoreOperation="coordinationPattern.ecore#//DynamicWiringPattern/disconnect">
+        <genParameters ecoreParameter="coordinationPattern.ecore#//DynamicWiringPattern/disconnect/sourceComponent"/>
+        <genParameters ecoreParameter="coordinationPattern.ecore#//DynamicWiringPattern/disconnect/sourcePort"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="coordinationPattern.ecore#//MonitoringPattern"/>
+  </genPackages>
+</genmodel:GenModel>

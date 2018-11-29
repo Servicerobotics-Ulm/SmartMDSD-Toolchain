@@ -1,0 +1,6 @@
+.metadata/
+*.xtendbin
+*.xtextbin
+*._trace
+bin/
+xtend-gen/
