@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.xtext.component.componentDatasheet.ComponentDatasheetGeneratorEP">
+      <generator
+            class="org.xtend.component.datasheet.generator.ComponentDatasheetGenerator">
+      </generator>
+   </extension>
+
+</plugin>

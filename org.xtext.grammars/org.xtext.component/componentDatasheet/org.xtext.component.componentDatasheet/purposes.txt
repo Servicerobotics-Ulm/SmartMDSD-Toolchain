@@ -1,0 +1,14 @@
+Hardware-Access
+Localization
+Mapping
+Mobile Base
+Manipulation
+Gripper
+Planner
+Object Recognition
+Text-To-Speech
+Speech-To-Text
+Sensor
+Actuator
+Simulation
+Navigation

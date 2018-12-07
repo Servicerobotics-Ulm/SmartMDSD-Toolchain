@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentDatasheet" nsURI="http://www.ecore.org/componentDatasheet"
+    nsPrefix="componentDatasheet">
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentDatasheet" eSuperTypes="../../org.ecore.base.genericDatasheet/model/genericDatasheet.ecore#//GenericDatasheet">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trl" eType="#//TRL" defaultValueLiteral="Undefined"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="purposeDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hardwareRequirementDescription"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//ComponentDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TRL">
+    <eLiterals name="LEVEL1" literal="Level1"/>
+    <eLiterals name="LEVEL2" value="1" literal="Level2"/>
+    <eLiterals name="LEVEL3" value="2" literal="Level3"/>
+    <eLiterals name="LEVEL4" value="3" literal="Level4"/>
+    <eLiterals name="LEVEL5" value="4" literal="Level5"/>
+    <eLiterals name="LEVEL6" value="5" literal="Level6"/>
+    <eLiterals name="LEVEL7" value="6" literal="Level7"/>
+    <eLiterals name="LEVEL8" value="7" literal="Level8"/>
+    <eLiterals name="LEVEL9" value="8" literal="Level9"/>
+    <eLiterals name="UNDEFINED" value="9" literal="Undefined"/>
+  </eClassifiers>
+</ecore:EPackage>

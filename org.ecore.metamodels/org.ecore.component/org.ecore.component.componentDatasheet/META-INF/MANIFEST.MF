@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.ecore.component.componentDatasheet;singleton:=true
+Bundle-Version: 3.7.0
+Bundle-ClassPath: .
+Bundle-Vendor: Servicerobotics Ulm
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ org.ecore.base.basicAttributes;visibility:=reexport,
+ org.ecore.service.communicationObject;visibility:=reexport,
+ org.ecore.service.communicationPattern;visibility:=reexport,
+ org.eclipse.core.runtime,
+ org.ecore.base.genericDatasheet;visibility:=reexport,
+ org.ecore.service.parameterDefinition;visibility:=reexport,
+ org.ecore.service.serviceDefinition;visibility:=reexport,
+ org.ecore.base.stateMachine;visibility:=reexport,
+ org.ecore.component.componentDefinition;visibility:=reexport,
+ org.ecore.service.componentMode;visibility:=reexport,
+ org.ecore.service.coordinationPattern;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.ecore.component.componentDatasheet,
+ org.ecore.component.componentDatasheet.impl,
+ org.ecore.component.componentDatasheet.util
+Automatic-Module-Name: org.ecore.component.componentDatasheet

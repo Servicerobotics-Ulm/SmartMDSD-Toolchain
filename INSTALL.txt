@@ -1,0 +1,40 @@
+The SmartMDSD Toolchain V3 requires the following default development environment:
+
+- OS: Ubuntu 16.04 LTS
+- Java: OpenJDK 8 (deb package "openjdk-8-jdk")
+- Eclipse: Oxygen (Modeling Tools)
+ (Sirius ver. 5.x and Xtext ver. 2.x)
+
+
+Eclipse installation instructions (assuming that Ubuntu and Java were installed):
+
+1. Download Eclipse Oxygen installer (this is the default download option):
+
+http://www.eclipse.org/downloads/
+
+2. Extract and execute installer and select "Eclipse Modeling Tools" (follow the installation instructions)
+
+3. Launch installed Eclipse instance and select a (new) workspace of your choice
+
+4. Within Eclipse select the menu: "Help" -> "Install Modeling Components"
+  - in the popup dialog, select: Sirius and Xtext
+  - press the "Finish" button and follow the installation instructions
+  - during installation, accept license windows 
+  - after installation, accept popup dialog to restart eclipse
+
+5. Configure the (default) JRE to be used for the new workspace:
+  - select menu: "Window" -> "Preferences"
+  - in the popup window select: "Java" -> "Installed JREs"
+  - if the list does not yet have the openjdk8 included then push the "Add..." button
+  - select "Standard VM" and push "Next"
+  - select the JRE home directory, typically: /usr/lib/jvm/java-8-openjdk-amd64
+  - normally all the other fields should be recognised automatically, if so, push "Finish"
+  - push "Apply and Close" button of the "Preferences" window 
+
+6. Import the plugin projects from this repository into the new Eclipse instance
+  - select menu: "File" -> "Import..."
+  - in the popup window select: "General" -> "Existing Projects into Workspace" and push "Next" button
+  - push the "Browse..." button and select the root folder from this repository checkout
+
+7. It is recommended to use "working sets" (which makes life easier) according to the folder structure in the repository
+

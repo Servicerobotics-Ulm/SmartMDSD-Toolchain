@@ -223,7 +223,22 @@ public class Services {
     
     public Iterable<ComponentPort> getAllServiceUses(EObject context) {
     	if(context instanceof ComponentInstance) {
-    		return ComponentArchitectureModelUtility.getAllClientPorts((ComponentInstance)context);
+    		ComponentInstance component = (ComponentInstance)context;
+    		Iterable<ComponentPort> allPorts = ComponentArchitectureModelUtility.getAllClientPorts(component);
+    		Collection<ComponentPort> newPortsOnly = new ArrayList<ComponentPort>();
+    		for(ComponentPort port: allPorts) {
+    			boolean portExists = false;
+    			for(ServiceInstance inst: component.getPorts()) {
+    				if(inst.getPort().equals(port)) {
+    					portExists = true;
+    					break;
+    				}
+    			}
+    			if(portExists == false) {
+    				newPortsOnly.add(port);
+    			}
+    		}
+    		return newPortsOnly;
     	}
     	return new ArrayList<ComponentPort>();
     }
@@ -234,7 +249,22 @@ public class Services {
     
     public Iterable<ComponentPort> getAllServiceRealizations(EObject context) {
     	if(context instanceof ComponentInstance) {
-    		return ComponentArchitectureModelUtility.getAllServerPorts((ComponentInstance)context);
+    		ComponentInstance component = (ComponentInstance)context;
+    		Iterable<ComponentPort> allPorts = ComponentArchitectureModelUtility.getAllServerPorts(component);
+    		Collection<ComponentPort> newPortsOnly = new ArrayList<ComponentPort>();
+    		for(ComponentPort port: allPorts) {
+    			boolean portExists = false;
+    			for(ServiceInstance inst: component.getPorts()) {
+    				if(inst.getPort().equals(port)) {
+    					portExists = true;
+    					break;
+    				}
+    			}
+    			if(portExists == false) {
+    				newPortsOnly.add(port);
+    			}
+    		}
+    		return newPortsOnly;
     	}
     	return new ArrayList<ComponentPort>();
     }

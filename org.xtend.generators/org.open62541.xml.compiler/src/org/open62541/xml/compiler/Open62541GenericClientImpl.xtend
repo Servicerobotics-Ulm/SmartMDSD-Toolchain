@@ -101,6 +101,13 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		// entity update value registry (key=EntityName, value=UpdateValue)
 		std::map<std::string, OPCUA::ValueType> entityUpdateValueRegistry;
 	
+		// asynchronous readRequest mutex
+		mutable std::mutex readRequestMutex;
+		// asynchronous readRequest condition variable
+		mutable std::condition_variable readRequestSignal;
+		// asynchronous readRequest value registry
+		mutable std::map<UA_UInt32, OPCUA::ValueType> readRequestValueRegistry;
+	
 		/// simple discovery service checks if the given address has any endpoints (not really needed)
 		bool hasEndpoints(const std::string &address, const bool &display=true);
 	
@@ -161,6 +168,9 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	
 		/// internal upcall called from within the internal OPC UA upcall method, it propagates the call to the 
 		void handleEntity(const UA_UInt32 &subscriptionId, UA_DataValue *data);
+	
+		/// internal upcall to handle asynchronous read-requests
+		void handleReadRequest(const UA_UInt32 &requestId, UA_Variant *data);
 	#endif
 	
 	protected:
@@ -250,14 +260,18 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		/** execute client's async interface
 		 *
 		 *  This method is supposed to be called repeatedly (i.e. in a loop) from within a new thread that
-		 *  is supposed to be implemented in derived classes.
+		 *  is supposed to be implemented in derived classes. Internally this method checks if client
+		 *  is still connected and if so, tries to maintain a connection session. As long as the session
+		 *  is valid, the method UA_Client_run_iterate is called that operates the client's asynchronous
+		 *  API.
 		 *
+		 *	@param address the OPC UA Server URL
 		 *  @param timeoutMS an optional argument for the timeout time (in milliseconds)
 		 *  @return the current status of the client
 		 *    - OPCUA::StatusCode::ALL_OK if everything is OK or
 		 *    - OPCUA::StatusCode::DISCONNECTED if the client-connection is lost
 		 */
-		OPCUA::StatusCode run_once(const unsigned short &timeoutMS=500);
+		OPCUA::StatusCode run_once(const std::string &address = "opc.tcp://localhost:4840", const unsigned short &timeoutMS=500);
 	
 	
 		/** Generic Getter function returning the current value of an OPC UA Variable
@@ -364,6 +378,28 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 			it->second(subId, value);
 		}
 	}
+	
+	
+	static std::map<UA_Client*,std::function<void(const UA_UInt32&,UA_Variant*)>> on_read_registry;
+	
+	static
+	void handle_on_read (UA_Client *client, void *userdata, UA_UInt32 requestId, UA_Variant *value)
+	{
+		auto it = on_read_registry.find(client);
+		if(it != on_read_registry.end()) {
+			// call bound function
+			it->second(requestId, value);
+		}
+	
+	    /*more type distinctions possible*/
+	    return;
+	}
+	static
+	void attrWritten (UA_Client *client, void *userdata, UA_UInt32 requestId, UA_WriteResponse *response)
+	{
+	    /*assuming no data to be retrieved by writing attributes*/
+	    UA_WriteResponse_deleteMembers(response);
+	}
 	#endif
 	
 	bool GenericClient::hasEndpoints(const std::string &address, const bool &display)
@@ -412,45 +448,48 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		// make sure the client is disconnected in any case
 		this->disconnect();
 	#ifdef HAS_OPCUA
-	    UA_ClientConfig config = UA_ClientConfig_default;
-	    /* Set stateCallback */
-	    config.inactivityCallback = inactivityCallback;
-	    /* Perform a connectivity check every 2 seconds */
-	    config.connectivityCheckInterval = 2000;
+		UA_ClientConfig config = UA_ClientConfig_default;
+		/* Set stateCallback */
+		config.inactivityCallback = inactivityCallback;
+		/* Perform a connectivity check every 2 seconds */
+		config.connectivityCheckInterval = 2000;
 	
 		// create a new client
-	    client = UA_Client_new(config);
+		client = UA_Client_new(config);
 	
-	    if( hasEndpoints(address) == true ) {
-	        // Connect client to a server
-	        UA_StatusCode retval = UA_Client_connect(client, address.c_str());
-	        //retval = UA_Client_connect_username(client, "opc.tcp://localhost:4840", "user1", "password");
-	        if(retval != UA_STATUSCODE_GOOD) {
-	            UA_Client_delete(client);
-	            client = 0;
-	            return OPCUA::StatusCode::ERROR_COMMUNICATION;
-	        }
+		if( hasEndpoints(address) == true ) 
+		{
+			// Connect client to a server
+			UA_StatusCode retval = UA_Client_connect(client, address.c_str());
+			//retval = UA_Client_connect_username(client, "opc.tcp://localhost:4840", "user1", "password");
+			if(retval != UA_STATUSCODE_GOOD) {
+				UA_Client_delete(client);
+				client = 0;
+				return OPCUA::StatusCode::ERROR_COMMUNICATION;
+			}
 	
-	        // find the root object using its browseName under the default objects folder
-	        rootObjectId = this->findElement(objectName,
-			UA_NODEID_NUMERIC(0, UA_NS0ID_OBJECTSFOLDER), // the the default objects folder as parent
-			UA_NODECLASS_OBJECT // look for object types only
-		);
-	        if(rootObjectId.isNull()) {
-	        	// if the object could no be found -> disconnect client and return wrong ID
-	            this->disconnect();
-	            return OPCUA::StatusCode::WRONG_ID;
-	        }
+			// find the root object using its browseName under the default objects folder
+			rootObjectId = this->findElement(objectName,
+				UA_NODEID_NUMERIC(0, UA_NS0ID_OBJECTSFOLDER), // the the default objects folder as parent
+				UA_NODECLASS_OBJECT // look for object types only
+			);
+			if(rootObjectId.isNull()) {
+				// if the object could no be found -> disconnect client and return wrong ID
+				this->disconnect();
+				return OPCUA::StatusCode::WRONG_ID;
+			}
 	
-	        // call the method that hopefully creates the client space in derived classes
-	        if( this->createClientSpace(activateUpcalls) == true ) {
+			on_read_registry[client] = std::bind(&GenericClient::handleReadRequest, this, std::placeholders::_1, std::placeholders::_2);
+	
+			// call the method that hopefully creates the client space in derived classes
+			if( this->createClientSpace(activateUpcalls) == true ) {
 				// client is now connected
 				return OPCUA::StatusCode::ALL_OK;
-	        }
-	    } else {
-	    	UA_Client_delete(client);
-	    	client = 0;
-	    }
+			}
+		} else {
+			UA_Client_delete(client);
+			client = 0;
+		}
 	#endif // HAS_OPCUA
 		// something else went wrong
 		return OPCUA::StatusCode::ERROR_COMMUNICATION;
@@ -785,6 +824,14 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	#endif // HAS_OPCUA
 	}
 	
+	void GenericClient::handleReadRequest(const UA_UInt32 &requestId, UA_Variant *data)
+	{
+		std::unique_lock<std::mutex> readRequestLock(readRequestMutex);
+		readRequestValueRegistry[requestId] = *data;
+		readRequestSignal.notify_all();
+	}
+	
+	
 	OPCUA::StatusCode GenericClient::getVariableCurrentValue(const std::string &variableName, OPCUA::ValueType &value) const
 	{
 		OPCUA::StatusCode result = OPCUA::StatusCode::ERROR_COMMUNICATION;
@@ -797,18 +844,36 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		}
 	
 		// Read attribute value
-		UA_Variant *variant = UA_Variant_new();
 		UA_NodeId uaId = entityId;
-		UA_StatusCode retval = UA_Client_readValueAttribute(client, uaId, variant);
+		UA_UInt32 requestId = 0;
+	
+		// don't use the synchronous (i.e. direct) access to variables as it will conflict with the asynchronous API
+	//	UA_StatusCode retval = UA_Client_readValueAttribute(client, uaId, variant);
+		UA_StatusCode retval = UA_Client_readValueAttribute_async(client, uaId, handle_on_read, NULL, &requestId);
 		if(retval == UA_STATUSCODE_GOOD) {
-			// copy variant value
-			value = (const UA_Variant*)variant;
+			while(true)
+			{
+				// grab the mutex
+				std::unique_lock<std::mutex> readRequestLock(readRequestMutex);
+				// wait for a read-request to finish
+				readRequestSignal.wait(readRequestLock);
+				// check if the registry has the result
+				auto it = readRequestValueRegistry.find(requestId);
+				// if request has been processed, then get the value and exit the while loop
+				if(it != readRequestValueRegistry.end()) {
+					// copy variant value
+					value = it->second;
+					// clean-up registry entry
+					readRequestValueRegistry.erase(it);
+					break;
+				}
+				// the required read request has not yet been processed -> wait for another signal
+			}
 			result = OPCUA::StatusCode::ALL_OK;
 		} else {
 			result = OPCUA::StatusCode::ERROR_COMMUNICATION;
 		}
 		UA_NodeId_deleteMembers(&uaId);
-		UA_Variant_delete(variant);
 	#endif // HAS_OPCUA
 		return result;
 	}
@@ -847,7 +912,8 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		}
 	
 		// write attribute value
-		UA_StatusCode retval = UA_Client_writeValueAttribute(client, entityId, value);
+		UA_UInt32 reqId;
+		UA_StatusCode retval = UA_Client_writeValueAttribute_async(client, entityId, value, attrWritten, NULL, &reqId);
 		if(retval == UA_STATUSCODE_GOOD) {
 	    	result = OPCUA::StatusCode::ALL_OK;
 		} else {
@@ -896,6 +962,10 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 			}
 			// cleanup output arguments memory
 			UA_Array_delete(output, outputSize, &UA_TYPES[UA_TYPES_VARIANT]);
+			// cleanup input arguments memory
+			for(size_t i=0; i<uaInputArguments.size(); ++i) {
+				UA_Variant_deleteMembers(&uaInputArguments[i]);
+			}
 			// return SUCCESS
 			return OPCUA::StatusCode::ALL_OK;
 		}
@@ -903,7 +973,7 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		return OPCUA::StatusCode::ERROR_COMMUNICATION;
 	}
 	
-	OPCUA::StatusCode GenericClient::run_once(const unsigned short &timeoutMS)
+	OPCUA::StatusCode GenericClient::run_once(const std::string &address, const unsigned short &timeoutMS)
 	{
 	#ifdef HAS_OPCUA
 		if(client == 0) {
@@ -913,9 +983,10 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		/* if already connected, this will return GOOD and do nothing */
 		/* if the connection is closed/errored, the connection will be reset and then reconnected */
 		/* Alternatively you can also use UA_Client_getState to get the current state */
-		UA_ClientState clientState = UA_Client_getState(client);
-		if(clientState != UA_CLIENTSTATE_SESSION) {
-			std::cerr << "client-state != UA_CLIENTSTATE_SESSION: " << clientState << std::endl;
+		//UA_ClientState clientState = UA_Client_getState(client);
+		UA_StatusCode status = UA_Client_connect(client, address.c_str());
+		if(status != UA_STATUSCODE_GOOD) {
+			std::cerr << "client connection status != UA_STATUSCODE_GOOD: " << status << std::endl;
 			/* The connect may timeout after 1 second (see above) or it may fail immediately on network errors */
 			/* E.g. name resolution errors or unreachable network. Thus there should be a small sleep here */
 			UA_sleep_ms(timeoutMS);

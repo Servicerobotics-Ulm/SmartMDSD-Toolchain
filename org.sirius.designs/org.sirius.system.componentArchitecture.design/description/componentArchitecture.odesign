@@ -143,34 +143,6 @@
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:PopupMenu" name="SystemComponentArchitecture">
-            <menuItemDescription xsi:type="tool:OperationAction" name="Add RequiredServices" precondition="[thisEObject.oclIsKindOf(componentArchitecture::ComponentInstance)/]" icon="/org.sirius.system.componentArchitecture.design/icons/RequiredService.gif">
-              <view name="views">
-                <subVariables xsi:type="tool:SelectModelElementVariable" name="services" candidatesExpression="service:self.getAllServiceUses()" multiple="true" message="Select one (or several) services to instantiate"/>
-              </view>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool:For" expression="var:services" iteratorName="service">
-                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
-                    <subModelOperations xsi:type="tool:CreateInstance" typeName="componentArchitecture::ServiceUse" referenceName="ports" variableName="use">
-                      <subModelOperations xsi:type="tool:SetValue" featureName="port" valueExpression="var:service"/>
-                    </subModelOperations>
-                  </subModelOperations>
-                </firstModelOperations>
-              </initialOperation>
-            </menuItemDescription>
-            <menuItemDescription xsi:type="tool:OperationAction" name="Add ProvidedServices" precondition="[thisEObject.oclIsKindOf(componentArchitecture::ComponentInstance)/]" icon="/org.sirius.system.componentArchitecture.design/icons/ProvidedService.gif">
-              <view name="views">
-                <subVariables xsi:type="tool:SelectModelElementVariable" name="services" candidatesExpression="service:self.getAllServiceRealizations()" multiple="true" message="Select one (or several) services to instantiate"/>
-              </view>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool:For" expression="var:services" iteratorName="service">
-                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
-                    <subModelOperations xsi:type="tool:CreateInstance" typeName="componentArchitecture::ServiceRealization" referenceName="ports" variableName="realization">
-                      <subModelOperations xsi:type="tool:SetValue" featureName="port" valueExpression="var:service"/>
-                    </subModelOperations>
-                  </subModelOperations>
-                </firstModelOperations>
-              </initialOperation>
-            </menuItemDescription>
             <menuItemDescription xsi:type="tool:ExternalJavaAction" name="OpenComponentInstanceParameter" icon="/org.sirius.system.componentArchitecture.design/icons/Parameter.gif" id="OpenSystemParameterEditor">
               <parameters name="self" value="var:self"/>
             </menuItemDescription>
@@ -185,7 +157,7 @@
             <elementView name="elementView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
-                <subModelOperations xsi:type="tool:ExternalJavaActionCall" name="OpenParamEditor" icon="/org.sirius.system.design/icons/Parameter.gif" action="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SystemComponentArchitecture']/@menuItemDescription.2"/>
+                <subModelOperations xsi:type="tool:ExternalJavaActionCall" name="OpenParamEditor" icon="/org.sirius.system.design/icons/Parameter.gif" action="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SystemComponentArchitecture']/@menuItemDescription.0"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -200,7 +172,7 @@
                   <subModelOperations xsi:type="tool:CreateInstance" typeName="systemParameter::ParameterStructInstance" referenceName="extensions">
                     <subModelOperations xsi:type="tool:SetValue" featureName="parameter" valueExpression="var:parameterInstance">
                       <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:containerView">
-                        <subModelOperations xsi:type="tool:ExternalJavaActionCall" name="OpenCompParamEditor" action="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SystemComponentArchitecture']/@menuItemDescription.2"/>
+                        <subModelOperations xsi:type="tool:ExternalJavaActionCall" name="OpenCompParamEditor" action="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SystemComponentArchitecture']/@menuItemDescription.0"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>

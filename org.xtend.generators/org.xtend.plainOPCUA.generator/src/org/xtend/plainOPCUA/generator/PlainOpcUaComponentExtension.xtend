@@ -117,6 +117,10 @@ class PlainOpcUaComponentExtension  {
 	:	«component.name»Extension("PlainOpcUa«component.name»Extension")
 	{
 		«FOR client: component.elements.filter(OpcUaDeviceClient)»
+		«client.name.toFirstLower»DeviceURI = "«client.deviceURI»";
+		«ENDFOR»
+		
+		«FOR client: component.elements.filter(OpcUaDeviceClient)»
 			«client.name.toFirstLower» = 0;
 		«ENDFOR»
 		«FOR opcStatusServer: component.elements.filter(OpcUaStatusServer)»
@@ -164,7 +168,7 @@ class PlainOpcUaComponentExtension  {
 	{
 		while(cancelled == false) {
 			«FOR client: component.elements.filter(OpcUaDeviceClient)»
-				«client.name.toFirstLower»->run_once();
+				«client.name.toFirstLower»->run_once(«client.name.toFirstLower»DeviceURI);
 			«ENDFOR»
 		}
 		return 0;

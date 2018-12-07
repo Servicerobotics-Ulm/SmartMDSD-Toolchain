@@ -97,7 +97,7 @@ class PlainOpcUaGenerator2Impl extends AbstractGenerator {
 	'''
 	CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 	
-	FIND_PACKAGE(open62541 QUIET)
+	FIND_PACKAGE(open62541 QUIET PATHS /usr/local/lib/cmake)
 
 	IF(open62541_FOUND)
 		SET(CMAKE_CXX_STANDARD 14)
