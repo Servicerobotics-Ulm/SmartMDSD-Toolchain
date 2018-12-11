@@ -62,6 +62,7 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	
 	// C++11 interface
 	#include <mutex>
+	#include <chrono>
 	#include <condition_variable>
 	
 	#ifdef HAS_OPCUA
@@ -83,6 +84,13 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		// the OPC UA Object ID (for the connected root object)
 		NodeId rootObjectId;
 	
+		// the general client mutex (prevents from concurrent access of the internal UA Client, which is not thread safe by itself)
+		mutable std::recursive_mutex clientMutex;
+	
+		// make the GenericClient non-copyable
+		GenericClient(const GenericClient&) = delete;
+		GenericClient& operator=(const GenericClient&) = delete;
+	
 		/** the internal registry of all the used entities (i.e. typically OPC UA variables)
 		 *
 		 *  Please overload and implement the method createClientSpace() in derived classes
@@ -93,6 +101,7 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	
 		/// internal registry to manage subscriptions (key=SubscriptionId, value=entityBrowseName)
 		std::map<UA_UInt32, std::string> subscriptionsRegistry;
+		std::chrono::steady_clock::duration minSubscriptionInterval;
 	
 		// entityUpdate handling
 		mutable std::mutex entityUpdateMutex;
@@ -100,13 +109,6 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		std::map<std::string, std::condition_variable> entityUpdateSignalRegistry;
 		// entity update value registry (key=EntityName, value=UpdateValue)
 		std::map<std::string, OPCUA::ValueType> entityUpdateValueRegistry;
-	
-		// asynchronous readRequest mutex
-		mutable std::mutex readRequestMutex;
-		// asynchronous readRequest condition variable
-		mutable std::condition_variable readRequestSignal;
-		// asynchronous readRequest value registry
-		mutable std::map<UA_UInt32, OPCUA::ValueType> readRequestValueRegistry;
 	
 		/// simple discovery service checks if the given address has any endpoints (not really needed)
 		bool hasEndpoints(const std::string &address, const bool &display=true);
@@ -163,14 +165,11 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		UA_StatusCode unregisterNode(const NodeId &nodeId);
 	
 		// these two helper methods should be used to implement the client async upcalls (not yet fully tested)
-		UA_StatusCode createSubscription(const std::string &entityBrowseName, const unsigned int samplingIntervalMS=100);
+		UA_StatusCode createSubscription(const std::string &entityBrowseName, const std::chrono::steady_clock::duration &subscriptionInterval = std::chrono::milliseconds(100) );
 		UA_StatusCode deleteSubscription(const std::string &entityBrowseName);
 	
 		/// internal upcall called from within the internal OPC UA upcall method, it propagates the call to the 
 		void handleEntity(const UA_UInt32 &subscriptionId, UA_DataValue *data);
-	
-		/// internal upcall to handle asynchronous read-requests
-		void handleReadRequest(const UA_UInt32 &requestId, UA_Variant *data);
 	#endif
 	
 	protected:
@@ -185,12 +184,12 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		 *
 		 *  @param variableBrowseName is the browse-name of the OPC UA variable within the server space
 		 *  @param activateUpdateUpcall optional attribute allows activation/deactivation of the upcall interface for data-updates
-		 *  @param samplingIntervalMS optional internal sampling interval for checking of the value-updates (default inteval is 100 ms)
+		 *  @param samplingInterval optional internal sampling interval for checking of the value-updates (default interval is 100 ms)
 		 *  @return true on SUCCESS or false on ERROR
 		 *
 		 *  @sa createClientSpace()
 		 */
-		bool addVariableNode(const std::string &variableBrowseName, const bool activateUpdateUpcall=true, const unsigned int samplingIntervalMS=100);
+		bool addVariableNode(const std::string &variableBrowseName, const bool activateUpdateUpcall=true, const std::chrono::steady_clock::duration &samplingInterval = std::chrono::milliseconds(100) );
 	
 		/** this method creates a fast-access registry to an OPC UA method identified by its browse-name
 		 *
@@ -234,7 +233,7 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		virtual void handleVariableValueUpdate(const std::string &variableBrowseName, const OPCUA::ValueType &value);
 	
 	public:
-		GenericClient();
+		GenericClient(const std::chrono::steady_clock::duration &minSubscriptionInterval = std::chrono::milliseconds(100));
 		virtual ~GenericClient();
 	
 		/** this method instantiates and connects the internal OPC UA Client
@@ -260,18 +259,13 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		/** execute client's async interface
 		 *
 		 *  This method is supposed to be called repeatedly (i.e. in a loop) from within a new thread that
-		 *  is supposed to be implemented in derived classes. Internally this method checks if client
-		 *  is still connected and if so, tries to maintain a connection session. As long as the session
-		 *  is valid, the method UA_Client_run_iterate is called that operates the client's asynchronous
-		 *  API.
+		 *  is supposed to be implemented in derived classes.
 		 *
-		 *	@param address the OPC UA Server URL
-		 *  @param timeoutMS an optional argument for the timeout time (in milliseconds)
 		 *  @return the current status of the client
 		 *    - OPCUA::StatusCode::ALL_OK if everything is OK or
 		 *    - OPCUA::StatusCode::DISCONNECTED if the client-connection is lost
 		 */
-		OPCUA::StatusCode run_once(const std::string &address = "opc.tcp://localhost:4840", const unsigned short &timeoutMS=500);
+		OPCUA::StatusCode run_once() const;
 	
 	
 		/** Generic Getter function returning the current value of an OPC UA Variable
@@ -351,6 +345,7 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	#include <vector>
 	#include <sstream>
 	#include <functional>
+	#include <thread>
 	
 	namespace OPCUA {
 	
@@ -378,32 +373,13 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 			it->second(subId, value);
 		}
 	}
-	
-	
-	static std::map<UA_Client*,std::function<void(const UA_UInt32&,UA_Variant*)>> on_read_registry;
-	
-	static
-	void handle_on_read (UA_Client *client, void *userdata, UA_UInt32 requestId, UA_Variant *value)
-	{
-		auto it = on_read_registry.find(client);
-		if(it != on_read_registry.end()) {
-			// call bound function
-			it->second(requestId, value);
-		}
-	
-	    /*more type distinctions possible*/
-	    return;
-	}
-	static
-	void attrWritten (UA_Client *client, void *userdata, UA_UInt32 requestId, UA_WriteResponse *response)
-	{
-	    /*assuming no data to be retrieved by writing attributes*/
-	    UA_WriteResponse_deleteMembers(response);
-	}
 	#endif
 	
 	bool GenericClient::hasEndpoints(const std::string &address, const bool &display)
 	{
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
 	    // Listing endpoints
 	    UA_EndpointDescription* endpointArray = NULL;
 	    size_t endpointArraySize = 0;
@@ -426,7 +402,8 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	}
 	#endif // HAS_OPCUA
 	
-	GenericClient::GenericClient()
+	GenericClient::GenericClient(const std::chrono::steady_clock::duration &minSubscriptionInterval)
+	:	minSubscriptionInterval(minSubscriptionInterval)
 	{
 	#ifdef HAS_OPCUA
 		// set client to initially to zero (the real initialization happens during connection)
@@ -447,7 +424,12 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	{
 		// make sure the client is disconnected in any case
 		this->disconnect();
+	
 	#ifdef HAS_OPCUA
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
+		// create default client configuration
 		UA_ClientConfig config = UA_ClientConfig_default;
 		/* Set stateCallback */
 		config.inactivityCallback = inactivityCallback;
@@ -479,8 +461,6 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 				return OPCUA::StatusCode::WRONG_ID;
 			}
 	
-			on_read_registry[client] = std::bind(&GenericClient::handleReadRequest, this, std::placeholders::_1, std::placeholders::_2);
-	
 			// call the method that hopefully creates the client space in derived classes
 			if( this->createClientSpace(activateUpcalls) == true ) {
 				// client is now connected
@@ -504,6 +484,9 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	OPCUA::StatusCode GenericClient::disconnect()
 	{
 	#ifdef HAS_OPCUA
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
 		// disconnect and clean-up client
 		if(client != 0) {
 		    UA_Client_disconnect(client);
@@ -522,6 +505,9 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	 */
 	NodeId GenericClient::browseObjectPath(const std::string &objectPath, const unsigned short namespaceIndex) const
 	{
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
 	    // create new node id
 	    NodeId nodeId;
 	
@@ -585,6 +571,9 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	
 	NodeId GenericClient::findElement(const std::string &elementBrowseName, const NodeId &parentNodeId, const UA_NodeClass &filterNodeType) const
 	{
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
 		// new id
 		NodeId resultId;
 	
@@ -632,6 +621,9 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	
 	UA_StatusCode GenericClient::registerNode(const NodeId &nodeId)
 	{
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
 	    UA_RegisterNodesRequest request;
 	    UA_RegisterNodesRequest_init(&request);
 	
@@ -660,6 +652,9 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	
 	UA_StatusCode GenericClient::unregisterNode(const NodeId &nodeId)
 	{
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
 	    UA_UnregisterNodesRequest reqUn;
 	    UA_UnregisterNodesRequest_init(&reqUn);
 	
@@ -679,6 +674,9 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	
 	OPCUA::StatusCode GenericClient::checkAndGetEntityId(const std::string &entityBrowseName, NodeId &entityId, const UA_NodeClass &filterNodeType) const
 	{
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
 		// check if client is connected, if not, return immediately
 		if(client == 0) {
 			return OPCUA::StatusCode::DISCONNECTED;
@@ -702,18 +700,25 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	}
 	
 	
-	UA_StatusCode GenericClient::createSubscription(const std::string &entityBrowseName, const unsigned int samplingIntervalMS)
+	UA_StatusCode GenericClient::createSubscription(const std::string &entityBrowseName, const std::chrono::steady_clock::duration &subscriptionInterval)
 	{
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
 		// try getting the entity ID
 		NodeId entityId;
 		OPCUA::StatusCode result = checkAndGetEntityId(entityBrowseName, entityId);
 		if(result != OPCUA::StatusCode::ALL_OK) {
 			return UA_STATUSCODE_BADSUBSCRIPTIONIDINVALID;
 		}
+	
+		if(subscriptionInterval < minSubscriptionInterval) {
+			minSubscriptionInterval = subscriptionInterval;
+		}
 	#ifdef UA_ENABLE_SUBSCRIPTIONS
 	    /* Create a subscription */
 	    UA_CreateSubscriptionRequest request = UA_CreateSubscriptionRequest_default();
-	    request.requestedPublishingInterval = samplingIntervalMS;
+	    request.requestedPublishingInterval = std::chrono::duration_cast<std::chrono::milliseconds>(subscriptionInterval).count();
 	    UA_CreateSubscriptionResponse response = UA_Client_Subscriptions_create(client, request,
 	                                                                            NULL, NULL, NULL);
 	
@@ -730,7 +735,7 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	
 	    // create a monitored item
 	    UA_MonitoredItemCreateRequest monRequest = UA_MonitoredItemCreateRequest_default(entityId);
-	    monRequest.requestedParameters.samplingInterval = samplingIntervalMS;
+	    monRequest.requestedParameters.samplingInterval = request.requestedPublishingInterval;
 	    UA_MonitoredItemCreateResult monResponse =
 	    UA_Client_MonitoredItems_createDataChange(client, response.subscriptionId,
 	                                              UA_TIMESTAMPSTORETURN_BOTH,
@@ -744,6 +749,9 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	
 	UA_StatusCode GenericClient::deleteSubscription(const std::string &entityBrowseName)
 	{
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
 	#ifdef UA_ENABLE_SUBSCRIPTIONS
 		for(auto it=subscriptionsRegistry.begin(); it!=subscriptionsRegistry.end(); it++) {
 			// search for the entity to unsubscribe
@@ -758,6 +766,9 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	
 	void GenericClient::handleEntity(const UA_UInt32 &subscriptionId, UA_DataValue *data)
 	{
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
 		// extract the actual value
 		OPCUA::ValueType value(data->value);
 	
@@ -784,9 +795,12 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		// no-op
 	}
 	
-	bool GenericClient::addVariableNode(const std::string &entityBrowseName, const bool activateUpdateUpcall, const unsigned int samplingIntervalMS)
+	bool GenericClient::addVariableNode(const std::string &entityBrowseName, const bool activateUpdateUpcall, const std::chrono::steady_clock::duration &samplingInterval)
 	{
 	#ifdef HAS_OPCUA
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
 		// try getting the entity ID
 		NodeId entityId;
 		OPCUA::StatusCode result = checkAndGetEntityId(entityBrowseName, entityId);
@@ -799,7 +813,7 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		
 		if(activateUpdateUpcall == true) {
 			// create subscription for the current entity
-			this->createSubscription(entityBrowseName, samplingIntervalMS);
+			this->createSubscription(entityBrowseName, samplingInterval);
 		}
 		return true;
 	#else
@@ -810,6 +824,9 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	bool GenericClient::addMethodNode(const std::string &methodBrowseName)
 	{
 	#ifdef HAS_OPCUA
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
 		NodeId methodId;
 		OPCUA::StatusCode result = checkAndGetEntityId(methodBrowseName, methodId, UA_NODECLASS_METHOD);
 		if(result != OPCUA::StatusCode::ALL_OK) {
@@ -824,18 +841,13 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	#endif // HAS_OPCUA
 	}
 	
-	void GenericClient::handleReadRequest(const UA_UInt32 &requestId, UA_Variant *data)
-	{
-		std::unique_lock<std::mutex> readRequestLock(readRequestMutex);
-		readRequestValueRegistry[requestId] = *data;
-		readRequestSignal.notify_all();
-	}
-	
-	
 	OPCUA::StatusCode GenericClient::getVariableCurrentValue(const std::string &variableName, OPCUA::ValueType &value) const
 	{
 		OPCUA::StatusCode result = OPCUA::StatusCode::ERROR_COMMUNICATION;
 	#ifdef HAS_OPCUA
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
 		// check if the entity ID can be found
 		NodeId entityId;
 		result = checkAndGetEntityId(variableName, entityId);
@@ -844,42 +856,25 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		}
 	
 		// Read attribute value
+		UA_Variant *variant = UA_Variant_new();
 		UA_NodeId uaId = entityId;
-		UA_UInt32 requestId = 0;
-	
-		// don't use the synchronous (i.e. direct) access to variables as it will conflict with the asynchronous API
-	//	UA_StatusCode retval = UA_Client_readValueAttribute(client, uaId, variant);
-		UA_StatusCode retval = UA_Client_readValueAttribute_async(client, uaId, handle_on_read, NULL, &requestId);
+		UA_StatusCode retval = UA_Client_readValueAttribute(client, uaId, variant);
 		if(retval == UA_STATUSCODE_GOOD) {
-			while(true)
-			{
-				// grab the mutex
-				std::unique_lock<std::mutex> readRequestLock(readRequestMutex);
-				// wait for a read-request to finish
-				readRequestSignal.wait(readRequestLock);
-				// check if the registry has the result
-				auto it = readRequestValueRegistry.find(requestId);
-				// if request has been processed, then get the value and exit the while loop
-				if(it != readRequestValueRegistry.end()) {
-					// copy variant value
-					value = it->second;
-					// clean-up registry entry
-					readRequestValueRegistry.erase(it);
-					break;
-				}
-				// the required read request has not yet been processed -> wait for another signal
-			}
+			// copy variant value
+			value = (const UA_Variant*)variant;
 			result = OPCUA::StatusCode::ALL_OK;
 		} else {
 			result = OPCUA::StatusCode::ERROR_COMMUNICATION;
 		}
 		UA_NodeId_deleteMembers(&uaId);
+		UA_Variant_delete(variant);
 	#endif // HAS_OPCUA
 		return result;
 	}
 	
 	OPCUA::StatusCode GenericClient::getVariableNextValue(const std::string &variableName, OPCUA::ValueType &value)
 	{
+		// don't lock the clientMutex here as this would lead to a deadlock with the entityUpdateSignalRegistry (see below)
 		OPCUA::StatusCode result = OPCUA::StatusCode::ERROR_COMMUNICATION;
 	#ifdef HAS_OPCUA
 		// check if the entity ID can be found
@@ -904,6 +899,9 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	{
 		OPCUA::StatusCode result = OPCUA::StatusCode::ERROR_COMMUNICATION;
 	#ifdef HAS_OPCUA
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
 		// check if the entity ID can be found
 		NodeId entityId;
 		result = checkAndGetEntityId(variableName, entityId);
@@ -912,8 +910,7 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		}
 	
 		// write attribute value
-		UA_UInt32 reqId;
-		UA_StatusCode retval = UA_Client_writeValueAttribute_async(client, entityId, value, attrWritten, NULL, &reqId);
+		UA_StatusCode retval = UA_Client_writeValueAttribute(client, entityId, value);
 		if(retval == UA_STATUSCODE_GOOD) {
 	    	result = OPCUA::StatusCode::ALL_OK;
 		} else {
@@ -929,6 +926,9 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	                        std::vector<OPCUA::ValueType> &outputArguments)
 	{
 	#ifdef UA_ENABLE_METHODCALLS
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
 		// check if the method ID can be found
 		NodeId methodId;
 		OPCUA::StatusCode result = checkAndGetEntityId(methodName, methodId, UA_NODECLASS_METHOD);
@@ -973,27 +973,46 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		return OPCUA::StatusCode::ERROR_COMMUNICATION;
 	}
 	
-	OPCUA::StatusCode GenericClient::run_once(const std::string &address, const unsigned short &timeoutMS)
+	OPCUA::StatusCode GenericClient::run_once() const
 	{
 	#ifdef HAS_OPCUA
+		// lock client mutex
+		std::unique_lock<std::recursive_mutex> lock(clientMutex);
+	
+		// check if client is connected at all (if not, sleep for the minSubscriptionInterval time and return DISCONNECTED)
 		if(client == 0) {
-			UA_sleep_ms(timeoutMS);
+			std::this_thread::sleep_for(minSubscriptionInterval);
 			return OPCUA::StatusCode::DISCONNECTED;
 		}
+	
+		// calculate the wake-up-time
+		std::chrono::system_clock::time_point wakeupTime = std::chrono::system_clock::now() + minSubscriptionInterval;
+	
 		/* if already connected, this will return GOOD and do nothing */
 		/* if the connection is closed/errored, the connection will be reset and then reconnected */
 		/* Alternatively you can also use UA_Client_getState to get the current state */
-		//UA_ClientState clientState = UA_Client_getState(client);
-		UA_StatusCode status = UA_Client_connect(client, address.c_str());
-		if(status != UA_STATUSCODE_GOOD) {
-			std::cerr << "client connection status != UA_STATUSCODE_GOOD: " << status << std::endl;
+		UA_ClientState clientState = UA_Client_getState(client);
+		if(clientState != UA_CLIENTSTATE_SESSION) {
+			std::cerr << "client-state != UA_CLIENTSTATE_SESSION: " << clientState << std::endl;
 			/* The connect may timeout after 1 second (see above) or it may fail immediately on network errors */
 			/* E.g. name resolution errors or unreachable network. Thus there should be a small sleep here */
-			UA_sleep_ms(timeoutMS);
+			std::this_thread::sleep_for(minSubscriptionInterval);
 			return OPCUA::StatusCode::DISCONNECTED;
 		}
-		// run client's callback interface with 500ms timeout
-		UA_Client_run_iterate(client, timeoutMS);
+
+		// iterate client's async interface at least once for every subscription
+		for(size_t i=0; i < subscriptionsRegistry.size(); ++i) {
+			// run client's callback interface non-blocking
+			UA_Client_run_iterate(client, 0);
+		}
+	
+		// release the lock BEFORE! the sleep is called (this enables using synchronous calls more frequently than the subscription interval)
+		lock.unlock();
+	
+		if(wakeupTime > std::chrono::system_clock::now()) {
+			std::this_thread::sleep_until(wakeupTime);
+		}
+	
 		return OPCUA::StatusCode::ALL_OK;
 	#else
 		return OPCUA::StatusCode::ERROR_COMMUNICATION;

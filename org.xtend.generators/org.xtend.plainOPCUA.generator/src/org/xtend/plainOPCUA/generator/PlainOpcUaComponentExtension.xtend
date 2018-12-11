@@ -168,7 +168,7 @@ class PlainOpcUaComponentExtension  {
 	{
 		while(cancelled == false) {
 			«FOR client: component.elements.filter(OpcUaDeviceClient)»
-				«client.name.toFirstLower»->run_once(«client.name.toFirstLower»DeviceURI);
+				«client.name.toFirstLower»->run_once();
 			«ENDFOR»
 		}
 		return 0;
