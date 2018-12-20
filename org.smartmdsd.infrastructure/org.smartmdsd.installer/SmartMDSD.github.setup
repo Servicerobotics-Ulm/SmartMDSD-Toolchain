@@ -51,6 +51,8 @@
         name="org.eclipse.sirius.runtime.ide.xtext.feature.group"/>
     <requirement
         name="org.eclipse.cdt.feature.group"/>
+    <requirement
+        name="org.eclipse.emf.compare.feature.group"/>
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
   </setupTask>
   <setupTask
@@ -83,6 +85,16 @@
           name="org.eclipse.sdk.feature.group"/>
       <requirement
           name="*"/>
+      <requirement
+          name="org.eclipse.xtext.sdk.feature.group"/>
+      <requirement
+          name="org.eclipse.sirius.specifier.feature.group"/>
+      <requirement
+          name="org.eclipse.sirius.runtime.ide.xtext.feature.group"/>
+      <requirement
+          name="org.eclipse.cdt.feature.group"/>
+      <requirement
+          name="org.eclipse.emf.compare.feature.group"/>
       <sourceLocator
           rootFolder="${git.clone.SmartMDSD.github.location}"
           locateNestedProjects="true"/>

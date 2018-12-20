@@ -20,6 +20,8 @@
     <requirement
         name="org.smartmdsd.toolchain.feature.group"
         filter=""/>
+    <requirement
+        name="org.eclipse.emf.compare.feature.group"/>
     <repository
         url="https://web2.servicerobotik-ulm.de/files/SmartMDSD_Toolchain/updatesite/v3.7/"/>
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
@@ -36,6 +38,22 @@
       name="eclipse.target.platform"
       defaultValue="Oxygen"
       storageURI="scope://Workspace"/>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="UserPreferences">
+    <annotation
+        source="http://www.eclipse.org/oomph/setup/UserPreferences"/>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.cdt.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="indexer/updatePolicy"
+          value="2">
+        <description>Deactivate automatic C++ indexer updating</description>
+      </setupTask>
+    </setupTask>
+  </setupTask>
   <stream name="v3.7"
       label="Version 3.7"/>
   <logicalProjectContainer

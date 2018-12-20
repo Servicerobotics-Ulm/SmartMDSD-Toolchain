@@ -1,9 +1,10 @@
 SmartMDSD Toolchain v3.7
-	* Improved implementation of the Plain OPC-UA Device Client Port code generation
+	* Improved/stable implementation of the Plain OPC-UA Device Client Port
 	* First realization of a Datasheet DSL for Component- and Domain-Models
-	* Refined SmartSoft C++ code generation that now enables flexible extensions of arbitrary Mixed-Ports (such as e.g. for ROS, see SeRoNet ROS Mixed Port)
+	* Refined SmartSoft C++ code generation that now enables flexible extensions of arbitrary Mixed-Ports (such as e.g. for OPC UA and ROS; see SeRoNet ROS Mixed Port)
 	* Add model flag that allows to switch between different middleware backends (currently between ACE/SmartSoft and SeRoNet OPC UA Backend)
 	* Add Toolchain Installer based on the default Eclipse (OOMPH) Installer
+	* Release candidate for skill modeling; see https://robmosys.eu/wiki/baseline:environment_tools:smartsoft:smartmdsd-toolchain:skills:start
 -- Fr, 21 Dec 2018
 
 SmartMDSD Toolchain v3.6
@@ -13,23 +14,21 @@ SmartMDSD Toolchain v3.6
 -- Tue, 7 Aug. 2018
 
 SmartMDSD Toolchain v3.5
-	* First implementation of the Plain OPC-UA Device Client Port for a Mixed Port component
+	* First release candidate of the Plain OPC-UA Device Client Port for a Mixed Port component
 -- Fr, 4 May 2018
 
 SmartMDSD Toolchain v3.4
-	* First public stable release of the SmartMDSD Toolchain version 3.4
+	* First public stable release of the SmartMDSD Toolchain version 3 series
 	* Refined and stabilzed realization of the System Builder modeling view
 	* Refined Component Code-Generation that matches the updated ACE/SmartSoft Kernel version 3 implementation
 -- Fr, 2 Mar 2018
 
-SmartMDSD Toolchain v3 Release Candidate 1
-	* First public release of the new SmartMDSD Toolchain version 3 that now uses Eclipse Sirius for graphical modeling instead of a UML Profile
+SmartMDSD Toolchain (v3.rc1)
+	* First public release candidate of the new SmartMDSD Toolchain version 3 that now uses Eclipse Sirius for graphical modeling instead of a UML Profile
 	* Refined Metamodels according to Composition Structures defined in the RobMoSys technical Wiki: https://robmosys.eu/wiki/
 	* Realized modeling view for the "Component Supplier" role: https://robmosys.eu/wiki/general_principles:ecosystem:roles:component_supplier
 	* Inital realization of the modeling view for the "System Builder" role: https://robmosys.eu/wiki/general_principles:ecosystem:roles:system_builder
 -- Tu, 19 Dec 2017
-
-#####################################################################
 
 SmartSoft MDSD Toolchain (2.12)
 	* Further improvements of Communication-Objects-serialization
