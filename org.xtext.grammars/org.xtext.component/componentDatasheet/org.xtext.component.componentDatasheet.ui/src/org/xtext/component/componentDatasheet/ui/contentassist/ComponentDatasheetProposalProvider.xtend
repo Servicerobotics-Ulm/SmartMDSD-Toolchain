@@ -79,26 +79,4 @@ class ComponentDatasheetProposalProvider extends AbstractComponentDatasheetPropo
 		}
 		super.completeComponentDatasheet_PurposeDescription(model, assignment, context, acceptor)
 	}
-	
-	override completeSpdxLicense_LicenseID(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		var URL url;
-		try {
-		    url = new URL("platform:/plugin/org.xtext.component.componentDatasheet/spdx-licenses.txt");
-		    val inputStream = url.openConnection().getInputStream();
-		    val in = new BufferedReader(new InputStreamReader(inputStream));
-		    var String inputLine;
-		 
-		    while ((inputLine = in.readLine()) !== null) {
-		    	val text = '"' + inputLine + '"'
-		        acceptor.accept(createCompletionProposal(text, context))
-		    }
-		 
-		    in.close();
-		 
-		} catch (IOException e) {
-		    e.printStackTrace();
-		}
-		super.completeSpdxLicense_LicenseID(model, assignment, context, acceptor)
-	}
-	
 }

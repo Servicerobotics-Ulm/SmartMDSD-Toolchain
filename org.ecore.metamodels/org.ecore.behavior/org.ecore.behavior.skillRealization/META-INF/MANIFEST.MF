@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.ecore.behavior.skillRealization;singleton:=true
+Bundle-Version: 3.4.0
+Bundle-ClassPath: .
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ org.ecore.base.basicAttributes;visibility:=reexport,
+ org.eclipse.core.runtime,
+ org.ecore.service.skillDefinition;visibility:=reexport,
+ org.xtext.base.basicAttributes
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Servicerobotics Ulm
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.ecore.behavior.skillRealization,
+ org.ecore.behavior.skillRealization.impl,
+ org.ecore.behavior.skillRealization.util
+Automatic-Module-Name: org.ecore.behavior.skillRealization

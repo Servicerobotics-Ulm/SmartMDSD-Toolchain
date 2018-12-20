@@ -918,6 +918,7 @@
     <semanticResources>platform:/resource/org.ecore.service.componentMode/model/componentMode.genmodel</semanticResources>
     <semanticResources>java:/Objects/org.ecore.service.componentMode.ComponentModeCollection</semanticResources>
     <semanticResources>java:/Objects/org.ecore.service.componentMode.ComponentModeDefinition</semanticResources>
+    <semanticResources>java:/Objects/org.ecore.service.serviceDefinition.CommunicationServiceUsage</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_EGHIIKQdEeekyreyE8bYtg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_EGzEpaQdEeekyreyE8bYtg" name="serviceDefinition" repPath="#_TXgmwDgnEeiE9KA1B-Y56A">
@@ -961,13 +962,6 @@
           <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='EClass']"/>
-        </computedStyleDescriptions>
-        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_hvFVELiKEee1DtIKRD8p5g" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" iconPath="/org.ecore.service.serviceDefinition.edit/icons/full/obj16/AbstractServiceDefinition.gif" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
-          <borderColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='Dark%20EClass']"/>
-          <labelFormat>italic</labelFormat>
-          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='Abstract%20EClass']"/>
         </computedStyleDescriptions>
         <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_hvF8ILiKEee1DtIKRD8p5g" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" iconPath="/org.ecore.service.serviceDefinition.edit/icons/full/obj16/CommRepoImport.gif" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
           <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -1048,6 +1042,13 @@
           <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='EClass']"/>
         </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_NLIJ4P7hEei0saih_CamFQ" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" iconPath="/org.ecore.service.serviceDefinition.edit/icons/full/obj16/AbstractServiceDefinition.gif" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
+          <borderColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='Dark%20EClass']"/>
+          <labelFormat>italic</labelFormat>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='Abstract%20EClass']"/>
+        </computedStyleDescriptions>
       </data>
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_EGzEpqQdEeekyreyE8bYtg" source="GMF_DIAGRAMS">
@@ -1081,11 +1082,15 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_Q7-AQaQdEeekyreyE8bYtg" fontColor="2697711" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_Q7-AQqQdEeekyreyE8bYtg"/>
             </children>
+            <children xmi:type="notation:Node" xmi:id="_LQGAkP7hEei0saih_CamFQ" type="3010" element="_LPhY0P7hEei0saih_CamFQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_LQGAkf7hEei0saih_CamFQ" fontColor="2697711" fontName="Ubuntu" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_LQGAkv7hEei0saih_CamFQ"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_PNmZ8qQdEeekyreyE8bYtg"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_PNmZ86QdEeekyreyE8bYtg"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_PNly4aQdEeekyreyE8bYtg" fontName="Ubuntu" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PNly4qQdEeekyreyE8bYtg" x="519" y="30" width="144" height="63"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PNly4qQdEeekyreyE8bYtg" x="519" y="30" width="144" height="81"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_YBqQkKQdEeekyreyE8bYtg" type="2003" element="_YBl_IKQdEeekyreyE8bYtg">
           <children xmi:type="notation:Node" xmi:id="_YBqQk6QdEeekyreyE8bYtg" type="5007"/>
@@ -1275,7 +1280,7 @@
           <styles xmi:type="notation:FontStyle" xmi:id="_Ssosoq3hEeemk7m-OJxdCA" fontName="Ubuntu" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ssoso63hEeemk7m-OJxdCA" points="[0, 0, -96, 83]$[58, -51, -38, 32]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SspTtq3hEeemk7m-OJxdCA" id="(0.46206896551724136,0.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SspTt63hEeemk7m-OJxdCA" id="(0.45774647887323944,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SspTt63hEeemk7m-OJxdCA" id="(0.45774647887323944,0.3860759493670886)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_TRwL4K3hEeemk7m-OJxdCA" type="4001" element="_TRnpAK3hEeemk7m-OJxdCA" source="_JBtfcK3hEeemk7m-OJxdCA" target="_PNly4KQdEeekyreyE8bYtg">
           <children xmi:type="notation:Node" xmi:id="_TRwy8K3hEeemk7m-OJxdCA" type="6001">
@@ -1291,7 +1296,7 @@
           <styles xmi:type="notation:FontStyle" xmi:id="_TRwL4q3hEeemk7m-OJxdCA" fontName="Ubuntu" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TRwL463hEeemk7m-OJxdCA" points="[0, 0, 71, 77]$[-71, -77, 0, 0]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TRwy9q3hEeemk7m-OJxdCA" id="(0.30569948186528495,0.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TRwy963hEeemk7m-OJxdCA" id="(0.0,0.5737704918032787)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TRwy963hEeemk7m-OJxdCA" id="(0.0,0.4430379746835443)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_brMugNZvEeeYK45uYbqbHg" type="4001" element="_bqb5gNZvEeeYK45uYbqbHg" source="_NbrUwNZvEeeYK45uYbqbHg" target="_HZsYwK3hEeemk7m-OJxdCA">
           <children xmi:type="notation:Node" xmi:id="_brNVkNZvEeeYK45uYbqbHg" type="6001">
@@ -1419,7 +1424,7 @@
           <styles xmi:type="notation:FontStyle" xmi:id="__CGXZNthEeeWGJR78pE47A" fontColor="7490599" fontName="Ubuntu" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__CGXZdthEeeWGJR78pE47A" points="[73, 12, -181, 12]$[183, 12, -71, 12]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__CHlgNthEeeWGJR78pE47A" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__CHlgdthEeeWGJR78pE47A" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__CHlgdthEeeWGJR78pE47A" id="(0.5,0.3860759493670886)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="__CHlgtthEeeWGJR78pE47A" type="4001" element="__By1Y9thEeeWGJR78pE47A" source="_PNly4KQdEeekyreyE8bYtg" target="_AoswoKQeEeekyreyE8bYtg">
           <children xmi:type="notation:Node" xmi:id="__CIzoNthEeeWGJR78pE47A" type="6001">
@@ -1434,7 +1439,7 @@
           <styles xmi:type="notation:ConnectorStyle" xmi:id="__CHlg9thEeeWGJR78pE47A" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="__CHlhNthEeeWGJR78pE47A" fontColor="7490599" fontName="Ubuntu" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__CHlhdthEeeWGJR78pE47A" points="[71, 12, -143, 12]$[154, 12, -60, 12]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__CJasNthEeeWGJR78pE47A" id="(0.5,0.5)"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__CJasNthEeeWGJR78pE47A" id="(0.5,0.3860759493670886)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__CJasdthEeeWGJR78pE47A" id="(0.5,0.5)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_yL3gQDgxEeiE9KA1B-Y56A" type="4001" element="_yLo2wDgxEeiE9KA1B-Y56A" source="_JBtfcK3hEeemk7m-OJxdCA" target="_g5Yr0DgxEeiE9KA1B-Y56A">
@@ -1524,7 +1529,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_hvFVEbiKEee1DtIKRD8p5g" iconPath="org.ecore.service.serviceDefinition.edit/icons/full/obj16/ServiceDefinition.gif" description="_hvFVELiKEee1DtIKRD8p5g" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_NLIJ4f7hEei0saih_CamFQ" iconPath="org.ecore.service.serviceDefinition.edit/icons/full/obj16/ServiceDefinition.gif" description="_NLIJ4P7hEei0saih_CamFQ" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
         <customFeatures>iconPath</customFeatures>
         <labelFormat>italic</labelFormat>
       </ownedStyle>
@@ -1534,6 +1539,14 @@
         <semanticElements xmi:type="ecore:EAttribute" href="serviceDefinition.ecore#//AbstractServiceDefinition/name"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_R8MHIKQdEeekyreyE8bYtg" labelAlignment="LEFT" description="_OOTgIKQdEeekyreyE8bYtg">
           <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_LPhY0P7hEei0saih_CamFQ" name="purposeDescription : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="serviceDefinition.ecore#//AbstractServiceDefinition/purposeDescription"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="serviceDefinition.ecore#//AbstractServiceDefinition/purposeDescription"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_NLQFsP7hEei0saih_CamFQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>

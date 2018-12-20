@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.smartmdsd.toolchain_3.7.0.jar" id="org.smartmdsd.toolchain" version="3.7.0" os="linux,win32" ws="gtk,win32">
+      <category name="SmartMDSD"/>
+   </feature>
+   <category-def name="SmartMDSD" label="SMartMDSD-Toolchain-v3">
+      <description>
+         SmartMDSD Toolchain v3 for Robotics Software Development.
+      </description>
+   </category-def>
+</site>

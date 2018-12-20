@@ -58,6 +58,7 @@ public class AbstractServiceDefinitionItemProvider extends ItemProviderAdapter i
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addPurposeDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,6 +77,23 @@ public class AbstractServiceDefinitionItemProvider extends ItemProviderAdapter i
 								"_UI_AbstractServiceDefinition_type"),
 						ServiceDefinitionPackage.Literals.ABSTRACT_SERVICE_DEFINITION__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Purpose Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPurposeDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_AbstractServiceDefinition_purposeDescription_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_AbstractServiceDefinition_purposeDescription_feature",
+								"_UI_AbstractServiceDefinition_type"),
+						ServiceDefinitionPackage.Literals.ABSTRACT_SERVICE_DEFINITION__PURPOSE_DESCRIPTION, true, false,
+						false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -155,6 +173,7 @@ public class AbstractServiceDefinitionItemProvider extends ItemProviderAdapter i
 
 		switch (notification.getFeatureID(AbstractServiceDefinition.class)) {
 		case ServiceDefinitionPackage.ABSTRACT_SERVICE_DEFINITION__NAME:
+		case ServiceDefinitionPackage.ABSTRACT_SERVICE_DEFINITION__PURPOSE_DESCRIPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case ServiceDefinitionPackage.ABSTRACT_SERVICE_DEFINITION__PROPERTIES:

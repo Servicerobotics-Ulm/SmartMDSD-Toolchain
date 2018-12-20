@@ -46,8 +46,11 @@ package org.xtext.component.componentDatasheet.ui
 
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor
 import org.eclipse.xtext.ui.editor.hyperlinking.DefaultHyperlinkDetector
+import org.xtext.base.genericDatasheet.ui.SPDXHyperlinkDetector
 import org.eclipse.xtext.ui.editor.hover.IEObjectHoverProvider
+import org.xtext.base.genericDatasheet.ui.SPDXHoverProvider
 import org.eclipse.xtext.ui.editor.hover.html.IEObjectHoverDocumentationProvider
+import org.xtext.base.genericDatasheet.ui.SPDXHoverDocuProvider
 
 /**
  * Use this class to register components to be used within the Eclipse IDE.

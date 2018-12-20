@@ -3,6 +3,7 @@
 package org.ecore.base.genericDatasheet.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -72,6 +73,36 @@ public class GenericDatasheetFactoryImpl extends EFactoryImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+		case GenericDatasheetPackage.TRL:
+			return createTRLFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+		case GenericDatasheetPackage.TRL:
+			return convertTRLToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GenericDatasheet createGenericDatasheet() {
 		GenericDatasheetImpl genericDatasheet = new GenericDatasheetImpl();
 		return genericDatasheet;
@@ -95,6 +126,28 @@ public class GenericDatasheetFactoryImpl extends EFactoryImpl implements Generic
 	public ProprietaryLicense createProprietaryLicense() {
 		ProprietaryLicenseImpl proprietaryLicense = new ProprietaryLicenseImpl();
 		return proprietaryLicense;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TRL createTRLFromString(EDataType eDataType, String initialValue) {
+		TRL result = TRL.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTRLToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

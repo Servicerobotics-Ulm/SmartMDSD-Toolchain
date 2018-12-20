@@ -97,6 +97,7 @@ ForkingServiceDefinition returns service::ForkingServiceDefinition:
 	'ForkingServiceDefinition' name=ID
 	'{'
 		pattern=ForkingPatternInstance
+		('purposeDescription' purposeDescription=EString)?
 		properties+=ServiceProperty*
 	'}'
 ;
@@ -105,6 +106,7 @@ JoyningServiceDefinition returns service::JoiningServiceDefinition:
 	'JoiningServiceDefinition' name=ID
 	'{'
 		pattern=JoiningPatternInstance
+		('purposeDescription' purposeDescription=EString)?
 		properties+=ServiceProperty*
 	'}'
 ;
@@ -114,6 +116,7 @@ RequestAnswerServiceDefinition returns service::RequestAnswerServiceDefinition:
 	'RequestAnswerServiceDefinition' name=ID
 	'{'
 		pattern=RequestAnswerPattern
+		('purposeDescription' purposeDescription=EString)?
 		properties+=ServiceProperty*
 	'}'
 ;
@@ -124,6 +127,7 @@ CoordinationServiceDefinition returns service::CoordinationServiceDefinition:
 	'CoordinationServiceDefinition' name=ID
 	'{'
 		(
+			('purposeDescription' purposeDescription=EString)? &
 			(statePattern=StatePattern)? &
 			(parameterPattern=ParameterPattern)? &
 			(monitoringPattern=MonitoringPattern)? &

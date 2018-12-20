@@ -68,6 +68,8 @@ public class CoordinationExtensionFactoryImpl extends EFactoryImpl implements Co
 			return createOperationModeBinding();
 		case CoordinationExtensionPackage.COMMUNICATION_SERVICE_USAGE_REALIZATION:
 			return createCommunicationServiceUsageRealization();
+		case CoordinationExtensionPackage.SKILL_REALIZATIONS_REF:
+			return createSkillRealizationsRef();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -131,6 +133,16 @@ public class CoordinationExtensionFactoryImpl extends EFactoryImpl implements Co
 	public CommunicationServiceUsageRealization createCommunicationServiceUsageRealization() {
 		CommunicationServiceUsageRealizationImpl communicationServiceUsageRealization = new CommunicationServiceUsageRealizationImpl();
 		return communicationServiceUsageRealization;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SkillRealizationsRef createSkillRealizationsRef() {
+		SkillRealizationsRefImpl skillRealizationsRef = new SkillRealizationsRefImpl();
+		return skillRealizationsRef;
 	}
 
 	/**

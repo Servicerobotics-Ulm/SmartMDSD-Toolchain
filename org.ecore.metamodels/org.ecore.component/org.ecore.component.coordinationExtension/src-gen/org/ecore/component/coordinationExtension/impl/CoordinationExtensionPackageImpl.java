@@ -13,6 +13,7 @@ import org.ecore.base.basicAttributes.BasicAttributesPackage;
 
 import org.ecore.base.stateMachine.StateMachinePackage;
 
+import org.ecore.behavior.skillRealization.SkillRealizationPackage;
 import org.ecore.component.componentDefinition.ComponentDefinitionPackage;
 
 import org.ecore.component.coordinationExtension.AbstractCoordinationElement;
@@ -25,6 +26,7 @@ import org.ecore.component.coordinationExtension.OperationModeBinding;
 import org.ecore.component.coordinationExtension.PrivateOperationMode;
 import org.ecore.component.coordinationExtension.PublicOperationMode;
 
+import org.ecore.component.coordinationExtension.SkillRealizationsRef;
 import org.ecore.service.communicationObject.CommunicationObjectPackage;
 
 import org.ecore.service.communicationPattern.CommunicationPatternPackage;
@@ -36,6 +38,7 @@ import org.ecore.service.coordinationPattern.CoordinationPatternPackage;
 import org.ecore.service.parameterDefinition.ParameterDefinitionPackage;
 
 import org.ecore.service.serviceDefinition.ServiceDefinitionPackage;
+import org.ecore.service.skillDefinition.SkillDefinitionPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -92,6 +95,13 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * @generated
 	 */
 	private EClass communicationServiceUsageRealizationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass skillRealizationsRefEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -152,6 +162,8 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 		CoordinationPatternPackage.eINSTANCE.eClass();
 		ParameterDefinitionPackage.eINSTANCE.eClass();
 		ServiceDefinitionPackage.eINSTANCE.eClass();
+		SkillDefinitionPackage.eINSTANCE.eClass();
+		SkillRealizationPackage.eINSTANCE.eClass();
 		StateMachinePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -344,6 +356,24 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSkillRealizationsRef() {
+		return skillRealizationsRefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSkillRealizationsRef_SkillRealizationSetRef() {
+		return (EReference) skillRealizationsRefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CoordinationExtensionFactory getCoordinationExtensionFactory() {
 		return (CoordinationExtensionFactory) getEFactoryInstance();
 	}
@@ -395,6 +425,9 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 				COMMUNICATION_SERVICE_USAGE_REALIZATION__SERVICE_USAGE);
 		createEReference(communicationServiceUsageRealizationEClass,
 				COMMUNICATION_SERVICE_USAGE_REALIZATION__COMPONENT_PORT);
+
+		skillRealizationsRefEClass = createEClass(SKILL_REALIZATIONS_REF);
+		createEReference(skillRealizationsRefEClass, SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF);
 	}
 
 	/**
@@ -428,6 +461,8 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 				.getEPackage(ComponentDefinitionPackage.eNS_URI);
 		ServiceDefinitionPackage theServiceDefinitionPackage = (ServiceDefinitionPackage) EPackage.Registry.INSTANCE
 				.getEPackage(ServiceDefinitionPackage.eNS_URI);
+		SkillRealizationPackage theSkillRealizationPackage = (SkillRealizationPackage) EPackage.Registry.INSTANCE
+				.getEPackage(SkillRealizationPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -440,6 +475,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 		coordinationMasterPortEClass.getESuperTypes().add(theComponentDefinitionPackage.getNamedComponentElement());
 		operationModeBindingEClass.getESuperTypes().add(theComponentDefinitionPackage.getActivityExtension());
 		communicationServiceUsageRealizationEClass.getESuperTypes().add(this.getAbstractCoordinationElement());
+		skillRealizationsRefEClass.getESuperTypes().add(this.getAbstractCoordinationElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(publicOperationModeEClass, PublicOperationMode.class, "PublicOperationMode", !IS_ABSTRACT,
@@ -501,6 +537,13 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 		initEReference(getCommunicationServiceUsageRealization_ComponentPort(),
 				theComponentDefinitionPackage.getComponentPort(), null, "componentPort", null, 1, 1,
 				CommunicationServiceUsageRealization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(skillRealizationsRefEClass, SkillRealizationsRef.class, "SkillRealizationsRef", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSkillRealizationsRef_SkillRealizationSetRef(),
+				theSkillRealizationPackage.getSkillRealizationSet(), null, "skillRealizationSetRef", null, 1, 1,
+				SkillRealizationsRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

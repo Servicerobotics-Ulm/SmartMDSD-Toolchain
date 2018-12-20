@@ -114,6 +114,7 @@ public class ComponentDefinitionParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOpcUaDeviceClientAccess().getGroup_2_1(), "rule__OpcUaDeviceClient__Group_2_1__0");
 					put(grammarAccess.getOpcUaStatusServerAccess().getGroup(), "rule__OpcUaStatusServer__Group__0");
 					put(grammarAccess.getCoordinationSlavePortAccess().getGroup(), "rule__CoordinationSlavePort__Group__0");
+					put(grammarAccess.getSkillRealizationsRefAccess().getGroup(), "rule__SkillRealizationsRef__Group__0");
 					put(grammarAccess.getCommunicationServiceUsageRealizationAccess().getGroup(), "rule__CommunicationServiceUsageRealization__Group__0");
 					put(grammarAccess.getPublicOperationModeAccess().getGroup(), "rule__PublicOperationMode__Group__0");
 					put(grammarAccess.getPublicOperationModeAccess().getGroup_5(), "rule__PublicOperationMode__Group_5__0");
@@ -191,6 +192,7 @@ public class ComponentDefinitionParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCoordinationSlavePortAccess().getNameAssignment_1(), "rule__CoordinationSlavePort__NameAssignment_1");
 					put(grammarAccess.getCoordinationSlavePortAccess().getServiceAssignment_3(), "rule__CoordinationSlavePort__ServiceAssignment_3");
 					put(grammarAccess.getCoordinationSlavePortAccess().getElementsAssignment_5(), "rule__CoordinationSlavePort__ElementsAssignment_5");
+					put(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationSetRefAssignment_1(), "rule__SkillRealizationsRef__SkillRealizationSetRefAssignment_1");
 					put(grammarAccess.getCommunicationServiceUsageRealizationAccess().getServiceUsageAssignment_1(), "rule__CommunicationServiceUsageRealization__ServiceUsageAssignment_1");
 					put(grammarAccess.getCommunicationServiceUsageRealizationAccess().getComponentPortAssignment_3(), "rule__CommunicationServiceUsageRealization__ComponentPortAssignment_3");
 					put(grammarAccess.getPublicOperationModeAccess().getIsDefaultInitAssignment_1(), "rule__PublicOperationMode__IsDefaultInitAssignment_1");

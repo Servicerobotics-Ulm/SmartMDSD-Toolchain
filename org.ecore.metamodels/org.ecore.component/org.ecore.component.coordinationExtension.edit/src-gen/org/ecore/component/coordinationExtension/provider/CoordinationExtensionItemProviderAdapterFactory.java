@@ -241,6 +241,29 @@ public class CoordinationExtensionItemProviderAdapterFactory extends Coordinatio
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.ecore.component.coordinationExtension.SkillRealizationsRef} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SkillRealizationsRefItemProvider skillRealizationsRefItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.ecore.component.coordinationExtension.SkillRealizationsRef}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSkillRealizationsRefAdapter() {
+		if (skillRealizationsRefItemProvider == null) {
+			skillRealizationsRefItemProvider = new SkillRealizationsRefItemProvider(this);
+		}
+
+		return skillRealizationsRefItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -378,6 +401,8 @@ public class CoordinationExtensionItemProviderAdapterFactory extends Coordinatio
 			operationModeBindingItemProvider.dispose();
 		if (communicationServiceUsageRealizationItemProvider != null)
 			communicationServiceUsageRealizationItemProvider.dispose();
+		if (skillRealizationsRefItemProvider != null)
+			skillRealizationsRefItemProvider.dispose();
 	}
 
 	/**

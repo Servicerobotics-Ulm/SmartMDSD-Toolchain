@@ -12,20 +12,7 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="ComponentDatasheet" basePackage="org.ecore.component" disposableProviderFactory="true"
       extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="componentDatasheet.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="componentDatasheet.ecore#//TRL">
-      <genEnumLiterals ecoreEnumLiteral="componentDatasheet.ecore#//TRL/LEVEL1"/>
-      <genEnumLiterals ecoreEnumLiteral="componentDatasheet.ecore#//TRL/LEVEL2"/>
-      <genEnumLiterals ecoreEnumLiteral="componentDatasheet.ecore#//TRL/LEVEL3"/>
-      <genEnumLiterals ecoreEnumLiteral="componentDatasheet.ecore#//TRL/LEVEL4"/>
-      <genEnumLiterals ecoreEnumLiteral="componentDatasheet.ecore#//TRL/LEVEL5"/>
-      <genEnumLiterals ecoreEnumLiteral="componentDatasheet.ecore#//TRL/LEVEL6"/>
-      <genEnumLiterals ecoreEnumLiteral="componentDatasheet.ecore#//TRL/LEVEL7"/>
-      <genEnumLiterals ecoreEnumLiteral="componentDatasheet.ecore#//TRL/LEVEL8"/>
-      <genEnumLiterals ecoreEnumLiteral="componentDatasheet.ecore#//TRL/LEVEL9"/>
-      <genEnumLiterals ecoreEnumLiteral="componentDatasheet.ecore#//TRL/UNDEFINED"/>
-    </genEnums>
     <genClasses ecoreClass="componentDatasheet.ecore#//ComponentDatasheet">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentDatasheet.ecore#//ComponentDatasheet/trl"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentDatasheet.ecore#//ComponentDatasheet/purposeDescription"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentDatasheet.ecore#//ComponentDatasheet/hardwareRequirementDescription"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentDatasheet.ecore#//ComponentDatasheet/component"/>

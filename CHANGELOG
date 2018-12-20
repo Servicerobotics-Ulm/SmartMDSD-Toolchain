@@ -1,0 +1,220 @@
+SmartMDSD Toolchain v3.7
+	* Improved implementation of the Plain OPC-UA Device Client Port code generation
+	* First realization of a Datasheet DSL for Component- and Domain-Models
+	* Refined SmartSoft C++ code generation that now enables flexible extensions of arbitrary Mixed-Ports (such as e.g. for ROS, see SeRoNet ROS Mixed Port)
+	* Add model flag that allows to switch between different middleware backends (currently between ACE/SmartSoft and SeRoNet OPC UA Backend)
+	* Add Toolchain Installer based on the default Eclipse (OOMPH) Installer
+-- Fr, 21 Dec 2018
+
+SmartMDSD Toolchain v3.6
+	* Simplified and cleaned-up graphical model editors
+	* Fully functional deployment and start-up script generation
+	* Activate Eclipse CDT editors for component and domain-models projects
+-- Tue, 7 Aug. 2018
+
+SmartMDSD Toolchain v3.5
+	* First implementation of the Plain OPC-UA Device Client Port for a Mixed Port component
+-- Fr, 4 May 2018
+
+SmartMDSD Toolchain v3.4
+	* First public stable release of the SmartMDSD Toolchain version 3.4
+	* Refined and stabilzed realization of the System Builder modeling view
+	* Refined Component Code-Generation that matches the updated ACE/SmartSoft Kernel version 3 implementation
+-- Fr, 2 Mar 2018
+
+SmartMDSD Toolchain v3 Release Candidate 1
+	* First public release of the new SmartMDSD Toolchain version 3 that now uses Eclipse Sirius for graphical modeling instead of a UML Profile
+	* Refined Metamodels according to Composition Structures defined in the RobMoSys technical Wiki: https://robmosys.eu/wiki/
+	* Realized modeling view for the "Component Supplier" role: https://robmosys.eu/wiki/general_principles:ecosystem:roles:component_supplier
+	* Inital realization of the modeling view for the "System Builder" role: https://robmosys.eu/wiki/general_principles:ecosystem:roles:system_builder
+-- Tu, 19 Dec 2017
+
+#####################################################################
+
+SmartSoft MDSD Toolchain (2.12)
+	* Further improvements of Communication-Objects-serialization
+	* Stable release with most recent improvements
+-- Fr, 10 June 2016
+
+SmartSoft MDSD Toolchain (2.11)
+	* Several performance and other optimization tweaks
+	* Stability bug fixes
+	* Add Jenkins support for projects
+	* Improve serialization of Communication Objects (requres SmartSoft Kernel Version 2.2.0)
+-- Thu, 31 Mar 2016
+
+SmartSoft MDSD Toolchain (2.10)
+	* Several performance and other optimization tweaks
+	* Stability bug fixes
+	* Enforce SmartSoft project name conventions
+-- Wed, 20 May 2015
+
+SmartSoft MDSD Toolchain (2.9)
+	* A new DocView now displays detailed component documentation according to the 
+	  currently selected element in Component Models and Deployment Models
+	* several minor bug fixes
+-- Fr, 17 Appr 2015
+
+SmartSoft MDSD Toolchain (2.8)
+	* Arrange terminal windows when running application (wm-tiler)
+	* Several model checks for CommObject, Component, Deployment
+	* Several minor bug-fixes
+	* Add info.txt to indicate toolchain version of generator
+	* Create logfiles of every component and zip them on scenario stop
+	* Improved code completion in parameter modelling
+-- Fr, 27 Mar 2015
+
+SmartSoft MDSD Toolchain (2.7)
+	* Fix bug in generating active triggers in a component
+-- Mon, 1 Dec 2014
+
+SmartSoft MDSD Toolchain (2.6)
+	* Improvements for deployment start scripts:
+	  - start/stop hooks
+	  - predeploy scripts
+	  - remote deployment / multiple devices
+	  - deployment of supplementary files ("data" dirs)
+	* Profile: add deploymentDirectory attribute for Deployment-Device specification
+	* Bugfix component serialization to xml
+	* Verbose output of initial component parameter during startup
+-- Thur, 13 Nov 2014
+
+SmartSoft MDSD Toolchain (2.5)
+	* Improvements for deployment start scripts
+	* add loginName attribute for Deployment-Device specification
+-- Thur, 14 Aug 2014
+
+SmartSoft MDSD Toolchain (2.4)
+	* Several minor improvements and bugfixes
+	* Extended version for system configuration modeling and remote deployment
+	* New DSL for component documentation
+	* Generation of doxygen component documentation from UML model
+-- Mon, 11 Aug 2014
+
+SmartSoft MDSD Toolchain (2.3)
+	* Several bugfixes for the code generation
+	* release compatibe with updated components (SF SVN revision 204)
+-- Fri, 16 May 2014
+
+SmartSoft MDSD Toolchain (2.2)
+	* Improved Parameter models for deployment and components
+	* Implement fully qualified names for generating parameter instances in components
+	* Extend the parameter XText editor providing additional comfort features
+-- Mon, 12 May 2014
+
+SmartSoft MDSD Toolchain (2.1)
+	* Bugfixes and improved stability
+	* Parameter improvements and preparations
+	* Component Metadata
+	* Debian Package Generation
+-- Mon, 5 May 2014
+
+SmartSoft MDSD Toolchain (2.0)
+	* Bugfixes and improved stability
+-- Wed, 18 Dec 2013
+
+SmartSoft MDSD Toolchain (2.0-alpha-1)
+	* Migration to current eclipse: juno
+	* Communication objects modeled with xtext + reworked code generation
+	* Generic parameter port implementation
+	* Reworked deployment modeling
+-- Mon, 16 Sep 2013
+
+SmartSoft MDSD Toolchain (0.10.15-ace)
+	* ACE-only release
+	* ...
+-- Wed 07 Aug 2013
+
+SmartSoft MDSD Toolchain (0.10.14-ace)
+	* ACE-only release
+	* ...
+-- Tue 06 Aug 2013
+
+SmartSoft MDSD Toolchain (0.10.13-ace)
+	* ACE-only release
+	* ...
+-- Fri 02 Aug 2013
+
+SmartSoft MDSD Toolchain (0.10.12-ace)
+	* ACE-only release
+	* ...
+-- Fri 19 Jul 2013
+
+SmartSoft MDSD Toolchain (0.10.11)
+	* ...
+-- Thu 23 May 2013
+
+SmartSoft MDSD Toolchain (0.10.10)
+	* ...
+-- Sat, 27 April 2013
+
+SmartSoft MDSD Toolchain (0.10.9)
+	* ...
+-- Tue, 23 April 2013
+
+SmartSoft MDSD Toolchain (0.10.8)
+	* Using directive for communication objects to use get/set methods from base classes
+	* Minor Makefile bugfix for communication objects 
+-- Tue, 20 Nov 2012 9:53
+
+SmartSoft MDSD Toolchain (0.10.7)
+	* Generate core class in gen folder for each communication object
+	* Updated hash check
+-- Mon, 19 Nov 2012 10:27
+
+SmartSoft MDSD Toolchain (0.10.6)
+	* Adjusted M2T to support HASH comparison in communication objects during communication in order to detect outdated communication object libraries
+	* Makefile for Communication objects repositories now also generates Makefile.depend
+	* XtendHelper util is moved from org.smartsoft.utils project directly into org.smartsoft.profile.corbasmartsoft in order to resolve "not-found" errors in the editor
+	* Some checks are redesigned in order to resolve erros in the editor
+	* Components generate templates for ini files rather than ini files: <ComponentName>.ini.template
+-- Wed, 14 Nov 2012 08:45
+
+SmartSoft MDSD Toolchain (0.10.5)
+	* Makefile bugfix for Communication Objects to speed up build process
+-- Fri, 19 Oct 2012 09:45
+
+SmartSoft MDSD Toolchain (0.10.4)
+	* Wiring added
+        * CorbaSmartSoftDevice renamed into CorbaSmartSoftTarget
+-- Fri, 8 Jul 2011 14:44
+
+SmartSoft MDSD Toolchain (0.10.3)
+	* Idl file generation of Corba/SmartSoft now compliant with ACE+TAO-6.0.2
+-- Fri, 24 Jun 2011 17:03:43 +0200
+
+SmartSoft MDSD Toolchain (0.10.2)
+	* Minor bugfixes
+-- Thu, 14 Apr 2011 15:09:01 +0100
+
+SmartSoft MDSD Toolchain (0.10.0)
+	* Improved usability
+	* Full modelling of communication objects, enums, structs, etc.
+	* Organizing Communication objects in repositories: full import functionality
+	* CommObjs organized in namespaces
+	* Several bugfixes
+-- Wed, 22 Dec 2010 10:30:01 +0100
+
+SmartSoft MDSD Toolchain (0.8.0)
+	* RTAI
+-- Thur, 29 Apr 2010 13:05:31 +0100
+
+SmartSoft MDSD Toolchain (0.6.0)
+	* Toolchain is available as Eclipse plugins
+	* Enhanced usability
+	* Condition Mutex
+	* State Pattern, EventState
+	* SmartParameter
+	* SmartState
+	* Communication objects generated without prefix "Comm"
+	* Support for nested communication objects
+-- Mon, 07 Dec 2009 13:38:31 +0100
+
+SmartSoft MDSD Toolchain (0.2.1)
+	* Deployment: Wizard imports CorbaSmartSoft + SmartMARS
+	* Deployment uses SmartMARS Components (PIM)
+-- Wed, 09 Sep 2009 08:42:35 +0200
+
+SmartSoft MDSD Toolchain (0.2.0)
+	* Initial release of the SmartSoft MDSD Toolchain
+-- Tue, 08 Sep 2009 10:35:44 +0200

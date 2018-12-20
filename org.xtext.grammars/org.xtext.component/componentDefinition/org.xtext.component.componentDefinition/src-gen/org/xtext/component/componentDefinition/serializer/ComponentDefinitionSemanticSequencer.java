@@ -76,6 +76,7 @@ import org.ecore.component.coordinationExtension.CoordinationSlavePort;
 import org.ecore.component.coordinationExtension.OperationModeBinding;
 import org.ecore.component.coordinationExtension.PrivateOperationMode;
 import org.ecore.component.coordinationExtension.PublicOperationMode;
+import org.ecore.component.coordinationExtension.SkillRealizationsRef;
 import org.ecore.component.performanceExtension.ActivationConstraints;
 import org.ecore.component.performanceExtension.DefaultInputTrigger;
 import org.ecore.component.performanceExtension.DefaultObservedElementTrigger;
@@ -171,6 +172,9 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 				return; 
 			case CoordinationExtensionPackage.PUBLIC_OPERATION_MODE:
 				sequence_PublicOperationMode(context, (PublicOperationMode) semanticObject); 
+				return; 
+			case CoordinationExtensionPackage.SKILL_REALIZATIONS_REF:
+				sequence_SkillRealizationsRef(context, (SkillRealizationsRef) semanticObject); 
 				return; 
 			}
 		else if (epackage == PerformanceExtensionPackage.eINSTANCE)
@@ -668,6 +672,25 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getServiceRepoImportAccess().getImportedNamespaceFQNWParserRuleCall_1_0(), semanticObject.getImportedNamespace());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractCoordinationElement returns SkillRealizationsRef
+	 *     SkillRealizationsRef returns SkillRealizationsRef
+	 *
+	 * Constraint:
+	 *     skillRealizationSetRef=[SkillRealizationSet|FQN]
+	 */
+	protected void sequence_SkillRealizationsRef(ISerializationContext context, SkillRealizationsRef semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CoordinationExtensionPackage.Literals.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CoordinationExtensionPackage.Literals.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationSetRefSkillRealizationSetFQNParserRuleCall_1_0_1(), semanticObject.eGet(CoordinationExtensionPackage.Literals.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF, false));
 		feeder.finish();
 	}
 	

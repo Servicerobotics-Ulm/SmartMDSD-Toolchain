@@ -4,6 +4,7 @@ package org.ecore.base.genericDatasheet.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -50,6 +51,13 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	private EClass proprietaryLicenseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum trlEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -182,6 +190,15 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getGenericDatasheet_Trl() {
+		return (EAttribute) genericDatasheetEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAbstractLicense() {
 		return abstractLicenseEClass;
 	}
@@ -245,6 +262,15 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getTRL() {
+		return trlEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GenericDatasheetFactory getGenericDatasheetFactory() {
 		return (GenericDatasheetFactory) getEFactoryInstance();
 	}
@@ -276,6 +302,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 		createEAttribute(genericDatasheetEClass, GENERIC_DATASHEET__SUPPLIER_DESCRIPTION);
 		createEAttribute(genericDatasheetEClass, GENERIC_DATASHEET__HOMEPAGE);
 		createEAttribute(genericDatasheetEClass, GENERIC_DATASHEET__BASE_URI);
+		createEAttribute(genericDatasheetEClass, GENERIC_DATASHEET__TRL);
 
 		abstractLicenseEClass = createEClass(ABSTRACT_LICENSE);
 
@@ -286,6 +313,9 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 		createEAttribute(proprietaryLicenseEClass, PROPRIETARY_LICENSE__FULL_TEXT);
 		createEAttribute(proprietaryLicenseEClass, PROPRIETARY_LICENSE__NAME);
 		createEAttribute(proprietaryLicenseEClass, PROPRIETARY_LICENSE__URL);
+
+		// Create enums
+		trlEEnum = createEEnum(TRL);
 	}
 
 	/**
@@ -341,6 +371,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 		initEAttribute(getGenericDatasheet_BaseURI(), ecorePackage.getEString(), "baseURI", null, 1, 1,
 				GenericDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGenericDatasheet_Trl(), this.getTRL(), "trl", "Undefined", 0, 1, GenericDatasheet.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractLicenseEClass, AbstractLicense.class, "AbstractLicense", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -362,6 +394,19 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 		initEAttribute(getProprietaryLicense_Url(), ecorePackage.getEString(), "url", null, 0, 1,
 				ProprietaryLicense.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(trlEEnum, org.ecore.base.genericDatasheet.TRL.class, "TRL");
+		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL1);
+		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL2);
+		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL3);
+		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL4);
+		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL5);
+		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL6);
+		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL7);
+		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL8);
+		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL9);
+		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.UNDEFINED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -134,6 +134,15 @@ public class CoordinationExtensionSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case CoordinationExtensionPackage.SKILL_REALIZATIONS_REF: {
+			SkillRealizationsRef skillRealizationsRef = (SkillRealizationsRef) theEObject;
+			T result = caseSkillRealizationsRef(skillRealizationsRef);
+			if (result == null)
+				result = caseAbstractCoordinationElement(skillRealizationsRef);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -241,6 +250,21 @@ public class CoordinationExtensionSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommunicationServiceUsageRealization(CommunicationServiceUsageRealization object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Skill Realizations Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Skill Realizations Ref</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSkillRealizationsRef(SkillRealizationsRef object) {
 		return null;
 	}
 

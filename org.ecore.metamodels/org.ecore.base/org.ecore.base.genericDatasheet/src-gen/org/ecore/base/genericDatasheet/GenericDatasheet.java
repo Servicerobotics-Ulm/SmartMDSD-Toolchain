@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.ecore.base.genericDatasheet.GenericDatasheet#getSupplierDescription <em>Supplier Description</em>}</li>
  *   <li>{@link org.ecore.base.genericDatasheet.GenericDatasheet#getHomepage <em>Homepage</em>}</li>
  *   <li>{@link org.ecore.base.genericDatasheet.GenericDatasheet#getBaseURI <em>Base URI</em>}</li>
+ *   <li>{@link org.ecore.base.genericDatasheet.GenericDatasheet#getTrl <em>Trl</em>}</li>
  * </ul>
  *
  * @see org.ecore.base.genericDatasheet.GenericDatasheetPackage#getGenericDatasheet()
@@ -181,5 +182,35 @@ public interface GenericDatasheet extends EObject {
 	 * @generated
 	 */
 	void setBaseURI(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Trl</b></em>' attribute.
+	 * The default value is <code>"Undefined"</code>.
+	 * The literals are from the enumeration {@link org.ecore.base.genericDatasheet.TRL}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Trl</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Trl</em>' attribute.
+	 * @see org.ecore.base.genericDatasheet.TRL
+	 * @see #setTrl(TRL)
+	 * @see org.ecore.base.genericDatasheet.GenericDatasheetPackage#getGenericDatasheet_Trl()
+	 * @model default="Undefined"
+	 * @generated
+	 */
+	TRL getTrl();
+
+	/**
+	 * Sets the value of the '{@link org.ecore.base.genericDatasheet.GenericDatasheet#getTrl <em>Trl</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Trl</em>' attribute.
+	 * @see org.ecore.base.genericDatasheet.TRL
+	 * @see #getTrl()
+	 * @generated
+	 */
+	void setTrl(TRL value);
 
 } // GenericDatasheet

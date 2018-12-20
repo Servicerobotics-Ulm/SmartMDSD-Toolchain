@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DatasheetGenerator
+Bundle-SymbolicName: org.xtend.system.datasheet.generator;singleton:=true
+Bundle-Version: 3.7.0
+Automatic-Module-Name: org.xtend.system.datasheet.generator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: Servicerobotics Ulm
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.xtext.xbase.lib,
+ org.xtend.smartsoft.generator,
+ org.eclipse.core.resources,
+ com.google.inject,
+ org.eclipse.xtext.util,
+ org.eclipse.xtext.generator,
+ org.eclipse.xtext,
+ org.eclipse.core.commands,
+ org.eclipse.ui.workbench,
+ org.smartsoft.utils,
+ org.ecore.system.componentArchitecture,
+ org.xtext.system.componentArchitecture,
+ org.ecore.component.coordinationExtension

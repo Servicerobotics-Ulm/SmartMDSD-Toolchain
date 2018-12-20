@@ -15,7 +15,6 @@ import org.ecore.component.componentDefinition.ComponentDefinition;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.ecore.component.componentDatasheet.ComponentDatasheet#getTrl <em>Trl</em>}</li>
  *   <li>{@link org.ecore.component.componentDatasheet.ComponentDatasheet#getPurposeDescription <em>Purpose Description</em>}</li>
  *   <li>{@link org.ecore.component.componentDatasheet.ComponentDatasheet#getHardwareRequirementDescription <em>Hardware Requirement Description</em>}</li>
  *   <li>{@link org.ecore.component.componentDatasheet.ComponentDatasheet#getComponent <em>Component</em>}</li>
@@ -26,36 +25,6 @@ import org.ecore.component.componentDefinition.ComponentDefinition;
  * @generated
  */
 public interface ComponentDatasheet extends GenericDatasheet {
-	/**
-	 * Returns the value of the '<em><b>Trl</b></em>' attribute.
-	 * The default value is <code>"Undefined"</code>.
-	 * The literals are from the enumeration {@link org.ecore.component.componentDatasheet.TRL}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Trl</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Trl</em>' attribute.
-	 * @see org.ecore.component.componentDatasheet.TRL
-	 * @see #setTrl(TRL)
-	 * @see org.ecore.component.componentDatasheet.ComponentDatasheetPackage#getComponentDatasheet_Trl()
-	 * @model default="Undefined"
-	 * @generated
-	 */
-	TRL getTrl();
-
-	/**
-	 * Sets the value of the '{@link org.ecore.component.componentDatasheet.ComponentDatasheet#getTrl <em>Trl</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Trl</em>' attribute.
-	 * @see org.ecore.component.componentDatasheet.TRL
-	 * @see #getTrl()
-	 * @generated
-	 */
-	void setTrl(TRL value);
-
 	/**
 	 * Returns the value of the '<em><b>Purpose Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->

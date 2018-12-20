@@ -24,6 +24,7 @@
     <genClasses ecoreClass="serviceDefinition.ecore#//AbstractServiceDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute serviceDefinition.ecore#//AbstractServiceDefinition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference serviceDefinition.ecore#//AbstractServiceDefinition/properties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute serviceDefinition.ecore#//AbstractServiceDefinition/purposeDescription"/>
     </genClasses>
     <genClasses ecoreClass="serviceDefinition.ecore#//CommRepoImport">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute serviceDefinition.ecore#//CommRepoImport/importedNamespace"/>

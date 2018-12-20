@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="skillRealization" nsURI="http://www.ecore.org/behavior/SkillRealization"
+    nsPrefix="SkillRealization">
+  <eClassifiers xsi:type="ecore:EClass" name="SkillRealizationModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="skillsets" upperBound="-1"
+        eType="#//SkillRealizationSet" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SkillRealizationSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="skills" upperBound="-1"
+        eType="#//SkillRealization" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="skillDefSet" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.service.skillDefinition/model/skillDefinition.ecore#//SkillDefinitionSet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SkillRealization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="skillDef" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.service.skillDefinition/model/skillDefinition.ecore#//SkillDefinition"/>
+  </eClassifiers>
+</ecore:EPackage>

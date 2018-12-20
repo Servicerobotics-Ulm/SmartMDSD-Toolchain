@@ -384,6 +384,43 @@ public interface CoordinationExtensionPackage extends EPackage {
 	int COMMUNICATION_SERVICE_USAGE_REALIZATION_OPERATION_COUNT = ABSTRACT_COORDINATION_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.ecore.component.coordinationExtension.impl.SkillRealizationsRefImpl <em>Skill Realizations Ref</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.ecore.component.coordinationExtension.impl.SkillRealizationsRefImpl
+	 * @see org.ecore.component.coordinationExtension.impl.CoordinationExtensionPackageImpl#getSkillRealizationsRef()
+	 * @generated
+	 */
+	int SKILL_REALIZATIONS_REF = 7;
+
+	/**
+	 * The feature id for the '<em><b>Skill Realization Set Ref</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF = ABSTRACT_COORDINATION_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Skill Realizations Ref</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL_REALIZATIONS_REF_FEATURE_COUNT = ABSTRACT_COORDINATION_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Skill Realizations Ref</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL_REALIZATIONS_REF_OPERATION_COUNT = ABSTRACT_COORDINATION_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.ecore.component.coordinationExtension.PublicOperationMode <em>Public Operation Mode</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -586,6 +623,27 @@ public interface CoordinationExtensionPackage extends EPackage {
 	EReference getCommunicationServiceUsageRealization_ComponentPort();
 
 	/**
+	 * Returns the meta object for class '{@link org.ecore.component.coordinationExtension.SkillRealizationsRef <em>Skill Realizations Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Skill Realizations Ref</em>'.
+	 * @see org.ecore.component.coordinationExtension.SkillRealizationsRef
+	 * @generated
+	 */
+	EClass getSkillRealizationsRef();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.ecore.component.coordinationExtension.SkillRealizationsRef#getSkillRealizationSetRef <em>Skill Realization Set Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Skill Realization Set Ref</em>'.
+	 * @see org.ecore.component.coordinationExtension.SkillRealizationsRef#getSkillRealizationSetRef()
+	 * @see #getSkillRealizationsRef()
+	 * @generated
+	 */
+	EReference getSkillRealizationsRef_SkillRealizationSetRef();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -775,6 +833,25 @@ public interface CoordinationExtensionPackage extends EPackage {
 		 */
 		EReference COMMUNICATION_SERVICE_USAGE_REALIZATION__COMPONENT_PORT = eINSTANCE
 				.getCommunicationServiceUsageRealization_ComponentPort();
+
+		/**
+		 * The meta object literal for the '{@link org.ecore.component.coordinationExtension.impl.SkillRealizationsRefImpl <em>Skill Realizations Ref</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecore.component.coordinationExtension.impl.SkillRealizationsRefImpl
+		 * @see org.ecore.component.coordinationExtension.impl.CoordinationExtensionPackageImpl#getSkillRealizationsRef()
+		 * @generated
+		 */
+		EClass SKILL_REALIZATIONS_REF = eINSTANCE.getSkillRealizationsRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Skill Realization Set Ref</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF = eINSTANCE
+				.getSkillRealizationsRef_SkillRealizationSetRef();
 
 	}
 

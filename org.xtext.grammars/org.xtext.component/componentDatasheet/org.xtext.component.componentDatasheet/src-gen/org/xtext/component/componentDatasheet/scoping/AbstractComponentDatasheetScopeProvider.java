@@ -44,7 +44,7 @@
 //===================================================================================
 package org.xtext.component.componentDatasheet.scoping;
 
-import org.eclipse.xtext.scoping.impl.DelegatingScopeProvider;
+import org.xtext.base.genericDatasheet.scoping.GenericDatasheetScopeProvider;
 
-public abstract class AbstractComponentDatasheetScopeProvider extends DelegatingScopeProvider {
+public abstract class AbstractComponentDatasheetScopeProvider extends GenericDatasheetScopeProvider {
 }

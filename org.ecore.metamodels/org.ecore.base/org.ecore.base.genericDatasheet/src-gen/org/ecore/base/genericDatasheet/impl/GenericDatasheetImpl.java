@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.ecore.base.genericDatasheet.AbstractLicense;
 import org.ecore.base.genericDatasheet.GenericDatasheet;
 import org.ecore.base.genericDatasheet.GenericDatasheetPackage;
+import org.ecore.base.genericDatasheet.TRL;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +30,7 @@ import org.ecore.base.genericDatasheet.GenericDatasheetPackage;
  *   <li>{@link org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl#getSupplierDescription <em>Supplier Description</em>}</li>
  *   <li>{@link org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl#getHomepage <em>Homepage</em>}</li>
  *   <li>{@link org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl#getBaseURI <em>Base URI</em>}</li>
+ *   <li>{@link org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl#getTrl <em>Trl</em>}</li>
  * </ul>
  *
  * @generated
@@ -143,6 +145,26 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected String baseURI = BASE_URI_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTrl() <em>Trl</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTrl()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final TRL TRL_EDEFAULT = TRL.UNDEFINED;
+
+	/**
+	 * The cached value of the '{@link #getTrl() <em>Trl</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTrl()
+	 * @generated
+	 * @ordered
+	 */
+	protected TRL trl = TRL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -329,6 +351,28 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TRL getTrl() {
+		return trl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTrl(TRL newTrl) {
+		TRL oldTrl = trl;
+		trl = newTrl == null ? TRL_EDEFAULT : newTrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenericDatasheetPackage.GENERIC_DATASHEET__TRL,
+					oldTrl, trl));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -358,6 +402,8 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 			return getHomepage();
 		case GenericDatasheetPackage.GENERIC_DATASHEET__BASE_URI:
 			return getBaseURI();
+		case GenericDatasheetPackage.GENERIC_DATASHEET__TRL:
+			return getTrl();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -387,6 +433,9 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 			return;
 		case GenericDatasheetPackage.GENERIC_DATASHEET__BASE_URI:
 			setBaseURI((String) newValue);
+			return;
+		case GenericDatasheetPackage.GENERIC_DATASHEET__TRL:
+			setTrl((TRL) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -418,6 +467,9 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 		case GenericDatasheetPackage.GENERIC_DATASHEET__BASE_URI:
 			setBaseURI(BASE_URI_EDEFAULT);
 			return;
+		case GenericDatasheetPackage.GENERIC_DATASHEET__TRL:
+			setTrl(TRL_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -445,6 +497,8 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 			return HOMEPAGE_EDEFAULT == null ? homepage != null : !HOMEPAGE_EDEFAULT.equals(homepage);
 		case GenericDatasheetPackage.GENERIC_DATASHEET__BASE_URI:
 			return BASE_URI_EDEFAULT == null ? baseURI != null : !BASE_URI_EDEFAULT.equals(baseURI);
+		case GenericDatasheetPackage.GENERIC_DATASHEET__TRL:
+			return trl != TRL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -470,6 +524,8 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 		result.append(homepage);
 		result.append(", baseURI: ");
 		result.append(baseURI);
+		result.append(", trl: ");
+		result.append(trl);
 		result.append(')');
 		return result.toString();
 	}

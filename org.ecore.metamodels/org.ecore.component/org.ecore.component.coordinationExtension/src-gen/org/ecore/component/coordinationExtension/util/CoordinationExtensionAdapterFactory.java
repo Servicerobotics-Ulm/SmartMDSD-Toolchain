@@ -105,6 +105,11 @@ public class CoordinationExtensionAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseSkillRealizationsRef(SkillRealizationsRef object) {
+			return createSkillRealizationsRefAdapter();
+		}
+
+		@Override
 		public Adapter caseAbstractComponentElement(AbstractComponentElement object) {
 			return createAbstractComponentElementAdapter();
 		}
@@ -233,6 +238,20 @@ public class CoordinationExtensionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommunicationServiceUsageRealizationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.component.coordinationExtension.SkillRealizationsRef <em>Skill Realizations Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.component.coordinationExtension.SkillRealizationsRef
+	 * @generated
+	 */
+	public Adapter createSkillRealizationsRefAdapter() {
 		return null;
 	}
 

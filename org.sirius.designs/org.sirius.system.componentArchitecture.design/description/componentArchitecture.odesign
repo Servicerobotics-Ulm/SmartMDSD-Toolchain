@@ -15,7 +15,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="ComponentInstanceContainer" semanticCandidatesExpression="feature:components" domainClass="componentArchitecture::ComponentInstance">
+        <containerMappings name="ComponentInstanceContainer" deletionDescription="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DeleteComponentInstanceAndConnections']" semanticCandidatesExpression="feature:components" domainClass="componentArchitecture::ComponentInstance">
           <borderedNodeMappings name="RequiredServiceNode" semanticCandidatesExpression="feature:ports" domainClass="componentArchitecture::RequiredService">
             <style xsi:type="style:CustomStyleDescription" showIcon="false" tooltipExpression="InputRequestor" resizeKind="NSEW" id="inreq">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -178,6 +178,14 @@
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="DeleteComponentInstanceAndConnections">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:element.deleteComponentAndRelatedConnections()"/>
             </initialOperation>
           </ownedTools>
         </toolSections>

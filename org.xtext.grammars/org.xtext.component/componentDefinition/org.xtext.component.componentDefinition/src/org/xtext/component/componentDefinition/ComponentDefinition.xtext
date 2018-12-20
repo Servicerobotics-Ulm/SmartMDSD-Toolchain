@@ -51,6 +51,7 @@ import "http://www.ecore.org/component/ComponentDefinition" as component
 import "http://www.ecore.org/component/ComponentParameter" as parameter
 import "http://www.ecore.org/component/PerformanceExtension" as performance
 import "http://www.ecore.org/component/CoordinationExtension" as coordination
+import "http://www.ecore.org/behavior/SkillRealization" as skillRealization
 import "http://www.ecore.org/component/SeronetExtension" as seronet
 import "http://www.ecore.org/base/StateMachine" as stateMach
 
@@ -250,7 +251,11 @@ CoordinationSlavePort returns coordination::CoordinationSlavePort:
 ;
 
 AbstractCoordinationElement returns coordination::AbstractCoordinationElement: 
-	PublicOperationMode | PrivateOperationMode | CommunicationServiceUsageRealization
+	PublicOperationMode | PrivateOperationMode | CommunicationServiceUsageRealization | SkillRealizationsRef
+;
+
+SkillRealizationsRef returns coordination::SkillRealizationsRef: 
+	'SkillRealizationsRef' skillRealizationSetRef=[skillRealization::SkillRealizationSet|FQN] (';')?
 ;
 
 CommunicationServiceUsageRealization returns coordination::CommunicationServiceUsageRealization: 

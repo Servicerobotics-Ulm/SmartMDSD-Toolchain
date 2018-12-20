@@ -10,11 +10,13 @@ Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.ecore.service.communicationPattern;visibility:=reexport,
  org.eclipse.core.runtime,
  org.ecore.service.serviceDefinition;visibility:=reexport,
+ org.ecore.service.skillDefinition;visibility:=reexport,
  org.ecore.base.stateMachine;visibility:=reexport,
  org.ecore.component.componentDefinition;visibility:=reexport,
  org.ecore.service.componentMode;visibility:=reexport,
  org.ecore.service.coordinationPattern;visibility:=reexport,
- org.ecore.service.parameterDefinition;visibility:=reexport
+ org.ecore.service.parameterDefinition;visibility:=reexport,
+ org.ecore.behavior.skillRealization;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin

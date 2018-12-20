@@ -77,6 +77,15 @@ public interface CoordinationExtensionFactory extends EFactory {
 	CommunicationServiceUsageRealization createCommunicationServiceUsageRealization();
 
 	/**
+	 * Returns a new object of class '<em>Skill Realizations Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Skill Realizations Ref</em>'.
+	 * @generated
+	 */
+	SkillRealizationsRef createSkillRealizationsRef();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -139,273 +139,45 @@ ruleComponentDatasheet returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getComponentDatasheetAccess().getLeftCurlyBracketKeyword_2());
 		}
+		{
+			if ($current==null) {
+				$current = createModelElement(grammarAccess.getComponentDatasheetRule());
+			}
+			newCompositeNode(grammarAccess.getComponentDatasheetAccess().getGenericDatasheetParserRuleCall_3());
+		}
+		this_GenericDatasheet_3=ruleGenericDatasheet[$current]
+		{
+			$current = $this_GenericDatasheet_3.current;
+			afterParserOrEnumRuleCall();
+		}
 		(
 			(
 				{ 
-				  getUnorderedGroupHelper().enter(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3());
+				  getUnorderedGroupHelper().enter(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4());
 				}
 				(
 					(
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 0)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4(), 0)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 0);
+						getUnorderedGroupHelper().select(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4(), 0);
 					}
-								({true}?=>(otherlv_4='shortDescrition'
+								({true}?=>(otherlv_5='purposeDescription'
 								{
-									newLeafNode(otherlv_4, grammarAccess.getComponentDatasheetAccess().getShortDescritionKeyword_3_0_0());
+									newLeafNode(otherlv_5, grammarAccess.getComponentDatasheetAccess().getPurposeDescriptionKeyword_4_0_0());
 								}
 								(
-									otherlv_5=':'
+									otherlv_6=':'
 									{
-										newLeafNode(otherlv_5, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_0_1());
+										newLeafNode(otherlv_6, grammarAccess.getComponentDatasheetAccess().getColonKeyword_4_0_1());
 									}
 								)?
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getComponentDatasheetAccess().getShortDescritionEStringParserRuleCall_3_0_2_0());
+											newCompositeNode(grammarAccess.getComponentDatasheetAccess().getPurposeDescriptionEStringParserRuleCall_4_0_2_0());
 										}
-										lv_shortDescrition_6_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getComponentDatasheetRule());
-											}
-											set(
-												$current,
-												"shortDescrition",
-												lv_shortDescrition_6_0,
-												"org.xtext.component.componentDatasheet.ComponentDatasheet.EString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 1)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 1);
-					}
-								({true}?=>(otherlv_7='baseURI'
-								{
-									newLeafNode(otherlv_7, grammarAccess.getComponentDatasheetAccess().getBaseURIKeyword_3_1_0());
-								}
-								(
-									otherlv_8=':'
-									{
-										newLeafNode(otherlv_8, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_1_1());
-									}
-								)?
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getComponentDatasheetAccess().getBaseURIEStringParserRuleCall_3_1_2_0());
-										}
-										lv_baseURI_9_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getComponentDatasheetRule());
-											}
-											set(
-												$current,
-												"baseURI",
-												lv_baseURI_9_0,
-												"org.xtext.component.componentDatasheet.ComponentDatasheet.EString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 2)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 2);
-					}
-								({true}?=>(otherlv_10='longDescription'
-								{
-									newLeafNode(otherlv_10, grammarAccess.getComponentDatasheetAccess().getLongDescriptionKeyword_3_2_0());
-								}
-								(
-									otherlv_11=':'
-									{
-										newLeafNode(otherlv_11, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_2_1());
-									}
-								)?
-								(
-									(
-										lv_longDescription_12_0=RULE_TEXT_BLOCK
-										{
-											newLeafNode(lv_longDescription_12_0, grammarAccess.getComponentDatasheetAccess().getLongDescriptionTEXT_BLOCKTerminalRuleCall_3_2_2_0());
-										}
-										{
-											if ($current==null) {
-												$current = createModelElement(grammarAccess.getComponentDatasheetRule());
-											}
-											setWithLastConsumed(
-												$current,
-												"longDescription",
-												lv_longDescription_12_0,
-												"org.xtext.component.componentDatasheet.ComponentDatasheet.TEXT_BLOCK");
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 3)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 3);
-					}
-								({true}?=>(otherlv_13='supplierDescription'
-								{
-									newLeafNode(otherlv_13, grammarAccess.getComponentDatasheetAccess().getSupplierDescriptionKeyword_3_3_0());
-								}
-								(
-									otherlv_14=':'
-									{
-										newLeafNode(otherlv_14, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_3_1());
-									}
-								)?
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getComponentDatasheetAccess().getSupplierDescriptionEStringParserRuleCall_3_3_2_0());
-										}
-										lv_supplierDescription_15_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getComponentDatasheetRule());
-											}
-											set(
-												$current,
-												"supplierDescription",
-												lv_supplierDescription_15_0,
-												"org.xtext.component.componentDatasheet.ComponentDatasheet.EString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 4)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 4);
-					}
-								({true}?=>(otherlv_16='homepage'
-								{
-									newLeafNode(otherlv_16, grammarAccess.getComponentDatasheetAccess().getHomepageKeyword_3_4_0());
-								}
-								(
-									otherlv_17=':'
-									{
-										newLeafNode(otherlv_17, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_4_1());
-									}
-								)?
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getComponentDatasheetAccess().getHomepageEStringParserRuleCall_3_4_2_0());
-										}
-										lv_homepage_18_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getComponentDatasheetRule());
-											}
-											set(
-												$current,
-												"homepage",
-												lv_homepage_18_0,
-												"org.xtext.component.componentDatasheet.ComponentDatasheet.EString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 5)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 5);
-					}
-								({true}?=>(otherlv_19='trl'
-								{
-									newLeafNode(otherlv_19, grammarAccess.getComponentDatasheetAccess().getTrlKeyword_3_5_0());
-								}
-								(
-									otherlv_20=':'
-									{
-										newLeafNode(otherlv_20, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_5_1());
-									}
-								)?
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getComponentDatasheetAccess().getTrlTRLEnumRuleCall_3_5_2_0());
-										}
-										lv_trl_21_0=ruleTRL
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getComponentDatasheetRule());
-											}
-											set(
-												$current,
-												"trl",
-												lv_trl_21_0,
-												"org.xtext.component.componentDatasheet.ComponentDatasheet.TRL");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 6)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 6);
-					}
-								({true}?=>(otherlv_22='purposeDescription'
-								{
-									newLeafNode(otherlv_22, grammarAccess.getComponentDatasheetAccess().getPurposeDescriptionKeyword_3_6_0());
-								}
-								(
-									otherlv_23=':'
-									{
-										newLeafNode(otherlv_23, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_6_1());
-									}
-								)?
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getComponentDatasheetAccess().getPurposeDescriptionEStringParserRuleCall_3_6_2_0());
-										}
-										lv_purposeDescription_24_0=ruleEString
+										lv_purposeDescription_7_0=ruleEString
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getComponentDatasheetRule());
@@ -413,39 +185,39 @@ ruleComponentDatasheet returns [EObject current=null]
 											set(
 												$current,
 												"purposeDescription",
-												lv_purposeDescription_24_0,
-												"org.xtext.component.componentDatasheet.ComponentDatasheet.EString");
+												lv_purposeDescription_7_0,
+												"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
 											afterParserOrEnumRuleCall();
 										}
 									)
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 7)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4(), 1)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 7);
+						getUnorderedGroupHelper().select(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4(), 1);
 					}
-								({true}?=>(otherlv_25='hardwareRequirementDescription'
+								({true}?=>(otherlv_8='hardwareRequirementDescription'
 								{
-									newLeafNode(otherlv_25, grammarAccess.getComponentDatasheetAccess().getHardwareRequirementDescriptionKeyword_3_7_0());
+									newLeafNode(otherlv_8, grammarAccess.getComponentDatasheetAccess().getHardwareRequirementDescriptionKeyword_4_1_0());
 								}
 								(
-									otherlv_26=':'
+									otherlv_9=':'
 									{
-										newLeafNode(otherlv_26, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_7_1());
+										newLeafNode(otherlv_9, grammarAccess.getComponentDatasheetAccess().getColonKeyword_4_1_1());
 									}
 								)?
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getComponentDatasheetAccess().getHardwareRequirementDescriptionEStringParserRuleCall_3_7_2_0());
+											newCompositeNode(grammarAccess.getComponentDatasheetAccess().getHardwareRequirementDescriptionEStringParserRuleCall_4_1_2_0());
 										}
-										lv_hardwareRequirementDescription_27_0=ruleEString
+										lv_hardwareRequirementDescription_10_0=ruleEString
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getComponentDatasheetRule());
@@ -453,70 +225,334 @@ ruleComponentDatasheet returns [EObject current=null]
 											set(
 												$current,
 												"hardwareRequirementDescription",
-												lv_hardwareRequirementDescription_27_0,
-												"org.xtext.component.componentDatasheet.ComponentDatasheet.EString");
+												lv_hardwareRequirementDescription_10_0,
+												"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
 											afterParserOrEnumRuleCall();
 										}
 									)
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 8)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3(), 8);
-					}
-								({true}?=>(otherlv_28='license'
-								{
-									newLeafNode(otherlv_28, grammarAccess.getComponentDatasheetAccess().getLicenseKeyword_3_8_0());
-								}
-								(
-									otherlv_29=':'
-									{
-										newLeafNode(otherlv_29, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_8_1());
-									}
-								)?
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getComponentDatasheetAccess().getLicenseAbstractLicenseParserRuleCall_3_8_2_0());
-										}
-										lv_license_30_0=ruleAbstractLicense
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getComponentDatasheetRule());
-											}
-											set(
-												$current,
-												"license",
-												lv_license_30_0,
-												"org.xtext.component.componentDatasheet.ComponentDatasheet.AbstractLicense");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4());
 					}
 				)
 			)
-					)+
-					{getUnorderedGroupHelper().canLeave(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3())}?
+					)*
 				)
 			)
 				{ 
-				  getUnorderedGroupHelper().leave(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_3());
+				  getUnorderedGroupHelper().leave(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4());
 				}
 		)
-		otherlv_31='}'
+		otherlv_11='}'
 		{
-			newLeafNode(otherlv_31, grammarAccess.getComponentDatasheetAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_11, grammarAccess.getComponentDatasheetAccess().getRightCurlyBracketKeyword_5());
 		}
+	)
+;
+
+
+// Rule GenericDatasheet
+ruleGenericDatasheet[EObject in_current]  returns [EObject current=in_current]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{ 
+			  getUnorderedGroupHelper().enter(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
+			}
+			(
+				(
+		(
+			{getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 0)}?=>(
+				{
+					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 0);
+				}
+							({true}?=>(otherlv_1='baseURI'
+							{
+								newLeafNode(otherlv_1, grammarAccess.getGenericDatasheetAccess().getBaseURIKeyword_0_0());
+							}
+							(
+								otherlv_2=':'
+								{
+									newLeafNode(otherlv_2, grammarAccess.getGenericDatasheetAccess().getColonKeyword_0_1());
+								}
+							)?
+							(
+								(
+									{
+										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getBaseURIEStringParserRuleCall_0_2_0());
+									}
+									lv_baseURI_3_0=ruleEString
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getGenericDatasheetRule());
+										}
+										set(
+											$current,
+											"baseURI",
+											lv_baseURI_3_0,
+											"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
+										afterParserOrEnumRuleCall();
+									}
+								)
+							)
+							))
+				{ 
+					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
+				}
+			)
+		)|
+		(
+			{getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 1)}?=>(
+				{
+					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 1);
+				}
+							({true}?=>(otherlv_4='shortDescrition'
+							{
+								newLeafNode(otherlv_4, grammarAccess.getGenericDatasheetAccess().getShortDescritionKeyword_1_0());
+							}
+							(
+								otherlv_5=':'
+								{
+									newLeafNode(otherlv_5, grammarAccess.getGenericDatasheetAccess().getColonKeyword_1_1());
+								}
+							)?
+							(
+								(
+									{
+										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getShortDescritionEStringParserRuleCall_1_2_0());
+									}
+									lv_shortDescrition_6_0=ruleEString
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getGenericDatasheetRule());
+										}
+										set(
+											$current,
+											"shortDescrition",
+											lv_shortDescrition_6_0,
+											"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
+										afterParserOrEnumRuleCall();
+									}
+								)
+							)
+							))
+				{ 
+					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
+				}
+			)
+		)|
+		(
+			{getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 2)}?=>(
+				{
+					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 2);
+				}
+							({true}?=>(otherlv_7='longDescription'
+							{
+								newLeafNode(otherlv_7, grammarAccess.getGenericDatasheetAccess().getLongDescriptionKeyword_2_0());
+							}
+							(
+								otherlv_8=':'
+								{
+									newLeafNode(otherlv_8, grammarAccess.getGenericDatasheetAccess().getColonKeyword_2_1());
+								}
+							)?
+							(
+								(
+									lv_longDescription_9_0=RULE_TEXT_BLOCK
+									{
+										newLeafNode(lv_longDescription_9_0, grammarAccess.getGenericDatasheetAccess().getLongDescriptionTEXT_BLOCKTerminalRuleCall_2_2_0());
+									}
+									{
+										if ($current==null) {
+											$current = createModelElement(grammarAccess.getGenericDatasheetRule());
+										}
+										setWithLastConsumed(
+											$current,
+											"longDescription",
+											lv_longDescription_9_0,
+											"org.xtext.base.genericDatasheet.GenericDatasheet.TEXT_BLOCK");
+									}
+								)
+							)
+							))
+				{ 
+					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
+				}
+			)
+		)|
+		(
+			{getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 3)}?=>(
+				{
+					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 3);
+				}
+							({true}?=>(otherlv_10='supplierDescription'
+							{
+								newLeafNode(otherlv_10, grammarAccess.getGenericDatasheetAccess().getSupplierDescriptionKeyword_3_0());
+							}
+							(
+								otherlv_11=':'
+								{
+									newLeafNode(otherlv_11, grammarAccess.getGenericDatasheetAccess().getColonKeyword_3_1());
+								}
+							)?
+							(
+								(
+									{
+										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getSupplierDescriptionEStringParserRuleCall_3_2_0());
+									}
+									lv_supplierDescription_12_0=ruleEString
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getGenericDatasheetRule());
+										}
+										set(
+											$current,
+											"supplierDescription",
+											lv_supplierDescription_12_0,
+											"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
+										afterParserOrEnumRuleCall();
+									}
+								)
+							)
+							))
+				{ 
+					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
+				}
+			)
+		)|
+		(
+			{getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 4)}?=>(
+				{
+					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 4);
+				}
+							({true}?=>(otherlv_13='homepage'
+							{
+								newLeafNode(otherlv_13, grammarAccess.getGenericDatasheetAccess().getHomepageKeyword_4_0());
+							}
+							(
+								otherlv_14=':'
+								{
+									newLeafNode(otherlv_14, grammarAccess.getGenericDatasheetAccess().getColonKeyword_4_1());
+								}
+							)?
+							(
+								(
+									{
+										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getHomepageEStringParserRuleCall_4_2_0());
+									}
+									lv_homepage_15_0=ruleEString
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getGenericDatasheetRule());
+										}
+										set(
+											$current,
+											"homepage",
+											lv_homepage_15_0,
+											"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
+										afterParserOrEnumRuleCall();
+									}
+								)
+							)
+							))
+				{ 
+					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
+				}
+			)
+		)|
+		(
+			{getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 5)}?=>(
+				{
+					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 5);
+				}
+							({true}?=>(otherlv_16='trl'
+							{
+								newLeafNode(otherlv_16, grammarAccess.getGenericDatasheetAccess().getTrlKeyword_5_0());
+							}
+							(
+								otherlv_17=':'
+								{
+									newLeafNode(otherlv_17, grammarAccess.getGenericDatasheetAccess().getColonKeyword_5_1());
+								}
+							)?
+							(
+								(
+									{
+										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getTrlTRLEnumRuleCall_5_2_0());
+									}
+									lv_trl_18_0=ruleTRL
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getGenericDatasheetRule());
+										}
+										set(
+											$current,
+											"trl",
+											lv_trl_18_0,
+											"org.xtext.base.genericDatasheet.GenericDatasheet.TRL");
+										afterParserOrEnumRuleCall();
+									}
+								)
+							)
+							))
+				{ 
+					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
+				}
+			)
+		)|
+		(
+			{getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 6)}?=>(
+				{
+					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 6);
+				}
+							({true}?=>(otherlv_19='license'
+							{
+								newLeafNode(otherlv_19, grammarAccess.getGenericDatasheetAccess().getLicenseKeyword_6_0());
+							}
+							(
+								otherlv_20=':'
+								{
+									newLeafNode(otherlv_20, grammarAccess.getGenericDatasheetAccess().getColonKeyword_6_1());
+								}
+							)?
+							(
+								(
+									{
+										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getLicenseAbstractLicenseParserRuleCall_6_2_0());
+									}
+									lv_license_21_0=ruleAbstractLicense
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getGenericDatasheetRule());
+										}
+										set(
+											$current,
+											"license",
+											lv_license_21_0,
+											"org.xtext.base.genericDatasheet.GenericDatasheet.AbstractLicense");
+										afterParserOrEnumRuleCall();
+									}
+								)
+							)
+							))
+				{ 
+					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
+				}
+			)
+		)
+				)+
+				{getUnorderedGroupHelper().canLeave(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup())}?
+			)
+		)
+			{ 
+			  getUnorderedGroupHelper().leave(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
+			}
 	)
 ;
 
@@ -618,7 +654,7 @@ ruleSpdxLicense returns [EObject current=null]
 						$current,
 						"licenseID",
 						lv_licenseID_2_0,
-						"org.xtext.component.componentDatasheet.ComponentDatasheet.EString");
+						"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -697,7 +733,7 @@ ruleProprietaryLicense returns [EObject current=null]
 												$current,
 												"name",
 												lv_name_6_0,
-												"org.xtext.component.componentDatasheet.ComponentDatasheet.EString");
+												"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
 											afterParserOrEnumRuleCall();
 										}
 									)
@@ -737,7 +773,7 @@ ruleProprietaryLicense returns [EObject current=null]
 												$current,
 												"fullText",
 												lv_fullText_9_0,
-												"org.xtext.component.componentDatasheet.ComponentDatasheet.EString");
+												"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
 											afterParserOrEnumRuleCall();
 										}
 									)
@@ -777,7 +813,7 @@ ruleProprietaryLicense returns [EObject current=null]
 												$current,
 												"url",
 												lv_url_12_0,
-												"org.xtext.component.componentDatasheet.ComponentDatasheet.EString");
+												"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
 											afterParserOrEnumRuleCall();
 										}
 									)

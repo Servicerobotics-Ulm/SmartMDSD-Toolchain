@@ -1467,12 +1467,13 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cPublicOperationModeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cPrivateOperationModeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cCommunicationServiceUsageRealizationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cSkillRealizationsRefParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//AbstractCoordinationElement coordination::AbstractCoordinationElement:
-		//	PublicOperationMode | PrivateOperationMode | CommunicationServiceUsageRealization;
+		//	PublicOperationMode | PrivateOperationMode | CommunicationServiceUsageRealization | SkillRealizationsRef;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//PublicOperationMode | PrivateOperationMode | CommunicationServiceUsageRealization
+		//PublicOperationMode | PrivateOperationMode | CommunicationServiceUsageRealization | SkillRealizationsRef
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//PublicOperationMode
@@ -1483,6 +1484,40 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		
 		//CommunicationServiceUsageRealization
 		public RuleCall getCommunicationServiceUsageRealizationParserRuleCall_2() { return cCommunicationServiceUsageRealizationParserRuleCall_2; }
+		
+		//SkillRealizationsRef
+		public RuleCall getSkillRealizationsRefParserRuleCall_3() { return cSkillRealizationsRefParserRuleCall_3; }
+	}
+	public class SkillRealizationsRefElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.SkillRealizationsRef");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSkillRealizationsRefKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSkillRealizationSetRefAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cSkillRealizationSetRefSkillRealizationSetCrossReference_1_0 = (CrossReference)cSkillRealizationSetRefAssignment_1.eContents().get(0);
+		private final RuleCall cSkillRealizationSetRefSkillRealizationSetFQNParserRuleCall_1_0_1 = (RuleCall)cSkillRealizationSetRefSkillRealizationSetCrossReference_1_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//SkillRealizationsRef coordination::SkillRealizationsRef:
+		//	'SkillRealizationsRef' skillRealizationSetRef=[skillRealization::SkillRealizationSet|FQN] ';'?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'SkillRealizationsRef' skillRealizationSetRef=[skillRealization::SkillRealizationSet|FQN] ';'?
+		public Group getGroup() { return cGroup; }
+		
+		//'SkillRealizationsRef'
+		public Keyword getSkillRealizationsRefKeyword_0() { return cSkillRealizationsRefKeyword_0; }
+		
+		//skillRealizationSetRef=[skillRealization::SkillRealizationSet|FQN]
+		public Assignment getSkillRealizationSetRefAssignment_1() { return cSkillRealizationSetRefAssignment_1; }
+		
+		//[skillRealization::SkillRealizationSet|FQN]
+		public CrossReference getSkillRealizationSetRefSkillRealizationSetCrossReference_1_0() { return cSkillRealizationSetRefSkillRealizationSetCrossReference_1_0; }
+		
+		//FQN
+		public RuleCall getSkillRealizationSetRefSkillRealizationSetFQNParserRuleCall_1_0_1() { return cSkillRealizationSetRefSkillRealizationSetFQNParserRuleCall_1_0_1; }
+		
+		//';'?
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 	public class CommunicationServiceUsageRealizationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.CommunicationServiceUsageRealization");
@@ -1789,6 +1824,7 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 	private final OpcUaStatusServerElements pOpcUaStatusServer;
 	private final CoordinationSlavePortElements pCoordinationSlavePort;
 	private final AbstractCoordinationElementElements pAbstractCoordinationElement;
+	private final SkillRealizationsRefElements pSkillRealizationsRef;
 	private final CommunicationServiceUsageRealizationElements pCommunicationServiceUsageRealization;
 	private final PublicOperationModeElements pPublicOperationMode;
 	private final PrivateOperationModeElements pPrivateOperationMode;
@@ -1842,6 +1878,7 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		this.pOpcUaStatusServer = new OpcUaStatusServerElements();
 		this.pCoordinationSlavePort = new CoordinationSlavePortElements();
 		this.pAbstractCoordinationElement = new AbstractCoordinationElementElements();
+		this.pSkillRealizationsRef = new SkillRealizationsRefElements();
 		this.pCommunicationServiceUsageRealization = new CommunicationServiceUsageRealizationElements();
 		this.pPublicOperationMode = new PublicOperationModeElements();
 		this.pPrivateOperationMode = new PrivateOperationModeElements();
@@ -2257,13 +2294,23 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//AbstractCoordinationElement coordination::AbstractCoordinationElement:
-	//	PublicOperationMode | PrivateOperationMode | CommunicationServiceUsageRealization;
+	//	PublicOperationMode | PrivateOperationMode | CommunicationServiceUsageRealization | SkillRealizationsRef;
 	public AbstractCoordinationElementElements getAbstractCoordinationElementAccess() {
 		return pAbstractCoordinationElement;
 	}
 	
 	public ParserRule getAbstractCoordinationElementRule() {
 		return getAbstractCoordinationElementAccess().getRule();
+	}
+	
+	//SkillRealizationsRef coordination::SkillRealizationsRef:
+	//	'SkillRealizationsRef' skillRealizationSetRef=[skillRealization::SkillRealizationSet|FQN] ';'?;
+	public SkillRealizationsRefElements getSkillRealizationsRefAccess() {
+		return pSkillRealizationsRef;
+	}
+	
+	public ParserRule getSkillRealizationsRefRule() {
+		return getSkillRealizationsRefAccess().getRule();
 	}
 	
 	//CommunicationServiceUsageRealization coordination::CommunicationServiceUsageRealization:

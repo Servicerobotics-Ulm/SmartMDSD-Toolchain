@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DomainModelsDatasheetGenerator
+Bundle-SymbolicName: org.xtend.domainModels.datasheet.generator;singleton:=true
+Bundle-Version: 3.7.0
+Bundle-Vendor: Servicerobotics Ulm
+Automatic-Module-Name: org.xtend.domainModels.datasheet.generator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.xtext.xbase.lib,
+ org.xtend.smartsoft.generator,
+ org.eclipse.core.resources,
+ com.google.inject,
+ org.eclipse.xtext.util,
+ org.eclipse.xtext.generator,
+ org.eclipse.xtext,
+ org.eclipse.core.commands,
+ org.eclipse.ui.workbench,
+ org.smartsoft.utils,
+ org.ecore.service.domainModelsDatasheet,
+ org.xtext.service.domainModelsDatasheet,
+ org.ecore.service.serviceDefinition,
+ org.xtext.service.serviceDefinition.ui,
+ org.xtext.service.communicationObject.ui

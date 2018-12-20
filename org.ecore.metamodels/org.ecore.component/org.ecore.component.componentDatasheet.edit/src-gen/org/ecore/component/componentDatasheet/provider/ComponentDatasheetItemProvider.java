@@ -46,28 +46,11 @@ public class ComponentDatasheetItemProvider extends GenericDatasheetItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTrlPropertyDescriptor(object);
 			addPurposeDescriptionPropertyDescriptor(object);
 			addHardwareRequirementDescriptionPropertyDescriptor(object);
 			addComponentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Trl feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTrlPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ComponentDatasheet_trl_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ComponentDatasheet_trl_feature",
-						"_UI_ComponentDatasheet_type"),
-				ComponentDatasheetPackage.Literals.COMPONENT_DATASHEET__TRL, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -164,7 +147,6 @@ public class ComponentDatasheetItemProvider extends GenericDatasheetItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentDatasheet.class)) {
-		case ComponentDatasheetPackage.COMPONENT_DATASHEET__TRL:
 		case ComponentDatasheetPackage.COMPONENT_DATASHEET__PURPOSE_DESCRIPTION:
 		case ComponentDatasheetPackage.COMPONENT_DATASHEET__HARDWARE_REQUIREMENT_DESCRIPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

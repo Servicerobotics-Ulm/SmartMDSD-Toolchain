@@ -28,6 +28,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.ecore.service.parameterDefinition.edit;visibility:=reexport,
  org.ecore.service.serviceDefinition;visibility:=reexport,
  org.ecore.service.serviceDefinition.edit;visibility:=reexport,
+ org.ecore.service.skillDefinition;visibility:=reexport,
+ org.ecore.service.skillDefinition.edit;visibility:=reexport,
+ org.ecore.behavior.skillRealization;visibility:=reexport,
+ org.ecore.behavior.skillRealization.edit;visibility:=reexport,
  org.ecore.base.stateMachine;visibility:=reexport,
  org.ecore.base.stateMachine.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

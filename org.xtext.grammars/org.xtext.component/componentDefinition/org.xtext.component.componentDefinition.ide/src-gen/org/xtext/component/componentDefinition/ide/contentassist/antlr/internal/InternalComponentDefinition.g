@@ -940,6 +940,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleSkillRealizationsRef
+entryRuleSkillRealizationsRef
+:
+{ before(grammarAccess.getSkillRealizationsRefRule()); }
+	 ruleSkillRealizationsRef
+{ after(grammarAccess.getSkillRealizationsRefRule()); } 
+	 EOF 
+;
+
+// Rule SkillRealizationsRef
+ruleSkillRealizationsRef 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getSkillRealizationsRefAccess().getGroup()); }
+		(rule__SkillRealizationsRef__Group__0)
+		{ after(grammarAccess.getSkillRealizationsRefAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRuleCommunicationServiceUsageRealization
 entryRuleCommunicationServiceUsageRealization
 :
@@ -1589,6 +1614,12 @@ rule__AbstractCoordinationElement__Alternatives
 		{ before(grammarAccess.getAbstractCoordinationElementAccess().getCommunicationServiceUsageRealizationParserRuleCall_2()); }
 		ruleCommunicationServiceUsageRealization
 		{ after(grammarAccess.getAbstractCoordinationElementAccess().getCommunicationServiceUsageRealizationParserRuleCall_2()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getAbstractCoordinationElementAccess().getSkillRealizationsRefParserRuleCall_3()); }
+		ruleSkillRealizationsRef
+		{ after(grammarAccess.getAbstractCoordinationElementAccess().getSkillRealizationsRefParserRuleCall_3()); }
 	)
 ;
 finally {
@@ -5450,6 +5481,87 @@ finally {
 }
 
 
+rule__SkillRealizationsRef__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SkillRealizationsRef__Group__0__Impl
+	rule__SkillRealizationsRef__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SkillRealizationsRef__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationsRefKeyword_0()); }
+	'SkillRealizationsRef'
+	{ after(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationsRefKeyword_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SkillRealizationsRef__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SkillRealizationsRef__Group__1__Impl
+	rule__SkillRealizationsRef__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SkillRealizationsRef__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationSetRefAssignment_1()); }
+	(rule__SkillRealizationsRef__SkillRealizationSetRefAssignment_1)
+	{ after(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationSetRefAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SkillRealizationsRef__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SkillRealizationsRef__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SkillRealizationsRef__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSkillRealizationsRefAccess().getSemicolonKeyword_2()); }
+	(';')?
+	{ after(grammarAccess.getSkillRealizationsRefAccess().getSemicolonKeyword_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 rule__CommunicationServiceUsageRealization__Group__0
 	@init {
 		int stackSize = keepStackSize();
@@ -8469,6 +8581,25 @@ rule__CoordinationSlavePort__ElementsAssignment_5
 		{ before(grammarAccess.getCoordinationSlavePortAccess().getElementsAbstractCoordinationElementParserRuleCall_5_0()); }
 		ruleAbstractCoordinationElement
 		{ after(grammarAccess.getCoordinationSlavePortAccess().getElementsAbstractCoordinationElementParserRuleCall_5_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SkillRealizationsRef__SkillRealizationSetRefAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationSetRefSkillRealizationSetCrossReference_1_0()); }
+		(
+			{ before(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationSetRefSkillRealizationSetFQNParserRuleCall_1_0_1()); }
+			ruleFQN
+			{ after(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationSetRefSkillRealizationSetFQNParserRuleCall_1_0_1()); }
+		)
+		{ after(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationSetRefSkillRealizationSetCrossReference_1_0()); }
 	)
 ;
 finally {

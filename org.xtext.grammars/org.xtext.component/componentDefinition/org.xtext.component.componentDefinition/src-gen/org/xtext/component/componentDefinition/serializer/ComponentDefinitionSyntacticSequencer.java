@@ -75,6 +75,7 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 	protected AbstractElementAlias match_PrivateOperationMode_SemicolonKeyword_2_q;
 	protected AbstractElementAlias match_RequestPortLink_SemicolonKeyword_2_q;
 	protected AbstractElementAlias match_ServiceRepoImport_SemicolonKeyword_2_q;
+	protected AbstractElementAlias match_SkillRealizationsRef_SemicolonKeyword_2_q;
 	protected AbstractElementAlias match_SupportedMiddleware_SemicolonKeyword_3_q;
 	
 	@Inject
@@ -94,6 +95,7 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 		match_PrivateOperationMode_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getPrivateOperationModeAccess().getSemicolonKeyword_2());
 		match_RequestPortLink_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getRequestPortLinkAccess().getSemicolonKeyword_2());
 		match_ServiceRepoImport_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getServiceRepoImportAccess().getSemicolonKeyword_2());
+		match_SkillRealizationsRef_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getSkillRealizationsRefAccess().getSemicolonKeyword_2());
 		match_SupportedMiddleware_SemicolonKeyword_3_q = new TokenAlias(false, true, grammarAccess.getSupportedMiddlewareAccess().getSemicolonKeyword_3());
 	}
 	
@@ -137,6 +139,8 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 				emit_RequestPortLink_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ServiceRepoImport_SemicolonKeyword_2_q.equals(syntax))
 				emit_ServiceRepoImport_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_SkillRealizationsRef_SemicolonKeyword_2_q.equals(syntax))
+				emit_SkillRealizationsRef_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_SupportedMiddleware_SemicolonKeyword_3_q.equals(syntax))
 				emit_SupportedMiddleware_SemicolonKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -306,6 +310,17 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 	 *     importedNamespace=FQNW (ambiguity) (rule end)
 	 */
 	protected void emit_ServiceRepoImport_SemicolonKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     skillRealizationSetRef=[SkillRealizationSet|FQN] (ambiguity) (rule end)
+	 */
+	protected void emit_SkillRealizationsRef_SemicolonKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

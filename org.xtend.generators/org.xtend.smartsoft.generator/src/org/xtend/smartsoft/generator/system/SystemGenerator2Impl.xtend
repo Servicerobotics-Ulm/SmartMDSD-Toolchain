@@ -63,6 +63,7 @@ import org.ecore.component.coordinationExtension.PublicOperationMode
 import org.ecore.component.seronetExtension.OpcUaDeviceClient
 import org.ecore.system.compArchSeronetExtension.OpcUaDeviceClientInstance
 import org.ecore.service.roboticMiddleware.ACE_SmartSoft
+import org.eclipse.core.resources.ResourcesPlugin
 
 class SystemGenerator2Impl extends AbstractGenerator {
 	
@@ -71,12 +72,47 @@ class SystemGenerator2Impl extends AbstractGenerator {
 	
 	override doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		for(model: resource.allContents.toIterable.filter(typeof(SystemComponentArchitecture))) {
+			fsa.generateFile("CMakeLists.txt", ExtendedOutputConfigurationProvider::SMARTSOFT_OUTPUT, model.compileCMakeLists)
+			fsa.generateFile("BuildExternalComponents.cmake", ExtendedOutputConfigurationProvider::SRC_GEN_SYS_CONFIG, model.compileBuildExternalComponents)
 			for(component: model.components) {
 				fsa.generateFile(component.name+".ini", ExtendedOutputConfigurationProvider::SRC_GEN_SYS_CONFIG, component.compileIniFile)
 			}
 		}
 	}
 	
+	def compileCMakeLists(SystemComponentArchitecture system)
+	'''
+	CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+	
+	INCLUDE(src-gen/system/BuildExternalComponents.cmake)
+	'''
+	
+	def compileBuildExternalComponents(SystemComponentArchitecture system)
+	'''
+	CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+	
+	INCLUDE(ExternalProject)
+	
+	«FOR componentInstance: system.components»
+	ExternalProject_Add(«componentInstance.name»External
+		PREFIX «componentInstance.name»
+		SOURCE_DIR "«componentInstance.smartSoftFolder»"
+		BINARY_DIR "«componentInstance.smartSoftFolder»/build"
+		INSTALL_COMMAND ""
+	)
+	
+	«ENDFOR»
+	'''
+	
+	def String getSmartSoftFolder(ComponentInstance componentInstance)
+	{
+		val proj = ResourcesPlugin.getWorkspace().getRoot().getProject(componentInstance.component.name)
+		val smartSoftFolder = proj.getFolder("smartsoft")
+		if(smartSoftFolder.exists) {
+			return smartSoftFolder.location.toOSString
+		}
+		return ""
+	}
 	
 	def compileIniFile(ComponentInstance compInstance)
 	'''

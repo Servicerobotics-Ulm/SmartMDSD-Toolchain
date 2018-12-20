@@ -61,15 +61,15 @@ import org.xtext.component.componentDatasheet.services.ComponentDatasheetGrammar
 public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ComponentDatasheetGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_ComponentDatasheet_ColonKeyword_3_0_1_q;
-	protected AbstractElementAlias match_ComponentDatasheet_ColonKeyword_3_1_1_q;
-	protected AbstractElementAlias match_ComponentDatasheet_ColonKeyword_3_2_1_q;
-	protected AbstractElementAlias match_ComponentDatasheet_ColonKeyword_3_3_1_q;
-	protected AbstractElementAlias match_ComponentDatasheet_ColonKeyword_3_4_1_q;
-	protected AbstractElementAlias match_ComponentDatasheet_ColonKeyword_3_5_1_q;
-	protected AbstractElementAlias match_ComponentDatasheet_ColonKeyword_3_6_1_q;
-	protected AbstractElementAlias match_ComponentDatasheet_ColonKeyword_3_7_1_q;
-	protected AbstractElementAlias match_ComponentDatasheet_ColonKeyword_3_8_1_q;
+	protected AbstractElementAlias match_ComponentDatasheet_ColonKeyword_4_0_1_q;
+	protected AbstractElementAlias match_ComponentDatasheet_ColonKeyword_4_1_1_q;
+	protected AbstractElementAlias match_GenericDatasheet_ColonKeyword_0_1_q;
+	protected AbstractElementAlias match_GenericDatasheet_ColonKeyword_1_1_q;
+	protected AbstractElementAlias match_GenericDatasheet_ColonKeyword_2_1_q;
+	protected AbstractElementAlias match_GenericDatasheet_ColonKeyword_3_1_q;
+	protected AbstractElementAlias match_GenericDatasheet_ColonKeyword_4_1_q;
+	protected AbstractElementAlias match_GenericDatasheet_ColonKeyword_5_1_q;
+	protected AbstractElementAlias match_GenericDatasheet_ColonKeyword_6_1_q;
 	protected AbstractElementAlias match_ProprietaryLicense_ColonKeyword_3_0_1_q;
 	protected AbstractElementAlias match_ProprietaryLicense_ColonKeyword_3_1_1_q;
 	protected AbstractElementAlias match_ProprietaryLicense_ColonKeyword_3_2_1_q;
@@ -77,15 +77,15 @@ public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSeque
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ComponentDatasheetGrammarAccess) access;
-		match_ComponentDatasheet_ColonKeyword_3_0_1_q = new TokenAlias(false, true, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_0_1());
-		match_ComponentDatasheet_ColonKeyword_3_1_1_q = new TokenAlias(false, true, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_1_1());
-		match_ComponentDatasheet_ColonKeyword_3_2_1_q = new TokenAlias(false, true, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_2_1());
-		match_ComponentDatasheet_ColonKeyword_3_3_1_q = new TokenAlias(false, true, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_3_1());
-		match_ComponentDatasheet_ColonKeyword_3_4_1_q = new TokenAlias(false, true, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_4_1());
-		match_ComponentDatasheet_ColonKeyword_3_5_1_q = new TokenAlias(false, true, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_5_1());
-		match_ComponentDatasheet_ColonKeyword_3_6_1_q = new TokenAlias(false, true, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_6_1());
-		match_ComponentDatasheet_ColonKeyword_3_7_1_q = new TokenAlias(false, true, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_7_1());
-		match_ComponentDatasheet_ColonKeyword_3_8_1_q = new TokenAlias(false, true, grammarAccess.getComponentDatasheetAccess().getColonKeyword_3_8_1());
+		match_ComponentDatasheet_ColonKeyword_4_0_1_q = new TokenAlias(false, true, grammarAccess.getComponentDatasheetAccess().getColonKeyword_4_0_1());
+		match_ComponentDatasheet_ColonKeyword_4_1_1_q = new TokenAlias(false, true, grammarAccess.getComponentDatasheetAccess().getColonKeyword_4_1_1());
+		match_GenericDatasheet_ColonKeyword_0_1_q = new TokenAlias(false, true, grammarAccess.getGenericDatasheetAccess().getColonKeyword_0_1());
+		match_GenericDatasheet_ColonKeyword_1_1_q = new TokenAlias(false, true, grammarAccess.getGenericDatasheetAccess().getColonKeyword_1_1());
+		match_GenericDatasheet_ColonKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getGenericDatasheetAccess().getColonKeyword_2_1());
+		match_GenericDatasheet_ColonKeyword_3_1_q = new TokenAlias(false, true, grammarAccess.getGenericDatasheetAccess().getColonKeyword_3_1());
+		match_GenericDatasheet_ColonKeyword_4_1_q = new TokenAlias(false, true, grammarAccess.getGenericDatasheetAccess().getColonKeyword_4_1());
+		match_GenericDatasheet_ColonKeyword_5_1_q = new TokenAlias(false, true, grammarAccess.getGenericDatasheetAccess().getColonKeyword_5_1());
+		match_GenericDatasheet_ColonKeyword_6_1_q = new TokenAlias(false, true, grammarAccess.getGenericDatasheetAccess().getColonKeyword_6_1());
 		match_ProprietaryLicense_ColonKeyword_3_0_1_q = new TokenAlias(false, true, grammarAccess.getProprietaryLicenseAccess().getColonKeyword_3_0_1());
 		match_ProprietaryLicense_ColonKeyword_3_1_1_q = new TokenAlias(false, true, grammarAccess.getProprietaryLicenseAccess().getColonKeyword_3_1_1());
 		match_ProprietaryLicense_ColonKeyword_3_2_1_q = new TokenAlias(false, true, grammarAccess.getProprietaryLicenseAccess().getColonKeyword_3_2_1());
@@ -103,24 +103,24 @@ public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSeque
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_ComponentDatasheet_ColonKeyword_3_0_1_q.equals(syntax))
-				emit_ComponentDatasheet_ColonKeyword_3_0_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ComponentDatasheet_ColonKeyword_3_1_1_q.equals(syntax))
-				emit_ComponentDatasheet_ColonKeyword_3_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ComponentDatasheet_ColonKeyword_3_2_1_q.equals(syntax))
-				emit_ComponentDatasheet_ColonKeyword_3_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ComponentDatasheet_ColonKeyword_3_3_1_q.equals(syntax))
-				emit_ComponentDatasheet_ColonKeyword_3_3_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ComponentDatasheet_ColonKeyword_3_4_1_q.equals(syntax))
-				emit_ComponentDatasheet_ColonKeyword_3_4_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ComponentDatasheet_ColonKeyword_3_5_1_q.equals(syntax))
-				emit_ComponentDatasheet_ColonKeyword_3_5_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ComponentDatasheet_ColonKeyword_3_6_1_q.equals(syntax))
-				emit_ComponentDatasheet_ColonKeyword_3_6_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ComponentDatasheet_ColonKeyword_3_7_1_q.equals(syntax))
-				emit_ComponentDatasheet_ColonKeyword_3_7_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ComponentDatasheet_ColonKeyword_3_8_1_q.equals(syntax))
-				emit_ComponentDatasheet_ColonKeyword_3_8_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_ComponentDatasheet_ColonKeyword_4_0_1_q.equals(syntax))
+				emit_ComponentDatasheet_ColonKeyword_4_0_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ComponentDatasheet_ColonKeyword_4_1_1_q.equals(syntax))
+				emit_ComponentDatasheet_ColonKeyword_4_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_GenericDatasheet_ColonKeyword_0_1_q.equals(syntax))
+				emit_GenericDatasheet_ColonKeyword_0_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_GenericDatasheet_ColonKeyword_1_1_q.equals(syntax))
+				emit_GenericDatasheet_ColonKeyword_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_GenericDatasheet_ColonKeyword_2_1_q.equals(syntax))
+				emit_GenericDatasheet_ColonKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_GenericDatasheet_ColonKeyword_3_1_q.equals(syntax))
+				emit_GenericDatasheet_ColonKeyword_3_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_GenericDatasheet_ColonKeyword_4_1_q.equals(syntax))
+				emit_GenericDatasheet_ColonKeyword_4_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_GenericDatasheet_ColonKeyword_5_1_q.equals(syntax))
+				emit_GenericDatasheet_ColonKeyword_5_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_GenericDatasheet_ColonKeyword_6_1_q.equals(syntax))
+				emit_GenericDatasheet_ColonKeyword_6_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ProprietaryLicense_ColonKeyword_3_0_1_q.equals(syntax))
 				emit_ProprietaryLicense_ColonKeyword_3_0_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ProprietaryLicense_ColonKeyword_3_1_1_q.equals(syntax))
@@ -131,126 +131,6 @@ public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSeque
 		}
 	}
 
-	/**
-	 * Ambiguous syntax:
-	 *     ':'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     baseURI=EString 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     component=[ComponentDefinition|ID] '{' 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     hardwareRequirementDescription=EString 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     homepage=EString 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     license=AbstractLicense 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     longDescription=TEXT_BLOCK 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     purposeDescription=EString 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     shortDescrition=EString 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     supplierDescription=EString 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     trl=TRL 'shortDescrition' (ambiguity) shortDescrition=EString
-	 */
-	protected void emit_ComponentDatasheet_ColonKeyword_3_0_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ':'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     baseURI=EString 'baseURI' (ambiguity) baseURI=EString
-	 *     component=[ComponentDefinition|ID] '{' 'baseURI' (ambiguity) baseURI=EString
-	 *     hardwareRequirementDescription=EString 'baseURI' (ambiguity) baseURI=EString
-	 *     homepage=EString 'baseURI' (ambiguity) baseURI=EString
-	 *     license=AbstractLicense 'baseURI' (ambiguity) baseURI=EString
-	 *     longDescription=TEXT_BLOCK 'baseURI' (ambiguity) baseURI=EString
-	 *     purposeDescription=EString 'baseURI' (ambiguity) baseURI=EString
-	 *     shortDescrition=EString 'baseURI' (ambiguity) baseURI=EString
-	 *     supplierDescription=EString 'baseURI' (ambiguity) baseURI=EString
-	 *     trl=TRL 'baseURI' (ambiguity) baseURI=EString
-	 */
-	protected void emit_ComponentDatasheet_ColonKeyword_3_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ':'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     baseURI=EString 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
-	 *     component=[ComponentDefinition|ID] '{' 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
-	 *     hardwareRequirementDescription=EString 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
-	 *     homepage=EString 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
-	 *     license=AbstractLicense 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
-	 *     longDescription=TEXT_BLOCK 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
-	 *     purposeDescription=EString 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
-	 *     shortDescrition=EString 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
-	 *     supplierDescription=EString 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
-	 *     trl=TRL 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
-	 */
-	protected void emit_ComponentDatasheet_ColonKeyword_3_2_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ':'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     baseURI=EString 'supplierDescription' (ambiguity) supplierDescription=EString
-	 *     component=[ComponentDefinition|ID] '{' 'supplierDescription' (ambiguity) supplierDescription=EString
-	 *     hardwareRequirementDescription=EString 'supplierDescription' (ambiguity) supplierDescription=EString
-	 *     homepage=EString 'supplierDescription' (ambiguity) supplierDescription=EString
-	 *     license=AbstractLicense 'supplierDescription' (ambiguity) supplierDescription=EString
-	 *     longDescription=TEXT_BLOCK 'supplierDescription' (ambiguity) supplierDescription=EString
-	 *     purposeDescription=EString 'supplierDescription' (ambiguity) supplierDescription=EString
-	 *     shortDescrition=EString 'supplierDescription' (ambiguity) supplierDescription=EString
-	 *     supplierDescription=EString 'supplierDescription' (ambiguity) supplierDescription=EString
-	 *     trl=TRL 'supplierDescription' (ambiguity) supplierDescription=EString
-	 */
-	protected void emit_ComponentDatasheet_ColonKeyword_3_3_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ':'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     baseURI=EString 'homepage' (ambiguity) homepage=EString
-	 *     component=[ComponentDefinition|ID] '{' 'homepage' (ambiguity) homepage=EString
-	 *     hardwareRequirementDescription=EString 'homepage' (ambiguity) homepage=EString
-	 *     homepage=EString 'homepage' (ambiguity) homepage=EString
-	 *     license=AbstractLicense 'homepage' (ambiguity) homepage=EString
-	 *     longDescription=TEXT_BLOCK 'homepage' (ambiguity) homepage=EString
-	 *     purposeDescription=EString 'homepage' (ambiguity) homepage=EString
-	 *     shortDescrition=EString 'homepage' (ambiguity) homepage=EString
-	 *     supplierDescription=EString 'homepage' (ambiguity) homepage=EString
-	 *     trl=TRL 'homepage' (ambiguity) homepage=EString
-	 */
-	protected void emit_ComponentDatasheet_ColonKeyword_3_4_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ':'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     baseURI=EString 'trl' (ambiguity) trl=TRL
-	 *     component=[ComponentDefinition|ID] '{' 'trl' (ambiguity) trl=TRL
-	 *     hardwareRequirementDescription=EString 'trl' (ambiguity) trl=TRL
-	 *     homepage=EString 'trl' (ambiguity) trl=TRL
-	 *     license=AbstractLicense 'trl' (ambiguity) trl=TRL
-	 *     longDescription=TEXT_BLOCK 'trl' (ambiguity) trl=TRL
-	 *     purposeDescription=EString 'trl' (ambiguity) trl=TRL
-	 *     shortDescrition=EString 'trl' (ambiguity) trl=TRL
-	 *     supplierDescription=EString 'trl' (ambiguity) trl=TRL
-	 *     trl=TRL 'trl' (ambiguity) trl=TRL
-	 */
-	protected void emit_ComponentDatasheet_ColonKeyword_3_5_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 	/**
 	 * Ambiguous syntax:
 	 *     ':'?
@@ -267,7 +147,7 @@ public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSeque
 	 *     supplierDescription=EString 'purposeDescription' (ambiguity) purposeDescription=EString
 	 *     trl=TRL 'purposeDescription' (ambiguity) purposeDescription=EString
 	 */
-	protected void emit_ComponentDatasheet_ColonKeyword_3_6_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ComponentDatasheet_ColonKeyword_4_0_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -287,7 +167,115 @@ public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSeque
 	 *     supplierDescription=EString 'hardwareRequirementDescription' (ambiguity) hardwareRequirementDescription=EString
 	 *     trl=TRL 'hardwareRequirementDescription' (ambiguity) hardwareRequirementDescription=EString
 	 */
-	protected void emit_ComponentDatasheet_ColonKeyword_3_7_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ComponentDatasheet_ColonKeyword_4_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ':'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     baseURI=EString 'baseURI' (ambiguity) baseURI=EString
+	 *     component=[ComponentDefinition|ID] '{' 'baseURI' (ambiguity) baseURI=EString
+	 *     homepage=EString 'baseURI' (ambiguity) baseURI=EString
+	 *     license=AbstractLicense 'baseURI' (ambiguity) baseURI=EString
+	 *     longDescription=TEXT_BLOCK 'baseURI' (ambiguity) baseURI=EString
+	 *     shortDescrition=EString 'baseURI' (ambiguity) baseURI=EString
+	 *     supplierDescription=EString 'baseURI' (ambiguity) baseURI=EString
+	 *     trl=TRL 'baseURI' (ambiguity) baseURI=EString
+	 */
+	protected void emit_GenericDatasheet_ColonKeyword_0_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ':'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     baseURI=EString 'shortDescrition' (ambiguity) shortDescrition=EString
+	 *     component=[ComponentDefinition|ID] '{' 'shortDescrition' (ambiguity) shortDescrition=EString
+	 *     homepage=EString 'shortDescrition' (ambiguity) shortDescrition=EString
+	 *     license=AbstractLicense 'shortDescrition' (ambiguity) shortDescrition=EString
+	 *     longDescription=TEXT_BLOCK 'shortDescrition' (ambiguity) shortDescrition=EString
+	 *     shortDescrition=EString 'shortDescrition' (ambiguity) shortDescrition=EString
+	 *     supplierDescription=EString 'shortDescrition' (ambiguity) shortDescrition=EString
+	 *     trl=TRL 'shortDescrition' (ambiguity) shortDescrition=EString
+	 */
+	protected void emit_GenericDatasheet_ColonKeyword_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ':'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     baseURI=EString 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
+	 *     component=[ComponentDefinition|ID] '{' 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
+	 *     homepage=EString 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
+	 *     license=AbstractLicense 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
+	 *     longDescription=TEXT_BLOCK 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
+	 *     shortDescrition=EString 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
+	 *     supplierDescription=EString 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
+	 *     trl=TRL 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
+	 */
+	protected void emit_GenericDatasheet_ColonKeyword_2_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ':'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     baseURI=EString 'supplierDescription' (ambiguity) supplierDescription=EString
+	 *     component=[ComponentDefinition|ID] '{' 'supplierDescription' (ambiguity) supplierDescription=EString
+	 *     homepage=EString 'supplierDescription' (ambiguity) supplierDescription=EString
+	 *     license=AbstractLicense 'supplierDescription' (ambiguity) supplierDescription=EString
+	 *     longDescription=TEXT_BLOCK 'supplierDescription' (ambiguity) supplierDescription=EString
+	 *     shortDescrition=EString 'supplierDescription' (ambiguity) supplierDescription=EString
+	 *     supplierDescription=EString 'supplierDescription' (ambiguity) supplierDescription=EString
+	 *     trl=TRL 'supplierDescription' (ambiguity) supplierDescription=EString
+	 */
+	protected void emit_GenericDatasheet_ColonKeyword_3_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ':'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     baseURI=EString 'homepage' (ambiguity) homepage=EString
+	 *     component=[ComponentDefinition|ID] '{' 'homepage' (ambiguity) homepage=EString
+	 *     homepage=EString 'homepage' (ambiguity) homepage=EString
+	 *     license=AbstractLicense 'homepage' (ambiguity) homepage=EString
+	 *     longDescription=TEXT_BLOCK 'homepage' (ambiguity) homepage=EString
+	 *     shortDescrition=EString 'homepage' (ambiguity) homepage=EString
+	 *     supplierDescription=EString 'homepage' (ambiguity) homepage=EString
+	 *     trl=TRL 'homepage' (ambiguity) homepage=EString
+	 */
+	protected void emit_GenericDatasheet_ColonKeyword_4_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ':'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     baseURI=EString 'trl' (ambiguity) trl=TRL
+	 *     component=[ComponentDefinition|ID] '{' 'trl' (ambiguity) trl=TRL
+	 *     homepage=EString 'trl' (ambiguity) trl=TRL
+	 *     license=AbstractLicense 'trl' (ambiguity) trl=TRL
+	 *     longDescription=TEXT_BLOCK 'trl' (ambiguity) trl=TRL
+	 *     shortDescrition=EString 'trl' (ambiguity) trl=TRL
+	 *     supplierDescription=EString 'trl' (ambiguity) trl=TRL
+	 *     trl=TRL 'trl' (ambiguity) trl=TRL
+	 */
+	protected void emit_GenericDatasheet_ColonKeyword_5_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -298,16 +286,14 @@ public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSeque
 	 * This ambiguous syntax occurs at:
 	 *     baseURI=EString 'license' (ambiguity) license=AbstractLicense
 	 *     component=[ComponentDefinition|ID] '{' 'license' (ambiguity) license=AbstractLicense
-	 *     hardwareRequirementDescription=EString 'license' (ambiguity) license=AbstractLicense
 	 *     homepage=EString 'license' (ambiguity) license=AbstractLicense
 	 *     license=AbstractLicense 'license' (ambiguity) license=AbstractLicense
 	 *     longDescription=TEXT_BLOCK 'license' (ambiguity) license=AbstractLicense
-	 *     purposeDescription=EString 'license' (ambiguity) license=AbstractLicense
 	 *     shortDescrition=EString 'license' (ambiguity) license=AbstractLicense
 	 *     supplierDescription=EString 'license' (ambiguity) license=AbstractLicense
 	 *     trl=TRL 'license' (ambiguity) license=AbstractLicense
 	 */
-	protected void emit_ComponentDatasheet_ColonKeyword_3_8_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_GenericDatasheet_ColonKeyword_6_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -204,7 +204,13 @@ public class ServiceDefinitionSemanticSequencer extends AbstractDelegatingSemant
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         (statePattern=StatePattern | parameterPattern=ParameterPattern | monitoringPattern=MonitoringPattern | wiringPattern=DynamicWiringPattern)* 
+	 *         (
+	 *             purposeDescription=EString | 
+	 *             statePattern=StatePattern | 
+	 *             parameterPattern=ParameterPattern | 
+	 *             monitoringPattern=MonitoringPattern | 
+	 *             wiringPattern=DynamicWiringPattern
+	 *         )* 
 	 *         services+=CommunicationServiceUsage* 
 	 *         properties+=ServiceProperty*
 	 *     )
@@ -246,7 +252,7 @@ public class ServiceDefinitionSemanticSequencer extends AbstractDelegatingSemant
 	 *     ForkingServiceDefinition returns ForkingServiceDefinition
 	 *
 	 * Constraint:
-	 *     (name=ID pattern=ForkingPatternInstance properties+=ServiceProperty*)
+	 *     (name=ID pattern=ForkingPatternInstance purposeDescription=EString? properties+=ServiceProperty*)
 	 */
 	protected void sequence_ForkingServiceDefinition(ISerializationContext context, ForkingServiceDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -260,7 +266,7 @@ public class ServiceDefinitionSemanticSequencer extends AbstractDelegatingSemant
 	 *     JoyningServiceDefinition returns JoiningServiceDefinition
 	 *
 	 * Constraint:
-	 *     (name=ID pattern=JoiningPatternInstance properties+=ServiceProperty*)
+	 *     (name=ID pattern=JoiningPatternInstance purposeDescription=EString? properties+=ServiceProperty*)
 	 */
 	protected void sequence_JoyningServiceDefinition(ISerializationContext context, JoiningServiceDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -336,7 +342,7 @@ public class ServiceDefinitionSemanticSequencer extends AbstractDelegatingSemant
 	 *     RequestAnswerServiceDefinition returns RequestAnswerServiceDefinition
 	 *
 	 * Constraint:
-	 *     (name=ID pattern=RequestAnswerPattern properties+=ServiceProperty*)
+	 *     (name=ID pattern=RequestAnswerPattern purposeDescription=EString? properties+=ServiceProperty*)
 	 */
 	protected void sequence_RequestAnswerServiceDefinition(ISerializationContext context, RequestAnswerServiceDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

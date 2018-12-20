@@ -52,18 +52,16 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.ecore.base.genericDatasheet.GenericDatasheetPackage;
 import org.ecore.base.genericDatasheet.ProprietaryLicense;
 import org.ecore.base.genericDatasheet.SpdxLicense;
 import org.ecore.component.componentDatasheet.ComponentDatasheet;
 import org.ecore.component.componentDatasheet.ComponentDatasheetPackage;
+import org.xtext.base.genericDatasheet.serializer.GenericDatasheetSemanticSequencer;
 import org.xtext.component.componentDatasheet.services.ComponentDatasheetGrammarAccess;
 
 @SuppressWarnings("all")
-public class ComponentDatasheetSemanticSequencer extends AbstractDelegatingSemanticSequencer {
+public class ComponentDatasheetSemanticSequencer extends GenericDatasheetSemanticSequencer {
 
 	@Inject
 	private ComponentDatasheetGrammarAccess grammarAccess;
@@ -77,7 +75,7 @@ public class ComponentDatasheetSemanticSequencer extends AbstractDelegatingSeman
 		if (epackage == ComponentDatasheetPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case ComponentDatasheetPackage.COMPONENT_DATASHEET:
-				sequence_ComponentDatasheet(context, (ComponentDatasheet) semanticObject); 
+				sequence_ComponentDatasheet_GenericDatasheet(context, (ComponentDatasheet) semanticObject); 
 				return; 
 			}
 		else if (epackage == GenericDatasheetPackage.eINSTANCE)
@@ -101,52 +99,20 @@ public class ComponentDatasheetSemanticSequencer extends AbstractDelegatingSeman
 	 *     (
 	 *         component=[ComponentDefinition|ID] 
 	 *         (
-	 *             shortDescrition=EString | 
 	 *             baseURI=EString | 
+	 *             shortDescrition=EString | 
 	 *             longDescription=TEXT_BLOCK | 
 	 *             supplierDescription=EString | 
 	 *             homepage=EString | 
 	 *             trl=TRL | 
-	 *             purposeDescription=EString | 
-	 *             hardwareRequirementDescription=EString | 
 	 *             license=AbstractLicense
-	 *         )*
+	 *         )* 
+	 *         purposeDescription=EString? 
+	 *         (hardwareRequirementDescription=EString? purposeDescription=EString?)*
 	 *     )
 	 */
-	protected void sequence_ComponentDatasheet(ISerializationContext context, ComponentDatasheet semanticObject) {
+	protected void sequence_ComponentDatasheet_GenericDatasheet(ISerializationContext context, ComponentDatasheet semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     AbstractLicense returns ProprietaryLicense
-	 *     ProprietaryLicense returns ProprietaryLicense
-	 *
-	 * Constraint:
-	 *     (name=EString | fullText=EString | url=EString)*
-	 */
-	protected void sequence_ProprietaryLicense(ISerializationContext context, ProprietaryLicense semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     AbstractLicense returns SpdxLicense
-	 *     SpdxLicense returns SpdxLicense
-	 *
-	 * Constraint:
-	 *     licenseID=EString
-	 */
-	protected void sequence_SpdxLicense(ISerializationContext context, SpdxLicense semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GenericDatasheetPackage.Literals.SPDX_LICENSE__LICENSE_ID) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GenericDatasheetPackage.Literals.SPDX_LICENSE__LICENSE_ID));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSpdxLicenseAccess().getLicenseIDEStringParserRuleCall_2_0(), semanticObject.getLicenseID());
-		feeder.finish();
 	}
 	
 	

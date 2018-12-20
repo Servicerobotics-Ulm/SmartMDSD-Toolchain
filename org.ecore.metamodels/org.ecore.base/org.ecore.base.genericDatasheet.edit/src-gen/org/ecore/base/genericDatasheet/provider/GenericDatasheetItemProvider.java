@@ -62,6 +62,7 @@ public class GenericDatasheetItemProvider extends ItemProviderAdapter implements
 			addSupplierDescriptionPropertyDescriptor(object);
 			addHomepagePropertyDescriptor(object);
 			addBaseURIPropertyDescriptor(object);
+			addTrlPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -147,6 +148,22 @@ public class GenericDatasheetItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
+	 * This adds a property descriptor for the Trl feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTrlPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_GenericDatasheet_trl_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_GenericDatasheet_trl_feature",
+								"_UI_GenericDatasheet_type"),
+						GenericDatasheetPackage.Literals.GENERIC_DATASHEET__TRL, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -227,6 +244,7 @@ public class GenericDatasheetItemProvider extends ItemProviderAdapter implements
 		case GenericDatasheetPackage.GENERIC_DATASHEET__SUPPLIER_DESCRIPTION:
 		case GenericDatasheetPackage.GENERIC_DATASHEET__HOMEPAGE:
 		case GenericDatasheetPackage.GENERIC_DATASHEET__BASE_URI:
+		case GenericDatasheetPackage.GENERIC_DATASHEET__TRL:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case GenericDatasheetPackage.GENERIC_DATASHEET__LICENSE:

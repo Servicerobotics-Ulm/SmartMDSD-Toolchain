@@ -45,12 +45,10 @@
 package org.xtext.component.componentDatasheet.validation
 
 import org.eclipse.xtext.validation.Check
-import org.ecore.base.genericDatasheet.SpdxLicense
 import java.net.URL
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.io.IOException
-import org.ecore.base.genericDatasheet.GenericDatasheetPackage
 import org.ecore.component.componentDatasheet.ComponentDatasheet
 import org.ecore.component.componentDatasheet.ComponentDatasheetPackage
 
@@ -61,7 +59,6 @@ import org.ecore.component.componentDatasheet.ComponentDatasheetPackage
  */
 class ComponentDatasheetValidator extends AbstractComponentDatasheetValidator {
 	
-	public static val INVALID_SPDX_ID = 'invalidSpdxId'
 	public static val INVALID_PURPOSE = 'invalidPurpose'
 	
 //	public static val INVALID_NAME = 'invalidName'
@@ -75,36 +72,6 @@ class ComponentDatasheetValidator extends AbstractComponentDatasheetValidator {
 //		}
 //	}
 	
-	
-	@Check
-	def checkSpdxId(SpdxLicense license) {
-		var URL url;
-		var validId = false;
-		try {
-		    url = new URL("platform:/plugin/org.xtext.component.componentDatasheet/spdx-licenses.txt");
-		    val inputStream = url.openConnection().getInputStream();
-		    val in = new BufferedReader(new InputStreamReader(inputStream));
-		    var String inputLine;
-		 
-		    while ((inputLine = in.readLine()) !== null) {
-		    	if(license.licenseID==inputLine) {
-		    		validId = true;
-		    	}
-		    }
-		 
-		    in.close();
-		 
-		} catch (IOException e) {
-		    e.printStackTrace();
-		}
-		
-		if(validId == false) {
-			warning("Invalid SPDX id, see platform:/plugin/org.xtext.component.componentDatasheet/spdx-licenses.txt for valid definitions.",
-				GenericDatasheetPackage.Literals.SPDX_LICENSE__LICENSE_ID,
-				INVALID_SPDX_ID
-			)
-		}
-	}
 	
 	@Check
 	def checkPurpose(ComponentDatasheet ds) {

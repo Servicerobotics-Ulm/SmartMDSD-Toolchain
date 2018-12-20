@@ -172,6 +172,10 @@ public class CoordinationSlavePortItemProvider extends NamedComponentElementItem
 		newChildDescriptors
 				.add(createChildParameter(CoordinationExtensionPackage.Literals.COORDINATION_SLAVE_PORT__ELEMENTS,
 						CoordinationExtensionFactory.eINSTANCE.createCommunicationServiceUsageRealization()));
+
+		newChildDescriptors
+				.add(createChildParameter(CoordinationExtensionPackage.Literals.COORDINATION_SLAVE_PORT__ELEMENTS,
+						CoordinationExtensionFactory.eINSTANCE.createSkillRealizationsRef()));
 	}
 
 }

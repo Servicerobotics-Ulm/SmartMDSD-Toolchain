@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.service.skillDefinition.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.service.skillDefinition.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.xtext.service.skillDefinition,
+ org.ecore.service.skillDefinition,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime,
+ org.xtext.base.basicAttributes
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.service.skillDefinition.ide.contentassist.antlr.internal,
+ org.xtext.service.skillDefinition.ide.contentassist.antlr
+

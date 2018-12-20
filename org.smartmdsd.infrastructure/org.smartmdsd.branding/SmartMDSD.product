@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="SmartMDSD Toolchain" uid="SmartMDSD" id="org.smartmdsd.branding.product" application="org.eclipse.ui.ide.workbench" version="3.7.0" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="/org.smartmdsd.branding/icons/about.png"/>
+      <text>
+         SmartMDSD Toolchain v3 for Robotics Software Development
+
+(c) Copyright Servicerobotics Ulm Research Center
+
+Alex Lotz
+Dennis Stampfer
+Matthias Lutz
+Christian schlegel
+
+Visit http://www.servicerobotik-ulm.de for further information.
+
+The SmartMDSD Toolchain realizes composition structures defined by the European Initiative RobMoSys. Visit https://robmosys.eu and https://robmosys.eu/wiki for further information.
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/org.smartmdsd.branding/icons/logo16.png" i32="/org.smartmdsd.branding/icons/logo32.png" i48="/org.smartmdsd.branding/icons/logo48.png" i64="/org.smartmdsd.branding/icons/logo64.png" i128="/org.smartmdsd.branding/icons/logo128.png" i256="/org.smartmdsd.branding/icons/logo256.png"/>
+
+   <splash
+      location="org.smartmdsd.branding"
+      startupProgressRect="5,275,445,15"
+      startupMessageRect="7,252,445,20"
+      startupForegroundColor="000000" />
+   <launcher name="SmartMDSD">
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+
+   <vm>
+   </vm>
+
+   <license>
+        <url>https://opensource.org/licenses/BSD-3-Clause</url>
+        <text>
+   Copyright 2018 Alex Lotz, Dennis Stampfer, Matthias Lutz and Christian Schlegel
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+         </text>
+   </license>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.features.smartMDSD" version="3.7.0"/>
+   </features>
+
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
+
+</product>

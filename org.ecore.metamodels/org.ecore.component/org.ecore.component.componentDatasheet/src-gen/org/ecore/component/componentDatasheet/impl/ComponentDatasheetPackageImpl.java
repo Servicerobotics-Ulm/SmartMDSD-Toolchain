@@ -4,7 +4,6 @@ package org.ecore.component.componentDatasheet.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -47,13 +46,6 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 	 * @generated
 	 */
 	private EClass componentDatasheetEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum trlEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -145,7 +137,7 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponentDatasheet_Trl() {
+	public EAttribute getComponentDatasheet_PurposeDescription() {
 		return (EAttribute) componentDatasheetEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -154,7 +146,7 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponentDatasheet_PurposeDescription() {
+	public EAttribute getComponentDatasheet_HardwareRequirementDescription() {
 		return (EAttribute) componentDatasheetEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -163,26 +155,8 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponentDatasheet_HardwareRequirementDescription() {
-		return (EAttribute) componentDatasheetEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getComponentDatasheet_Component() {
-		return (EReference) componentDatasheetEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getTRL() {
-		return trlEEnum;
+		return (EReference) componentDatasheetEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -215,13 +189,9 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 
 		// Create classes and their features
 		componentDatasheetEClass = createEClass(COMPONENT_DATASHEET);
-		createEAttribute(componentDatasheetEClass, COMPONENT_DATASHEET__TRL);
 		createEAttribute(componentDatasheetEClass, COMPONENT_DATASHEET__PURPOSE_DESCRIPTION);
 		createEAttribute(componentDatasheetEClass, COMPONENT_DATASHEET__HARDWARE_REQUIREMENT_DESCRIPTION);
 		createEReference(componentDatasheetEClass, COMPONENT_DATASHEET__COMPONENT);
-
-		// Create enums
-		trlEEnum = createEEnum(TRL);
 	}
 
 	/**
@@ -264,8 +234,6 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentDatasheetEClass, ComponentDatasheet.class, "ComponentDatasheet", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponentDatasheet_Trl(), this.getTRL(), "trl", "Undefined", 0, 1, ComponentDatasheet.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponentDatasheet_PurposeDescription(), ecorePackage.getEString(), "purposeDescription",
 				null, 0, 1, ComponentDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
 				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -275,19 +243,6 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 		initEReference(getComponentDatasheet_Component(), theComponentDefinitionPackage.getComponentDefinition(), null,
 				"component", null, 1, 1, ComponentDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Initialize enums and add enum literals
-		initEEnum(trlEEnum, org.ecore.component.componentDatasheet.TRL.class, "TRL");
-		addEEnumLiteral(trlEEnum, org.ecore.component.componentDatasheet.TRL.LEVEL1);
-		addEEnumLiteral(trlEEnum, org.ecore.component.componentDatasheet.TRL.LEVEL2);
-		addEEnumLiteral(trlEEnum, org.ecore.component.componentDatasheet.TRL.LEVEL3);
-		addEEnumLiteral(trlEEnum, org.ecore.component.componentDatasheet.TRL.LEVEL4);
-		addEEnumLiteral(trlEEnum, org.ecore.component.componentDatasheet.TRL.LEVEL5);
-		addEEnumLiteral(trlEEnum, org.ecore.component.componentDatasheet.TRL.LEVEL6);
-		addEEnumLiteral(trlEEnum, org.ecore.component.componentDatasheet.TRL.LEVEL7);
-		addEEnumLiteral(trlEEnum, org.ecore.component.componentDatasheet.TRL.LEVEL8);
-		addEEnumLiteral(trlEEnum, org.ecore.component.componentDatasheet.TRL.LEVEL9);
-		addEEnumLiteral(trlEEnum, org.ecore.component.componentDatasheet.TRL.UNDEFINED);
 
 		// Create resource
 		createResource(eNS_URI);

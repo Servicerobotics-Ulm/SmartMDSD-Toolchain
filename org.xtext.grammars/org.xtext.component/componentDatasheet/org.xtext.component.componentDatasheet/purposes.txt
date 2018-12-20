@@ -1,14 +1,12 @@
-Hardware-Access
+Sensor-Access
+Actuator-Access
 Localization
+Navigation
 Mapping
-Mobile Base
+Mobile-Base
 Manipulation
-Gripper
 Planner
-Object Recognition
+Object-Recognition
 Text-To-Speech
 Speech-To-Text
-Sensor
-Actuator
 Simulation
-Navigation

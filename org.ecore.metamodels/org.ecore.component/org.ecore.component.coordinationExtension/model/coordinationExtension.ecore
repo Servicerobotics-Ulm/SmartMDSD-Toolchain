@@ -37,4 +37,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentPort" lowerBound="1"
         eType="ecore:EClass ../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//ComponentPort"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SkillRealizationsRef" eSuperTypes="#//AbstractCoordinationElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="skillRealizationSetRef"
+        lowerBound="1" eType="ecore:EClass ../../org.ecore.behavior.skillRealization/model/skillRealization.ecore#//SkillRealizationSet"/>
+  </eClassifiers>
 </ecore:EPackage>

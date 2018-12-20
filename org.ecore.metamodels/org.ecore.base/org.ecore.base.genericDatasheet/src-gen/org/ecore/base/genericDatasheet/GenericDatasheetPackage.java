@@ -4,6 +4,7 @@ package org.ecore.base.genericDatasheet;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -121,13 +122,22 @@ public interface GenericDatasheetPackage extends EPackage {
 	int GENERIC_DATASHEET__BASE_URI = 5;
 
 	/**
+	 * The feature id for the '<em><b>Trl</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_DATASHEET__TRL = 6;
+
+	/**
 	 * The number of structural features of the '<em>Generic Datasheet</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_DATASHEET_FEATURE_COUNT = 6;
+	int GENERIC_DATASHEET_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Generic Datasheet</em>' class.
@@ -259,6 +269,16 @@ public interface GenericDatasheetPackage extends EPackage {
 	int PROPRIETARY_LICENSE_OPERATION_COUNT = ABSTRACT_LICENSE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.ecore.base.genericDatasheet.TRL <em>TRL</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.ecore.base.genericDatasheet.TRL
+	 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getTRL()
+	 * @generated
+	 */
+	int TRL = 4;
+
+	/**
 	 * Returns the meta object for class '{@link org.ecore.base.genericDatasheet.GenericDatasheet <em>Generic Datasheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -335,6 +355,17 @@ public interface GenericDatasheetPackage extends EPackage {
 	EAttribute getGenericDatasheet_BaseURI();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.GenericDatasheet#getTrl <em>Trl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Trl</em>'.
+	 * @see org.ecore.base.genericDatasheet.GenericDatasheet#getTrl()
+	 * @see #getGenericDatasheet()
+	 * @generated
+	 */
+	EAttribute getGenericDatasheet_Trl();
+
+	/**
 	 * Returns the meta object for class '{@link org.ecore.base.genericDatasheet.AbstractLicense <em>Abstract License</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -407,6 +438,16 @@ public interface GenericDatasheetPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getProprietaryLicense_Url();
+
+	/**
+	 * Returns the meta object for enum '{@link org.ecore.base.genericDatasheet.TRL <em>TRL</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>TRL</em>'.
+	 * @see org.ecore.base.genericDatasheet.TRL
+	 * @generated
+	 */
+	EEnum getTRL();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -490,6 +531,14 @@ public interface GenericDatasheetPackage extends EPackage {
 		EAttribute GENERIC_DATASHEET__BASE_URI = eINSTANCE.getGenericDatasheet_BaseURI();
 
 		/**
+		 * The meta object literal for the '<em><b>Trl</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GENERIC_DATASHEET__TRL = eINSTANCE.getGenericDatasheet_Trl();
+
+		/**
 		 * The meta object literal for the '{@link org.ecore.base.genericDatasheet.impl.AbstractLicenseImpl <em>Abstract License</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -550,6 +599,16 @@ public interface GenericDatasheetPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROPRIETARY_LICENSE__URL = eINSTANCE.getProprietaryLicense_Url();
+
+		/**
+		 * The meta object literal for the '{@link org.ecore.base.genericDatasheet.TRL <em>TRL</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecore.base.genericDatasheet.TRL
+		 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getTRL()
+		 * @generated
+		 */
+		EEnum TRL = eINSTANCE.getTRL();
 
 	}
 

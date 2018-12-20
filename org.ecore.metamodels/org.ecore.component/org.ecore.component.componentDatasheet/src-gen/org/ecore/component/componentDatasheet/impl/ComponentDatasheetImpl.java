@@ -13,8 +13,6 @@ import org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl;
 
 import org.ecore.component.componentDatasheet.ComponentDatasheet;
 import org.ecore.component.componentDatasheet.ComponentDatasheetPackage;
-import org.ecore.component.componentDatasheet.TRL;
-
 import org.ecore.component.componentDefinition.ComponentDefinition;
 
 /**
@@ -25,7 +23,6 @@ import org.ecore.component.componentDefinition.ComponentDefinition;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.ecore.component.componentDatasheet.impl.ComponentDatasheetImpl#getTrl <em>Trl</em>}</li>
  *   <li>{@link org.ecore.component.componentDatasheet.impl.ComponentDatasheetImpl#getPurposeDescription <em>Purpose Description</em>}</li>
  *   <li>{@link org.ecore.component.componentDatasheet.impl.ComponentDatasheetImpl#getHardwareRequirementDescription <em>Hardware Requirement Description</em>}</li>
  *   <li>{@link org.ecore.component.componentDatasheet.impl.ComponentDatasheetImpl#getComponent <em>Component</em>}</li>
@@ -34,26 +31,6 @@ import org.ecore.component.componentDefinition.ComponentDefinition;
  * @generated
  */
 public class ComponentDatasheetImpl extends GenericDatasheetImpl implements ComponentDatasheet {
-	/**
-	 * The default value of the '{@link #getTrl() <em>Trl</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrl()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final TRL TRL_EDEFAULT = TRL.UNDEFINED;
-
-	/**
-	 * The cached value of the '{@link #getTrl() <em>Trl</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrl()
-	 * @generated
-	 * @ordered
-	 */
-	protected TRL trl = TRL_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getPurposeDescription() <em>Purpose Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -121,28 +98,6 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	@Override
 	protected EClass eStaticClass() {
 		return ComponentDatasheetPackage.Literals.COMPONENT_DATASHEET;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TRL getTrl() {
-		return trl;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTrl(TRL newTrl) {
-		TRL oldTrl = trl;
-		trl = newTrl == null ? TRL_EDEFAULT : newTrl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentDatasheetPackage.COMPONENT_DATASHEET__TRL,
-					oldTrl, trl));
 	}
 
 	/**
@@ -239,8 +194,6 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ComponentDatasheetPackage.COMPONENT_DATASHEET__TRL:
-			return getTrl();
 		case ComponentDatasheetPackage.COMPONENT_DATASHEET__PURPOSE_DESCRIPTION:
 			return getPurposeDescription();
 		case ComponentDatasheetPackage.COMPONENT_DATASHEET__HARDWARE_REQUIREMENT_DESCRIPTION:
@@ -261,9 +214,6 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ComponentDatasheetPackage.COMPONENT_DATASHEET__TRL:
-			setTrl((TRL) newValue);
-			return;
 		case ComponentDatasheetPackage.COMPONENT_DATASHEET__PURPOSE_DESCRIPTION:
 			setPurposeDescription((String) newValue);
 			return;
@@ -285,9 +235,6 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ComponentDatasheetPackage.COMPONENT_DATASHEET__TRL:
-			setTrl(TRL_EDEFAULT);
-			return;
 		case ComponentDatasheetPackage.COMPONENT_DATASHEET__PURPOSE_DESCRIPTION:
 			setPurposeDescription(PURPOSE_DESCRIPTION_EDEFAULT);
 			return;
@@ -309,8 +256,6 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ComponentDatasheetPackage.COMPONENT_DATASHEET__TRL:
-			return trl != TRL_EDEFAULT;
 		case ComponentDatasheetPackage.COMPONENT_DATASHEET__PURPOSE_DESCRIPTION:
 			return PURPOSE_DESCRIPTION_EDEFAULT == null ? purposeDescription != null
 					: !PURPOSE_DESCRIPTION_EDEFAULT.equals(purposeDescription);
@@ -334,9 +279,7 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (trl: ");
-		result.append(trl);
-		result.append(", purposeDescription: ");
+		result.append(" (purposeDescription: ");
 		result.append(purposeDescription);
 		result.append(", hardwareRequirementDescription: ");
 		result.append(hardwareRequirementDescription);

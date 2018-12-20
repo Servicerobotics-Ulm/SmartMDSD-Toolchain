@@ -11,6 +11,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.resource.IContainer;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.resource.IResourceDescription;
@@ -36,6 +37,7 @@ import org.ecore.service.serviceDefinition.RequestAnswerServiceDefinition;
 import org.ecore.system.componentArchitecture.ComponentArchitectureModelUtility;
 import org.ecore.system.componentArchitecture.ComponentInstance;
 import org.ecore.system.componentArchitecture.Connection;
+import org.ecore.system.componentArchitecture.ProvidedService;
 import org.ecore.system.componentArchitecture.ServiceInstance;
 import org.ecore.system.componentArchitecture.SystemComponentArchitecture;
 import org.ecore.system.systemParameter.ComponentParameterInstance;
@@ -55,6 +57,38 @@ public class Services {
     
     public String getProjectName(EObject obj) {
     	return DiagramHelperServices.getProjectName(obj);
+    }
+     
+    public EObject deleteComponentAndRelatedConnections(EObject context)
+    {
+    	if(context instanceof ComponentInstance) {
+    		ComponentInstance componentInstance = (ComponentInstance)context;
+    		EObject parent = context.eContainer();
+    		if(parent instanceof SystemComponentArchitecture) {
+    			SystemComponentArchitecture system = (SystemComponentArchitecture)parent;
+    			Collection<Connection> relatedConnections = new ArrayList<Connection>();
+    			for(Connection connection: system.getConnections()) {
+    				for(ServiceInstance port: componentInstance.getPorts()) {
+    					if(port instanceof ProvidedService) {
+    						if(connection.getTo().equals(port)) {
+    							relatedConnections.add(connection);
+    						}
+    					} else {
+    						if(connection.getFrom().equals(port)) {
+    							relatedConnections.add(connection);
+    						}
+    					}
+    				}
+    			}
+    			for(Connection connection: relatedConnections) {
+    				// delete related connection
+    				EcoreUtil.delete(connection);
+    			}
+    		}
+    		// delete component instance
+    		EcoreUtil.delete(componentInstance);
+    	}
+    	return context;
     }
     
 	public Boolean hasLogo(EObject context) {

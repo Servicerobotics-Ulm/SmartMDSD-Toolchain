@@ -312,6 +312,15 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getAbstractServiceDefinition_PurposeDescription() {
+		return (EAttribute) abstractServiceDefinitionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCommRepoImport() {
 		return commRepoImportEClass;
 	}
@@ -582,6 +591,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 		abstractServiceDefinitionEClass = createEClass(ABSTRACT_SERVICE_DEFINITION);
 		createEAttribute(abstractServiceDefinitionEClass, ABSTRACT_SERVICE_DEFINITION__NAME);
 		createEReference(abstractServiceDefinitionEClass, ABSTRACT_SERVICE_DEFINITION__PROPERTIES);
+		createEAttribute(abstractServiceDefinitionEClass, ABSTRACT_SERVICE_DEFINITION__PURPOSE_DESCRIPTION);
 
 		commRepoImportEClass = createEClass(COMM_REPO_IMPORT);
 		createEAttribute(commRepoImportEClass, COMM_REPO_IMPORT__IMPORTED_NAMESPACE);
@@ -694,6 +704,9 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 		initEReference(getAbstractServiceDefinition_Properties(), this.getServiceProperty(), null, "properties", null,
 				0, -1, AbstractServiceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractServiceDefinition_PurposeDescription(), ecorePackage.getEString(),
+				"purposeDescription", null, 0, 1, AbstractServiceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(commRepoImportEClass, CommRepoImport.class, "CommRepoImport", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

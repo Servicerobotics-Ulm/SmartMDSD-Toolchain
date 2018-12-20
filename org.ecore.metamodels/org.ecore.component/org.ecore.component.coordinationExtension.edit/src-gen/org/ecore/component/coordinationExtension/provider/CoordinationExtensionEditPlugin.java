@@ -10,6 +10,7 @@ import org.ecore.base.basicAttributes.provider.BasicAttributesEditPlugin;
 
 import org.ecore.base.stateMachine.provider.StateMachineEditPlugin;
 
+import org.ecore.behavior.skillRealization.provider.SkillRealizationEditPlugin;
 import org.ecore.component.componentDefinition.provider.ComponentDefinitionEditPlugin;
 
 import org.ecore.service.communicationObject.provider.CommunicationObjectEditPlugin;
@@ -23,6 +24,7 @@ import org.ecore.service.coordinationPattern.provider.CoordinationPatternEditPlu
 import org.ecore.service.parameterDefinition.provider.ParameterDefinitionEditPlugin;
 
 import org.ecore.service.serviceDefinition.provider.ServiceDefinitionEditPlugin;
+import org.ecore.service.skillDefinition.provider.SkillDefinitionEditPlugin;
 
 /**
  * This is the central singleton for the CoordinationExtension edit plugin.
@@ -58,6 +60,7 @@ public final class CoordinationExtensionEditPlugin extends EMFPlugin {
 				CommunicationPatternEditPlugin.INSTANCE, ComponentDefinitionEditPlugin.INSTANCE,
 				ComponentModeEditPlugin.INSTANCE, CoordinationPatternEditPlugin.INSTANCE,
 				ParameterDefinitionEditPlugin.INSTANCE, ServiceDefinitionEditPlugin.INSTANCE,
+				SkillDefinitionEditPlugin.INSTANCE, SkillRealizationEditPlugin.INSTANCE,
 				StateMachineEditPlugin.INSTANCE, });
 	}
 

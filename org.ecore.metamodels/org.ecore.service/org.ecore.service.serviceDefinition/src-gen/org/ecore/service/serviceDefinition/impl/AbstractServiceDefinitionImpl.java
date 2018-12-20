@@ -32,6 +32,7 @@ import org.ecore.service.serviceDefinition.ServiceProperty;
  * <ul>
  *   <li>{@link org.ecore.service.serviceDefinition.impl.AbstractServiceDefinitionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.ecore.service.serviceDefinition.impl.AbstractServiceDefinitionImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link org.ecore.service.serviceDefinition.impl.AbstractServiceDefinitionImpl#getPurposeDescription <em>Purpose Description</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +68,26 @@ public abstract class AbstractServiceDefinitionImpl extends MinimalEObjectImpl.C
 	 * @ordered
 	 */
 	protected EList<ServiceProperty> properties;
+
+	/**
+	 * The default value of the '{@link #getPurposeDescription() <em>Purpose Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPurposeDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PURPOSE_DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPurposeDescription() <em>Purpose Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPurposeDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String purposeDescription = PURPOSE_DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,6 +148,29 @@ public abstract class AbstractServiceDefinitionImpl extends MinimalEObjectImpl.C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPurposeDescription() {
+		return purposeDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPurposeDescription(String newPurposeDescription) {
+		String oldPurposeDescription = purposeDescription;
+		purposeDescription = newPurposeDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ServiceDefinitionPackage.ABSTRACT_SERVICE_DEFINITION__PURPOSE_DESCRIPTION, oldPurposeDescription,
+					purposeDescription));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -148,6 +192,8 @@ public abstract class AbstractServiceDefinitionImpl extends MinimalEObjectImpl.C
 			return getName();
 		case ServiceDefinitionPackage.ABSTRACT_SERVICE_DEFINITION__PROPERTIES:
 			return getProperties();
+		case ServiceDefinitionPackage.ABSTRACT_SERVICE_DEFINITION__PURPOSE_DESCRIPTION:
+			return getPurposeDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,6 +214,9 @@ public abstract class AbstractServiceDefinitionImpl extends MinimalEObjectImpl.C
 			getProperties().clear();
 			getProperties().addAll((Collection<? extends ServiceProperty>) newValue);
 			return;
+		case ServiceDefinitionPackage.ABSTRACT_SERVICE_DEFINITION__PURPOSE_DESCRIPTION:
+			setPurposeDescription((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -186,6 +235,9 @@ public abstract class AbstractServiceDefinitionImpl extends MinimalEObjectImpl.C
 		case ServiceDefinitionPackage.ABSTRACT_SERVICE_DEFINITION__PROPERTIES:
 			getProperties().clear();
 			return;
+		case ServiceDefinitionPackage.ABSTRACT_SERVICE_DEFINITION__PURPOSE_DESCRIPTION:
+			setPurposeDescription(PURPOSE_DESCRIPTION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,6 +254,9 @@ public abstract class AbstractServiceDefinitionImpl extends MinimalEObjectImpl.C
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case ServiceDefinitionPackage.ABSTRACT_SERVICE_DEFINITION__PROPERTIES:
 			return properties != null && !properties.isEmpty();
+		case ServiceDefinitionPackage.ABSTRACT_SERVICE_DEFINITION__PURPOSE_DESCRIPTION:
+			return PURPOSE_DESCRIPTION_EDEFAULT == null ? purposeDescription != null
+					: !PURPOSE_DESCRIPTION_EDEFAULT.equals(purposeDescription);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -219,6 +274,8 @@ public abstract class AbstractServiceDefinitionImpl extends MinimalEObjectImpl.C
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", purposeDescription: ");
+		result.append(purposeDescription);
 		result.append(')');
 		return result.toString();
 	}

@@ -4,7 +4,6 @@ package org.ecore.component.componentDatasheet;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -131,7 +130,7 @@ public interface ComponentDatasheetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_DATASHEET__TRL = GenericDatasheetPackage.GENERIC_DATASHEET_FEATURE_COUNT + 0;
+	int COMPONENT_DATASHEET__TRL = GenericDatasheetPackage.GENERIC_DATASHEET__TRL;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Description</b></em>' attribute.
@@ -140,7 +139,7 @@ public interface ComponentDatasheetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_DATASHEET__PURPOSE_DESCRIPTION = GenericDatasheetPackage.GENERIC_DATASHEET_FEATURE_COUNT + 1;
+	int COMPONENT_DATASHEET__PURPOSE_DESCRIPTION = GenericDatasheetPackage.GENERIC_DATASHEET_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Hardware Requirement Description</b></em>' attribute.
@@ -150,7 +149,7 @@ public interface ComponentDatasheetPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPONENT_DATASHEET__HARDWARE_REQUIREMENT_DESCRIPTION = GenericDatasheetPackage.GENERIC_DATASHEET_FEATURE_COUNT
-			+ 2;
+			+ 1;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' reference.
@@ -159,7 +158,7 @@ public interface ComponentDatasheetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_DATASHEET__COMPONENT = GenericDatasheetPackage.GENERIC_DATASHEET_FEATURE_COUNT + 3;
+	int COMPONENT_DATASHEET__COMPONENT = GenericDatasheetPackage.GENERIC_DATASHEET_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Component Datasheet</em>' class.
@@ -168,7 +167,7 @@ public interface ComponentDatasheetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_DATASHEET_FEATURE_COUNT = GenericDatasheetPackage.GENERIC_DATASHEET_FEATURE_COUNT + 4;
+	int COMPONENT_DATASHEET_FEATURE_COUNT = GenericDatasheetPackage.GENERIC_DATASHEET_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Component Datasheet</em>' class.
@@ -180,16 +179,6 @@ public interface ComponentDatasheetPackage extends EPackage {
 	int COMPONENT_DATASHEET_OPERATION_COUNT = GenericDatasheetPackage.GENERIC_DATASHEET_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.ecore.component.componentDatasheet.TRL <em>TRL</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.ecore.component.componentDatasheet.TRL
-	 * @see org.ecore.component.componentDatasheet.impl.ComponentDatasheetPackageImpl#getTRL()
-	 * @generated
-	 */
-	int TRL = 1;
-
-	/**
 	 * Returns the meta object for class '{@link org.ecore.component.componentDatasheet.ComponentDatasheet <em>Component Datasheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -198,17 +187,6 @@ public interface ComponentDatasheetPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComponentDatasheet();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.component.componentDatasheet.ComponentDatasheet#getTrl <em>Trl</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Trl</em>'.
-	 * @see org.ecore.component.componentDatasheet.ComponentDatasheet#getTrl()
-	 * @see #getComponentDatasheet()
-	 * @generated
-	 */
-	EAttribute getComponentDatasheet_Trl();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.ecore.component.componentDatasheet.ComponentDatasheet#getPurposeDescription <em>Purpose Description</em>}'.
@@ -244,16 +222,6 @@ public interface ComponentDatasheetPackage extends EPackage {
 	EReference getComponentDatasheet_Component();
 
 	/**
-	 * Returns the meta object for enum '{@link org.ecore.component.componentDatasheet.TRL <em>TRL</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>TRL</em>'.
-	 * @see org.ecore.component.componentDatasheet.TRL
-	 * @generated
-	 */
-	EEnum getTRL();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -287,14 +255,6 @@ public interface ComponentDatasheetPackage extends EPackage {
 		EClass COMPONENT_DATASHEET = eINSTANCE.getComponentDatasheet();
 
 		/**
-		 * The meta object literal for the '<em><b>Trl</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_DATASHEET__TRL = eINSTANCE.getComponentDatasheet_Trl();
-
-		/**
 		 * The meta object literal for the '<em><b>Purpose Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -318,16 +278,6 @@ public interface ComponentDatasheetPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_DATASHEET__COMPONENT = eINSTANCE.getComponentDatasheet_Component();
-
-		/**
-		 * The meta object literal for the '{@link org.ecore.component.componentDatasheet.TRL <em>TRL</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.ecore.component.componentDatasheet.TRL
-		 * @see org.ecore.component.componentDatasheet.impl.ComponentDatasheetPackageImpl#getTRL()
-		 * @generated
-		 */
-		EEnum TRL = eINSTANCE.getTRL();
 
 	}
 

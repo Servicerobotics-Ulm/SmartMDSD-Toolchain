@@ -17,7 +17,9 @@ Require-Bundle: org.xtext.component.componentDatasheet,
  org.eclipse.compare,
  org.eclipse.xtext.builder,
  org.eclipse.xtend.lib;resolution:=optional,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.xtext.xbase.lib,
+ org.xtext.base.genericDatasheet,
+ org.xtext.base.genericDatasheet.ui
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.component.componentDatasheet.ui.quickfix,

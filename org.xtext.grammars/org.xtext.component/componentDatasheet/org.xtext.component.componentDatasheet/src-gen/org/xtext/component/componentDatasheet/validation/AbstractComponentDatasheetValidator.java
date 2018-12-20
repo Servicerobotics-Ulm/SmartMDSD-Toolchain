@@ -47,13 +47,13 @@ package org.xtext.component.componentDatasheet.validation;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.xtext.validation.AbstractDeclarativeValidator;
+import org.xtext.base.genericDatasheet.validation.GenericDatasheetValidator;
 
-public abstract class AbstractComponentDatasheetValidator extends AbstractDeclarativeValidator {
+public abstract class AbstractComponentDatasheetValidator extends GenericDatasheetValidator {
 	
 	@Override
 	protected List<EPackage> getEPackages() {
-		List<EPackage> result = new ArrayList<EPackage>();
+		List<EPackage> result = new ArrayList<EPackage>(super.getEPackages());
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/componentDatasheet"));
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/base/genericDatasheet"));
 		return result;

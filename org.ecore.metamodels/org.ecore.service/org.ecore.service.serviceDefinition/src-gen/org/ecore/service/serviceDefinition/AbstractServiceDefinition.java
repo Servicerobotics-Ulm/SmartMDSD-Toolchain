@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.ecore.service.serviceDefinition.AbstractServiceDefinition#getName <em>Name</em>}</li>
  *   <li>{@link org.ecore.service.serviceDefinition.AbstractServiceDefinition#getProperties <em>Properties</em>}</li>
+ *   <li>{@link org.ecore.service.serviceDefinition.AbstractServiceDefinition#getPurposeDescription <em>Purpose Description</em>}</li>
  * </ul>
  *
  * @see org.ecore.service.serviceDefinition.ServiceDefinitionPackage#getAbstractServiceDefinition()
@@ -65,5 +66,31 @@ public interface AbstractServiceDefinition extends EObject {
 	 * @generated
 	 */
 	EList<ServiceProperty> getProperties();
+
+	/**
+	 * Returns the value of the '<em><b>Purpose Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Purpose Description</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Purpose Description</em>' attribute.
+	 * @see #setPurposeDescription(String)
+	 * @see org.ecore.service.serviceDefinition.ServiceDefinitionPackage#getAbstractServiceDefinition_PurposeDescription()
+	 * @model
+	 * @generated
+	 */
+	String getPurposeDescription();
+
+	/**
+	 * Sets the value of the '{@link org.ecore.service.serviceDefinition.AbstractServiceDefinition#getPurposeDescription <em>Purpose Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Purpose Description</em>' attribute.
+	 * @see #getPurposeDescription()
+	 * @generated
+	 */
+	void setPurposeDescription(String value);
 
 } // AbstractServiceDefinition

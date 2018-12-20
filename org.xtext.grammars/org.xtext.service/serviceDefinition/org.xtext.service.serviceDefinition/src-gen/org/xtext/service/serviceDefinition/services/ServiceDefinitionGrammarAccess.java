@@ -358,19 +358,24 @@ public class ServiceDefinitionGrammarAccess extends AbstractGrammarElementFinder
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cPatternAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cPatternForkingPatternInstanceParserRuleCall_3_0 = (RuleCall)cPatternAssignment_3.eContents().get(0);
-		private final Assignment cPropertiesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cPropertiesServicePropertyParserRuleCall_4_0 = (RuleCall)cPropertiesAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cPurposeDescriptionKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cPurposeDescriptionAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cPurposeDescriptionEStringParserRuleCall_4_1_0 = (RuleCall)cPurposeDescriptionAssignment_4_1.eContents().get(0);
+		private final Assignment cPropertiesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPropertiesServicePropertyParserRuleCall_5_0 = (RuleCall)cPropertiesAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ForkingServiceDefinition service::ForkingServiceDefinition:
 		//	'ForkingServiceDefinition' name=ID
 		//	'{'
-		//	pattern=ForkingPatternInstance
+		//	pattern=ForkingPatternInstance ('purposeDescription' purposeDescription=EString)?
 		//	properties+=ServiceProperty*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ForkingServiceDefinition' name=ID '{' pattern=ForkingPatternInstance properties+=ServiceProperty* '}'
+		//'ForkingServiceDefinition' name=ID '{' pattern=ForkingPatternInstance ('purposeDescription' purposeDescription=EString)?
+		//properties+=ServiceProperty* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ForkingServiceDefinition'
@@ -391,14 +396,26 @@ public class ServiceDefinitionGrammarAccess extends AbstractGrammarElementFinder
 		//ForkingPatternInstance
 		public RuleCall getPatternForkingPatternInstanceParserRuleCall_3_0() { return cPatternForkingPatternInstanceParserRuleCall_3_0; }
 		
+		//('purposeDescription' purposeDescription=EString)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'purposeDescription'
+		public Keyword getPurposeDescriptionKeyword_4_0() { return cPurposeDescriptionKeyword_4_0; }
+		
+		//purposeDescription=EString
+		public Assignment getPurposeDescriptionAssignment_4_1() { return cPurposeDescriptionAssignment_4_1; }
+		
+		//EString
+		public RuleCall getPurposeDescriptionEStringParserRuleCall_4_1_0() { return cPurposeDescriptionEStringParserRuleCall_4_1_0; }
+		
 		//properties+=ServiceProperty*
-		public Assignment getPropertiesAssignment_4() { return cPropertiesAssignment_4; }
+		public Assignment getPropertiesAssignment_5() { return cPropertiesAssignment_5; }
 		
 		//ServiceProperty
-		public RuleCall getPropertiesServicePropertyParserRuleCall_4_0() { return cPropertiesServicePropertyParserRuleCall_4_0; }
+		public RuleCall getPropertiesServicePropertyParserRuleCall_5_0() { return cPropertiesServicePropertyParserRuleCall_5_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class JoyningServiceDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.service.serviceDefinition.ServiceDefinition.JoyningServiceDefinition");
@@ -409,19 +426,24 @@ public class ServiceDefinitionGrammarAccess extends AbstractGrammarElementFinder
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cPatternAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cPatternJoiningPatternInstanceParserRuleCall_3_0 = (RuleCall)cPatternAssignment_3.eContents().get(0);
-		private final Assignment cPropertiesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cPropertiesServicePropertyParserRuleCall_4_0 = (RuleCall)cPropertiesAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cPurposeDescriptionKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cPurposeDescriptionAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cPurposeDescriptionEStringParserRuleCall_4_1_0 = (RuleCall)cPurposeDescriptionAssignment_4_1.eContents().get(0);
+		private final Assignment cPropertiesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPropertiesServicePropertyParserRuleCall_5_0 = (RuleCall)cPropertiesAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//JoyningServiceDefinition service::JoiningServiceDefinition:
 		//	'JoiningServiceDefinition' name=ID
 		//	'{'
-		//	pattern=JoiningPatternInstance
+		//	pattern=JoiningPatternInstance ('purposeDescription' purposeDescription=EString)?
 		//	properties+=ServiceProperty*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'JoiningServiceDefinition' name=ID '{' pattern=JoiningPatternInstance properties+=ServiceProperty* '}'
+		//'JoiningServiceDefinition' name=ID '{' pattern=JoiningPatternInstance ('purposeDescription' purposeDescription=EString)?
+		//properties+=ServiceProperty* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'JoiningServiceDefinition'
@@ -442,14 +464,26 @@ public class ServiceDefinitionGrammarAccess extends AbstractGrammarElementFinder
 		//JoiningPatternInstance
 		public RuleCall getPatternJoiningPatternInstanceParserRuleCall_3_0() { return cPatternJoiningPatternInstanceParserRuleCall_3_0; }
 		
+		//('purposeDescription' purposeDescription=EString)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'purposeDescription'
+		public Keyword getPurposeDescriptionKeyword_4_0() { return cPurposeDescriptionKeyword_4_0; }
+		
+		//purposeDescription=EString
+		public Assignment getPurposeDescriptionAssignment_4_1() { return cPurposeDescriptionAssignment_4_1; }
+		
+		//EString
+		public RuleCall getPurposeDescriptionEStringParserRuleCall_4_1_0() { return cPurposeDescriptionEStringParserRuleCall_4_1_0; }
+		
 		//properties+=ServiceProperty*
-		public Assignment getPropertiesAssignment_4() { return cPropertiesAssignment_4; }
+		public Assignment getPropertiesAssignment_5() { return cPropertiesAssignment_5; }
 		
 		//ServiceProperty
-		public RuleCall getPropertiesServicePropertyParserRuleCall_4_0() { return cPropertiesServicePropertyParserRuleCall_4_0; }
+		public RuleCall getPropertiesServicePropertyParserRuleCall_5_0() { return cPropertiesServicePropertyParserRuleCall_5_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class RequestAnswerServiceDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.service.serviceDefinition.ServiceDefinition.RequestAnswerServiceDefinition");
@@ -460,19 +494,24 @@ public class ServiceDefinitionGrammarAccess extends AbstractGrammarElementFinder
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cPatternAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cPatternRequestAnswerPatternParserRuleCall_3_0 = (RuleCall)cPatternAssignment_3.eContents().get(0);
-		private final Assignment cPropertiesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cPropertiesServicePropertyParserRuleCall_4_0 = (RuleCall)cPropertiesAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cPurposeDescriptionKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cPurposeDescriptionAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cPurposeDescriptionEStringParserRuleCall_4_1_0 = (RuleCall)cPurposeDescriptionAssignment_4_1.eContents().get(0);
+		private final Assignment cPropertiesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPropertiesServicePropertyParserRuleCall_5_0 = (RuleCall)cPropertiesAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//RequestAnswerServiceDefinition service::RequestAnswerServiceDefinition:
 		//	'RequestAnswerServiceDefinition' name=ID
 		//	'{'
-		//	pattern=RequestAnswerPattern
+		//	pattern=RequestAnswerPattern ('purposeDescription' purposeDescription=EString)?
 		//	properties+=ServiceProperty*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'RequestAnswerServiceDefinition' name=ID '{' pattern=RequestAnswerPattern properties+=ServiceProperty* '}'
+		//'RequestAnswerServiceDefinition' name=ID '{' pattern=RequestAnswerPattern ('purposeDescription'
+		//purposeDescription=EString)? properties+=ServiceProperty* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'RequestAnswerServiceDefinition'
@@ -493,14 +532,26 @@ public class ServiceDefinitionGrammarAccess extends AbstractGrammarElementFinder
 		//RequestAnswerPattern
 		public RuleCall getPatternRequestAnswerPatternParserRuleCall_3_0() { return cPatternRequestAnswerPatternParserRuleCall_3_0; }
 		
+		//('purposeDescription' purposeDescription=EString)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'purposeDescription'
+		public Keyword getPurposeDescriptionKeyword_4_0() { return cPurposeDescriptionKeyword_4_0; }
+		
+		//purposeDescription=EString
+		public Assignment getPurposeDescriptionAssignment_4_1() { return cPurposeDescriptionAssignment_4_1; }
+		
+		//EString
+		public RuleCall getPurposeDescriptionEStringParserRuleCall_4_1_0() { return cPurposeDescriptionEStringParserRuleCall_4_1_0; }
+		
 		//properties+=ServiceProperty*
-		public Assignment getPropertiesAssignment_4() { return cPropertiesAssignment_4; }
+		public Assignment getPropertiesAssignment_5() { return cPropertiesAssignment_5; }
 		
 		//ServiceProperty
-		public RuleCall getPropertiesServicePropertyParserRuleCall_4_0() { return cPropertiesServicePropertyParserRuleCall_4_0; }
+		public RuleCall getPropertiesServicePropertyParserRuleCall_5_0() { return cPropertiesServicePropertyParserRuleCall_5_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class CoordinationServiceDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.service.serviceDefinition.ServiceDefinition.CoordinationServiceDefinition");
@@ -510,14 +561,18 @@ public class ServiceDefinitionGrammarAccess extends AbstractGrammarElementFinder
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final UnorderedGroup cUnorderedGroup_3 = (UnorderedGroup)cGroup.eContents().get(3);
-		private final Assignment cStatePatternAssignment_3_0 = (Assignment)cUnorderedGroup_3.eContents().get(0);
-		private final RuleCall cStatePatternStatePatternParserRuleCall_3_0_0 = (RuleCall)cStatePatternAssignment_3_0.eContents().get(0);
-		private final Assignment cParameterPatternAssignment_3_1 = (Assignment)cUnorderedGroup_3.eContents().get(1);
-		private final RuleCall cParameterPatternParameterPatternParserRuleCall_3_1_0 = (RuleCall)cParameterPatternAssignment_3_1.eContents().get(0);
-		private final Assignment cMonitoringPatternAssignment_3_2 = (Assignment)cUnorderedGroup_3.eContents().get(2);
-		private final RuleCall cMonitoringPatternMonitoringPatternParserRuleCall_3_2_0 = (RuleCall)cMonitoringPatternAssignment_3_2.eContents().get(0);
-		private final Assignment cWiringPatternAssignment_3_3 = (Assignment)cUnorderedGroup_3.eContents().get(3);
-		private final RuleCall cWiringPatternDynamicWiringPatternParserRuleCall_3_3_0 = (RuleCall)cWiringPatternAssignment_3_3.eContents().get(0);
+		private final Group cGroup_3_0 = (Group)cUnorderedGroup_3.eContents().get(0);
+		private final Keyword cPurposeDescriptionKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
+		private final Assignment cPurposeDescriptionAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
+		private final RuleCall cPurposeDescriptionEStringParserRuleCall_3_0_1_0 = (RuleCall)cPurposeDescriptionAssignment_3_0_1.eContents().get(0);
+		private final Assignment cStatePatternAssignment_3_1 = (Assignment)cUnorderedGroup_3.eContents().get(1);
+		private final RuleCall cStatePatternStatePatternParserRuleCall_3_1_0 = (RuleCall)cStatePatternAssignment_3_1.eContents().get(0);
+		private final Assignment cParameterPatternAssignment_3_2 = (Assignment)cUnorderedGroup_3.eContents().get(2);
+		private final RuleCall cParameterPatternParameterPatternParserRuleCall_3_2_0 = (RuleCall)cParameterPatternAssignment_3_2.eContents().get(0);
+		private final Assignment cMonitoringPatternAssignment_3_3 = (Assignment)cUnorderedGroup_3.eContents().get(3);
+		private final RuleCall cMonitoringPatternMonitoringPatternParserRuleCall_3_3_0 = (RuleCall)cMonitoringPatternAssignment_3_3.eContents().get(0);
+		private final Assignment cWiringPatternAssignment_3_4 = (Assignment)cUnorderedGroup_3.eContents().get(4);
+		private final RuleCall cWiringPatternDynamicWiringPatternParserRuleCall_3_4_0 = (RuleCall)cWiringPatternAssignment_3_4.eContents().get(0);
 		private final Assignment cServicesAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cServicesCommunicationServiceUsageParserRuleCall_4_0 = (RuleCall)cServicesAssignment_4.eContents().get(0);
 		private final Assignment cPropertiesAssignment_5 = (Assignment)cGroup.eContents().get(5);
@@ -526,15 +581,16 @@ public class ServiceDefinitionGrammarAccess extends AbstractGrammarElementFinder
 		
 		//CoordinationServiceDefinition service::CoordinationServiceDefinition:
 		//	'CoordinationServiceDefinition' name=ID
-		//	'{' (statePattern=StatePattern? & parameterPattern=ParameterPattern? & monitoringPattern=MonitoringPattern? &
-		//	wiringPattern=DynamicWiringPattern?) services+=CommunicationServiceUsage*
+		//	'{' (('purposeDescription' purposeDescription=EString)? & statePattern=StatePattern? &
+		//	parameterPattern=ParameterPattern? & monitoringPattern=MonitoringPattern? & wiringPattern=DynamicWiringPattern?)
+		//	services+=CommunicationServiceUsage*
 		//	properties+=ServiceProperty*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'CoordinationServiceDefinition' name=ID '{' (statePattern=StatePattern? & parameterPattern=ParameterPattern? &
-		//monitoringPattern=MonitoringPattern? & wiringPattern=DynamicWiringPattern?) services+=CommunicationServiceUsage*
-		//properties+=ServiceProperty* '}'
+		//'CoordinationServiceDefinition' name=ID '{' (('purposeDescription' purposeDescription=EString)? &
+		//statePattern=StatePattern? & parameterPattern=ParameterPattern? & monitoringPattern=MonitoringPattern? &
+		//wiringPattern=DynamicWiringPattern?) services+=CommunicationServiceUsage* properties+=ServiceProperty* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'CoordinationServiceDefinition'
@@ -549,33 +605,45 @@ public class ServiceDefinitionGrammarAccess extends AbstractGrammarElementFinder
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//statePattern=StatePattern? & parameterPattern=ParameterPattern? & monitoringPattern=MonitoringPattern? &
-		//wiringPattern=DynamicWiringPattern?
+		//('purposeDescription' purposeDescription=EString)? & statePattern=StatePattern? & parameterPattern=ParameterPattern? &
+		//monitoringPattern=MonitoringPattern? & wiringPattern=DynamicWiringPattern?
 		public UnorderedGroup getUnorderedGroup_3() { return cUnorderedGroup_3; }
 		
+		//('purposeDescription' purposeDescription=EString)?
+		public Group getGroup_3_0() { return cGroup_3_0; }
+		
+		//'purposeDescription'
+		public Keyword getPurposeDescriptionKeyword_3_0_0() { return cPurposeDescriptionKeyword_3_0_0; }
+		
+		//purposeDescription=EString
+		public Assignment getPurposeDescriptionAssignment_3_0_1() { return cPurposeDescriptionAssignment_3_0_1; }
+		
+		//EString
+		public RuleCall getPurposeDescriptionEStringParserRuleCall_3_0_1_0() { return cPurposeDescriptionEStringParserRuleCall_3_0_1_0; }
+		
 		//statePattern=StatePattern?
-		public Assignment getStatePatternAssignment_3_0() { return cStatePatternAssignment_3_0; }
+		public Assignment getStatePatternAssignment_3_1() { return cStatePatternAssignment_3_1; }
 		
 		//StatePattern
-		public RuleCall getStatePatternStatePatternParserRuleCall_3_0_0() { return cStatePatternStatePatternParserRuleCall_3_0_0; }
+		public RuleCall getStatePatternStatePatternParserRuleCall_3_1_0() { return cStatePatternStatePatternParserRuleCall_3_1_0; }
 		
 		//parameterPattern=ParameterPattern?
-		public Assignment getParameterPatternAssignment_3_1() { return cParameterPatternAssignment_3_1; }
+		public Assignment getParameterPatternAssignment_3_2() { return cParameterPatternAssignment_3_2; }
 		
 		//ParameterPattern
-		public RuleCall getParameterPatternParameterPatternParserRuleCall_3_1_0() { return cParameterPatternParameterPatternParserRuleCall_3_1_0; }
+		public RuleCall getParameterPatternParameterPatternParserRuleCall_3_2_0() { return cParameterPatternParameterPatternParserRuleCall_3_2_0; }
 		
 		//monitoringPattern=MonitoringPattern?
-		public Assignment getMonitoringPatternAssignment_3_2() { return cMonitoringPatternAssignment_3_2; }
+		public Assignment getMonitoringPatternAssignment_3_3() { return cMonitoringPatternAssignment_3_3; }
 		
 		//MonitoringPattern
-		public RuleCall getMonitoringPatternMonitoringPatternParserRuleCall_3_2_0() { return cMonitoringPatternMonitoringPatternParserRuleCall_3_2_0; }
+		public RuleCall getMonitoringPatternMonitoringPatternParserRuleCall_3_3_0() { return cMonitoringPatternMonitoringPatternParserRuleCall_3_3_0; }
 		
 		//wiringPattern=DynamicWiringPattern?
-		public Assignment getWiringPatternAssignment_3_3() { return cWiringPatternAssignment_3_3; }
+		public Assignment getWiringPatternAssignment_3_4() { return cWiringPatternAssignment_3_4; }
 		
 		//DynamicWiringPattern
-		public RuleCall getWiringPatternDynamicWiringPatternParserRuleCall_3_3_0() { return cWiringPatternDynamicWiringPatternParserRuleCall_3_3_0; }
+		public RuleCall getWiringPatternDynamicWiringPatternParserRuleCall_3_4_0() { return cWiringPatternDynamicWiringPatternParserRuleCall_3_4_0; }
 		
 		//services+=CommunicationServiceUsage*
 		public Assignment getServicesAssignment_4() { return cServicesAssignment_4; }
@@ -1352,7 +1420,7 @@ public class ServiceDefinitionGrammarAccess extends AbstractGrammarElementFinder
 	//ForkingServiceDefinition service::ForkingServiceDefinition:
 	//	'ForkingServiceDefinition' name=ID
 	//	'{'
-	//	pattern=ForkingPatternInstance
+	//	pattern=ForkingPatternInstance ('purposeDescription' purposeDescription=EString)?
 	//	properties+=ServiceProperty*
 	//	'}';
 	public ForkingServiceDefinitionElements getForkingServiceDefinitionAccess() {
@@ -1366,7 +1434,7 @@ public class ServiceDefinitionGrammarAccess extends AbstractGrammarElementFinder
 	//JoyningServiceDefinition service::JoiningServiceDefinition:
 	//	'JoiningServiceDefinition' name=ID
 	//	'{'
-	//	pattern=JoiningPatternInstance
+	//	pattern=JoiningPatternInstance ('purposeDescription' purposeDescription=EString)?
 	//	properties+=ServiceProperty*
 	//	'}';
 	public JoyningServiceDefinitionElements getJoyningServiceDefinitionAccess() {
@@ -1380,7 +1448,7 @@ public class ServiceDefinitionGrammarAccess extends AbstractGrammarElementFinder
 	//RequestAnswerServiceDefinition service::RequestAnswerServiceDefinition:
 	//	'RequestAnswerServiceDefinition' name=ID
 	//	'{'
-	//	pattern=RequestAnswerPattern
+	//	pattern=RequestAnswerPattern ('purposeDescription' purposeDescription=EString)?
 	//	properties+=ServiceProperty*
 	//	'}';
 	public RequestAnswerServiceDefinitionElements getRequestAnswerServiceDefinitionAccess() {
@@ -1393,8 +1461,9 @@ public class ServiceDefinitionGrammarAccess extends AbstractGrammarElementFinder
 	
 	//CoordinationServiceDefinition service::CoordinationServiceDefinition:
 	//	'CoordinationServiceDefinition' name=ID
-	//	'{' (statePattern=StatePattern? & parameterPattern=ParameterPattern? & monitoringPattern=MonitoringPattern? &
-	//	wiringPattern=DynamicWiringPattern?) services+=CommunicationServiceUsage*
+	//	'{' (('purposeDescription' purposeDescription=EString)? & statePattern=StatePattern? &
+	//	parameterPattern=ParameterPattern? & monitoringPattern=MonitoringPattern? & wiringPattern=DynamicWiringPattern?)
+	//	services+=CommunicationServiceUsage*
 	//	properties+=ServiceProperty*
 	//	'}';
 	public CoordinationServiceDefinitionElements getCoordinationServiceDefinitionAccess() {

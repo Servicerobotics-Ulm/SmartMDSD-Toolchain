@@ -2444,6 +2444,60 @@ ruleAbstractCoordinationElement returns [EObject current=null]
 			$current = $this_CommunicationServiceUsageRealization_2.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getAbstractCoordinationElementAccess().getSkillRealizationsRefParserRuleCall_3());
+		}
+		this_SkillRealizationsRef_3=ruleSkillRealizationsRef
+		{
+			$current = $this_SkillRealizationsRef_3.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleSkillRealizationsRef
+entryRuleSkillRealizationsRef returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSkillRealizationsRefRule()); }
+	iv_ruleSkillRealizationsRef=ruleSkillRealizationsRef
+	{ $current=$iv_ruleSkillRealizationsRef.current; }
+	EOF;
+
+// Rule SkillRealizationsRef
+ruleSkillRealizationsRef returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='SkillRealizationsRef'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationsRefKeyword_0());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSkillRealizationsRefRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationSetRefSkillRealizationSetCrossReference_1_0());
+				}
+				ruleFQN
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_2=';'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getSkillRealizationsRefAccess().getSemicolonKeyword_2());
+			}
+		)?
 	)
 ;
 

@@ -10,6 +10,18 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="GenericDatasheet" basePackage="org.ecore.base" disposableProviderFactory="true"
       extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="genericDatasheet.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="genericDatasheet.ecore#//TRL">
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL1"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL2"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL3"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL4"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL5"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL6"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL7"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL8"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL9"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/UNDEFINED"/>
+    </genEnums>
     <genClasses ecoreClass="genericDatasheet.ecore#//GenericDatasheet">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genericDatasheet.ecore#//GenericDatasheet/license"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/shortDescrition"/>
@@ -17,6 +29,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/supplierDescription"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/homepage"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/baseURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/trl"/>
     </genClasses>
     <genClasses ecoreClass="genericDatasheet.ecore#//AbstractLicense"/>
     <genClasses ecoreClass="genericDatasheet.ecore#//SpdxLicense">

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Project
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
+    name="SmartMDSD"
+    label="SmartMDSD Toolchain v3.7">
+  <setupTask
+      xsi:type="setup.p2:P2Task">
+    <requirement
+        name="org.eclipse.xtext.sdk.feature.group"/>
+    <requirement
+        name="org.eclipse.sirius.specifier.feature.group"/>
+    <requirement
+        name="org.eclipse.sirius.runtime.ide.xtext.feature.group"/>
+    <requirement
+        name="org.eclipse.cdt.feature.group"/>
+    <requirement
+        name="org.smartmdsd.toolchain.feature.group"
+        filter=""/>
+    <repository
+        url="https://web2.servicerobotik-ulm.de/files/SmartMDSD_Toolchain/updatesite/v3.7/"/>
+    <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:EclipseIniTask"
+      option="-Xmx"
+      value="1024m"
+      vm="true">
+    <description>Set the heap space needed to work with the projects of ${scope.project.label}</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:VariableTask"
+      name="eclipse.target.platform"
+      defaultValue="Oxygen"
+      storageURI="scope://Workspace"/>
+  <stream name="v3.7"
+      label="Version 3.7"/>
+  <logicalProjectContainer
+      xsi:type="setup:ProjectCatalog"
+      href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
+  <description>SmartMDSD Toolchan for Robotics Software Development.</description>
+</setup:Project>
