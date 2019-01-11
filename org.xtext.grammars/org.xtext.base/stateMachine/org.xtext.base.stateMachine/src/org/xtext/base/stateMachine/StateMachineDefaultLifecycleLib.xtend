@@ -51,6 +51,7 @@ import org.eclipse.emf.ecore.EObject
 import org.ecore.base.stateMachine.StateMachine
 import org.xtext.base.utils.XtextResourceIndex
 import org.ecore.base.stateMachine.StateMachinePackage
+import org.eclipse.xtext.naming.QualifiedName
 
 class StateMachineDefaultLifecycleLib {
 	@Inject XtextResourceIndex index
@@ -61,6 +62,7 @@ class StateMachineDefaultLifecycleLib {
 	public val static COMPONENT_LIFECYCLE = "ComponentLifecycle"
 	public val static ALIVE_SIMPLE = "Alive"
 	public val static ALIVE_MAIN_STATE_COLLECTION = COMPONENT_LIFECYCLE+"."+ALIVE_SIMPLE
+	public static val COMPONENT_LIFECYCLE_QNAME = QualifiedName.create(COMPONENT_LIFECYCLE)
 	
 	def getPluginURI() {
 		URI.createPlatformPluginURI(class.package.name+"/"+COMPONENT_LIFECYCLE_LIBRARY, false)

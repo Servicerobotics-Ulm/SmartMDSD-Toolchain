@@ -50,6 +50,7 @@ import com.google.inject.Inject
 import org.ecore.service.coordinationPattern.CoordinationPatternPackage
 import org.xtext.service.parameterDefinition.ParameterDefinitionDefaultLib
 import org.eclipse.xtext.scoping.Scopes
+import org.xtext.base.stateMachine.StateMachineDefaultLifecycleLib
 
 /**
  * This class contains custom scoping description.
@@ -60,6 +61,8 @@ import org.eclipse.xtext.scoping.Scopes
 class ServiceDefinitionScopeProvider extends AbstractServiceDefinitionScopeProvider {
 	@Inject ServiceDefinitionGlobalScopeProvider gsp
 	
+	// FIXME: this is not a very elegant implementation as it behaves differently in runtime and stand-alone setups (e.g. for unit-tests)
+	// a more uniform and simpler solution should be developed in future
 	override getScope(EObject context, EReference reference) {
 		if(reference == CoordinationPatternPackage.eINSTANCE.parameterPattern_ParameterSet) {
 			val result = gsp.getScope(context.eResource, reference)
@@ -67,7 +70,10 @@ class ServiceDefinitionScopeProvider extends AbstractServiceDefinitionScopeProvi
 			val globalScope = super.getScope(context, reference)
 			return Scopes.scopeFor(elements.map[it.EObjectOrProxy], globalScope)
 		} else if(reference == CoordinationPatternPackage.eINSTANCE.statePattern_Lifecycle) {
-			return gsp.getScope(context.eResource, reference)
+			val result = gsp.getScope(context.eResource, reference)
+			val elements = result.getElements(StateMachineDefaultLifecycleLib.COMPONENT_LIFECYCLE_QNAME)
+			val globalScope = super.getScope(context, reference)
+			return Scopes.scopeFor(elements.map[it.EObjectOrProxy], globalScope)
 		}
 		return super.getScope(context, reference)
 	}
