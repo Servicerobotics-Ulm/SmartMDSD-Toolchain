@@ -67,7 +67,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&
    </plugins>
 
    <features>
-      <feature id="org.features.smartMDSD" version="3.7.0"/>
+      <feature id="org.smartmdsd.toolchain" version="3.7.0.qualifier"/>
    </features>
 
 
