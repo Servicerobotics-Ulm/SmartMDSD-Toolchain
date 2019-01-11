@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.ecore.base.genericDatasheet;singleton:=true
-Bundle-Version: 3.7.0
+Bundle-Version: 3.7.0.qualifier
 Bundle-ClassPath: .
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.runtime
@@ -11,6 +11,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.ecore.base.genericDatasheet,
  org.ecore.base.genericDatasheet.impl,
  org.ecore.base.genericDatasheet.util
-Bundle-Vendor: %providerName
+Bundle-Vendor: Servicerobotics Ulm
 Bundle-Localization: plugin
 Automatic-Module-Name: org.ecore.base.genericDatasheet

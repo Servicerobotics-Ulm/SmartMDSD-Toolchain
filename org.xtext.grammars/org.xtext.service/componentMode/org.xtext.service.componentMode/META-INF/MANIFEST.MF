@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.xtext.service.componentMode
 Bundle-Vendor: Servicerobotics Ulm
-Bundle-Version: 3.6.0
+Bundle-Version: 3.6.0.qualifier
 Bundle-SymbolicName: org.xtext.service.componentMode; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.ecore.service.componentMode,

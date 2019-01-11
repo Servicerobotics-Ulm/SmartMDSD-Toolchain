@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.sirius.component.design;singleton:=true
-Bundle-Version: 3.4.0
+Bundle-Version: 3.4.0.qualifier
 Bundle-Activator: org.sirius.component.design.Activator
 Bundle-Localization: plugin
 Require-Bundle: org.ecore.component.componentDefinition,

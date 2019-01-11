@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.xtext.service.parameterDefinition
 Bundle-Vendor: Servicerobotics Ulm
-Bundle-Version: 3.4.0
+Bundle-Version: 3.4.0.qualifier
 Bundle-SymbolicName: org.xtext.service.parameterDefinition; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.ecore.service.parameterDefinition,

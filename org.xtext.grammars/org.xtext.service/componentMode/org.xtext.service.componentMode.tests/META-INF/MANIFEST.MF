@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.xtext.service.componentMode.tests
-Bundle-Vendor: My Company
-Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Servicerobotics Ulm
+Bundle-Version: 3.6.0.qualifier
 Bundle-SymbolicName: org.xtext.service.componentMode.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.xtext.service.componentMode,

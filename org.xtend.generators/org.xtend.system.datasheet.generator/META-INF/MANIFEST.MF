@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: DatasheetGenerator
 Bundle-SymbolicName: org.xtend.system.datasheet.generator;singleton:=true
-Bundle-Version: 3.7.0
+Bundle-Version: 3.7.0.qualifier
 Automatic-Module-Name: org.xtend.system.datasheet.generator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: Servicerobotics Ulm

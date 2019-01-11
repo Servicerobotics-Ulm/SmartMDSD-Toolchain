@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: DomainModelsDatasheetGenerator
 Bundle-SymbolicName: org.xtend.domainModels.datasheet.generator;singleton:=true
-Bundle-Version: 3.7.0
+Bundle-Version: 3.7.0.qualifier
 Bundle-Vendor: Servicerobotics Ulm
 Automatic-Module-Name: org.xtend.domainModels.datasheet.generator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

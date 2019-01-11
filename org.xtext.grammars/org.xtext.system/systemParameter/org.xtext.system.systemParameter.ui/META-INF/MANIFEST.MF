@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.xtext.system.systemParameter.ui
 Bundle-Vendor: ServiceRobotics Ulm
-Bundle-Version: 3.4.0
+Bundle-Version: 3.4.0.qualifier
 Bundle-SymbolicName: org.xtext.system.systemParameter.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.xtext.system.systemParameter,

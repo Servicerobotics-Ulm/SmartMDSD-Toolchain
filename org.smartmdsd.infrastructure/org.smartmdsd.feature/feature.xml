@@ -2,7 +2,7 @@
 <feature
       id="org.smartmdsd.toolchain"
       label="SmartMDSD-Toolchain"
-      version="3.7.0"
+      version="3.7.0.qualifier"
       provider-name="Servicerobotics Ulm"
       plugin="org.smartmdsd.branding"
       os="linux,win32"
