@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: SmartSoftGenerator
 Bundle-SymbolicName: org.xtend.smartsoft.generator;singleton:=true
-Bundle-Version: 3.4.0.qualifier
+Bundle-Version: 3.7.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.xtext.xbase.lib,
@@ -29,7 +29,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.commands,
  org.smartsoft.utils,
  org.ecore.system.compArchSeronetExtension
-Bundle-Vendor: University of Applied Sciences Ulm
+Bundle-Vendor: Servicerobotics Ulm
 Export-Package: org.xtend.smartsoft.generator,
  org.xtend.smartsoft.generator.commObj,
  org.xtend.smartsoft.generator.component

@@ -5,7 +5,7 @@ SmartMDSD Toolchain v3.7
 	* Add model flag that allows to switch between different middleware backends (currently between ACE/SmartSoft and SeRoNet OPC UA Backend)
 	* Add Toolchain Installer based on the default Eclipse (OOMPH) Installer
 	* Release candidate for skill modeling; see https://robmosys.eu/wiki/baseline:environment_tools:smartsoft:smartmdsd-toolchain:skills:start
--- Fr, 21 Dec 2018
+-- Mon, 14 Jan. 2019
 
 SmartMDSD Toolchain v3.6
 	* Simplified and cleaned-up graphical model editors
