@@ -815,7 +815,7 @@
         </decorationDescriptionsSet>
       </defaultLayer>
       <additionalLayers name="SeRoNet" icon="/org.sirius.component.design/icons/SeRoNetIcon.png">
-        <edgeMappings name="OpcStatusServerOutPortEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentContainerImport']/@borderedNodeMappings[name='OpcUaStatusServerNode']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='OutputPortNode']" targetFinderExpression="feature:outPort" sourceFinderExpression="var:self" domainClass="seronetExtension::OpcUaStatusServer" useDomainElement="true">
+        <edgeMappings name="OpcStatusServerOutPortEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentContainerImport']/@borderedNodeMappings[name='OpcUaReadServerNode']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='OutputPortNode']" targetFinderExpression="feature:outPort" sourceFinderExpression="var:self" domainClass="seronetExtension::OpcUaReadServer" useDomainElement="true">
           <style targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -838,8 +838,8 @@
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </borderedNodeMappings>
-          <borderedNodeMappings name="OpcUaStatusServerNode" labelDirectEdit="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@toolSections.0/@ownedTools[name='SeRoNetEdition']" semanticCandidatesExpression="feature:elements" domainClass="seronetExtension::OpcUaStatusServer">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" tooltipExpression="OpcUaStatusServer" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.sirius.component.design/icons/OpcUaServer.png">
+          <borderedNodeMappings name="OpcUaReadServerNode" labelDirectEdit="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@toolSections.0/@ownedTools[name='SeRoNetEdition']" semanticCandidatesExpression="feature:elements" domainClass="seronetExtension::OpcUaReadServer">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" tooltipExpression="OpcUaReadServer" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.sirius.component.design/icons/OpcUaServer.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -952,15 +952,15 @@
               </initialOperation>
             </tools>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="PlainOpcUaReadServer" label="Plain OPC UA Port (ReadServer)" nodeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentContainerImport']/@borderedNodeMappings[name='OpcUaStatusServerNode']">
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="PlainOpcUaReadServer" label="Plain OPC UA Port (ReadServer)" nodeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentContainerImport']/@borderedNodeMappings[name='OpcUaReadServerNode']">
             <variable name="container">
-              <subVariables xsi:type="tool:SelectModelElementVariable" name="outPort" candidatesExpression="[container.elements->filter(componentDefinition::OutputPort)/]" message="Select an OutputPort as the data source for the PlainOpcUaStatusPort" userDocumentation="OutputPort providing the data for the PlainOpcUaStatusPort"/>
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="outPort" candidatesExpression="[container.elements->filter(componentDefinition::OutputPort)/]" message="Select an OutputPort as the data source for the PlainOpcUaStatusPort" userDocumentation="OutputPort providing the data for the Plain OpcUa ReadServer"/>
             </variable>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool:CreateInstance" typeName="seronetExtension::OpcUaStatusServer" referenceName="elements">
-                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="['OpcUaStatusServer'+container.elements->size()/]">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="seronetExtension::OpcUaReadServer" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="['ua'+outPort.name/]">
                     <subModelOperations xsi:type="tool:SetValue" featureName="outPort" valueExpression="var:outPort"/>
                   </subModelOperations>
                 </subModelOperations>

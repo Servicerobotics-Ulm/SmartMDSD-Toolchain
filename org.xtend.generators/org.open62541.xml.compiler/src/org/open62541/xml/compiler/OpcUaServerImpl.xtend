@@ -118,7 +118,7 @@ class OpcUaServerImpl implements  OpcUaServer {
 		virtual void handleMethodCall(const std::string &browseName, const std::vector<ValueType> &inputs, std::vector<ValueType> &outputs) override;
 		
 	public:
-		«objectName»(«objectName»Interface *controller);
+		«objectName»(«objectName»Interface *controller, const unsigned short &portNumber=4840, const bool &activateSignalHandler=true);
 		virtual ~«objectName»();
 	};
 	
@@ -135,8 +135,8 @@ class OpcUaServerImpl implements  OpcUaServer {
 		
 	namespace OPCUA {
 	
-	«objectName»::«objectName»(«objectName»Interface *controller)
-	:	OPCUA::GenericServer("«objectName»")
+	«objectName»::«objectName»(«objectName»Interface *controller, const unsigned short &portNumber, const bool &activateSignalHandler)
+	:	OPCUA::GenericServer("«objectName»", 1, portNumber, activateSignalHandler)
 	,	controller(controller)
 	{
 		

@@ -40,7 +40,7 @@ import org.ecore.component.componentDefinition.ComponentDefinition
 import com.google.inject.Inject
 import org.xtend.smartsoft.generator.CopyrightHelpers
 import org.ecore.component.seronetExtension.OpcUaDeviceClient
-import org.ecore.component.seronetExtension.OpcUaStatusServer
+import org.ecore.component.seronetExtension.OpcUaReadServer
 import org.xtend.smartsoft.generator.component.SmartComponentExtension
 import org.xtend.smartsoft.generator.component.SmartComponent
 
@@ -72,8 +72,8 @@ class PlainOpcUaComponentExtension  {
 	#include "«opcDeviceClient.opcUaDeviceClientHeader»"
 	«ENDFOR»
 	// include plain OPC UA status servers
-	«FOR opcStatusServer: component.elements.filter(OpcUaStatusServer)»
-	#include "«opcStatusServer.serverControllerHeaderFileName»"
+	«FOR server: component.elements.filter(OpcUaReadServer)»
+	#include "«server.serverControllerHeaderFileName»"
 	«ENDFOR»
 	
 	class PlainOpcUa«component.name»Extension : public «component.name»Extension 
@@ -83,8 +83,9 @@ class PlainOpcUaComponentExtension  {
 		OPCUA::«opcDeviceClient.name.toFirstUpper» *«opcDeviceClient.name.toFirstLower»;
 		std::string «opcDeviceClient.name.toFirstLower»DeviceURI;
 		«ENDFOR»
-		«FOR opcStatusServer: component.elements.filter(OpcUaStatusServer)»
-		«opcStatusServer.className» *«opcStatusServer.name.toFirstLower»;
+		«FOR opcStatusServer: component.elements.filter(OpcUaReadServer)»
+		unsigned short «opcStatusServer.name.toFirstLower»PortNumber;
+		OPCUA::«opcStatusServer.className» *«opcStatusServer.name.toFirstLower»;
 		«ENDFOR»
 	public:
 		PlainOpcUa«component.name»Extension();
@@ -110,6 +111,8 @@ class PlainOpcUaComponentExtension  {
 	
 	#include "«component.plainOpcUaExtensionHeaderFilename»"
 	
+	// the ace port-factory is used as a default port-mapping
+	
 	// statically create a global PlainOpcUa«component.name»Extension instance
 	static PlainOpcUa«component.name»Extension extension;
 	
@@ -117,14 +120,13 @@ class PlainOpcUaComponentExtension  {
 	:	«component.name»Extension("PlainOpcUa«component.name»Extension")
 	{
 		«FOR client: component.elements.filter(OpcUaDeviceClient)»
-		«client.name.toFirstLower»DeviceURI = "«client.deviceURI»";
+			«client.name.toFirstLower» = 0;
+			«client.name.toFirstLower»DeviceURI = "«client.deviceURI»";
 		«ENDFOR»
 		
-		«FOR client: component.elements.filter(OpcUaDeviceClient)»
-			«client.name.toFirstLower» = 0;
-		«ENDFOR»
-		«FOR opcStatusServer: component.elements.filter(OpcUaStatusServer)»
+		«FOR opcStatusServer: component.elements.filter(OpcUaReadServer)»
 			«opcStatusServer.name.toFirstLower» = 0;
+			«opcStatusServer.name.toFirstLower»PortNumber = «opcStatusServer.portNumber»;
 		«ENDFOR»
 	}
 	
@@ -134,7 +136,10 @@ class PlainOpcUaComponentExtension  {
 	void PlainOpcUa«component.name»Extension::loadParameters(const SmartACE::SmartIniParameter &parameter)
 	{
 		«FOR client: component.elements.filter(OpcUaDeviceClient)»
-		parameter.getString("«client.name»", "deviceURI", «client.name.toFirstLower»DeviceURI);
+			parameter.getString("«client.name»", "deviceURI", «client.name.toFirstLower»DeviceURI);
+		«ENDFOR»
+		«FOR server: component.elements.filter(OpcUaReadServer)»
+			parameter.getInteger("«server.name»", "portNumber", «server.name.toFirstLower»PortNumber);
 		«ENDFOR»
 	}
 	
@@ -144,8 +149,8 @@ class PlainOpcUaComponentExtension  {
 		«opcDeviceClient.name.toFirstLower» = new OPCUA::«opcDeviceClient.name.toFirstUpper»();
 		component->«opcDeviceClient.name.toFirstLower» = «opcDeviceClient.name.toFirstLower»;
 		«ENDFOR»
-		«FOR opcStatusServer: component.elements.filter(OpcUaStatusServer)»
-		«opcStatusServer.name.toFirstLower» = new «opcStatusServer.name.toFirstUpper»(component);
+		«FOR opcStatusServer: component.elements.filter(OpcUaReadServer)»
+		«opcStatusServer.name.toFirstLower» = new OPCUA::«opcStatusServer.className»(NULL, «opcStatusServer.name.toFirstLower»PortNumber);
 		component->«opcStatusServer.name.toFirstLower» = «opcStatusServer.name.toFirstLower»;
 		«ENDFOR»
 	}
@@ -157,7 +162,7 @@ class PlainOpcUaComponentExtension  {
 			«client.name.toFirstLower»->connect(«client.name.toFirstLower»DeviceURI, "«client.name»", false);
 		«ENDFOR»
 		
-		«FOR opcStatusServer: component.elements.filter(OpcUaStatusServer)»
+		«FOR opcStatusServer: component.elements.filter(OpcUaReadServer)»
 		«opcStatusServer.name.toFirstLower»->start();
 		«ENDFOR»
 		
@@ -181,7 +186,7 @@ class PlainOpcUaComponentExtension  {
 			«client.name.toFirstLower»->disconnect();
 		«ENDFOR»
 		
-		«FOR opcStatusServer: component.elements.filter(OpcUaStatusServer)»
+		«FOR opcStatusServer: component.elements.filter(OpcUaReadServer)»
 		«opcStatusServer.name.toFirstLower»->stop();
 		«ENDFOR»
 		
@@ -193,7 +198,7 @@ class PlainOpcUaComponentExtension  {
 		«FOR opcDeviceClient: component.elements.filter(OpcUaDeviceClient)»
 		delete «opcDeviceClient.name.toFirstLower»;
 		«ENDFOR»
-		«FOR opcStatusServer: component.elements.filter(OpcUaStatusServer)»
+		«FOR opcStatusServer: component.elements.filter(OpcUaReadServer)»
 		delete «opcStatusServer.name.toFirstLower»;
 		«ENDFOR»
 	}

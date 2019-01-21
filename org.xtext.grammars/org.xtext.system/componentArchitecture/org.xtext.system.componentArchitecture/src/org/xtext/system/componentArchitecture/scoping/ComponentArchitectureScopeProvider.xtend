@@ -59,17 +59,7 @@ import org.ecore.system.componentArchitecture.SystemComponentArchitecture
 import org.ecore.system.activityArchitecture.ActivityNode
 import org.ecore.component.componentDefinition.InputHandler
 import org.ecore.system.activityArchitecture.InputHandlerNode
-import org.ecore.system.systemParameter.SystemParameterPackage
-import org.eclipse.xtext.scoping.impl.FilteringScope
-import com.google.common.base.Predicate
-import org.eclipse.xtext.resource.IEObjectDescription
-import com.google.inject.Inject
-import org.eclipse.xtext.naming.IQualifiedNameProvider
-import org.eclipse.xtext.scoping.IScope
-import org.eclipse.xtext.scoping.impl.ImportNormalizer
-import org.eclipse.xtext.scoping.impl.ScopeBasedSelectable
-import org.eclipse.xtext.scoping.impl.ImportScope
-import java.util.Arrays
+import org.ecore.component.seronetExtension.OpcUaReadServer
 
 /**
  * This class contains custom scoping description.
@@ -78,7 +68,7 @@ import java.util.Arrays
  * on how and when to use it.
  */
 class ComponentArchitectureScopeProvider extends AbstractComponentArchitectureScopeProvider {
-	@Inject IQualifiedNameProvider name_provider;
+//	@Inject IQualifiedNameProvider name_provider;
 	
 	override getScope(EObject context, EReference reference) {
 		if(reference == ComponentArchitecturePackage.eINSTANCE.serviceInstance_Port) {
@@ -94,6 +84,11 @@ class ComponentArchitectureScopeProvider extends AbstractComponentArchitectureSc
 			val parent = context.eContainer
 			if(parent instanceof ComponentInstance) {
 				return Scopes.scopeFor(parent.component.elements.filter(OpcUaDeviceClient))
+			} 
+		} else if(reference == CompArchSeronetExtensionPackage.eINSTANCE.opcUaReadServerInstance_ReadServer) {
+			val parent = context.eContainer
+			if(parent instanceof ComponentInstance) {
+				return Scopes.scopeFor(parent.component.elements.filter(OpcUaReadServer))
 			} 
 		} else if(reference == ComponentArchitecturePackage.eINSTANCE.activityConfigurationMapping_Activity) {
 			val parent = context.eContainer

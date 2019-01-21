@@ -73,7 +73,7 @@ ComponentInstance returns ComponentInstance:
 	'}';
 
 ComponentInstanceExtension returns ComponentInstanceExtension: 
-	ParameterStructInstance | ActivityConfigurationMapping | InputHandlerConfigurationMapping | OpcUaDeviceClientInstance
+	ParameterStructInstance | ActivityConfigurationMapping | InputHandlerConfigurationMapping | OpcUaDeviceClientInstance | OpcUaReadServerInstance
 ;
 
 ParameterStructInstance returns systemParameter::ParameterStructInstance:
@@ -91,6 +91,10 @@ InputHandlerConfigurationMapping returns InputHandlerConfigurationMapping:
 
 OpcUaDeviceClientInstance returns compArchSeronetExtension::OpcUaDeviceClientInstance: 
 	'OpcUaDeviceClientInstance' deviceClient=[seronetExtension::OpcUaDeviceClient|FQN] 'deviceURI' deviceURI=EString (';')?
+;
+
+OpcUaReadServerInstance returns compArchSeronetExtension::OpcUaReadServerInstance: 
+	'OpcUaReadServerInstance' readServer=[seronetExtension::OpcUaReadServer|FQN] ('portNumber' portNumber=EInt)? (';')?
 ;
 
 

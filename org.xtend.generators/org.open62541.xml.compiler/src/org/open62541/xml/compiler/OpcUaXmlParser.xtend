@@ -50,6 +50,7 @@ class OpcUaXmlParser {
 	
 	static class SeRoNetENTITY {
 		public String name;
+		public String commObjectCall;
 		public String type;
 		public int userAccessLevel;
 		public SeRoNetNodeId nodeid;
@@ -566,6 +567,18 @@ class OpcUaXmlParser {
 			case "UInt64": "unsigned long"
 			case "Float": "float"
 			case "Double": "double"
+			
+			case "std::vector<Boolean>": "std::vector<bool>"
+			case "std::vector<String>": "std::vector<std::string>"
+			case "std::vector<Byte>": "std::vector<unsigned char>"
+			case "std::vector<Int16>": "std::vector<short>"
+			case "std::vector<UInt16>": "std::vector<unsigned short>"
+			case "std::vector<Int32>": "std::vector<int>"
+			case "std::vector<UInt32>": "std::vector<unsigned int>"
+			case "std::vector<Int64>": "std::vector<long>"
+			case "std::vector<UInt64>": "std::vector<unsigned long>"
+			case "std::vector<Float>": "std::vector<float>"
+			case "std::vector<Double>": "std::vector<double>"
 		}
 	}
 	def getCppDefaultValue(String opcUaType) {
@@ -581,6 +594,18 @@ class OpcUaXmlParser {
 			case "UInt64": "0"
 			case "Float": "0.0"
 			case "Double": "0.0"
+			
+			case "std::vector<Boolean>": "std::vector<bool>()"
+			case "std::vector<String>": "std::vector<std::string>()"
+			case "std::vector<Byte>": "std::vector<unsigned char>()"
+			case "std::vector<Int16>": "std::vector<short>()"
+			case "std::vector<UInt16>": "std::vector<unsigned short>()"
+			case "std::vector<Int32>": "std::vector<int>()"
+			case "std::vector<UInt32>": "std::vector<unsigned int>()"
+			case "std::vector<Int64>": "std::vector<long>()"
+			case "std::vector<UInt64>": "std::vector<unsigned long>()"
+			case "std::vector<Float>": "std::vector<float>()"
+			case "std::vector<Double>": "std::vector<double>()"
 		}
 	}
 	

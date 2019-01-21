@@ -21,8 +21,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute seronetExtension.ecore#//OpcUaDeviceClient/deviceURI"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute seronetExtension.ecore#//OpcUaDeviceClient/opcuaXmlFile"/>
     </genClasses>
-    <genClasses ecoreClass="seronetExtension.ecore#//OpcUaStatusServer">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference seronetExtension.ecore#//OpcUaStatusServer/outPort"/>
+    <genClasses ecoreClass="seronetExtension.ecore#//OpcUaReadServer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference seronetExtension.ecore#//OpcUaReadServer/outPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute seronetExtension.ecore#//OpcUaReadServer/portNumber"/>
     </genClasses>
     <genClasses ecoreClass="seronetExtension.ecore#//OpcUaClientLink">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference seronetExtension.ecore#//OpcUaClientLink/client"/>

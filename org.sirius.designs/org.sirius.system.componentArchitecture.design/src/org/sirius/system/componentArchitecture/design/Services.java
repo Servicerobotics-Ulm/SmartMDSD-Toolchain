@@ -27,6 +27,7 @@ import org.ecore.component.componentDefinition.OutputPort;
 import org.ecore.component.componentDefinition.RequestPort;
 import org.ecore.component.componentParameter.ComponentParameter;
 import org.ecore.component.componentParameter.ComponentParametersRef;
+import org.ecore.component.seronetExtension.OpcUaReadServer;
 import org.ecore.service.communicationPattern.EventPattern;
 import org.ecore.service.communicationPattern.PushPattern;
 import org.ecore.service.communicationPattern.QueryPattern;
@@ -34,6 +35,7 @@ import org.ecore.service.communicationPattern.SendPattern;
 import org.ecore.service.serviceDefinition.ForkingServiceDefinition;
 import org.ecore.service.serviceDefinition.JoiningServiceDefinition;
 import org.ecore.service.serviceDefinition.RequestAnswerServiceDefinition;
+import org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance;
 import org.ecore.system.componentArchitecture.ComponentArchitectureModelUtility;
 import org.ecore.system.componentArchitecture.ComponentInstance;
 import org.ecore.system.componentArchitecture.Connection;
@@ -57,6 +59,29 @@ public class Services {
     
     public String getProjectName(EObject obj) {
     	return DiagramHelperServices.getProjectName(obj);
+    }
+    
+    public EObject selectOpcUaReadServerPortReference(EObject context) {
+    	if(context instanceof OpcUaReadServerInstance) {
+    		OpcUaReadServerInstance readServerInstance = (OpcUaReadServerInstance)context;
+    		EObject parent = context.eContainer();
+    		if(parent instanceof ComponentInstance) {
+    			ComponentInstance compInstance = (ComponentInstance)parent;
+    			for(EObject element: compInstance.getComponent().getElements()) {
+    				if(element instanceof OpcUaReadServer) {
+    					OpcUaReadServer readServer = (OpcUaReadServer)element;
+    					if(readServerInstance.getReadServer().equals(readServer)) {
+    						for(ServiceInstance serviceInstance: compInstance.getPorts()) {
+    							if(serviceInstance.getPort().equals(readServer.getOutPort())) {
+    								return serviceInstance;
+    							}
+    						}
+    					}
+    				}
+    			}
+    		}
+    	}
+    	return null;
     }
      
     public EObject deleteComponentAndRelatedConnections(EObject context)

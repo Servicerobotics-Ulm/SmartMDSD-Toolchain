@@ -39,7 +39,7 @@ package org.xtend.plainOPCUA.generator.ext
 import org.xtend.smartsoft.generator.component.ComponentGeneratorExtension
 import org.ecore.component.componentDefinition.ComponentDefinition
 import org.ecore.component.seronetExtension.OpcUaDeviceClient
-import org.ecore.component.seronetExtension.OpcUaStatusServer
+import org.ecore.component.seronetExtension.OpcUaReadServer
 import com.google.inject.Inject
 import org.xtend.plainOPCUA.generator.PlainOpcUaDeviceClient
 import org.xtend.plainOPCUA.generator.PlainOpcUaStatusServer
@@ -58,7 +58,7 @@ class PlainOpcUaComponentGeneratorExtensionImpl implements ComponentGeneratorExt
 		#include "«opcDeviceClient.opcUaDeviceClientHeader»"
 		«ENDFOR»
 		// include plain OPC UA status servers
-		«FOR opcStatusServer: component.elements.filter(OpcUaStatusServer)»
+		«FOR opcStatusServer: component.elements.filter(OpcUaReadServer)»
 		#include "«opcStatusServer.serverControllerHeaderFileName»"
 		«ENDFOR»
 	'''
@@ -70,8 +70,8 @@ class PlainOpcUaComponentGeneratorExtensionImpl implements ComponentGeneratorExt
 		«FOR opcDeviceClient: component.elements.filter(OpcUaDeviceClient)»
 		OPCUA::«opcDeviceClient.name.toFirstUpper» *«opcDeviceClient.name.toFirstLower»;
 		«ENDFOR»
-		«FOR opcStatusServer: component.elements.filter(OpcUaStatusServer)»
-		«opcStatusServer.name.toFirstUpper» *«opcStatusServer.name.toFirstLower»;
+		«FOR opcStatusServer: component.elements.filter(OpcUaReadServer)»
+		OPCUA::«opcStatusServer.className» *«opcStatusServer.name.toFirstLower»;
 		«ENDFOR»
 	'''
 	
@@ -81,6 +81,12 @@ class PlainOpcUaComponentGeneratorExtensionImpl implements ComponentGeneratorExt
 		[«client.name»]
 		deviceURI «client.deviceURI»
 		opcuaXmlFile «client.opcuaXmlFile»
+		
+		«ENDFOR»
+		
+		«FOR server: component.elements.filter(OpcUaReadServer)»
+		[«server.name»]
+		portNumber «server.portNumber»
 		
 		«ENDFOR»
 	'''

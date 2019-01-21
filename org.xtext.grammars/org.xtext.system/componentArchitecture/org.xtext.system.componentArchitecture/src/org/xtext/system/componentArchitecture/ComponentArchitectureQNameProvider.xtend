@@ -56,6 +56,7 @@ import org.ecore.system.componentArchitecture.ActivityConfigurationMapping
 import org.ecore.system.componentArchitecture.InputHandlerConfigurationMapping
 import org.ecore.system.systemParameter.ParameterStructInstance
 import org.ecore.system.systemParameter.SystemParameterPackage
+import org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance
 
 class ComponentArchitectureQNameProvider extends DefaultDeclarativeQualifiedNameProvider {
 	// derive InPortInstance.name from InRef.name
@@ -95,6 +96,19 @@ class ComponentArchitectureQNameProvider extends DefaultDeclarativeQualifiedName
 		} else {
 			if(client.eIsSet(CompArchSeronetExtensionPackage.Literals.OPC_UA_DEVICE_CLIENT_INSTANCE__DEVICE_CLIENT)) {
 				return parent.append(client.deviceClient.name);
+			}
+		}
+        return QualifiedName.EMPTY;
+    }
+    
+	def QualifiedName qualifiedName(OpcUaReadServerInstance server) {
+		val parent = super.getFullyQualifiedName(server.eContainer());
+		val nodes = NodeModelUtils.findNodesForFeature(server, CompArchSeronetExtensionPackage.Literals.OPC_UA_READ_SERVER_INSTANCE__READ_SERVER)
+		if(!nodes.isEmpty()) {
+			return parent.append(NodeModelUtils.getTokenText(nodes.get(0)));
+		} else {
+			if(server.eIsSet(CompArchSeronetExtensionPackage.Literals.OPC_UA_READ_SERVER_INSTANCE__READ_SERVER)) {
+				return parent.append(server.readServer.name);
 			}
 		}
         return QualifiedName.EMPTY;

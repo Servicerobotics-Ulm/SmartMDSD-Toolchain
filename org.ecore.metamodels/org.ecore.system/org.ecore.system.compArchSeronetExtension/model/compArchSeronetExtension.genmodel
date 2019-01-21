@@ -17,5 +17,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compArchSeronetExtension.ecore#//OpcUaDeviceClientInstance/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compArchSeronetExtension.ecore#//OpcUaDeviceClientInstance/deviceURI"/>
     </genClasses>
+    <genClasses ecoreClass="compArchSeronetExtension.ecore#//OpcUaReadServerInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compArchSeronetExtension.ecore#//OpcUaReadServerInstance/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compArchSeronetExtension.ecore#//OpcUaReadServerInstance/portNumber"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

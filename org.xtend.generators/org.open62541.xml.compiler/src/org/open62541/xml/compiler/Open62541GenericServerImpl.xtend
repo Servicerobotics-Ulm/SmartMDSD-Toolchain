@@ -53,12 +53,16 @@ class Open62541GenericServerImpl implements Open62541GenericServer {
 	#ifndef OPCUAGENERICSERVER_HH_
 	#define OPCUAGENERICSERVER_HH_
 	
-	#ifdef HAS_OPCUA
-	#include <open62541.h>
-	#endif
-	
 	#include <map>
 	#include <string>
+	
+	#ifdef HAS_OPCUA
+		#ifdef UA_ENABLE_AMALGAMATION
+			#include <open62541.h>
+		#else
+			#include <ua_server.h>
+		#endif
+	#endif
 	
 	#include "«opcUaStatusCodeHeaderFileName»"
 	#include "«opcUaValueTypeHeaderFileName»"
@@ -174,8 +178,23 @@ class Open62541GenericServerImpl implements Open62541GenericServer {
 		virtual void handleMethodCall(const std::string &browseName, const std::vector<ValueType> &inputs, std::vector<ValueType> &outputs);
 	
 	public:
-		/// default constructor requires a name for the root object that is automatically created
-		GenericServer(const std::string &rootObjectName, const unsigned short &namespaceId=1);
+		/** default constructor requires at the minimum a name for the root object that is automatically created
+		 *
+		 *  This constructor internally creates a new UA_Server and a server space with one root object
+		 *  with the given name and namespace-ID. Optionally, the port-number for the UA_Server can be provided.
+		 *
+		 *  @param rootObjectName The browse noame of the root-object within the server-space
+		 *  @param namespaceId optionally, the namespace ID for the browse-name can be given (default: 1)
+		 *  @param portNr optional port number for the server to listen to (default: 4840)
+		 *  @param activateSignalHandler optional parameter to activate/deactivate the default SIGINT signal handler (for stopping the server with CTRL+C)
+		 *
+		 */
+		GenericServer(
+			const std::string &rootObjectName,
+			const unsigned short &namespaceId=1,
+			const unsigned short &portNr=4840,
+			const bool &activateSignalHandler=true
+		);
 	
 		/// default destructor
 		virtual ~GenericServer();
@@ -199,6 +218,8 @@ class Open62541GenericServerImpl implements Open62541GenericServer {
 		 *  @return 0 if everything was fine or -1 otherwise
 		 */
 		int run();
+		
+		void signalStop();
 	};
 	
 	} /* namespace OPCUA */
@@ -213,6 +234,13 @@ class Open62541GenericServerImpl implements Open62541GenericServer {
 	#include <vector>
 	#include <sstream>
 	#include <functional>
+	
+	#ifdef HAS_OPCUA
+	#ifndef UA_ENABLE_AMALGAMATION
+	#include <ua_config_default.h>
+	#include <ua_log_stdout.h>
+	#endif
+	#endif // HAS_OPCUA
 	
 	namespace OPCUA {
 	
@@ -304,15 +332,18 @@ class Open62541GenericServerImpl implements Open62541GenericServer {
 	}
 	#endif // HAS_OPCUA
 	
-	GenericServer::GenericServer(const std::string &rootObjectName, const unsigned short &namespaceId)
+	GenericServer::GenericServer(const std::string &rootObjectName, const unsigned short &namespaceId, const unsigned short &portNr, const bool &activateSignalHandler)
 	{
 		#ifdef HAS_OPCUA
-		// setup signal handlers
-		signal(SIGINT, signal_handler);
-		signal(SIGTERM, signal_handler);
+		
+		if(activateSignalHandler == true) {
+			// setup signal handlers
+			signal(SIGINT, signal_handler);
+			signal(SIGTERM, signal_handler);
+		}
 	
 		// setup the OPC UA server
-		config = UA_ServerConfig_new_default();
+		config = UA_ServerConfig_new_minimal(portNr, NULL);
 		server = UA_Server_new(config);
 	
 		on_read_upcall_bindings[server] = std::bind(&GenericServer::handleOnRead, this, std::placeholders::_1, std::placeholders::_2);
@@ -358,6 +389,11 @@ class Open62541GenericServerImpl implements Open62541GenericServer {
 		}
 		#endif // HAS_OPCUA
 		return -1;
+	}
+	
+	void GenericServer::signalStop()
+	{
+		running = false;
 	}
 	
 	bool GenericServer::createRootObject(const std::string &objectName, const unsigned short &namespaceId)

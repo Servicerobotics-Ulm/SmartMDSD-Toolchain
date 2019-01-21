@@ -78,11 +78,11 @@ class SmartComponentPortFactory {
 		virtual void initialize(«component.nameClass» *component, int argc, char* argv[]) = 0;
 		virtual int onStartup() = 0;
 	
-		«FOR port: component.allClientPorts»
+		«FOR port: component.allClientPorts.sortBy[it.name]»
 		virtual «port.portDefinition» * create«port.nameClass»() = 0;
 		«ENDFOR»
 		
-		«FOR port: component.allServerPorts»
+		«FOR port: component.allServerPorts.sortBy[it.name]»
 		virtual «port.portDefinition» * create«port.nameClass»(const std::string &serviceName«IF port.isEventServer», Smart::IEventTestHandler<«port.getCommObjectCppList(true)»> *«port.nameInstance»EventTestHandler«ENDIF») = 0;
 		«ENDFOR»
 	
@@ -117,11 +117,11 @@ class SmartComponentPortFactory {
 		virtual void initialize(«component.nameClass» *component, int argc, char* argv[]) override;
 		virtual int onStartup() override;
 	
-		«FOR port: component.allClientPorts»
+		«FOR port: component.allClientPorts.sortBy[it.name]»
 		virtual «port.portDefinition» * create«port.nameClass»() override;
 		«ENDFOR»
 		
-		«FOR port: component.allServerPorts»
+		«FOR port: component.allServerPorts.sortBy[it.name]»
 		virtual «port.portDefinition» * create«port.nameClass»(const std::string &serviceName«IF port.isEventServer», Smart::IEventTestHandler<«port.getCommObjectCppList(true)»> *«port.nameInstance»EventTestHandler«ENDIF») override;
 		«ENDFOR»
 		
@@ -177,7 +177,7 @@ class SmartComponentPortFactory {
 		return componentImpl->startComponentInfrastructure();
 	}
 
-	«FOR port: component.allClientPorts»
+	«FOR port: component.allClientPorts.sortBy[it.name]»
 	«port.portDefinition» * «component.name»AcePortFactory::create«port.nameClass»()
 	{
 		return new «port.portImplementation»(componentImpl);
@@ -185,7 +185,7 @@ class SmartComponentPortFactory {
 	
 	«ENDFOR»
 	
-	«FOR port: component.allServerPorts»
+	«FOR port: component.allServerPorts.sortBy[it.name]»
 	«port.portDefinition» * «component.name»AcePortFactory::create«port.nameClass»(const std::string &serviceName«IF port.isEventServer», Smart::IEventTestHandler<«port.getCommObjectCppList(true)»> *«port.nameInstance»EventTestHandler«ENDIF»)
 	{
 		return new «port.portImplementation»(componentImpl, serviceName«IF port.isEventServer», «port.nameInstance»EventTestHandler«ENDIF»);

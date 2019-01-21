@@ -14,9 +14,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="opcuaXmlFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OpcUaStatusServer" eSuperTypes="#//PlainOpcUaPort">
+  <eClassifiers xsi:type="ecore:EClass" name="OpcUaReadServer" eSuperTypes="#//PlainOpcUaPort">
     <eStructuralFeatures xsi:type="ecore:EReference" name="outPort" lowerBound="1"
         eType="ecore:EClass ../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//OutputPort"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="portNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="4840"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OpcUaClientLink" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//AbstractComponentLink">
     <eStructuralFeatures xsi:type="ecore:EReference" name="client" lowerBound="1"

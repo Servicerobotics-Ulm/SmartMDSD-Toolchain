@@ -70,7 +70,7 @@ import static extension org.ecore.component.componentDefinition.ComponentDefinit
 class ComponentDefinitionScopeProvider extends AbstractComponentDefinitionScopeProvider {
 	
 	override getScope(EObject context, EReference reference) {
-		if(reference == SeronetExtensionPackage.eINSTANCE.opcUaStatusServer_OutPort) {
+		if(reference == SeronetExtensionPackage.eINSTANCE.opcUaReadServer_OutPort) {
 			val parent = context.eContainer
 			if(parent instanceof ComponentDefinition) {
 				return Scopes.scopeFor(parent.elements.filter(OutputPort));

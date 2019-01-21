@@ -43,7 +43,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.ecore.component.componentDefinition.ComponentDefinition
 import org.ecore.component.seronetExtension.OpcUaDeviceClient
-import org.ecore.component.seronetExtension.OpcUaStatusServer
+import org.ecore.component.seronetExtension.OpcUaReadServer
 
 class PlainOpcUaGenerator2Impl extends AbstractGenerator {
 	// Plain OPC UA extensions
@@ -76,8 +76,8 @@ class PlainOpcUaGenerator2Impl extends AbstractGenerator {
 				hasPlainOpcUaClientPorts = true;
 			}
 			var hasPlainOpcUaServerPorts = false
-			for(opcUaStatusServer: comp.elements.filter(OpcUaStatusServer)) {
-				opcUaStatusServer.compilePlainOpcUaStatusServer(fsa)
+			for(opcUaStatusServer: comp.elements.filter(OpcUaReadServer)) {
+				opcUaStatusServer.compilePlainOpcUaReadServer(fsa)
 				hasPlainOpcUaServerPorts = true
 			}
 			if(hasPlainOpcUaClientPorts || hasPlainOpcUaServerPorts) {

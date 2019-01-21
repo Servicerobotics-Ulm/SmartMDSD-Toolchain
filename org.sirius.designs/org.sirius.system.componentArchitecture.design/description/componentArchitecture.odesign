@@ -199,9 +199,25 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
+        <edgeMappings name="OpcReadServerToPortEdge" sourceMapping="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentInstanceImport']/@subContainerMappings[name='OpcUaReadServerInstanceContainer']" targetMapping="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@borderedNodeMappings[name='ProvidedServiceNode'] //@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@borderedNodeMappings[name='RequiredServiceNode']" targetFinderExpression="service:self.selectOpcUaReadServerPortReference()">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
         <containerMappings xsi:type="description_1:ContainerMappingImport" name="ComponentInstanceImport" reusedBorderedNodeMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@borderedNodeMappings[name='ProvidedServiceNode'] //@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@borderedNodeMappings[name='RequiredServiceNode']" reusedContainerMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@subContainerMappings[name='ParameterStructInstanceContainer']" importedMapping="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']">
           <subContainerMappings name="OpcUaDeviceClientInstanceContainer" semanticCandidatesExpression="feature:extensions" domainClass="compArchSeronetExtension::OpcUaDeviceClientInstance">
             <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="OpcUaDeviceClientInstance">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="OpcUaReadServerInstanceContainer" semanticCandidatesExpression="feature:extensions" domainClass="compArchSeronetExtension::OpcUaReadServerInstance">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="OpcUaReadServerInstance">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -235,7 +251,22 @@
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool:CreateInstance" typeName="compArchSeronetExtension::OpcUaDeviceClientInstance" referenceName="extensions">
                   <subModelOperations xsi:type="tool:SetValue" featureName="deviceClient" valueExpression="var:deviceClient">
-                    <subModelOperations xsi:type="tool:SetValue" featureName="deviceURI" valueExpression="['opc://device/uri/'/]"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="deviceURI" valueExpression="[deviceClient.deviceURI/]"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="OpcUaReadServerInstance" label="Plain OPC UA ReadServer Instance" containerMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentInstanceImport']/@subContainerMappings[name='OpcUaReadServerInstanceContainer']">
+            <variable name="container">
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="readServer" candidatesExpression="[container.component.elements->filter(seronetExtension::OpcUaReadServer)/]" message="Select Plain OPC UA ReadServer to be refined"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="compArchSeronetExtension::OpcUaReadServerInstance" referenceName="extensions">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="readServer" valueExpression="var:readServer">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="portNumber" valueExpression="[readServer.portNumber/]"/>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>

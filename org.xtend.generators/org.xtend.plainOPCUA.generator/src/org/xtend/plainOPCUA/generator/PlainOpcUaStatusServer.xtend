@@ -42,7 +42,7 @@ import com.google.inject.Inject
 import org.open62541.xml.compiler.OpcUaXmlParser.SeRoNetENTITY
 import org.ecore.service.communicationObject.CommunicationObject
 import java.util.ArrayList
-import org.ecore.component.seronetExtension.OpcUaStatusServer
+import org.ecore.component.seronetExtension.OpcUaReadServer
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.ecore.component.componentDefinition.ComponentDefinitionModelUtility
 import org.open62541.xml.compiler.OpcUaXmlParser.SeRoNetMETHOD
@@ -54,6 +54,8 @@ import org.ecore.base.basicAttributes.PRIMITIVE_TYPE_NAME
 import org.open62541.xml.compiler.OpcUaXmlParser
 import org.xtend.smartsoft.generator.commObj.CommObjectGenHelpers
 import org.xtend.smartsoft.generator.component.ComponentGenHelpers
+import org.ecore.service.communicationObject.CommElementReference
+import java.util.List
 
 class PlainOpcUaStatusServer {
 	@Inject extension CopyrightHelpers
@@ -63,25 +65,30 @@ class PlainOpcUaStatusServer {
 	@Inject extension OpcUaObjectInterfaceImpl
 	@Inject extension OpcUaXmlParser
 	
-	def getNameInstance(OpcUaStatusServer server) {
+	// this variable is used by the recursive method getEntityList(...) to generate a consecutive entity-id 
+	var private currentEntityId = 6000;
+	
+	def getNameInstance(OpcUaReadServer server) {
 		server.name.toFirstLower+"Controller"
 	}
-	def getClassName(OpcUaStatusServer server) {
+	def getClassName(OpcUaReadServer server) {
 		server.name.toFirstUpper+"Controller"
 	}
 	
-	def getServerControllerHeaderFileName(OpcUaStatusServer server) {
+	def getServerControllerHeaderFileName(OpcUaReadServer server) {
 		server.name+"Controller.hh"
 	}
-	def getServerControllerSourceFileName(OpcUaStatusServer server) {
+	def getServerControllerSourceFileName(OpcUaReadServer server) {
 		server.name+"Controller.cc"
 	}
 	
-	def compilePlainOpcUaStatusServer(OpcUaStatusServer server, IFileSystemAccess2 fsa) {
+	def compilePlainOpcUaReadServer(OpcUaReadServer server, IFileSystemAccess2 fsa) {
 		val objects = ComponentDefinitionModelUtility.getAllCommObjects(server.outPort)
 		val communicationObject = objects.head
 		if(communicationObject !== null) {
-			val entityList = communicationObject.entityList
+			// reset the current entity ID to the starting value of 6000
+			currentEntityId = 6000;
+			val entityList = communicationObject.getEntityList("", "", new ArrayList<SeRoNetENTITY>())
 			val Iterable<SeRoNetMETHOD> methodList = new ArrayList<SeRoNetMETHOD>();
 			
 			// generate OPC UA StatusServer information model as an XML file
@@ -122,17 +129,28 @@ class PlainOpcUaStatusServer {
 		}
 	}
 	
-	def private Iterable<SeRoNetENTITY> getEntityList(CommunicationObject object) {
-		val result = new ArrayList<SeRoNetENTITY>();
-		var entityId = 6000;
+	def private Iterable<SeRoNetENTITY> getEntityList(CommunicationObject object, String parentName, String parentCommObjectCall, List<SeRoNetENTITY> result) {
 		for(attribute: object.attributes) {
 			val entity = new SeRoNetENTITY();
-			
-			entity.name = attribute.name
 			entity.userAccessLevel = 1 // read only
 			
 			val type = attribute.type
-			if(type instanceof PrimitiveType) {
+			if(type instanceof PrimitiveType) 
+			{
+				// construct name
+				if(parentName != "") {
+					entity.name = parentName + "_" + attribute.name
+					entity.commObjectCall = parentCommObjectCall + ".get" + attribute.name.toFirstUpper
+				} else {
+					entity.name = attribute.name
+					entity.commObjectCall = ".get" + attribute.name.toFirstUpper
+				}
+				if(type.array !== null) {
+					entity.commObjectCall = entity.commObjectCall + "Ref()"
+				} else {
+					entity.commObjectCall = entity.commObjectCall + "()"
+				}
+				
 				if(
 					type.typeName == PRIMITIVE_TYPE_NAME.BOOLEAN ||
 					type.typeName == PRIMITIVE_TYPE_NAME.INT32 ||
@@ -147,14 +165,41 @@ class PlainOpcUaStatusServer {
 					entity.type = "Int32"
 				}
 				
+				if(type.array !== null) {
+					entity.type = "std::vector<" + entity.type + ">"
+				}
+				
 				entity.nodeid = new SeRoNetNodeId
-				entity.nodeid.i = entityId++;
+				entity.nodeid.i = currentEntityId++;
 				
 				entity.Parent_nodeid = new SeRoNetNodeId
 				entity.Parent_nodeid.i = 1001
 				
 				// add entity to the list
 				result.add(entity)
+			} else if(type instanceof CommElementReference) {
+				val typeName = (type as CommElementReference).typeName
+				if(typeName instanceof CommunicationObject) {
+					val subObject = (typeName as CommunicationObject);
+					if(parentName != "") {
+						val currentName = parentName + "_" + attribute.name
+						var currentCommObjectCall = parentCommObjectCall + ".get" + attribute.name.toFirstUpper
+						if(type.array !== null) {
+							currentCommObjectCall = currentCommObjectCall + "Ref()"
+						} else {
+							currentCommObjectCall = currentCommObjectCall + "()"
+						}
+						subObject.getEntityList(currentName, currentCommObjectCall, result)
+					} else {
+						var currentCommObjectCall = ".get" + attribute.name.toFirstUpper
+						if(type.array !== null) {
+							currentCommObjectCall = currentCommObjectCall + "Ref()"
+						} else {
+							currentCommObjectCall = currentCommObjectCall + "()"
+						}
+						subObject.getEntityList(attribute.name, currentCommObjectCall, result)
+					}
+				}
 			}
 		}
 		return result;
@@ -163,7 +208,7 @@ class PlainOpcUaStatusServer {
 	///////////////////////////
 	// XML file of Read Server
 	///////////////////////////
-	def private compileReadServerXMLFileContent(OpcUaStatusServer server, Iterable<SeRoNetENTITY> entitiesReadServer) '''
+	def private compileReadServerXMLFileContent(OpcUaReadServer server, Iterable<SeRoNetENTITY> entitiesReadServer) '''
 		<!--
 		«getCopyright().replace('-','').replace('//','')»
 		-->
@@ -229,7 +274,7 @@ class PlainOpcUaStatusServer {
 	'''
 	
 	
-	def CharSequence compileServerControllerHeader(OpcUaStatusServer server, CommunicationObject commObj, Iterable<SeRoNetENTITY> entityList)
+	def CharSequence compileServerControllerHeader(OpcUaReadServer server, CommunicationObject commObj, Iterable<SeRoNetENTITY> entityList)
 	'''
 	«getCopyright()»
 	
@@ -242,6 +287,8 @@ class PlainOpcUaStatusServer {
 	#include "«server.name.opcUaDevice_Interface_HeaderFileName»"
 	#include "«server.name.opcUaDevice_Server_HeaderFileName»"
 	#include <«commObj.userClassHeaderFileNameFQN»>
+	
+	namespace OPCUA {
 	
 	/**
 	 * This class implements the Controller part of the Model-View-Controller (MVC)
@@ -265,11 +312,14 @@ class PlainOpcUaStatusServer {
 		virtual int task_execution();
 	
 	public:
-		«server.className»(Smart::IComponent *component);
+		«server.className»(Smart::IComponent *component, const unsigned short &portNumber=4840);
 		virtual ~«server.className»();
 	
 		/// allows updating the internal communication-object copy
 		virtual void put(«server.outPort.commObjectsParameterList»);
+		
+		// override stop method from SmartACE::Task base class (to stop internal GenricServer)
+		virtual int stop(const bool wait_till_stopped=true) override;
 		
 		«FOR entity: entityList»
 		/** XML Specific Getter function for entity «entity.name»
@@ -289,18 +339,22 @@ class PlainOpcUaStatusServer {
 		«ENDFOR»
 	};
 	
+	} /* namespace OPCUA */
+	
 	#endif /* «server.name.toUpperCase»CONTROLLER_H_ */
 	'''
 	
-	def CharSequence compileServerControllerSource(OpcUaStatusServer server, CommunicationObject commObj, Iterable<SeRoNetENTITY> entityList)
+	def CharSequence compileServerControllerSource(OpcUaReadServer server, CommunicationObject commObj, Iterable<SeRoNetENTITY> entityList)
 	'''
 	«getCopyright()»
 	
 	#include "«server.serverControllerHeaderFileName»"
 	
-	«server.className»::«server.className»(Smart::IComponent *component)
+	using namespace OPCUA;
+	
+	«server.className»::«server.className»(Smart::IComponent *component, const unsigned short &portNumber)
 	:	SmartACE::Task(component)
-	,	server(this)
+	,	server(this, portNumber, false)
 	{  }
 	
 	«server.className»::~«server.className»()
@@ -311,12 +365,17 @@ class PlainOpcUaStatusServer {
 		this->«server.name»Object = «server.outPort.nameInstance»DataObject;
 	}
 	
+	int «server.className»::stop(const bool wait_till_stopped) {
+		this->server.signalStop();
+		return SmartACE::Task::stop(wait_till_stopped);
+	}
+	
 	//Getter methods for all OPCUA Entity nodes.		
 	«FOR entity: entityList»
 		OPCUA::StatusCode «server.className»::get«entity.name.toFirstUpper»(«entity.type.cppType» &value) const
 		{
 			std::unique_lock<std::mutex> lock(object_mutex);
-			value = «server.name»Object.get«entity.name.toFirstUpper»();
+			value = «server.name»Object«entity.commObjectCall»;
 			return OPCUA::StatusCode::ALL_OK;
 		}
 	«ENDFOR»			

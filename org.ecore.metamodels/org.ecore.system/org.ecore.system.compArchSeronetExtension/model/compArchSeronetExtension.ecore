@@ -10,4 +10,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceURI" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpcUaReadServerInstance" eSuperTypes="../../org.ecore.system.componentArchitecture/model/componentArchitecture.ecore#//ComponentInstanceExtension">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" unsettable="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="portNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="readServer" lowerBound="1"
+        eType="ecore:EClass ../../org.ecore.component.seronetExtension/model/seronetExtension.ecore#//OpcUaReadServer"/>
+  </eClassifiers>
 </ecore:EPackage>

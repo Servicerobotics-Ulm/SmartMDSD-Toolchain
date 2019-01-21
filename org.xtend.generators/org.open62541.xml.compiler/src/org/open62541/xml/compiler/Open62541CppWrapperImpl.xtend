@@ -137,9 +137,13 @@ class Open62541CppWrapperImpl implements Open62541CppWrapper {
 		#include <vector>
 		
 		#ifdef HAS_OPCUA
-		#include <open62541.h>
+			#ifdef UA_ENABLE_AMALGAMATION
+				#include <open62541.h>
+			#else
+				#include <ua_types.h>
+			#endif
 		#else
-		#include <sstream>
+			#include <sstream>
 		#endif
 		
 		namespace OPCUA {
@@ -266,8 +270,14 @@ class Open62541CppWrapperImpl implements Open62541CppWrapper {
 	'''
 		«getCopyright()»
 		
-		#include "«getOpcUaValueTypeHeaderFileName()»"
 		#include <sstream>
+		#include "«getOpcUaValueTypeHeaderFileName()»"
+		
+		#ifdef HAS_OPCUA
+		#ifndef UA_ENABLE_AMALGAMATION
+		#include <ua_types_generated_handling.h>
+		#endif
+		#endif
 		
 		namespace OPCUA {
 		
@@ -843,7 +853,11 @@ class Open62541CppWrapperImpl implements Open62541CppWrapper {
 	#define OPCUANODEID_HH_
 	
 	#ifdef HAS_OPCUA
-	#include <open62541.h>
+		#ifdef UA_ENABLE_AMALGAMATION
+			#include <open62541.h>
+		#else
+			#include <ua_types.h>
+		#endif
 	#endif
 	
 	#include <string>
@@ -936,6 +950,12 @@ class Open62541CppWrapperImpl implements Open62541CppWrapper {
 	#include "«opcUaNodeIdHeaderFileName»"
 	
 	#include <sstream>
+	
+	#ifdef HAS_OPCUA
+	#ifndef UA_ENABLE_AMALGAMATION
+	#include <ua_types_generated_handling.h>
+	#endif
+	#endif
 	
 	namespace OPCUA {
 	

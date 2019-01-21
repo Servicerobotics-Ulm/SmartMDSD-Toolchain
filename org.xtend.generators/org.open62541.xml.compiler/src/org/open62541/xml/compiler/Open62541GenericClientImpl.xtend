@@ -66,7 +66,11 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	#include <condition_variable>
 	
 	#ifdef HAS_OPCUA
-	#include <open62541.h>
+		#ifdef UA_ENABLE_AMALGAMATION
+			#include <open62541.h>
+		#else
+			#include <ua_client.h>
+		#endif
 	#endif
 	
 	#include "«opcUaStatusCodeHeaderFileName»"
@@ -346,6 +350,14 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	#include <sstream>
 	#include <functional>
 	#include <thread>
+	
+	#ifdef HAS_OPCUA
+	#ifndef UA_ENABLE_AMALGAMATION
+	#include <ua_config_default.h>
+	#include <ua_client_subscriptions.h>
+	#include <ua_client_highlevel.h>
+	#endif
+	#endif // HAS_OPCUA
 	
 	namespace OPCUA {
 	

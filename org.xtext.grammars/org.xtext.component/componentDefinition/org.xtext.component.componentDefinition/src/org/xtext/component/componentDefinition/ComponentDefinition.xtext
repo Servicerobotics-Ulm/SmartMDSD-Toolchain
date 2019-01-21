@@ -232,15 +232,15 @@ DefaultObservedElementTrigger returns performance::DefaultObservedElementTrigger
 
 
 PlainOpcUaPort returns seronet::PlainOpcUaPort: 
-	OpcUaDeviceClient | OpcUaStatusServer
+	OpcUaDeviceClient | OpcUaReadServer
 ;
 
 OpcUaDeviceClient returns seronet::OpcUaDeviceClient: 
 	'OpcUaDeviceClient' name=ID ( ('deviceURI' deviceURI=EString) & ('opcuaXmlFile' opcuaXmlFile=EString)? ) (';')?
 ;
 
-OpcUaStatusServer returns seronet::OpcUaStatusServer: 
-	'OpcUaStatusServer' name=ID 'dataProviderPort' outPort=[component::OutputPort|FQN] (';')?
+OpcUaReadServer returns seronet::OpcUaReadServer: 
+	'OpcUaReadServer' name=ID 'dataProviderPort' outPort=[component::OutputPort|FQN] ('portNumber' portNumber=EInt)? (';')?
 ;
 
 

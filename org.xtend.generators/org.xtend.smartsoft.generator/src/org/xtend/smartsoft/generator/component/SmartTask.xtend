@@ -46,7 +46,7 @@ import org.ecore.component.componentDefinition.ComponentDefinition
 import static extension org.ecore.component.componentDefinition.ComponentDefinitionModelUtility.*
 import org.ecore.component.componentDefinition.InputHandler
 import org.ecore.component.coordinationExtension.OperationModeBinding
-import org.ecore.component.seronetExtension.OpcUaStatusServer
+import org.ecore.component.seronetExtension.OpcUaReadServer
 
 class SmartTask {
 	@Inject extension ComponentGenHelpers
@@ -350,7 +350,7 @@ class SmartTask {
 				// this method is meant to be used in derived classes
 				Smart::StatusCode «task.nameClass»Core::«output.nameInstance»Put(«IF output.isEventServer»«output.eventServerStateObject» &eventState«ELSE»«output.commObjectsParameterList»«ENDIF»)
 				{
-					«FOR opcStatusServer: (task.eContainer as ComponentDefinition).elements.filter(OpcUaStatusServer).filter[it.outPort==output]»
+					«FOR opcStatusServer: (task.eContainer as ComponentDefinition).elements.filter(OpcUaReadServer).filter[it.outPort==output]»
 					COMP->«opcStatusServer.name.toFirstLower»->put(«output.commObjectsCallerList»);
 					«ENDFOR»
 «««					int pushLoggingId = taskLoggingId + 1 + 2*«(task.eContainer as ComponentDefinition).outputPorts.indexOf(initiator)»;

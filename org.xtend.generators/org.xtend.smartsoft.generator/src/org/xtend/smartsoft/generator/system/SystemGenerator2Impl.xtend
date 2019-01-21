@@ -64,6 +64,8 @@ import org.ecore.component.seronetExtension.OpcUaDeviceClient
 import org.ecore.system.compArchSeronetExtension.OpcUaDeviceClientInstance
 import org.ecore.service.roboticMiddleware.ACE_SmartSoft
 import org.eclipse.core.resources.ResourcesPlugin
+import org.ecore.component.seronetExtension.OpcUaReadServer
+import org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance
 
 class SystemGenerator2Impl extends AbstractGenerator {
 	
@@ -170,6 +172,15 @@ class SystemGenerator2Impl extends AbstractGenerator {
 		deviceURI «opcDeviceClient.deviceURI»
 		«ENDIF»
 		opcuaXmlFile «opcDeviceClient.opcuaXmlFile»
+	«ENDFOR»
+	
+	«FOR opcStatusServer: compInstance.component.elements.filter(OpcUaReadServer)»
+		[«opcStatusServer.name»]
+		«IF compInstance.extensions.filter(OpcUaReadServerInstance).exists[it.readServer==opcStatusServer]»
+		portNumber «compInstance.extensions.filter(OpcUaReadServerInstance).findFirst[it.readServer==opcStatusServer].portNumber»
+		«ELSE»
+		portNumber «opcStatusServer.portNumber»
+		«ENDIF»
 	«ENDFOR»
 	
 	##########################

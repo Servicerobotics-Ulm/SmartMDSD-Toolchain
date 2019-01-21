@@ -17,7 +17,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.xtext,
  org.xtext.component.componentDefinition.ui,
  org.xtext.system.systemParameter.ui,
- org.eclipse.sirius.diagram.ui
+ org.eclipse.sirius.diagram.ui,
+ org.ecore.system.compArchSeronetExtension
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: Servicerobotics Ulm
