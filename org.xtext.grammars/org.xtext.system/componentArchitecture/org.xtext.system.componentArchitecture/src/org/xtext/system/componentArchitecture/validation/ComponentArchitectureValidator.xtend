@@ -148,7 +148,7 @@ class ComponentArchitectureValidator extends AbstractComponentArchitectureValida
 					if(connection != other) {
 						if(connection.to == other.to) {
 							if(other.middlewareSelection !== null) {
-								if(connection.middlewareSelection != other.middlewareSelection) {
+								if(connection.middlewareSelection.eClass != other.middlewareSelection.eClass) {
 									error("Selected middleware "+connection.middlewareSelection.eClass.name+" conflicts with another selection for the same service "+connection.to.name,
 										ComponentArchitecturePackage.Literals.CONNECTION__MIDDLEWARE_SELECTION,
 										CONFLICTING_MIDDLWARE_SELECTION
