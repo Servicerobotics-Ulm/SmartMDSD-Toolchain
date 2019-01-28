@@ -124,6 +124,29 @@ public class CompArchSeronetExtensionItemProviderAdapterFactory extends CompArch
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OpcUaReadServerInstanceItemProvider opcUaReadServerInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOpcUaReadServerInstanceAdapter() {
+		if (opcUaReadServerInstanceItemProvider == null) {
+			opcUaReadServerInstanceItemProvider = new OpcUaReadServerInstanceItemProvider(this);
+		}
+
+		return opcUaReadServerInstanceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -251,6 +274,8 @@ public class CompArchSeronetExtensionItemProviderAdapterFactory extends CompArch
 	public void dispose() {
 		if (opcUaDeviceClientInstanceItemProvider != null)
 			opcUaDeviceClientInstanceItemProvider.dispose();
+		if (opcUaReadServerInstanceItemProvider != null)
+			opcUaReadServerInstanceItemProvider.dispose();
 	}
 
 	/**
@@ -304,6 +329,10 @@ public class CompArchSeronetExtensionItemProviderAdapterFactory extends CompArch
 				newChildDescriptors
 						.add(createChildParameter(ComponentArchitecturePackage.Literals.COMPONENT_INSTANCE__EXTENSIONS,
 								CompArchSeronetExtensionFactory.eINSTANCE.createOpcUaDeviceClientInstance()));
+
+				newChildDescriptors
+						.add(createChildParameter(ComponentArchitecturePackage.Literals.COMPONENT_INSTANCE__EXTENSIONS,
+								CompArchSeronetExtensionFactory.eINSTANCE.createOpcUaReadServerInstance()));
 
 				return null;
 			}

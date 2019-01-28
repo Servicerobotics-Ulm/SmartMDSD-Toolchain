@@ -104,15 +104,15 @@ public class SeronetExtensionSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case SeronetExtensionPackage.OPC_UA_STATUS_SERVER: {
-			OpcUaStatusServer opcUaStatusServer = (OpcUaStatusServer) theEObject;
-			T result = caseOpcUaStatusServer(opcUaStatusServer);
+		case SeronetExtensionPackage.OPC_UA_READ_SERVER: {
+			OpcUaReadServer opcUaReadServer = (OpcUaReadServer) theEObject;
+			T result = caseOpcUaReadServer(opcUaReadServer);
 			if (result == null)
-				result = casePlainOpcUaPort(opcUaStatusServer);
+				result = casePlainOpcUaPort(opcUaReadServer);
 			if (result == null)
-				result = caseNamedComponentElement(opcUaStatusServer);
+				result = caseNamedComponentElement(opcUaReadServer);
 			if (result == null)
-				result = caseAbstractComponentElement(opcUaStatusServer);
+				result = caseAbstractComponentElement(opcUaReadServer);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -177,17 +177,17 @@ public class SeronetExtensionSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Opc Ua Status Server</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Opc Ua Read Server</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Opc Ua Status Server</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Opc Ua Read Server</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseOpcUaStatusServer(OpcUaStatusServer object) {
+	public T caseOpcUaReadServer(OpcUaReadServer object) {
 		return null;
 	}
 

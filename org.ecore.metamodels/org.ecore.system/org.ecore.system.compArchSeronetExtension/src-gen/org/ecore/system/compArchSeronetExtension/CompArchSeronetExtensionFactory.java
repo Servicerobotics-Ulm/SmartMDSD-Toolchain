@@ -32,6 +32,15 @@ public interface CompArchSeronetExtensionFactory extends EFactory {
 	OpcUaDeviceClientInstance createOpcUaDeviceClientInstance();
 
 	/**
+	 * Returns a new object of class '<em>Opc Ua Read Server Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Opc Ua Read Server Instance</em>'.
+	 * @generated
+	 */
+	OpcUaReadServerInstance createOpcUaReadServerInstance();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

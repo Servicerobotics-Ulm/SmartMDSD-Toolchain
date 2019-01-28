@@ -77,6 +77,15 @@ public class CompArchSeronetExtensionSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case CompArchSeronetExtensionPackage.OPC_UA_READ_SERVER_INSTANCE: {
+			OpcUaReadServerInstance opcUaReadServerInstance = (OpcUaReadServerInstance) theEObject;
+			T result = caseOpcUaReadServerInstance(opcUaReadServerInstance);
+			if (result == null)
+				result = caseComponentInstanceExtension(opcUaReadServerInstance);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -94,6 +103,21 @@ public class CompArchSeronetExtensionSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOpcUaDeviceClientInstance(OpcUaDeviceClientInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Opc Ua Read Server Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Opc Ua Read Server Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOpcUaReadServerInstance(OpcUaReadServerInstance object) {
 		return null;
 	}
 

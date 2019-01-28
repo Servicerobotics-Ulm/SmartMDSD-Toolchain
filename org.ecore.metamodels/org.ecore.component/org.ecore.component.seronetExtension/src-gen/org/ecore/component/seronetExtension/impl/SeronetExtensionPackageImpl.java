@@ -17,7 +17,7 @@ import org.ecore.component.componentDefinition.ComponentDefinitionPackage;
 
 import org.ecore.component.seronetExtension.OpcUaClientLink;
 import org.ecore.component.seronetExtension.OpcUaDeviceClient;
-import org.ecore.component.seronetExtension.OpcUaStatusServer;
+import org.ecore.component.seronetExtension.OpcUaReadServer;
 import org.ecore.component.seronetExtension.PlainOpcUaPort;
 import org.ecore.component.seronetExtension.SeronetExtensionFactory;
 import org.ecore.component.seronetExtension.SeronetExtensionPackage;
@@ -70,7 +70,7 @@ public class SeronetExtensionPackageImpl extends EPackageImpl implements Seronet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass opcUaStatusServerEClass = null;
+	private EClass opcUaReadServerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,8 +222,8 @@ public class SeronetExtensionPackageImpl extends EPackageImpl implements Seronet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getOpcUaStatusServer() {
-		return opcUaStatusServerEClass;
+	public EClass getOpcUaReadServer() {
+		return opcUaReadServerEClass;
 	}
 
 	/**
@@ -231,8 +231,17 @@ public class SeronetExtensionPackageImpl extends EPackageImpl implements Seronet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOpcUaStatusServer_OutPort() {
-		return (EReference) opcUaStatusServerEClass.getEStructuralFeatures().get(0);
+	public EReference getOpcUaReadServer_OutPort() {
+		return (EReference) opcUaReadServerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOpcUaReadServer_PortNumber() {
+		return (EAttribute) opcUaReadServerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -292,8 +301,9 @@ public class SeronetExtensionPackageImpl extends EPackageImpl implements Seronet
 		createEAttribute(opcUaDeviceClientEClass, OPC_UA_DEVICE_CLIENT__DEVICE_URI);
 		createEAttribute(opcUaDeviceClientEClass, OPC_UA_DEVICE_CLIENT__OPCUA_XML_FILE);
 
-		opcUaStatusServerEClass = createEClass(OPC_UA_STATUS_SERVER);
-		createEReference(opcUaStatusServerEClass, OPC_UA_STATUS_SERVER__OUT_PORT);
+		opcUaReadServerEClass = createEClass(OPC_UA_READ_SERVER);
+		createEReference(opcUaReadServerEClass, OPC_UA_READ_SERVER__OUT_PORT);
+		createEAttribute(opcUaReadServerEClass, OPC_UA_READ_SERVER__PORT_NUMBER);
 
 		opcUaClientLinkEClass = createEClass(OPC_UA_CLIENT_LINK);
 		createEReference(opcUaClientLinkEClass, OPC_UA_CLIENT_LINK__CLIENT);
@@ -337,7 +347,7 @@ public class SeronetExtensionPackageImpl extends EPackageImpl implements Seronet
 		supportedMiddlewareEClass.getESuperTypes().add(theComponentDefinitionPackage.getComponentPortExtension());
 		plainOpcUaPortEClass.getESuperTypes().add(theComponentDefinitionPackage.getNamedComponentElement());
 		opcUaDeviceClientEClass.getESuperTypes().add(this.getPlainOpcUaPort());
-		opcUaStatusServerEClass.getESuperTypes().add(this.getPlainOpcUaPort());
+		opcUaReadServerEClass.getESuperTypes().add(this.getPlainOpcUaPort());
 		opcUaClientLinkEClass.getESuperTypes().add(theComponentDefinitionPackage.getAbstractComponentLink());
 
 		// Initialize classes and features; add operations and parameters
@@ -362,11 +372,14 @@ public class SeronetExtensionPackageImpl extends EPackageImpl implements Seronet
 				OpcUaDeviceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(opcUaStatusServerEClass, OpcUaStatusServer.class, "OpcUaStatusServer", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(opcUaReadServerEClass, OpcUaReadServer.class, "OpcUaReadServer", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOpcUaStatusServer_OutPort(), theComponentDefinitionPackage.getOutputPort(), null, "outPort",
-				null, 1, 1, OpcUaStatusServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+		initEReference(getOpcUaReadServer_OutPort(), theComponentDefinitionPackage.getOutputPort(), null, "outPort",
+				null, 1, 1, OpcUaReadServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOpcUaReadServer_PortNumber(), ecorePackage.getEInt(), "portNumber", "4840", 0, 1,
+				OpcUaReadServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(opcUaClientLinkEClass, OpcUaClientLink.class, "OpcUaClientLink", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

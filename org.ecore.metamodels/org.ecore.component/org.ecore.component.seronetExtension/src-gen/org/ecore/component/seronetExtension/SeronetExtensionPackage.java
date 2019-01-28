@@ -169,14 +169,14 @@ public interface SeronetExtensionPackage extends EPackage {
 	int OPC_UA_DEVICE_CLIENT_FEATURE_COUNT = PLAIN_OPC_UA_PORT_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.ecore.component.seronetExtension.impl.OpcUaStatusServerImpl <em>Opc Ua Status Server</em>}' class.
+	 * The meta object id for the '{@link org.ecore.component.seronetExtension.impl.OpcUaReadServerImpl <em>Opc Ua Read Server</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.ecore.component.seronetExtension.impl.OpcUaStatusServerImpl
-	 * @see org.ecore.component.seronetExtension.impl.SeronetExtensionPackageImpl#getOpcUaStatusServer()
+	 * @see org.ecore.component.seronetExtension.impl.OpcUaReadServerImpl
+	 * @see org.ecore.component.seronetExtension.impl.SeronetExtensionPackageImpl#getOpcUaReadServer()
 	 * @generated
 	 */
-	int OPC_UA_STATUS_SERVER = 3;
+	int OPC_UA_READ_SERVER = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -185,7 +185,7 @@ public interface SeronetExtensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPC_UA_STATUS_SERVER__NAME = PLAIN_OPC_UA_PORT__NAME;
+	int OPC_UA_READ_SERVER__NAME = PLAIN_OPC_UA_PORT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Out Port</b></em>' reference.
@@ -194,16 +194,25 @@ public interface SeronetExtensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPC_UA_STATUS_SERVER__OUT_PORT = PLAIN_OPC_UA_PORT_FEATURE_COUNT + 0;
+	int OPC_UA_READ_SERVER__OUT_PORT = PLAIN_OPC_UA_PORT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Opc Ua Status Server</em>' class.
+	 * The feature id for the '<em><b>Port Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPC_UA_STATUS_SERVER_FEATURE_COUNT = PLAIN_OPC_UA_PORT_FEATURE_COUNT + 1;
+	int OPC_UA_READ_SERVER__PORT_NUMBER = PLAIN_OPC_UA_PORT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Opc Ua Read Server</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPC_UA_READ_SERVER_FEATURE_COUNT = PLAIN_OPC_UA_PORT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.component.seronetExtension.impl.OpcUaClientLinkImpl <em>Opc Ua Client Link</em>}' class.
@@ -317,25 +326,36 @@ public interface SeronetExtensionPackage extends EPackage {
 	EAttribute getOpcUaDeviceClient_OpcuaXmlFile();
 
 	/**
-	 * Returns the meta object for class '{@link org.ecore.component.seronetExtension.OpcUaStatusServer <em>Opc Ua Status Server</em>}'.
+	 * Returns the meta object for class '{@link org.ecore.component.seronetExtension.OpcUaReadServer <em>Opc Ua Read Server</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Opc Ua Status Server</em>'.
-	 * @see org.ecore.component.seronetExtension.OpcUaStatusServer
+	 * @return the meta object for class '<em>Opc Ua Read Server</em>'.
+	 * @see org.ecore.component.seronetExtension.OpcUaReadServer
 	 * @generated
 	 */
-	EClass getOpcUaStatusServer();
+	EClass getOpcUaReadServer();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.ecore.component.seronetExtension.OpcUaStatusServer#getOutPort <em>Out Port</em>}'.
+	 * Returns the meta object for the reference '{@link org.ecore.component.seronetExtension.OpcUaReadServer#getOutPort <em>Out Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Out Port</em>'.
-	 * @see org.ecore.component.seronetExtension.OpcUaStatusServer#getOutPort()
-	 * @see #getOpcUaStatusServer()
+	 * @see org.ecore.component.seronetExtension.OpcUaReadServer#getOutPort()
+	 * @see #getOpcUaReadServer()
 	 * @generated
 	 */
-	EReference getOpcUaStatusServer_OutPort();
+	EReference getOpcUaReadServer_OutPort();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.ecore.component.seronetExtension.OpcUaReadServer#getPortNumber <em>Port Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Port Number</em>'.
+	 * @see org.ecore.component.seronetExtension.OpcUaReadServer#getPortNumber()
+	 * @see #getOpcUaReadServer()
+	 * @generated
+	 */
+	EAttribute getOpcUaReadServer_PortNumber();
 
 	/**
 	 * Returns the meta object for class '{@link org.ecore.component.seronetExtension.OpcUaClientLink <em>Opc Ua Client Link</em>}'.
@@ -443,14 +463,14 @@ public interface SeronetExtensionPackage extends EPackage {
 		EAttribute OPC_UA_DEVICE_CLIENT__OPCUA_XML_FILE = eINSTANCE.getOpcUaDeviceClient_OpcuaXmlFile();
 
 		/**
-		 * The meta object literal for the '{@link org.ecore.component.seronetExtension.impl.OpcUaStatusServerImpl <em>Opc Ua Status Server</em>}' class.
+		 * The meta object literal for the '{@link org.ecore.component.seronetExtension.impl.OpcUaReadServerImpl <em>Opc Ua Read Server</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.ecore.component.seronetExtension.impl.OpcUaStatusServerImpl
-		 * @see org.ecore.component.seronetExtension.impl.SeronetExtensionPackageImpl#getOpcUaStatusServer()
+		 * @see org.ecore.component.seronetExtension.impl.OpcUaReadServerImpl
+		 * @see org.ecore.component.seronetExtension.impl.SeronetExtensionPackageImpl#getOpcUaReadServer()
 		 * @generated
 		 */
-		EClass OPC_UA_STATUS_SERVER = eINSTANCE.getOpcUaStatusServer();
+		EClass OPC_UA_READ_SERVER = eINSTANCE.getOpcUaReadServer();
 
 		/**
 		 * The meta object literal for the '<em><b>Out Port</b></em>' reference feature.
@@ -458,7 +478,15 @@ public interface SeronetExtensionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPC_UA_STATUS_SERVER__OUT_PORT = eINSTANCE.getOpcUaStatusServer_OutPort();
+		EReference OPC_UA_READ_SERVER__OUT_PORT = eINSTANCE.getOpcUaReadServer_OutPort();
+
+		/**
+		 * The meta object literal for the '<em><b>Port Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPC_UA_READ_SERVER__PORT_NUMBER = eINSTANCE.getOpcUaReadServer_PortNumber();
 
 		/**
 		 * The meta object literal for the '{@link org.ecore.component.seronetExtension.impl.OpcUaClientLinkImpl <em>Opc Ua Client Link</em>}' class.

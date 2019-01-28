@@ -60,8 +60,8 @@ public class SeronetExtensionFactoryImpl extends EFactoryImpl implements Seronet
 			return createSupportedMiddleware();
 		case SeronetExtensionPackage.OPC_UA_DEVICE_CLIENT:
 			return createOpcUaDeviceClient();
-		case SeronetExtensionPackage.OPC_UA_STATUS_SERVER:
-			return createOpcUaStatusServer();
+		case SeronetExtensionPackage.OPC_UA_READ_SERVER:
+			return createOpcUaReadServer();
 		case SeronetExtensionPackage.OPC_UA_CLIENT_LINK:
 			return createOpcUaClientLink();
 		default:
@@ -94,9 +94,9 @@ public class SeronetExtensionFactoryImpl extends EFactoryImpl implements Seronet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OpcUaStatusServer createOpcUaStatusServer() {
-		OpcUaStatusServerImpl opcUaStatusServer = new OpcUaStatusServerImpl();
-		return opcUaStatusServer;
+	public OpcUaReadServer createOpcUaReadServer() {
+		OpcUaReadServerImpl opcUaReadServer = new OpcUaReadServerImpl();
+		return opcUaReadServer;
 	}
 
 	/**

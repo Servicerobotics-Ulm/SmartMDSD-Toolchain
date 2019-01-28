@@ -40,13 +40,13 @@ public interface SeronetExtensionFactory extends EFactory {
 	OpcUaDeviceClient createOpcUaDeviceClient();
 
 	/**
-	 * Returns a new object of class '<em>Opc Ua Status Server</em>'.
+	 * Returns a new object of class '<em>Opc Ua Read Server</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Opc Ua Status Server</em>'.
+	 * @return a new object of class '<em>Opc Ua Read Server</em>'.
 	 * @generated
 	 */
-	OpcUaStatusServer createOpcUaStatusServer();
+	OpcUaReadServer createOpcUaReadServer();
 
 	/**
 	 * Returns a new object of class '<em>Opc Ua Client Link</em>'.

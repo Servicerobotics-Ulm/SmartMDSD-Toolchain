@@ -14,24 +14,24 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.ecore.system.compArchSeronetExtension.CompArchSeronetExtensionPackage;
-import org.ecore.system.compArchSeronetExtension.OpcUaDeviceClientInstance;
+import org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance;
 
 import org.ecore.system.componentArchitecture.provider.ComponentInstanceExtensionItemProvider;
 
 /**
- * This is the item provider adapter for a {@link org.ecore.system.compArchSeronetExtension.OpcUaDeviceClientInstance} object.
+ * This is the item provider adapter for a {@link org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class OpcUaDeviceClientInstanceItemProvider extends ComponentInstanceExtensionItemProvider {
+public class OpcUaReadServerInstanceItemProvider extends ComponentInstanceExtensionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OpcUaDeviceClientInstanceItemProvider(AdapterFactory adapterFactory) {
+	public OpcUaReadServerInstanceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -46,27 +46,11 @@ public class OpcUaDeviceClientInstanceItemProvider extends ComponentInstanceExte
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDeviceClientPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addDeviceURIPropertyDescriptor(object);
+			addPortNumberPropertyDescriptor(object);
+			addReadServerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Device Client feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDeviceClientPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_OpcUaDeviceClientInstance_deviceClient_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_OpcUaDeviceClientInstance_deviceClient_feature",
-						"_UI_OpcUaDeviceClientInstance_type"),
-				CompArchSeronetExtensionPackage.Literals.OPC_UA_DEVICE_CLIENT_INSTANCE__DEVICE_CLIENT, true, false,
-				true, null, null, null));
 	}
 
 	/**
@@ -78,38 +62,54 @@ public class OpcUaDeviceClientInstanceItemProvider extends ComponentInstanceExte
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_OpcUaDeviceClientInstance_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_OpcUaDeviceClientInstance_name_feature",
-								"_UI_OpcUaDeviceClientInstance_type"),
-						CompArchSeronetExtensionPackage.Literals.OPC_UA_DEVICE_CLIENT_INSTANCE__NAME, true, false,
-						false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						getResourceLocator(), getString("_UI_OpcUaReadServerInstance_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_OpcUaReadServerInstance_name_feature",
+								"_UI_OpcUaReadServerInstance_type"),
+						CompArchSeronetExtensionPackage.Literals.OPC_UA_READ_SERVER_INSTANCE__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Device URI feature.
+	 * This adds a property descriptor for the Port Number feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDeviceURIPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_OpcUaDeviceClientInstance_deviceURI_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_OpcUaDeviceClientInstance_deviceURI_feature",
-						"_UI_OpcUaDeviceClientInstance_type"),
-				CompArchSeronetExtensionPackage.Literals.OPC_UA_DEVICE_CLIENT_INSTANCE__DEVICE_URI, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	protected void addPortNumberPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_OpcUaReadServerInstance_portNumber_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_OpcUaReadServerInstance_portNumber_feature", "_UI_OpcUaReadServerInstance_type"),
+						CompArchSeronetExtensionPackage.Literals.OPC_UA_READ_SERVER_INSTANCE__PORT_NUMBER, true, false,
+						false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns OpcUaDeviceClientInstance.gif.
+	 * This adds a property descriptor for the Read Server feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReadServerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_OpcUaReadServerInstance_readServer_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_OpcUaReadServerInstance_readServer_feature", "_UI_OpcUaReadServerInstance_type"),
+						CompArchSeronetExtensionPackage.Literals.OPC_UA_READ_SERVER_INSTANCE__READ_SERVER, true, false,
+						true, null, null, null));
+	}
+
+	/**
+	 * This returns OpcUaReadServerInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/OpcUaDeviceClientInstance"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/OpcUaReadServerInstance"));
 	}
 
 	/**
@@ -130,9 +130,9 @@ public class OpcUaDeviceClientInstanceItemProvider extends ComponentInstanceExte
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((OpcUaDeviceClientInstance) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_OpcUaDeviceClientInstance_type")
-				: getString("_UI_OpcUaDeviceClientInstance_type") + " " + label;
+		String label = ((OpcUaReadServerInstance) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_OpcUaReadServerInstance_type")
+				: getString("_UI_OpcUaReadServerInstance_type") + " " + label;
 	}
 
 	/**
@@ -146,9 +146,9 @@ public class OpcUaDeviceClientInstanceItemProvider extends ComponentInstanceExte
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(OpcUaDeviceClientInstance.class)) {
-		case CompArchSeronetExtensionPackage.OPC_UA_DEVICE_CLIENT_INSTANCE__NAME:
-		case CompArchSeronetExtensionPackage.OPC_UA_DEVICE_CLIENT_INSTANCE__DEVICE_URI:
+		switch (notification.getFeatureID(OpcUaReadServerInstance.class)) {
+		case CompArchSeronetExtensionPackage.OPC_UA_READ_SERVER_INSTANCE__NAME:
+		case CompArchSeronetExtensionPackage.OPC_UA_READ_SERVER_INSTANCE__PORT_NUMBER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

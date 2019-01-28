@@ -58,6 +58,8 @@ public class CompArchSeronetExtensionFactoryImpl extends EFactoryImpl implements
 		switch (eClass.getClassifierID()) {
 		case CompArchSeronetExtensionPackage.OPC_UA_DEVICE_CLIENT_INSTANCE:
 			return createOpcUaDeviceClientInstance();
+		case CompArchSeronetExtensionPackage.OPC_UA_READ_SERVER_INSTANCE:
+			return createOpcUaReadServerInstance();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -71,6 +73,16 @@ public class CompArchSeronetExtensionFactoryImpl extends EFactoryImpl implements
 	public OpcUaDeviceClientInstance createOpcUaDeviceClientInstance() {
 		OpcUaDeviceClientInstanceImpl opcUaDeviceClientInstance = new OpcUaDeviceClientInstanceImpl();
 		return opcUaDeviceClientInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OpcUaReadServerInstance createOpcUaReadServerInstance() {
+		OpcUaReadServerInstanceImpl opcUaReadServerInstance = new OpcUaReadServerInstanceImpl();
+		return opcUaReadServerInstance;
 	}
 
 	/**

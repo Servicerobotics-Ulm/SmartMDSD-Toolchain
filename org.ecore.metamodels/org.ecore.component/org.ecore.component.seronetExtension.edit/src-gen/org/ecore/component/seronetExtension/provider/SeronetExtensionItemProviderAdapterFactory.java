@@ -149,26 +149,26 @@ public class SeronetExtensionItemProviderAdapterFactory extends SeronetExtension
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.ecore.component.seronetExtension.OpcUaStatusServer} instances.
+	 * This keeps track of the one adapter used for all {@link org.ecore.component.seronetExtension.OpcUaReadServer} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OpcUaStatusServerItemProvider opcUaStatusServerItemProvider;
+	protected OpcUaReadServerItemProvider opcUaReadServerItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.ecore.component.seronetExtension.OpcUaStatusServer}.
+	 * This creates an adapter for a {@link org.ecore.component.seronetExtension.OpcUaReadServer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createOpcUaStatusServerAdapter() {
-		if (opcUaStatusServerItemProvider == null) {
-			opcUaStatusServerItemProvider = new OpcUaStatusServerItemProvider(this);
+	public Adapter createOpcUaReadServerAdapter() {
+		if (opcUaReadServerItemProvider == null) {
+			opcUaReadServerItemProvider = new OpcUaReadServerItemProvider(this);
 		}
 
-		return opcUaStatusServerItemProvider;
+		return opcUaReadServerItemProvider;
 	}
 
 	/**
@@ -324,8 +324,8 @@ public class SeronetExtensionItemProviderAdapterFactory extends SeronetExtension
 			supportedMiddlewareItemProvider.dispose();
 		if (opcUaDeviceClientItemProvider != null)
 			opcUaDeviceClientItemProvider.dispose();
-		if (opcUaStatusServerItemProvider != null)
-			opcUaStatusServerItemProvider.dispose();
+		if (opcUaReadServerItemProvider != null)
+			opcUaReadServerItemProvider.dispose();
 		if (opcUaClientLinkItemProvider != null)
 			opcUaClientLinkItemProvider.dispose();
 	}
@@ -384,7 +384,7 @@ public class SeronetExtensionItemProviderAdapterFactory extends SeronetExtension
 
 				newChildDescriptors
 						.add(createChildParameter(ComponentDefinitionPackage.Literals.COMPONENT_DEFINITION__ELEMENTS,
-								SeronetExtensionFactory.eINSTANCE.createOpcUaStatusServer()));
+								SeronetExtensionFactory.eINSTANCE.createOpcUaReadServer()));
 
 				return null;
 			}

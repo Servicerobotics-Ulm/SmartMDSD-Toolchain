@@ -87,8 +87,8 @@ public class SeronetExtensionAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseOpcUaStatusServer(OpcUaStatusServer object) {
-			return createOpcUaStatusServerAdapter();
+		public Adapter caseOpcUaReadServer(OpcUaReadServer object) {
+			return createOpcUaReadServerAdapter();
 		}
 
 		@Override
@@ -178,16 +178,16 @@ public class SeronetExtensionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.ecore.component.seronetExtension.OpcUaStatusServer <em>Opc Ua Status Server</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.ecore.component.seronetExtension.OpcUaReadServer <em>Opc Ua Read Server</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.ecore.component.seronetExtension.OpcUaStatusServer
+	 * @see org.ecore.component.seronetExtension.OpcUaReadServer
 	 * @generated
 	 */
-	public Adapter createOpcUaStatusServerAdapter() {
+	public Adapter createOpcUaReadServerAdapter() {
 		return null;
 	}
 

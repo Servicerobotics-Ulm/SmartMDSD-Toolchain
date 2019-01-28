@@ -120,6 +120,65 @@ public interface CompArchSeronetExtensionPackage extends EPackage {
 			+ 0;
 
 	/**
+	 * The meta object id for the '{@link org.ecore.system.compArchSeronetExtension.impl.OpcUaReadServerInstanceImpl <em>Opc Ua Read Server Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.ecore.system.compArchSeronetExtension.impl.OpcUaReadServerInstanceImpl
+	 * @see org.ecore.system.compArchSeronetExtension.impl.CompArchSeronetExtensionPackageImpl#getOpcUaReadServerInstance()
+	 * @generated
+	 */
+	int OPC_UA_READ_SERVER_INSTANCE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPC_UA_READ_SERVER_INSTANCE__NAME = ComponentArchitecturePackage.COMPONENT_INSTANCE_EXTENSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Port Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPC_UA_READ_SERVER_INSTANCE__PORT_NUMBER = ComponentArchitecturePackage.COMPONENT_INSTANCE_EXTENSION_FEATURE_COUNT
+			+ 1;
+
+	/**
+	 * The feature id for the '<em><b>Read Server</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPC_UA_READ_SERVER_INSTANCE__READ_SERVER = ComponentArchitecturePackage.COMPONENT_INSTANCE_EXTENSION_FEATURE_COUNT
+			+ 2;
+
+	/**
+	 * The number of structural features of the '<em>Opc Ua Read Server Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPC_UA_READ_SERVER_INSTANCE_FEATURE_COUNT = ComponentArchitecturePackage.COMPONENT_INSTANCE_EXTENSION_FEATURE_COUNT
+			+ 3;
+
+	/**
+	 * The number of operations of the '<em>Opc Ua Read Server Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPC_UA_READ_SERVER_INSTANCE_OPERATION_COUNT = ComponentArchitecturePackage.COMPONENT_INSTANCE_EXTENSION_OPERATION_COUNT
+			+ 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.ecore.system.compArchSeronetExtension.OpcUaDeviceClientInstance <em>Opc Ua Device Client Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,6 +220,49 @@ public interface CompArchSeronetExtensionPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getOpcUaDeviceClientInstance_DeviceURI();
+
+	/**
+	 * Returns the meta object for class '{@link org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance <em>Opc Ua Read Server Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Opc Ua Read Server Instance</em>'.
+	 * @see org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance
+	 * @generated
+	 */
+	EClass getOpcUaReadServerInstance();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance#getName()
+	 * @see #getOpcUaReadServerInstance()
+	 * @generated
+	 */
+	EAttribute getOpcUaReadServerInstance_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance#getPortNumber <em>Port Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Port Number</em>'.
+	 * @see org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance#getPortNumber()
+	 * @see #getOpcUaReadServerInstance()
+	 * @generated
+	 */
+	EAttribute getOpcUaReadServerInstance_PortNumber();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance#getReadServer <em>Read Server</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Read Server</em>'.
+	 * @see org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance#getReadServer()
+	 * @see #getOpcUaReadServerInstance()
+	 * @generated
+	 */
+	EReference getOpcUaReadServerInstance_ReadServer();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -218,6 +320,40 @@ public interface CompArchSeronetExtensionPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OPC_UA_DEVICE_CLIENT_INSTANCE__DEVICE_URI = eINSTANCE.getOpcUaDeviceClientInstance_DeviceURI();
+
+		/**
+		 * The meta object literal for the '{@link org.ecore.system.compArchSeronetExtension.impl.OpcUaReadServerInstanceImpl <em>Opc Ua Read Server Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecore.system.compArchSeronetExtension.impl.OpcUaReadServerInstanceImpl
+		 * @see org.ecore.system.compArchSeronetExtension.impl.CompArchSeronetExtensionPackageImpl#getOpcUaReadServerInstance()
+		 * @generated
+		 */
+		EClass OPC_UA_READ_SERVER_INSTANCE = eINSTANCE.getOpcUaReadServerInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPC_UA_READ_SERVER_INSTANCE__NAME = eINSTANCE.getOpcUaReadServerInstance_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Port Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPC_UA_READ_SERVER_INSTANCE__PORT_NUMBER = eINSTANCE.getOpcUaReadServerInstance_PortNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Read Server</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPC_UA_READ_SERVER_INSTANCE__READ_SERVER = eINSTANCE.getOpcUaReadServerInstance_ReadServer();
 
 	}
 

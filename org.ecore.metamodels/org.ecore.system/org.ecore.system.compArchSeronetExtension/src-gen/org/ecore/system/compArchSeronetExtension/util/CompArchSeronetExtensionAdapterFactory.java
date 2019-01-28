@@ -74,6 +74,11 @@ public class CompArchSeronetExtensionAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseOpcUaReadServerInstance(OpcUaReadServerInstance object) {
+			return createOpcUaReadServerInstanceAdapter();
+		}
+
+		@Override
 		public Adapter caseComponentInstanceExtension(ComponentInstanceExtension object) {
 			return createComponentInstanceExtensionAdapter();
 		}
@@ -108,6 +113,20 @@ public class CompArchSeronetExtensionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOpcUaDeviceClientInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance <em>Opc Ua Read Server Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance
+	 * @generated
+	 */
+	public Adapter createOpcUaReadServerInstanceAdapter() {
 		return null;
 	}
 

@@ -14,6 +14,7 @@ import org.ecore.base.basicAttributes.BasicAttributesPackage;
 import org.ecore.base.stateMachine.StateMachinePackage;
 
 import org.ecore.component.componentDefinition.ComponentDefinitionPackage;
+
 import org.ecore.component.seronetExtension.SeronetExtensionPackage;
 
 import org.ecore.service.communicationObject.CommunicationObjectPackage;
@@ -21,6 +22,7 @@ import org.ecore.service.communicationObject.CommunicationObjectPackage;
 import org.ecore.service.communicationPattern.CommunicationPatternPackage;
 
 import org.ecore.service.componentMode.ComponentModePackage;
+
 import org.ecore.service.coordinationPattern.CoordinationPatternPackage;
 
 import org.ecore.service.parameterDefinition.ParameterDefinitionPackage;
@@ -28,10 +30,13 @@ import org.ecore.service.parameterDefinition.ParameterDefinitionPackage;
 import org.ecore.service.roboticMiddleware.RoboticMiddlewarePackage;
 
 import org.ecore.service.serviceDefinition.ServiceDefinitionPackage;
+
 import org.ecore.system.activityArchitecture.ActivityArchitecturePackage;
+
 import org.ecore.system.compArchSeronetExtension.CompArchSeronetExtensionFactory;
 import org.ecore.system.compArchSeronetExtension.CompArchSeronetExtensionPackage;
 import org.ecore.system.compArchSeronetExtension.OpcUaDeviceClientInstance;
+import org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance;
 
 import org.ecore.system.componentArchitecture.ComponentArchitecturePackage;
 
@@ -48,6 +53,13 @@ public class CompArchSeronetExtensionPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	private EClass opcUaDeviceClientInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass opcUaReadServerInstanceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -169,6 +181,42 @@ public class CompArchSeronetExtensionPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOpcUaReadServerInstance() {
+		return opcUaReadServerInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOpcUaReadServerInstance_Name() {
+		return (EAttribute) opcUaReadServerInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOpcUaReadServerInstance_PortNumber() {
+		return (EAttribute) opcUaReadServerInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOpcUaReadServerInstance_ReadServer() {
+		return (EReference) opcUaReadServerInstanceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CompArchSeronetExtensionFactory getCompArchSeronetExtensionFactory() {
 		return (CompArchSeronetExtensionFactory) getEFactoryInstance();
 	}
@@ -197,6 +245,11 @@ public class CompArchSeronetExtensionPackageImpl extends EPackageImpl implements
 		createEReference(opcUaDeviceClientInstanceEClass, OPC_UA_DEVICE_CLIENT_INSTANCE__DEVICE_CLIENT);
 		createEAttribute(opcUaDeviceClientInstanceEClass, OPC_UA_DEVICE_CLIENT_INSTANCE__NAME);
 		createEAttribute(opcUaDeviceClientInstanceEClass, OPC_UA_DEVICE_CLIENT_INSTANCE__DEVICE_URI);
+
+		opcUaReadServerInstanceEClass = createEClass(OPC_UA_READ_SERVER_INSTANCE);
+		createEAttribute(opcUaReadServerInstanceEClass, OPC_UA_READ_SERVER_INSTANCE__NAME);
+		createEAttribute(opcUaReadServerInstanceEClass, OPC_UA_READ_SERVER_INSTANCE__PORT_NUMBER);
+		createEReference(opcUaReadServerInstanceEClass, OPC_UA_READ_SERVER_INSTANCE__READ_SERVER);
 	}
 
 	/**
@@ -236,6 +289,8 @@ public class CompArchSeronetExtensionPackageImpl extends EPackageImpl implements
 		// Add supertypes to classes
 		opcUaDeviceClientInstanceEClass.getESuperTypes()
 				.add(theComponentArchitecturePackage.getComponentInstanceExtension());
+		opcUaReadServerInstanceEClass.getESuperTypes()
+				.add(theComponentArchitecturePackage.getComponentInstanceExtension());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(opcUaDeviceClientInstanceEClass, OpcUaDeviceClientInstance.class, "OpcUaDeviceClientInstance",
@@ -249,6 +304,18 @@ public class CompArchSeronetExtensionPackageImpl extends EPackageImpl implements
 		initEAttribute(getOpcUaDeviceClientInstance_DeviceURI(), ecorePackage.getEString(), "deviceURI", null, 1, 1,
 				OpcUaDeviceClientInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(opcUaReadServerInstanceEClass, OpcUaReadServerInstance.class, "OpcUaReadServerInstance",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOpcUaReadServerInstance_Name(), ecorePackage.getEString(), "name", null, 1, 1,
+				OpcUaReadServerInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOpcUaReadServerInstance_PortNumber(), ecorePackage.getEInt(), "portNumber", null, 0, 1,
+				OpcUaReadServerInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOpcUaReadServerInstance_ReadServer(), theSeronetExtensionPackage.getOpcUaReadServer(), null,
+				"readServer", null, 1, 1, OpcUaReadServerInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

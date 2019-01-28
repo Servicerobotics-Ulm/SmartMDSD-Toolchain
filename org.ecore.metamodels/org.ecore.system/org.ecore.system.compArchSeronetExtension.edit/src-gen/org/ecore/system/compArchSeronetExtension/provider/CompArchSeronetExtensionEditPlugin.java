@@ -11,6 +11,7 @@ import org.ecore.base.basicAttributes.provider.BasicAttributesEditPlugin;
 import org.ecore.base.stateMachine.provider.StateMachineEditPlugin;
 
 import org.ecore.component.componentDefinition.provider.ComponentDefinitionEditPlugin;
+
 import org.ecore.component.seronetExtension.provider.SeronetExtensionEditPlugin;
 
 import org.ecore.service.communicationObject.provider.CommunicationObjectEditPlugin;
@@ -18,6 +19,7 @@ import org.ecore.service.communicationObject.provider.CommunicationObjectEditPlu
 import org.ecore.service.communicationPattern.provider.CommunicationPatternEditPlugin;
 
 import org.ecore.service.componentMode.provider.ComponentModeEditPlugin;
+
 import org.ecore.service.coordinationPattern.provider.CoordinationPatternEditPlugin;
 
 import org.ecore.service.parameterDefinition.provider.ParameterDefinitionEditPlugin;
@@ -25,7 +27,9 @@ import org.ecore.service.parameterDefinition.provider.ParameterDefinitionEditPlu
 import org.ecore.service.roboticMiddleware.provider.RoboticMiddlewareEditPlugin;
 
 import org.ecore.service.serviceDefinition.provider.ServiceDefinitionEditPlugin;
+
 import org.ecore.system.activityArchitecture.provider.ActivityArchitectureEditPlugin;
+
 import org.ecore.system.componentArchitecture.provider.ComponentArchitectureEditPlugin;
 
 /**
