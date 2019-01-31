@@ -44,7 +44,7 @@ class CopyrightHelpers {
 	'''
 	«copyright»
 	
-	// Generated with SmartSoft MDSD Toolchain Version «version»
+	// Generated with SmartMDSD Toolchain Version «version»
 	'''
 	
 	
