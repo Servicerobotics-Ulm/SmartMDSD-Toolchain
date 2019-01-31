@@ -60,6 +60,7 @@ import static extension org.ecore.component.componentDefinition.ComponentDefinit
 import org.ecore.service.communicationObject.CommObjectsRepository
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.NullProgressMonitor
+import org.ecore.component.componentDefinition.ComponentDefinition
 
 class DeploymentGenerator2Impl extends AbstractGenerator {
 	
@@ -102,13 +103,13 @@ class DeploymentGenerator2Impl extends AbstractGenerator {
 	# Any changes will be overwritten next time the deployment project
 	# is deployed/run from within the SmartMDSD toolchain.
 	
-	«FOR artefact: model.elements.filter(ComponentArtefact)»
-	REFERENCED_PROJECT_«artefact.name»="«artefact.location»"
+	«FOR componentDef: model.elements.filter(ComponentArtefact).map[it.type].toSet.sortBy[it.name]»
+	REFERENCED_PROJECT_«componentDef.name»="«componentDef.location»"
 	«ENDFOR»
 	'''
 	
-	def private String getLocation(ComponentArtefact artefact) {
-		val uri = artefact.component.component.eResource.URI
+	def private String getLocation(ComponentDefinition component) {
+		val uri = component.eResource.URI
 		val project = ResourcesPlugin.getWorkspace().getRoot().getProject(uri.segment(1))
 		return project.location.toString
 	}
@@ -141,11 +142,19 @@ class DeploymentGenerator2Impl extends AbstractGenerator {
 		# This script collects the generated ini-file parts and combines them into single ini-files (one for each component artefact)
 		#
 		
-		«FOR artefact: model.elements.filter(ComponentArtefact)»
+		# create subfolder combined-ini-files (if not yet created)
+		echo "create subfolder src-gen/combined-ini-files"
+		mkdir -p src-gen/combined-ini-files
+		
+		# clean-up old combined-ini-files before they are generated again
+		echo "clean-up src-gen/combined-ini-files subfolder"
+		rm src-gen/combined-ini-files/*.ini
+		
+		«FOR artefact: model.elements.filter(ComponentArtefact).sortBy[it.name]»
 		# create ini-file «artefact.name».ini
 		echo "create ini-file «artefact.name».ini"
-		cp src-gen/system/«artefact.name».ini src-gen/deployment/
-		cat src-gen/params/«artefact.name».ini >> src-gen/deployment/«artefact.name».ini
+		cp src-gen/system/«artefact.name».ini src-gen/combined-ini-files/
+		cat src-gen/params/«artefact.name».ini >> src-gen/combined-ini-files/«artefact.name».ini
 		
 		«ENDFOR»
 	'''
@@ -300,7 +309,7 @@ class DeploymentGenerator2Impl extends AbstractGenerator {
 		source src-gen/deployment/referenced-projects
 		
 		DEPLOY_LIBRARIES_USER=""
-		«FOR artefact: target.componentArtefacts»
+		«FOR artefact: target.componentArtefacts.sortBy[it.name]»
 			echo "Sourcing pre-deployment script for «artefact.name»... (errors might be ignored)"
 			DEPLOY_LIBRARIES=""
 			DEPLOY_COMPONENT_FILES=""
@@ -337,12 +346,12 @@ class DeploymentGenerator2Impl extends AbstractGenerator {
 		$SMART_ROOT_ACE/bin/NamingService
 		src-gen/deployment/ns_config.ini
 		«ENDIF»
-		«FOR artefact: target.componentArtefacts»
+		«FOR artefact: target.componentArtefacts.sortBy[it.name]»
 			src/«artefact.name»_data
 			src/startstop-hooks-«artefact.name».sh
 			$SMART_ROOT_ACE/bin/«artefact.type.name»
-			src-gen/deployment/«artefact.name».ini
-			«FOR x : artefact.type.allCommObjects.map[(it.eContainer as CommObjectsRepository)].toSet»
+			src-gen/combined-ini-files/«artefact.name».ini
+			«FOR x : artefact.type.allCommObjects.map[(it.eContainer as CommObjectsRepository)].toSet.sortBy[it.name]»
 				$SMART_ROOT_ACE/lib/lib«x.name».so*
 			«ENDFOR»
 		«ENDFOR»
@@ -384,13 +393,13 @@ class DeploymentGenerator2Impl extends AbstractGenerator {
 			#rsync -l -r -v --progress --exclude ".svn" $DEPL_FILES $TMPDIR/
 			cp -rv $DEPL_FILES $TMPDIR 2>&1
 		«««	rsync -l -r -v --progress --exclude ".svn" -e ssh $DEPL_FILES $SSH_TARGET
-			«FOR artefact : target.componentArtefacts»
+			«FOR artefact : target.componentArtefacts.sortBy[it.name]»
 				#rsync -l -r -v --progress --exclude ".svn" $DEPLOY_COMPONENT_FILES_PATHS_«artefact.type.name» $TMPDIR/«artefact.name»_data/
 				if [ ! "$DEPLOY_COMPONENT_FILES_PATHS_«artefact.type.name»" = "" ]; then
 					cp -rv $DEPLOY_COMPONENT_FILES_PATHS_«artefact.type.name» $TMPDIR/«artefact.name»_data/ 2>&1
 				fi
 				
-				cp -v $REFERENCED_PROJECT_«artefact.type.name»/smartsoft/src/startstop-hooks.sh $TMPDIR/startstop-hooks-component-«artefact.component.name».sh 2>/dev/null
+				cp -v $REFERENCED_PROJECT_«artefact.type.name»/smartsoft/src/startstop-hooks.sh $TMPDIR/startstop-hooks-component-«artefact.type.name».sh 2>/dev/null
 			«ENDFOR»
 			# actually deploy:
 			rsync -z -l -r -v --progress --exclude ".svn" -e ssh $TMPDIR/ $SSH_TARGET
@@ -461,7 +470,7 @@ class DeploymentGenerator2Impl extends AbstractGenerator {
 		«IF target.host !== null»export SMART_IP=«target.host.network.hostAddress»«ENDIF»
 		echo "starting components..."
 		
-		«FOR artefact : target.componentArtefacts»
+		«FOR artefact : target.componentArtefacts.sortBy[it.name]»
 			# Component instance «artefact.name»
 			echo
 			echo "############################################"
@@ -489,7 +498,7 @@ class DeploymentGenerator2Impl extends AbstractGenerator {
 		## stop
 		stop)
 		cd $SCRIPT_DIR
-		«FOR artefact : target.componentArtefacts»
+		«FOR artefact : target.componentArtefacts.sortBy[it.name]»
 			bash startstop-hooks-«artefact.name».sh pre-stop
 		«ENDFOR»
 		
@@ -524,7 +533,7 @@ class DeploymentGenerator2Impl extends AbstractGenerator {
 		«««sudo /sbin/rmmod rtai_lxrt.ko
 		«««sudo /sbin/rmmod rtai_hal.ko
 		««««ENDIF»
-		«FOR artefact : target.componentArtefacts»
+		«FOR artefact : target.componentArtefacts.sortBy[it.name]»
 			bash startstop-hooks-«artefact.name».sh post-stop
 		«ENDFOR»
 		
