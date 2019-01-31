@@ -2,6 +2,11 @@
 
 This file contains the release notes for the SmartMDSD Toolchain version 3.x. For each release, it provides important information to users to support them in switching from one specific version the previous version. This includes information and instructions how to migrate content from one version to another.
 
+## v3.8
+
+This release does not involve any changes for the existing projects created with the previous SmartMDSD Toolchain v3.7.
+
+
 ## v3.7
 
 * In previous versions of the Toolchain, the Java Classpath of each project required a dependency to two libraries
@@ -13,8 +18,3 @@ This file contains the release notes for the SmartMDSD Toolchain version 3.x. Fo
   * To deactivate the automatic indexer for your workspace, go to **Window -> Preferences -> C/C++ -> Indexer** and **deactivate the option "Automatically update the index"** (this option is highlighted with black color for a reason as it seems to be an evil option ;-)).
   * To manually trigger the C++ indexer for your project, **right-click on your project** within the project explorer and select **Index -> Rebuild**.
 If you used the new Eclipse Installer to install the SmartMDSD Toolchain, then the global index update should be automatically deactivated by default.
-
-
-## v3.8
-
-This release does not involve any changes for the existing projects created with the previous SmartMDSD Toolchain v3.7.
