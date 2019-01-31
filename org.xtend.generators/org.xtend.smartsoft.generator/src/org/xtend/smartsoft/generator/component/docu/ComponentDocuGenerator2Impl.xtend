@@ -62,7 +62,7 @@ class ComponentDocuGenerator2Impl extends AbstractGenerator
 	
 	# «docu.component.name» Component
 	
-	![«docu.component.name»-ComponentImage](https://github.com/Servicerobotics-Ulm/ComponentRepository/blob/master/«docu.component.name»/model/«docu.component.name»ComponentDefinition.jpg)
+	![«docu.component.name»-ComponentImage](model/«docu.component.name»ComponentDefinition.jpg)
 	
 	«IF docu.description !== null»
 		«docu.description.replace("\t","")»

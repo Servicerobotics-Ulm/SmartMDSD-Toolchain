@@ -727,8 +727,8 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool:CreateInstance" typeName="coordinationExtension::PrivateOperationMode" referenceName="modes">
-                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="['active'+container.modes->size()/]"/>
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="coordinationExtension::PrivateOperationMode" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="['active'+container.elements->size()/]"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -741,7 +741,7 @@
               <viewVariable name="containerView"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
-                  <subModelOperations xsi:type="tool:CreateInstance" typeName="coordinationExtension::PublicOperationMode" referenceName="modes">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="coordinationExtension::PublicOperationMode" referenceName="elements">
                     <subModelOperations xsi:type="tool:SetValue" featureName="mode" valueExpression="var:operationMode">
                       <subModelOperations xsi:type="tool:SetValue" featureName="isDefaultInit" valueExpression="[false/]"/>
                     </subModelOperations>

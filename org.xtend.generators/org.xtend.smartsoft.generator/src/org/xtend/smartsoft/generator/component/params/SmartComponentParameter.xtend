@@ -249,7 +249,8 @@ class SmartComponentParameter {
 		public:
 			TriggerHandlerCore() 
 			«IF usage.hasActiveTriggers»
-			:	mutex()
+			:	SmartACE::ManagedTask(NULL) //TODO: a propper component pointer should be probably used here instead of NULL
+			,	mutex()
 			,	sema(0) // initialize semaphore in blocking mode
 			,	current_trigger_enumerator(TriggerEnumerators::UNDEFINED_TRIGGER_ACTION)
 			«ENDIF»
