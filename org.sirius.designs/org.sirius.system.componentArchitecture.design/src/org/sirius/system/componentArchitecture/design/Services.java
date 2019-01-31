@@ -36,10 +36,12 @@ import org.ecore.service.serviceDefinition.ForkingServiceDefinition;
 import org.ecore.service.serviceDefinition.JoiningServiceDefinition;
 import org.ecore.service.serviceDefinition.RequestAnswerServiceDefinition;
 import org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance;
+import org.ecore.system.componentArchitecture.ComponentArchitectureFactory;
 import org.ecore.system.componentArchitecture.ComponentArchitectureModelUtility;
 import org.ecore.system.componentArchitecture.ComponentInstance;
 import org.ecore.system.componentArchitecture.Connection;
 import org.ecore.system.componentArchitecture.ProvidedService;
+import org.ecore.system.componentArchitecture.RequiredService;
 import org.ecore.system.componentArchitecture.ServiceInstance;
 import org.ecore.system.componentArchitecture.SystemComponentArchitecture;
 import org.ecore.system.systemParameter.ComponentParameterInstance;
@@ -326,6 +328,23 @@ public class Services {
     		return newPortsOnly;
     	}
     	return new ArrayList<ComponentPort>();
+    }
+    
+    public EObject instantiateAllComponentPorts(EObject context) {
+    	if(context instanceof ComponentInstance) {
+    		ComponentInstance component = (ComponentInstance)context;
+    		for(ComponentPort port: ComponentArchitectureModelUtility.getAllClientPorts(component)) {
+    			RequiredService service = ComponentArchitectureFactory.eINSTANCE.createRequiredService();
+    			service.setPort(port);
+    			component.getPorts().add(service);
+    		}
+    		for(ComponentPort port: ComponentArchitectureModelUtility.getAllServerPorts(component)) {
+    			ProvidedService service = ComponentArchitectureFactory.eINSTANCE.createProvidedService();
+    			service.setPort(port);
+    			component.getPorts().add(service);
+    		}
+    	}
+    	return context;
     }
     
     public Collection<EObject> getAllVisibleComponentDefinitions(EObject context) {

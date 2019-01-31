@@ -90,7 +90,9 @@
                 <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
                   <subModelOperations xsi:type="tool:CreateInstance" typeName="componentArchitecture::ComponentInstance" referenceName="components">
                     <subModelOperations xsi:type="tool:SetValue" featureName="component" valueExpression="var:compDef">
-                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="[compDef.name/]"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="[compDef.name/]">
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:instance.instantiateAllComponentPorts()"/>
+                      </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
                 </subModelOperations>
