@@ -13,3 +13,8 @@ This file contains the release notes for the SmartMDSD Toolchain version 3.x. Fo
   * To deactivate the automatic indexer for your workspace, go to **Window -> Preferences -> C/C++ -> Indexer** and **deactivate the option "Automatically update the index"** (this option is highlighted with black color for a reason as it seems to be an evil option ;-)).
   * To manually trigger the C++ indexer for your project, **right-click on your project** within the project explorer and select **Index -> Rebuild**.
 If you used the new Eclipse Installer to install the SmartMDSD Toolchain, then the global index update should be automatically deactivated by default.
+
+
+## v3.8
+
+This release does not involve any changes for the existing projects created with the previous SmartMDSD Toolchain v3.7.

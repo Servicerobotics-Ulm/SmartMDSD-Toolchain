@@ -1,3 +1,10 @@
+SmartMDSD Toolchain v3.8
+	* New experimental feature to model Components with SeRoNet ROS MixedPorts (including the generation of ROS C++ glue code)
+	* New feature Plain "OPC UA ReadServer" allows to read output-ports over a plain OPC UA interface
+	* Improvement in the SystemComponentArchitecture Graphical Editor to autogenerate ComponentInstance-Ports
+	* multiple small bugfixes in the Deployment Bash-script Generation
+-- Thu, 31 Jan. 2019
+
 SmartMDSD Toolchain v3.7
 	* Improved/stable implementation of the Plain OPC-UA Device Client Port
 	* First realization of a Datasheet DSL for Component- and Domain-Models

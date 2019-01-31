@@ -79,7 +79,7 @@
   <setupTask
       xsi:type="setup.targlets:TargletTask">
     <targlet
-        name="${scope.project.label}"
+        name="SmartMDSD-Toolchain-Target"
         activeRepositoryList="${eclipse.target.platform}">
       <requirement
           name="org.eclipse.sdk.feature.group"/>
@@ -198,13 +198,13 @@
       name="GenerateXtextGrammars">
     <setupTask
         xsi:type="projects:ProjectsBuildTask"
-        id="FirstBuild"
+        id="SmartMDSD-one"
         refresh="true">
       <description>First build round</description>
     </setupTask>
     <setupTask
         xsi:type="projects:ProjectsBuildTask"
-        id="SecondBuild"
+        id="SmartMDSD-two"
         refresh="true">
       <description>Second build round to compile generated xtend-gen folders</description>
     </setupTask>
@@ -336,7 +336,7 @@
     </setupTask>
     <setupTask
         xsi:type="projects:ProjectsBuildTask"
-        id="FinalBuild"
+        id="SmartMDSD-three"
         refresh="true">
       <description>Final build round to reflect generated files</description>
     </setupTask>
@@ -356,6 +356,124 @@
     </setupTask>
     <description>GenerateXtextGrammars</description>
   </setupTask>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="UserPreferences">
+    <annotation
+        source="http://www.eclipse.org/oomph/setup/UserPreferences"/>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.oomph.setup.ui">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="skip.startup.tasks"
+          value="true"/>
+    </setupTask>
+  </setupTask>
+  <project name="SeRoNet-ROS-Mixed-Port"
+      label="SeRoNet ROS MixedPort (experimental)">
+    <setupTask
+        xsi:type="git:GitCloneTask"
+        id="git.clone.ROSMixedPort.github"
+        remoteURI="Servicerobotics-Ulm/SeRoNet-Tooling-ROS-Mixed-Port">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/InducedChoices">
+        <detail
+            key="inherit">
+          <value>github.remoteURIs</value>
+        </detail>
+        <detail
+            key="label">
+          <value>SeRoNet ROS MixedPort Github repository</value>
+        </detail>
+        <detail
+            key="target">
+          <value>remoteURI</value>
+        </detail>
+      </annotation>
+      <description>SeRoNet ROS MixedPort</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.p2:P2Task">
+      <requirement
+          name="org.eclipse.xtext.sdk.feature.group"/>
+      <requirement
+          name="org.eclipse.sdk.feature.group"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.targlets:TargletTask"
+        targetName="Modular Target for SeRoNet-ROS-MixedPort">
+      <targlet
+          name="SeRoNet-ROS-MixedPort-Target"
+          activeRepositoryList="${eclipse.target.platform}">
+        <requirement
+            name="*"/>
+        <requirement
+            name="org.eclipse.sdk.feature.group"/>
+        <requirement
+            name="org.eclipse.xtext.sdk.feature.group"/>
+        <sourceLocator
+            rootFolder="${git.clone.ROSMixedPort.github.location}"
+            locateNestedProjects="true">
+          <excludedPath>de.seronet_projekt.ros.componentGateway.generator</excludedPath>
+          <excludedPath>ROS-MixedPort-Examples</excludedPath>
+        </sourceLocator>
+        <sourceLocator
+            rootFolder="${git.clone.SmartMDSD.github.location}"
+            locateNestedProjects="true"/>
+        <repositoryList
+            name="Oxygen">
+          <repository
+              url="http://download.eclipse.org/releases/oxygen"/>
+        </repositoryList>
+        <repositoryList
+            name="Photon">
+          <repository
+              url="http://download.eclipse.org/releases/photon"/>
+        </repositoryList>
+      </targlet>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.workingsets:WorkingSetTask">
+      <workingSet
+          name="de.seronet_projekt"
+          id="de.seronet_projekt">
+        <predicate
+            xsi:type="predicates:NamePredicate"
+            pattern="de.seronet_projekt.*"/>
+      </workingSet>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="GenerateXtextGrammars">
+      <setupTask
+          xsi:type="projects:ProjectsBuildTask"
+          id="rmp-one"/>
+      <setupTask
+          xsi:type="projects:ProjectsBuildTask"
+          id="rmp-two"/>
+      <setupTask
+          xsi:type="launching:LaunchTask"
+          id="GenerateRosInterfacesPool"
+          launcher="GenerateRosInterfacesPool">
+        <description>GenerateRosInterfacesPool</description>
+      </setupTask>
+      <setupTask
+          xsi:type="launching:LaunchTask"
+          id="GenerateRosPortExtension"
+          launcher="GenerateRosPortExtension">
+        <description>GenerateRosPortExtension</description>
+      </setupTask>
+      <setupTask
+          xsi:type="projects:ProjectsBuildTask"
+          id="rmp-three"/>
+      <description>GenerateXtextGrammars</description>
+    </setupTask>
+    <stream
+        name="master"
+        label="Master"/>
+    <description>Extends the SmartMDSD Toolchain with a ROS MixedPort Component (experimental feature)</description>
+  </project>
   <stream name="master"
       label="Master">
     <setupTask

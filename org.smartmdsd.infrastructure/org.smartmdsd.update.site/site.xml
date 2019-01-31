@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.smartmdsd.toolchain_3.7.0.201901141255.jar" id="org.smartmdsd.toolchain" version="3.7.0.201901141255" os="linux,win32" ws="gtk,win32">
+   <feature url="features/org.smartmdsd.toolchain_3.7.0.201901311117.jar" id="org.smartmdsd.toolchain" version="3.7.0.201901311117" os="linux,win32" ws="gtk,win32">
+      <category name="SmartMDSD"/>
+   </feature>
+   <feature url="features/de.seronet_projekt.mixedport.ros.feature_1.0.0.201901311117.jar" id="de.seronet_projekt.mixedport.ros.feature" version="1.0.0.201901311117">
       <category name="SmartMDSD"/>
    </feature>
    <category-def name="SmartMDSD" label="SMartMDSD-Toolchain-v3">
