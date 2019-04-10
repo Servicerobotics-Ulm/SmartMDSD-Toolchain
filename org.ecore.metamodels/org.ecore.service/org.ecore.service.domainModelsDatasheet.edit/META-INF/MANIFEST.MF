@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.ecore.service.domainModelsDatasheet.edit;singleton:=tru
 Bundle-Version: 3.7.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.ecore.service.domainModelsDatasheet.provider.DomainModelsDatasheetEditPlugin$Implementation
-Bundle-Vendor: Servicerobotics Ulm
+Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.ecore.service.domainModelsDatasheet.provider

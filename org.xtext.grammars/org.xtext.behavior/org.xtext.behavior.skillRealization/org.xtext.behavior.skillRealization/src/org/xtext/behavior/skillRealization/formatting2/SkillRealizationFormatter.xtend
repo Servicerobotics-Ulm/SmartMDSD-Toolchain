@@ -49,8 +49,9 @@ import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
 import org.ecore.behavior.skillRealization.SkillRealization
 import org.ecore.behavior.skillRealization.SkillRealizationModel
-import org.ecore.behavior.skillRealization.SkillRealizationSet
+import org.ecore.behavior.skillRealization.CoordinationModuleRealization
 import org.xtext.behavior.skillRealization.services.SkillRealizationGrammarAccess
+import org.ecore.behavior.skillRealization.CoordinationModuleRealization
 
 class SkillRealizationFormatter extends AbstractFormatter2 {
 	
@@ -58,14 +59,14 @@ class SkillRealizationFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(SkillRealizationModel skillRealizationModel, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (SkillRealizationSet skillRealizationSet : skillRealizationModel.getSkillsets()) {
-			skillRealizationSet.format;
+		for (CoordinationModuleRealization coordModuleRealization : skillRealizationModel.getModules()) {
+			coordModuleRealization.format;
 		}
 	}
 
-	def dispatch void format(SkillRealizationSet skillRealizationSet, extension IFormattableDocument document) {
+	def dispatch void format(CoordinationModuleRealization coordinationModuleRealization, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (SkillRealization skillRealization : skillRealizationSet.getSkills()) {
+		for (SkillRealization skillRealization : coordinationModuleRealization.getSkills()) {
 			skillRealization.format;
 		}
 	}

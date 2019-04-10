@@ -45,6 +45,7 @@
 package org.xtext.service.serviceDefinition.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.service.serviceDefinition.ui.internal.ServiceDefinitionActivator;
@@ -57,12 +58,13 @@ public class ServiceDefinitionExecutableExtensionFactory extends AbstractGuiceAw
 
 	@Override
 	protected Bundle getBundle() {
-		return ServiceDefinitionActivator.getInstance().getBundle();
+		return Platform.getBundle(ServiceDefinitionActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return ServiceDefinitionActivator.getInstance().getInjector(ServiceDefinitionActivator.ORG_XTEXT_SERVICE_SERVICEDEFINITION_SERVICEDEFINITION);
+		ServiceDefinitionActivator activator = ServiceDefinitionActivator.getInstance();
+		return activator != null ? activator.getInjector(ServiceDefinitionActivator.ORG_XTEXT_SERVICE_SERVICEDEFINITION_SERVICEDEFINITION) : null;
 	}
-	
+
 }

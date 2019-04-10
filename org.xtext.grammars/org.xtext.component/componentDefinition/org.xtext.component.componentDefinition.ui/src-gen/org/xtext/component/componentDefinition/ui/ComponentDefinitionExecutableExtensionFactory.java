@@ -45,6 +45,7 @@
 package org.xtext.component.componentDefinition.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.component.componentDefinition.ui.internal.ComponentDefinitionActivator;
@@ -57,12 +58,13 @@ public class ComponentDefinitionExecutableExtensionFactory extends AbstractGuice
 
 	@Override
 	protected Bundle getBundle() {
-		return ComponentDefinitionActivator.getInstance().getBundle();
+		return Platform.getBundle(ComponentDefinitionActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return ComponentDefinitionActivator.getInstance().getInjector(ComponentDefinitionActivator.ORG_XTEXT_COMPONENT_COMPONENTDEFINITION_COMPONENTDEFINITION);
+		ComponentDefinitionActivator activator = ComponentDefinitionActivator.getInstance();
+		return activator != null ? activator.getInjector(ComponentDefinitionActivator.ORG_XTEXT_COMPONENT_COMPONENTDEFINITION_COMPONENTDEFINITION) : null;
 	}
-	
+
 }

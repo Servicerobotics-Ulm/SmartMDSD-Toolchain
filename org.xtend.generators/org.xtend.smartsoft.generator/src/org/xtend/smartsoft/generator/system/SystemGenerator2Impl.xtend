@@ -71,40 +71,39 @@ class SystemGenerator2Impl extends AbstractGenerator {
 	
 	@Inject extension CopyrightHelpers
 	@Inject extension ActivityConfig 
+	@Inject extension BehaviorSystem
 	
 	override doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		for(model: resource.allContents.toIterable.filter(typeof(SystemComponentArchitecture))) {
 			fsa.generateFile("CMakeLists.txt", ExtendedOutputConfigurationProvider::SMARTSOFT_OUTPUT, model.compileCMakeLists)
 			fsa.generateFile("BuildExternalComponents.cmake", ExtendedOutputConfigurationProvider::SRC_GEN_SYS_CONFIG, model.compileBuildExternalComponents)
+			
+			//behavior files
+			fsa.generateFile("CoordinationModuleConnections.json", ExtendedOutputConfigurationProvider::SRC_GEN_SYS_CONFIG, model.compileModuleConnections)
+			fsa.generateFile("behaviorProjectFiles.sh", ExtendedOutputConfigurationProvider::SRC_GEN_SYS_CONFIG, model.compileBehaviorProjectFiles)
+			
 			for(component: model.components) {
 				fsa.generateFile(component.name+".ini", ExtendedOutputConfigurationProvider::SRC_GEN_SYS_CONFIG, component.compileIniFile)
 			}
 		}
-	}
+	}	
 	
 	def compileCMakeLists(SystemComponentArchitecture system)
 	'''
-	CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+	CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 	
 	INCLUDE(src-gen/system/BuildExternalComponents.cmake)
 	'''
 	
 	def compileBuildExternalComponents(SystemComponentArchitecture system)
 	'''
-	CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
-	
-	INCLUDE(ExternalProject)
-	
-	«FOR componentInstance: system.components»
-	ExternalProject_Add(«componentInstance.name»External
-		PREFIX «componentInstance.name»
-		SOURCE_DIR "«componentInstance.smartSoftFolder»"
-		BINARY_DIR "«componentInstance.smartSoftFolder»/build"
-		INSTALL_COMMAND ""
-	)
-	
-	«ENDFOR»
+		CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
+		PROJECT(«system.name»)
+		
+		# this is a pseudo-target just to trigger CMake builder
+		ADD_CUSTOM_TARGET(${PROJECT_NAME} ALL)
 	'''
+	
 	
 	def String getSmartSoftFolder(ComponentInstance componentInstance)
 	{

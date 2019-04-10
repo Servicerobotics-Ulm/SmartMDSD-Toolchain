@@ -47,7 +47,6 @@ package org.xtext.behavior.skillRealization.ui.internal;
 import com.google.common.collect.Maps;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.google.inject.Module;
 import java.util.Collections;
 import java.util.Map;
 import org.apache.log4j.Logger;
@@ -64,6 +63,7 @@ import org.xtext.behavior.skillRealization.ui.SkillRealizationUiModule;
  */
 public class SkillRealizationActivator extends AbstractUIPlugin {
 
+	public static final String PLUGIN_ID = "org.xtext.behavior.skillRealization.ui";
 	public static final String ORG_XTEXT_BEHAVIOR_SKILLREALIZATION_SKILLREALIZATION = "org.xtext.behavior.skillRealization.SkillRealization";
 	
 	private static final Logger logger = Logger.getLogger(SkillRealizationActivator.class);
@@ -101,10 +101,10 @@ public class SkillRealizationActivator extends AbstractUIPlugin {
 	
 	protected Injector createInjector(String language) {
 		try {
-			Module runtimeModule = getRuntimeModule(language);
-			Module sharedStateModule = getSharedStateModule();
-			Module uiModule = getUiModule(language);
-			Module mergedModule = Modules2.mixin(runtimeModule, sharedStateModule, uiModule);
+			com.google.inject.Module runtimeModule = getRuntimeModule(language);
+			com.google.inject.Module sharedStateModule = getSharedStateModule();
+			com.google.inject.Module uiModule = getUiModule(language);
+			com.google.inject.Module mergedModule = Modules2.mixin(runtimeModule, sharedStateModule, uiModule);
 			return Guice.createInjector(mergedModule);
 		} catch (Exception e) {
 			logger.error("Failed to create injector for " + language);
@@ -113,22 +113,23 @@ public class SkillRealizationActivator extends AbstractUIPlugin {
 		}
 	}
 	
-	protected Module getRuntimeModule(String grammar) {
+	protected com.google.inject.Module getRuntimeModule(String grammar) {
 		if (ORG_XTEXT_BEHAVIOR_SKILLREALIZATION_SKILLREALIZATION.equals(grammar)) {
 			return new SkillRealizationRuntimeModule();
 		}
 		throw new IllegalArgumentException(grammar);
 	}
 	
-	protected Module getUiModule(String grammar) {
+	protected com.google.inject.Module getUiModule(String grammar) {
 		if (ORG_XTEXT_BEHAVIOR_SKILLREALIZATION_SKILLREALIZATION.equals(grammar)) {
 			return new SkillRealizationUiModule(this);
 		}
 		throw new IllegalArgumentException(grammar);
 	}
 	
-	protected Module getSharedStateModule() {
+	protected com.google.inject.Module getSharedStateModule() {
 		return new SharedStateModule();
 	}
+	
 	
 }

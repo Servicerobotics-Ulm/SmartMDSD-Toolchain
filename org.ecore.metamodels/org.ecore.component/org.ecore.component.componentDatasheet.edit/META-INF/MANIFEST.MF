@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.ecore.component.componentDatasheet.edit;singleton:=true
 Bundle-Version: 3.7.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.ecore.component.componentDatasheet.provider.ComponentDatasheetEditPlugin$Implementation
-Bundle-Vendor: Servicerobotics Ulm
+Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.ecore.component.componentDatasheet.provider

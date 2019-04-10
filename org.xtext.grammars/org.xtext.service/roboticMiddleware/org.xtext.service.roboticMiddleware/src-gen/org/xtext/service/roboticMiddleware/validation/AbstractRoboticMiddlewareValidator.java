@@ -57,5 +57,4 @@ public abstract class AbstractRoboticMiddlewareValidator extends AbstractDeclara
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/service/roboticMiddleware"));
 		return result;
 	}
-	
 }

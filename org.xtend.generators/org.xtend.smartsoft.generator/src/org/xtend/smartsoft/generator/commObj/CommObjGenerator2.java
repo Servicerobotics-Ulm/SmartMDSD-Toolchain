@@ -33,15 +33,10 @@
 
 package org.xtend.smartsoft.generator.commObj;
 
-import org.eclipse.core.commands.Command;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.commands.ICommandService;
-import org.eclipse.ui.handlers.RegistryToggleState;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
-import org.smartsoft.utils.commands.AutoCodeGeneration;
 import org.xtend.smartsoft.generator.ExtendedOutputConfigurationProvider;
 import org.xtend.smartsoft.generator.GeneratorHelper;
 
@@ -51,33 +46,25 @@ import com.google.inject.Injector;
 public class CommObjGenerator2 extends AbstractGenerator {
 
 	@Override
-	public void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+	public void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) 
+	{
+		// use google Guice to resolve all injected Xtend classes!
+		Injector injector = Guice.createInjector(new CommObjGenerator2Module());
+		CommObjGenerator2Impl gen = injector.getInstance(CommObjGenerator2Impl.class);
 		
-		ICommandService commandService = (ICommandService) PlatformUI.getWorkbench().getService(ICommandService.class);  
-	    Command command = commandService.getCommand(AutoCodeGeneration.COMMAND_ID);
-		boolean activatedCodeGenerator = (Boolean)command.getState(RegistryToggleState.STATE_ID).getValue();
+		// use the generator-helper class
+		GeneratorHelper genHelper = new GeneratorHelper(injector, resource);
 		
-		if(activatedCodeGenerator == true) {
-			// use google Guice to resolve all injected Xtend classes!
-			Injector injector = Guice.createInjector(new CommObjGenerator2Module());
-			CommObjGenerator2Impl gen = injector.getInstance(CommObjGenerator2Impl.class);
-			
-			// use the generator-helper class
-			GeneratorHelper genHelper = new GeneratorHelper(injector, resource);
-			
-			// create the smartsoft folder (if not already created)
-			genHelper.createFolder(ExtendedOutputConfigurationProvider.SMARTSOFT_OUTPUT);
-			
-			// clean-up the "smartsoft/src-gen" directory
-			genHelper.invokeDirectoryCleaner();
-			
-			// execute generator using a configured FileSystemAccess
-			gen.doGenerate(resource, genHelper.getConfiguredFileSystemAccess(),context);
-			
-			// refresh the source-folder (and its subfolders down to depth 2) for making changes visible
-			genHelper.refreshFolder(ExtendedOutputConfigurationProvider.SMARTSOFT_OUTPUT, 2);
-		} else {
-//			System.out.println("CommObjects CodeGenerator deactivated");
-		}
+		// create the smartsoft folder (if not already created)
+		genHelper.createFolder(ExtendedOutputConfigurationProvider.SMARTSOFT_OUTPUT);
+		
+		// clean-up the "smartsoft/src-gen" directory
+		genHelper.invokeDirectoryCleaner();
+		
+		// execute generator using a configured FileSystemAccess
+		gen.doGenerate(resource, genHelper.getConfiguredFileSystemAccess(),context);
+		
+		// refresh the source-folder (and its subfolders down to depth 2) for making changes visible
+		genHelper.refreshFolder(ExtendedOutputConfigurationProvider.SMARTSOFT_OUTPUT, 2);
 	}
 }

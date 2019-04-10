@@ -356,13 +356,22 @@ public interface ComponentParameterPackage extends EPackage {
 	int TRIGGER_INSTANCE__ACTIVE = ABSTRACT_PARAMETER_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_INSTANCE__NAME = ABSTRACT_PARAMETER_INSTANCE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Trigger Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRIGGER_INSTANCE_FEATURE_COUNT = ABSTRACT_PARAMETER_INSTANCE_FEATURE_COUNT + 2;
+	int TRIGGER_INSTANCE_FEATURE_COUNT = ABSTRACT_PARAMETER_INSTANCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.component.componentParameter.impl.ParameterInstanceImpl <em>Parameter Instance</em>}' class.
@@ -492,6 +501,25 @@ public interface ComponentParameterPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPONENT_PARAMETERS_REF_FEATURE_COUNT = ComponentDefinitionPackage.DERIVED_COMPONENT_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.ecore.component.componentParameter.impl.ComponentRunTimeParameterBaseImpl <em>Component Run Time Parameter Base</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.ecore.component.componentParameter.impl.ComponentRunTimeParameterBaseImpl
+	 * @see org.ecore.component.componentParameter.impl.ComponentParameterPackageImpl#getComponentRunTimeParameterBase()
+	 * @generated
+	 */
+	int COMPONENT_RUN_TIME_PARAMETER_BASE = 12;
+
+	/**
+	 * The number of structural features of the '<em>Component Run Time Parameter Base</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_RUN_TIME_PARAMETER_BASE_FEATURE_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.ecore.component.componentParameter.ComponentParameter <em>Component Parameter</em>}'.
@@ -749,6 +777,17 @@ public interface ComponentParameterPackage extends EPackage {
 	EAttribute getTriggerInstance_Active();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.ecore.component.componentParameter.TriggerInstance#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.ecore.component.componentParameter.TriggerInstance#getName()
+	 * @see #getTriggerInstance()
+	 * @generated
+	 */
+	EAttribute getTriggerInstance_Name();
+
+	/**
 	 * Returns the meta object for class '{@link org.ecore.component.componentParameter.ParameterInstance <em>Parameter Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -854,6 +893,16 @@ public interface ComponentParameterPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentParametersRef_Slave();
+
+	/**
+	 * Returns the meta object for class '{@link org.ecore.component.componentParameter.ComponentRunTimeParameterBase <em>Component Run Time Parameter Base</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Component Run Time Parameter Base</em>'.
+	 * @see org.ecore.component.componentParameter.ComponentRunTimeParameterBase
+	 * @generated
+	 */
+	EClass getComponentRunTimeParameterBase();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1088,6 +1137,14 @@ public interface ComponentParameterPackage extends EPackage {
 		EAttribute TRIGGER_INSTANCE__ACTIVE = eINSTANCE.getTriggerInstance_Active();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRIGGER_INSTANCE__NAME = eINSTANCE.getTriggerInstance_Name();
+
+		/**
 		 * The meta object literal for the '{@link org.ecore.component.componentParameter.impl.ParameterInstanceImpl <em>Parameter Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1172,6 +1229,16 @@ public interface ComponentParameterPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_PARAMETERS_REF__SLAVE = eINSTANCE.getComponentParametersRef_Slave();
+
+		/**
+		 * The meta object literal for the '{@link org.ecore.component.componentParameter.impl.ComponentRunTimeParameterBaseImpl <em>Component Run Time Parameter Base</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecore.component.componentParameter.impl.ComponentRunTimeParameterBaseImpl
+		 * @see org.ecore.component.componentParameter.impl.ComponentParameterPackageImpl#getComponentRunTimeParameterBase()
+		 * @generated
+		 */
+		EClass COMPONENT_RUN_TIME_PARAMETER_BASE = eINSTANCE.getComponentRunTimeParameterBase();
 
 	}
 

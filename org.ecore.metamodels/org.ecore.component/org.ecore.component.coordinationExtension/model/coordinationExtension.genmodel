@@ -38,7 +38,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coordinationExtension.ecore#//CommunicationServiceUsageRealization/componentPort"/>
     </genClasses>
     <genClasses ecoreClass="coordinationExtension.ecore#//SkillRealizationsRef">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coordinationExtension.ecore#//SkillRealizationsRef/skillRealizationSetRef"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference coordinationExtension.ecore#//SkillRealizationsRef/skillRealizationCoordModuleRef"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

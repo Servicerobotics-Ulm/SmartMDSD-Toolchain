@@ -6,22 +6,57 @@
     modelPluginID="org.ecore.behavior.skillRealization" modelName="SkillRealization"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="../../org.ecore.base.basicAttributes/model/basicAttributes.genmodel#//basicAttributes ../../org.ecore.service.skillDefinition/model/skillDefinition.genmodel#//skillDefinition"
+    usedGenPackages="../../org.ecore.base.basicAttributes/model/basicAttributes.genmodel#//basicAttributes ../../org.ecore.service.communicationObject/model/communicationObject.genmodel#//communicationObject ../../org.ecore.service.communicationPattern/model/communicationPattern.genmodel#//communicationPattern ../../org.ecore.service.componentMode/model/componentMode.genmodel#//componentMode ../../org.ecore.service.coordinationPattern/model/coordinationPattern.genmodel#//coordinationPattern ../../org.ecore.service.parameterDefinition/model/parameterDefinition.genmodel#//parameterDefinition ../../org.ecore.service.serviceDefinition/model/serviceDefinition.genmodel#//serviceDefinition ../../org.ecore.service.skillDefinition/model/skillDefinition.genmodel#//skillDefinition ../../org.ecore.base.stateMachine/model/stateMachine.genmodel#//stateMachine"
     operationReflection="true" importOrganizing="true">
   <foreignModel>skillRealization.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="SkillRealization" basePackage="org.ecore.behavior" disposableProviderFactory="true"
       extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="skillRealization.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="skillRealization.ecore#//EventMode">
+      <genEnumLiterals ecoreEnumLiteral="skillRealization.ecore#//EventMode/continuous"/>
+      <genEnumLiterals ecoreEnumLiteral="skillRealization.ecore#//EventMode/single"/>
+    </genEnums>
     <genClasses ecoreClass="skillRealization.ecore#//SkillRealizationModel">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference skillRealization.ecore#//SkillRealizationModel/skillsets"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference skillRealization.ecore#//SkillRealizationModel/modules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference skillRealization.ecore#//SkillRealizationModel/eventhandler"/>
     </genClasses>
-    <genClasses ecoreClass="skillRealization.ecore#//SkillRealizationSet">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference skillRealization.ecore#//SkillRealizationSet/skills"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference skillRealization.ecore#//SkillRealizationSet/skillDefSet"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute skillRealization.ecore#//SkillRealizationSet/name"/>
+    <genClasses ecoreClass="skillRealization.ecore#//CoordinationModuleRealization">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference skillRealization.ecore#//CoordinationModuleRealization/skills"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference skillRealization.ecore#//CoordinationModuleRealization/coordinationModuleDef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute skillRealization.ecore#//CoordinationModuleRealization/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference skillRealization.ecore#//CoordinationModuleRealization/coordInterfaceInsts"/>
     </genClasses>
     <genClasses ecoreClass="skillRealization.ecore#//SkillRealization">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference skillRealization.ecore#//SkillRealization/skillDef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference skillRealization.ecore#//SkillRealization/action"/>
+    </genClasses>
+    <genClasses ecoreClass="skillRealization.ecore#//AbstractCoordinationAction"/>
+    <genClasses ecoreClass="skillRealization.ecore#//AbstractComponentCoordinationAction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference skillRealization.ecore#//AbstractComponentCoordinationAction/coordinationService"/>
+    </genClasses>
+    <genClasses ecoreClass="skillRealization.ecore#//ComponentCoordinationActionEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute skillRealization.ecore#//ComponentCoordinationActionEvent/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference skillRealization.ecore#//ComponentCoordinationActionEvent/handler"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute skillRealization.ecore#//ComponentCoordinationActionEvent/mode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute skillRealization.ecore#//ComponentCoordinationActionEvent/param"/>
+    </genClasses>
+    <genClasses ecoreClass="skillRealization.ecore#//ComponentCoordinationActionWiring"/>
+    <genClasses ecoreClass="skillRealization.ecore#//ComponentCoordinationActionParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute skillRealization.ecore#//ComponentCoordinationActionParameter/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference skillRealization.ecore#//ComponentCoordinationActionParameter/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="skillRealization.ecore#//ComponentCoordinationActionActivation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference skillRealization.ecore#//ComponentCoordinationActionActivation/state"/>
+    </genClasses>
+    <genClasses ecoreClass="skillRealization.ecore#//CoordinationActionBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference skillRealization.ecore#//CoordinationActionBlock/actions"/>
+    </genClasses>
+    <genClasses ecoreClass="skillRealization.ecore#//EventHandler">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference skillRealization.ecore#//EventHandler/action"/>
+    </genClasses>
+    <genClasses ecoreClass="skillRealization.ecore#//CoordinationInterfaceInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute skillRealization.ecore#//CoordinationInterfaceInstance/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference skillRealization.ecore#//CoordinationInterfaceInstance/coordinationInterfaceDef"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

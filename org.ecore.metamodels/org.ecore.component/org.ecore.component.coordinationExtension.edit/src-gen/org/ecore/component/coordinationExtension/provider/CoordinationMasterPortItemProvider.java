@@ -10,7 +10,9 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
 import org.ecore.component.componentDefinition.provider.NamedComponentElementItemProvider;
+
 import org.ecore.component.coordinationExtension.CoordinationExtensionPackage;
 import org.ecore.component.coordinationExtension.CoordinationMasterPort;
 

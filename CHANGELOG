@@ -1,3 +1,16 @@
+SmartMDSD Toolchain v3.9
+	* Upgraded to the new Eclipse base-installation version 2018-12
+	* Major update of the User Interface (UI), see also Release Notes
+	* Three new perspective views for the core three RobMoSys developer roles: Domain Experts, Component Suppliers, Behavior Developers, and System Builders
+	* Integration of Behavior Development into Toolchain
+	* New Project type "Behavior Project" with new models around behavior development
+	* Generation of Coordination Interfaces for Sequencer
+	* New SmartMDSD Project Explorer
+	* Fundamentally upgraded build infrastructure integration
+	* New option to manually trigger code generation
+	* Cleaned up and harmonized context menus and buttons
+-- Wed, 10 Apr. 2019
+
 SmartMDSD Toolchain v3.8
 	* New experimental feature to model Components with SeRoNet ROS MixedPorts (including the generation of ROS C++ glue code)
 	* New feature Plain "OPC UA ReadServer" allows to read output-ports over a plain OPC UA interface

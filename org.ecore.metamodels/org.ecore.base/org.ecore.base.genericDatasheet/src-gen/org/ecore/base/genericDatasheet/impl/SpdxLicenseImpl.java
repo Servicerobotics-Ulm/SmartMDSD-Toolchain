@@ -69,6 +69,7 @@ public class SpdxLicenseImpl extends AbstractLicenseImpl implements SpdxLicense 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLicenseID() {
 		return licenseID;
 	}
@@ -78,6 +79,7 @@ public class SpdxLicenseImpl extends AbstractLicenseImpl implements SpdxLicense 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLicenseID(String newLicenseID) {
 		String oldLicenseID = licenseID;
 		licenseID = newLicenseID;
@@ -154,7 +156,7 @@ public class SpdxLicenseImpl extends AbstractLicenseImpl implements SpdxLicense 
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (licenseID: ");
 		result.append(licenseID);
 		result.append(')');

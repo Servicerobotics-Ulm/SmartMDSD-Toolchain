@@ -65,5 +65,4 @@ public abstract class AbstractComponentDefinitionValidator extends RoboticMiddle
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/service/roboticMiddleware"));
 		return result;
 	}
-	
 }

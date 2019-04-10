@@ -80,9 +80,9 @@ public class SkillDefinitionSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case SkillDefinitionPackage.SKILL_DEFINITION_SET: {
-			SkillDefinitionSet skillDefinitionSet = (SkillDefinitionSet) theEObject;
-			T result = caseSkillDefinitionSet(skillDefinitionSet);
+		case SkillDefinitionPackage.COORDINATION_MODULE_DEFINITION: {
+			CoordinationModuleDefinition coordinationModuleDefinition = (CoordinationModuleDefinition) theEObject;
+			T result = caseCoordinationModuleDefinition(coordinationModuleDefinition);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -137,17 +137,17 @@ public class SkillDefinitionSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Set</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Coordination Module Definition</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Set</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Coordination Module Definition</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSkillDefinitionSet(SkillDefinitionSet object) {
+	public T caseCoordinationModuleDefinition(CoordinationModuleDefinition object) {
 		return null;
 	}
 

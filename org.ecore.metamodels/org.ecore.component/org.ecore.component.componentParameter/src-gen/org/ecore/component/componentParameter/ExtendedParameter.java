@@ -23,7 +23,8 @@ import org.ecore.base.basicAttributes.AttributeDefinition;
  * @model
  * @generated
  */
-public interface ExtendedParameter extends AbstractComponentParameter, ComponentParameterBase {
+public interface ExtendedParameter
+		extends AbstractComponentParameter, ComponentParameterBase, ComponentRunTimeParameterBase {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

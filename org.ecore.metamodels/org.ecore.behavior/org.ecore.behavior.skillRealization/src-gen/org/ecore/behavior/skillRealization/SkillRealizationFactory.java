@@ -31,13 +31,13 @@ public interface SkillRealizationFactory extends EFactory {
 	SkillRealizationModel createSkillRealizationModel();
 
 	/**
-	 * Returns a new object of class '<em>Set</em>'.
+	 * Returns a new object of class '<em>Coordination Module Realization</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Set</em>'.
+	 * @return a new object of class '<em>Coordination Module Realization</em>'.
 	 * @generated
 	 */
-	SkillRealizationSet createSkillRealizationSet();
+	CoordinationModuleRealization createCoordinationModuleRealization();
 
 	/**
 	 * Returns a new object of class '<em>Skill Realization</em>'.
@@ -47,6 +47,69 @@ public interface SkillRealizationFactory extends EFactory {
 	 * @generated
 	 */
 	SkillRealization createSkillRealization();
+
+	/**
+	 * Returns a new object of class '<em>Component Coordination Action Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Component Coordination Action Event</em>'.
+	 * @generated
+	 */
+	ComponentCoordinationActionEvent createComponentCoordinationActionEvent();
+
+	/**
+	 * Returns a new object of class '<em>Component Coordination Action Wiring</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Component Coordination Action Wiring</em>'.
+	 * @generated
+	 */
+	ComponentCoordinationActionWiring createComponentCoordinationActionWiring();
+
+	/**
+	 * Returns a new object of class '<em>Component Coordination Action Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Component Coordination Action Parameter</em>'.
+	 * @generated
+	 */
+	ComponentCoordinationActionParameter createComponentCoordinationActionParameter();
+
+	/**
+	 * Returns a new object of class '<em>Component Coordination Action Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Component Coordination Action Activation</em>'.
+	 * @generated
+	 */
+	ComponentCoordinationActionActivation createComponentCoordinationActionActivation();
+
+	/**
+	 * Returns a new object of class '<em>Coordination Action Block</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Coordination Action Block</em>'.
+	 * @generated
+	 */
+	CoordinationActionBlock createCoordinationActionBlock();
+
+	/**
+	 * Returns a new object of class '<em>Event Handler</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Event Handler</em>'.
+	 * @generated
+	 */
+	EventHandler createEventHandler();
+
+	/**
+	 * Returns a new object of class '<em>Coordination Interface Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Coordination Interface Instance</em>'.
+	 * @generated
+	 */
+	CoordinationInterfaceInstance createCoordinationInterfaceInstance();
 
 	/**
 	 * Returns the package supported by this factory.

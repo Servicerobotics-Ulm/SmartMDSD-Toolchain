@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.ecore.component.componentDefinition.ComponentPort;
 
 import org.ecore.component.coordinationExtension.CommunicationServiceUsageRealization;

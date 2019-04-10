@@ -35,6 +35,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.commands.NotEnabledException;
+import org.eclipse.core.commands.NotHandledException;
+import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -79,9 +83,8 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
-import org.eclipse.ui.dialogs.ListSelectionDialog;
 import org.eclipse.ui.dialogs.TwoPaneElementSelector;
-import org.eclipse.ui.model.WorkbenchLabelProvider;
+import org.eclipse.ui.handlers.IHandlerService;
 import org.osgi.framework.Bundle;
 
 public class DiagramHelperServices {
@@ -273,32 +276,6 @@ public class DiagramHelperServices {
 		return null;
 	}
 	
-	public static Object[] openProjectSelectionDialog(List<ResourceDescriptor> currentSematicResources, IWorkspaceRoot root, String modelFolder, String modelFileExtension, String dialogMessage) {
-		// get currently active Shell
-		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-
-		List<IProject> preselectedProjects = new ArrayList<IProject>();
-		for(ResourceDescriptor resource: currentSematicResources) {
-			IProject project = root.getProject(resource.getResourceURI().segment(1));
-			if(project.exists()) {
-				preselectedProjects.add(project);
-			}
-		}
-		
-		// create and open a ListSelectionDialog using an own ModelImportContentProvider
-		ListSelectionDialog dialog = new ListSelectionDialog(shell, root,
-				new ModelImportContentProvider(modelFolder,modelFileExtension), 
-				new WorkbenchLabelProvider(), 
-				dialogMessage);
-		dialog.setTitle("Project Selection");
-		dialog.setInitialElementSelections(preselectedProjects);
-		
-		if(dialog.open() == Window.OK) {
-			return dialog.getResult();
-		}
-		return null;
-	}
-	
 	public static EObject importModels(DDiagram diagram, String modelFolder, String modelFileExtension) {
 		// by default, deselect projects
 		boolean deselectProjects = true;
@@ -306,23 +283,19 @@ public class DiagramHelperServices {
 	}
 	
 	public static EObject importModels(DDiagram diagram, String modelFolder, String modelFileExtension, Boolean deselectProjects) {
-		// get Workspace root
-		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		IProgressMonitor monitor = new NullProgressMonitor();
-		
-		// get the already imported projects by iterating through semantic-resources in the diagram (filtering them based on the modelFileExtension)
-		List<ResourceDescriptor> currentSematicResources = getSemanticResources(diagram, modelFileExtension);
-		
-		String dialogMessage = "Select the projects to be imported:";
-		// use a selection Dialog for selecting which projects to import into the Diagram resource
-		Object[] results = openProjectSelectionDialog(currentSematicResources, root, modelFolder, modelFileExtension, dialogMessage);
-		if(results != null) {
-			// 1) adjust the semantic resources of the DDiagram resource-set
-			adjustSemanticResources(diagram, results, currentSematicResources, modelFolder, modelFileExtension, root, monitor);
-			// 2) adjust java-classpath of the according java-project
-			adjustJavaBuildPath(diagram, results, deselectProjects, root, monitor);
-		}
+		// we delegate the import handling to the new Eclipse command "org.smartmdsd.navigator.imports"
+		triggerModelImportCommand();
 		return diagram;
+	}
+	
+	public static void triggerModelImportCommand() {
+		// we delegate the import handling to the new Eclipse command "org.smartmdsd.navigator.imports"
+		IHandlerService handlerService = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getService(IHandlerService.class);
+		try {
+			handlerService.executeCommand("org.smartmdsd.navigator.imports", null);
+		} catch (ExecutionException | NotDefinedException | NotEnabledException | NotHandledException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static List<ResourceDescriptor> getSemanticResources(DDiagram diagram, String modelFileExtension) {

@@ -45,6 +45,7 @@
 package org.xtext.system.systemParameter.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.system.systemParameter.ui.internal.SystemParameterActivator;
@@ -57,12 +58,13 @@ public class SystemParameterExecutableExtensionFactory extends AbstractGuiceAwar
 
 	@Override
 	protected Bundle getBundle() {
-		return SystemParameterActivator.getInstance().getBundle();
+		return Platform.getBundle(SystemParameterActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return SystemParameterActivator.getInstance().getInjector(SystemParameterActivator.ORG_XTEXT_SYSTEM_SYSTEMPARAMETER_SYSTEMPARAMETER);
+		SystemParameterActivator activator = SystemParameterActivator.getInstance();
+		return activator != null ? activator.getInjector(SystemParameterActivator.ORG_XTEXT_SYSTEM_SYSTEMPARAMETER_SYSTEMPARAMETER) : null;
 	}
-	
+
 }

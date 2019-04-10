@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.ecore.service.skillDefinition.SkillDefinitionRepository#getName <em>Name</em>}</li>
- *   <li>{@link org.ecore.service.skillDefinition.SkillDefinitionRepository#getSets <em>Sets</em>}</li>
+ *   <li>{@link org.ecore.service.skillDefinition.SkillDefinitionRepository#getModules <em>Modules</em>}</li>
  * </ul>
  *
  * @see org.ecore.service.skillDefinition.SkillDefinitionPackage#getSkillDefinitionRepository()
@@ -51,19 +51,19 @@ public interface SkillDefinitionRepository extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Sets</b></em>' containment reference list.
-	 * The list contents are of type {@link org.ecore.service.skillDefinition.SkillDefinitionSet}.
+	 * Returns the value of the '<em><b>Modules</b></em>' containment reference list.
+	 * The list contents are of type {@link org.ecore.service.skillDefinition.CoordinationModuleDefinition}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Sets</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Modules</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sets</em>' containment reference list.
-	 * @see org.ecore.service.skillDefinition.SkillDefinitionPackage#getSkillDefinitionRepository_Sets()
+	 * @return the value of the '<em>Modules</em>' containment reference list.
+	 * @see org.ecore.service.skillDefinition.SkillDefinitionPackage#getSkillDefinitionRepository_Modules()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<SkillDefinitionSet> getSets();
+	EList<CoordinationModuleDefinition> getModules();
 
 } // SkillDefinitionRepository

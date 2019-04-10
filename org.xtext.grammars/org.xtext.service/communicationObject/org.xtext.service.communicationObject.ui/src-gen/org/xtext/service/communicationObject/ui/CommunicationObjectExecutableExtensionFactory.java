@@ -45,6 +45,7 @@
 package org.xtext.service.communicationObject.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.service.communicationObject.ui.internal.CommunicationObjectActivator;
@@ -57,12 +58,13 @@ public class CommunicationObjectExecutableExtensionFactory extends AbstractGuice
 
 	@Override
 	protected Bundle getBundle() {
-		return CommunicationObjectActivator.getInstance().getBundle();
+		return Platform.getBundle(CommunicationObjectActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return CommunicationObjectActivator.getInstance().getInjector(CommunicationObjectActivator.ORG_XTEXT_SERVICE_COMMUNICATIONOBJECT_COMMUNICATIONOBJECT);
+		CommunicationObjectActivator activator = CommunicationObjectActivator.getInstance();
+		return activator != null ? activator.getInjector(CommunicationObjectActivator.ORG_XTEXT_SERVICE_COMMUNICATIONOBJECT_COMMUNICATIONOBJECT) : null;
 	}
-	
+
 }

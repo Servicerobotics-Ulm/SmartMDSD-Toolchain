@@ -100,7 +100,7 @@ public class DomainModelsDatasheetSemanticSequencer extends GenericDatasheetSema
 	 *         name=ID 
 	 *         (
 	 *             baseURI=EString | 
-	 *             shortDescrition=EString | 
+	 *             shortDescription=EString | 
 	 *             longDescription=TEXT_BLOCK | 
 	 *             supplierDescription=EString | 
 	 *             homepage=EString | 

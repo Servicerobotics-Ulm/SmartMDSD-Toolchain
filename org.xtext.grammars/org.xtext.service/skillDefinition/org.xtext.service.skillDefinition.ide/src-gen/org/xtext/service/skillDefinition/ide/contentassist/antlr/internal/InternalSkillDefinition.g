@@ -140,25 +140,25 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleSkillDefinitionSet
-entryRuleSkillDefinitionSet
+// Entry rule entryRuleCoordinationModuleDefinition
+entryRuleCoordinationModuleDefinition
 :
-{ before(grammarAccess.getSkillDefinitionSetRule()); }
-	 ruleSkillDefinitionSet
-{ after(grammarAccess.getSkillDefinitionSetRule()); } 
+{ before(grammarAccess.getCoordinationModuleDefinitionRule()); }
+	 ruleCoordinationModuleDefinition
+{ after(grammarAccess.getCoordinationModuleDefinitionRule()); } 
 	 EOF 
 ;
 
-// Rule SkillDefinitionSet
-ruleSkillDefinitionSet 
+// Rule CoordinationModuleDefinition
+ruleCoordinationModuleDefinition 
 	@init {
 		int stackSize = keepStackSize();
 	}
 	:
 	(
-		{ before(grammarAccess.getSkillDefinitionSetAccess().getGroup()); }
-		(rule__SkillDefinitionSet__Group__0)
-		{ after(grammarAccess.getSkillDefinitionSetAccess().getGroup()); }
+		{ before(grammarAccess.getCoordinationModuleDefinitionAccess().getGroup()); }
+		(rule__CoordinationModuleDefinition__Group__0)
+		{ after(grammarAccess.getCoordinationModuleDefinitionAccess().getGroup()); }
 	)
 ;
 finally {
@@ -1021,9 +1021,9 @@ rule__SkillDefinitionRepository__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getSkillDefinitionRepositoryAccess().getSetsAssignment_3()); }
-	(rule__SkillDefinitionRepository__SetsAssignment_3)*
-	{ after(grammarAccess.getSkillDefinitionRepositoryAccess().getSetsAssignment_3()); }
+	{ before(grammarAccess.getSkillDefinitionRepositoryAccess().getModulesAssignment_3()); }
+	(rule__SkillDefinitionRepository__ModulesAssignment_3)*
+	{ after(grammarAccess.getSkillDefinitionRepositoryAccess().getModulesAssignment_3()); }
 )
 ;
 finally {
@@ -1057,134 +1057,134 @@ finally {
 }
 
 
-rule__SkillDefinitionSet__Group__0
+rule__CoordinationModuleDefinition__Group__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__SkillDefinitionSet__Group__0__Impl
-	rule__SkillDefinitionSet__Group__1
+	rule__CoordinationModuleDefinition__Group__0__Impl
+	rule__CoordinationModuleDefinition__Group__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SkillDefinitionSet__Group__0__Impl
+rule__CoordinationModuleDefinition__Group__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getSkillDefinitionSetAccess().getSkillDefinitionSetKeyword_0()); }
-	'SkillDefinitionSet'
-	{ after(grammarAccess.getSkillDefinitionSetAccess().getSkillDefinitionSetKeyword_0()); }
+	{ before(grammarAccess.getCoordinationModuleDefinitionAccess().getCoordinationModuleDefinitionKeyword_0()); }
+	'CoordinationModuleDefinition'
+	{ after(grammarAccess.getCoordinationModuleDefinitionAccess().getCoordinationModuleDefinitionKeyword_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SkillDefinitionSet__Group__1
+rule__CoordinationModuleDefinition__Group__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__SkillDefinitionSet__Group__1__Impl
-	rule__SkillDefinitionSet__Group__2
+	rule__CoordinationModuleDefinition__Group__1__Impl
+	rule__CoordinationModuleDefinition__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SkillDefinitionSet__Group__1__Impl
+rule__CoordinationModuleDefinition__Group__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getSkillDefinitionSetAccess().getNameAssignment_1()); }
-	(rule__SkillDefinitionSet__NameAssignment_1)
-	{ after(grammarAccess.getSkillDefinitionSetAccess().getNameAssignment_1()); }
+	{ before(grammarAccess.getCoordinationModuleDefinitionAccess().getNameAssignment_1()); }
+	(rule__CoordinationModuleDefinition__NameAssignment_1)
+	{ after(grammarAccess.getCoordinationModuleDefinitionAccess().getNameAssignment_1()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SkillDefinitionSet__Group__2
+rule__CoordinationModuleDefinition__Group__2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__SkillDefinitionSet__Group__2__Impl
-	rule__SkillDefinitionSet__Group__3
+	rule__CoordinationModuleDefinition__Group__2__Impl
+	rule__CoordinationModuleDefinition__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SkillDefinitionSet__Group__2__Impl
+rule__CoordinationModuleDefinition__Group__2__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getSkillDefinitionSetAccess().getLeftCurlyBracketKeyword_2()); }
+	{ before(grammarAccess.getCoordinationModuleDefinitionAccess().getLeftCurlyBracketKeyword_2()); }
 	'{'
-	{ after(grammarAccess.getSkillDefinitionSetAccess().getLeftCurlyBracketKeyword_2()); }
+	{ after(grammarAccess.getCoordinationModuleDefinitionAccess().getLeftCurlyBracketKeyword_2()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SkillDefinitionSet__Group__3
+rule__CoordinationModuleDefinition__Group__3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__SkillDefinitionSet__Group__3__Impl
-	rule__SkillDefinitionSet__Group__4
+	rule__CoordinationModuleDefinition__Group__3__Impl
+	rule__CoordinationModuleDefinition__Group__4
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SkillDefinitionSet__Group__3__Impl
+rule__CoordinationModuleDefinition__Group__3__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getSkillDefinitionSetAccess().getSkillsAssignment_3()); }
-	(rule__SkillDefinitionSet__SkillsAssignment_3)*
-	{ after(grammarAccess.getSkillDefinitionSetAccess().getSkillsAssignment_3()); }
+	{ before(grammarAccess.getCoordinationModuleDefinitionAccess().getSkillsAssignment_3()); }
+	(rule__CoordinationModuleDefinition__SkillsAssignment_3)*
+	{ after(grammarAccess.getCoordinationModuleDefinitionAccess().getSkillsAssignment_3()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SkillDefinitionSet__Group__4
+rule__CoordinationModuleDefinition__Group__4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__SkillDefinitionSet__Group__4__Impl
+	rule__CoordinationModuleDefinition__Group__4__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SkillDefinitionSet__Group__4__Impl
+rule__CoordinationModuleDefinition__Group__4__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getSkillDefinitionSetAccess().getRightCurlyBracketKeyword_4()); }
+	{ before(grammarAccess.getCoordinationModuleDefinitionAccess().getRightCurlyBracketKeyword_4()); }
 	'}'
-	{ after(grammarAccess.getSkillDefinitionSetAccess().getRightCurlyBracketKeyword_4()); }
+	{ after(grammarAccess.getCoordinationModuleDefinitionAccess().getRightCurlyBracketKeyword_4()); }
 )
 ;
 finally {
@@ -3288,45 +3288,45 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SkillDefinitionRepository__SetsAssignment_3
+rule__SkillDefinitionRepository__ModulesAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getSkillDefinitionRepositoryAccess().getSetsSkillDefinitionSetParserRuleCall_3_0()); }
-		ruleSkillDefinitionSet
-		{ after(grammarAccess.getSkillDefinitionRepositoryAccess().getSetsSkillDefinitionSetParserRuleCall_3_0()); }
+		{ before(grammarAccess.getSkillDefinitionRepositoryAccess().getModulesCoordinationModuleDefinitionParserRuleCall_3_0()); }
+		ruleCoordinationModuleDefinition
+		{ after(grammarAccess.getSkillDefinitionRepositoryAccess().getModulesCoordinationModuleDefinitionParserRuleCall_3_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SkillDefinitionSet__NameAssignment_1
+rule__CoordinationModuleDefinition__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getSkillDefinitionSetAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getCoordinationModuleDefinitionAccess().getNameIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getSkillDefinitionSetAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getCoordinationModuleDefinitionAccess().getNameIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SkillDefinitionSet__SkillsAssignment_3
+rule__CoordinationModuleDefinition__SkillsAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getSkillDefinitionSetAccess().getSkillsSkillDefinitionParserRuleCall_3_0()); }
+		{ before(grammarAccess.getCoordinationModuleDefinitionAccess().getSkillsSkillDefinitionParserRuleCall_3_0()); }
 		ruleSkillDefinition
-		{ after(grammarAccess.getSkillDefinitionSetAccess().getSkillsSkillDefinitionParserRuleCall_3_0()); }
+		{ after(grammarAccess.getCoordinationModuleDefinitionAccess().getSkillsSkillDefinitionParserRuleCall_3_0()); }
 	)
 ;
 finally {

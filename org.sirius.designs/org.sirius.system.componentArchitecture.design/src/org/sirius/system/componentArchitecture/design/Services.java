@@ -63,6 +63,11 @@ public class Services {
     	return DiagramHelperServices.getProjectName(obj);
     }
     
+	public EObject importModels(EObject context) {
+		DiagramHelperServices.triggerModelImportCommand();
+		return context;
+	}
+    
     public EObject selectOpcUaReadServerPortReference(EObject context) {
     	if(context instanceof OpcUaReadServerInstance) {
     		OpcUaReadServerInstance readServerInstance = (OpcUaReadServerInstance)context;

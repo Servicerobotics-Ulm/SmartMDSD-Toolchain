@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSkillDefinitionParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'SkillDefinitionRepository'", "'{'", "'}'", "'SkillDefinitionSet'", "'SkillDefinition'", "'in'", "'out'", "'results'", "'value'", "'='", "';'", "':'", "'.'", "'true'", "'false'", "'-'", "'E'", "'e'", "'InlineEnumeration'", "'['", "']'", "'*'", "','", "'ERROR'", "'SUCCESS'", "'Int8'", "'Int16'", "'Int32'", "'Int64'", "'UInt8'", "'UInt16'", "'UInt32'", "'UInt64'", "'Float'", "'Double'", "'String'", "'Boolean'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'SkillDefinitionRepository'", "'{'", "'}'", "'CoordinationModuleDefinition'", "'SkillDefinition'", "'in'", "'out'", "'results'", "'value'", "'='", "';'", "':'", "'.'", "'true'", "'false'", "'-'", "'E'", "'e'", "'InlineEnumeration'", "'['", "']'", "'*'", "','", "'ERROR'", "'SUCCESS'", "'Int8'", "'Int16'", "'Int32'", "'Int64'", "'UInt8'", "'UInt16'", "'UInt32'", "'UInt64'", "'Float'", "'Double'", "'String'", "'Boolean'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
@@ -275,7 +275,7 @@ public class InternalSkillDefinitionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSkillDefinitionRepository"
-    // InternalSkillDefinition.g:158:1: ruleSkillDefinitionRepository returns [EObject current=null] : (otherlv_0= 'SkillDefinitionRepository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_sets_3_0= ruleSkillDefinitionSet ) )* otherlv_4= '}' ) ;
+    // InternalSkillDefinition.g:158:1: ruleSkillDefinitionRepository returns [EObject current=null] : (otherlv_0= 'SkillDefinitionRepository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_modules_3_0= ruleCoordinationModuleDefinition ) )* otherlv_4= '}' ) ;
     public final EObject ruleSkillDefinitionRepository() throws RecognitionException {
         EObject current = null;
 
@@ -283,18 +283,18 @@ public class InternalSkillDefinitionParser extends AbstractInternalAntlrParser {
         Token lv_name_1_0=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
-        EObject lv_sets_3_0 = null;
+        EObject lv_modules_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSkillDefinition.g:164:2: ( (otherlv_0= 'SkillDefinitionRepository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_sets_3_0= ruleSkillDefinitionSet ) )* otherlv_4= '}' ) )
-            // InternalSkillDefinition.g:165:2: (otherlv_0= 'SkillDefinitionRepository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_sets_3_0= ruleSkillDefinitionSet ) )* otherlv_4= '}' )
+            // InternalSkillDefinition.g:164:2: ( (otherlv_0= 'SkillDefinitionRepository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_modules_3_0= ruleCoordinationModuleDefinition ) )* otherlv_4= '}' ) )
+            // InternalSkillDefinition.g:165:2: (otherlv_0= 'SkillDefinitionRepository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_modules_3_0= ruleCoordinationModuleDefinition ) )* otherlv_4= '}' )
             {
-            // InternalSkillDefinition.g:165:2: (otherlv_0= 'SkillDefinitionRepository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_sets_3_0= ruleSkillDefinitionSet ) )* otherlv_4= '}' )
-            // InternalSkillDefinition.g:166:3: otherlv_0= 'SkillDefinitionRepository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_sets_3_0= ruleSkillDefinitionSet ) )* otherlv_4= '}'
+            // InternalSkillDefinition.g:165:2: (otherlv_0= 'SkillDefinitionRepository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_modules_3_0= ruleCoordinationModuleDefinition ) )* otherlv_4= '}' )
+            // InternalSkillDefinition.g:166:3: otherlv_0= 'SkillDefinitionRepository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_modules_3_0= ruleCoordinationModuleDefinition ) )* otherlv_4= '}'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
@@ -330,7 +330,7 @@ public class InternalSkillDefinitionParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getSkillDefinitionRepositoryAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalSkillDefinition.g:192:3: ( (lv_sets_3_0= ruleSkillDefinitionSet ) )*
+            // InternalSkillDefinition.g:192:3: ( (lv_modules_3_0= ruleCoordinationModuleDefinition ) )*
             loop2:
             do {
                 int alt2=2;
@@ -343,16 +343,16 @@ public class InternalSkillDefinitionParser extends AbstractInternalAntlrParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalSkillDefinition.g:193:4: (lv_sets_3_0= ruleSkillDefinitionSet )
+            	    // InternalSkillDefinition.g:193:4: (lv_modules_3_0= ruleCoordinationModuleDefinition )
             	    {
-            	    // InternalSkillDefinition.g:193:4: (lv_sets_3_0= ruleSkillDefinitionSet )
-            	    // InternalSkillDefinition.g:194:5: lv_sets_3_0= ruleSkillDefinitionSet
+            	    // InternalSkillDefinition.g:193:4: (lv_modules_3_0= ruleCoordinationModuleDefinition )
+            	    // InternalSkillDefinition.g:194:5: lv_modules_3_0= ruleCoordinationModuleDefinition
             	    {
 
-            	    					newCompositeNode(grammarAccess.getSkillDefinitionRepositoryAccess().getSetsSkillDefinitionSetParserRuleCall_3_0());
+            	    					newCompositeNode(grammarAccess.getSkillDefinitionRepositoryAccess().getModulesCoordinationModuleDefinitionParserRuleCall_3_0());
             	    				
             	    pushFollow(FOLLOW_5);
-            	    lv_sets_3_0=ruleSkillDefinitionSet();
+            	    lv_modules_3_0=ruleCoordinationModuleDefinition();
 
             	    state._fsp--;
 
@@ -362,9 +362,9 @@ public class InternalSkillDefinitionParser extends AbstractInternalAntlrParser {
             	    					}
             	    					add(
             	    						current,
-            	    						"sets",
-            	    						lv_sets_3_0,
-            	    						"org.xtext.service.skillDefinition.SkillDefinition.SkillDefinitionSet");
+            	    						"modules",
+            	    						lv_modules_3_0,
+            	    						"org.xtext.service.skillDefinition.SkillDefinition.CoordinationModuleDefinition");
             	    					afterParserOrEnumRuleCall();
             	    				
 
@@ -405,25 +405,25 @@ public class InternalSkillDefinitionParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleSkillDefinitionRepository"
 
 
-    // $ANTLR start "entryRuleSkillDefinitionSet"
-    // InternalSkillDefinition.g:219:1: entryRuleSkillDefinitionSet returns [EObject current=null] : iv_ruleSkillDefinitionSet= ruleSkillDefinitionSet EOF ;
-    public final EObject entryRuleSkillDefinitionSet() throws RecognitionException {
+    // $ANTLR start "entryRuleCoordinationModuleDefinition"
+    // InternalSkillDefinition.g:219:1: entryRuleCoordinationModuleDefinition returns [EObject current=null] : iv_ruleCoordinationModuleDefinition= ruleCoordinationModuleDefinition EOF ;
+    public final EObject entryRuleCoordinationModuleDefinition() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleSkillDefinitionSet = null;
+        EObject iv_ruleCoordinationModuleDefinition = null;
 
 
         try {
-            // InternalSkillDefinition.g:219:59: (iv_ruleSkillDefinitionSet= ruleSkillDefinitionSet EOF )
-            // InternalSkillDefinition.g:220:2: iv_ruleSkillDefinitionSet= ruleSkillDefinitionSet EOF
+            // InternalSkillDefinition.g:219:69: (iv_ruleCoordinationModuleDefinition= ruleCoordinationModuleDefinition EOF )
+            // InternalSkillDefinition.g:220:2: iv_ruleCoordinationModuleDefinition= ruleCoordinationModuleDefinition EOF
             {
-             newCompositeNode(grammarAccess.getSkillDefinitionSetRule()); 
+             newCompositeNode(grammarAccess.getCoordinationModuleDefinitionRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleSkillDefinitionSet=ruleSkillDefinitionSet();
+            iv_ruleCoordinationModuleDefinition=ruleCoordinationModuleDefinition();
 
             state._fsp--;
 
-             current =iv_ruleSkillDefinitionSet; 
+             current =iv_ruleCoordinationModuleDefinition; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -438,12 +438,12 @@ public class InternalSkillDefinitionParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleSkillDefinitionSet"
+    // $ANTLR end "entryRuleCoordinationModuleDefinition"
 
 
-    // $ANTLR start "ruleSkillDefinitionSet"
-    // InternalSkillDefinition.g:226:1: ruleSkillDefinitionSet returns [EObject current=null] : (otherlv_0= 'SkillDefinitionSet' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_skills_3_0= ruleSkillDefinition ) )* otherlv_4= '}' ) ;
-    public final EObject ruleSkillDefinitionSet() throws RecognitionException {
+    // $ANTLR start "ruleCoordinationModuleDefinition"
+    // InternalSkillDefinition.g:226:1: ruleCoordinationModuleDefinition returns [EObject current=null] : (otherlv_0= 'CoordinationModuleDefinition' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_skills_3_0= ruleSkillDefinition ) )* otherlv_4= '}' ) ;
+    public final EObject ruleCoordinationModuleDefinition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -457,15 +457,15 @@ public class InternalSkillDefinitionParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSkillDefinition.g:232:2: ( (otherlv_0= 'SkillDefinitionSet' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_skills_3_0= ruleSkillDefinition ) )* otherlv_4= '}' ) )
-            // InternalSkillDefinition.g:233:2: (otherlv_0= 'SkillDefinitionSet' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_skills_3_0= ruleSkillDefinition ) )* otherlv_4= '}' )
+            // InternalSkillDefinition.g:232:2: ( (otherlv_0= 'CoordinationModuleDefinition' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_skills_3_0= ruleSkillDefinition ) )* otherlv_4= '}' ) )
+            // InternalSkillDefinition.g:233:2: (otherlv_0= 'CoordinationModuleDefinition' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_skills_3_0= ruleSkillDefinition ) )* otherlv_4= '}' )
             {
-            // InternalSkillDefinition.g:233:2: (otherlv_0= 'SkillDefinitionSet' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_skills_3_0= ruleSkillDefinition ) )* otherlv_4= '}' )
-            // InternalSkillDefinition.g:234:3: otherlv_0= 'SkillDefinitionSet' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_skills_3_0= ruleSkillDefinition ) )* otherlv_4= '}'
+            // InternalSkillDefinition.g:233:2: (otherlv_0= 'CoordinationModuleDefinition' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_skills_3_0= ruleSkillDefinition ) )* otherlv_4= '}' )
+            // InternalSkillDefinition.g:234:3: otherlv_0= 'CoordinationModuleDefinition' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_skills_3_0= ruleSkillDefinition ) )* otherlv_4= '}'
             {
             otherlv_0=(Token)match(input,14,FOLLOW_3); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getSkillDefinitionSetAccess().getSkillDefinitionSetKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getCoordinationModuleDefinitionAccess().getCoordinationModuleDefinitionKeyword_0());
             		
             // InternalSkillDefinition.g:238:3: ( (lv_name_1_0= RULE_ID ) )
             // InternalSkillDefinition.g:239:4: (lv_name_1_0= RULE_ID )
@@ -475,11 +475,11 @@ public class InternalSkillDefinitionParser extends AbstractInternalAntlrParser {
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_4); 
 
-            					newLeafNode(lv_name_1_0, grammarAccess.getSkillDefinitionSetAccess().getNameIDTerminalRuleCall_1_0());
+            					newLeafNode(lv_name_1_0, grammarAccess.getCoordinationModuleDefinitionAccess().getNameIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getSkillDefinitionSetRule());
+            						current = createModelElement(grammarAccess.getCoordinationModuleDefinitionRule());
             					}
             					setWithLastConsumed(
             						current,
@@ -495,7 +495,7 @@ public class InternalSkillDefinitionParser extends AbstractInternalAntlrParser {
 
             otherlv_2=(Token)match(input,12,FOLLOW_6); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getSkillDefinitionSetAccess().getLeftCurlyBracketKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getCoordinationModuleDefinitionAccess().getLeftCurlyBracketKeyword_2());
             		
             // InternalSkillDefinition.g:260:3: ( (lv_skills_3_0= ruleSkillDefinition ) )*
             loop3:
@@ -516,7 +516,7 @@ public class InternalSkillDefinitionParser extends AbstractInternalAntlrParser {
             	    // InternalSkillDefinition.g:262:5: lv_skills_3_0= ruleSkillDefinition
             	    {
 
-            	    					newCompositeNode(grammarAccess.getSkillDefinitionSetAccess().getSkillsSkillDefinitionParserRuleCall_3_0());
+            	    					newCompositeNode(grammarAccess.getCoordinationModuleDefinitionAccess().getSkillsSkillDefinitionParserRuleCall_3_0());
             	    				
             	    pushFollow(FOLLOW_6);
             	    lv_skills_3_0=ruleSkillDefinition();
@@ -525,7 +525,7 @@ public class InternalSkillDefinitionParser extends AbstractInternalAntlrParser {
 
 
             	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getSkillDefinitionSetRule());
+            	    						current = createModelElementForParent(grammarAccess.getCoordinationModuleDefinitionRule());
             	    					}
             	    					add(
             	    						current,
@@ -548,7 +548,7 @@ public class InternalSkillDefinitionParser extends AbstractInternalAntlrParser {
 
             otherlv_4=(Token)match(input,13,FOLLOW_2); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getSkillDefinitionSetAccess().getRightCurlyBracketKeyword_4());
+            			newLeafNode(otherlv_4, grammarAccess.getCoordinationModuleDefinitionAccess().getRightCurlyBracketKeyword_4());
             		
 
             }
@@ -569,7 +569,7 @@ public class InternalSkillDefinitionParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleSkillDefinitionSet"
+    // $ANTLR end "ruleCoordinationModuleDefinition"
 
 
     // $ANTLR start "entryRuleSkillDefinition"

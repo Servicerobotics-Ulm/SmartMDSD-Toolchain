@@ -77,13 +77,13 @@ public interface GenericDatasheetPackage extends EPackage {
 	int GENERIC_DATASHEET__LICENSE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Short Descrition</b></em>' attribute.
+	 * The feature id for the '<em><b>Short Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_DATASHEET__SHORT_DESCRITION = 1;
+	int GENERIC_DATASHEET__SHORT_DESCRIPTION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Long Description</b></em>' attribute.
@@ -300,15 +300,15 @@ public interface GenericDatasheetPackage extends EPackage {
 	EReference getGenericDatasheet_License();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.GenericDatasheet#getShortDescrition <em>Short Descrition</em>}'.
+	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.GenericDatasheet#getShortDescription <em>Short Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Short Descrition</em>'.
-	 * @see org.ecore.base.genericDatasheet.GenericDatasheet#getShortDescrition()
+	 * @return the meta object for the attribute '<em>Short Description</em>'.
+	 * @see org.ecore.base.genericDatasheet.GenericDatasheet#getShortDescription()
 	 * @see #getGenericDatasheet()
 	 * @generated
 	 */
-	EAttribute getGenericDatasheet_ShortDescrition();
+	EAttribute getGenericDatasheet_ShortDescription();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.GenericDatasheet#getLongDescription <em>Long Description</em>}'.
@@ -491,12 +491,12 @@ public interface GenericDatasheetPackage extends EPackage {
 		EReference GENERIC_DATASHEET__LICENSE = eINSTANCE.getGenericDatasheet_License();
 
 		/**
-		 * The meta object literal for the '<em><b>Short Descrition</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Short Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GENERIC_DATASHEET__SHORT_DESCRITION = eINSTANCE.getGenericDatasheet_ShortDescrition();
+		EAttribute GENERIC_DATASHEET__SHORT_DESCRIPTION = eINSTANCE.getGenericDatasheet_ShortDescription();
 
 		/**
 		 * The meta object literal for the '<em><b>Long Description</b></em>' attribute feature.

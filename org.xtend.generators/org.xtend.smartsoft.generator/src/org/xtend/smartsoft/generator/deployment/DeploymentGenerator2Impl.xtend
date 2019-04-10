@@ -61,10 +61,12 @@ import org.ecore.service.communicationObject.CommObjectsRepository
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.NullProgressMonitor
 import org.ecore.component.componentDefinition.ComponentDefinition
+import org.xtend.smartsoft.generator.system.BehaviorSystem
 
 class DeploymentGenerator2Impl extends AbstractGenerator {
 	
 	@Inject extension CopyrightHelpers 
+	@Inject extension BehaviorSystem
 	
 	override doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		for(deployment: resource.allContents.toIterable.filter(typeof(DeploymentModel))) {
@@ -86,11 +88,12 @@ class DeploymentGenerator2Impl extends AbstractGenerator {
 				fsa.generateFile("deploy-" + target.name + ".sh", ExtendedOutputConfigurationProvider::SRC_GEN_SYS_DEPLOY, target.deployDeviceScript);
 				fsa.generateFile("start-" + target.name + ".sh", ExtendedOutputConfigurationProvider::SRC_GEN_SYS_DEPLOY, target.startScript);
 			}
-			
 
 			fsa.generateFile("deploy-all.sh", ExtendedOutputConfigurationProvider::SRC_GEN_SYS_DEPLOY, deployment.deployAllScript);
 			fsa.generateFile("start-all.sh", ExtendedOutputConfigurationProvider::SRC_GEN_SYS_DEPLOY, deployment.startAllScript);
 			fsa.generateFile("tiler.sh", ExtendedOutputConfigurationProvider::SRC_GEN_SYS_DEPLOY, this.tilerscript())
+			
+			fsa.generateFile("deploy-behavior-files.sh",ExtendedOutputConfigurationProvider::SRC_GEN_SYS_DEPLOY, deployment.compileBehaviorDeploymentFiles)
 			
 			fsa.generateFile("referenced-projects", ExtendedOutputConfigurationProvider::SRC_GEN_SYS_DEPLOY, deployment.compileReferencedProjects)
 		}
@@ -154,7 +157,9 @@ class DeploymentGenerator2Impl extends AbstractGenerator {
 		# create ini-file «artefact.name».ini
 		echo "create ini-file «artefact.name».ini"
 		cp src-gen/system/«artefact.name».ini src-gen/combined-ini-files/
-		cat src-gen/params/«artefact.name».ini >> src-gen/combined-ini-files/«artefact.name».ini
+		if [ -f src-gen/params/«artefact.name».ini ]; then
+		  cat src-gen/params/«artefact.name».ini >> src-gen/combined-ini-files/«artefact.name».ini
+		fi
 		
 		«ENDFOR»
 	'''
@@ -310,6 +315,7 @@ class DeploymentGenerator2Impl extends AbstractGenerator {
 		
 		DEPLOY_LIBRARIES_USER=""
 		«FOR artefact: target.componentArtefacts.sortBy[it.name]»
+			###############################
 			echo "Sourcing pre-deployment script for «artefact.name»... (errors might be ignored)"
 			DEPLOY_LIBRARIES=""
 			DEPLOY_COMPONENT_FILES=""
@@ -333,7 +339,21 @@ class DeploymentGenerator2Impl extends AbstractGenerator {
 				fi
 			done
 			
+			#########################
+			## BEHAVIOR FILES
+			shopt -u | grep -q nullglob && changed=true && shopt -s nullglob
+			for entry in "$REFERENCED_PROJECT_«artefact.type.name»"/model/*.smartTcl
+			do
+			  DEPLOY_COMPONENT_BEHAVIOR_MODEL_FILES_«artefact.type.name»="$DEPLOY_COMPONENT_TCL_MODEL_FILES_«artefact.type.name» $entry"
+			done
+			[ $changed ] && shopt -u nullglob; unset changed
+			
+			echo "$DEPLOY_COMPONENT_BEHAVIOR_MODEL_FILES_«artefact.type.name» "
+			#########################
+			
 			echo
+			###############################
+			 
 		«ENDFOR»
 		
 		
@@ -387,6 +407,7 @@ class DeploymentGenerator2Impl extends AbstractGenerator {
 			
 			TMPDIR=$(mktemp -d --suffix=.deployment) || exit 1
 			echo "Temporary directory: $TMPDIR"
+			mkdir $TMPDIR/behaviorFiles
 			trap "rm -rf $TMPDIR" EXIT
 			
 			# collect files in $TMPDIR
@@ -399,8 +420,17 @@ class DeploymentGenerator2Impl extends AbstractGenerator {
 					cp -rv $DEPLOY_COMPONENT_FILES_PATHS_«artefact.type.name» $TMPDIR/«artefact.name»_data/ 2>&1
 				fi
 				
+				if [ ! "$DEPLOY_COMPONENT_BEHAVIOR_MODEL_FILES_«artefact.type.name»" = "" ]; then
+					cp -rv $DEPLOY_COMPONENT_BEHAVIOR_MODEL_FILES_«artefact.type.name» $TMPDIR/behaviorFiles/ 2>&1
+				fi
+				
 				cp -v $REFERENCED_PROJECT_«artefact.type.name»/smartsoft/src/startstop-hooks.sh $TMPDIR/startstop-hooks-component-«artefact.type.name».sh 2>/dev/null
 			«ENDFOR»
+			
+			#collect and copy behavior related files
+			echo "Sourcing behavior files..."
+			test -f src-gen/deployment/deploy-behavior-files.sh && source src-gen/deployment/deploy-behavior-files.sh
+			
 			# actually deploy:
 			rsync -z -l -r -v --progress --exclude ".svn" -e ssh $TMPDIR/ $SSH_TARGET
 		fi

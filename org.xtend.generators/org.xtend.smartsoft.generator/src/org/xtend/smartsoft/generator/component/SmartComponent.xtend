@@ -285,6 +285,11 @@ class SmartComponent {
 				{
 					return paramHandler.getGlobalState();
 				}
+				
+				ParameterStateStruct getParameters() const
+				{
+					return paramHandler.getGlobalState();
+				}
 			«ENDIF»
 «««		    
 «««		    // instantiate handler
@@ -361,6 +366,8 @@ class SmartComponent {
 			
 			/// this method is used to register different PortFactory classes (one for each supported middleware framework)
 			void addPortFactory(const std::string &name, «component.name»PortFactoryInterface *portFactory);
+			
+			SmartACE::SmartComponent* getComponentImpl();
 			
 			/// this method is used to register different component-extension classes
 			void addExtension(«component.name»Extension *extension);
@@ -520,6 +527,11 @@ class SmartComponent {
 		{
 			componentExtensionRegistry[extension->getName()] = extension;
 		}
+		
+		SmartACE::SmartComponent* «component.getName()»::getComponentImpl()
+		{
+			return dynamic_cast<«component.getName()»AcePortFactory*>(portFactoryRegistry["ACE_SmartSoft"])->getComponentImpl();
+		}
 
 		/**
 		 * Notify the component that setup/initialization is finished.
@@ -628,7 +640,7 @@ class SmartComponent {
 				
 				«IF component.hasParameters»
 				// print out the actual parameters which are used to initialize the component
-				std::cout << " \nComponentDefinition Initial-Parameters:\n" << COMP->getGlobalState() << std::endl;
+				std::cout << " \nComponentDefinition Initial-Parameters:\n" << COMP->getParameters() << std::endl;
 				«ENDIF»
 				
 				«FOR ext: componentGeneratorExtensions»
@@ -756,7 +768,7 @@ class SmartComponent {
 						if(microseconds > 0) {
 							Smart::TimedTaskTrigger *triggerPtr = new Smart::TimedTaskTrigger();
 							triggerPtr->attach(«task.nameInstance»);
-							component->getTimerManager()->scheduleTimer(triggerPtr, std::chrono::microseconds(microseconds), std::chrono::microseconds(microseconds));
+							component->getTimerManager()->scheduleTimer(triggerPtr, (void *) 0, std::chrono::microseconds(microseconds), std::chrono::microseconds(microseconds));
 							// store trigger in class member
 							«task.nameInstance»Trigger = triggerPtr;
 						} else {
@@ -778,7 +790,7 @@ class SmartComponent {
 							Smart::TimedTaskTrigger *triggerPtr = new Smart::TimedTaskTrigger();
 							int microseconds = 1000*1000 / «trigger.periodicActFreq»;
 							if(microseconds > 0) {
-								component->getTimerManager()->scheduleTimer(triggerPtr, std::chrono::microseconds(microseconds), std::chrono::microseconds(microseconds));
+								component->getTimerManager()->scheduleTimer(triggerPtr, (void *) 0, std::chrono::microseconds(microseconds), std::chrono::microseconds(microseconds));
 								triggerPtr->attach(«task.nameInstance»);
 								// store trigger in class member
 								«task.nameInstance»Trigger = triggerPtr;
@@ -877,8 +889,10 @@ class SmartComponent {
 				«inLink.inputPort.nameInstance»UpcallManager->detach(«task.nameInstance»);
 				«ENDFOR»
 				// unlink the TaskTrigger
-				«task.nameInstance»Trigger->detach(«task.nameInstance»);
-				delete «task.nameInstance»;
+				if(«task.nameInstance»Trigger != NULL){
+					«task.nameInstance»Trigger->detach(«task.nameInstance»);
+					delete «task.nameInstance»;
+				}
 			«ENDFOR»
 
 			// destroy all input-handler

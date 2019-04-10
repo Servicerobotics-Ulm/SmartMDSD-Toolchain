@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.ecore.behavior.skillRealization.edit;singleton:=true
 Bundle-Version: 3.7.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.ecore.behavior.skillRealization.provider.SkillRealizationEditPlugin$Implementation
-Bundle-Vendor: Servicerobotics Ulm
+Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.ecore.behavior.skillRealization.provider
@@ -14,7 +14,21 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit;visibility:=reexport,
  org.ecore.base.basicAttributes;visibility:=reexport,
  org.ecore.base.basicAttributes.edit;visibility:=reexport,
+ org.ecore.service.communicationObject;visibility:=reexport,
+ org.ecore.service.communicationObject.edit;visibility:=reexport,
+ org.ecore.service.communicationPattern;visibility:=reexport,
+ org.ecore.service.communicationPattern.edit;visibility:=reexport,
+ org.ecore.service.componentMode;visibility:=reexport,
+ org.ecore.service.componentMode.edit;visibility:=reexport,
+ org.ecore.service.coordinationPattern;visibility:=reexport,
+ org.ecore.service.coordinationPattern.edit;visibility:=reexport,
+ org.ecore.service.parameterDefinition;visibility:=reexport,
+ org.ecore.service.parameterDefinition.edit;visibility:=reexport,
+ org.ecore.service.serviceDefinition;visibility:=reexport,
+ org.ecore.service.serviceDefinition.edit;visibility:=reexport,
  org.ecore.service.skillDefinition;visibility:=reexport,
- org.ecore.service.skillDefinition.edit;visibility:=reexport
+ org.ecore.service.skillDefinition.edit;visibility:=reexport,
+ org.ecore.base.stateMachine;visibility:=reexport,
+ org.ecore.base.stateMachine.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.ecore.behavior.skillRealization.edit

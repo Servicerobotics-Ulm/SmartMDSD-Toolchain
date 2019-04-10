@@ -67,11 +67,11 @@ import org.ecore.base.basicAttributes.InlineEnumerationType;
 import org.ecore.base.basicAttributes.IntValue;
 import org.ecore.base.basicAttributes.PrimitiveType;
 import org.ecore.base.basicAttributes.StringValue;
+import org.ecore.service.skillDefinition.CoordinationModuleDefinition;
 import org.ecore.service.skillDefinition.SkillDefinition;
 import org.ecore.service.skillDefinition.SkillDefinitionModel;
 import org.ecore.service.skillDefinition.SkillDefinitionPackage;
 import org.ecore.service.skillDefinition.SkillDefinitionRepository;
-import org.ecore.service.skillDefinition.SkillDefinitionSet;
 import org.ecore.service.skillDefinition.SkillResult;
 import org.xtext.base.basicAttributes.serializer.BasicAttributesSemanticSequencer;
 import org.xtext.service.skillDefinition.services.SkillDefinitionGrammarAccess;
@@ -129,6 +129,9 @@ public class SkillDefinitionSemanticSequencer extends BasicAttributesSemanticSeq
 			}
 		else if (epackage == SkillDefinitionPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case SkillDefinitionPackage.COORDINATION_MODULE_DEFINITION:
+				sequence_CoordinationModuleDefinition(context, (CoordinationModuleDefinition) semanticObject); 
+				return; 
 			case SkillDefinitionPackage.SKILL_DEFINITION:
 				sequence_SkillDefinition(context, (SkillDefinition) semanticObject); 
 				return; 
@@ -138,9 +141,6 @@ public class SkillDefinitionSemanticSequencer extends BasicAttributesSemanticSeq
 			case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY:
 				sequence_SkillDefinitionRepository(context, (SkillDefinitionRepository) semanticObject); 
 				return; 
-			case SkillDefinitionPackage.SKILL_DEFINITION_SET:
-				sequence_SkillDefinitionSet(context, (SkillDefinitionSet) semanticObject); 
-				return; 
 			case SkillDefinitionPackage.SKILL_RESULT:
 				sequence_SkillResult(context, (SkillResult) semanticObject); 
 				return; 
@@ -148,6 +148,18 @@ public class SkillDefinitionSemanticSequencer extends BasicAttributesSemanticSeq
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     CoordinationModuleDefinition returns CoordinationModuleDefinition
+	 *
+	 * Constraint:
+	 *     (name=ID skills+=SkillDefinition*)
+	 */
+	protected void sequence_CoordinationModuleDefinition(ISerializationContext context, CoordinationModuleDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -166,21 +178,9 @@ public class SkillDefinitionSemanticSequencer extends BasicAttributesSemanticSeq
 	 *     SkillDefinitionRepository returns SkillDefinitionRepository
 	 *
 	 * Constraint:
-	 *     (name=ID sets+=SkillDefinitionSet*)
+	 *     (name=ID modules+=CoordinationModuleDefinition*)
 	 */
 	protected void sequence_SkillDefinitionRepository(ISerializationContext context, SkillDefinitionRepository semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     SkillDefinitionSet returns SkillDefinitionSet
-	 *
-	 * Constraint:
-	 *     (name=ID skills+=SkillDefinition*)
-	 */
-	protected void sequence_SkillDefinitionSet(ISerializationContext context, SkillDefinitionSet semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated taskRealization -->
+      <package
+            uri="http://www.ecore.org/examples/taskRealization"
+            class="org.ecore.behavior.taskRealization.TaskRealizationPackage"
+            genModel="model/taskRealization.genmodel"/>
+   </extension>
+
+</plugin>

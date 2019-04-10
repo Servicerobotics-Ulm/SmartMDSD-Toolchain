@@ -24,7 +24,7 @@ import org.ecore.base.basicAttributes.AttributeDefinition;
  * @model
  * @generated
  */
-public interface ExtendedTrigger extends AbstractComponentParameter {
+public interface ExtendedTrigger extends AbstractComponentParameter, ComponentRunTimeParameterBase {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

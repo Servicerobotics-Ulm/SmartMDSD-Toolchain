@@ -394,13 +394,13 @@ public interface CoordinationExtensionPackage extends EPackage {
 	int SKILL_REALIZATIONS_REF = 7;
 
 	/**
-	 * The feature id for the '<em><b>Skill Realization Set Ref</b></em>' reference.
+	 * The feature id for the '<em><b>Skill Realization Coord Module Ref</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF = ABSTRACT_COORDINATION_ELEMENT_FEATURE_COUNT + 0;
+	int SKILL_REALIZATIONS_REF__SKILL_REALIZATION_COORD_MODULE_REF = ABSTRACT_COORDINATION_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Skill Realizations Ref</em>' class.
@@ -633,15 +633,15 @@ public interface CoordinationExtensionPackage extends EPackage {
 	EClass getSkillRealizationsRef();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.ecore.component.coordinationExtension.SkillRealizationsRef#getSkillRealizationSetRef <em>Skill Realization Set Ref</em>}'.
+	 * Returns the meta object for the reference '{@link org.ecore.component.coordinationExtension.SkillRealizationsRef#getSkillRealizationCoordModuleRef <em>Skill Realization Coord Module Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Skill Realization Set Ref</em>'.
-	 * @see org.ecore.component.coordinationExtension.SkillRealizationsRef#getSkillRealizationSetRef()
+	 * @return the meta object for the reference '<em>Skill Realization Coord Module Ref</em>'.
+	 * @see org.ecore.component.coordinationExtension.SkillRealizationsRef#getSkillRealizationCoordModuleRef()
 	 * @see #getSkillRealizationsRef()
 	 * @generated
 	 */
-	EReference getSkillRealizationsRef_SkillRealizationSetRef();
+	EReference getSkillRealizationsRef_SkillRealizationCoordModuleRef();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -845,13 +845,13 @@ public interface CoordinationExtensionPackage extends EPackage {
 		EClass SKILL_REALIZATIONS_REF = eINSTANCE.getSkillRealizationsRef();
 
 		/**
-		 * The meta object literal for the '<em><b>Skill Realization Set Ref</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Skill Realization Coord Module Ref</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF = eINSTANCE
-				.getSkillRealizationsRef_SkillRealizationSetRef();
+		EReference SKILL_REALIZATIONS_REF__SKILL_REALIZATION_COORD_MODULE_REF = eINSTANCE
+				.getSkillRealizationsRef_SkillRealizationCoordModuleRef();
 
 	}
 

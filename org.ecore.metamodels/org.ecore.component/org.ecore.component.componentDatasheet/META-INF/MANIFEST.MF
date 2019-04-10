@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.ecore.component.componentDatasheet;singleton:=true
 Bundle-Version: 3.7.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: Servicerobotics Ulm
+Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.ecore.base.basicAttributes;visibility:=reexport,

@@ -61,8 +61,8 @@ public class SkillDefinitionFactoryImpl extends EFactoryImpl implements SkillDef
 			return createSkillDefinitionModel();
 		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY:
 			return createSkillDefinitionRepository();
-		case SkillDefinitionPackage.SKILL_DEFINITION_SET:
-			return createSkillDefinitionSet();
+		case SkillDefinitionPackage.COORDINATION_MODULE_DEFINITION:
+			return createCoordinationModuleDefinition();
 		case SkillDefinitionPackage.SKILL_DEFINITION:
 			return createSkillDefinition();
 		case SkillDefinitionPackage.SKILL_RESULT:
@@ -127,9 +127,9 @@ public class SkillDefinitionFactoryImpl extends EFactoryImpl implements SkillDef
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SkillDefinitionSet createSkillDefinitionSet() {
-		SkillDefinitionSetImpl skillDefinitionSet = new SkillDefinitionSetImpl();
-		return skillDefinitionSet;
+	public CoordinationModuleDefinition createCoordinationModuleDefinition() {
+		CoordinationModuleDefinitionImpl coordinationModuleDefinition = new CoordinationModuleDefinitionImpl();
+		return coordinationModuleDefinition;
 	}
 
 	/**

@@ -137,26 +137,26 @@ public class SkillDefinitionItemProviderAdapterFactory extends SkillDefinitionAd
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.ecore.service.skillDefinition.SkillDefinitionSet} instances.
+	 * This keeps track of the one adapter used for all {@link org.ecore.service.skillDefinition.CoordinationModuleDefinition} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SkillDefinitionSetItemProvider skillDefinitionSetItemProvider;
+	protected CoordinationModuleDefinitionItemProvider coordinationModuleDefinitionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.ecore.service.skillDefinition.SkillDefinitionSet}.
+	 * This creates an adapter for a {@link org.ecore.service.skillDefinition.CoordinationModuleDefinition}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSkillDefinitionSetAdapter() {
-		if (skillDefinitionSetItemProvider == null) {
-			skillDefinitionSetItemProvider = new SkillDefinitionSetItemProvider(this);
+	public Adapter createCoordinationModuleDefinitionAdapter() {
+		if (coordinationModuleDefinitionItemProvider == null) {
+			coordinationModuleDefinitionItemProvider = new CoordinationModuleDefinitionItemProvider(this);
 		}
 
-		return skillDefinitionSetItemProvider;
+		return coordinationModuleDefinitionItemProvider;
 	}
 
 	/**
@@ -335,8 +335,8 @@ public class SkillDefinitionItemProviderAdapterFactory extends SkillDefinitionAd
 			skillDefinitionModelItemProvider.dispose();
 		if (skillDefinitionRepositoryItemProvider != null)
 			skillDefinitionRepositoryItemProvider.dispose();
-		if (skillDefinitionSetItemProvider != null)
-			skillDefinitionSetItemProvider.dispose();
+		if (coordinationModuleDefinitionItemProvider != null)
+			coordinationModuleDefinitionItemProvider.dispose();
 		if (skillDefinitionItemProvider != null)
 			skillDefinitionItemProvider.dispose();
 		if (skillResultItemProvider != null)

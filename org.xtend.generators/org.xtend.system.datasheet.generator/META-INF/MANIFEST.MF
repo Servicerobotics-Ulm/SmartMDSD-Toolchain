@@ -16,7 +16,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.xtext,
  org.eclipse.core.commands,
  org.eclipse.ui.workbench,
- org.smartsoft.utils,
  org.ecore.system.componentArchitecture,
  org.xtext.system.componentArchitecture,
  org.ecore.component.coordinationExtension

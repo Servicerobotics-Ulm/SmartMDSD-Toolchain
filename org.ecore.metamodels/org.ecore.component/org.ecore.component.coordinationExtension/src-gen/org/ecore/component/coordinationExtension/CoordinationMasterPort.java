@@ -3,6 +3,7 @@
 package org.ecore.component.coordinationExtension;
 
 import org.ecore.component.componentDefinition.NamedComponentElement;
+
 import org.ecore.service.serviceDefinition.CoordinationServiceDefinition;
 
 /**

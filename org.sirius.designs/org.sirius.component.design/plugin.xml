@@ -9,12 +9,8 @@
   </extension>
   <extension
         point="org.eclipse.ui.views">
-     <category
-           id="org.smartMDSD.category"
-           name="SmartMDSD Tools">
-     </category>
      <view
-           category="org.smartMDSD.category"
+           category="org.smartmdsd.navigator.views"
            class="org.sirius.component.design.ComponentParameterViewPart"
            icon="icons/parameters16.png"
            id="org.sirius.component.design.ComponentParamView"
@@ -46,13 +42,6 @@
      <javaActions
            actionClass="org.sirius.component.design.DeleteComponentParameterModelFileAction"
            id="DeleteComponentParameterModelFile">
-     </javaActions>
-  </extension>
-  <extension
-        point="org.eclipse.sirius.externalJavaAction">
-     <javaActions
-           actionClass="org.sirius.tools.ImportModelsAction"
-           id="ImportModels">
      </javaActions>
   </extension>
 </plugin>

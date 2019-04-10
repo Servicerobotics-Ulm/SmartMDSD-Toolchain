@@ -68,6 +68,7 @@ public class DomainModelsDatasheetFactoryImpl extends EFactoryImpl implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DomainModelsDatasheet createDomainModelsDatasheet() {
 		DomainModelsDatasheetImpl domainModelsDatasheet = new DomainModelsDatasheetImpl();
 		return domainModelsDatasheet;
@@ -78,6 +79,7 @@ public class DomainModelsDatasheetFactoryImpl extends EFactoryImpl implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DomainModelsDatasheetPackage getDomainModelsDatasheetPackage() {
 		return (DomainModelsDatasheetPackage) getEPackage();
 	}

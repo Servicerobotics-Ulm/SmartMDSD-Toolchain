@@ -47,7 +47,6 @@ package org.xtext.system.causeEffectChain.ui.internal;
 import com.google.common.collect.Maps;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.google.inject.Module;
 import java.util.Collections;
 import java.util.Map;
 import org.apache.log4j.Logger;
@@ -64,6 +63,7 @@ import org.xtext.system.causeEffectChain.ui.CauseEffectChainUiModule;
  */
 public class CauseEffectChainActivator extends AbstractUIPlugin {
 
+	public static final String PLUGIN_ID = "org.xtext.system.causeEffectChain.ui";
 	public static final String ORG_XTEXT_SYSTEM_CAUSEEFFECTCHAIN_CAUSEEFFECTCHAIN = "org.xtext.system.causeEffectChain.CauseEffectChain";
 	
 	private static final Logger logger = Logger.getLogger(CauseEffectChainActivator.class);
@@ -101,10 +101,10 @@ public class CauseEffectChainActivator extends AbstractUIPlugin {
 	
 	protected Injector createInjector(String language) {
 		try {
-			Module runtimeModule = getRuntimeModule(language);
-			Module sharedStateModule = getSharedStateModule();
-			Module uiModule = getUiModule(language);
-			Module mergedModule = Modules2.mixin(runtimeModule, sharedStateModule, uiModule);
+			com.google.inject.Module runtimeModule = getRuntimeModule(language);
+			com.google.inject.Module sharedStateModule = getSharedStateModule();
+			com.google.inject.Module uiModule = getUiModule(language);
+			com.google.inject.Module mergedModule = Modules2.mixin(runtimeModule, sharedStateModule, uiModule);
 			return Guice.createInjector(mergedModule);
 		} catch (Exception e) {
 			logger.error("Failed to create injector for " + language);
@@ -113,22 +113,23 @@ public class CauseEffectChainActivator extends AbstractUIPlugin {
 		}
 	}
 	
-	protected Module getRuntimeModule(String grammar) {
+	protected com.google.inject.Module getRuntimeModule(String grammar) {
 		if (ORG_XTEXT_SYSTEM_CAUSEEFFECTCHAIN_CAUSEEFFECTCHAIN.equals(grammar)) {
 			return new CauseEffectChainRuntimeModule();
 		}
 		throw new IllegalArgumentException(grammar);
 	}
 	
-	protected Module getUiModule(String grammar) {
+	protected com.google.inject.Module getUiModule(String grammar) {
 		if (ORG_XTEXT_SYSTEM_CAUSEEFFECTCHAIN_CAUSEEFFECTCHAIN.equals(grammar)) {
 			return new CauseEffectChainUiModule(this);
 		}
 		throw new IllegalArgumentException(grammar);
 	}
 	
-	protected Module getSharedStateModule() {
+	protected com.google.inject.Module getSharedStateModule() {
 		return new SharedStateModule();
 	}
+	
 	
 }

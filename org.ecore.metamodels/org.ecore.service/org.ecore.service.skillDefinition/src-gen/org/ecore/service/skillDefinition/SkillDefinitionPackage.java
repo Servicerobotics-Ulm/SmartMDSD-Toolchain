@@ -104,13 +104,13 @@ public interface SkillDefinitionPackage extends EPackage {
 	int SKILL_DEFINITION_REPOSITORY__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Sets</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Modules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SKILL_DEFINITION_REPOSITORY__SETS = 1;
+	int SKILL_DEFINITION_REPOSITORY__MODULES = 1;
 
 	/**
 	 * The number of structural features of the '<em>Repository</em>' class.
@@ -122,14 +122,14 @@ public interface SkillDefinitionPackage extends EPackage {
 	int SKILL_DEFINITION_REPOSITORY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.ecore.service.skillDefinition.impl.SkillDefinitionSetImpl <em>Set</em>}' class.
+	 * The meta object id for the '{@link org.ecore.service.skillDefinition.impl.CoordinationModuleDefinitionImpl <em>Coordination Module Definition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.ecore.service.skillDefinition.impl.SkillDefinitionSetImpl
-	 * @see org.ecore.service.skillDefinition.impl.SkillDefinitionPackageImpl#getSkillDefinitionSet()
+	 * @see org.ecore.service.skillDefinition.impl.CoordinationModuleDefinitionImpl
+	 * @see org.ecore.service.skillDefinition.impl.SkillDefinitionPackageImpl#getCoordinationModuleDefinition()
 	 * @generated
 	 */
-	int SKILL_DEFINITION_SET = 2;
+	int COORDINATION_MODULE_DEFINITION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -138,7 +138,7 @@ public interface SkillDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SKILL_DEFINITION_SET__NAME = 0;
+	int COORDINATION_MODULE_DEFINITION__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Skills</b></em>' containment reference list.
@@ -147,16 +147,16 @@ public interface SkillDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SKILL_DEFINITION_SET__SKILLS = 1;
+	int COORDINATION_MODULE_DEFINITION__SKILLS = 1;
 
 	/**
-	 * The number of structural features of the '<em>Set</em>' class.
+	 * The number of structural features of the '<em>Coordination Module Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SKILL_DEFINITION_SET_FEATURE_COUNT = 2;
+	int COORDINATION_MODULE_DEFINITION_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.service.skillDefinition.impl.SkillDefinitionImpl <em>Skill Definition</em>}' class.
@@ -303,47 +303,47 @@ public interface SkillDefinitionPackage extends EPackage {
 	EAttribute getSkillDefinitionRepository_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.ecore.service.skillDefinition.SkillDefinitionRepository#getSets <em>Sets</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.ecore.service.skillDefinition.SkillDefinitionRepository#getModules <em>Modules</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Sets</em>'.
-	 * @see org.ecore.service.skillDefinition.SkillDefinitionRepository#getSets()
+	 * @return the meta object for the containment reference list '<em>Modules</em>'.
+	 * @see org.ecore.service.skillDefinition.SkillDefinitionRepository#getModules()
 	 * @see #getSkillDefinitionRepository()
 	 * @generated
 	 */
-	EReference getSkillDefinitionRepository_Sets();
+	EReference getSkillDefinitionRepository_Modules();
 
 	/**
-	 * Returns the meta object for class '{@link org.ecore.service.skillDefinition.SkillDefinitionSet <em>Set</em>}'.
+	 * Returns the meta object for class '{@link org.ecore.service.skillDefinition.CoordinationModuleDefinition <em>Coordination Module Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Set</em>'.
-	 * @see org.ecore.service.skillDefinition.SkillDefinitionSet
+	 * @return the meta object for class '<em>Coordination Module Definition</em>'.
+	 * @see org.ecore.service.skillDefinition.CoordinationModuleDefinition
 	 * @generated
 	 */
-	EClass getSkillDefinitionSet();
+	EClass getCoordinationModuleDefinition();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.service.skillDefinition.SkillDefinitionSet#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.ecore.service.skillDefinition.CoordinationModuleDefinition#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.ecore.service.skillDefinition.SkillDefinitionSet#getName()
-	 * @see #getSkillDefinitionSet()
+	 * @see org.ecore.service.skillDefinition.CoordinationModuleDefinition#getName()
+	 * @see #getCoordinationModuleDefinition()
 	 * @generated
 	 */
-	EAttribute getSkillDefinitionSet_Name();
+	EAttribute getCoordinationModuleDefinition_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.ecore.service.skillDefinition.SkillDefinitionSet#getSkills <em>Skills</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.ecore.service.skillDefinition.CoordinationModuleDefinition#getSkills <em>Skills</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Skills</em>'.
-	 * @see org.ecore.service.skillDefinition.SkillDefinitionSet#getSkills()
-	 * @see #getSkillDefinitionSet()
+	 * @see org.ecore.service.skillDefinition.CoordinationModuleDefinition#getSkills()
+	 * @see #getCoordinationModuleDefinition()
 	 * @generated
 	 */
-	EReference getSkillDefinitionSet_Skills();
+	EReference getCoordinationModuleDefinition_Skills();
 
 	/**
 	 * Returns the meta object for class '{@link org.ecore.service.skillDefinition.SkillDefinition <em>Skill Definition</em>}'.
@@ -500,22 +500,22 @@ public interface SkillDefinitionPackage extends EPackage {
 		EAttribute SKILL_DEFINITION_REPOSITORY__NAME = eINSTANCE.getSkillDefinitionRepository_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Sets</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Modules</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SKILL_DEFINITION_REPOSITORY__SETS = eINSTANCE.getSkillDefinitionRepository_Sets();
+		EReference SKILL_DEFINITION_REPOSITORY__MODULES = eINSTANCE.getSkillDefinitionRepository_Modules();
 
 		/**
-		 * The meta object literal for the '{@link org.ecore.service.skillDefinition.impl.SkillDefinitionSetImpl <em>Set</em>}' class.
+		 * The meta object literal for the '{@link org.ecore.service.skillDefinition.impl.CoordinationModuleDefinitionImpl <em>Coordination Module Definition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.ecore.service.skillDefinition.impl.SkillDefinitionSetImpl
-		 * @see org.ecore.service.skillDefinition.impl.SkillDefinitionPackageImpl#getSkillDefinitionSet()
+		 * @see org.ecore.service.skillDefinition.impl.CoordinationModuleDefinitionImpl
+		 * @see org.ecore.service.skillDefinition.impl.SkillDefinitionPackageImpl#getCoordinationModuleDefinition()
 		 * @generated
 		 */
-		EClass SKILL_DEFINITION_SET = eINSTANCE.getSkillDefinitionSet();
+		EClass COORDINATION_MODULE_DEFINITION = eINSTANCE.getCoordinationModuleDefinition();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -523,7 +523,7 @@ public interface SkillDefinitionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SKILL_DEFINITION_SET__NAME = eINSTANCE.getSkillDefinitionSet_Name();
+		EAttribute COORDINATION_MODULE_DEFINITION__NAME = eINSTANCE.getCoordinationModuleDefinition_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Skills</b></em>' containment reference list feature.
@@ -531,7 +531,7 @@ public interface SkillDefinitionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SKILL_DEFINITION_SET__SKILLS = eINSTANCE.getSkillDefinitionSet_Skills();
+		EReference COORDINATION_MODULE_DEFINITION__SKILLS = eINSTANCE.getCoordinationModuleDefinition_Skills();
 
 		/**
 		 * The meta object literal for the '{@link org.ecore.service.skillDefinition.impl.SkillDefinitionImpl <em>Skill Definition</em>}' class.

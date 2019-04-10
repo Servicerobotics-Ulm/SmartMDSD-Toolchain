@@ -5,7 +5,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="GenericDatasheet">
     <eStructuralFeatures xsi:type="ecore:EReference" name="license" eType="#//AbstractLicense"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shortDescrition" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shortDescription" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="longDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="supplierDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

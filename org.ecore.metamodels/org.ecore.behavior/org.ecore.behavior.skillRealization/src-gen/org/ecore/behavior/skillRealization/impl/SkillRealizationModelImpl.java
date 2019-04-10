@@ -16,9 +16,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.ecore.behavior.skillRealization.CoordinationModuleRealization;
+import org.ecore.behavior.skillRealization.EventHandler;
 import org.ecore.behavior.skillRealization.SkillRealizationModel;
 import org.ecore.behavior.skillRealization.SkillRealizationPackage;
-import org.ecore.behavior.skillRealization.SkillRealizationSet;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,21 +29,32 @@ import org.ecore.behavior.skillRealization.SkillRealizationSet;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.ecore.behavior.skillRealization.impl.SkillRealizationModelImpl#getSkillsets <em>Skillsets</em>}</li>
+ *   <li>{@link org.ecore.behavior.skillRealization.impl.SkillRealizationModelImpl#getModules <em>Modules</em>}</li>
+ *   <li>{@link org.ecore.behavior.skillRealization.impl.SkillRealizationModelImpl#getEventhandler <em>Eventhandler</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SkillRealizationModelImpl extends MinimalEObjectImpl.Container implements SkillRealizationModel {
 	/**
-	 * The cached value of the '{@link #getSkillsets() <em>Skillsets</em>}' containment reference list.
+	 * The cached value of the '{@link #getModules() <em>Modules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSkillsets()
+	 * @see #getModules()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SkillRealizationSet> skillsets;
+	protected EList<CoordinationModuleRealization> modules;
+
+	/**
+	 * The cached value of the '{@link #getEventhandler() <em>Eventhandler</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEventhandler()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EventHandler> eventhandler;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,12 +80,27 @@ public class SkillRealizationModelImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SkillRealizationSet> getSkillsets() {
-		if (skillsets == null) {
-			skillsets = new EObjectContainmentEList<SkillRealizationSet>(SkillRealizationSet.class, this,
-					SkillRealizationPackage.SKILL_REALIZATION_MODEL__SKILLSETS);
+	@Override
+	public EList<CoordinationModuleRealization> getModules() {
+		if (modules == null) {
+			modules = new EObjectContainmentEList<CoordinationModuleRealization>(CoordinationModuleRealization.class,
+					this, SkillRealizationPackage.SKILL_REALIZATION_MODEL__MODULES);
 		}
-		return skillsets;
+		return modules;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<EventHandler> getEventhandler() {
+		if (eventhandler == null) {
+			eventhandler = new EObjectContainmentEList<EventHandler>(EventHandler.class, this,
+					SkillRealizationPackage.SKILL_REALIZATION_MODEL__EVENTHANDLER);
+		}
+		return eventhandler;
 	}
 
 	/**
@@ -84,8 +111,10 @@ public class SkillRealizationModelImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__SKILLSETS:
-			return ((InternalEList<?>) getSkillsets()).basicRemove(otherEnd, msgs);
+		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__MODULES:
+			return ((InternalEList<?>) getModules()).basicRemove(otherEnd, msgs);
+		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__EVENTHANDLER:
+			return ((InternalEList<?>) getEventhandler()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -98,8 +127,10 @@ public class SkillRealizationModelImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__SKILLSETS:
-			return getSkillsets();
+		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__MODULES:
+			return getModules();
+		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__EVENTHANDLER:
+			return getEventhandler();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,9 +144,13 @@ public class SkillRealizationModelImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__SKILLSETS:
-			getSkillsets().clear();
-			getSkillsets().addAll((Collection<? extends SkillRealizationSet>) newValue);
+		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__MODULES:
+			getModules().clear();
+			getModules().addAll((Collection<? extends CoordinationModuleRealization>) newValue);
+			return;
+		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__EVENTHANDLER:
+			getEventhandler().clear();
+			getEventhandler().addAll((Collection<? extends EventHandler>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,8 +164,11 @@ public class SkillRealizationModelImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__SKILLSETS:
-			getSkillsets().clear();
+		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__MODULES:
+			getModules().clear();
+			return;
+		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__EVENTHANDLER:
+			getEventhandler().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -144,8 +182,10 @@ public class SkillRealizationModelImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__SKILLSETS:
-			return skillsets != null && !skillsets.isEmpty();
+		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__MODULES:
+			return modules != null && !modules.isEmpty();
+		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__EVENTHANDLER:
+			return eventhandler != null && !eventhandler.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

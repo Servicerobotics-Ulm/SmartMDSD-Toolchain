@@ -60,5 +60,4 @@ public abstract class AbstractComponentModeValidator extends AbstractDeclarative
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/service/ComponentMode"));
 		return result;
 	}
-	
 }

@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.ecore.component.componentDefinition.AbstractComponentElement;
 import org.ecore.component.componentDefinition.ActivityExtension;
 import org.ecore.component.componentDefinition.NamedComponentElement;
+
 import org.ecore.component.coordinationExtension.*;
 
 /**

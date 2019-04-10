@@ -60,7 +60,7 @@ class Open62541GenericServerImpl implements Open62541GenericServer {
 		#ifdef UA_ENABLE_AMALGAMATION
 			#include <open62541.h>
 		#else
-			#include <ua_server.h>
+			#include <open62541/ua_server.h>
 		#endif
 	#endif
 	
@@ -237,8 +237,8 @@ class Open62541GenericServerImpl implements Open62541GenericServer {
 	
 	#ifdef HAS_OPCUA
 	#ifndef UA_ENABLE_AMALGAMATION
-	#include <ua_config_default.h>
-	#include <ua_log_stdout.h>
+	#include <open62541/ua_config_default.h>
+	#include <open62541/ua_log_stdout.h>
 	#endif
 	#endif // HAS_OPCUA
 	

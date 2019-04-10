@@ -62,5 +62,4 @@ public abstract class AbstractServiceDefinitionValidator extends AbstractDeclara
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/service/CommunicationPattern"));
 		return result;
 	}
-	
 }

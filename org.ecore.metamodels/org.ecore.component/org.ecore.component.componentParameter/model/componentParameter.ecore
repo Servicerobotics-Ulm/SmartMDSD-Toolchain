@@ -16,13 +16,13 @@
         eType="ecore:EClass ../../org.ecore.base.basicAttributes/model/basicAttributes.ecore#//AttributeDefinition"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExtendedParameter" eSuperTypes="#//AbstractComponentParameter #//ComponentParameterBase">
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendedParameter" eSuperTypes="#//AbstractComponentParameter #//ComponentParameterBase #//ComponentRunTimeParameterBase">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="ecore:EClass ../../org.ecore.base.basicAttributes/model/basicAttributes.ecore#//AttributeDefinition"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExtendedTrigger" eSuperTypes="#//AbstractComponentParameter">
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendedTrigger" eSuperTypes="#//AbstractComponentParameter #//ComponentRunTimeParameterBase">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -39,13 +39,15 @@
         changeable="false" volatile="true" transient="true" unsettable="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractParameterInstance" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TriggerInstance" eSuperTypes="#//AbstractParameterInstance">
+  <eClassifiers xsi:type="ecore:EClass" name="TriggerInstance" eSuperTypes="#//AbstractParameterInstance #//ComponentRunTimeParameterBase">
     <eStructuralFeatures xsi:type="ecore:EReference" name="triggerDef" lowerBound="1"
         eType="ecore:EClass ../../org.ecore.service.parameterDefinition/model/parameterDefinition.ecore#//TriggerDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" unsettable="true" derived="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterInstance" eSuperTypes="#//AbstractParameterInstance #//ComponentParameterBase">
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterInstance" eSuperTypes="#//AbstractParameterInstance #//ComponentRunTimeParameterBase #//ComponentParameterBase">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameterDef" lowerBound="1"
         eType="ecore:EClass ../../org.ecore.service.parameterDefinition/model/parameterDefinition.ecore#//ParameterDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
@@ -66,4 +68,5 @@
         eType="#//ComponentParameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="slave" eType="ecore:EClass ../../org.ecore.component.coordinationExtension/model/coordinationExtension.ecore#//CoordinationSlavePort"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentRunTimeParameterBase" abstract="true"/>
 </ecore:EPackage>

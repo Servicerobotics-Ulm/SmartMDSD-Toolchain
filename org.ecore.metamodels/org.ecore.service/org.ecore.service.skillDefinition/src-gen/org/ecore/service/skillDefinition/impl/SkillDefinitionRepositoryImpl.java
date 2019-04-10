@@ -18,9 +18,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.ecore.service.skillDefinition.CoordinationModuleDefinition;
 import org.ecore.service.skillDefinition.SkillDefinitionPackage;
 import org.ecore.service.skillDefinition.SkillDefinitionRepository;
-import org.ecore.service.skillDefinition.SkillDefinitionSet;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ import org.ecore.service.skillDefinition.SkillDefinitionSet;
  * </p>
  * <ul>
  *   <li>{@link org.ecore.service.skillDefinition.impl.SkillDefinitionRepositoryImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.ecore.service.skillDefinition.impl.SkillDefinitionRepositoryImpl#getSets <em>Sets</em>}</li>
+ *   <li>{@link org.ecore.service.skillDefinition.impl.SkillDefinitionRepositoryImpl#getModules <em>Modules</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,14 +58,14 @@ public class SkillDefinitionRepositoryImpl extends MinimalEObjectImpl.Container 
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSets() <em>Sets</em>}' containment reference list.
+	 * The cached value of the '{@link #getModules() <em>Modules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSets()
+	 * @see #getModules()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SkillDefinitionSet> sets;
+	protected EList<CoordinationModuleDefinition> modules;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,12 +113,12 @@ public class SkillDefinitionRepositoryImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SkillDefinitionSet> getSets() {
-		if (sets == null) {
-			sets = new EObjectContainmentEList<SkillDefinitionSet>(SkillDefinitionSet.class, this,
-					SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__SETS);
+	public EList<CoordinationModuleDefinition> getModules() {
+		if (modules == null) {
+			modules = new EObjectContainmentEList<CoordinationModuleDefinition>(CoordinationModuleDefinition.class,
+					this, SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__MODULES);
 		}
-		return sets;
+		return modules;
 	}
 
 	/**
@@ -129,8 +129,8 @@ public class SkillDefinitionRepositoryImpl extends MinimalEObjectImpl.Container 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__SETS:
-			return ((InternalEList<?>) getSets()).basicRemove(otherEnd, msgs);
+		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__MODULES:
+			return ((InternalEList<?>) getModules()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -145,8 +145,8 @@ public class SkillDefinitionRepositoryImpl extends MinimalEObjectImpl.Container 
 		switch (featureID) {
 		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__NAME:
 			return getName();
-		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__SETS:
-			return getSets();
+		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__MODULES:
+			return getModules();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -163,9 +163,9 @@ public class SkillDefinitionRepositoryImpl extends MinimalEObjectImpl.Container 
 		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__NAME:
 			setName((String) newValue);
 			return;
-		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__SETS:
-			getSets().clear();
-			getSets().addAll((Collection<? extends SkillDefinitionSet>) newValue);
+		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__MODULES:
+			getModules().clear();
+			getModules().addAll((Collection<? extends CoordinationModuleDefinition>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,8 +182,8 @@ public class SkillDefinitionRepositoryImpl extends MinimalEObjectImpl.Container 
 		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__SETS:
-			getSets().clear();
+		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__MODULES:
+			getModules().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -199,8 +199,8 @@ public class SkillDefinitionRepositoryImpl extends MinimalEObjectImpl.Container 
 		switch (featureID) {
 		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__SETS:
-			return sets != null && !sets.isEmpty();
+		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__MODULES:
+			return modules != null && !modules.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

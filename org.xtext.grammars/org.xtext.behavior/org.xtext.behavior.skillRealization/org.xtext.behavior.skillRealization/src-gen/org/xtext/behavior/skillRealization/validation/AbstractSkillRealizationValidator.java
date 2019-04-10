@@ -60,5 +60,4 @@ public abstract class AbstractSkillRealizationValidator extends AbstractDeclarat
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/behavior/SkillRealization"));
 		return result;
 	}
-	
 }

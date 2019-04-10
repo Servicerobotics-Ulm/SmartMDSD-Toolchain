@@ -61,5 +61,4 @@ public abstract class AbstractDomainModelsDatasheetValidator extends GenericData
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/base/genericDatasheet"));
 		return result;
 	}
-	
 }

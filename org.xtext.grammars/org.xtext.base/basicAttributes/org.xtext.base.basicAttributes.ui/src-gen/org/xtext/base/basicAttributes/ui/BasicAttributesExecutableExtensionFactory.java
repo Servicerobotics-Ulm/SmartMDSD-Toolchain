@@ -45,6 +45,7 @@
 package org.xtext.base.basicAttributes.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.base.basicAttributes.ui.internal.BasicAttributesActivator;
@@ -57,12 +58,13 @@ public class BasicAttributesExecutableExtensionFactory extends AbstractGuiceAwar
 
 	@Override
 	protected Bundle getBundle() {
-		return BasicAttributesActivator.getInstance().getBundle();
+		return Platform.getBundle(BasicAttributesActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return BasicAttributesActivator.getInstance().getInjector(BasicAttributesActivator.ORG_XTEXT_BASE_BASICATTRIBUTES_BASICATTRIBUTES);
+		BasicAttributesActivator activator = BasicAttributesActivator.getInstance();
+		return activator != null ? activator.getInjector(BasicAttributesActivator.ORG_XTEXT_BASE_BASICATTRIBUTES_BASICATTRIBUTES) : null;
 	}
-	
+
 }

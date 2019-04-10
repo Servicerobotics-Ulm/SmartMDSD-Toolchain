@@ -41,25 +41,26 @@ public class SkillRealizationsRefItemProvider extends AbstractCoordinationElemen
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSkillRealizationSetRefPropertyDescriptor(object);
+			addSkillRealizationCoordModuleRefPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Skill Realization Set Ref feature.
+	 * This adds a property descriptor for the Skill Realization Coord Module Ref feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSkillRealizationSetRefPropertyDescriptor(Object object) {
+	protected void addSkillRealizationCoordModuleRefPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_SkillRealizationsRef_skillRealizationSetRef_feature"),
+				getString("_UI_SkillRealizationsRef_skillRealizationCoordModuleRef_feature"),
 				getString("_UI_PropertyDescriptor_description",
-						"_UI_SkillRealizationsRef_skillRealizationSetRef_feature", "_UI_SkillRealizationsRef_type"),
-				CoordinationExtensionPackage.Literals.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF, true, false,
-				true, null, null, null));
+						"_UI_SkillRealizationsRef_skillRealizationCoordModuleRef_feature",
+						"_UI_SkillRealizationsRef_type"),
+				CoordinationExtensionPackage.Literals.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_COORD_MODULE_REF, true,
+				false, true, null, null, null));
 	}
 
 	/**

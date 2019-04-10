@@ -60,5 +60,4 @@ public abstract class AbstractComponentDocumentationValidator extends AbstractDe
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/component/ComponentDocumentation"));
 		return result;
 	}
-	
 }

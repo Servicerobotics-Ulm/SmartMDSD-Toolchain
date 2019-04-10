@@ -9,8 +9,7 @@ Require-Bundle: org.xtext.system.causeEffectChain,
  org.ecore.system.causeEffectChain,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
- org.antlr.runtime
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.system.causeEffectChain.ide.contentassist.antlr.internal,
  org.xtext.system.causeEffectChain.ide.contentassist.antlr
-

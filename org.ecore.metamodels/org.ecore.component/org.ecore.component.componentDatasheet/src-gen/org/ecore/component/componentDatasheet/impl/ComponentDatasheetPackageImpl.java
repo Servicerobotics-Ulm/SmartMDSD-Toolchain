@@ -75,7 +75,7 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ComponentDatasheetPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -91,9 +91,10 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 					.getEPackage(ComponentDatasheetPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ComponentDatasheetPackageImpl theComponentDatasheetPackage = (ComponentDatasheetPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof ComponentDatasheetPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new ComponentDatasheetPackageImpl());
+		Object registeredComponentDatasheetPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ComponentDatasheetPackageImpl theComponentDatasheetPackage = registeredComponentDatasheetPackage instanceof ComponentDatasheetPackageImpl
+				? (ComponentDatasheetPackageImpl) registeredComponentDatasheetPackage
+				: new ComponentDatasheetPackageImpl();
 
 		isInited = true;
 
@@ -128,6 +129,7 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentDatasheet() {
 		return componentDatasheetEClass;
 	}
@@ -137,6 +139,7 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentDatasheet_PurposeDescription() {
 		return (EAttribute) componentDatasheetEClass.getEStructuralFeatures().get(0);
 	}
@@ -146,6 +149,7 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentDatasheet_HardwareRequirementDescription() {
 		return (EAttribute) componentDatasheetEClass.getEStructuralFeatures().get(1);
 	}
@@ -155,6 +159,7 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentDatasheet_Component() {
 		return (EReference) componentDatasheetEClass.getEStructuralFeatures().get(2);
 	}
@@ -164,6 +169,7 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentDatasheetFactory getComponentDatasheetFactory() {
 		return (ComponentDatasheetFactory) getEFactoryInstance();
 	}

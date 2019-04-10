@@ -78,13 +78,13 @@ public interface DomainModelsDatasheetPackage extends EPackage {
 	int DOMAIN_MODELS_DATASHEET__LICENSE = GenericDatasheetPackage.GENERIC_DATASHEET__LICENSE;
 
 	/**
-	 * The feature id for the '<em><b>Short Descrition</b></em>' attribute.
+	 * The feature id for the '<em><b>Short Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_MODELS_DATASHEET__SHORT_DESCRITION = GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRITION;
+	int DOMAIN_MODELS_DATASHEET__SHORT_DESCRIPTION = GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Long Description</b></em>' attribute.

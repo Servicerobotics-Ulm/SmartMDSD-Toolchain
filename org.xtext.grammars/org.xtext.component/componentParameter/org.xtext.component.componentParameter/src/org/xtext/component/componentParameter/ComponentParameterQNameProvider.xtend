@@ -50,6 +50,7 @@ import org.ecore.component.componentParameter.ParameterInstance
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 import org.ecore.component.componentParameter.ComponentParameterPackage
 import org.ecore.component.componentParameter.ParameterSetInstance
+import org.ecore.component.componentParameter.TriggerInstance
 
 class ComponentParameterQNameProvider extends DefaultDeclarativeQualifiedNameProvider {
 	def QualifiedName qualifiedName(ParameterSetInstance paramSet) {
@@ -63,6 +64,15 @@ class ComponentParameterQNameProvider extends DefaultDeclarativeQualifiedNamePro
 	}
 	def QualifiedName qualifiedName(ParameterInstance param) {
 		val nodes = NodeModelUtils.findNodesForFeature(param, ComponentParameterPackage.Literals.PARAMETER_INSTANCE__PARAMETER_DEF)
+		if(!nodes.isEmpty()) {
+			val refname = NodeModelUtils.getTokenText(nodes.get(0));
+			val parent = super.getFullyQualifiedName(param.eContainer());
+			return parent.append(refname);
+		}
+        return QualifiedName.EMPTY;
+    }
+	def QualifiedName qualifiedName(TriggerInstance param) {
+		val nodes = NodeModelUtils.findNodesForFeature(param, ComponentParameterPackage.Literals.TRIGGER_INSTANCE__TRIGGER_DEF)
 		if(!nodes.isEmpty()) {
 			val refname = NodeModelUtils.getTokenText(nodes.get(0));
 			val parent = super.getFullyQualifiedName(param.eContainer());

@@ -52,6 +52,9 @@ import "http://www.ecore.org/system/SystemParameter" as systemParameter
 import "http://www.ecore.org/component/SeronetExtension" as seronetExtension
 import "http://www.ecore.org/system/compArchSeronetExtension" as compArchSeronetExtension
 import "http://www.ecore.org/system/ActivityArchitecture" as activityArchitecture
+import "http://www.ecore.org/system/compArchBehaviorExtension" as compArchBehaviorExtension
+import "http://www.ecore.org/examples/taskRealization" as taskRealization
+import "http://www.ecore.org/behavior/SkillRealization" as skillRealization
 
 SystemComponentArchitecture returns SystemComponentArchitecture:
 	{SystemComponentArchitecture}
@@ -59,7 +62,12 @@ SystemComponentArchitecture returns SystemComponentArchitecture:
 	'{'
 		components+=ComponentInstance*
 		connections+=Connection*
+		extensions+=SystemExtension*
 	'}';
+
+SystemExtension returns SystemExtension:
+	CoordinationModuleMapping | TaskRealizationModelRef
+;
 
 Connection returns Connection:
 	'Connection' from=[RequiredService|FQN] '->' to=[ProvidedService|FQN] ('useMiddleware' middlewareSelection=RoboticMiddleware)? (';')?
@@ -88,7 +96,6 @@ InputHandlerConfigurationMapping returns InputHandlerConfigurationMapping:
 	'InputHandler' handler=[componentDefinition::InputHandler|FQN] 'configuration' config=[activityArchitecture::InputHandlerNode|FQN] (';')?
 ;
 
-
 OpcUaDeviceClientInstance returns compArchSeronetExtension::OpcUaDeviceClientInstance: 
 	'OpcUaDeviceClientInstance' deviceClient=[seronetExtension::OpcUaDeviceClient|FQN] 'deviceURI' deviceURI=EString (';')?
 ;
@@ -110,4 +117,20 @@ ProvidedService returns ProvidedService:
 	'ProvidedService' port=[componentDefinition::ComponentPort] (';')?
 ;
 
+CoordinationModuleMapping returns compArchBehaviorExtension::CoordinationModuleMapping:
+	'CoordinationModuleMapping' '{'
+	'moduleInstance' coordModuleInst=[taskRealization::AbstractCoordinationModuleInstance|FQN] 'realizedby' coordModReal=[skillRealization::CoordinationModuleRealization]
+	    '{'
+			coordInterCompInstMapping+=CoordinationInterfaceComponentInstanceMapping+
+		'}'
+	'}'  
+;
+
+CoordinationInterfaceComponentInstanceMapping returns compArchBehaviorExtension::CoordinationInterfaceComponentInstanceMapping:
+	'interfaceInstance' coordInterInst=[skillRealization::CoordinationInterfaceInstance] 'realizedby' compInst=[ComponentInstance]
+;
+
+TaskRealizationModelRef returns compArchBehaviorExtension::TaskRealizationModelRef: 
+	'BehaviorTaskRef' taskModelRef=[taskRealization::TaskRealizationModel|FQN]
+;
 

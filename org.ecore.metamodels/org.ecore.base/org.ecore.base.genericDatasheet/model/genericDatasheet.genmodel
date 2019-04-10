@@ -24,7 +24,7 @@
     </genEnums>
     <genClasses ecoreClass="genericDatasheet.ecore#//GenericDatasheet">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genericDatasheet.ecore#//GenericDatasheet/license"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/shortDescrition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/shortDescription"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/longDescription"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/supplierDescription"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/homepage"/>

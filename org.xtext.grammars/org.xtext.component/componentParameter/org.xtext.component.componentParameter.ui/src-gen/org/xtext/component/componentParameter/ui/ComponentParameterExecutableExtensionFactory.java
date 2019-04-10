@@ -45,6 +45,7 @@
 package org.xtext.component.componentParameter.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.component.componentParameter.ui.internal.ComponentParameterActivator;
@@ -57,12 +58,13 @@ public class ComponentParameterExecutableExtensionFactory extends AbstractGuiceA
 
 	@Override
 	protected Bundle getBundle() {
-		return ComponentParameterActivator.getInstance().getBundle();
+		return Platform.getBundle(ComponentParameterActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return ComponentParameterActivator.getInstance().getInjector(ComponentParameterActivator.ORG_XTEXT_COMPONENT_COMPONENTPARAMETER_COMPONENTPARAMETER);
+		ComponentParameterActivator activator = ComponentParameterActivator.getInstance();
+		return activator != null ? activator.getInjector(ComponentParameterActivator.ORG_XTEXT_COMPONENT_COMPONENTPARAMETER_COMPONENTPARAMETER) : null;
 	}
-	
+
 }

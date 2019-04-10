@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: SmartSoftGenerator
 Bundle-SymbolicName: org.xtend.smartsoft.generator;singleton:=true
-Bundle-Version: 3.8.0.qualifier
+Bundle-Version: 3.9.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.xtext.xbase.lib,
@@ -22,13 +22,15 @@ Require-Bundle: org.eclipse.core.runtime,
  org.xtext.component.componentDocumentation,
  org.ecore.system.deployment,
  org.xtext.system.deployment,
+ org.xtext.system.deployment.ui,
  org.ecore.system.systemParameter,
  org.xtext.system.systemParameter,
  org.xtext.system.componentArchitecture,
  org.eclipse.ui.workbench,
  org.eclipse.core.commands,
- org.smartsoft.utils,
- org.ecore.system.compArchSeronetExtension
+ org.ecore.system.compArchSeronetExtension,
+ org.xtext.system.targetPlatform,
+ org.ecore.system.compArchBehaviorExtension
 Bundle-Vendor: Servicerobotics Ulm
 Export-Package: org.xtend.smartsoft.generator,
  org.xtend.smartsoft.generator.commObj,

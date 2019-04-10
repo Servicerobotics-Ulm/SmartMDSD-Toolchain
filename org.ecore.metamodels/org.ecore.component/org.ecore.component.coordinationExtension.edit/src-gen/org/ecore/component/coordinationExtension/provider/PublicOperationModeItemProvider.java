@@ -10,9 +10,9 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.ecore.component.coordinationExtension.CoordinationExtensionPackage;
 import org.ecore.component.coordinationExtension.PublicOperationMode;
 

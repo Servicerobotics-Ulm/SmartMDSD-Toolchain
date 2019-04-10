@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.ecore.service.componentMode.edit;singleton:=true
 Bundle-Version: 3.6.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.ecore.service.componentMode.provider.ComponentModeEditPlugin$Implementation
-Bundle-Vendor: Servicerobotics Ulm
+Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.ecore.service.componentMode.provider

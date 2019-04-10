@@ -109,7 +109,7 @@ class ComponentDatasheetGeneratorImpl extends AbstractGenerator {
 	# imports: http://seronet-projekt.de/models/t2#Navigation
 	# imports: http://spdx.org/licenses/LGPL-2.0-or-later
 	
-	«FOR dm_ds: ds.allDomainModelDatasheets»
+	«FOR dm_ds: ds.allDomainModelDatasheets.sortBy(c|c.name.toString)»
 	# imports: «dm_ds.baseURI»/DomainModels/«dm_ds.name»
 	«ENDFOR»
 	
@@ -140,7 +140,7 @@ class ComponentDatasheetGeneratorImpl extends AbstractGenerator {
 	# these namespaces can be different in generated files
 	@prefix t3: <«ds.baseURI»/ComponentsAndSystems#> .
 	
-	«FOR dm_ds: ds.allDomainModelDatasheets»
+	«FOR dm_ds: ds.allDomainModelDatasheets.sortBy(c|c.name.toString)»
 	@prefix «dm_ds.name»: <«dm_ds.baseURI»/DomainModels/«dm_ds.name»#> .
 	«ENDFOR»
 
@@ -152,7 +152,7 @@ class ComponentDatasheetGeneratorImpl extends AbstractGenerator {
 		«IF ds.license instanceof SpdxLicense»
 		owl:imports <http://spdx.org/licenses/«(ds.license as SpdxLicense).licenseID»>;
 		«ENDIF»
-		«FOR dm_ds: ds.allDomainModelDatasheets»
+		«FOR dm_ds: ds.allDomainModelDatasheets.sortBy(c|c.name.toString)»
 		owl:imports <«dm_ds.baseURI»/DomainModels/«dm_ds.name»> ;
 		«ENDFOR»
 		
@@ -161,7 +161,7 @@ class ComponentDatasheetGeneratorImpl extends AbstractGenerator {
 		rdfs:label "«ds.component.name»";
 	
 		# Abstract. 1-sentence, very brief, description about this component.
-		t1:shortDescription "«ds.shortDescrition»";
+		t1:shortDescription "«ds.shortDescription»";
 	
 		«IF ds.longDescription !== null && ds.longDescription.length > 4»
 		# A long description of this component

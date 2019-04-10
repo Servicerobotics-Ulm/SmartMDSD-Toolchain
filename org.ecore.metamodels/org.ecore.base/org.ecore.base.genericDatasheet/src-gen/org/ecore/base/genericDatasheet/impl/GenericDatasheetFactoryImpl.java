@@ -103,6 +103,7 @@ public class GenericDatasheetFactoryImpl extends EFactoryImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GenericDatasheet createGenericDatasheet() {
 		GenericDatasheetImpl genericDatasheet = new GenericDatasheetImpl();
 		return genericDatasheet;
@@ -113,6 +114,7 @@ public class GenericDatasheetFactoryImpl extends EFactoryImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SpdxLicense createSpdxLicense() {
 		SpdxLicenseImpl spdxLicense = new SpdxLicenseImpl();
 		return spdxLicense;
@@ -123,6 +125,7 @@ public class GenericDatasheetFactoryImpl extends EFactoryImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ProprietaryLicense createProprietaryLicense() {
 		ProprietaryLicenseImpl proprietaryLicense = new ProprietaryLicenseImpl();
 		return proprietaryLicense;
@@ -155,6 +158,7 @@ public class GenericDatasheetFactoryImpl extends EFactoryImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GenericDatasheetPackage getGenericDatasheetPackage() {
 		return (GenericDatasheetPackage) getEPackage();
 	}

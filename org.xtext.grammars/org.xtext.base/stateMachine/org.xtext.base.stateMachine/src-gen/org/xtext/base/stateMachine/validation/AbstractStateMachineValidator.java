@@ -60,5 +60,4 @@ public abstract class AbstractStateMachineValidator extends AbstractDeclarativeV
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/base/StateMachine"));
 		return result;
 	}
-	
 }

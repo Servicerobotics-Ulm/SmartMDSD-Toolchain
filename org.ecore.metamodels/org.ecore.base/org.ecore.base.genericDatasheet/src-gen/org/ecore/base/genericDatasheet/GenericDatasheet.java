@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.ecore.base.genericDatasheet.GenericDatasheet#getLicense <em>License</em>}</li>
- *   <li>{@link org.ecore.base.genericDatasheet.GenericDatasheet#getShortDescrition <em>Short Descrition</em>}</li>
+ *   <li>{@link org.ecore.base.genericDatasheet.GenericDatasheet#getShortDescription <em>Short Description</em>}</li>
  *   <li>{@link org.ecore.base.genericDatasheet.GenericDatasheet#getLongDescription <em>Long Description</em>}</li>
  *   <li>{@link org.ecore.base.genericDatasheet.GenericDatasheet#getSupplierDescription <em>Supplier Description</em>}</li>
  *   <li>{@link org.ecore.base.genericDatasheet.GenericDatasheet#getHomepage <em>Homepage</em>}</li>
@@ -54,30 +54,30 @@ public interface GenericDatasheet extends EObject {
 	void setLicense(AbstractLicense value);
 
 	/**
-	 * Returns the value of the '<em><b>Short Descrition</b></em>' attribute.
+	 * Returns the value of the '<em><b>Short Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Short Descrition</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Short Description</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Short Descrition</em>' attribute.
-	 * @see #setShortDescrition(String)
-	 * @see org.ecore.base.genericDatasheet.GenericDatasheetPackage#getGenericDatasheet_ShortDescrition()
+	 * @return the value of the '<em>Short Description</em>' attribute.
+	 * @see #setShortDescription(String)
+	 * @see org.ecore.base.genericDatasheet.GenericDatasheetPackage#getGenericDatasheet_ShortDescription()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getShortDescrition();
+	String getShortDescription();
 
 	/**
-	 * Sets the value of the '{@link org.ecore.base.genericDatasheet.GenericDatasheet#getShortDescrition <em>Short Descrition</em>}' attribute.
+	 * Sets the value of the '{@link org.ecore.base.genericDatasheet.GenericDatasheet#getShortDescription <em>Short Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Short Descrition</em>' attribute.
-	 * @see #getShortDescrition()
+	 * @param value the new value of the '<em>Short Description</em>' attribute.
+	 * @see #getShortDescription()
 	 * @generated
 	 */
-	void setShortDescrition(String value);
+	void setShortDescription(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Long Description</b></em>' attribute.

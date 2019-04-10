@@ -143,7 +143,7 @@ public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSeque
 	 *     license=AbstractLicense 'purposeDescription' (ambiguity) purposeDescription=EString
 	 *     longDescription=TEXT_BLOCK 'purposeDescription' (ambiguity) purposeDescription=EString
 	 *     purposeDescription=EString 'purposeDescription' (ambiguity) purposeDescription=EString
-	 *     shortDescrition=EString 'purposeDescription' (ambiguity) purposeDescription=EString
+	 *     shortDescription=EString 'purposeDescription' (ambiguity) purposeDescription=EString
 	 *     supplierDescription=EString 'purposeDescription' (ambiguity) purposeDescription=EString
 	 *     trl=TRL 'purposeDescription' (ambiguity) purposeDescription=EString
 	 */
@@ -163,7 +163,7 @@ public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSeque
 	 *     license=AbstractLicense 'hardwareRequirementDescription' (ambiguity) hardwareRequirementDescription=EString
 	 *     longDescription=TEXT_BLOCK 'hardwareRequirementDescription' (ambiguity) hardwareRequirementDescription=EString
 	 *     purposeDescription=EString 'hardwareRequirementDescription' (ambiguity) hardwareRequirementDescription=EString
-	 *     shortDescrition=EString 'hardwareRequirementDescription' (ambiguity) hardwareRequirementDescription=EString
+	 *     shortDescription=EString 'hardwareRequirementDescription' (ambiguity) hardwareRequirementDescription=EString
 	 *     supplierDescription=EString 'hardwareRequirementDescription' (ambiguity) hardwareRequirementDescription=EString
 	 *     trl=TRL 'hardwareRequirementDescription' (ambiguity) hardwareRequirementDescription=EString
 	 */
@@ -181,7 +181,7 @@ public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSeque
 	 *     homepage=EString 'baseURI' (ambiguity) baseURI=EString
 	 *     license=AbstractLicense 'baseURI' (ambiguity) baseURI=EString
 	 *     longDescription=TEXT_BLOCK 'baseURI' (ambiguity) baseURI=EString
-	 *     shortDescrition=EString 'baseURI' (ambiguity) baseURI=EString
+	 *     shortDescription=EString 'baseURI' (ambiguity) baseURI=EString
 	 *     supplierDescription=EString 'baseURI' (ambiguity) baseURI=EString
 	 *     trl=TRL 'baseURI' (ambiguity) baseURI=EString
 	 */
@@ -194,14 +194,14 @@ public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSeque
 	 *     ':'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     baseURI=EString 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     component=[ComponentDefinition|ID] '{' 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     homepage=EString 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     license=AbstractLicense 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     longDescription=TEXT_BLOCK 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     shortDescrition=EString 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     supplierDescription=EString 'shortDescrition' (ambiguity) shortDescrition=EString
-	 *     trl=TRL 'shortDescrition' (ambiguity) shortDescrition=EString
+	 *     baseURI=EString 'shortDescription' (ambiguity) shortDescription=EString
+	 *     component=[ComponentDefinition|ID] '{' 'shortDescription' (ambiguity) shortDescription=EString
+	 *     homepage=EString 'shortDescription' (ambiguity) shortDescription=EString
+	 *     license=AbstractLicense 'shortDescription' (ambiguity) shortDescription=EString
+	 *     longDescription=TEXT_BLOCK 'shortDescription' (ambiguity) shortDescription=EString
+	 *     shortDescription=EString 'shortDescription' (ambiguity) shortDescription=EString
+	 *     supplierDescription=EString 'shortDescription' (ambiguity) shortDescription=EString
+	 *     trl=TRL 'shortDescription' (ambiguity) shortDescription=EString
 	 */
 	protected void emit_GenericDatasheet_ColonKeyword_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -217,7 +217,7 @@ public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSeque
 	 *     homepage=EString 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
 	 *     license=AbstractLicense 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
 	 *     longDescription=TEXT_BLOCK 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
-	 *     shortDescrition=EString 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
+	 *     shortDescription=EString 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
 	 *     supplierDescription=EString 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
 	 *     trl=TRL 'longDescription' (ambiguity) longDescription=TEXT_BLOCK
 	 */
@@ -235,7 +235,7 @@ public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSeque
 	 *     homepage=EString 'supplierDescription' (ambiguity) supplierDescription=EString
 	 *     license=AbstractLicense 'supplierDescription' (ambiguity) supplierDescription=EString
 	 *     longDescription=TEXT_BLOCK 'supplierDescription' (ambiguity) supplierDescription=EString
-	 *     shortDescrition=EString 'supplierDescription' (ambiguity) supplierDescription=EString
+	 *     shortDescription=EString 'supplierDescription' (ambiguity) supplierDescription=EString
 	 *     supplierDescription=EString 'supplierDescription' (ambiguity) supplierDescription=EString
 	 *     trl=TRL 'supplierDescription' (ambiguity) supplierDescription=EString
 	 */
@@ -253,7 +253,7 @@ public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSeque
 	 *     homepage=EString 'homepage' (ambiguity) homepage=EString
 	 *     license=AbstractLicense 'homepage' (ambiguity) homepage=EString
 	 *     longDescription=TEXT_BLOCK 'homepage' (ambiguity) homepage=EString
-	 *     shortDescrition=EString 'homepage' (ambiguity) homepage=EString
+	 *     shortDescription=EString 'homepage' (ambiguity) homepage=EString
 	 *     supplierDescription=EString 'homepage' (ambiguity) homepage=EString
 	 *     trl=TRL 'homepage' (ambiguity) homepage=EString
 	 */
@@ -271,7 +271,7 @@ public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSeque
 	 *     homepage=EString 'trl' (ambiguity) trl=TRL
 	 *     license=AbstractLicense 'trl' (ambiguity) trl=TRL
 	 *     longDescription=TEXT_BLOCK 'trl' (ambiguity) trl=TRL
-	 *     shortDescrition=EString 'trl' (ambiguity) trl=TRL
+	 *     shortDescription=EString 'trl' (ambiguity) trl=TRL
 	 *     supplierDescription=EString 'trl' (ambiguity) trl=TRL
 	 *     trl=TRL 'trl' (ambiguity) trl=TRL
 	 */
@@ -289,7 +289,7 @@ public class ComponentDatasheetSyntacticSequencer extends AbstractSyntacticSeque
 	 *     homepage=EString 'license' (ambiguity) license=AbstractLicense
 	 *     license=AbstractLicense 'license' (ambiguity) license=AbstractLicense
 	 *     longDescription=TEXT_BLOCK 'license' (ambiguity) license=AbstractLicense
-	 *     shortDescrition=EString 'license' (ambiguity) license=AbstractLicense
+	 *     shortDescription=EString 'license' (ambiguity) license=AbstractLicense
 	 *     supplierDescription=EString 'license' (ambiguity) license=AbstractLicense
 	 *     trl=TRL 'license' (ambiguity) license=AbstractLicense
 	 */

@@ -312,9 +312,9 @@ ruleGenericDatasheet[EObject in_current]  returns [EObject current=in_current]
 				{
 					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 1);
 				}
-							({true}?=>(otherlv_4='shortDescrition'
+							({true}?=>(otherlv_4='shortDescription'
 							{
-								newLeafNode(otherlv_4, grammarAccess.getGenericDatasheetAccess().getShortDescritionKeyword_1_0());
+								newLeafNode(otherlv_4, grammarAccess.getGenericDatasheetAccess().getShortDescriptionKeyword_1_0());
 							}
 							(
 								otherlv_5=':'
@@ -325,17 +325,17 @@ ruleGenericDatasheet[EObject in_current]  returns [EObject current=in_current]
 							(
 								(
 									{
-										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getShortDescritionEStringParserRuleCall_1_2_0());
+										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getShortDescriptionEStringParserRuleCall_1_2_0());
 									}
-									lv_shortDescrition_6_0=ruleEString
+									lv_shortDescription_6_0=ruleEString
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getGenericDatasheetRule());
 										}
 										set(
 											$current,
-											"shortDescrition",
-											lv_shortDescrition_6_0,
+											"shortDescription",
+											lv_shortDescription_6_0,
 											"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
 										afterParserOrEnumRuleCall();
 									}

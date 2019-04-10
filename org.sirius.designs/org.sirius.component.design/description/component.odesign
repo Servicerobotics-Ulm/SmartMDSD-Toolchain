@@ -248,11 +248,7 @@
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="ImportDMs" id="ImportModels">
-                <parameters name="diagram" value="var:elementView"/>
-                <parameters name="modelFolder" value="['model'/]"/>
-                <parameters name="modelFileExtension" value="['services'/]"/>
-              </firstModelOperations>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:self.importModels()"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="ComponentDefinition" precondition="[container.component=null/]" containerMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']">
@@ -454,11 +450,6 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:0"/>
             </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:ExternalJavaAction" name="ImportDomainModels" icon="/org.sirius.tools/icons/import.gif" id="ImportModels">
-            <parameters name="diagram" value="var:self"/>
-            <parameters name="modelFolder" value="['model'/]"/>
-            <parameters name="modelFileExtension" value="['types'/]"/>
           </ownedTools>
           <ownedTools xsi:type="tool_1:DeleteElementDescription" name="InputPortRemoval">
             <element name="element">

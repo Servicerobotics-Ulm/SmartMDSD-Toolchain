@@ -45,6 +45,7 @@
 package org.xtext.base.stateMachine.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.base.stateMachine.ui.internal.StateMachineActivator;
@@ -57,12 +58,13 @@ public class StateMachineExecutableExtensionFactory extends AbstractGuiceAwareEx
 
 	@Override
 	protected Bundle getBundle() {
-		return StateMachineActivator.getInstance().getBundle();
+		return Platform.getBundle(StateMachineActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return StateMachineActivator.getInstance().getInjector(StateMachineActivator.ORG_XTEXT_BASE_STATEMACHINE_STATEMACHINE);
+		StateMachineActivator activator = StateMachineActivator.getInstance();
+		return activator != null ? activator.getInjector(StateMachineActivator.ORG_XTEXT_BASE_STATEMACHINE_STATEMACHINE) : null;
 	}
-	
+
 }

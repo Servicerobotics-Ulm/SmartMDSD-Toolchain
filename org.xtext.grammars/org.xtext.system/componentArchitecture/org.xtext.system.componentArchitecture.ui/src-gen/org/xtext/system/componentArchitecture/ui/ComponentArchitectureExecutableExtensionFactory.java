@@ -45,6 +45,7 @@
 package org.xtext.system.componentArchitecture.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.system.componentArchitecture.ui.internal.ComponentArchitectureActivator;
@@ -57,12 +58,13 @@ public class ComponentArchitectureExecutableExtensionFactory extends AbstractGui
 
 	@Override
 	protected Bundle getBundle() {
-		return ComponentArchitectureActivator.getInstance().getBundle();
+		return Platform.getBundle(ComponentArchitectureActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return ComponentArchitectureActivator.getInstance().getInjector(ComponentArchitectureActivator.ORG_XTEXT_SYSTEM_COMPONENTARCHITECTURE_COMPONENTARCHITECTURE);
+		ComponentArchitectureActivator activator = ComponentArchitectureActivator.getInstance();
+		return activator != null ? activator.getInjector(ComponentArchitectureActivator.ORG_XTEXT_SYSTEM_COMPONENTARCHITECTURE_COMPONENTARCHITECTURE) : null;
 	}
-	
+
 }

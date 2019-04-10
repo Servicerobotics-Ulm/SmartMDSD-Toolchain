@@ -90,7 +90,7 @@ public class SkillDefinitionRepositoryItemProvider extends ItemProviderAdapter i
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SkillDefinitionPackage.Literals.SKILL_DEFINITION_REPOSITORY__SETS);
+			childrenFeatures.add(SkillDefinitionPackage.Literals.SKILL_DEFINITION_REPOSITORY__MODULES);
 		}
 		return childrenFeatures;
 	}
@@ -157,7 +157,7 @@ public class SkillDefinitionRepositoryItemProvider extends ItemProviderAdapter i
 		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__SETS:
+		case SkillDefinitionPackage.SKILL_DEFINITION_REPOSITORY__MODULES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -175,8 +175,9 @@ public class SkillDefinitionRepositoryItemProvider extends ItemProviderAdapter i
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(SkillDefinitionPackage.Literals.SKILL_DEFINITION_REPOSITORY__SETS,
-				SkillDefinitionFactory.eINSTANCE.createSkillDefinitionSet()));
+		newChildDescriptors
+				.add(createChildParameter(SkillDefinitionPackage.Literals.SKILL_DEFINITION_REPOSITORY__MODULES,
+						SkillDefinitionFactory.eINSTANCE.createCoordinationModuleDefinition()));
 	}
 
 	/**

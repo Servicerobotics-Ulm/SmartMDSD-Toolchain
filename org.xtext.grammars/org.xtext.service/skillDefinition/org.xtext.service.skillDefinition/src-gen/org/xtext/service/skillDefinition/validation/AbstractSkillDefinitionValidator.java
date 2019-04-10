@@ -61,5 +61,4 @@ public abstract class AbstractSkillDefinitionValidator extends BasicAttributesVa
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/base/BasicAttributes"));
 		return result;
 	}
-	
 }

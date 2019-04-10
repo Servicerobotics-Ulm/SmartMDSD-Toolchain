@@ -6,7 +6,7 @@
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     name="SmartMDSD"
-    label="SmartMDSD Toolchain v3.8">
+    label="SmartMDSD Toolchain v3.9">
   <setupTask
       xsi:type="setup.p2:P2Task">
     <requirement
@@ -23,7 +23,7 @@
     <requirement
         name="org.eclipse.emf.compare.feature.group"/>
     <repository
-        url="https://web2.servicerobotik-ulm.de/files/SmartMDSD_Toolchain/updatesite/v3.8"/>
+        url="https://web2.servicerobotik-ulm.de/files/SmartMDSD_Toolchain/updatesite/v3.9"/>
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
   </setupTask>
   <setupTask
@@ -36,7 +36,7 @@
   <setupTask
       xsi:type="setup:VariableTask"
       name="eclipse.target.platform"
-      defaultValue="Oxygen"
+      defaultValue="2018-12"
       storageURI="scope://Workspace"/>
   <setupTask
       xsi:type="setup:CompoundTask"
@@ -51,6 +51,16 @@
           key="indexer/updatePolicy"
           value="2">
         <description>Deactivate automatic C++ indexer updating</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.egit.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="core_autoIgnoreDerivedResources"
+          value="false">
+        <description>Deactivate gitignore for src-gen folders</description>
       </setupTask>
     </setupTask>
   </setupTask>
@@ -68,8 +78,8 @@
     </stream>
     <description>Extends the SmartMDSD Toolchain with a ROS MixedPort Component (experimental feature)</description>
   </project>
-  <stream name="v3.8"
-      label="SmartMDSD Toolchain v3.8"/>
+  <stream name="v3.9"
+      label="SmartMDSD Toolchain v3.9"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>

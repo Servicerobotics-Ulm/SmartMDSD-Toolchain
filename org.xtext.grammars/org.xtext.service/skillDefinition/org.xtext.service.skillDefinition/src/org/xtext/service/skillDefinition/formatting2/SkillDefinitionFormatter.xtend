@@ -47,10 +47,10 @@ package org.xtext.service.skillDefinition.formatting2
 import com.google.inject.Inject
 import org.eclipse.xtext.formatting2.IFormattableDocument
 import org.ecore.service.skillDefinition.SkillDefinitionRepository
-import org.ecore.service.skillDefinition.SkillDefinitionSet
 import org.xtext.base.basicAttributes.formatting2.BasicAttributesFormatter
 import org.xtext.service.skillDefinition.services.SkillDefinitionGrammarAccess
 import org.ecore.service.skillDefinition.SkillDefinitionModel
+import org.ecore.service.skillDefinition.CoordinationModuleDefinition
 
 class SkillDefinitionFormatter extends BasicAttributesFormatter {
 	
@@ -63,8 +63,8 @@ class SkillDefinitionFormatter extends BasicAttributesFormatter {
 
 	def dispatch void format(SkillDefinitionRepository skillDefinitionRepository, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (SkillDefinitionSet skillDefinitionSet : skillDefinitionRepository.getSets()) {
-			skillDefinitionSet.format;
+		for (CoordinationModuleDefinition coordinationModule : skillDefinitionRepository.getModules()) {
+			coordinationModule.format;
 		}
 	}
 	

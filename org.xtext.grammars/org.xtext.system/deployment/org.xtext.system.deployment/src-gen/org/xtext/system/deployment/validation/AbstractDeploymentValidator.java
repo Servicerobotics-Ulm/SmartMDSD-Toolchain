@@ -57,5 +57,4 @@ public abstract class AbstractDeploymentValidator extends AbstractDeclarativeVal
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/system/Deployment"));
 		return result;
 	}
-	
 }

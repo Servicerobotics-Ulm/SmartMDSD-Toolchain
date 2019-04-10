@@ -57,7 +57,7 @@ public class GenericDatasheetItemProvider extends ItemProviderAdapter implements
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addShortDescritionPropertyDescriptor(object);
+			addShortDescriptionPropertyDescriptor(object);
 			addLongDescriptionPropertyDescriptor(object);
 			addSupplierDescriptionPropertyDescriptor(object);
 			addHomepagePropertyDescriptor(object);
@@ -68,18 +68,18 @@ public class GenericDatasheetItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This adds a property descriptor for the Short Descrition feature.
+	 * This adds a property descriptor for the Short Description feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addShortDescritionPropertyDescriptor(Object object) {
+	protected void addShortDescriptionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_GenericDatasheet_shortDescrition_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_GenericDatasheet_shortDescrition_feature",
+						getResourceLocator(), getString("_UI_GenericDatasheet_shortDescription_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_GenericDatasheet_shortDescription_feature",
 								"_UI_GenericDatasheet_type"),
-						GenericDatasheetPackage.Literals.GENERIC_DATASHEET__SHORT_DESCRITION, true, false, false,
+						GenericDatasheetPackage.Literals.GENERIC_DATASHEET__SHORT_DESCRIPTION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -222,7 +222,7 @@ public class GenericDatasheetItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((GenericDatasheet) object).getShortDescrition();
+		String label = ((GenericDatasheet) object).getShortDescription();
 		return label == null || label.length() == 0 ? getString("_UI_GenericDatasheet_type")
 				: getString("_UI_GenericDatasheet_type") + " " + label;
 	}
@@ -239,7 +239,7 @@ public class GenericDatasheetItemProvider extends ItemProviderAdapter implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(GenericDatasheet.class)) {
-		case GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRITION:
+		case GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRIPTION:
 		case GenericDatasheetPackage.GENERIC_DATASHEET__LONG_DESCRIPTION:
 		case GenericDatasheetPackage.GENERIC_DATASHEET__SUPPLIER_DESCRIPTION:
 		case GenericDatasheetPackage.GENERIC_DATASHEET__HOMEPAGE:

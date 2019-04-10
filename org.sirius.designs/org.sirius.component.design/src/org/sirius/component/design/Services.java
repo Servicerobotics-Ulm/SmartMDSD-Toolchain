@@ -57,6 +57,11 @@ public class Services {
 		return context;
 	}
 	
+	public EObject importModels(EObject context) {
+		DiagramHelperServices.triggerModelImportCommand();
+		return context;
+	}
+	
 	public Boolean hasLogo(EObject context) {
 		if(context instanceof ComponentDefinition) {
 			ComponentDefinition component = (ComponentDefinition)context;

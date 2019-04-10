@@ -45,6 +45,7 @@
 package org.xtext.system.targetPlatform.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.system.targetPlatform.ui.internal.TargetPlatformActivator;
@@ -57,12 +58,13 @@ public class TargetPlatformExecutableExtensionFactory extends AbstractGuiceAware
 
 	@Override
 	protected Bundle getBundle() {
-		return TargetPlatformActivator.getInstance().getBundle();
+		return Platform.getBundle(TargetPlatformActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return TargetPlatformActivator.getInstance().getInjector(TargetPlatformActivator.ORG_XTEXT_SYSTEM_TARGETPLATFORM_TARGETPLATFORM);
+		TargetPlatformActivator activator = TargetPlatformActivator.getInstance();
+		return activator != null ? activator.getInjector(TargetPlatformActivator.ORG_XTEXT_SYSTEM_TARGETPLATFORM_TARGETPLATFORM) : null;
 	}
-	
+
 }

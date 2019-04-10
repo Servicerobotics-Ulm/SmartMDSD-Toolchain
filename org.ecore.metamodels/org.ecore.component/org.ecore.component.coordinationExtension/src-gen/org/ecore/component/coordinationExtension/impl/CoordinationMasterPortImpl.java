@@ -8,7 +8,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.ecore.component.componentDefinition.impl.NamedComponentElementImpl;
+
 import org.ecore.component.coordinationExtension.CoordinationExtensionPackage;
 import org.ecore.component.coordinationExtension.CoordinationMasterPort;
 

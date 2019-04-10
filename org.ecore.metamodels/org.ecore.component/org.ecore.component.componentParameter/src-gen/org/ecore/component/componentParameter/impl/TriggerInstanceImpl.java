@@ -24,6 +24,7 @@ import org.ecore.service.parameterDefinition.TriggerDefinition;
  * <ul>
  *   <li>{@link org.ecore.component.componentParameter.impl.TriggerInstanceImpl#getTriggerDef <em>Trigger Def</em>}</li>
  *   <li>{@link org.ecore.component.componentParameter.impl.TriggerInstanceImpl#isActive <em>Active</em>}</li>
+ *   <li>{@link org.ecore.component.componentParameter.impl.TriggerInstanceImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,6 +59,16 @@ public class TriggerInstanceImpl extends AbstractParameterInstanceImpl implement
 	 * @ordered
 	 */
 	protected boolean active = ACTIVE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -143,6 +154,27 @@ public class TriggerInstanceImpl extends AbstractParameterInstanceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getName() {
+		if (triggerDef != null) {
+			return getTriggerDef().getName();
+		}
+		return "";
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean isSetName() {
+		return (triggerDef != null);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -154,6 +186,8 @@ public class TriggerInstanceImpl extends AbstractParameterInstanceImpl implement
 			return basicGetTriggerDef();
 		case ComponentParameterPackage.TRIGGER_INSTANCE__ACTIVE:
 			return isActive();
+		case ComponentParameterPackage.TRIGGER_INSTANCE__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -206,6 +240,8 @@ public class TriggerInstanceImpl extends AbstractParameterInstanceImpl implement
 			return triggerDef != null;
 		case ComponentParameterPackage.TRIGGER_INSTANCE__ACTIVE:
 			return active != ACTIVE_EDEFAULT;
+		case ComponentParameterPackage.TRIGGER_INSTANCE__NAME:
+			return isSetName();
 		}
 		return super.eIsSet(featureID);
 	}

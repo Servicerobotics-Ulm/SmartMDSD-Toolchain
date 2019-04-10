@@ -167,7 +167,7 @@ public class DomainModelsDatasheetGrammarAccess extends AbstractGrammarElementFi
 	}
 	
 	//fragment GenericDatasheet:
-	//	'baseURI' ':'? baseURI=EString & 'shortDescrition' ':'? shortDescrition=EString & ('longDescription' ':'?
+	//	'baseURI' ':'? baseURI=EString & 'shortDescription' ':'? shortDescription=EString & ('longDescription' ':'?
 	//	longDescription=TEXT_BLOCK)? & ('supplierDescription' ':'? supplierDescription=EString)? & ('homepage' ':'?
 	//	homepage=EString)? & ('trl' ':'? trl=TRL)? & ('license' ':'? license=AbstractLicense)?;
 	public GenericDatasheetGrammarAccess.GenericDatasheetElements getGenericDatasheetAccess() {

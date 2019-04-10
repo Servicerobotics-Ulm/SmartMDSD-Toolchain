@@ -26,7 +26,8 @@ import org.ecore.service.parameterDefinition.ParameterDefinition;
  * @model
  * @generated
  */
-public interface ParameterInstance extends AbstractParameterInstance, ComponentParameterBase {
+public interface ParameterInstance
+		extends AbstractParameterInstance, ComponentRunTimeParameterBase, ComponentParameterBase {
 	/**
 	 * Returns the value of the '<em><b>Parameter Def</b></em>' reference.
 	 * <!-- begin-user-doc -->

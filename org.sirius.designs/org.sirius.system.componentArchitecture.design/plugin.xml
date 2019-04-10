@@ -22,7 +22,7 @@
   <extension
         point="org.eclipse.ui.views">
      <view
-           category="org.smartMDSD.category"
+           category="org.smartmdsd.navigator.views"
            class="org.sirius.system.componentArchitecture.design.SystemParameterViewPart"
            icon="icons/Parameter.gif"
            id="org.sirius.system.componentArchitecture.design.SystemParamView"
@@ -35,13 +35,6 @@
      <javaActions
            actionClass="org.sirius.system.componentArchitecture.design.OpenSystemParameterEditorAction"
            id="OpenSystemParameterEditor">
-     </javaActions>
-  </extension>
-  <extension
-        point="org.eclipse.sirius.externalJavaAction">
-     <javaActions
-           actionClass="org.sirius.tools.ImportModelsAction"
-           id="ImportModels">
      </javaActions>
   </extension>
 </plugin>

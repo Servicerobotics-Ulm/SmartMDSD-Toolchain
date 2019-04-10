@@ -68,6 +68,11 @@
                   name="newWizardId"
                   value="org.project.creation.wizards.commObj">
             </parameter>
+               <visibleWhen checkEnabled="false">
+                  <with variable="activeWorkbenchWindow.activePerspective">
+                     <equals value="org.eclipse.sirius.ui.tools.perspective.modeling"/>
+                  </with>
+               </visibleWhen>
          </command>
          <command
                commandId="org.eclipse.ui.newWizard"
@@ -78,6 +83,11 @@
                   name="newWizardId"
                   value="org.project.creation.wizards.component">
             </parameter>
+               <visibleWhen checkEnabled="false">
+                  <with variable="activeWorkbenchWindow.activePerspective">
+                     <equals value="org.eclipse.sirius.ui.tools.perspective.modeling"/>
+                  </with>
+               </visibleWhen>
          </command>
          <command
                commandId="org.eclipse.ui.newWizard"
@@ -88,6 +98,11 @@
                   name="newWizardId"
                   value="org.project.creation.wizards.system">
             </parameter>
+               <visibleWhen checkEnabled="false">
+                  <with variable="activeWorkbenchWindow.activePerspective">
+                     <equals value="org.eclipse.sirius.ui.tools.perspective.modeling"/>
+                  </with>
+               </visibleWhen>
          </command>
       </menuContribution>
    </extension>

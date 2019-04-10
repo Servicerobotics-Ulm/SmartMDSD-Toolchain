@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.ecore.base.basicAttributes.BasicAttributesPackage;
 
+import org.ecore.service.skillDefinition.CoordinationModuleDefinition;
 import org.ecore.service.skillDefinition.SkillDefinition;
 import org.ecore.service.skillDefinition.SkillDefinitionFactory;
 import org.ecore.service.skillDefinition.SkillDefinitionModel;
 import org.ecore.service.skillDefinition.SkillDefinitionPackage;
 import org.ecore.service.skillDefinition.SkillDefinitionRepository;
-import org.ecore.service.skillDefinition.SkillDefinitionSet;
 import org.ecore.service.skillDefinition.SkillResult;
 
 /**
@@ -46,7 +46,7 @@ public class SkillDefinitionPackageImpl extends EPackageImpl implements SkillDef
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass skillDefinitionSetEClass = null;
+	private EClass coordinationModuleDefinitionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,7 +176,7 @@ public class SkillDefinitionPackageImpl extends EPackageImpl implements SkillDef
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSkillDefinitionRepository_Sets() {
+	public EReference getSkillDefinitionRepository_Modules() {
 		return (EReference) skillDefinitionRepositoryEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -185,8 +185,8 @@ public class SkillDefinitionPackageImpl extends EPackageImpl implements SkillDef
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSkillDefinitionSet() {
-		return skillDefinitionSetEClass;
+	public EClass getCoordinationModuleDefinition() {
+		return coordinationModuleDefinitionEClass;
 	}
 
 	/**
@@ -194,8 +194,8 @@ public class SkillDefinitionPackageImpl extends EPackageImpl implements SkillDef
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSkillDefinitionSet_Name() {
-		return (EAttribute) skillDefinitionSetEClass.getEStructuralFeatures().get(0);
+	public EAttribute getCoordinationModuleDefinition_Name() {
+		return (EAttribute) coordinationModuleDefinitionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -203,8 +203,8 @@ public class SkillDefinitionPackageImpl extends EPackageImpl implements SkillDef
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSkillDefinitionSet_Skills() {
-		return (EReference) skillDefinitionSetEClass.getEStructuralFeatures().get(1);
+	public EReference getCoordinationModuleDefinition_Skills() {
+		return (EReference) coordinationModuleDefinitionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -322,11 +322,11 @@ public class SkillDefinitionPackageImpl extends EPackageImpl implements SkillDef
 
 		skillDefinitionRepositoryEClass = createEClass(SKILL_DEFINITION_REPOSITORY);
 		createEAttribute(skillDefinitionRepositoryEClass, SKILL_DEFINITION_REPOSITORY__NAME);
-		createEReference(skillDefinitionRepositoryEClass, SKILL_DEFINITION_REPOSITORY__SETS);
+		createEReference(skillDefinitionRepositoryEClass, SKILL_DEFINITION_REPOSITORY__MODULES);
 
-		skillDefinitionSetEClass = createEClass(SKILL_DEFINITION_SET);
-		createEAttribute(skillDefinitionSetEClass, SKILL_DEFINITION_SET__NAME);
-		createEReference(skillDefinitionSetEClass, SKILL_DEFINITION_SET__SKILLS);
+		coordinationModuleDefinitionEClass = createEClass(COORDINATION_MODULE_DEFINITION);
+		createEAttribute(coordinationModuleDefinitionEClass, COORDINATION_MODULE_DEFINITION__NAME);
+		createEReference(coordinationModuleDefinitionEClass, COORDINATION_MODULE_DEFINITION__SKILLS);
 
 		skillDefinitionEClass = createEClass(SKILL_DEFINITION);
 		createEAttribute(skillDefinitionEClass, SKILL_DEFINITION__NAME);
@@ -388,18 +388,18 @@ public class SkillDefinitionPackageImpl extends EPackageImpl implements SkillDef
 		initEAttribute(getSkillDefinitionRepository_Name(), ecorePackage.getEString(), "name", null, 1, 1,
 				SkillDefinitionRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSkillDefinitionRepository_Sets(), this.getSkillDefinitionSet(), null, "sets", null, 0, -1,
-				SkillDefinitionRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+		initEReference(getSkillDefinitionRepository_Modules(), this.getCoordinationModuleDefinition(), null, "modules",
+				null, 0, -1, SkillDefinitionRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(skillDefinitionSetEClass, SkillDefinitionSet.class, "SkillDefinitionSet", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSkillDefinitionSet_Name(), ecorePackage.getEString(), "name", null, 1, 1,
-				SkillDefinitionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEReference(getSkillDefinitionSet_Skills(), this.getSkillDefinition(), null, "skills", null, 0, -1,
-				SkillDefinitionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(coordinationModuleDefinitionEClass, CoordinationModuleDefinition.class,
+				"CoordinationModuleDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCoordinationModuleDefinition_Name(), ecorePackage.getEString(), "name", null, 1, 1,
+				CoordinationModuleDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCoordinationModuleDefinition_Skills(), this.getSkillDefinition(), null, "skills", null, 0, -1,
+				CoordinationModuleDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(skillDefinitionEClass, SkillDefinition.class, "SkillDefinition", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

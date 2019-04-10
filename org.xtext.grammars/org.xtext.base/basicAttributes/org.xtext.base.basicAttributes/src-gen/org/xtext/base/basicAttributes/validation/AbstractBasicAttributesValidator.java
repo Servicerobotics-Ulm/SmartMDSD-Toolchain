@@ -60,5 +60,4 @@ public abstract class AbstractBasicAttributesValidator extends AbstractDeclarati
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/base/BasicAttributes"));
 		return result;
 	}
-	
 }

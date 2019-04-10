@@ -114,26 +114,26 @@ public class SkillRealizationItemProviderAdapterFactory extends SkillRealization
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.ecore.behavior.skillRealization.SkillRealizationSet} instances.
+	 * This keeps track of the one adapter used for all {@link org.ecore.behavior.skillRealization.CoordinationModuleRealization} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SkillRealizationSetItemProvider skillRealizationSetItemProvider;
+	protected CoordinationModuleRealizationItemProvider coordinationModuleRealizationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.ecore.behavior.skillRealization.SkillRealizationSet}.
+	 * This creates an adapter for a {@link org.ecore.behavior.skillRealization.CoordinationModuleRealization}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSkillRealizationSetAdapter() {
-		if (skillRealizationSetItemProvider == null) {
-			skillRealizationSetItemProvider = new SkillRealizationSetItemProvider(this);
+	public Adapter createCoordinationModuleRealizationAdapter() {
+		if (coordinationModuleRealizationItemProvider == null) {
+			coordinationModuleRealizationItemProvider = new CoordinationModuleRealizationItemProvider(this);
 		}
 
-		return skillRealizationSetItemProvider;
+		return coordinationModuleRealizationItemProvider;
 	}
 
 	/**
@@ -160,11 +160,175 @@ public class SkillRealizationItemProviderAdapterFactory extends SkillRealization
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.ecore.behavior.skillRealization.ComponentCoordinationActionEvent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentCoordinationActionEventItemProvider componentCoordinationActionEventItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.ecore.behavior.skillRealization.ComponentCoordinationActionEvent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentCoordinationActionEventAdapter() {
+		if (componentCoordinationActionEventItemProvider == null) {
+			componentCoordinationActionEventItemProvider = new ComponentCoordinationActionEventItemProvider(this);
+		}
+
+		return componentCoordinationActionEventItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.ecore.behavior.skillRealization.ComponentCoordinationActionWiring} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentCoordinationActionWiringItemProvider componentCoordinationActionWiringItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.ecore.behavior.skillRealization.ComponentCoordinationActionWiring}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentCoordinationActionWiringAdapter() {
+		if (componentCoordinationActionWiringItemProvider == null) {
+			componentCoordinationActionWiringItemProvider = new ComponentCoordinationActionWiringItemProvider(this);
+		}
+
+		return componentCoordinationActionWiringItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.ecore.behavior.skillRealization.ComponentCoordinationActionParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentCoordinationActionParameterItemProvider componentCoordinationActionParameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.ecore.behavior.skillRealization.ComponentCoordinationActionParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentCoordinationActionParameterAdapter() {
+		if (componentCoordinationActionParameterItemProvider == null) {
+			componentCoordinationActionParameterItemProvider = new ComponentCoordinationActionParameterItemProvider(
+					this);
+		}
+
+		return componentCoordinationActionParameterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.ecore.behavior.skillRealization.ComponentCoordinationActionActivation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentCoordinationActionActivationItemProvider componentCoordinationActionActivationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.ecore.behavior.skillRealization.ComponentCoordinationActionActivation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentCoordinationActionActivationAdapter() {
+		if (componentCoordinationActionActivationItemProvider == null) {
+			componentCoordinationActionActivationItemProvider = new ComponentCoordinationActionActivationItemProvider(
+					this);
+		}
+
+		return componentCoordinationActionActivationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.ecore.behavior.skillRealization.CoordinationActionBlock} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CoordinationActionBlockItemProvider coordinationActionBlockItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.ecore.behavior.skillRealization.CoordinationActionBlock}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCoordinationActionBlockAdapter() {
+		if (coordinationActionBlockItemProvider == null) {
+			coordinationActionBlockItemProvider = new CoordinationActionBlockItemProvider(this);
+		}
+
+		return coordinationActionBlockItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.ecore.behavior.skillRealization.EventHandler} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EventHandlerItemProvider eventHandlerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.ecore.behavior.skillRealization.EventHandler}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEventHandlerAdapter() {
+		if (eventHandlerItemProvider == null) {
+			eventHandlerItemProvider = new EventHandlerItemProvider(this);
+		}
+
+		return eventHandlerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.ecore.behavior.skillRealization.CoordinationInterfaceInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CoordinationInterfaceInstanceItemProvider coordinationInterfaceInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.ecore.behavior.skillRealization.CoordinationInterfaceInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCoordinationInterfaceInstanceAdapter() {
+		if (coordinationInterfaceInstanceItemProvider == null) {
+			coordinationInterfaceInstanceItemProvider = new CoordinationInterfaceInstanceItemProvider(this);
+		}
+
+		return coordinationInterfaceInstanceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -175,6 +339,7 @@ public class SkillRealizationItemProviderAdapterFactory extends SkillRealization
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -250,6 +415,7 @@ public class SkillRealizationItemProviderAdapterFactory extends SkillRealization
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -260,6 +426,7 @@ public class SkillRealizationItemProviderAdapterFactory extends SkillRealization
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -270,6 +437,7 @@ public class SkillRealizationItemProviderAdapterFactory extends SkillRealization
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -284,13 +452,28 @@ public class SkillRealizationItemProviderAdapterFactory extends SkillRealization
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (skillRealizationModelItemProvider != null)
 			skillRealizationModelItemProvider.dispose();
-		if (skillRealizationSetItemProvider != null)
-			skillRealizationSetItemProvider.dispose();
+		if (coordinationModuleRealizationItemProvider != null)
+			coordinationModuleRealizationItemProvider.dispose();
 		if (skillRealizationItemProvider != null)
 			skillRealizationItemProvider.dispose();
+		if (componentCoordinationActionEventItemProvider != null)
+			componentCoordinationActionEventItemProvider.dispose();
+		if (componentCoordinationActionWiringItemProvider != null)
+			componentCoordinationActionWiringItemProvider.dispose();
+		if (componentCoordinationActionParameterItemProvider != null)
+			componentCoordinationActionParameterItemProvider.dispose();
+		if (componentCoordinationActionActivationItemProvider != null)
+			componentCoordinationActionActivationItemProvider.dispose();
+		if (coordinationActionBlockItemProvider != null)
+			coordinationActionBlockItemProvider.dispose();
+		if (eventHandlerItemProvider != null)
+			eventHandlerItemProvider.dispose();
+		if (coordinationInterfaceInstanceItemProvider != null)
+			coordinationInterfaceInstanceItemProvider.dispose();
 	}
 
 }

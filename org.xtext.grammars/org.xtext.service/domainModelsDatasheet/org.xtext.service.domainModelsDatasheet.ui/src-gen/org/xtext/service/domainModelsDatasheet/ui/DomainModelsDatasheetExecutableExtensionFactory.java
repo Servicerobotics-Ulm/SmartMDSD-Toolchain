@@ -45,6 +45,7 @@
 package org.xtext.service.domainModelsDatasheet.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.service.domainModelsDatasheet.ui.internal.DomainModelsDatasheetActivator;
@@ -57,12 +58,13 @@ public class DomainModelsDatasheetExecutableExtensionFactory extends AbstractGui
 
 	@Override
 	protected Bundle getBundle() {
-		return DomainModelsDatasheetActivator.getInstance().getBundle();
+		return Platform.getBundle(DomainModelsDatasheetActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return DomainModelsDatasheetActivator.getInstance().getInjector(DomainModelsDatasheetActivator.ORG_XTEXT_SERVICE_DOMAINMODELSDATASHEET_DOMAINMODELSDATASHEET);
+		DomainModelsDatasheetActivator activator = DomainModelsDatasheetActivator.getInstance();
+		return activator != null ? activator.getInjector(DomainModelsDatasheetActivator.ORG_XTEXT_SERVICE_DOMAINMODELSDATASHEET_DOMAINMODELSDATASHEET) : null;
 	}
-	
+
 }

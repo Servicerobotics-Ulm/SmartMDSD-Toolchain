@@ -15,13 +15,14 @@ import org.ecore.service.parameterDefinition.TriggerDefinition;
  * <ul>
  *   <li>{@link org.ecore.component.componentParameter.TriggerInstance#getTriggerDef <em>Trigger Def</em>}</li>
  *   <li>{@link org.ecore.component.componentParameter.TriggerInstance#isActive <em>Active</em>}</li>
+ *   <li>{@link org.ecore.component.componentParameter.TriggerInstance#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.ecore.component.componentParameter.ComponentParameterPackage#getTriggerInstance()
  * @model
  * @generated
  */
-public interface TriggerInstance extends AbstractParameterInstance {
+public interface TriggerInstance extends AbstractParameterInstance, ComponentRunTimeParameterBase {
 	/**
 	 * Returns the value of the '<em><b>Trigger Def</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -73,5 +74,31 @@ public interface TriggerInstance extends AbstractParameterInstance {
 	 * @generated
 	 */
 	void setActive(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #isSetName()
+	 * @see org.ecore.component.componentParameter.ComponentParameterPackage#getTriggerInstance_Name()
+	 * @model unsettable="true" required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Returns whether the value of the '{@link org.ecore.component.componentParameter.TriggerInstance#getName <em>Name</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Name</em>' attribute is set.
+	 * @see #getName()
+	 * @generated
+	 */
+	boolean isSetName();
 
 } // TriggerInstance

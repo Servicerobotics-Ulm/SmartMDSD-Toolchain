@@ -102,6 +102,9 @@ class CommObjectCMakeGenerator {
 		
 		# autoinstall all default CommunicationObject artefacts
 		SMART_COMMOBJECT_AUTOINSTALL()
+		
+		# include extensions cmake files
+		INCLUDE(${CMAKE_CURRENT_LIST_DIR}/src-gen/DomainModelsExtensions.cmake)
 	'''
 	
 	def generateCmakeConfigFile(CommObjectsRepository repo) '''
@@ -305,6 +308,16 @@ class CommObjectCMakeGenerator {
 		LIST(APPEND SMART_EXPORT_VARS «repo.name.toUpperCase»_FOUND)
 		LIST(APPEND SMART_EXPORT_VARS «repo.name.toUpperCase»_INCLUDE_DIRS)
 		LIST(APPEND SMART_EXPORT_VARS «repo.name.toUpperCase»_LIBRARIES)
+	'''
+	
+	def CharSequence generateCmakeDomainModelsExtensionsFile(CommObjectsRepository repository)'''
+		# includes for Extensions
+		# include coordination interfaces extensions
+		GET_FILENAME_COMPONENT(Coordination_DIR "${PROJECT_SOURCE_DIR}/../coordination" REALPATH)
+		IF(EXISTS ${Coordination_DIR})
+		MESSAGE("-- Include CoordinationInterfaces")
+		INCLUDE("${Coordination_DIR}/src-gen/coordinationInterfaces.cmake")
+		ENDIF(EXISTS ${Coordination_DIR})
 	'''
 		
 	def getReferencedCommObjects(CommObjectsRepository repo) {

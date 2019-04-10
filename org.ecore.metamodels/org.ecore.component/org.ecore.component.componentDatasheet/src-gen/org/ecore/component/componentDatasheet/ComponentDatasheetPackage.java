@@ -79,13 +79,13 @@ public interface ComponentDatasheetPackage extends EPackage {
 	int COMPONENT_DATASHEET__LICENSE = GenericDatasheetPackage.GENERIC_DATASHEET__LICENSE;
 
 	/**
-	 * The feature id for the '<em><b>Short Descrition</b></em>' attribute.
+	 * The feature id for the '<em><b>Short Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_DATASHEET__SHORT_DESCRITION = GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRITION;
+	int COMPONENT_DATASHEET__SHORT_DESCRIPTION = GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Long Description</b></em>' attribute.

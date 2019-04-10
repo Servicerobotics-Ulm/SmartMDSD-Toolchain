@@ -100,7 +100,7 @@ public class ComponentDatasheetSemanticSequencer extends GenericDatasheetSemanti
 	 *         component=[ComponentDefinition|ID] 
 	 *         (
 	 *             baseURI=EString | 
-	 *             shortDescrition=EString | 
+	 *             shortDescription=EString | 
 	 *             longDescription=TEXT_BLOCK | 
 	 *             supplierDescription=EString | 
 	 *             homepage=EString | 

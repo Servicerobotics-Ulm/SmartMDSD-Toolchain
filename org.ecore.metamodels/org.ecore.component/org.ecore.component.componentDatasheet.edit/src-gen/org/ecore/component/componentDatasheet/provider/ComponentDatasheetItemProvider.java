@@ -130,7 +130,7 @@ public class ComponentDatasheetItemProvider extends GenericDatasheetItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentDatasheet) object).getShortDescrition();
+		String label = ((ComponentDatasheet) object).getShortDescription();
 		return label == null || label.length() == 0 ? getString("_UI_ComponentDatasheet_type")
 				: getString("_UI_ComponentDatasheet_type") + " " + label;
 	}

@@ -85,7 +85,7 @@ import org.ecore.component.performanceExtension.InputLinkExtension;
 import org.ecore.component.performanceExtension.PerformanceExtensionPackage;
 import org.ecore.component.seronetExtension.OpcUaClientLink;
 import org.ecore.component.seronetExtension.OpcUaDeviceClient;
-import org.ecore.component.seronetExtension.OpcUaStatusServer;
+import org.ecore.component.seronetExtension.OpcUaReadServer;
 import org.ecore.component.seronetExtension.SeronetExtensionPackage;
 import org.ecore.component.seronetExtension.SupportedMiddleware;
 import org.ecore.service.roboticMiddleware.ACE_SmartSoft;
@@ -218,8 +218,8 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 			case SeronetExtensionPackage.OPC_UA_DEVICE_CLIENT:
 				sequence_OpcUaDeviceClient(context, (OpcUaDeviceClient) semanticObject); 
 				return; 
-			case SeronetExtensionPackage.OPC_UA_STATUS_SERVER:
-				sequence_OpcUaStatusServer(context, (OpcUaStatusServer) semanticObject); 
+			case SeronetExtensionPackage.OPC_UA_READ_SERVER:
+				sequence_OpcUaReadServer(context, (OpcUaReadServer) semanticObject); 
 				return; 
 			case SeronetExtensionPackage.SUPPORTED_MIDDLEWARE:
 				sequence_SupportedMiddleware(context, (SupportedMiddleware) semanticObject); 
@@ -521,25 +521,16 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 	
 	/**
 	 * Contexts:
-	 *     AbstractComponentElement returns OpcUaStatusServer
-	 *     NamedComponentElement returns OpcUaStatusServer
-	 *     PlainOpcUaPort returns OpcUaStatusServer
-	 *     OpcUaStatusServer returns OpcUaStatusServer
+	 *     AbstractComponentElement returns OpcUaReadServer
+	 *     NamedComponentElement returns OpcUaReadServer
+	 *     PlainOpcUaPort returns OpcUaReadServer
+	 *     OpcUaReadServer returns OpcUaReadServer
 	 *
 	 * Constraint:
-	 *     (name=ID outPort=[OutputPort|FQN])
+	 *     (name=ID outPort=[OutputPort|FQN] portNumber=EInt?)
 	 */
-	protected void sequence_OpcUaStatusServer(ISerializationContext context, OpcUaStatusServer semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ComponentDefinitionPackage.Literals.NAMED_COMPONENT_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ComponentDefinitionPackage.Literals.NAMED_COMPONENT_ELEMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, SeronetExtensionPackage.Literals.OPC_UA_STATUS_SERVER__OUT_PORT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeronetExtensionPackage.Literals.OPC_UA_STATUS_SERVER__OUT_PORT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOpcUaStatusServerAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getOpcUaStatusServerAccess().getOutPortOutputPortFQNParserRuleCall_3_0_1(), semanticObject.eGet(SeronetExtensionPackage.Literals.OPC_UA_STATUS_SERVER__OUT_PORT, false));
-		feeder.finish();
+	protected void sequence_OpcUaReadServer(ISerializationContext context, OpcUaReadServer semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -682,15 +673,15 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 	 *     SkillRealizationsRef returns SkillRealizationsRef
 	 *
 	 * Constraint:
-	 *     skillRealizationSetRef=[SkillRealizationSet|FQN]
+	 *     skillRealizationCoordModuleRef=[CoordinationModuleRealization|FQN]
 	 */
 	protected void sequence_SkillRealizationsRef(ISerializationContext context, SkillRealizationsRef semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CoordinationExtensionPackage.Literals.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CoordinationExtensionPackage.Literals.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF));
+			if (transientValues.isValueTransient(semanticObject, CoordinationExtensionPackage.Literals.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_COORD_MODULE_REF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CoordinationExtensionPackage.Literals.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_COORD_MODULE_REF));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationSetRefSkillRealizationSetFQNParserRuleCall_1_0_1(), semanticObject.eGet(CoordinationExtensionPackage.Literals.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF, false));
+		feeder.accept(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationCoordModuleRefCoordinationModuleRealizationFQNParserRuleCall_1_0_1(), semanticObject.eGet(CoordinationExtensionPackage.Literals.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_COORD_MODULE_REF, false));
 		feeder.finish();
 	}
 	

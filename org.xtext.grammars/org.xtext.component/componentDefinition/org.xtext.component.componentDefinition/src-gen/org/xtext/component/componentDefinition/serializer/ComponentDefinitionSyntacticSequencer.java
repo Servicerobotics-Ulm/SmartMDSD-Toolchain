@@ -70,7 +70,7 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 	protected AbstractElementAlias match_DefaultTrigger_SemicolonKeyword_2_q;
 	protected AbstractElementAlias match_OpcUaClientLink_SemicolonKeyword_2_q;
 	protected AbstractElementAlias match_OpcUaDeviceClient_SemicolonKeyword_3_q;
-	protected AbstractElementAlias match_OpcUaStatusServer_SemicolonKeyword_4_q;
+	protected AbstractElementAlias match_OpcUaReadServer_SemicolonKeyword_5_q;
 	protected AbstractElementAlias match_OperationModeBinding_SemicolonKeyword_2_q;
 	protected AbstractElementAlias match_PrivateOperationMode_SemicolonKeyword_2_q;
 	protected AbstractElementAlias match_RequestPortLink_SemicolonKeyword_2_q;
@@ -90,7 +90,7 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 		match_DefaultTrigger_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getDefaultTriggerAccess().getSemicolonKeyword_2());
 		match_OpcUaClientLink_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getOpcUaClientLinkAccess().getSemicolonKeyword_2());
 		match_OpcUaDeviceClient_SemicolonKeyword_3_q = new TokenAlias(false, true, grammarAccess.getOpcUaDeviceClientAccess().getSemicolonKeyword_3());
-		match_OpcUaStatusServer_SemicolonKeyword_4_q = new TokenAlias(false, true, grammarAccess.getOpcUaStatusServerAccess().getSemicolonKeyword_4());
+		match_OpcUaReadServer_SemicolonKeyword_5_q = new TokenAlias(false, true, grammarAccess.getOpcUaReadServerAccess().getSemicolonKeyword_5());
 		match_OperationModeBinding_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getOperationModeBindingAccess().getSemicolonKeyword_2());
 		match_PrivateOperationMode_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getPrivateOperationModeAccess().getSemicolonKeyword_2());
 		match_RequestPortLink_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getRequestPortLinkAccess().getSemicolonKeyword_2());
@@ -129,8 +129,8 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 				emit_OpcUaClientLink_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_OpcUaDeviceClient_SemicolonKeyword_3_q.equals(syntax))
 				emit_OpcUaDeviceClient_SemicolonKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_OpcUaStatusServer_SemicolonKeyword_4_q.equals(syntax))
-				emit_OpcUaStatusServer_SemicolonKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OpcUaReadServer_SemicolonKeyword_5_q.equals(syntax))
+				emit_OpcUaReadServer_SemicolonKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_OperationModeBinding_SemicolonKeyword_2_q.equals(syntax))
 				emit_OperationModeBinding_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_PrivateOperationMode_SemicolonKeyword_2_q.equals(syntax))
@@ -264,8 +264,9 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     outPort=[OutputPort|FQN] (ambiguity) (rule end)
+	 *     portNumber=EInt (ambiguity) (rule end)
 	 */
-	protected void emit_OpcUaStatusServer_SemicolonKeyword_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_OpcUaReadServer_SemicolonKeyword_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -318,7 +319,7 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 	 *     ';'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     skillRealizationSetRef=[SkillRealizationSet|FQN] (ambiguity) (rule end)
+	 *     skillRealizationCoordModuleRef=[CoordinationModuleRealization|FQN] (ambiguity) (rule end)
 	 */
 	protected void emit_SkillRealizationsRef_SemicolonKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

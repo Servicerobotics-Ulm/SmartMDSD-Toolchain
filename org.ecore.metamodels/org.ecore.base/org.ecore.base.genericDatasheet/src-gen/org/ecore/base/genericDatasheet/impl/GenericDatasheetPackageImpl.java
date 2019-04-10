@@ -87,7 +87,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link GenericDatasheetPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -102,9 +102,10 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 			return (GenericDatasheetPackage) EPackage.Registry.INSTANCE.getEPackage(GenericDatasheetPackage.eNS_URI);
 
 		// Obtain or create and register package
-		GenericDatasheetPackageImpl theGenericDatasheetPackage = (GenericDatasheetPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof GenericDatasheetPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new GenericDatasheetPackageImpl());
+		Object registeredGenericDatasheetPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		GenericDatasheetPackageImpl theGenericDatasheetPackage = registeredGenericDatasheetPackage instanceof GenericDatasheetPackageImpl
+				? (GenericDatasheetPackageImpl) registeredGenericDatasheetPackage
+				: new GenericDatasheetPackageImpl();
 
 		isInited = true;
 
@@ -127,6 +128,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGenericDatasheet() {
 		return genericDatasheetEClass;
 	}
@@ -136,6 +138,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGenericDatasheet_License() {
 		return (EReference) genericDatasheetEClass.getEStructuralFeatures().get(0);
 	}
@@ -145,7 +148,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGenericDatasheet_ShortDescrition() {
+	@Override
+	public EAttribute getGenericDatasheet_ShortDescription() {
 		return (EAttribute) genericDatasheetEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -154,6 +158,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGenericDatasheet_LongDescription() {
 		return (EAttribute) genericDatasheetEClass.getEStructuralFeatures().get(2);
 	}
@@ -163,6 +168,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGenericDatasheet_SupplierDescription() {
 		return (EAttribute) genericDatasheetEClass.getEStructuralFeatures().get(3);
 	}
@@ -172,6 +178,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGenericDatasheet_Homepage() {
 		return (EAttribute) genericDatasheetEClass.getEStructuralFeatures().get(4);
 	}
@@ -181,6 +188,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGenericDatasheet_BaseURI() {
 		return (EAttribute) genericDatasheetEClass.getEStructuralFeatures().get(5);
 	}
@@ -190,6 +198,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGenericDatasheet_Trl() {
 		return (EAttribute) genericDatasheetEClass.getEStructuralFeatures().get(6);
 	}
@@ -199,6 +208,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractLicense() {
 		return abstractLicenseEClass;
 	}
@@ -208,6 +218,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSpdxLicense() {
 		return spdxLicenseEClass;
 	}
@@ -217,6 +228,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSpdxLicense_LicenseID() {
 		return (EAttribute) spdxLicenseEClass.getEStructuralFeatures().get(0);
 	}
@@ -226,6 +238,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getProprietaryLicense() {
 		return proprietaryLicenseEClass;
 	}
@@ -235,6 +248,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProprietaryLicense_FullText() {
 		return (EAttribute) proprietaryLicenseEClass.getEStructuralFeatures().get(0);
 	}
@@ -244,6 +258,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProprietaryLicense_Name() {
 		return (EAttribute) proprietaryLicenseEClass.getEStructuralFeatures().get(1);
 	}
@@ -253,6 +268,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProprietaryLicense_Url() {
 		return (EAttribute) proprietaryLicenseEClass.getEStructuralFeatures().get(2);
 	}
@@ -262,6 +278,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getTRL() {
 		return trlEEnum;
 	}
@@ -271,6 +288,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GenericDatasheetFactory getGenericDatasheetFactory() {
 		return (GenericDatasheetFactory) getEFactoryInstance();
 	}
@@ -297,7 +315,7 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 		// Create classes and their features
 		genericDatasheetEClass = createEClass(GENERIC_DATASHEET);
 		createEReference(genericDatasheetEClass, GENERIC_DATASHEET__LICENSE);
-		createEAttribute(genericDatasheetEClass, GENERIC_DATASHEET__SHORT_DESCRITION);
+		createEAttribute(genericDatasheetEClass, GENERIC_DATASHEET__SHORT_DESCRIPTION);
 		createEAttribute(genericDatasheetEClass, GENERIC_DATASHEET__LONG_DESCRIPTION);
 		createEAttribute(genericDatasheetEClass, GENERIC_DATASHEET__SUPPLIER_DESCRIPTION);
 		createEAttribute(genericDatasheetEClass, GENERIC_DATASHEET__HOMEPAGE);
@@ -356,9 +374,9 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 		initEReference(getGenericDatasheet_License(), this.getAbstractLicense(), null, "license", null, 0, 1,
 				GenericDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGenericDatasheet_ShortDescrition(), ecorePackage.getEString(), "shortDescrition", null, 1, 1,
-				GenericDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGenericDatasheet_ShortDescription(), ecorePackage.getEString(), "shortDescription", null, 1,
+				1, GenericDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGenericDatasheet_LongDescription(), ecorePackage.getEString(), "longDescription", null, 0, 1,
 				GenericDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);

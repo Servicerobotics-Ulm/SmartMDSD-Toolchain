@@ -16,6 +16,7 @@ import org.ecore.service.skillDefinition.SkillDefinition;
  * </p>
  * <ul>
  *   <li>{@link org.ecore.behavior.skillRealization.SkillRealization#getSkillDef <em>Skill Def</em>}</li>
+ *   <li>{@link org.ecore.behavior.skillRealization.SkillRealization#getAction <em>Action</em>}</li>
  * </ul>
  *
  * @see org.ecore.behavior.skillRealization.SkillRealizationPackage#getSkillRealization()
@@ -48,5 +49,31 @@ public interface SkillRealization extends EObject {
 	 * @generated
 	 */
 	void setSkillDef(SkillDefinition value);
+
+	/**
+	 * Returns the value of the '<em><b>Action</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Action</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Action</em>' containment reference.
+	 * @see #setAction(CoordinationActionBlock)
+	 * @see org.ecore.behavior.skillRealization.SkillRealizationPackage#getSkillRealization_Action()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	CoordinationActionBlock getAction();
+
+	/**
+	 * Sets the value of the '{@link org.ecore.behavior.skillRealization.SkillRealization#getAction <em>Action</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Action</em>' containment reference.
+	 * @see #getAction()
+	 * @generated
+	 */
+	void setAction(CoordinationActionBlock value);
 
 } // SkillRealization

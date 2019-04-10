@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalComponentDatasheetParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_TEXT_BLOCK", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'ComponentDatasheet'", "'{'", "'purposeDescription'", "':'", "'hardwareRequirementDescription'", "'}'", "'baseURI'", "'shortDescrition'", "'longDescription'", "'supplierDescription'", "'homepage'", "'trl'", "'license'", "'spdx'", "'('", "')'", "'proprietary'", "'name'", "'fullText'", "'URL'", "'Level1'", "'Level2'", "'Level3'", "'Level4'", "'Level5'", "'Level6'", "'Level7'", "'Level8'", "'Level9'", "'Undefined'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_TEXT_BLOCK", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'ComponentDatasheet'", "'{'", "'purposeDescription'", "':'", "'hardwareRequirementDescription'", "'}'", "'baseURI'", "'shortDescription'", "'longDescription'", "'supplierDescription'", "'homepage'", "'trl'", "'license'", "'spdx'", "'('", "')'", "'proprietary'", "'name'", "'fullText'", "'URL'", "'Level1'", "'Level2'", "'Level3'", "'Level4'", "'Level5'", "'Level6'", "'Level7'", "'Level8'", "'Level9'", "'Undefined'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_TEXT_BLOCK=5;
@@ -481,7 +481,7 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleGenericDatasheet"
-    // InternalComponentDatasheet.g:256:1: ruleGenericDatasheet[EObject in_current] returns [EObject current=in_current] : ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) ) ) ;
+    // InternalComponentDatasheet.g:256:1: ruleGenericDatasheet[EObject in_current] returns [EObject current=in_current] : ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) ) ) ;
     public final EObject ruleGenericDatasheet(EObject in_current) throws RecognitionException {
         EObject current = in_current;
 
@@ -502,7 +502,7 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
         Token otherlv_20=null;
         AntlrDatatypeRuleToken lv_baseURI_3_0 = null;
 
-        AntlrDatatypeRuleToken lv_shortDescrition_6_0 = null;
+        AntlrDatatypeRuleToken lv_shortDescription_6_0 = null;
 
         AntlrDatatypeRuleToken lv_supplierDescription_12_0 = null;
 
@@ -517,22 +517,22 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
         	enterRule();
 
         try {
-            // InternalComponentDatasheet.g:262:2: ( ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) ) ) )
-            // InternalComponentDatasheet.g:263:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) ) )
+            // InternalComponentDatasheet.g:262:2: ( ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) ) ) )
+            // InternalComponentDatasheet.g:263:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) ) )
             {
-            // InternalComponentDatasheet.g:263:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) ) )
-            // InternalComponentDatasheet.g:264:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) )
+            // InternalComponentDatasheet.g:263:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) ) )
+            // InternalComponentDatasheet.g:264:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) )
             {
-            // InternalComponentDatasheet.g:264:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) )
-            // InternalComponentDatasheet.g:265:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?)
+            // InternalComponentDatasheet.g:264:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) )
+            // InternalComponentDatasheet.g:265:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?)
             {
              
             			  getUnorderedGroupHelper().enter(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
             			
-            // InternalComponentDatasheet.g:268:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?)
-            // InternalComponentDatasheet.g:269:5: ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?
+            // InternalComponentDatasheet.g:268:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?)
+            // InternalComponentDatasheet.g:269:5: ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?
             {
-            // InternalComponentDatasheet.g:269:5: ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+
+            // InternalComponentDatasheet.g:269:5: ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+
             int cnt11=0;
             loop11:
             do {
@@ -662,32 +662,32 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
             	    }
             	    break;
             	case 2 :
-            	    // InternalComponentDatasheet.g:310:3: ({...}? => ( ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) ) ) )
+            	    // InternalComponentDatasheet.g:310:3: ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalComponentDatasheet.g:310:3: ({...}? => ( ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) ) ) )
-            	    // InternalComponentDatasheet.g:311:4: {...}? => ( ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) ) )
+            	    // InternalComponentDatasheet.g:310:3: ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) )
+            	    // InternalComponentDatasheet.g:311:4: {...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 1)");
             	    }
-            	    // InternalComponentDatasheet.g:311:110: ( ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) ) )
-            	    // InternalComponentDatasheet.g:312:5: ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) )
+            	    // InternalComponentDatasheet.g:311:110: ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) )
+            	    // InternalComponentDatasheet.g:312:5: ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) )
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 1);
             	    				
-            	    // InternalComponentDatasheet.g:315:8: ({...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) ) )
-            	    // InternalComponentDatasheet.g:315:9: {...}? => (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) )
+            	    // InternalComponentDatasheet.g:315:8: ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) )
+            	    // InternalComponentDatasheet.g:315:9: {...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "true");
             	    }
-            	    // InternalComponentDatasheet.g:315:18: (otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) ) )
-            	    // InternalComponentDatasheet.g:315:19: otherlv_4= 'shortDescrition' (otherlv_5= ':' )? ( (lv_shortDescrition_6_0= ruleEString ) )
+            	    // InternalComponentDatasheet.g:315:18: (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) )
+            	    // InternalComponentDatasheet.g:315:19: otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) )
             	    {
             	    otherlv_4=(Token)match(input,19,FOLLOW_7); 
 
-            	    								newLeafNode(otherlv_4, grammarAccess.getGenericDatasheetAccess().getShortDescritionKeyword_1_0());
+            	    								newLeafNode(otherlv_4, grammarAccess.getGenericDatasheetAccess().getShortDescriptionKeyword_1_0());
             	    							
             	    // InternalComponentDatasheet.g:319:8: (otherlv_5= ':' )?
             	    int alt5=2;
@@ -710,17 +710,17 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
 
             	    }
 
-            	    // InternalComponentDatasheet.g:325:8: ( (lv_shortDescrition_6_0= ruleEString ) )
-            	    // InternalComponentDatasheet.g:326:9: (lv_shortDescrition_6_0= ruleEString )
+            	    // InternalComponentDatasheet.g:325:8: ( (lv_shortDescription_6_0= ruleEString ) )
+            	    // InternalComponentDatasheet.g:326:9: (lv_shortDescription_6_0= ruleEString )
             	    {
-            	    // InternalComponentDatasheet.g:326:9: (lv_shortDescrition_6_0= ruleEString )
-            	    // InternalComponentDatasheet.g:327:10: lv_shortDescrition_6_0= ruleEString
+            	    // InternalComponentDatasheet.g:326:9: (lv_shortDescription_6_0= ruleEString )
+            	    // InternalComponentDatasheet.g:327:10: lv_shortDescription_6_0= ruleEString
             	    {
 
-            	    										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getShortDescritionEStringParserRuleCall_1_2_0());
+            	    										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getShortDescriptionEStringParserRuleCall_1_2_0());
             	    									
             	    pushFollow(FOLLOW_8);
-            	    lv_shortDescrition_6_0=ruleEString();
+            	    lv_shortDescription_6_0=ruleEString();
 
             	    state._fsp--;
 
@@ -730,8 +730,8 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
             	    										}
             	    										set(
             	    											current,
-            	    											"shortDescrition",
-            	    											lv_shortDescrition_6_0,
+            	    											"shortDescription",
+            	    											lv_shortDescription_6_0,
             	    											"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
             	    										afterParserOrEnumRuleCall();
             	    									

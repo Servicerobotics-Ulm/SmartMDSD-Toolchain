@@ -45,6 +45,7 @@
 package org.xtext.behavior.skillRealization.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.behavior.skillRealization.ui.internal.SkillRealizationActivator;
@@ -57,12 +58,13 @@ public class SkillRealizationExecutableExtensionFactory extends AbstractGuiceAwa
 
 	@Override
 	protected Bundle getBundle() {
-		return SkillRealizationActivator.getInstance().getBundle();
+		return Platform.getBundle(SkillRealizationActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return SkillRealizationActivator.getInstance().getInjector(SkillRealizationActivator.ORG_XTEXT_BEHAVIOR_SKILLREALIZATION_SKILLREALIZATION);
+		SkillRealizationActivator activator = SkillRealizationActivator.getInstance();
+		return activator != null ? activator.getInjector(SkillRealizationActivator.ORG_XTEXT_BEHAVIOR_SKILLREALIZATION_SKILLREALIZATION) : null;
 	}
-	
+
 }

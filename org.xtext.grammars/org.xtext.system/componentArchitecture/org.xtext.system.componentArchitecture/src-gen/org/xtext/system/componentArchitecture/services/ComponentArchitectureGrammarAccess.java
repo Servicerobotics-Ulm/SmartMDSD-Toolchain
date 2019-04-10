@@ -83,7 +83,9 @@ public class ComponentArchitectureGrammarAccess extends AbstractGrammarElementFi
 		private final RuleCall cComponentsComponentInstanceParserRuleCall_5_0 = (RuleCall)cComponentsAssignment_5.eContents().get(0);
 		private final Assignment cConnectionsAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cConnectionsConnectionParserRuleCall_6_0 = (RuleCall)cConnectionsAssignment_6.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cExtensionsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cExtensionsSystemExtensionParserRuleCall_7_0 = (RuleCall)cExtensionsAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//SystemComponentArchitecture:
 		//	{SystemComponentArchitecture}
@@ -92,12 +94,13 @@ public class ComponentArchitectureGrammarAccess extends AbstractGrammarElementFi
 		//	'{'
 		//	components+=ComponentInstance*
 		//	connections+=Connection*
+		//	extensions+=SystemExtension*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{SystemComponentArchitecture} 'SystemComponentArchitecture' name=ID ('usingActivityArchitecture'
 		//activityArch=[activityArchitecture::ActivityArchitectureModel|FQN])? '{' components+=ComponentInstance*
-		//connections+=Connection* '}'
+		//connections+=Connection* extensions+=SystemExtension* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{SystemComponentArchitecture}
@@ -142,8 +145,33 @@ public class ComponentArchitectureGrammarAccess extends AbstractGrammarElementFi
 		//Connection
 		public RuleCall getConnectionsConnectionParserRuleCall_6_0() { return cConnectionsConnectionParserRuleCall_6_0; }
 		
+		//extensions+=SystemExtension*
+		public Assignment getExtensionsAssignment_7() { return cExtensionsAssignment_7; }
+		
+		//SystemExtension
+		public RuleCall getExtensionsSystemExtensionParserRuleCall_7_0() { return cExtensionsSystemExtensionParserRuleCall_7_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+	}
+	public class SystemExtensionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.system.componentArchitecture.ComponentArchitecture.SystemExtension");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cCoordinationModuleMappingParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cTaskRealizationModelRefParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//SystemExtension:
+		//	CoordinationModuleMapping | TaskRealizationModelRef;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//CoordinationModuleMapping | TaskRealizationModelRef
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//CoordinationModuleMapping
+		public RuleCall getCoordinationModuleMappingParserRuleCall_0() { return cCoordinationModuleMappingParserRuleCall_0; }
+		
+		//TaskRealizationModelRef
+		public RuleCall getTaskRealizationModelRefParserRuleCall_1() { return cTaskRealizationModelRefParserRuleCall_1; }
 	}
 	public class ConnectionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.system.componentArchitecture.ComponentArchitecture.Connection");
@@ -285,12 +313,15 @@ public class ComponentArchitectureGrammarAccess extends AbstractGrammarElementFi
 		private final RuleCall cActivityConfigurationMappingParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cInputHandlerConfigurationMappingParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cOpcUaDeviceClientInstanceParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cOpcUaReadServerInstanceParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//ComponentInstanceExtension:
-		//	ParameterStructInstance | ActivityConfigurationMapping | InputHandlerConfigurationMapping | OpcUaDeviceClientInstance;
+		//	ParameterStructInstance | ActivityConfigurationMapping | InputHandlerConfigurationMapping | OpcUaDeviceClientInstance
+		//	| OpcUaReadServerInstance;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ParameterStructInstance | ActivityConfigurationMapping | InputHandlerConfigurationMapping | OpcUaDeviceClientInstance
+		//ParameterStructInstance | ActivityConfigurationMapping | InputHandlerConfigurationMapping | OpcUaDeviceClientInstance |
+		//OpcUaReadServerInstance
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ParameterStructInstance
@@ -304,6 +335,9 @@ public class ComponentArchitectureGrammarAccess extends AbstractGrammarElementFi
 		
 		//OpcUaDeviceClientInstance
 		public RuleCall getOpcUaDeviceClientInstanceParserRuleCall_3() { return cOpcUaDeviceClientInstanceParserRuleCall_3; }
+		
+		//OpcUaReadServerInstance
+		public RuleCall getOpcUaReadServerInstanceParserRuleCall_4() { return cOpcUaReadServerInstanceParserRuleCall_4; }
 	}
 	public class ParameterStructInstanceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.system.componentArchitecture.ComponentArchitecture.ParameterStructInstance");
@@ -477,6 +511,53 @@ public class ComponentArchitectureGrammarAccess extends AbstractGrammarElementFi
 		//';'?
 		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 	}
+	public class OpcUaReadServerInstanceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.system.componentArchitecture.ComponentArchitecture.OpcUaReadServerInstance");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOpcUaReadServerInstanceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cReadServerAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cReadServerOpcUaReadServerCrossReference_1_0 = (CrossReference)cReadServerAssignment_1.eContents().get(0);
+		private final RuleCall cReadServerOpcUaReadServerFQNParserRuleCall_1_0_1 = (RuleCall)cReadServerOpcUaReadServerCrossReference_1_0.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cPortNumberKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cPortNumberAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cPortNumberEIntParserRuleCall_2_1_0 = (RuleCall)cPortNumberAssignment_2_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//OpcUaReadServerInstance compArchSeronetExtension::OpcUaReadServerInstance:
+		//	'OpcUaReadServerInstance' readServer=[seronetExtension::OpcUaReadServer|FQN] ('portNumber' portNumber=EInt)? ';'?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'OpcUaReadServerInstance' readServer=[seronetExtension::OpcUaReadServer|FQN] ('portNumber' portNumber=EInt)? ';'?
+		public Group getGroup() { return cGroup; }
+		
+		//'OpcUaReadServerInstance'
+		public Keyword getOpcUaReadServerInstanceKeyword_0() { return cOpcUaReadServerInstanceKeyword_0; }
+		
+		//readServer=[seronetExtension::OpcUaReadServer|FQN]
+		public Assignment getReadServerAssignment_1() { return cReadServerAssignment_1; }
+		
+		//[seronetExtension::OpcUaReadServer|FQN]
+		public CrossReference getReadServerOpcUaReadServerCrossReference_1_0() { return cReadServerOpcUaReadServerCrossReference_1_0; }
+		
+		//FQN
+		public RuleCall getReadServerOpcUaReadServerFQNParserRuleCall_1_0_1() { return cReadServerOpcUaReadServerFQNParserRuleCall_1_0_1; }
+		
+		//('portNumber' portNumber=EInt)?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'portNumber'
+		public Keyword getPortNumberKeyword_2_0() { return cPortNumberKeyword_2_0; }
+		
+		//portNumber=EInt
+		public Assignment getPortNumberAssignment_2_1() { return cPortNumberAssignment_2_1; }
+		
+		//EInt
+		public RuleCall getPortNumberEIntParserRuleCall_2_1_0() { return cPortNumberEIntParserRuleCall_2_1_0; }
+		
+		//';'?
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+	}
 	public class ServiceInstanceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.system.componentArchitecture.ComponentArchitecture.ServiceInstance");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -558,9 +639,162 @@ public class ComponentArchitectureGrammarAccess extends AbstractGrammarElementFi
 		//';'?
 		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
+	public class CoordinationModuleMappingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.system.componentArchitecture.ComponentArchitecture.CoordinationModuleMapping");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCoordinationModuleMappingKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cModuleInstanceKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cCoordModuleInstAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cCoordModuleInstAbstractCoordinationModuleInstanceCrossReference_3_0 = (CrossReference)cCoordModuleInstAssignment_3.eContents().get(0);
+		private final RuleCall cCoordModuleInstAbstractCoordinationModuleInstanceFQNParserRuleCall_3_0_1 = (RuleCall)cCoordModuleInstAbstractCoordinationModuleInstanceCrossReference_3_0.eContents().get(1);
+		private final Keyword cRealizedbyKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cCoordModRealAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cCoordModRealCoordinationModuleRealizationCrossReference_5_0 = (CrossReference)cCoordModRealAssignment_5.eContents().get(0);
+		private final RuleCall cCoordModRealCoordinationModuleRealizationIDTerminalRuleCall_5_0_1 = (RuleCall)cCoordModRealCoordinationModuleRealizationCrossReference_5_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cCoordInterCompInstMappingAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cCoordInterCompInstMappingCoordinationInterfaceComponentInstanceMappingParserRuleCall_7_0 = (RuleCall)cCoordInterCompInstMappingAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		
+		//CoordinationModuleMapping compArchBehaviorExtension::CoordinationModuleMapping:
+		//	'CoordinationModuleMapping' '{'
+		//	'moduleInstance' coordModuleInst=[taskRealization::AbstractCoordinationModuleInstance|FQN] 'realizedby'
+		//	coordModReal=[skillRealization::CoordinationModuleRealization]
+		//	'{'
+		//	coordInterCompInstMapping+=CoordinationInterfaceComponentInstanceMapping+
+		//	'}'
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'CoordinationModuleMapping' '{' 'moduleInstance'
+		//coordModuleInst=[taskRealization::AbstractCoordinationModuleInstance|FQN] 'realizedby'
+		//coordModReal=[skillRealization::CoordinationModuleRealization] '{'
+		//coordInterCompInstMapping+=CoordinationInterfaceComponentInstanceMapping+ '}' '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'CoordinationModuleMapping'
+		public Keyword getCoordinationModuleMappingKeyword_0() { return cCoordinationModuleMappingKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'moduleInstance'
+		public Keyword getModuleInstanceKeyword_2() { return cModuleInstanceKeyword_2; }
+		
+		//coordModuleInst=[taskRealization::AbstractCoordinationModuleInstance|FQN]
+		public Assignment getCoordModuleInstAssignment_3() { return cCoordModuleInstAssignment_3; }
+		
+		//[taskRealization::AbstractCoordinationModuleInstance|FQN]
+		public CrossReference getCoordModuleInstAbstractCoordinationModuleInstanceCrossReference_3_0() { return cCoordModuleInstAbstractCoordinationModuleInstanceCrossReference_3_0; }
+		
+		//FQN
+		public RuleCall getCoordModuleInstAbstractCoordinationModuleInstanceFQNParserRuleCall_3_0_1() { return cCoordModuleInstAbstractCoordinationModuleInstanceFQNParserRuleCall_3_0_1; }
+		
+		//'realizedby'
+		public Keyword getRealizedbyKeyword_4() { return cRealizedbyKeyword_4; }
+		
+		//coordModReal=[skillRealization::CoordinationModuleRealization]
+		public Assignment getCoordModRealAssignment_5() { return cCoordModRealAssignment_5; }
+		
+		//[skillRealization::CoordinationModuleRealization]
+		public CrossReference getCoordModRealCoordinationModuleRealizationCrossReference_5_0() { return cCoordModRealCoordinationModuleRealizationCrossReference_5_0; }
+		
+		//ID
+		public RuleCall getCoordModRealCoordinationModuleRealizationIDTerminalRuleCall_5_0_1() { return cCoordModRealCoordinationModuleRealizationIDTerminalRuleCall_5_0_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
+		
+		//coordInterCompInstMapping+=CoordinationInterfaceComponentInstanceMapping+
+		public Assignment getCoordInterCompInstMappingAssignment_7() { return cCoordInterCompInstMappingAssignment_7; }
+		
+		//CoordinationInterfaceComponentInstanceMapping
+		public RuleCall getCoordInterCompInstMappingCoordinationInterfaceComponentInstanceMappingParserRuleCall_7_0() { return cCoordInterCompInstMappingCoordinationInterfaceComponentInstanceMappingParserRuleCall_7_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+	}
+	public class CoordinationInterfaceComponentInstanceMappingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.system.componentArchitecture.ComponentArchitecture.CoordinationInterfaceComponentInstanceMapping");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cInterfaceInstanceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cCoordInterInstAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cCoordInterInstCoordinationInterfaceInstanceCrossReference_1_0 = (CrossReference)cCoordInterInstAssignment_1.eContents().get(0);
+		private final RuleCall cCoordInterInstCoordinationInterfaceInstanceIDTerminalRuleCall_1_0_1 = (RuleCall)cCoordInterInstCoordinationInterfaceInstanceCrossReference_1_0.eContents().get(1);
+		private final Keyword cRealizedbyKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cCompInstAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cCompInstComponentInstanceCrossReference_3_0 = (CrossReference)cCompInstAssignment_3.eContents().get(0);
+		private final RuleCall cCompInstComponentInstanceIDTerminalRuleCall_3_0_1 = (RuleCall)cCompInstComponentInstanceCrossReference_3_0.eContents().get(1);
+		
+		//CoordinationInterfaceComponentInstanceMapping compArchBehaviorExtension::CoordinationInterfaceComponentInstanceMapping:
+		//	'interfaceInstance' coordInterInst=[skillRealization::CoordinationInterfaceInstance] 'realizedby'
+		//	compInst=[ComponentInstance];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'interfaceInstance' coordInterInst=[skillRealization::CoordinationInterfaceInstance] 'realizedby'
+		//compInst=[ComponentInstance]
+		public Group getGroup() { return cGroup; }
+		
+		//'interfaceInstance'
+		public Keyword getInterfaceInstanceKeyword_0() { return cInterfaceInstanceKeyword_0; }
+		
+		//coordInterInst=[skillRealization::CoordinationInterfaceInstance]
+		public Assignment getCoordInterInstAssignment_1() { return cCoordInterInstAssignment_1; }
+		
+		//[skillRealization::CoordinationInterfaceInstance]
+		public CrossReference getCoordInterInstCoordinationInterfaceInstanceCrossReference_1_0() { return cCoordInterInstCoordinationInterfaceInstanceCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getCoordInterInstCoordinationInterfaceInstanceIDTerminalRuleCall_1_0_1() { return cCoordInterInstCoordinationInterfaceInstanceIDTerminalRuleCall_1_0_1; }
+		
+		//'realizedby'
+		public Keyword getRealizedbyKeyword_2() { return cRealizedbyKeyword_2; }
+		
+		//compInst=[ComponentInstance]
+		public Assignment getCompInstAssignment_3() { return cCompInstAssignment_3; }
+		
+		//[ComponentInstance]
+		public CrossReference getCompInstComponentInstanceCrossReference_3_0() { return cCompInstComponentInstanceCrossReference_3_0; }
+		
+		//ID
+		public RuleCall getCompInstComponentInstanceIDTerminalRuleCall_3_0_1() { return cCompInstComponentInstanceIDTerminalRuleCall_3_0_1; }
+	}
+	public class TaskRealizationModelRefElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.system.componentArchitecture.ComponentArchitecture.TaskRealizationModelRef");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cBehaviorTaskRefKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTaskModelRefAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cTaskModelRefTaskRealizationModelCrossReference_1_0 = (CrossReference)cTaskModelRefAssignment_1.eContents().get(0);
+		private final RuleCall cTaskModelRefTaskRealizationModelFQNParserRuleCall_1_0_1 = (RuleCall)cTaskModelRefTaskRealizationModelCrossReference_1_0.eContents().get(1);
+		
+		//TaskRealizationModelRef compArchBehaviorExtension::TaskRealizationModelRef:
+		//	'BehaviorTaskRef' taskModelRef=[taskRealization::TaskRealizationModel|FQN];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'BehaviorTaskRef' taskModelRef=[taskRealization::TaskRealizationModel|FQN]
+		public Group getGroup() { return cGroup; }
+		
+		//'BehaviorTaskRef'
+		public Keyword getBehaviorTaskRefKeyword_0() { return cBehaviorTaskRefKeyword_0; }
+		
+		//taskModelRef=[taskRealization::TaskRealizationModel|FQN]
+		public Assignment getTaskModelRefAssignment_1() { return cTaskModelRefAssignment_1; }
+		
+		//[taskRealization::TaskRealizationModel|FQN]
+		public CrossReference getTaskModelRefTaskRealizationModelCrossReference_1_0() { return cTaskModelRefTaskRealizationModelCrossReference_1_0; }
+		
+		//FQN
+		public RuleCall getTaskModelRefTaskRealizationModelFQNParserRuleCall_1_0_1() { return cTaskModelRefTaskRealizationModelFQNParserRuleCall_1_0_1; }
+	}
 	
 	
 	private final SystemComponentArchitectureElements pSystemComponentArchitecture;
+	private final SystemExtensionElements pSystemExtension;
 	private final ConnectionElements pConnection;
 	private final ComponentInstanceElements pComponentInstance;
 	private final ComponentInstanceExtensionElements pComponentInstanceExtension;
@@ -568,9 +802,13 @@ public class ComponentArchitectureGrammarAccess extends AbstractGrammarElementFi
 	private final ActivityConfigurationMappingElements pActivityConfigurationMapping;
 	private final InputHandlerConfigurationMappingElements pInputHandlerConfigurationMapping;
 	private final OpcUaDeviceClientInstanceElements pOpcUaDeviceClientInstance;
+	private final OpcUaReadServerInstanceElements pOpcUaReadServerInstance;
 	private final ServiceInstanceElements pServiceInstance;
 	private final RequiredServiceElements pRequiredService;
 	private final ProvidedServiceElements pProvidedService;
+	private final CoordinationModuleMappingElements pCoordinationModuleMapping;
+	private final CoordinationInterfaceComponentInstanceMappingElements pCoordinationInterfaceComponentInstanceMapping;
+	private final TaskRealizationModelRefElements pTaskRealizationModelRef;
 	
 	private final Grammar grammar;
 	
@@ -586,6 +824,7 @@ public class ComponentArchitectureGrammarAccess extends AbstractGrammarElementFi
 		this.gaRoboticMiddleware = gaRoboticMiddleware;
 		this.gaTerminals = gaTerminals;
 		this.pSystemComponentArchitecture = new SystemComponentArchitectureElements();
+		this.pSystemExtension = new SystemExtensionElements();
 		this.pConnection = new ConnectionElements();
 		this.pComponentInstance = new ComponentInstanceElements();
 		this.pComponentInstanceExtension = new ComponentInstanceExtensionElements();
@@ -593,9 +832,13 @@ public class ComponentArchitectureGrammarAccess extends AbstractGrammarElementFi
 		this.pActivityConfigurationMapping = new ActivityConfigurationMappingElements();
 		this.pInputHandlerConfigurationMapping = new InputHandlerConfigurationMappingElements();
 		this.pOpcUaDeviceClientInstance = new OpcUaDeviceClientInstanceElements();
+		this.pOpcUaReadServerInstance = new OpcUaReadServerInstanceElements();
 		this.pServiceInstance = new ServiceInstanceElements();
 		this.pRequiredService = new RequiredServiceElements();
 		this.pProvidedService = new ProvidedServiceElements();
+		this.pCoordinationModuleMapping = new CoordinationModuleMappingElements();
+		this.pCoordinationInterfaceComponentInstanceMapping = new CoordinationInterfaceComponentInstanceMappingElements();
+		this.pTaskRealizationModelRef = new TaskRealizationModelRefElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -636,6 +879,7 @@ public class ComponentArchitectureGrammarAccess extends AbstractGrammarElementFi
 	//	'{'
 	//	components+=ComponentInstance*
 	//	connections+=Connection*
+	//	extensions+=SystemExtension*
 	//	'}';
 	public SystemComponentArchitectureElements getSystemComponentArchitectureAccess() {
 		return pSystemComponentArchitecture;
@@ -643,6 +887,16 @@ public class ComponentArchitectureGrammarAccess extends AbstractGrammarElementFi
 	
 	public ParserRule getSystemComponentArchitectureRule() {
 		return getSystemComponentArchitectureAccess().getRule();
+	}
+	
+	//SystemExtension:
+	//	CoordinationModuleMapping | TaskRealizationModelRef;
+	public SystemExtensionElements getSystemExtensionAccess() {
+		return pSystemExtension;
+	}
+	
+	public ParserRule getSystemExtensionRule() {
+		return getSystemExtensionAccess().getRule();
 	}
 	
 	//Connection:
@@ -671,7 +925,8 @@ public class ComponentArchitectureGrammarAccess extends AbstractGrammarElementFi
 	}
 	
 	//ComponentInstanceExtension:
-	//	ParameterStructInstance | ActivityConfigurationMapping | InputHandlerConfigurationMapping | OpcUaDeviceClientInstance;
+	//	ParameterStructInstance | ActivityConfigurationMapping | InputHandlerConfigurationMapping | OpcUaDeviceClientInstance
+	//	| OpcUaReadServerInstance;
 	public ComponentInstanceExtensionElements getComponentInstanceExtensionAccess() {
 		return pComponentInstanceExtension;
 	}
@@ -722,6 +977,16 @@ public class ComponentArchitectureGrammarAccess extends AbstractGrammarElementFi
 		return getOpcUaDeviceClientInstanceAccess().getRule();
 	}
 	
+	//OpcUaReadServerInstance compArchSeronetExtension::OpcUaReadServerInstance:
+	//	'OpcUaReadServerInstance' readServer=[seronetExtension::OpcUaReadServer|FQN] ('portNumber' portNumber=EInt)? ';'?;
+	public OpcUaReadServerInstanceElements getOpcUaReadServerInstanceAccess() {
+		return pOpcUaReadServerInstance;
+	}
+	
+	public ParserRule getOpcUaReadServerInstanceRule() {
+		return getOpcUaReadServerInstanceAccess().getRule();
+	}
+	
 	//ServiceInstance:
 	//	RequiredService | ProvidedService;
 	public ServiceInstanceElements getServiceInstanceAccess() {
@@ -750,6 +1015,43 @@ public class ComponentArchitectureGrammarAccess extends AbstractGrammarElementFi
 	
 	public ParserRule getProvidedServiceRule() {
 		return getProvidedServiceAccess().getRule();
+	}
+	
+	//CoordinationModuleMapping compArchBehaviorExtension::CoordinationModuleMapping:
+	//	'CoordinationModuleMapping' '{'
+	//	'moduleInstance' coordModuleInst=[taskRealization::AbstractCoordinationModuleInstance|FQN] 'realizedby'
+	//	coordModReal=[skillRealization::CoordinationModuleRealization]
+	//	'{'
+	//	coordInterCompInstMapping+=CoordinationInterfaceComponentInstanceMapping+
+	//	'}'
+	//	'}';
+	public CoordinationModuleMappingElements getCoordinationModuleMappingAccess() {
+		return pCoordinationModuleMapping;
+	}
+	
+	public ParserRule getCoordinationModuleMappingRule() {
+		return getCoordinationModuleMappingAccess().getRule();
+	}
+	
+	//CoordinationInterfaceComponentInstanceMapping compArchBehaviorExtension::CoordinationInterfaceComponentInstanceMapping:
+	//	'interfaceInstance' coordInterInst=[skillRealization::CoordinationInterfaceInstance] 'realizedby'
+	//	compInst=[ComponentInstance];
+	public CoordinationInterfaceComponentInstanceMappingElements getCoordinationInterfaceComponentInstanceMappingAccess() {
+		return pCoordinationInterfaceComponentInstanceMapping;
+	}
+	
+	public ParserRule getCoordinationInterfaceComponentInstanceMappingRule() {
+		return getCoordinationInterfaceComponentInstanceMappingAccess().getRule();
+	}
+	
+	//TaskRealizationModelRef compArchBehaviorExtension::TaskRealizationModelRef:
+	//	'BehaviorTaskRef' taskModelRef=[taskRealization::TaskRealizationModel|FQN];
+	public TaskRealizationModelRefElements getTaskRealizationModelRefAccess() {
+		return pTaskRealizationModelRef;
+	}
+	
+	public ParserRule getTaskRealizationModelRefRule() {
+		return getTaskRealizationModelRefAccess().getRule();
 	}
 	
 	//RoboticMiddleware:

@@ -16,7 +16,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.ecore.component.componentDefinition.impl.NamedComponentElementImpl;
+
 import org.ecore.component.coordinationExtension.AbstractCoordinationElement;
 import org.ecore.component.coordinationExtension.CoordinationExtensionPackage;
 import org.ecore.component.coordinationExtension.CoordinationSlavePort;

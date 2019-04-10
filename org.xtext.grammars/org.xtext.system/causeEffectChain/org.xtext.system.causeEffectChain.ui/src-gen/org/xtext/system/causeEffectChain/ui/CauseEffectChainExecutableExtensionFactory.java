@@ -45,6 +45,7 @@
 package org.xtext.system.causeEffectChain.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.system.causeEffectChain.ui.internal.CauseEffectChainActivator;
@@ -57,12 +58,13 @@ public class CauseEffectChainExecutableExtensionFactory extends AbstractGuiceAwa
 
 	@Override
 	protected Bundle getBundle() {
-		return CauseEffectChainActivator.getInstance().getBundle();
+		return Platform.getBundle(CauseEffectChainActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return CauseEffectChainActivator.getInstance().getInjector(CauseEffectChainActivator.ORG_XTEXT_SYSTEM_CAUSEEFFECTCHAIN_CAUSEEFFECTCHAIN);
+		CauseEffectChainActivator activator = CauseEffectChainActivator.getInstance();
+		return activator != null ? activator.getInjector(CauseEffectChainActivator.ORG_XTEXT_SYSTEM_CAUSEEFFECTCHAIN_CAUSEEFFECTCHAIN) : null;
 	}
-	
+
 }

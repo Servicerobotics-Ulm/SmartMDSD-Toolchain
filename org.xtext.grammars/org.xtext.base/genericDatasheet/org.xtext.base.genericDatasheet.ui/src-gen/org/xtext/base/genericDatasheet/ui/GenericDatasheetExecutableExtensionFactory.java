@@ -45,6 +45,7 @@
 package org.xtext.base.genericDatasheet.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.base.genericDatasheet.ui.internal.GenericDatasheetActivator;
@@ -57,12 +58,13 @@ public class GenericDatasheetExecutableExtensionFactory extends AbstractGuiceAwa
 
 	@Override
 	protected Bundle getBundle() {
-		return GenericDatasheetActivator.getInstance().getBundle();
+		return Platform.getBundle(GenericDatasheetActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return GenericDatasheetActivator.getInstance().getInjector(GenericDatasheetActivator.ORG_XTEXT_BASE_GENERICDATASHEET_GENERICDATASHEET);
+		GenericDatasheetActivator activator = GenericDatasheetActivator.getInstance();
+		return activator != null ? activator.getInjector(GenericDatasheetActivator.ORG_XTEXT_BASE_GENERICDATASHEET_GENERICDATASHEET) : null;
 	}
-	
+
 }

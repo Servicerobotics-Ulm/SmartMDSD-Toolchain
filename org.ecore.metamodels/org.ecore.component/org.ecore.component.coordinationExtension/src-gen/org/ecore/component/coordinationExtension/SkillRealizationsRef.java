@@ -2,7 +2,7 @@
  */
 package org.ecore.component.coordinationExtension;
 
-import org.ecore.behavior.skillRealization.SkillRealizationSet;
+import org.ecore.behavior.skillRealization.CoordinationModuleRealization;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +13,7 @@ import org.ecore.behavior.skillRealization.SkillRealizationSet;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.ecore.component.coordinationExtension.SkillRealizationsRef#getSkillRealizationSetRef <em>Skill Realization Set Ref</em>}</li>
+ *   <li>{@link org.ecore.component.coordinationExtension.SkillRealizationsRef#getSkillRealizationCoordModuleRef <em>Skill Realization Coord Module Ref</em>}</li>
  * </ul>
  *
  * @see org.ecore.component.coordinationExtension.CoordinationExtensionPackage#getSkillRealizationsRef()
@@ -22,29 +22,29 @@ import org.ecore.behavior.skillRealization.SkillRealizationSet;
  */
 public interface SkillRealizationsRef extends AbstractCoordinationElement {
 	/**
-	 * Returns the value of the '<em><b>Skill Realization Set Ref</b></em>' reference.
+	 * Returns the value of the '<em><b>Skill Realization Coord Module Ref</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Skill Realization Set Ref</em>' reference isn't clear,
+	 * If the meaning of the '<em>Skill Realization Coord Module Ref</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Skill Realization Set Ref</em>' reference.
-	 * @see #setSkillRealizationSetRef(SkillRealizationSet)
-	 * @see org.ecore.component.coordinationExtension.CoordinationExtensionPackage#getSkillRealizationsRef_SkillRealizationSetRef()
+	 * @return the value of the '<em>Skill Realization Coord Module Ref</em>' reference.
+	 * @see #setSkillRealizationCoordModuleRef(CoordinationModuleRealization)
+	 * @see org.ecore.component.coordinationExtension.CoordinationExtensionPackage#getSkillRealizationsRef_SkillRealizationCoordModuleRef()
 	 * @model required="true"
 	 * @generated
 	 */
-	SkillRealizationSet getSkillRealizationSetRef();
+	CoordinationModuleRealization getSkillRealizationCoordModuleRef();
 
 	/**
-	 * Sets the value of the '{@link org.ecore.component.coordinationExtension.SkillRealizationsRef#getSkillRealizationSetRef <em>Skill Realization Set Ref</em>}' reference.
+	 * Sets the value of the '{@link org.ecore.component.coordinationExtension.SkillRealizationsRef#getSkillRealizationCoordModuleRef <em>Skill Realization Coord Module Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Skill Realization Set Ref</em>' reference.
-	 * @see #getSkillRealizationSetRef()
+	 * @param value the new value of the '<em>Skill Realization Coord Module Ref</em>' reference.
+	 * @see #getSkillRealizationCoordModuleRef()
 	 * @generated
 	 */
-	void setSkillRealizationSetRef(SkillRealizationSet value);
+	void setSkillRealizationCoordModuleRef(CoordinationModuleRealization value);
 
 } // SkillRealizationsRef

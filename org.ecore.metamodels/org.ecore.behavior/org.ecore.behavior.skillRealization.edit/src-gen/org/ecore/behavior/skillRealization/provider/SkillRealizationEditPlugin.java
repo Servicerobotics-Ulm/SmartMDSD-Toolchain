@@ -8,6 +8,20 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.ecore.base.basicAttributes.provider.BasicAttributesEditPlugin;
 
+import org.ecore.base.stateMachine.provider.StateMachineEditPlugin;
+
+import org.ecore.service.communicationObject.provider.CommunicationObjectEditPlugin;
+
+import org.ecore.service.communicationPattern.provider.CommunicationPatternEditPlugin;
+
+import org.ecore.service.componentMode.provider.ComponentModeEditPlugin;
+
+import org.ecore.service.coordinationPattern.provider.CoordinationPatternEditPlugin;
+
+import org.ecore.service.parameterDefinition.provider.ParameterDefinitionEditPlugin;
+
+import org.ecore.service.serviceDefinition.provider.ServiceDefinitionEditPlugin;
+
 import org.ecore.service.skillDefinition.provider.SkillDefinitionEditPlugin;
 
 /**
@@ -40,7 +54,11 @@ public final class SkillRealizationEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public SkillRealizationEditPlugin() {
-		super(new ResourceLocator[] { BasicAttributesEditPlugin.INSTANCE, SkillDefinitionEditPlugin.INSTANCE, });
+		super(new ResourceLocator[] { BasicAttributesEditPlugin.INSTANCE, CommunicationObjectEditPlugin.INSTANCE,
+				CommunicationPatternEditPlugin.INSTANCE, ComponentModeEditPlugin.INSTANCE,
+				CoordinationPatternEditPlugin.INSTANCE, ParameterDefinitionEditPlugin.INSTANCE,
+				ServiceDefinitionEditPlugin.INSTANCE, SkillDefinitionEditPlugin.INSTANCE,
+				StateMachineEditPlugin.INSTANCE, });
 	}
 
 	/**

@@ -11,7 +11,7 @@ Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.ecore.base.stateMachine;visibility:=reexport,
  org.ecore.service.componentMode;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Bundle-Vendor: Servicerobotics Ulm
+Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.ecore.service.coordinationPattern,

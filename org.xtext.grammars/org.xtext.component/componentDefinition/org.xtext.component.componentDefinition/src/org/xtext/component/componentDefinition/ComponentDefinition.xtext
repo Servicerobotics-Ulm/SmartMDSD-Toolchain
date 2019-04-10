@@ -255,7 +255,7 @@ AbstractCoordinationElement returns coordination::AbstractCoordinationElement:
 ;
 
 SkillRealizationsRef returns coordination::SkillRealizationsRef: 
-	'SkillRealizationsRef' skillRealizationSetRef=[skillRealization::SkillRealizationSet|FQN] (';')?
+	'SkillRealizationsRef' skillRealizationCoordModuleRef=[skillRealization::CoordinationModuleRealization|FQN] (';')?
 ;
 
 CommunicationServiceUsageRealization returns coordination::CommunicationServiceUsageRealization: 

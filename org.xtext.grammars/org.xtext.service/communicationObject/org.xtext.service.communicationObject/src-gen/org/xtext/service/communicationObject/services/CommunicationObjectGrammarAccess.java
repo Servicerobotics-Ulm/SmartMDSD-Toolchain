@@ -375,7 +375,8 @@ public class CommunicationObjectGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cCommElementReferenceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cAbstractAttributeTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//@ Override AbstractAttributeType attr::AbstractAttributeType:
+		//@Override
+		//AbstractAttributeType attr::AbstractAttributeType:
 		//	CommElementReference | super;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -431,7 +432,8 @@ public class CommunicationObjectGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cRightParenthesisKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
 		private final RuleCall cSingleValueParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//@ Override SingleValue attr::SingleValue:
+		//@Override
+		//SingleValue attr::SingleValue:
 		//	{comm::CommElementValue} value=[comm::AbstractCommElement|FQN] '(' ')' // TODO: further constructor types could be defined in the future
 		//	| super;
 		@Override public ParserRule getRule() { return rule; }
@@ -624,7 +626,8 @@ public class CommunicationObjectGrammarAccess extends AbstractGrammarElementFind
 		return getEnumerationAccess().getRule();
 	}
 	
-	//@ Override AbstractAttributeType attr::AbstractAttributeType:
+	//@Override
+	//AbstractAttributeType attr::AbstractAttributeType:
 	//	CommElementReference | super;
 	public AbstractAttributeTypeElements getAbstractAttributeTypeAccess() {
 		return pAbstractAttributeType;
@@ -644,7 +647,8 @@ public class CommunicationObjectGrammarAccess extends AbstractGrammarElementFind
 		return getCommElementReferenceAccess().getRule();
 	}
 	
-	//@ Override SingleValue attr::SingleValue:
+	//@Override
+	//SingleValue attr::SingleValue:
 	//	{comm::CommElementValue} value=[comm::AbstractCommElement|FQN] '(' ')' // TODO: further constructor types could be defined in the future
 	//	| super;
 	public SingleValueElements getSingleValueAccess() {

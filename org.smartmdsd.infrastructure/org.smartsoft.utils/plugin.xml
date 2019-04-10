@@ -77,6 +77,11 @@
                   id="org.smartsoft.utils.toolbar.cmake"
                   style="push"
                   tooltip="Execute CMake Command">
+               <visibleWhen checkEnabled="false">
+                  <with variable="activeWorkbenchWindow.activePerspective">
+                     <equals value="org.eclipse.sirius.ui.tools.perspective.modeling"/>
+                  </with>
+               </visibleWhen>
             </command>
             <command
                   commandId="org.smartsoft.utils.make.all"
@@ -84,6 +89,11 @@
                   id="org.smartsoft.utils.toolbar.make.all"
                   style="push"
                   tooltip="Execute Make All Command">
+               <visibleWhen checkEnabled="false">
+                  <with variable="activeWorkbenchWindow.activePerspective">
+                     <equals value="org.eclipse.sirius.ui.tools.perspective.modeling"/>
+                  </with>
+               </visibleWhen>
             </command>
             <command
                   commandId="org.smartsoft.utils.make.clean"
@@ -91,6 +101,11 @@
                   id="org.smartsoft.utils.toolbar.make.clean"
                   style="push"
                   tooltip="Execute Make Distclean Command">
+               <visibleWhen checkEnabled="false">
+                  <with variable="activeWorkbenchWindow.activePerspective">
+                     <equals value="org.eclipse.sirius.ui.tools.perspective.modeling"/>
+                  </with>
+               </visibleWhen>
             </command>
             <command
                   commandId="org.smartsoft.utils.deploy"
@@ -98,12 +113,11 @@
                   id="org.smartsoft.utils.toolbar.deploy"
                   style="push"
                   tooltip="Deploy System to specified Robot Platform">
-            </command>
-            <command
-                  commandId="org.smartsoft.utils.autocodegen"
-                  icon="icons/tools2.png"
-                  id="org.smartsoft.utils.toolbar.autocodegen"
-                  style="toggle">
+               <visibleWhen checkEnabled="false">
+                  <with variable="activeWorkbenchWindow.activePerspective">
+                     <equals value="org.eclipse.sirius.ui.tools.perspective.modeling"/>
+                  </with>
+               </visibleWhen>
             </command>
          </toolbar>
       </menuContribution>
@@ -113,6 +127,11 @@
          <menu
                icon="icons/tools.png"
                label="SmartMDSD">
+               <visibleWhen checkEnabled="false">
+                  <with variable="activeWorkbenchWindow.activePerspective">
+                     <equals value="org.eclipse.sirius.ui.tools.perspective.modeling"/>
+                  </with>
+               </visibleWhen>
             <command
                   commandId="org.smartsoft.utils.cmake"
                   icon="icons/cmake_logo.png"
@@ -136,18 +155,10 @@
             </command>
             <command
                   commandId="org.smartsoft.utils.deploy"
-                  helpContextId="Deploy System to specified Robot Platform"
                   icon="icons/robot.png"
                   id="org.smartsoft.utils.menu.deploy"
-                  style="push">
-            </command>
-            <command
-                  commandId="org.smartsoft.utils.autocodegen"
-                  helpContextId="Activate automated code-generation"
-                  icon="icons/tools2.png"
-                  id="org.smartsoft.utils.menu.autocodegen"
-                  label="Auto Code Generation"
-                  style="toggle">
+                  style="push"
+                  tooltip="Deploy System to specified Robot Platform">
             </command>
          </menu>
       </menuContribution>
@@ -159,15 +170,19 @@
                label="SmartMDSD Build Tools">
             <visibleWhen
                   checkEnabled="false">
-               <with
-                     variable="selection">
-                  <iterate
-                        ifEmpty="false">
-                     <instanceof
+               <and>
+                  <with variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
                            value="org.eclipse.core.resources.IProject">
-                     </instanceof>
-                  </iterate>
-               </with>
+                        </instanceof>
+                     </iterate>
+                  </with>
+                  <with variable="activeWorkbenchWindow.activePerspective">
+                     <equals value="org.eclipse.sirius.ui.tools.perspective.modeling"/>
+                  </with>
+               </and>
             </visibleWhen>
             <command
                   commandId="org.smartsoft.utils.cmake"

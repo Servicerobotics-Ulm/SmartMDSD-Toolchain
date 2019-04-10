@@ -45,6 +45,7 @@
 package org.xtext.service.roboticMiddleware.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.service.roboticMiddleware.ui.internal.RoboticMiddlewareActivator;
@@ -57,12 +58,13 @@ public class RoboticMiddlewareExecutableExtensionFactory extends AbstractGuiceAw
 
 	@Override
 	protected Bundle getBundle() {
-		return RoboticMiddlewareActivator.getInstance().getBundle();
+		return Platform.getBundle(RoboticMiddlewareActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return RoboticMiddlewareActivator.getInstance().getInjector(RoboticMiddlewareActivator.ORG_XTEXT_SERVICE_ROBOTICMIDDLEWARE_ROBOTICMIDDLEWARE);
+		RoboticMiddlewareActivator activator = RoboticMiddlewareActivator.getInstance();
+		return activator != null ? activator.getInjector(RoboticMiddlewareActivator.ORG_XTEXT_SERVICE_ROBOTICMIDDLEWARE_ROBOTICMIDDLEWARE) : null;
 	}
-	
+
 }

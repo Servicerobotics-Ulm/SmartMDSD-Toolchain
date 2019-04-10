@@ -589,7 +589,7 @@ class SmartComponentParameter {
 			
 			// define your own getter methods here
 			// (to provide conversion functions and/or more convenient getter methods)
-			// these own getter methods will be accessible through "COMP->getGlobalState().yourOwnMethod()"
+			// these own getter methods will be accessible through "COMP->getParameters().yourOwnMethod()"
 			// inside of your methods use the getter methods from the parent class ParameterStateStructCore
 			// (they provide parameter values from the global state only, which are available after the last commit)
 		};

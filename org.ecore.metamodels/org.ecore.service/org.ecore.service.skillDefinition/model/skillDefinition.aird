@@ -917,7 +917,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_wQQCdjmBEeiTLa70sa5wbg"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_wQQCcTmBEeiTLa70sa5wbg" fontName="Ubuntu" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wQQCcjmBEeiTLa70sa5wbg" x="336" y="144" width="171" height="63"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wQQCcjmBEeiTLa70sa5wbg" x="336" y="144" width="195" height="63"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_EqG3gDmCEeiTLa70sa5wbg" type="2003" element="_Ep74YDmCEeiTLa70sa5wbg">
           <children xmi:type="notation:Node" xmi:id="_EqG3gzmCEeiTLa70sa5wbg" type="5007"/>
@@ -1005,7 +1005,7 @@
           <styles xmi:type="notation:FontStyle" xmi:id="_-iTy0jmBEeiTLa70sa5wbg" fontColor="7490599" fontName="Ubuntu" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-iTy0zmBEeiTLa70sa5wbg" points="[2, 0, 2, -47]$[2, 47, 2, 0]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-iTy2jmBEeiTLa70sa5wbg" id="(0.7692307692307693,1.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-iTy2zmBEeiTLa70sa5wbg" id="(0.7692307692307693,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-iTy2zmBEeiTLa70sa5wbg" id="(0.6735751295336787,0.0)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_JCNgMDmCEeiTLa70sa5wbg" type="4001" element="_JCJ10DmCEeiTLa70sa5wbg" source="_wQQCcDmBEeiTLa70sa5wbg" target="_EqG3gDmCEeiTLa70sa5wbg">
           <children xmi:type="notation:Node" xmi:id="_JCNgNDmCEeiTLa70sa5wbg" type="6001">
@@ -1020,7 +1020,7 @@
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_JCNgMTmCEeiTLa70sa5wbg" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_JCNgMjmCEeiTLa70sa5wbg" fontColor="7490599" fontName="Ubuntu" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JCNgMzmCEeiTLa70sa5wbg" points="[14, 0, 14, -47]$[14, 47, 14, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JCNgOjmCEeiTLa70sa5wbg" id="(0.6982248520710059,1.0)"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JCNgOjmCEeiTLa70sa5wbg" id="(0.6113989637305699,1.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JCNgOzmCEeiTLa70sa5wbg" id="(0.6982248520710059,0.0)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_LEyOYDmiEeiTLa70sa5wbg" type="4001" element="_LEtV4DmiEeiTLa70sa5wbg" source="_EqG3gDmCEeiTLa70sa5wbg" target="_RbHQkDmdEeiTLa70sa5wbg">
@@ -1086,9 +1086,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_wQLxADmBEeiTLa70sa5wbg" name="SkillDefinitionSet" tooltipText="" outgoingEdges="_JCJ10DmCEeiTLa70sa5wbg" incomingEdges="_-iPhYDmBEeiTLa70sa5wbg" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="skillDefinition.ecore#//SkillDefinitionSet"/>
-      <semanticElements xmi:type="ecore:EClass" href="skillDefinition.ecore#//SkillDefinitionSet"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_wQLxADmBEeiTLa70sa5wbg" name="CoordinationModuleDefinition" tooltipText="" outgoingEdges="_JCJ10DmCEeiTLa70sa5wbg" incomingEdges="_-iPhYDmBEeiTLa70sa5wbg" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="skillDefinition.ecore#//CoordinationModuleDefinition"/>
+      <semanticElements xmi:type="ecore:EClass" href="skillDefinition.ecore#//CoordinationModuleDefinition"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1097,17 +1097,17 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_8Omq0DmBEeiTLa70sa5wbg" name="name : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="skillDefinition.ecore#//SkillDefinitionSet/name"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="skillDefinition.ecore#//SkillDefinitionSet/name"/>
+        <target xmi:type="ecore:EAttribute" href="skillDefinition.ecore#//CoordinationModuleDefinition/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="skillDefinition.ecore#//CoordinationModuleDefinition/name"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_9Zd7cDmBEeiTLa70sa5wbg" labelAlignment="LEFT" description="_e1EacDmAEeiTLa70sa5wbg">
           <labelFormat>bold</labelFormat>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_-iPhYDmBEeiTLa70sa5wbg" name="[0..*] sets" sourceNode="_UjIQkDmAEeiTLa70sa5wbg" targetNode="_wQLxADmBEeiTLa70sa5wbg">
-      <target xmi:type="ecore:EReference" href="skillDefinition.ecore#//SkillDefinitionRepository/sets"/>
-      <semanticElements xmi:type="ecore:EReference" href="skillDefinition.ecore#//SkillDefinitionRepository/sets"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_-iPhYDmBEeiTLa70sa5wbg" name="[0..*] modules" sourceNode="_UjIQkDmAEeiTLa70sa5wbg" targetNode="_wQLxADmBEeiTLa70sa5wbg">
+      <target xmi:type="ecore:EReference" href="skillDefinition.ecore#//SkillDefinitionRepository/modules"/>
+      <semanticElements xmi:type="ecore:EReference" href="skillDefinition.ecore#//SkillDefinitionRepository/modules"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_-iQIcDmBEeiTLa70sa5wbg" description="_h95MkDmAEeiTLa70sa5wbg" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_-iQIcTmBEeiTLa70sa5wbg" showIcon="false">
           <customFeatures>labelSize</customFeatures>
@@ -1154,8 +1154,8 @@
       </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_JCJ10DmCEeiTLa70sa5wbg" name="[0..*] skills" sourceNode="_wQLxADmBEeiTLa70sa5wbg" targetNode="_Ep74YDmCEeiTLa70sa5wbg">
-      <target xmi:type="ecore:EReference" href="skillDefinition.ecore#//SkillDefinitionSet/skills"/>
-      <semanticElements xmi:type="ecore:EReference" href="skillDefinition.ecore#//SkillDefinitionSet/skills"/>
+      <target xmi:type="ecore:EReference" href="skillDefinition.ecore#//CoordinationModuleDefinition/skills"/>
+      <semanticElements xmi:type="ecore:EReference" href="skillDefinition.ecore#//CoordinationModuleDefinition/skills"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_JCJ10TmCEeiTLa70sa5wbg" description="_h95MkDmAEeiTLa70sa5wbg" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_JCJ10jmCEeiTLa70sa5wbg" showIcon="false">
           <customFeatures>labelSize</customFeatures>

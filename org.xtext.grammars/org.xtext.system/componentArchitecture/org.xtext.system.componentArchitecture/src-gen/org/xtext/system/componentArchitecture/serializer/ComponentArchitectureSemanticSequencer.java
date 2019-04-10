@@ -59,8 +59,13 @@ import org.ecore.service.roboticMiddleware.CORBA_SmartSoft;
 import org.ecore.service.roboticMiddleware.DDS_SmartSoft;
 import org.ecore.service.roboticMiddleware.OpcUa_SeRoNet;
 import org.ecore.service.roboticMiddleware.RoboticMiddlewarePackage;
+import org.ecore.system.compArchBehaviorExtension.CompArchBehaviorExtensionPackage;
+import org.ecore.system.compArchBehaviorExtension.CoordinationInterfaceComponentInstanceMapping;
+import org.ecore.system.compArchBehaviorExtension.CoordinationModuleMapping;
+import org.ecore.system.compArchBehaviorExtension.TaskRealizationModelRef;
 import org.ecore.system.compArchSeronetExtension.CompArchSeronetExtensionPackage;
 import org.ecore.system.compArchSeronetExtension.OpcUaDeviceClientInstance;
+import org.ecore.system.compArchSeronetExtension.OpcUaReadServerInstance;
 import org.ecore.system.componentArchitecture.ActivityConfigurationMapping;
 import org.ecore.system.componentArchitecture.ComponentArchitecturePackage;
 import org.ecore.system.componentArchitecture.ComponentInstance;
@@ -86,10 +91,25 @@ public class ComponentArchitectureSemanticSequencer extends RoboticMiddlewareSem
 		ParserRule rule = context.getParserRule();
 		Action action = context.getAssignedAction();
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
-		if (epackage == CompArchSeronetExtensionPackage.eINSTANCE)
+		if (epackage == CompArchBehaviorExtensionPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case CompArchBehaviorExtensionPackage.COORDINATION_INTERFACE_COMPONENT_INSTANCE_MAPPING:
+				sequence_CoordinationInterfaceComponentInstanceMapping(context, (CoordinationInterfaceComponentInstanceMapping) semanticObject); 
+				return; 
+			case CompArchBehaviorExtensionPackage.COORDINATION_MODULE_MAPPING:
+				sequence_CoordinationModuleMapping(context, (CoordinationModuleMapping) semanticObject); 
+				return; 
+			case CompArchBehaviorExtensionPackage.TASK_REALIZATION_MODEL_REF:
+				sequence_TaskRealizationModelRef(context, (TaskRealizationModelRef) semanticObject); 
+				return; 
+			}
+		else if (epackage == CompArchSeronetExtensionPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case CompArchSeronetExtensionPackage.OPC_UA_DEVICE_CLIENT_INSTANCE:
 				sequence_OpcUaDeviceClientInstance(context, (OpcUaDeviceClientInstance) semanticObject); 
+				return; 
+			case CompArchSeronetExtensionPackage.OPC_UA_READ_SERVER_INSTANCE:
+				sequence_OpcUaReadServerInstance(context, (OpcUaReadServerInstance) semanticObject); 
 				return; 
 			}
 		else if (epackage == ComponentArchitecturePackage.eINSTANCE)
@@ -189,6 +209,44 @@ public class ComponentArchitectureSemanticSequencer extends RoboticMiddlewareSem
 	
 	/**
 	 * Contexts:
+	 *     CoordinationInterfaceComponentInstanceMapping returns CoordinationInterfaceComponentInstanceMapping
+	 *
+	 * Constraint:
+	 *     (coordInterInst=[CoordinationInterfaceInstance|ID] compInst=[ComponentInstance|ID])
+	 */
+	protected void sequence_CoordinationInterfaceComponentInstanceMapping(ISerializationContext context, CoordinationInterfaceComponentInstanceMapping semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CompArchBehaviorExtensionPackage.Literals.COORDINATION_INTERFACE_COMPONENT_INSTANCE_MAPPING__COORD_INTER_INST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompArchBehaviorExtensionPackage.Literals.COORDINATION_INTERFACE_COMPONENT_INSTANCE_MAPPING__COORD_INTER_INST));
+			if (transientValues.isValueTransient(semanticObject, CompArchBehaviorExtensionPackage.Literals.COORDINATION_INTERFACE_COMPONENT_INSTANCE_MAPPING__COMP_INST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompArchBehaviorExtensionPackage.Literals.COORDINATION_INTERFACE_COMPONENT_INSTANCE_MAPPING__COMP_INST));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCoordinationInterfaceComponentInstanceMappingAccess().getCoordInterInstCoordinationInterfaceInstanceIDTerminalRuleCall_1_0_1(), semanticObject.eGet(CompArchBehaviorExtensionPackage.Literals.COORDINATION_INTERFACE_COMPONENT_INSTANCE_MAPPING__COORD_INTER_INST, false));
+		feeder.accept(grammarAccess.getCoordinationInterfaceComponentInstanceMappingAccess().getCompInstComponentInstanceIDTerminalRuleCall_3_0_1(), semanticObject.eGet(CompArchBehaviorExtensionPackage.Literals.COORDINATION_INTERFACE_COMPONENT_INSTANCE_MAPPING__COMP_INST, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SystemExtension returns CoordinationModuleMapping
+	 *     CoordinationModuleMapping returns CoordinationModuleMapping
+	 *
+	 * Constraint:
+	 *     (
+	 *         coordModuleInst=[AbstractCoordinationModuleInstance|FQN] 
+	 *         coordModReal=[CoordinationModuleRealization|ID] 
+	 *         coordInterCompInstMapping+=CoordinationInterfaceComponentInstanceMapping+
+	 *     )
+	 */
+	protected void sequence_CoordinationModuleMapping(ISerializationContext context, CoordinationModuleMapping semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ComponentInstanceExtension returns InputHandlerConfigurationMapping
 	 *     InputHandlerConfigurationMapping returns InputHandlerConfigurationMapping
 	 *
@@ -228,6 +286,19 @@ public class ComponentArchitectureSemanticSequencer extends RoboticMiddlewareSem
 		feeder.accept(grammarAccess.getOpcUaDeviceClientInstanceAccess().getDeviceClientOpcUaDeviceClientFQNParserRuleCall_1_0_1(), semanticObject.eGet(CompArchSeronetExtensionPackage.Literals.OPC_UA_DEVICE_CLIENT_INSTANCE__DEVICE_CLIENT, false));
 		feeder.accept(grammarAccess.getOpcUaDeviceClientInstanceAccess().getDeviceURIEStringParserRuleCall_3_0(), semanticObject.getDeviceURI());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ComponentInstanceExtension returns OpcUaReadServerInstance
+	 *     OpcUaReadServerInstance returns OpcUaReadServerInstance
+	 *
+	 * Constraint:
+	 *     (readServer=[OpcUaReadServer|FQN] portNumber=EInt?)
+	 */
+	protected void sequence_OpcUaReadServerInstance(ISerializationContext context, OpcUaReadServerInstance semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -293,10 +364,29 @@ public class ComponentArchitectureSemanticSequencer extends RoboticMiddlewareSem
 	 *     SystemComponentArchitecture returns SystemComponentArchitecture
 	 *
 	 * Constraint:
-	 *     (name=ID activityArch=[ActivityArchitectureModel|FQN]? components+=ComponentInstance* connections+=Connection*)
+	 *     (name=ID activityArch=[ActivityArchitectureModel|FQN]? components+=ComponentInstance* connections+=Connection* extensions+=SystemExtension*)
 	 */
 	protected void sequence_SystemComponentArchitecture(ISerializationContext context, SystemComponentArchitecture semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SystemExtension returns TaskRealizationModelRef
+	 *     TaskRealizationModelRef returns TaskRealizationModelRef
+	 *
+	 * Constraint:
+	 *     taskModelRef=[TaskRealizationModel|FQN]
+	 */
+	protected void sequence_TaskRealizationModelRef(ISerializationContext context, TaskRealizationModelRef semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CompArchBehaviorExtensionPackage.Literals.TASK_REALIZATION_MODEL_REF__TASK_MODEL_REF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CompArchBehaviorExtensionPackage.Literals.TASK_REALIZATION_MODEL_REF__TASK_MODEL_REF));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTaskRealizationModelRefAccess().getTaskModelRefTaskRealizationModelFQNParserRuleCall_1_0_1(), semanticObject.eGet(CompArchBehaviorExtensionPackage.Literals.TASK_REALIZATION_MODEL_REF__TASK_MODEL_REF, false));
+		feeder.finish();
 	}
 	
 	

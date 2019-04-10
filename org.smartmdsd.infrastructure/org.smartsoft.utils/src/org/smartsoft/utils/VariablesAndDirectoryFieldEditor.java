@@ -43,6 +43,13 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 
+/**
+ * SWT-based implementation of a directory-selection field (and open-directory button)
+ * for an Eclipse Preferences page elements.
+ * 
+ * @author alex-lotz
+ *
+ */
 public class VariablesAndDirectoryFieldEditor extends DirectoryFieldEditor {
     /**
      * The variables button, or <code>null</code> if none

@@ -60,6 +60,15 @@ import org.ecore.system.activityArchitecture.ActivityNode
 import org.ecore.component.componentDefinition.InputHandler
 import org.ecore.system.activityArchitecture.InputHandlerNode
 import org.ecore.component.seronetExtension.OpcUaReadServer
+import org.ecore.system.compArchBehaviorExtension.CompArchBehaviorExtensionPackage
+import org.ecore.system.compArchBehaviorExtension.CoordinationModuleMapping
+import org.ecore.component.coordinationExtension.CoordinationSlavePort
+import org.ecore.component.coordinationExtension.SkillRealizationsRef
+import org.ecore.service.skillDefinition.CoordinationModuleDefinition
+import java.util.List
+import org.ecore.system.compArchBehaviorExtension.CoordinationInterfaceComponentInstanceMapping
+import org.ecore.service.serviceDefinition.CoordinationServiceDefinition
+import org.ecore.behavior.skillRealization.CoordinationModuleRealization
 
 /**
  * This class contains custom scoping description.
@@ -68,6 +77,66 @@ import org.ecore.component.seronetExtension.OpcUaReadServer
  * on how and when to use it.
  */
 class ComponentArchitectureScopeProvider extends AbstractComponentArchitectureScopeProvider {
+	
+	def static Iterable<ComponentInstance> getAllMatchingComponentInstances(SystemComponentArchitecture sysArch,
+		CoordinationServiceDefinition coordInterDef) {
+		var List<ComponentInstance> result = newArrayList()
+
+		for (compInst : sysArch.components) {
+			var compCoordinationSlavePorts = compInst.component.elements.filter(typeof(CoordinationSlavePort))
+
+			if (compCoordinationSlavePorts !== null) {
+
+				// only a single coordinationSlavePort is allowed for a component
+				for (compCoordinationSlavePort : compCoordinationSlavePorts) {
+					
+					var coordInterDef2 = compCoordinationSlavePort.service 
+					if (coordInterDef == coordInterDef2)
+					{
+						result.add(compInst);
+					}
+
+//					// get all skillRealizationsRefs
+//					var skillRealizationsRefs = compCoordinationSlavePort.elements.filter(typeof(SkillRealizationsRef))
+//					for (skillRealizationsRef : skillRealizationsRefs) {
+//						var coordModuleDef2 = skillRealizationsRef.skillRealizationCoordModuleRef.coordinationModuleDef
+//						if (coordModDef == coordModuleDef2) {
+//							result.add(compInst);
+//						}
+//					}
+				}
+			}
+		}
+		return result
+	}
+	
+	def static Iterable<CoordinationModuleRealization> getAllMatchingCoordinationModuleRealizations(SystemComponentArchitecture sysArch,
+		CoordinationModuleDefinition coordModDef) {
+		var List<CoordinationModuleRealization> result = newArrayList()
+
+		for (compInst : sysArch.components) {
+			var compCoordinationSlavePorts = compInst.component.elements.filter(typeof(CoordinationSlavePort))
+
+			if (compCoordinationSlavePorts !== null) {
+
+				// only a single coordinationSlavePort is allowed for a component
+				for (compCoordinationSlavePort : compCoordinationSlavePorts) {
+
+					// get all skillRealizationsRefs
+					var skillRealizationsRefs = compCoordinationSlavePort.elements.filter(typeof(SkillRealizationsRef))
+					for (skillRealizationsRef : skillRealizationsRefs) {
+						var coordinatioModuleRealization = skillRealizationsRef.skillRealizationCoordModuleRef
+						var coordModuleDef2 = skillRealizationsRef.skillRealizationCoordModuleRef.coordinationModuleDef
+						if (coordModDef == coordModuleDef2) {
+							result.add(coordinatioModuleRealization);
+						}
+					}
+				}
+			}
+		}
+		return result
+	}
+	
 //	@Inject IQualifiedNameProvider name_provider;
 	
 	override getScope(EObject context, EReference reference) {
@@ -114,7 +183,55 @@ class ComponentArchitectureScopeProvider extends AbstractComponentArchitectureSc
 					return Scopes.scopeFor(parent.activityArch.elements.filter(InputHandlerNode))
 				}
 			}
+		} else if(reference == CompArchBehaviorExtensionPackage.eINSTANCE.coordinationModuleMapping_CoordModReal){
+			if(context instanceof CoordinationModuleMapping)
+			{
+				var coordModuleDef1 = context.coordModuleInst.coordModuleDef
+				val parent = context.eContainer
+				if(parent instanceof SystemComponentArchitecture) {
+					//find the matching (same coordination module def) component instance
+					return Scopes.scopeFor(parent.getAllMatchingCoordinationModuleRealizations(coordModuleDef1))
+				}
+				
+			}
+			
+		} else if(reference == CompArchBehaviorExtensionPackage.eINSTANCE.coordinationInterfaceComponentInstanceMapping_CoordInterInst){
+			val parent = context.eContainer
+			if(parent instanceof CoordinationModuleMapping) {
+				return Scopes.scopeFor(parent.coordModReal.coordInterfaceInsts);
+			}
+		} else if(reference == CompArchBehaviorExtensionPackage.eINSTANCE.coordinationInterfaceComponentInstanceMapping_CompInst){
+			//get coordination module definition via the coordintion module instance
+			if(context instanceof CoordinationInterfaceComponentInstanceMapping)
+			{
+				var coordInterfaceDef1 = context.coordInterInst.coordinationInterfaceDef				
+				val parent = context.eContainer.eContainer
+				if(parent instanceof SystemComponentArchitecture) {
+					//find the matching (same coordination module def) component instance
+					return Scopes.scopeFor(parent.getAllMatchingComponentInstances(coordInterfaceDef1))
+					
+				}
+				
+			}
+				
+			
 		}
+		
+//		else if(reference == CompArchBehaviorExtensionPackage.eINSTANCE.coordinationModuleMapping_CompInst) {
+//			if(context instanceof CoordinationModuleMapping)
+//			{
+//				//get coordination module definition via the coordintion module instance
+//				var coordModuleDef1 = context.coordModuleInst.coordModuleDef			
+//				
+//				val parent = context.eContainer
+//				if(parent instanceof SystemComponentArchitecture) {
+//					//find the matching (same coordination module def) component instance
+//					return Scopes.scopeFor(parent.getAllMatchingComponentInstnaces(coordModuleDef1))
+//				}				
+//			}
+//		}
+
+		
 		return super.getScope(context, reference)
 	}
 	

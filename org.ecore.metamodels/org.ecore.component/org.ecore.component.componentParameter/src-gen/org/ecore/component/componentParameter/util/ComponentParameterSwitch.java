@@ -108,6 +108,8 @@ public class ComponentParameterSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseComponentParameterBase(extendedParameter);
 			if (result == null)
+				result = caseComponentRunTimeParameterBase(extendedParameter);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -116,6 +118,8 @@ public class ComponentParameterSwitch<T> extends Switch<T> {
 			T result = caseExtendedTrigger(extendedTrigger);
 			if (result == null)
 				result = caseAbstractComponentParameter(extendedTrigger);
+			if (result == null)
+				result = caseComponentRunTimeParameterBase(extendedTrigger);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -142,6 +146,8 @@ public class ComponentParameterSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractParameterInstance(triggerInstance);
 			if (result == null)
+				result = caseComponentRunTimeParameterBase(triggerInstance);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -150,6 +156,8 @@ public class ComponentParameterSwitch<T> extends Switch<T> {
 			T result = caseParameterInstance(parameterInstance);
 			if (result == null)
 				result = caseAbstractParameterInstance(parameterInstance);
+			if (result == null)
+				result = caseComponentRunTimeParameterBase(parameterInstance);
 			if (result == null)
 				result = caseComponentParameterBase(parameterInstance);
 			if (result == null)
@@ -170,6 +178,13 @@ public class ComponentParameterSwitch<T> extends Switch<T> {
 				result = caseDerivedComponentElement(componentParametersRef);
 			if (result == null)
 				result = caseAbstractComponentElement(componentParametersRef);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ComponentParameterPackage.COMPONENT_RUN_TIME_PARAMETER_BASE: {
+			ComponentRunTimeParameterBase componentRunTimeParameterBase = (ComponentRunTimeParameterBase) theEObject;
+			T result = caseComponentRunTimeParameterBase(componentRunTimeParameterBase);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -356,6 +371,21 @@ public class ComponentParameterSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComponentParametersRef(ComponentParametersRef object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component Run Time Parameter Base</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component Run Time Parameter Base</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponentRunTimeParameterBase(ComponentRunTimeParameterBase object) {
 		return null;
 	}
 

@@ -1282,20 +1282,20 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.PlainOpcUaPort");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cOpcUaDeviceClientParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cOpcUaStatusServerParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cOpcUaReadServerParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//PlainOpcUaPort seronet::PlainOpcUaPort:
-		//	OpcUaDeviceClient | OpcUaStatusServer;
+		//	OpcUaDeviceClient | OpcUaReadServer;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//OpcUaDeviceClient | OpcUaStatusServer
+		//OpcUaDeviceClient | OpcUaReadServer
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//OpcUaDeviceClient
 		public RuleCall getOpcUaDeviceClientParserRuleCall_0() { return cOpcUaDeviceClientParserRuleCall_0; }
 		
-		//OpcUaStatusServer
-		public RuleCall getOpcUaStatusServerParserRuleCall_1() { return cOpcUaStatusServerParserRuleCall_1; }
+		//OpcUaReadServer
+		public RuleCall getOpcUaReadServerParserRuleCall_1() { return cOpcUaReadServerParserRuleCall_1; }
 	}
 	public class OpcUaDeviceClientElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.OpcUaDeviceClient");
@@ -1360,27 +1360,31 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		//';'?
 		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
-	public class OpcUaStatusServerElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.OpcUaStatusServer");
+	public class OpcUaReadServerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.OpcUaReadServer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cOpcUaStatusServerKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cOpcUaReadServerKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cDataProviderPortKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cOutPortAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cOutPortOutputPortCrossReference_3_0 = (CrossReference)cOutPortAssignment_3.eContents().get(0);
 		private final RuleCall cOutPortOutputPortFQNParserRuleCall_3_0_1 = (RuleCall)cOutPortOutputPortCrossReference_3_0.eContents().get(1);
-		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cPortNumberKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cPortNumberAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cPortNumberEIntParserRuleCall_4_1_0 = (RuleCall)cPortNumberAssignment_4_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//OpcUaStatusServer seronet::OpcUaStatusServer:
-		//	'OpcUaStatusServer' name=ID 'dataProviderPort' outPort=[component::OutputPort|FQN] ';'?;
+		//OpcUaReadServer seronet::OpcUaReadServer:
+		//	'OpcUaReadServer' name=ID 'dataProviderPort' outPort=[component::OutputPort|FQN] ('portNumber' portNumber=EInt)? ';'?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'OpcUaStatusServer' name=ID 'dataProviderPort' outPort=[component::OutputPort|FQN] ';'?
+		//'OpcUaReadServer' name=ID 'dataProviderPort' outPort=[component::OutputPort|FQN] ('portNumber' portNumber=EInt)? ';'?
 		public Group getGroup() { return cGroup; }
 		
-		//'OpcUaStatusServer'
-		public Keyword getOpcUaStatusServerKeyword_0() { return cOpcUaStatusServerKeyword_0; }
+		//'OpcUaReadServer'
+		public Keyword getOpcUaReadServerKeyword_0() { return cOpcUaReadServerKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -1400,8 +1404,20 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		//FQN
 		public RuleCall getOutPortOutputPortFQNParserRuleCall_3_0_1() { return cOutPortOutputPortFQNParserRuleCall_3_0_1; }
 		
+		//('portNumber' portNumber=EInt)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'portNumber'
+		public Keyword getPortNumberKeyword_4_0() { return cPortNumberKeyword_4_0; }
+		
+		//portNumber=EInt
+		public Assignment getPortNumberAssignment_4_1() { return cPortNumberAssignment_4_1; }
+		
+		//EInt
+		public RuleCall getPortNumberEIntParserRuleCall_4_1_0() { return cPortNumberEIntParserRuleCall_4_1_0; }
+		
 		//';'?
-		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
 	public class CoordinationSlavePortElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.CoordinationSlavePort");
@@ -1492,29 +1508,29 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.SkillRealizationsRef");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSkillRealizationsRefKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cSkillRealizationSetRefAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cSkillRealizationSetRefSkillRealizationSetCrossReference_1_0 = (CrossReference)cSkillRealizationSetRefAssignment_1.eContents().get(0);
-		private final RuleCall cSkillRealizationSetRefSkillRealizationSetFQNParserRuleCall_1_0_1 = (RuleCall)cSkillRealizationSetRefSkillRealizationSetCrossReference_1_0.eContents().get(1);
+		private final Assignment cSkillRealizationCoordModuleRefAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cSkillRealizationCoordModuleRefCoordinationModuleRealizationCrossReference_1_0 = (CrossReference)cSkillRealizationCoordModuleRefAssignment_1.eContents().get(0);
+		private final RuleCall cSkillRealizationCoordModuleRefCoordinationModuleRealizationFQNParserRuleCall_1_0_1 = (RuleCall)cSkillRealizationCoordModuleRefCoordinationModuleRealizationCrossReference_1_0.eContents().get(1);
 		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//SkillRealizationsRef coordination::SkillRealizationsRef:
-		//	'SkillRealizationsRef' skillRealizationSetRef=[skillRealization::SkillRealizationSet|FQN] ';'?;
+		//	'SkillRealizationsRef' skillRealizationCoordModuleRef=[skillRealization::CoordinationModuleRealization|FQN] ';'?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'SkillRealizationsRef' skillRealizationSetRef=[skillRealization::SkillRealizationSet|FQN] ';'?
+		//'SkillRealizationsRef' skillRealizationCoordModuleRef=[skillRealization::CoordinationModuleRealization|FQN] ';'?
 		public Group getGroup() { return cGroup; }
 		
 		//'SkillRealizationsRef'
 		public Keyword getSkillRealizationsRefKeyword_0() { return cSkillRealizationsRefKeyword_0; }
 		
-		//skillRealizationSetRef=[skillRealization::SkillRealizationSet|FQN]
-		public Assignment getSkillRealizationSetRefAssignment_1() { return cSkillRealizationSetRefAssignment_1; }
+		//skillRealizationCoordModuleRef=[skillRealization::CoordinationModuleRealization|FQN]
+		public Assignment getSkillRealizationCoordModuleRefAssignment_1() { return cSkillRealizationCoordModuleRefAssignment_1; }
 		
-		//[skillRealization::SkillRealizationSet|FQN]
-		public CrossReference getSkillRealizationSetRefSkillRealizationSetCrossReference_1_0() { return cSkillRealizationSetRefSkillRealizationSetCrossReference_1_0; }
+		//[skillRealization::CoordinationModuleRealization|FQN]
+		public CrossReference getSkillRealizationCoordModuleRefCoordinationModuleRealizationCrossReference_1_0() { return cSkillRealizationCoordModuleRefCoordinationModuleRealizationCrossReference_1_0; }
 		
 		//FQN
-		public RuleCall getSkillRealizationSetRefSkillRealizationSetFQNParserRuleCall_1_0_1() { return cSkillRealizationSetRefSkillRealizationSetFQNParserRuleCall_1_0_1; }
+		public RuleCall getSkillRealizationCoordModuleRefCoordinationModuleRealizationFQNParserRuleCall_1_0_1() { return cSkillRealizationCoordModuleRefCoordinationModuleRealizationFQNParserRuleCall_1_0_1; }
 		
 		//';'?
 		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
@@ -1821,7 +1837,7 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 	private final DefaultObservedElementTriggerElements pDefaultObservedElementTrigger;
 	private final PlainOpcUaPortElements pPlainOpcUaPort;
 	private final OpcUaDeviceClientElements pOpcUaDeviceClient;
-	private final OpcUaStatusServerElements pOpcUaStatusServer;
+	private final OpcUaReadServerElements pOpcUaReadServer;
 	private final CoordinationSlavePortElements pCoordinationSlavePort;
 	private final AbstractCoordinationElementElements pAbstractCoordinationElement;
 	private final SkillRealizationsRefElements pSkillRealizationsRef;
@@ -1875,7 +1891,7 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		this.pDefaultObservedElementTrigger = new DefaultObservedElementTriggerElements();
 		this.pPlainOpcUaPort = new PlainOpcUaPortElements();
 		this.pOpcUaDeviceClient = new OpcUaDeviceClientElements();
-		this.pOpcUaStatusServer = new OpcUaStatusServerElements();
+		this.pOpcUaReadServer = new OpcUaReadServerElements();
 		this.pCoordinationSlavePort = new CoordinationSlavePortElements();
 		this.pAbstractCoordinationElement = new AbstractCoordinationElementElements();
 		this.pSkillRealizationsRef = new SkillRealizationsRefElements();
@@ -2252,7 +2268,7 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//PlainOpcUaPort seronet::PlainOpcUaPort:
-	//	OpcUaDeviceClient | OpcUaStatusServer;
+	//	OpcUaDeviceClient | OpcUaReadServer;
 	public PlainOpcUaPortElements getPlainOpcUaPortAccess() {
 		return pPlainOpcUaPort;
 	}
@@ -2271,14 +2287,14 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		return getOpcUaDeviceClientAccess().getRule();
 	}
 	
-	//OpcUaStatusServer seronet::OpcUaStatusServer:
-	//	'OpcUaStatusServer' name=ID 'dataProviderPort' outPort=[component::OutputPort|FQN] ';'?;
-	public OpcUaStatusServerElements getOpcUaStatusServerAccess() {
-		return pOpcUaStatusServer;
+	//OpcUaReadServer seronet::OpcUaReadServer:
+	//	'OpcUaReadServer' name=ID 'dataProviderPort' outPort=[component::OutputPort|FQN] ('portNumber' portNumber=EInt)? ';'?;
+	public OpcUaReadServerElements getOpcUaReadServerAccess() {
+		return pOpcUaReadServer;
 	}
 	
-	public ParserRule getOpcUaStatusServerRule() {
-		return getOpcUaStatusServerAccess().getRule();
+	public ParserRule getOpcUaReadServerRule() {
+		return getOpcUaReadServerAccess().getRule();
 	}
 	
 	//CoordinationSlavePort coordination::CoordinationSlavePort:
@@ -2304,7 +2320,7 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//SkillRealizationsRef coordination::SkillRealizationsRef:
-	//	'SkillRealizationsRef' skillRealizationSetRef=[skillRealization::SkillRealizationSet|FQN] ';'?;
+	//	'SkillRealizationsRef' skillRealizationCoordModuleRef=[skillRealization::CoordinationModuleRealization|FQN] ';'?;
 	public SkillRealizationsRefElements getSkillRealizationsRefAccess() {
 		return pSkillRealizationsRef;
 	}

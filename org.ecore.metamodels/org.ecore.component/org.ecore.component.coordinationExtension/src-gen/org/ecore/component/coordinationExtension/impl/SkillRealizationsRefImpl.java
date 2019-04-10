@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.ecore.behavior.skillRealization.SkillRealizationSet;
+import org.ecore.behavior.skillRealization.CoordinationModuleRealization;
 
 import org.ecore.component.coordinationExtension.CoordinationExtensionPackage;
 import org.ecore.component.coordinationExtension.SkillRealizationsRef;
@@ -22,21 +22,21 @@ import org.ecore.component.coordinationExtension.SkillRealizationsRef;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.ecore.component.coordinationExtension.impl.SkillRealizationsRefImpl#getSkillRealizationSetRef <em>Skill Realization Set Ref</em>}</li>
+ *   <li>{@link org.ecore.component.coordinationExtension.impl.SkillRealizationsRefImpl#getSkillRealizationCoordModuleRef <em>Skill Realization Coord Module Ref</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SkillRealizationsRefImpl extends AbstractCoordinationElementImpl implements SkillRealizationsRef {
 	/**
-	 * The cached value of the '{@link #getSkillRealizationSetRef() <em>Skill Realization Set Ref</em>}' reference.
+	 * The cached value of the '{@link #getSkillRealizationCoordModuleRef() <em>Skill Realization Coord Module Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSkillRealizationSetRef()
+	 * @see #getSkillRealizationCoordModuleRef()
 	 * @generated
 	 * @ordered
 	 */
-	protected SkillRealizationSet skillRealizationSetRef;
+	protected CoordinationModuleRealization skillRealizationCoordModuleRef;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,18 +62,19 @@ public class SkillRealizationsRefImpl extends AbstractCoordinationElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SkillRealizationSet getSkillRealizationSetRef() {
-		if (skillRealizationSetRef != null && skillRealizationSetRef.eIsProxy()) {
-			InternalEObject oldSkillRealizationSetRef = (InternalEObject) skillRealizationSetRef;
-			skillRealizationSetRef = (SkillRealizationSet) eResolveProxy(oldSkillRealizationSetRef);
-			if (skillRealizationSetRef != oldSkillRealizationSetRef) {
+	public CoordinationModuleRealization getSkillRealizationCoordModuleRef() {
+		if (skillRealizationCoordModuleRef != null && skillRealizationCoordModuleRef.eIsProxy()) {
+			InternalEObject oldSkillRealizationCoordModuleRef = (InternalEObject) skillRealizationCoordModuleRef;
+			skillRealizationCoordModuleRef = (CoordinationModuleRealization) eResolveProxy(
+					oldSkillRealizationCoordModuleRef);
+			if (skillRealizationCoordModuleRef != oldSkillRealizationCoordModuleRef) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							CoordinationExtensionPackage.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF,
-							oldSkillRealizationSetRef, skillRealizationSetRef));
+							CoordinationExtensionPackage.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_COORD_MODULE_REF,
+							oldSkillRealizationCoordModuleRef, skillRealizationCoordModuleRef));
 			}
 		}
-		return skillRealizationSetRef;
+		return skillRealizationCoordModuleRef;
 	}
 
 	/**
@@ -81,8 +82,8 @@ public class SkillRealizationsRefImpl extends AbstractCoordinationElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SkillRealizationSet basicGetSkillRealizationSetRef() {
-		return skillRealizationSetRef;
+	public CoordinationModuleRealization basicGetSkillRealizationCoordModuleRef() {
+		return skillRealizationCoordModuleRef;
 	}
 
 	/**
@@ -90,13 +91,13 @@ public class SkillRealizationsRefImpl extends AbstractCoordinationElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSkillRealizationSetRef(SkillRealizationSet newSkillRealizationSetRef) {
-		SkillRealizationSet oldSkillRealizationSetRef = skillRealizationSetRef;
-		skillRealizationSetRef = newSkillRealizationSetRef;
+	public void setSkillRealizationCoordModuleRef(CoordinationModuleRealization newSkillRealizationCoordModuleRef) {
+		CoordinationModuleRealization oldSkillRealizationCoordModuleRef = skillRealizationCoordModuleRef;
+		skillRealizationCoordModuleRef = newSkillRealizationCoordModuleRef;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					CoordinationExtensionPackage.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF,
-					oldSkillRealizationSetRef, skillRealizationSetRef));
+					CoordinationExtensionPackage.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_COORD_MODULE_REF,
+					oldSkillRealizationCoordModuleRef, skillRealizationCoordModuleRef));
 	}
 
 	/**
@@ -107,10 +108,10 @@ public class SkillRealizationsRefImpl extends AbstractCoordinationElementImpl im
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CoordinationExtensionPackage.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF:
+		case CoordinationExtensionPackage.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_COORD_MODULE_REF:
 			if (resolve)
-				return getSkillRealizationSetRef();
-			return basicGetSkillRealizationSetRef();
+				return getSkillRealizationCoordModuleRef();
+			return basicGetSkillRealizationCoordModuleRef();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -123,8 +124,8 @@ public class SkillRealizationsRefImpl extends AbstractCoordinationElementImpl im
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CoordinationExtensionPackage.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF:
-			setSkillRealizationSetRef((SkillRealizationSet) newValue);
+		case CoordinationExtensionPackage.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_COORD_MODULE_REF:
+			setSkillRealizationCoordModuleRef((CoordinationModuleRealization) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -138,8 +139,8 @@ public class SkillRealizationsRefImpl extends AbstractCoordinationElementImpl im
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CoordinationExtensionPackage.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF:
-			setSkillRealizationSetRef((SkillRealizationSet) null);
+		case CoordinationExtensionPackage.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_COORD_MODULE_REF:
+			setSkillRealizationCoordModuleRef((CoordinationModuleRealization) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -153,8 +154,8 @@ public class SkillRealizationsRefImpl extends AbstractCoordinationElementImpl im
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CoordinationExtensionPackage.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF:
-			return skillRealizationSetRef != null;
+		case CoordinationExtensionPackage.SKILL_REALIZATIONS_REF__SKILL_REALIZATION_COORD_MODULE_REF:
+			return skillRealizationCoordModuleRef != null;
 		}
 		return super.eIsSet(featureID);
 	}

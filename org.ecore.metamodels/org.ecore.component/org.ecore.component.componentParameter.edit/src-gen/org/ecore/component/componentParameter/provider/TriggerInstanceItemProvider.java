@@ -46,6 +46,7 @@ public class TriggerInstanceItemProvider extends AbstractParameterInstanceItemPr
 
 			addTriggerDefPropertyDescriptor(object);
 			addActivePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,6 +83,22 @@ public class TriggerInstanceItemProvider extends AbstractParameterInstanceItemPr
 	}
 
 	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_TriggerInstance_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_TriggerInstance_name_feature",
+								"_UI_TriggerInstance_type"),
+						ComponentParameterPackage.Literals.TRIGGER_INSTANCE__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns TriggerInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,8 +127,9 @@ public class TriggerInstanceItemProvider extends AbstractParameterInstanceItemPr
 	 */
 	@Override
 	public String getText(Object object) {
-		TriggerInstance triggerInstance = (TriggerInstance) object;
-		return getString("_UI_TriggerInstance_type") + " " + triggerInstance.isActive();
+		String label = ((TriggerInstance) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_TriggerInstance_type")
+				: getString("_UI_TriggerInstance_type") + " " + label;
 	}
 
 	/**
@@ -127,6 +145,7 @@ public class TriggerInstanceItemProvider extends AbstractParameterInstanceItemPr
 
 		switch (notification.getFeatureID(TriggerInstance.class)) {
 		case ComponentParameterPackage.TRIGGER_INSTANCE__ACTIVE:
+		case ComponentParameterPackage.TRIGGER_INSTANCE__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

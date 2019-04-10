@@ -9,9 +9,8 @@ Require-Bundle: org.xtext.system.targetPlatform,
  org.ecore.system.targetPlatform,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
- org.antlr.runtime,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
  org.xtext.service.roboticMiddleware
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.system.targetPlatform.ide.contentassist.antlr.internal,
  org.xtext.system.targetPlatform.ide.contentassist.antlr
-

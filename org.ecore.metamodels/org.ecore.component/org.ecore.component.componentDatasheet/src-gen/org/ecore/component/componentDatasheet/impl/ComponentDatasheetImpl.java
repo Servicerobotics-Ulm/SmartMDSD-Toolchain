@@ -105,6 +105,7 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPurposeDescription() {
 		return purposeDescription;
 	}
@@ -114,6 +115,7 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPurposeDescription(String newPurposeDescription) {
 		String oldPurposeDescription = purposeDescription;
 		purposeDescription = newPurposeDescription;
@@ -128,6 +130,7 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getHardwareRequirementDescription() {
 		return hardwareRequirementDescription;
 	}
@@ -137,6 +140,7 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHardwareRequirementDescription(String newHardwareRequirementDescription) {
 		String oldHardwareRequirementDescription = hardwareRequirementDescription;
 		hardwareRequirementDescription = newHardwareRequirementDescription;
@@ -151,6 +155,7 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentDefinition getComponent() {
 		if (component != null && component.eIsProxy()) {
 			InternalEObject oldComponent = (InternalEObject) component;
@@ -178,6 +183,7 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponent(ComponentDefinition newComponent) {
 		ComponentDefinition oldComponent = component;
 		component = newComponent;
@@ -278,7 +284,7 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (purposeDescription: ");
 		result.append(purposeDescription);
 		result.append(", hardwareRequirementDescription: ");

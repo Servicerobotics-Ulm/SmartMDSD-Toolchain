@@ -45,6 +45,7 @@
 package org.xtext.system.deployment.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.system.deployment.ui.internal.DeploymentActivator;
@@ -57,12 +58,13 @@ public class DeploymentExecutableExtensionFactory extends AbstractGuiceAwareExec
 
 	@Override
 	protected Bundle getBundle() {
-		return DeploymentActivator.getInstance().getBundle();
+		return Platform.getBundle(DeploymentActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return DeploymentActivator.getInstance().getInjector(DeploymentActivator.ORG_XTEXT_SYSTEM_DEPLOYMENT_DEPLOYMENT);
+		DeploymentActivator activator = DeploymentActivator.getInstance();
+		return activator != null ? activator.getInjector(DeploymentActivator.ORG_XTEXT_SYSTEM_DEPLOYMENT_DEPLOYMENT) : null;
 	}
-	
+
 }

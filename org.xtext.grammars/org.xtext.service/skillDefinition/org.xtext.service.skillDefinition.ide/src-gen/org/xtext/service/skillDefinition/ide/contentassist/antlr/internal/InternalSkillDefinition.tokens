@@ -6,6 +6,7 @@
 ';'=40
 '='=39
 'Boolean'=29
+'CoordinationModuleDefinition'=33
 'Double'=27
 'E'=13
 'ERROR'=16
@@ -18,7 +19,6 @@
 'SUCCESS'=17
 'SkillDefinition'=34
 'SkillDefinitionRepository'=30
-'SkillDefinitionSet'=33
 'String'=28
 'UInt16'=23
 'UInt32'=24

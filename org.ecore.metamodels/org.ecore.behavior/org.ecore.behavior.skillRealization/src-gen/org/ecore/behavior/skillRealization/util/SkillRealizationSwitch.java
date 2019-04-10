@@ -73,9 +73,9 @@ public class SkillRealizationSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case SkillRealizationPackage.SKILL_REALIZATION_SET: {
-			SkillRealizationSet skillRealizationSet = (SkillRealizationSet) theEObject;
-			T result = caseSkillRealizationSet(skillRealizationSet);
+		case SkillRealizationPackage.COORDINATION_MODULE_REALIZATION: {
+			CoordinationModuleRealization coordinationModuleRealization = (CoordinationModuleRealization) theEObject;
+			T result = caseCoordinationModuleRealization(coordinationModuleRealization);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -83,6 +83,87 @@ public class SkillRealizationSwitch<T> extends Switch<T> {
 		case SkillRealizationPackage.SKILL_REALIZATION: {
 			SkillRealization skillRealization = (SkillRealization) theEObject;
 			T result = caseSkillRealization(skillRealization);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SkillRealizationPackage.ABSTRACT_COORDINATION_ACTION: {
+			AbstractCoordinationAction abstractCoordinationAction = (AbstractCoordinationAction) theEObject;
+			T result = caseAbstractCoordinationAction(abstractCoordinationAction);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SkillRealizationPackage.ABSTRACT_COMPONENT_COORDINATION_ACTION: {
+			AbstractComponentCoordinationAction abstractComponentCoordinationAction = (AbstractComponentCoordinationAction) theEObject;
+			T result = caseAbstractComponentCoordinationAction(abstractComponentCoordinationAction);
+			if (result == null)
+				result = caseAbstractCoordinationAction(abstractComponentCoordinationAction);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SkillRealizationPackage.COMPONENT_COORDINATION_ACTION_EVENT: {
+			ComponentCoordinationActionEvent componentCoordinationActionEvent = (ComponentCoordinationActionEvent) theEObject;
+			T result = caseComponentCoordinationActionEvent(componentCoordinationActionEvent);
+			if (result == null)
+				result = caseAbstractComponentCoordinationAction(componentCoordinationActionEvent);
+			if (result == null)
+				result = caseAbstractCoordinationAction(componentCoordinationActionEvent);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SkillRealizationPackage.COMPONENT_COORDINATION_ACTION_WIRING: {
+			ComponentCoordinationActionWiring componentCoordinationActionWiring = (ComponentCoordinationActionWiring) theEObject;
+			T result = caseComponentCoordinationActionWiring(componentCoordinationActionWiring);
+			if (result == null)
+				result = caseAbstractComponentCoordinationAction(componentCoordinationActionWiring);
+			if (result == null)
+				result = caseAbstractCoordinationAction(componentCoordinationActionWiring);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SkillRealizationPackage.COMPONENT_COORDINATION_ACTION_PARAMETER: {
+			ComponentCoordinationActionParameter componentCoordinationActionParameter = (ComponentCoordinationActionParameter) theEObject;
+			T result = caseComponentCoordinationActionParameter(componentCoordinationActionParameter);
+			if (result == null)
+				result = caseAbstractComponentCoordinationAction(componentCoordinationActionParameter);
+			if (result == null)
+				result = caseAbstractCoordinationAction(componentCoordinationActionParameter);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SkillRealizationPackage.COMPONENT_COORDINATION_ACTION_ACTIVATION: {
+			ComponentCoordinationActionActivation componentCoordinationActionActivation = (ComponentCoordinationActionActivation) theEObject;
+			T result = caseComponentCoordinationActionActivation(componentCoordinationActionActivation);
+			if (result == null)
+				result = caseAbstractComponentCoordinationAction(componentCoordinationActionActivation);
+			if (result == null)
+				result = caseAbstractCoordinationAction(componentCoordinationActionActivation);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SkillRealizationPackage.COORDINATION_ACTION_BLOCK: {
+			CoordinationActionBlock coordinationActionBlock = (CoordinationActionBlock) theEObject;
+			T result = caseCoordinationActionBlock(coordinationActionBlock);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SkillRealizationPackage.EVENT_HANDLER: {
+			EventHandler eventHandler = (EventHandler) theEObject;
+			T result = caseEventHandler(eventHandler);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SkillRealizationPackage.COORDINATION_INTERFACE_INSTANCE: {
+			CoordinationInterfaceInstance coordinationInterfaceInstance = (CoordinationInterfaceInstance) theEObject;
+			T result = caseCoordinationInterfaceInstance(coordinationInterfaceInstance);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -108,17 +189,17 @@ public class SkillRealizationSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Set</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Coordination Module Realization</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Set</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Coordination Module Realization</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSkillRealizationSet(SkillRealizationSet object) {
+	public T caseCoordinationModuleRealization(CoordinationModuleRealization object) {
 		return null;
 	}
 
@@ -134,6 +215,141 @@ public class SkillRealizationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSkillRealization(SkillRealization object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Coordination Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Coordination Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractCoordinationAction(AbstractCoordinationAction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Component Coordination Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Component Coordination Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractComponentCoordinationAction(AbstractComponentCoordinationAction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component Coordination Action Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component Coordination Action Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponentCoordinationActionEvent(ComponentCoordinationActionEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component Coordination Action Wiring</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component Coordination Action Wiring</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponentCoordinationActionWiring(ComponentCoordinationActionWiring object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component Coordination Action Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component Coordination Action Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponentCoordinationActionParameter(ComponentCoordinationActionParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component Coordination Action Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component Coordination Action Activation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponentCoordinationActionActivation(ComponentCoordinationActionActivation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Coordination Action Block</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Coordination Action Block</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCoordinationActionBlock(CoordinationActionBlock object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Event Handler</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Event Handler</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEventHandler(EventHandler object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Coordination Interface Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Coordination Interface Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCoordinationInterfaceInstance(CoordinationInterfaceInstance object) {
 		return null;
 	}
 

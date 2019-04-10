@@ -2,7 +2,7 @@
 <feature
       id="org.smartmdsd.toolchain"
       label="SmartMDSD-Toolchain"
-      version="3.8.0.qualifier"
+      version="3.9.0.qualifier"
       provider-name="Servicerobotics Ulm"
       plugin="org.smartmdsd.branding"
       os="linux,win32"
@@ -55,7 +55,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
    </license>
 
    <url>
-      <update label="SmartMDSD" url="https://web2.servicerobotik-ulm.de/files/SmartMDSD_Toolchain/updatesite/v3.7/"/>
+      <update label="SmartMDSD" url="https://web2.servicerobotik-ulm.de/files/SmartMDSD_Toolchain/updatesite/v3.9/"/>
    </url>
 
    <plugin
@@ -983,6 +983,111 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 
    <plugin
          id="org.xtend.system.datasheet.generator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.smartmdsd.navigator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.smartmdsd.utils"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ecore.behavior.taskDefinition"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ecore.behavior.taskDefinition.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ecore.behavior.taskRealization"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ecore.behavior.taskRealization.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ecore.system.compArchBehaviorExtension"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ecore.system.compArchBehaviorExtension.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.behavior.taskDefinition"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.behavior.taskDefinition.ide"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.behavior.taskDefinition.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.behavior.taskRealization"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.behavior.taskRealization.ide"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.behavior.taskRealization.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtend.coordinationInterface.generator"
          download-size="0"
          install-size="0"
          version="0.0.0"

@@ -41,6 +41,7 @@
     <genClasses ecoreClass="componentParameter.ecore#//TriggerInstance">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentParameter.ecore#//TriggerInstance/triggerDef"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentParameter.ecore#//TriggerInstance/active"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentParameter.ecore#//TriggerInstance/name"/>
     </genClasses>
     <genClasses ecoreClass="componentParameter.ecore#//ParameterInstance">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentParameter.ecore#//ParameterInstance/parameterDef"/>
@@ -55,5 +56,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentParameter.ecore#//ComponentParametersRef/parameter"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentParameter.ecore#//ComponentParametersRef/slave"/>
     </genClasses>
+    <genClasses ecoreClass="componentParameter.ecore#//ComponentRunTimeParameterBase"/>
   </genPackages>
 </genmodel:GenModel>

@@ -13,7 +13,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.ecore.component.componentDefinition.provider.NamedComponentElementItemProvider;
+
 import org.ecore.component.coordinationExtension.CoordinationExtensionFactory;
 import org.ecore.component.coordinationExtension.CoordinationExtensionPackage;
 import org.ecore.component.coordinationExtension.CoordinationSlavePort;

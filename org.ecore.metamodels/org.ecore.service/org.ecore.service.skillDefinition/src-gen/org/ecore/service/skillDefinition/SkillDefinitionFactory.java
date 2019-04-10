@@ -40,13 +40,13 @@ public interface SkillDefinitionFactory extends EFactory {
 	SkillDefinitionRepository createSkillDefinitionRepository();
 
 	/**
-	 * Returns a new object of class '<em>Set</em>'.
+	 * Returns a new object of class '<em>Coordination Module Definition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Set</em>'.
+	 * @return a new object of class '<em>Coordination Module Definition</em>'.
 	 * @generated
 	 */
-	SkillDefinitionSet createSkillDefinitionSet();
+	CoordinationModuleDefinition createCoordinationModuleDefinition();
 
 	/**
 	 * Returns a new object of class '<em>Skill Definition</em>'.

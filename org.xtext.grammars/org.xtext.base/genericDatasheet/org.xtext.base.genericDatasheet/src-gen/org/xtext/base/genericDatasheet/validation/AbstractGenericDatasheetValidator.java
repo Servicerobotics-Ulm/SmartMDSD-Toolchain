@@ -57,5 +57,4 @@ public abstract class AbstractGenericDatasheetValidator extends AbstractDeclarat
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/base/genericDatasheet"));
 		return result;
 	}
-	
 }

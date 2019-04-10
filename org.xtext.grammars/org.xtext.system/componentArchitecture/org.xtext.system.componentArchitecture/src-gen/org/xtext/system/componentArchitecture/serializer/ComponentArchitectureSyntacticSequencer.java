@@ -65,6 +65,7 @@ public class ComponentArchitectureSyntacticSequencer extends AbstractSyntacticSe
 	protected AbstractElementAlias match_Connection_SemicolonKeyword_5_q;
 	protected AbstractElementAlias match_InputHandlerConfigurationMapping_SemicolonKeyword_4_q;
 	protected AbstractElementAlias match_OpcUaDeviceClientInstance_SemicolonKeyword_4_q;
+	protected AbstractElementAlias match_OpcUaReadServerInstance_SemicolonKeyword_3_q;
 	protected AbstractElementAlias match_ParameterStructInstance_SemicolonKeyword_2_q;
 	protected AbstractElementAlias match_ProvidedService_SemicolonKeyword_2_q;
 	protected AbstractElementAlias match_RequiredService_SemicolonKeyword_2_q;
@@ -76,6 +77,7 @@ public class ComponentArchitectureSyntacticSequencer extends AbstractSyntacticSe
 		match_Connection_SemicolonKeyword_5_q = new TokenAlias(false, true, grammarAccess.getConnectionAccess().getSemicolonKeyword_5());
 		match_InputHandlerConfigurationMapping_SemicolonKeyword_4_q = new TokenAlias(false, true, grammarAccess.getInputHandlerConfigurationMappingAccess().getSemicolonKeyword_4());
 		match_OpcUaDeviceClientInstance_SemicolonKeyword_4_q = new TokenAlias(false, true, grammarAccess.getOpcUaDeviceClientInstanceAccess().getSemicolonKeyword_4());
+		match_OpcUaReadServerInstance_SemicolonKeyword_3_q = new TokenAlias(false, true, grammarAccess.getOpcUaReadServerInstanceAccess().getSemicolonKeyword_3());
 		match_ParameterStructInstance_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getParameterStructInstanceAccess().getSemicolonKeyword_2());
 		match_ProvidedService_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getProvidedServiceAccess().getSemicolonKeyword_2());
 		match_RequiredService_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getRequiredServiceAccess().getSemicolonKeyword_2());
@@ -101,6 +103,8 @@ public class ComponentArchitectureSyntacticSequencer extends AbstractSyntacticSe
 				emit_InputHandlerConfigurationMapping_SemicolonKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_OpcUaDeviceClientInstance_SemicolonKeyword_4_q.equals(syntax))
 				emit_OpcUaDeviceClientInstance_SemicolonKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OpcUaReadServerInstance_SemicolonKeyword_3_q.equals(syntax))
+				emit_OpcUaReadServerInstance_SemicolonKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ParameterStructInstance_SemicolonKeyword_2_q.equals(syntax))
 				emit_ParameterStructInstance_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ProvidedService_SemicolonKeyword_2_q.equals(syntax))
@@ -153,6 +157,18 @@ public class ComponentArchitectureSyntacticSequencer extends AbstractSyntacticSe
 	 *     deviceURI=EString (ambiguity) (rule end)
 	 */
 	protected void emit_OpcUaDeviceClientInstance_SemicolonKeyword_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     portNumber=EInt (ambiguity) (rule end)
+	 *     readServer=[OpcUaReadServer|FQN] (ambiguity) (rule end)
+	 */
+	protected void emit_OpcUaReadServerInstance_SemicolonKeyword_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

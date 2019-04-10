@@ -60,8 +60,8 @@ public abstract class AbstractComponentArchitectureValidator extends RoboticMidd
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/system/ComponentArchitecture"));
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/system/SystemParameter"));
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/system/compArchSeronetExtension"));
+		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/system/compArchBehaviorExtension"));
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/service/roboticMiddleware"));
 		return result;
 	}
-	
 }

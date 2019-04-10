@@ -9,7 +9,7 @@ Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.ecore.base.basicAttributes;visibility:=reexport,
  org.eclipse.xtext.xbase.lib
 Bundle-ActivationPolicy: lazy
-Bundle-Vendor: Servicerobotics Ulm
+Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.ecore.service.parameterDefinition,

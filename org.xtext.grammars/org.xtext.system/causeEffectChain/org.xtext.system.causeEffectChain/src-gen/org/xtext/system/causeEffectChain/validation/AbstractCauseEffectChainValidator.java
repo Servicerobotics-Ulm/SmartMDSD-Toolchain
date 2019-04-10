@@ -60,5 +60,4 @@ public abstract class AbstractCauseEffectChainValidator extends AbstractDeclarat
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/system/CauseEffectChain"));
 		return result;
 	}
-	
 }

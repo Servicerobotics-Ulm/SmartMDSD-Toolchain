@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSkillDefinitionParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'E'", "'e'", "'*'", "'ERROR'", "'SUCCESS'", "'Int8'", "'Int16'", "'Int32'", "'Int64'", "'UInt8'", "'UInt16'", "'UInt32'", "'UInt64'", "'Float'", "'Double'", "'String'", "'Boolean'", "'SkillDefinitionRepository'", "'{'", "'}'", "'SkillDefinitionSet'", "'SkillDefinition'", "'results'", "'in'", "'out'", "'value'", "'='", "';'", "':'", "'.'", "'-'", "'InlineEnumeration'", "'['", "']'", "','"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'E'", "'e'", "'*'", "'ERROR'", "'SUCCESS'", "'Int8'", "'Int16'", "'Int32'", "'Int64'", "'UInt8'", "'UInt16'", "'UInt32'", "'UInt64'", "'Float'", "'Double'", "'String'", "'Boolean'", "'SkillDefinitionRepository'", "'{'", "'}'", "'CoordinationModuleDefinition'", "'SkillDefinition'", "'results'", "'in'", "'out'", "'value'", "'='", "';'", "':'", "'.'", "'-'", "'InlineEnumeration'", "'['", "']'", "','"
     };
     public static final int T__19=19;
     public static final int T__15=15;
@@ -259,20 +259,20 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
     // $ANTLR end "ruleSkillDefinitionRepository"
 
 
-    // $ANTLR start "entryRuleSkillDefinitionSet"
-    // InternalSkillDefinition.g:144:1: entryRuleSkillDefinitionSet : ruleSkillDefinitionSet EOF ;
-    public final void entryRuleSkillDefinitionSet() throws RecognitionException {
+    // $ANTLR start "entryRuleCoordinationModuleDefinition"
+    // InternalSkillDefinition.g:144:1: entryRuleCoordinationModuleDefinition : ruleCoordinationModuleDefinition EOF ;
+    public final void entryRuleCoordinationModuleDefinition() throws RecognitionException {
         try {
-            // InternalSkillDefinition.g:145:1: ( ruleSkillDefinitionSet EOF )
-            // InternalSkillDefinition.g:146:1: ruleSkillDefinitionSet EOF
+            // InternalSkillDefinition.g:145:1: ( ruleCoordinationModuleDefinition EOF )
+            // InternalSkillDefinition.g:146:1: ruleCoordinationModuleDefinition EOF
             {
-             before(grammarAccess.getSkillDefinitionSetRule()); 
+             before(grammarAccess.getCoordinationModuleDefinitionRule()); 
             pushFollow(FOLLOW_1);
-            ruleSkillDefinitionSet();
+            ruleCoordinationModuleDefinition();
 
             state._fsp--;
 
-             after(grammarAccess.getSkillDefinitionSetRule()); 
+             after(grammarAccess.getCoordinationModuleDefinitionRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -286,35 +286,35 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "entryRuleSkillDefinitionSet"
+    // $ANTLR end "entryRuleCoordinationModuleDefinition"
 
 
-    // $ANTLR start "ruleSkillDefinitionSet"
-    // InternalSkillDefinition.g:153:1: ruleSkillDefinitionSet : ( ( rule__SkillDefinitionSet__Group__0 ) ) ;
-    public final void ruleSkillDefinitionSet() throws RecognitionException {
+    // $ANTLR start "ruleCoordinationModuleDefinition"
+    // InternalSkillDefinition.g:153:1: ruleCoordinationModuleDefinition : ( ( rule__CoordinationModuleDefinition__Group__0 ) ) ;
+    public final void ruleCoordinationModuleDefinition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillDefinition.g:157:2: ( ( ( rule__SkillDefinitionSet__Group__0 ) ) )
-            // InternalSkillDefinition.g:158:2: ( ( rule__SkillDefinitionSet__Group__0 ) )
+            // InternalSkillDefinition.g:157:2: ( ( ( rule__CoordinationModuleDefinition__Group__0 ) ) )
+            // InternalSkillDefinition.g:158:2: ( ( rule__CoordinationModuleDefinition__Group__0 ) )
             {
-            // InternalSkillDefinition.g:158:2: ( ( rule__SkillDefinitionSet__Group__0 ) )
-            // InternalSkillDefinition.g:159:3: ( rule__SkillDefinitionSet__Group__0 )
+            // InternalSkillDefinition.g:158:2: ( ( rule__CoordinationModuleDefinition__Group__0 ) )
+            // InternalSkillDefinition.g:159:3: ( rule__CoordinationModuleDefinition__Group__0 )
             {
-             before(grammarAccess.getSkillDefinitionSetAccess().getGroup()); 
-            // InternalSkillDefinition.g:160:3: ( rule__SkillDefinitionSet__Group__0 )
-            // InternalSkillDefinition.g:160:4: rule__SkillDefinitionSet__Group__0
+             before(grammarAccess.getCoordinationModuleDefinitionAccess().getGroup()); 
+            // InternalSkillDefinition.g:160:3: ( rule__CoordinationModuleDefinition__Group__0 )
+            // InternalSkillDefinition.g:160:4: rule__CoordinationModuleDefinition__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__SkillDefinitionSet__Group__0();
+            rule__CoordinationModuleDefinition__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSkillDefinitionSetAccess().getGroup()); 
+             after(grammarAccess.getCoordinationModuleDefinitionAccess().getGroup()); 
 
             }
 
@@ -333,7 +333,7 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "ruleSkillDefinitionSet"
+    // $ANTLR end "ruleCoordinationModuleDefinition"
 
 
     // $ANTLR start "entryRuleSkillDefinition"
@@ -3200,20 +3200,20 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SkillDefinitionRepository__Group__3__Impl"
-    // InternalSkillDefinition.g:1018:1: rule__SkillDefinitionRepository__Group__3__Impl : ( ( rule__SkillDefinitionRepository__SetsAssignment_3 )* ) ;
+    // InternalSkillDefinition.g:1018:1: rule__SkillDefinitionRepository__Group__3__Impl : ( ( rule__SkillDefinitionRepository__ModulesAssignment_3 )* ) ;
     public final void rule__SkillDefinitionRepository__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillDefinition.g:1022:1: ( ( ( rule__SkillDefinitionRepository__SetsAssignment_3 )* ) )
-            // InternalSkillDefinition.g:1023:1: ( ( rule__SkillDefinitionRepository__SetsAssignment_3 )* )
+            // InternalSkillDefinition.g:1022:1: ( ( ( rule__SkillDefinitionRepository__ModulesAssignment_3 )* ) )
+            // InternalSkillDefinition.g:1023:1: ( ( rule__SkillDefinitionRepository__ModulesAssignment_3 )* )
             {
-            // InternalSkillDefinition.g:1023:1: ( ( rule__SkillDefinitionRepository__SetsAssignment_3 )* )
-            // InternalSkillDefinition.g:1024:2: ( rule__SkillDefinitionRepository__SetsAssignment_3 )*
+            // InternalSkillDefinition.g:1023:1: ( ( rule__SkillDefinitionRepository__ModulesAssignment_3 )* )
+            // InternalSkillDefinition.g:1024:2: ( rule__SkillDefinitionRepository__ModulesAssignment_3 )*
             {
-             before(grammarAccess.getSkillDefinitionRepositoryAccess().getSetsAssignment_3()); 
-            // InternalSkillDefinition.g:1025:2: ( rule__SkillDefinitionRepository__SetsAssignment_3 )*
+             before(grammarAccess.getSkillDefinitionRepositoryAccess().getModulesAssignment_3()); 
+            // InternalSkillDefinition.g:1025:2: ( rule__SkillDefinitionRepository__ModulesAssignment_3 )*
             loop10:
             do {
                 int alt10=2;
@@ -3226,10 +3226,10 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalSkillDefinition.g:1025:3: rule__SkillDefinitionRepository__SetsAssignment_3
+            	    // InternalSkillDefinition.g:1025:3: rule__SkillDefinitionRepository__ModulesAssignment_3
             	    {
             	    pushFollow(FOLLOW_7);
-            	    rule__SkillDefinitionRepository__SetsAssignment_3();
+            	    rule__SkillDefinitionRepository__ModulesAssignment_3();
 
             	    state._fsp--;
 
@@ -3242,7 +3242,7 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
                 }
             } while (true);
 
-             after(grammarAccess.getSkillDefinitionRepositoryAccess().getSetsAssignment_3()); 
+             after(grammarAccess.getSkillDefinitionRepositoryAccess().getModulesAssignment_3()); 
 
             }
 
@@ -3334,23 +3334,23 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
     // $ANTLR end "rule__SkillDefinitionRepository__Group__4__Impl"
 
 
-    // $ANTLR start "rule__SkillDefinitionSet__Group__0"
-    // InternalSkillDefinition.g:1060:1: rule__SkillDefinitionSet__Group__0 : rule__SkillDefinitionSet__Group__0__Impl rule__SkillDefinitionSet__Group__1 ;
-    public final void rule__SkillDefinitionSet__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationModuleDefinition__Group__0"
+    // InternalSkillDefinition.g:1060:1: rule__CoordinationModuleDefinition__Group__0 : rule__CoordinationModuleDefinition__Group__0__Impl rule__CoordinationModuleDefinition__Group__1 ;
+    public final void rule__CoordinationModuleDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillDefinition.g:1064:1: ( rule__SkillDefinitionSet__Group__0__Impl rule__SkillDefinitionSet__Group__1 )
-            // InternalSkillDefinition.g:1065:2: rule__SkillDefinitionSet__Group__0__Impl rule__SkillDefinitionSet__Group__1
+            // InternalSkillDefinition.g:1064:1: ( rule__CoordinationModuleDefinition__Group__0__Impl rule__CoordinationModuleDefinition__Group__1 )
+            // InternalSkillDefinition.g:1065:2: rule__CoordinationModuleDefinition__Group__0__Impl rule__CoordinationModuleDefinition__Group__1
             {
             pushFollow(FOLLOW_4);
-            rule__SkillDefinitionSet__Group__0__Impl();
+            rule__CoordinationModuleDefinition__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__SkillDefinitionSet__Group__1();
+            rule__CoordinationModuleDefinition__Group__1();
 
             state._fsp--;
 
@@ -3369,25 +3369,25 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SkillDefinitionSet__Group__0"
+    // $ANTLR end "rule__CoordinationModuleDefinition__Group__0"
 
 
-    // $ANTLR start "rule__SkillDefinitionSet__Group__0__Impl"
-    // InternalSkillDefinition.g:1072:1: rule__SkillDefinitionSet__Group__0__Impl : ( 'SkillDefinitionSet' ) ;
-    public final void rule__SkillDefinitionSet__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationModuleDefinition__Group__0__Impl"
+    // InternalSkillDefinition.g:1072:1: rule__CoordinationModuleDefinition__Group__0__Impl : ( 'CoordinationModuleDefinition' ) ;
+    public final void rule__CoordinationModuleDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillDefinition.g:1076:1: ( ( 'SkillDefinitionSet' ) )
-            // InternalSkillDefinition.g:1077:1: ( 'SkillDefinitionSet' )
+            // InternalSkillDefinition.g:1076:1: ( ( 'CoordinationModuleDefinition' ) )
+            // InternalSkillDefinition.g:1077:1: ( 'CoordinationModuleDefinition' )
             {
-            // InternalSkillDefinition.g:1077:1: ( 'SkillDefinitionSet' )
-            // InternalSkillDefinition.g:1078:2: 'SkillDefinitionSet'
+            // InternalSkillDefinition.g:1077:1: ( 'CoordinationModuleDefinition' )
+            // InternalSkillDefinition.g:1078:2: 'CoordinationModuleDefinition'
             {
-             before(grammarAccess.getSkillDefinitionSetAccess().getSkillDefinitionSetKeyword_0()); 
+             before(grammarAccess.getCoordinationModuleDefinitionAccess().getCoordinationModuleDefinitionKeyword_0()); 
             match(input,33,FOLLOW_2); 
-             after(grammarAccess.getSkillDefinitionSetAccess().getSkillDefinitionSetKeyword_0()); 
+             after(grammarAccess.getCoordinationModuleDefinitionAccess().getCoordinationModuleDefinitionKeyword_0()); 
 
             }
 
@@ -3406,26 +3406,26 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SkillDefinitionSet__Group__0__Impl"
+    // $ANTLR end "rule__CoordinationModuleDefinition__Group__0__Impl"
 
 
-    // $ANTLR start "rule__SkillDefinitionSet__Group__1"
-    // InternalSkillDefinition.g:1087:1: rule__SkillDefinitionSet__Group__1 : rule__SkillDefinitionSet__Group__1__Impl rule__SkillDefinitionSet__Group__2 ;
-    public final void rule__SkillDefinitionSet__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationModuleDefinition__Group__1"
+    // InternalSkillDefinition.g:1087:1: rule__CoordinationModuleDefinition__Group__1 : rule__CoordinationModuleDefinition__Group__1__Impl rule__CoordinationModuleDefinition__Group__2 ;
+    public final void rule__CoordinationModuleDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillDefinition.g:1091:1: ( rule__SkillDefinitionSet__Group__1__Impl rule__SkillDefinitionSet__Group__2 )
-            // InternalSkillDefinition.g:1092:2: rule__SkillDefinitionSet__Group__1__Impl rule__SkillDefinitionSet__Group__2
+            // InternalSkillDefinition.g:1091:1: ( rule__CoordinationModuleDefinition__Group__1__Impl rule__CoordinationModuleDefinition__Group__2 )
+            // InternalSkillDefinition.g:1092:2: rule__CoordinationModuleDefinition__Group__1__Impl rule__CoordinationModuleDefinition__Group__2
             {
             pushFollow(FOLLOW_5);
-            rule__SkillDefinitionSet__Group__1__Impl();
+            rule__CoordinationModuleDefinition__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__SkillDefinitionSet__Group__2();
+            rule__CoordinationModuleDefinition__Group__2();
 
             state._fsp--;
 
@@ -3444,35 +3444,35 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SkillDefinitionSet__Group__1"
+    // $ANTLR end "rule__CoordinationModuleDefinition__Group__1"
 
 
-    // $ANTLR start "rule__SkillDefinitionSet__Group__1__Impl"
-    // InternalSkillDefinition.g:1099:1: rule__SkillDefinitionSet__Group__1__Impl : ( ( rule__SkillDefinitionSet__NameAssignment_1 ) ) ;
-    public final void rule__SkillDefinitionSet__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationModuleDefinition__Group__1__Impl"
+    // InternalSkillDefinition.g:1099:1: rule__CoordinationModuleDefinition__Group__1__Impl : ( ( rule__CoordinationModuleDefinition__NameAssignment_1 ) ) ;
+    public final void rule__CoordinationModuleDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillDefinition.g:1103:1: ( ( ( rule__SkillDefinitionSet__NameAssignment_1 ) ) )
-            // InternalSkillDefinition.g:1104:1: ( ( rule__SkillDefinitionSet__NameAssignment_1 ) )
+            // InternalSkillDefinition.g:1103:1: ( ( ( rule__CoordinationModuleDefinition__NameAssignment_1 ) ) )
+            // InternalSkillDefinition.g:1104:1: ( ( rule__CoordinationModuleDefinition__NameAssignment_1 ) )
             {
-            // InternalSkillDefinition.g:1104:1: ( ( rule__SkillDefinitionSet__NameAssignment_1 ) )
-            // InternalSkillDefinition.g:1105:2: ( rule__SkillDefinitionSet__NameAssignment_1 )
+            // InternalSkillDefinition.g:1104:1: ( ( rule__CoordinationModuleDefinition__NameAssignment_1 ) )
+            // InternalSkillDefinition.g:1105:2: ( rule__CoordinationModuleDefinition__NameAssignment_1 )
             {
-             before(grammarAccess.getSkillDefinitionSetAccess().getNameAssignment_1()); 
-            // InternalSkillDefinition.g:1106:2: ( rule__SkillDefinitionSet__NameAssignment_1 )
-            // InternalSkillDefinition.g:1106:3: rule__SkillDefinitionSet__NameAssignment_1
+             before(grammarAccess.getCoordinationModuleDefinitionAccess().getNameAssignment_1()); 
+            // InternalSkillDefinition.g:1106:2: ( rule__CoordinationModuleDefinition__NameAssignment_1 )
+            // InternalSkillDefinition.g:1106:3: rule__CoordinationModuleDefinition__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__SkillDefinitionSet__NameAssignment_1();
+            rule__CoordinationModuleDefinition__NameAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSkillDefinitionSetAccess().getNameAssignment_1()); 
+             after(grammarAccess.getCoordinationModuleDefinitionAccess().getNameAssignment_1()); 
 
             }
 
@@ -3491,26 +3491,26 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SkillDefinitionSet__Group__1__Impl"
+    // $ANTLR end "rule__CoordinationModuleDefinition__Group__1__Impl"
 
 
-    // $ANTLR start "rule__SkillDefinitionSet__Group__2"
-    // InternalSkillDefinition.g:1114:1: rule__SkillDefinitionSet__Group__2 : rule__SkillDefinitionSet__Group__2__Impl rule__SkillDefinitionSet__Group__3 ;
-    public final void rule__SkillDefinitionSet__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationModuleDefinition__Group__2"
+    // InternalSkillDefinition.g:1114:1: rule__CoordinationModuleDefinition__Group__2 : rule__CoordinationModuleDefinition__Group__2__Impl rule__CoordinationModuleDefinition__Group__3 ;
+    public final void rule__CoordinationModuleDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillDefinition.g:1118:1: ( rule__SkillDefinitionSet__Group__2__Impl rule__SkillDefinitionSet__Group__3 )
-            // InternalSkillDefinition.g:1119:2: rule__SkillDefinitionSet__Group__2__Impl rule__SkillDefinitionSet__Group__3
+            // InternalSkillDefinition.g:1118:1: ( rule__CoordinationModuleDefinition__Group__2__Impl rule__CoordinationModuleDefinition__Group__3 )
+            // InternalSkillDefinition.g:1119:2: rule__CoordinationModuleDefinition__Group__2__Impl rule__CoordinationModuleDefinition__Group__3
             {
             pushFollow(FOLLOW_8);
-            rule__SkillDefinitionSet__Group__2__Impl();
+            rule__CoordinationModuleDefinition__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__SkillDefinitionSet__Group__3();
+            rule__CoordinationModuleDefinition__Group__3();
 
             state._fsp--;
 
@@ -3529,12 +3529,12 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SkillDefinitionSet__Group__2"
+    // $ANTLR end "rule__CoordinationModuleDefinition__Group__2"
 
 
-    // $ANTLR start "rule__SkillDefinitionSet__Group__2__Impl"
-    // InternalSkillDefinition.g:1126:1: rule__SkillDefinitionSet__Group__2__Impl : ( '{' ) ;
-    public final void rule__SkillDefinitionSet__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationModuleDefinition__Group__2__Impl"
+    // InternalSkillDefinition.g:1126:1: rule__CoordinationModuleDefinition__Group__2__Impl : ( '{' ) ;
+    public final void rule__CoordinationModuleDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3545,9 +3545,9 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
             // InternalSkillDefinition.g:1131:1: ( '{' )
             // InternalSkillDefinition.g:1132:2: '{'
             {
-             before(grammarAccess.getSkillDefinitionSetAccess().getLeftCurlyBracketKeyword_2()); 
+             before(grammarAccess.getCoordinationModuleDefinitionAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,31,FOLLOW_2); 
-             after(grammarAccess.getSkillDefinitionSetAccess().getLeftCurlyBracketKeyword_2()); 
+             after(grammarAccess.getCoordinationModuleDefinitionAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
 
@@ -3566,26 +3566,26 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SkillDefinitionSet__Group__2__Impl"
+    // $ANTLR end "rule__CoordinationModuleDefinition__Group__2__Impl"
 
 
-    // $ANTLR start "rule__SkillDefinitionSet__Group__3"
-    // InternalSkillDefinition.g:1141:1: rule__SkillDefinitionSet__Group__3 : rule__SkillDefinitionSet__Group__3__Impl rule__SkillDefinitionSet__Group__4 ;
-    public final void rule__SkillDefinitionSet__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationModuleDefinition__Group__3"
+    // InternalSkillDefinition.g:1141:1: rule__CoordinationModuleDefinition__Group__3 : rule__CoordinationModuleDefinition__Group__3__Impl rule__CoordinationModuleDefinition__Group__4 ;
+    public final void rule__CoordinationModuleDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillDefinition.g:1145:1: ( rule__SkillDefinitionSet__Group__3__Impl rule__SkillDefinitionSet__Group__4 )
-            // InternalSkillDefinition.g:1146:2: rule__SkillDefinitionSet__Group__3__Impl rule__SkillDefinitionSet__Group__4
+            // InternalSkillDefinition.g:1145:1: ( rule__CoordinationModuleDefinition__Group__3__Impl rule__CoordinationModuleDefinition__Group__4 )
+            // InternalSkillDefinition.g:1146:2: rule__CoordinationModuleDefinition__Group__3__Impl rule__CoordinationModuleDefinition__Group__4
             {
             pushFollow(FOLLOW_8);
-            rule__SkillDefinitionSet__Group__3__Impl();
+            rule__CoordinationModuleDefinition__Group__3__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__SkillDefinitionSet__Group__4();
+            rule__CoordinationModuleDefinition__Group__4();
 
             state._fsp--;
 
@@ -3604,24 +3604,24 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SkillDefinitionSet__Group__3"
+    // $ANTLR end "rule__CoordinationModuleDefinition__Group__3"
 
 
-    // $ANTLR start "rule__SkillDefinitionSet__Group__3__Impl"
-    // InternalSkillDefinition.g:1153:1: rule__SkillDefinitionSet__Group__3__Impl : ( ( rule__SkillDefinitionSet__SkillsAssignment_3 )* ) ;
-    public final void rule__SkillDefinitionSet__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationModuleDefinition__Group__3__Impl"
+    // InternalSkillDefinition.g:1153:1: rule__CoordinationModuleDefinition__Group__3__Impl : ( ( rule__CoordinationModuleDefinition__SkillsAssignment_3 )* ) ;
+    public final void rule__CoordinationModuleDefinition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillDefinition.g:1157:1: ( ( ( rule__SkillDefinitionSet__SkillsAssignment_3 )* ) )
-            // InternalSkillDefinition.g:1158:1: ( ( rule__SkillDefinitionSet__SkillsAssignment_3 )* )
+            // InternalSkillDefinition.g:1157:1: ( ( ( rule__CoordinationModuleDefinition__SkillsAssignment_3 )* ) )
+            // InternalSkillDefinition.g:1158:1: ( ( rule__CoordinationModuleDefinition__SkillsAssignment_3 )* )
             {
-            // InternalSkillDefinition.g:1158:1: ( ( rule__SkillDefinitionSet__SkillsAssignment_3 )* )
-            // InternalSkillDefinition.g:1159:2: ( rule__SkillDefinitionSet__SkillsAssignment_3 )*
+            // InternalSkillDefinition.g:1158:1: ( ( rule__CoordinationModuleDefinition__SkillsAssignment_3 )* )
+            // InternalSkillDefinition.g:1159:2: ( rule__CoordinationModuleDefinition__SkillsAssignment_3 )*
             {
-             before(grammarAccess.getSkillDefinitionSetAccess().getSkillsAssignment_3()); 
-            // InternalSkillDefinition.g:1160:2: ( rule__SkillDefinitionSet__SkillsAssignment_3 )*
+             before(grammarAccess.getCoordinationModuleDefinitionAccess().getSkillsAssignment_3()); 
+            // InternalSkillDefinition.g:1160:2: ( rule__CoordinationModuleDefinition__SkillsAssignment_3 )*
             loop11:
             do {
                 int alt11=2;
@@ -3634,10 +3634,10 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalSkillDefinition.g:1160:3: rule__SkillDefinitionSet__SkillsAssignment_3
+            	    // InternalSkillDefinition.g:1160:3: rule__CoordinationModuleDefinition__SkillsAssignment_3
             	    {
             	    pushFollow(FOLLOW_9);
-            	    rule__SkillDefinitionSet__SkillsAssignment_3();
+            	    rule__CoordinationModuleDefinition__SkillsAssignment_3();
 
             	    state._fsp--;
 
@@ -3650,7 +3650,7 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
                 }
             } while (true);
 
-             after(grammarAccess.getSkillDefinitionSetAccess().getSkillsAssignment_3()); 
+             after(grammarAccess.getCoordinationModuleDefinitionAccess().getSkillsAssignment_3()); 
 
             }
 
@@ -3669,21 +3669,21 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SkillDefinitionSet__Group__3__Impl"
+    // $ANTLR end "rule__CoordinationModuleDefinition__Group__3__Impl"
 
 
-    // $ANTLR start "rule__SkillDefinitionSet__Group__4"
-    // InternalSkillDefinition.g:1168:1: rule__SkillDefinitionSet__Group__4 : rule__SkillDefinitionSet__Group__4__Impl ;
-    public final void rule__SkillDefinitionSet__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationModuleDefinition__Group__4"
+    // InternalSkillDefinition.g:1168:1: rule__CoordinationModuleDefinition__Group__4 : rule__CoordinationModuleDefinition__Group__4__Impl ;
+    public final void rule__CoordinationModuleDefinition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillDefinition.g:1172:1: ( rule__SkillDefinitionSet__Group__4__Impl )
-            // InternalSkillDefinition.g:1173:2: rule__SkillDefinitionSet__Group__4__Impl
+            // InternalSkillDefinition.g:1172:1: ( rule__CoordinationModuleDefinition__Group__4__Impl )
+            // InternalSkillDefinition.g:1173:2: rule__CoordinationModuleDefinition__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__SkillDefinitionSet__Group__4__Impl();
+            rule__CoordinationModuleDefinition__Group__4__Impl();
 
             state._fsp--;
 
@@ -3702,12 +3702,12 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SkillDefinitionSet__Group__4"
+    // $ANTLR end "rule__CoordinationModuleDefinition__Group__4"
 
 
-    // $ANTLR start "rule__SkillDefinitionSet__Group__4__Impl"
-    // InternalSkillDefinition.g:1179:1: rule__SkillDefinitionSet__Group__4__Impl : ( '}' ) ;
-    public final void rule__SkillDefinitionSet__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationModuleDefinition__Group__4__Impl"
+    // InternalSkillDefinition.g:1179:1: rule__CoordinationModuleDefinition__Group__4__Impl : ( '}' ) ;
+    public final void rule__CoordinationModuleDefinition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3718,9 +3718,9 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
             // InternalSkillDefinition.g:1184:1: ( '}' )
             // InternalSkillDefinition.g:1185:2: '}'
             {
-             before(grammarAccess.getSkillDefinitionSetAccess().getRightCurlyBracketKeyword_4()); 
+             before(grammarAccess.getCoordinationModuleDefinitionAccess().getRightCurlyBracketKeyword_4()); 
             match(input,32,FOLLOW_2); 
-             after(grammarAccess.getSkillDefinitionSetAccess().getRightCurlyBracketKeyword_4()); 
+             after(grammarAccess.getCoordinationModuleDefinitionAccess().getRightCurlyBracketKeyword_4()); 
 
             }
 
@@ -3739,7 +3739,7 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SkillDefinitionSet__Group__4__Impl"
+    // $ANTLR end "rule__CoordinationModuleDefinition__Group__4__Impl"
 
 
     // $ANTLR start "rule__SkillDefinition__Group__0"
@@ -10080,26 +10080,26 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
     // $ANTLR end "rule__SkillDefinitionRepository__NameAssignment_1"
 
 
-    // $ANTLR start "rule__SkillDefinitionRepository__SetsAssignment_3"
-    // InternalSkillDefinition.g:3291:1: rule__SkillDefinitionRepository__SetsAssignment_3 : ( ruleSkillDefinitionSet ) ;
-    public final void rule__SkillDefinitionRepository__SetsAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__SkillDefinitionRepository__ModulesAssignment_3"
+    // InternalSkillDefinition.g:3291:1: rule__SkillDefinitionRepository__ModulesAssignment_3 : ( ruleCoordinationModuleDefinition ) ;
+    public final void rule__SkillDefinitionRepository__ModulesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillDefinition.g:3295:1: ( ( ruleSkillDefinitionSet ) )
-            // InternalSkillDefinition.g:3296:2: ( ruleSkillDefinitionSet )
+            // InternalSkillDefinition.g:3295:1: ( ( ruleCoordinationModuleDefinition ) )
+            // InternalSkillDefinition.g:3296:2: ( ruleCoordinationModuleDefinition )
             {
-            // InternalSkillDefinition.g:3296:2: ( ruleSkillDefinitionSet )
-            // InternalSkillDefinition.g:3297:3: ruleSkillDefinitionSet
+            // InternalSkillDefinition.g:3296:2: ( ruleCoordinationModuleDefinition )
+            // InternalSkillDefinition.g:3297:3: ruleCoordinationModuleDefinition
             {
-             before(grammarAccess.getSkillDefinitionRepositoryAccess().getSetsSkillDefinitionSetParserRuleCall_3_0()); 
+             before(grammarAccess.getSkillDefinitionRepositoryAccess().getModulesCoordinationModuleDefinitionParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
-            ruleSkillDefinitionSet();
+            ruleCoordinationModuleDefinition();
 
             state._fsp--;
 
-             after(grammarAccess.getSkillDefinitionRepositoryAccess().getSetsSkillDefinitionSetParserRuleCall_3_0()); 
+             after(grammarAccess.getSkillDefinitionRepositoryAccess().getModulesCoordinationModuleDefinitionParserRuleCall_3_0()); 
 
             }
 
@@ -10118,12 +10118,12 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SkillDefinitionRepository__SetsAssignment_3"
+    // $ANTLR end "rule__SkillDefinitionRepository__ModulesAssignment_3"
 
 
-    // $ANTLR start "rule__SkillDefinitionSet__NameAssignment_1"
-    // InternalSkillDefinition.g:3306:1: rule__SkillDefinitionSet__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__SkillDefinitionSet__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationModuleDefinition__NameAssignment_1"
+    // InternalSkillDefinition.g:3306:1: rule__CoordinationModuleDefinition__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__CoordinationModuleDefinition__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -10134,9 +10134,9 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
             // InternalSkillDefinition.g:3311:2: ( RULE_ID )
             // InternalSkillDefinition.g:3312:3: RULE_ID
             {
-             before(grammarAccess.getSkillDefinitionSetAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getCoordinationModuleDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getSkillDefinitionSetAccess().getNameIDTerminalRuleCall_1_0()); 
+             after(grammarAccess.getCoordinationModuleDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -10155,12 +10155,12 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SkillDefinitionSet__NameAssignment_1"
+    // $ANTLR end "rule__CoordinationModuleDefinition__NameAssignment_1"
 
 
-    // $ANTLR start "rule__SkillDefinitionSet__SkillsAssignment_3"
-    // InternalSkillDefinition.g:3321:1: rule__SkillDefinitionSet__SkillsAssignment_3 : ( ruleSkillDefinition ) ;
-    public final void rule__SkillDefinitionSet__SkillsAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationModuleDefinition__SkillsAssignment_3"
+    // InternalSkillDefinition.g:3321:1: rule__CoordinationModuleDefinition__SkillsAssignment_3 : ( ruleSkillDefinition ) ;
+    public final void rule__CoordinationModuleDefinition__SkillsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -10171,13 +10171,13 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
             // InternalSkillDefinition.g:3326:2: ( ruleSkillDefinition )
             // InternalSkillDefinition.g:3327:3: ruleSkillDefinition
             {
-             before(grammarAccess.getSkillDefinitionSetAccess().getSkillsSkillDefinitionParserRuleCall_3_0()); 
+             before(grammarAccess.getCoordinationModuleDefinitionAccess().getSkillsSkillDefinitionParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleSkillDefinition();
 
             state._fsp--;
 
-             after(grammarAccess.getSkillDefinitionSetAccess().getSkillsSkillDefinitionParserRuleCall_3_0()); 
+             after(grammarAccess.getCoordinationModuleDefinitionAccess().getSkillsSkillDefinitionParserRuleCall_3_0()); 
 
             }
 
@@ -10196,7 +10196,7 @@ public class InternalSkillDefinitionParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SkillDefinitionSet__SkillsAssignment_3"
+    // $ANTLR end "rule__CoordinationModuleDefinition__SkillsAssignment_3"
 
 
     // $ANTLR start "rule__SkillDefinition__NameAssignment_1"

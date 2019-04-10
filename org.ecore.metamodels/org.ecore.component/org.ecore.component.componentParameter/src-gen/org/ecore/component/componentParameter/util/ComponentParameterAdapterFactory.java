@@ -129,6 +129,11 @@ public class ComponentParameterAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseComponentRunTimeParameterBase(ComponentRunTimeParameterBase object) {
+			return createComponentRunTimeParameterBaseAdapter();
+		}
+
+		@Override
 		public Adapter caseAbstractComponentElement(AbstractComponentElement object) {
 			return createAbstractComponentElementAdapter();
 		}
@@ -322,6 +327,20 @@ public class ComponentParameterAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComponentParametersRefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.component.componentParameter.ComponentRunTimeParameterBase <em>Component Run Time Parameter Base</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.component.componentParameter.ComponentRunTimeParameterBase
+	 * @generated
+	 */
+	public Adapter createComponentRunTimeParameterBaseAdapter() {
 		return null;
 	}
 

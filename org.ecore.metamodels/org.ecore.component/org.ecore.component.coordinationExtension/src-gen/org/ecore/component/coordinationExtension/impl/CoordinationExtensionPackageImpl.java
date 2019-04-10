@@ -365,7 +365,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSkillRealizationsRef_SkillRealizationSetRef() {
+	public EReference getSkillRealizationsRef_SkillRealizationCoordModuleRef() {
 		return (EReference) skillRealizationsRefEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -427,7 +427,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 				COMMUNICATION_SERVICE_USAGE_REALIZATION__COMPONENT_PORT);
 
 		skillRealizationsRefEClass = createEClass(SKILL_REALIZATIONS_REF);
-		createEReference(skillRealizationsRefEClass, SKILL_REALIZATIONS_REF__SKILL_REALIZATION_SET_REF);
+		createEReference(skillRealizationsRefEClass, SKILL_REALIZATIONS_REF__SKILL_REALIZATION_COORD_MODULE_REF);
 	}
 
 	/**
@@ -541,9 +541,9 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 
 		initEClass(skillRealizationsRefEClass, SkillRealizationsRef.class, "SkillRealizationsRef", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSkillRealizationsRef_SkillRealizationSetRef(),
-				theSkillRealizationPackage.getSkillRealizationSet(), null, "skillRealizationSetRef", null, 1, 1,
-				SkillRealizationsRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+		initEReference(getSkillRealizationsRef_SkillRealizationCoordModuleRef(),
+				theSkillRealizationPackage.getCoordinationModuleRealization(), null, "skillRealizationCoordModuleRef",
+				null, 1, 1, SkillRealizationsRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

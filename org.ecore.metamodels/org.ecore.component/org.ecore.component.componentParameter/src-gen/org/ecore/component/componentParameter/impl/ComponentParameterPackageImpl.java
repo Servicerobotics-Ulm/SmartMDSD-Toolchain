@@ -23,6 +23,7 @@ import org.ecore.component.componentParameter.ComponentParameterBase;
 import org.ecore.component.componentParameter.ComponentParameterFactory;
 import org.ecore.component.componentParameter.ComponentParameterPackage;
 import org.ecore.component.componentParameter.ComponentParametersRef;
+import org.ecore.component.componentParameter.ComponentRunTimeParameterBase;
 import org.ecore.component.componentParameter.ExtendedParameter;
 import org.ecore.component.componentParameter.ExtendedTrigger;
 import org.ecore.component.componentParameter.InternalParameter;
@@ -132,6 +133,13 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * @generated
 	 */
 	private EClass componentParametersRefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass componentRunTimeParameterBaseEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -430,6 +438,15 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTriggerInstance_Name() {
+		return (EAttribute) triggerInstanceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getParameterInstance() {
 		return parameterInstanceEClass;
 	}
@@ -520,6 +537,15 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getComponentRunTimeParameterBase() {
+		return componentRunTimeParameterBaseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ComponentParameterFactory getComponentParameterFactory() {
 		return (ComponentParameterFactory) getEFactoryInstance();
 	}
@@ -576,6 +602,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 		triggerInstanceEClass = createEClass(TRIGGER_INSTANCE);
 		createEReference(triggerInstanceEClass, TRIGGER_INSTANCE__TRIGGER_DEF);
 		createEAttribute(triggerInstanceEClass, TRIGGER_INSTANCE__ACTIVE);
+		createEAttribute(triggerInstanceEClass, TRIGGER_INSTANCE__NAME);
 
 		parameterInstanceEClass = createEClass(PARAMETER_INSTANCE);
 		createEReference(parameterInstanceEClass, PARAMETER_INSTANCE__PARAMETER_DEF);
@@ -589,6 +616,8 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 		componentParametersRefEClass = createEClass(COMPONENT_PARAMETERS_REF);
 		createEReference(componentParametersRefEClass, COMPONENT_PARAMETERS_REF__PARAMETER);
 		createEReference(componentParametersRefEClass, COMPONENT_PARAMETERS_REF__SLAVE);
+
+		componentRunTimeParameterBaseEClass = createEClass(COMPONENT_RUN_TIME_PARAMETER_BASE);
 	}
 
 	/**
@@ -634,10 +663,14 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 		internalParameterEClass.getESuperTypes().add(this.getComponentParameterBase());
 		extendedParameterEClass.getESuperTypes().add(this.getAbstractComponentParameter());
 		extendedParameterEClass.getESuperTypes().add(this.getComponentParameterBase());
+		extendedParameterEClass.getESuperTypes().add(this.getComponentRunTimeParameterBase());
 		extendedTriggerEClass.getESuperTypes().add(this.getAbstractComponentParameter());
+		extendedTriggerEClass.getESuperTypes().add(this.getComponentRunTimeParameterBase());
 		parameterSetInstanceEClass.getESuperTypes().add(this.getAbstractComponentParameter());
 		triggerInstanceEClass.getESuperTypes().add(this.getAbstractParameterInstance());
+		triggerInstanceEClass.getESuperTypes().add(this.getComponentRunTimeParameterBase());
 		parameterInstanceEClass.getESuperTypes().add(this.getAbstractParameterInstance());
+		parameterInstanceEClass.getESuperTypes().add(this.getComponentRunTimeParameterBase());
 		parameterInstanceEClass.getESuperTypes().add(this.getComponentParameterBase());
 		componentParametersRefEClass.getESuperTypes().add(theComponentDefinitionPackage.getDerivedComponentElement());
 
@@ -712,6 +745,8 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 		initEAttribute(getTriggerInstance_Active(), ecorePackage.getEBoolean(), "active", null, 1, 1,
 				TriggerInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTriggerInstance_Name(), ecorePackage.getEString(), "name", null, 1, 1, TriggerInstance.class,
+				IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterInstanceEClass, ParameterInstance.class, "ParameterInstance", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -742,6 +777,9 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 		initEReference(getComponentParametersRef_Slave(), theCoordinationExtensionPackage.getCoordinationSlavePort(),
 				null, "slave", null, 0, 1, ComponentParametersRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(componentRunTimeParameterBaseEClass, ComponentRunTimeParameterBase.class,
+				"ComponentRunTimeParameterBase", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

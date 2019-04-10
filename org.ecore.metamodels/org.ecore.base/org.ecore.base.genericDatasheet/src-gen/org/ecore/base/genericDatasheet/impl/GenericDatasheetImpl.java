@@ -25,7 +25,7 @@ import org.ecore.base.genericDatasheet.TRL;
  * </p>
  * <ul>
  *   <li>{@link org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl#getLicense <em>License</em>}</li>
- *   <li>{@link org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl#getShortDescrition <em>Short Descrition</em>}</li>
+ *   <li>{@link org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl#getShortDescription <em>Short Description</em>}</li>
  *   <li>{@link org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl#getLongDescription <em>Long Description</em>}</li>
  *   <li>{@link org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl#getSupplierDescription <em>Supplier Description</em>}</li>
  *   <li>{@link org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl#getHomepage <em>Homepage</em>}</li>
@@ -47,24 +47,24 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	protected AbstractLicense license;
 
 	/**
-	 * The default value of the '{@link #getShortDescrition() <em>Short Descrition</em>}' attribute.
+	 * The default value of the '{@link #getShortDescription() <em>Short Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getShortDescrition()
+	 * @see #getShortDescription()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SHORT_DESCRITION_EDEFAULT = null;
+	protected static final String SHORT_DESCRIPTION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getShortDescrition() <em>Short Descrition</em>}' attribute.
+	 * The cached value of the '{@link #getShortDescription() <em>Short Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getShortDescrition()
+	 * @see #getShortDescription()
 	 * @generated
 	 * @ordered
 	 */
-	protected String shortDescrition = SHORT_DESCRITION_EDEFAULT;
+	protected String shortDescription = SHORT_DESCRIPTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLongDescription() <em>Long Description</em>}' attribute.
@@ -190,6 +190,7 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AbstractLicense getLicense() {
 		return license;
 	}
@@ -218,6 +219,7 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLicense(AbstractLicense newLicense) {
 		if (newLicense != license) {
 			NotificationChain msgs = null;
@@ -240,8 +242,9 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getShortDescrition() {
-		return shortDescrition;
+	@Override
+	public String getShortDescription() {
+		return shortDescription;
 	}
 
 	/**
@@ -249,12 +252,14 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setShortDescrition(String newShortDescrition) {
-		String oldShortDescrition = shortDescrition;
-		shortDescrition = newShortDescrition;
+	@Override
+	public void setShortDescription(String newShortDescription) {
+		String oldShortDescription = shortDescription;
+		shortDescription = newShortDescription;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRITION, oldShortDescrition, shortDescrition));
+					GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRIPTION, oldShortDescription,
+					shortDescription));
 	}
 
 	/**
@@ -262,6 +267,7 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLongDescription() {
 		return longDescription;
 	}
@@ -271,6 +277,7 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLongDescription(String newLongDescription) {
 		String oldLongDescription = longDescription;
 		longDescription = newLongDescription;
@@ -284,6 +291,7 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getSupplierDescription() {
 		return supplierDescription;
 	}
@@ -293,6 +301,7 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSupplierDescription(String newSupplierDescription) {
 		String oldSupplierDescription = supplierDescription;
 		supplierDescription = newSupplierDescription;
@@ -307,6 +316,7 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getHomepage() {
 		return homepage;
 	}
@@ -316,6 +326,7 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHomepage(String newHomepage) {
 		String oldHomepage = homepage;
 		homepage = newHomepage;
@@ -329,6 +340,7 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getBaseURI() {
 		return baseURI;
 	}
@@ -338,6 +350,7 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBaseURI(String newBaseURI) {
 		String oldBaseURI = baseURI;
 		baseURI = newBaseURI;
@@ -351,6 +364,7 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TRL getTrl() {
 		return trl;
 	}
@@ -360,6 +374,7 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTrl(TRL newTrl) {
 		TRL oldTrl = trl;
 		trl = newTrl == null ? TRL_EDEFAULT : newTrl;
@@ -392,8 +407,8 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case GenericDatasheetPackage.GENERIC_DATASHEET__LICENSE:
 			return getLicense();
-		case GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRITION:
-			return getShortDescrition();
+		case GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRIPTION:
+			return getShortDescription();
 		case GenericDatasheetPackage.GENERIC_DATASHEET__LONG_DESCRIPTION:
 			return getLongDescription();
 		case GenericDatasheetPackage.GENERIC_DATASHEET__SUPPLIER_DESCRIPTION:
@@ -419,8 +434,8 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 		case GenericDatasheetPackage.GENERIC_DATASHEET__LICENSE:
 			setLicense((AbstractLicense) newValue);
 			return;
-		case GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRITION:
-			setShortDescrition((String) newValue);
+		case GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRIPTION:
+			setShortDescription((String) newValue);
 			return;
 		case GenericDatasheetPackage.GENERIC_DATASHEET__LONG_DESCRIPTION:
 			setLongDescription((String) newValue);
@@ -452,8 +467,8 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 		case GenericDatasheetPackage.GENERIC_DATASHEET__LICENSE:
 			setLicense((AbstractLicense) null);
 			return;
-		case GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRITION:
-			setShortDescrition(SHORT_DESCRITION_EDEFAULT);
+		case GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRIPTION:
+			setShortDescription(SHORT_DESCRIPTION_EDEFAULT);
 			return;
 		case GenericDatasheetPackage.GENERIC_DATASHEET__LONG_DESCRIPTION:
 			setLongDescription(LONG_DESCRIPTION_EDEFAULT);
@@ -484,9 +499,9 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case GenericDatasheetPackage.GENERIC_DATASHEET__LICENSE:
 			return license != null;
-		case GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRITION:
-			return SHORT_DESCRITION_EDEFAULT == null ? shortDescrition != null
-					: !SHORT_DESCRITION_EDEFAULT.equals(shortDescrition);
+		case GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRIPTION:
+			return SHORT_DESCRIPTION_EDEFAULT == null ? shortDescription != null
+					: !SHORT_DESCRIPTION_EDEFAULT.equals(shortDescription);
 		case GenericDatasheetPackage.GENERIC_DATASHEET__LONG_DESCRIPTION:
 			return LONG_DESCRIPTION_EDEFAULT == null ? longDescription != null
 					: !LONG_DESCRIPTION_EDEFAULT.equals(longDescription);
@@ -513,9 +528,9 @@ public class GenericDatasheetImpl extends MinimalEObjectImpl.Container implement
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (shortDescrition: ");
-		result.append(shortDescrition);
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (shortDescription: ");
+		result.append(shortDescription);
 		result.append(", longDescription: ");
 		result.append(longDescription);
 		result.append(", supplierDescription: ");

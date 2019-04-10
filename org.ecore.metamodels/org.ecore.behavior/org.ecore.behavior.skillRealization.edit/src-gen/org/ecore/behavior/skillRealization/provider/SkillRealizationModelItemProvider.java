@@ -71,7 +71,8 @@ public class SkillRealizationModelItemProvider extends ItemProviderAdapter imple
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SkillRealizationPackage.Literals.SKILL_REALIZATION_MODEL__SKILLSETS);
+			childrenFeatures.add(SkillRealizationPackage.Literals.SKILL_REALIZATION_MODEL__MODULES);
+			childrenFeatures.add(SkillRealizationPackage.Literals.SKILL_REALIZATION_MODEL__EVENTHANDLER);
 		}
 		return childrenFeatures;
 	}
@@ -133,7 +134,8 @@ public class SkillRealizationModelItemProvider extends ItemProviderAdapter imple
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SkillRealizationModel.class)) {
-		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__SKILLSETS:
+		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__MODULES:
+		case SkillRealizationPackage.SKILL_REALIZATION_MODEL__EVENTHANDLER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -151,9 +153,12 @@ public class SkillRealizationModelItemProvider extends ItemProviderAdapter imple
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
+		newChildDescriptors.add(createChildParameter(SkillRealizationPackage.Literals.SKILL_REALIZATION_MODEL__MODULES,
+				SkillRealizationFactory.eINSTANCE.createCoordinationModuleRealization()));
+
 		newChildDescriptors
-				.add(createChildParameter(SkillRealizationPackage.Literals.SKILL_REALIZATION_MODEL__SKILLSETS,
-						SkillRealizationFactory.eINSTANCE.createSkillRealizationSet()));
+				.add(createChildParameter(SkillRealizationPackage.Literals.SKILL_REALIZATION_MODEL__EVENTHANDLER,
+						SkillRealizationFactory.eINSTANCE.createEventHandler()));
 	}
 
 	/**

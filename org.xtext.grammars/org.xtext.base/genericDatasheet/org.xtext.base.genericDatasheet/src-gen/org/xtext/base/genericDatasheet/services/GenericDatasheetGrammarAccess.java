@@ -77,10 +77,10 @@ public class GenericDatasheetGrammarAccess extends AbstractGrammarElementFinder 
 		private final Assignment cBaseURIAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
 		private final RuleCall cBaseURIEStringParserRuleCall_0_2_0 = (RuleCall)cBaseURIAssignment_0_2.eContents().get(0);
 		private final Group cGroup_1 = (Group)cUnorderedGroup.eContents().get(1);
-		private final Keyword cShortDescritionKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cShortDescriptionKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cColonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cShortDescritionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cShortDescritionEStringParserRuleCall_1_2_0 = (RuleCall)cShortDescritionAssignment_1_2.eContents().get(0);
+		private final Assignment cShortDescriptionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cShortDescriptionEStringParserRuleCall_1_2_0 = (RuleCall)cShortDescriptionAssignment_1_2.eContents().get(0);
 		private final Group cGroup_2 = (Group)cUnorderedGroup.eContents().get(2);
 		private final Keyword cLongDescriptionKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
@@ -108,12 +108,12 @@ public class GenericDatasheetGrammarAccess extends AbstractGrammarElementFinder 
 		private final RuleCall cLicenseAbstractLicenseParserRuleCall_6_2_0 = (RuleCall)cLicenseAssignment_6_2.eContents().get(0);
 		
 		//fragment GenericDatasheet:
-		//	'baseURI' ':'? baseURI=EString & 'shortDescrition' ':'? shortDescrition=EString & ('longDescription' ':'?
+		//	'baseURI' ':'? baseURI=EString & 'shortDescription' ':'? shortDescription=EString & ('longDescription' ':'?
 		//	longDescription=TEXT_BLOCK)? & ('supplierDescription' ':'? supplierDescription=EString)? & ('homepage' ':'?
 		//	homepage=EString)? & ('trl' ':'? trl=TRL)? & ('license' ':'? license=AbstractLicense)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'baseURI' ':'? baseURI=EString & 'shortDescrition' ':'? shortDescrition=EString & ('longDescription' ':'?
+		//'baseURI' ':'? baseURI=EString & 'shortDescription' ':'? shortDescription=EString & ('longDescription' ':'?
 		//longDescription=TEXT_BLOCK)? & ('supplierDescription' ':'? supplierDescription=EString)? & ('homepage' ':'?
 		//homepage=EString)? & ('trl' ':'? trl=TRL)? & ('license' ':'? license=AbstractLicense)?
 		public UnorderedGroup getUnorderedGroup() { return cUnorderedGroup; }
@@ -133,20 +133,20 @@ public class GenericDatasheetGrammarAccess extends AbstractGrammarElementFinder 
 		//EString
 		public RuleCall getBaseURIEStringParserRuleCall_0_2_0() { return cBaseURIEStringParserRuleCall_0_2_0; }
 		
-		//'shortDescrition' ':'? shortDescrition=EString
+		//'shortDescription' ':'? shortDescription=EString
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//'shortDescrition'
-		public Keyword getShortDescritionKeyword_1_0() { return cShortDescritionKeyword_1_0; }
+		//'shortDescription'
+		public Keyword getShortDescriptionKeyword_1_0() { return cShortDescriptionKeyword_1_0; }
 		
 		//':'?
 		public Keyword getColonKeyword_1_1() { return cColonKeyword_1_1; }
 		
-		//shortDescrition=EString
-		public Assignment getShortDescritionAssignment_1_2() { return cShortDescritionAssignment_1_2; }
+		//shortDescription=EString
+		public Assignment getShortDescriptionAssignment_1_2() { return cShortDescriptionAssignment_1_2; }
 		
 		//EString
-		public RuleCall getShortDescritionEStringParserRuleCall_1_2_0() { return cShortDescritionEStringParserRuleCall_1_2_0; }
+		public RuleCall getShortDescriptionEStringParserRuleCall_1_2_0() { return cShortDescriptionEStringParserRuleCall_1_2_0; }
 		
 		//('longDescription' ':'? longDescription=TEXT_BLOCK)?
 		public Group getGroup_2() { return cGroup_2; }
@@ -528,7 +528,7 @@ public class GenericDatasheetGrammarAccess extends AbstractGrammarElementFinder 
 
 	
 	//fragment GenericDatasheet:
-	//	'baseURI' ':'? baseURI=EString & 'shortDescrition' ':'? shortDescrition=EString & ('longDescription' ':'?
+	//	'baseURI' ':'? baseURI=EString & 'shortDescription' ':'? shortDescription=EString & ('longDescription' ':'?
 	//	longDescription=TEXT_BLOCK)? & ('supplierDescription' ':'? supplierDescription=EString)? & ('homepage' ':'?
 	//	homepage=EString)? & ('trl' ':'? trl=TRL)? & ('license' ':'? license=AbstractLicense)?;
 	public GenericDatasheetElements getGenericDatasheetAccess() {

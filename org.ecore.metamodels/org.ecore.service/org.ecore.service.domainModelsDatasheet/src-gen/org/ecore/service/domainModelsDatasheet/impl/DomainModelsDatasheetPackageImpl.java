@@ -56,7 +56,7 @@ public class DomainModelsDatasheetPackageImpl extends EPackageImpl implements Do
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link DomainModelsDatasheetPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -72,9 +72,10 @@ public class DomainModelsDatasheetPackageImpl extends EPackageImpl implements Do
 					.getEPackage(DomainModelsDatasheetPackage.eNS_URI);
 
 		// Obtain or create and register package
-		DomainModelsDatasheetPackageImpl theDomainModelsDatasheetPackage = (DomainModelsDatasheetPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof DomainModelsDatasheetPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new DomainModelsDatasheetPackageImpl());
+		Object registeredDomainModelsDatasheetPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		DomainModelsDatasheetPackageImpl theDomainModelsDatasheetPackage = registeredDomainModelsDatasheetPackage instanceof DomainModelsDatasheetPackageImpl
+				? (DomainModelsDatasheetPackageImpl) registeredDomainModelsDatasheetPackage
+				: new DomainModelsDatasheetPackageImpl();
 
 		isInited = true;
 
@@ -100,6 +101,7 @@ public class DomainModelsDatasheetPackageImpl extends EPackageImpl implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDomainModelsDatasheet() {
 		return domainModelsDatasheetEClass;
 	}
@@ -109,6 +111,7 @@ public class DomainModelsDatasheetPackageImpl extends EPackageImpl implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDomainModelsDatasheet_Name() {
 		return (EAttribute) domainModelsDatasheetEClass.getEStructuralFeatures().get(0);
 	}
@@ -118,6 +121,7 @@ public class DomainModelsDatasheetPackageImpl extends EPackageImpl implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DomainModelsDatasheetFactory getDomainModelsDatasheetFactory() {
 		return (DomainModelsDatasheetFactory) getEFactoryInstance();
 	}

@@ -98,18 +98,18 @@ public class SkillDefinitionGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cSetsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cSetsSkillDefinitionSetParserRuleCall_3_0 = (RuleCall)cSetsAssignment_3.eContents().get(0);
+		private final Assignment cModulesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModulesCoordinationModuleDefinitionParserRuleCall_3_0 = (RuleCall)cModulesAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SkillDefinitionRepository skill::SkillDefinitionRepository:
 		//	'SkillDefinitionRepository' name=ID
 		//	'{'
-		//	sets+=SkillDefinitionSet*
+		//	modules+=CoordinationModuleDefinition*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'SkillDefinitionRepository' name=ID '{' sets+=SkillDefinitionSet* '}'
+		//'SkillDefinitionRepository' name=ID '{' modules+=CoordinationModuleDefinition* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'SkillDefinitionRepository'
@@ -124,19 +124,19 @@ public class SkillDefinitionGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//sets+=SkillDefinitionSet*
-		public Assignment getSetsAssignment_3() { return cSetsAssignment_3; }
+		//modules+=CoordinationModuleDefinition*
+		public Assignment getModulesAssignment_3() { return cModulesAssignment_3; }
 		
-		//SkillDefinitionSet
-		public RuleCall getSetsSkillDefinitionSetParserRuleCall_3_0() { return cSetsSkillDefinitionSetParserRuleCall_3_0; }
+		//CoordinationModuleDefinition
+		public RuleCall getModulesCoordinationModuleDefinitionParserRuleCall_3_0() { return cModulesCoordinationModuleDefinitionParserRuleCall_3_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
-	public class SkillDefinitionSetElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.service.skillDefinition.SkillDefinition.SkillDefinitionSet");
+	public class CoordinationModuleDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.service.skillDefinition.SkillDefinition.CoordinationModuleDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSkillDefinitionSetKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cCoordinationModuleDefinitionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -144,18 +144,18 @@ public class SkillDefinitionGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSkillsSkillDefinitionParserRuleCall_3_0 = (RuleCall)cSkillsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//SkillDefinitionSet skill::SkillDefinitionSet:
-		//	'SkillDefinitionSet' name=ID
+		//CoordinationModuleDefinition skill::CoordinationModuleDefinition:
+		//	'CoordinationModuleDefinition' name=ID
 		//	'{'
 		//	skills+=SkillDefinition*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'SkillDefinitionSet' name=ID '{' skills+=SkillDefinition* '}'
+		//'CoordinationModuleDefinition' name=ID '{' skills+=SkillDefinition* '}'
 		public Group getGroup() { return cGroup; }
 		
-		//'SkillDefinitionSet'
-		public Keyword getSkillDefinitionSetKeyword_0() { return cSkillDefinitionSetKeyword_0; }
+		//'CoordinationModuleDefinition'
+		public Keyword getCoordinationModuleDefinitionKeyword_0() { return cCoordinationModuleDefinitionKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -348,7 +348,7 @@ public class SkillDefinitionGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final SkillDefinitionModelElements pSkillDefinitionModel;
 	private final SkillDefinitionRepositoryElements pSkillDefinitionRepository;
-	private final SkillDefinitionSetElements pSkillDefinitionSet;
+	private final CoordinationModuleDefinitionElements pCoordinationModuleDefinition;
 	private final SkillDefinitionElements pSkillDefinition;
 	private final SkillResultElements pSkillResult;
 	private final SKILL_RESULT_TYPESElements eSKILL_RESULT_TYPES;
@@ -368,7 +368,7 @@ public class SkillDefinitionGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pSkillDefinitionModel = new SkillDefinitionModelElements();
 		this.pSkillDefinitionRepository = new SkillDefinitionRepositoryElements();
-		this.pSkillDefinitionSet = new SkillDefinitionSetElements();
+		this.pCoordinationModuleDefinition = new CoordinationModuleDefinitionElements();
 		this.pSkillDefinition = new SkillDefinitionElements();
 		this.pSkillResult = new SkillResultElements();
 		this.eSKILL_RESULT_TYPES = new SKILL_RESULT_TYPESElements();
@@ -418,7 +418,7 @@ public class SkillDefinitionGrammarAccess extends AbstractGrammarElementFinder {
 	//SkillDefinitionRepository skill::SkillDefinitionRepository:
 	//	'SkillDefinitionRepository' name=ID
 	//	'{'
-	//	sets+=SkillDefinitionSet*
+	//	modules+=CoordinationModuleDefinition*
 	//	'}';
 	public SkillDefinitionRepositoryElements getSkillDefinitionRepositoryAccess() {
 		return pSkillDefinitionRepository;
@@ -428,17 +428,17 @@ public class SkillDefinitionGrammarAccess extends AbstractGrammarElementFinder {
 		return getSkillDefinitionRepositoryAccess().getRule();
 	}
 	
-	//SkillDefinitionSet skill::SkillDefinitionSet:
-	//	'SkillDefinitionSet' name=ID
+	//CoordinationModuleDefinition skill::CoordinationModuleDefinition:
+	//	'CoordinationModuleDefinition' name=ID
 	//	'{'
 	//	skills+=SkillDefinition*
 	//	'}';
-	public SkillDefinitionSetElements getSkillDefinitionSetAccess() {
-		return pSkillDefinitionSet;
+	public CoordinationModuleDefinitionElements getCoordinationModuleDefinitionAccess() {
+		return pCoordinationModuleDefinition;
 	}
 	
-	public ParserRule getSkillDefinitionSetRule() {
-		return getSkillDefinitionSetAccess().getRule();
+	public ParserRule getCoordinationModuleDefinitionRule() {
+		return getCoordinationModuleDefinitionAccess().getRule();
 	}
 	
 	//SkillDefinition skill::SkillDefinition: //'SkillDefinition' name=EString

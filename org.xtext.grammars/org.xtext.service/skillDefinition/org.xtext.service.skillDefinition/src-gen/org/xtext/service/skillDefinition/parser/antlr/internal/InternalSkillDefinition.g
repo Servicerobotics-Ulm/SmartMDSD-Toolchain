@@ -192,18 +192,18 @@ ruleSkillDefinitionRepository returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSkillDefinitionRepositoryAccess().getSetsSkillDefinitionSetParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getSkillDefinitionRepositoryAccess().getModulesCoordinationModuleDefinitionParserRuleCall_3_0());
 				}
-				lv_sets_3_0=ruleSkillDefinitionSet
+				lv_modules_3_0=ruleCoordinationModuleDefinition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSkillDefinitionRepositoryRule());
 					}
 					add(
 						$current,
-						"sets",
-						lv_sets_3_0,
-						"org.xtext.service.skillDefinition.SkillDefinition.SkillDefinitionSet");
+						"modules",
+						lv_modules_3_0,
+						"org.xtext.service.skillDefinition.SkillDefinition.CoordinationModuleDefinition");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -215,15 +215,15 @@ ruleSkillDefinitionRepository returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleSkillDefinitionSet
-entryRuleSkillDefinitionSet returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSkillDefinitionSetRule()); }
-	iv_ruleSkillDefinitionSet=ruleSkillDefinitionSet
-	{ $current=$iv_ruleSkillDefinitionSet.current; }
+// Entry rule entryRuleCoordinationModuleDefinition
+entryRuleCoordinationModuleDefinition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCoordinationModuleDefinitionRule()); }
+	iv_ruleCoordinationModuleDefinition=ruleCoordinationModuleDefinition
+	{ $current=$iv_ruleCoordinationModuleDefinition.current; }
 	EOF;
 
-// Rule SkillDefinitionSet
-ruleSkillDefinitionSet returns [EObject current=null]
+// Rule CoordinationModuleDefinition
+ruleCoordinationModuleDefinition returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -231,19 +231,19 @@ ruleSkillDefinitionSet returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='SkillDefinitionSet'
+		otherlv_0='CoordinationModuleDefinition'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getSkillDefinitionSetAccess().getSkillDefinitionSetKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getCoordinationModuleDefinitionAccess().getCoordinationModuleDefinitionKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getSkillDefinitionSetAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getCoordinationModuleDefinitionAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSkillDefinitionSetRule());
+						$current = createModelElement(grammarAccess.getCoordinationModuleDefinitionRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -255,17 +255,17 @@ ruleSkillDefinitionSet returns [EObject current=null]
 		)
 		otherlv_2='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getSkillDefinitionSetAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getCoordinationModuleDefinitionAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSkillDefinitionSetAccess().getSkillsSkillDefinitionParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getCoordinationModuleDefinitionAccess().getSkillsSkillDefinitionParserRuleCall_3_0());
 				}
 				lv_skills_3_0=ruleSkillDefinition
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSkillDefinitionSetRule());
+						$current = createModelElementForParent(grammarAccess.getCoordinationModuleDefinitionRule());
 					}
 					add(
 						$current,
@@ -278,7 +278,7 @@ ruleSkillDefinitionSet returns [EObject current=null]
 		)*
 		otherlv_4='}'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getSkillDefinitionSetAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getCoordinationModuleDefinitionAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;

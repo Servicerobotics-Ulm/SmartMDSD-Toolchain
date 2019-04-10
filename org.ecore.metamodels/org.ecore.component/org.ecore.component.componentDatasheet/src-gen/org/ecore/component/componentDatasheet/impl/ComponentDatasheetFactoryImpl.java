@@ -68,6 +68,7 @@ public class ComponentDatasheetFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentDatasheet createComponentDatasheet() {
 		ComponentDatasheetImpl componentDatasheet = new ComponentDatasheetImpl();
 		return componentDatasheet;
@@ -78,6 +79,7 @@ public class ComponentDatasheetFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentDatasheetPackage getComponentDatasheetPackage() {
 		return (ComponentDatasheetPackage) getEPackage();
 	}

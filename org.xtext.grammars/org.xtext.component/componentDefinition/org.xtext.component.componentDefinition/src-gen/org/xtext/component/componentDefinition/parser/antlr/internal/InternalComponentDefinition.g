@@ -2107,11 +2107,11 @@ rulePlainOpcUaPort returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getPlainOpcUaPortAccess().getOpcUaStatusServerParserRuleCall_1());
+			newCompositeNode(grammarAccess.getPlainOpcUaPortAccess().getOpcUaReadServerParserRuleCall_1());
 		}
-		this_OpcUaStatusServer_1=ruleOpcUaStatusServer
+		this_OpcUaReadServer_1=ruleOpcUaReadServer
 		{
-			$current = $this_OpcUaStatusServer_1.current;
+			$current = $this_OpcUaReadServer_1.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -2247,15 +2247,15 @@ ruleOpcUaDeviceClient returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleOpcUaStatusServer
-entryRuleOpcUaStatusServer returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getOpcUaStatusServerRule()); }
-	iv_ruleOpcUaStatusServer=ruleOpcUaStatusServer
-	{ $current=$iv_ruleOpcUaStatusServer.current; }
+// Entry rule entryRuleOpcUaReadServer
+entryRuleOpcUaReadServer returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getOpcUaReadServerRule()); }
+	iv_ruleOpcUaReadServer=ruleOpcUaReadServer
+	{ $current=$iv_ruleOpcUaReadServer.current; }
 	EOF;
 
-// Rule OpcUaStatusServer
-ruleOpcUaStatusServer returns [EObject current=null]
+// Rule OpcUaReadServer
+ruleOpcUaReadServer returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -2263,19 +2263,19 @@ ruleOpcUaStatusServer returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='OpcUaStatusServer'
+		otherlv_0='OpcUaReadServer'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getOpcUaStatusServerAccess().getOpcUaStatusServerKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getOpcUaReadServerAccess().getOpcUaReadServerKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getOpcUaStatusServerAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getOpcUaReadServerAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOpcUaStatusServerRule());
+						$current = createModelElement(grammarAccess.getOpcUaReadServerRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -2287,17 +2287,17 @@ ruleOpcUaStatusServer returns [EObject current=null]
 		)
 		otherlv_2='dataProviderPort'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getOpcUaStatusServerAccess().getDataProviderPortKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getOpcUaReadServerAccess().getDataProviderPortKeyword_2());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOpcUaStatusServerRule());
+						$current = createModelElement(grammarAccess.getOpcUaReadServerRule());
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getOpcUaStatusServerAccess().getOutPortOutputPortCrossReference_3_0());
+					newCompositeNode(grammarAccess.getOpcUaReadServerAccess().getOutPortOutputPortCrossReference_3_0());
 				}
 				ruleFQN
 				{
@@ -2306,9 +2306,34 @@ ruleOpcUaStatusServer returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_4=';'
+			otherlv_4='portNumber'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getOpcUaStatusServerAccess().getSemicolonKeyword_4());
+				newLeafNode(otherlv_4, grammarAccess.getOpcUaReadServerAccess().getPortNumberKeyword_4_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getOpcUaReadServerAccess().getPortNumberEIntParserRuleCall_4_1_0());
+					}
+					lv_portNumber_5_0=ruleEInt
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getOpcUaReadServerRule());
+						}
+						set(
+							$current,
+							"portNumber",
+							lv_portNumber_5_0,
+							"org.xtext.service.roboticMiddleware.RoboticMiddleware.EInt");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		(
+			otherlv_6=';'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getOpcUaReadServerAccess().getSemicolonKeyword_5());
 			}
 		)?
 	)
@@ -2484,7 +2509,7 @@ ruleSkillRealizationsRef returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationSetRefSkillRealizationSetCrossReference_1_0());
+					newCompositeNode(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationCoordModuleRefCoordinationModuleRealizationCrossReference_1_0());
 				}
 				ruleFQN
 				{

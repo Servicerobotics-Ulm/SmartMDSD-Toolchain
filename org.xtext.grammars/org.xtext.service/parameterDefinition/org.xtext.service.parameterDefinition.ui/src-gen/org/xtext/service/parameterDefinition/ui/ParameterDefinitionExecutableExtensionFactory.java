@@ -45,6 +45,7 @@
 package org.xtext.service.parameterDefinition.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.service.parameterDefinition.ui.internal.ParameterDefinitionActivator;
@@ -57,12 +58,13 @@ public class ParameterDefinitionExecutableExtensionFactory extends AbstractGuice
 
 	@Override
 	protected Bundle getBundle() {
-		return ParameterDefinitionActivator.getInstance().getBundle();
+		return Platform.getBundle(ParameterDefinitionActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return ParameterDefinitionActivator.getInstance().getInjector(ParameterDefinitionActivator.ORG_XTEXT_SERVICE_PARAMETERDEFINITION_PARAMETERDEFINITION);
+		ParameterDefinitionActivator activator = ParameterDefinitionActivator.getInstance();
+		return activator != null ? activator.getInjector(ParameterDefinitionActivator.ORG_XTEXT_SERVICE_PARAMETERDEFINITION_PARAMETERDEFINITION) : null;
 	}
-	
+
 }

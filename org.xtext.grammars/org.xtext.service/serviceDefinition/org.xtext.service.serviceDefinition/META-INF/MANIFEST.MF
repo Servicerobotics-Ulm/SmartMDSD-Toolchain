@@ -3,19 +3,20 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.xtext.service.serviceDefinition
 Bundle-Vendor: Servicerobotics Ulm
 Bundle-Version: 3.4.0.qualifier
-Bundle-SymbolicName: org.xtext.service.serviceDefinition; singleton:=true
+Bundle-SymbolicName: org.xtext.service.serviceDefinition;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.ecore.service.serviceDefinition,
  org.ecore.service.communicationPattern,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.5.0",
- org.eclipse.xtext.xbase.lib,
- org.antlr.runtime,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
  org.eclipse.xtext.util,
- org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
  org.xtext.service.parameterDefinition,
- org.xtext.base.stateMachine
+ org.xtext.base.stateMachine,
+ org.eclipse.core.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.service.serviceDefinition.services,
  org.xtext.service.serviceDefinition.formatting2,

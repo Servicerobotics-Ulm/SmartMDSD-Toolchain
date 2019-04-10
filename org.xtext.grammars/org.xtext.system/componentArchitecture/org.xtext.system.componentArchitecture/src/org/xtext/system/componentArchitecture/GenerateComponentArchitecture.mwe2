@@ -79,7 +79,7 @@ Workflow {
 			referencedResource = "platform:/resource/org.ecore.system.componentArchitecture/model/componentArchitecture.genmodel"
 			referencedResource = "platform:/resource/org.ecore.system.systemParameter/model/systemParameter.genmodel"
 			referencedResource = "platform:/resource/org.ecore.system.compArchSeronetExtension/model/compArchSeronetExtension.genmodel"
-			
+			referencedResource = "platform:/resource/org.ecore.system.compArchBehaviorExtension/model/compArchBehaviorExtension.genmodel"			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
 
 			formatter = {

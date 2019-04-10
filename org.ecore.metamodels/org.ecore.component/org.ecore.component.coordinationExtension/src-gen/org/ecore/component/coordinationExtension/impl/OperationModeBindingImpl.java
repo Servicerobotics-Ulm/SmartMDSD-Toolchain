@@ -127,7 +127,7 @@ public class OperationModeBindingImpl extends ActivityExtensionImpl implements O
 	 * @generated NOT
 	 */
 	public boolean isSetName() {
-		return (mode != null);
+		return mode != null;
 	}
 
 	/**

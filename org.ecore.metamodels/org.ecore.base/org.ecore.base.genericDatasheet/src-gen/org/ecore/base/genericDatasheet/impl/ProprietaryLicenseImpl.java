@@ -111,6 +111,7 @@ public class ProprietaryLicenseImpl extends AbstractLicenseImpl implements Propr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getFullText() {
 		return fullText;
 	}
@@ -120,6 +121,7 @@ public class ProprietaryLicenseImpl extends AbstractLicenseImpl implements Propr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFullText(String newFullText) {
 		String oldFullText = fullText;
 		fullText = newFullText;
@@ -133,6 +135,7 @@ public class ProprietaryLicenseImpl extends AbstractLicenseImpl implements Propr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -142,6 +145,7 @@ public class ProprietaryLicenseImpl extends AbstractLicenseImpl implements Propr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -155,6 +159,7 @@ public class ProprietaryLicenseImpl extends AbstractLicenseImpl implements Propr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUrl() {
 		return url;
 	}
@@ -164,6 +169,7 @@ public class ProprietaryLicenseImpl extends AbstractLicenseImpl implements Propr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUrl(String newUrl) {
 		String oldUrl = url;
 		url = newUrl;
@@ -260,7 +266,7 @@ public class ProprietaryLicenseImpl extends AbstractLicenseImpl implements Propr
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (fullText: ");
 		result.append(fullText);
 		result.append(", name: ");

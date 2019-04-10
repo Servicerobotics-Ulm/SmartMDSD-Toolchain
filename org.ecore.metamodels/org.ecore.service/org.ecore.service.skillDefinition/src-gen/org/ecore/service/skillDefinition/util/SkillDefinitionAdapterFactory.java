@@ -77,8 +77,8 @@ public class SkillDefinitionAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseSkillDefinitionSet(SkillDefinitionSet object) {
-			return createSkillDefinitionSetAdapter();
+		public Adapter caseCoordinationModuleDefinition(CoordinationModuleDefinition object) {
+			return createCoordinationModuleDefinitionAdapter();
 		}
 
 		@Override
@@ -139,16 +139,16 @@ public class SkillDefinitionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.ecore.service.skillDefinition.SkillDefinitionSet <em>Set</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.ecore.service.skillDefinition.CoordinationModuleDefinition <em>Coordination Module Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.ecore.service.skillDefinition.SkillDefinitionSet
+	 * @see org.ecore.service.skillDefinition.CoordinationModuleDefinition
 	 * @generated
 	 */
-	public Adapter createSkillDefinitionSetAdapter() {
+	public Adapter createCoordinationModuleDefinitionAdapter() {
 		return null;
 	}
 

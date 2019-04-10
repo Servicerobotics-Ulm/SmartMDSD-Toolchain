@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalComponentDatasheetParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_TEXT_BLOCK", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Level1'", "'Level2'", "'Level3'", "'Level4'", "'Level5'", "'Level6'", "'Level7'", "'Level8'", "'Level9'", "'Undefined'", "'ComponentDatasheet'", "'{'", "'}'", "'purposeDescription'", "':'", "'hardwareRequirementDescription'", "'baseURI'", "'shortDescrition'", "'longDescription'", "'supplierDescription'", "'homepage'", "'trl'", "'license'", "'spdx'", "'('", "')'", "'proprietary'", "'name'", "'fullText'", "'URL'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_TEXT_BLOCK", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Level1'", "'Level2'", "'Level3'", "'Level4'", "'Level5'", "'Level6'", "'Level7'", "'Level8'", "'Level9'", "'Undefined'", "'ComponentDatasheet'", "'{'", "'}'", "'purposeDescription'", "':'", "'hardwareRequirementDescription'", "'baseURI'", "'shortDescription'", "'longDescription'", "'supplierDescription'", "'homepage'", "'trl'", "'license'", "'spdx'", "'('", "')'", "'proprietary'", "'name'", "'fullText'", "'URL'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_TEXT_BLOCK=6;
@@ -2191,21 +2191,21 @@ public class InternalComponentDatasheetParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__GenericDatasheet__Group_1__0__Impl"
-    // InternalComponentDatasheet.g:758:1: rule__GenericDatasheet__Group_1__0__Impl : ( 'shortDescrition' ) ;
+    // InternalComponentDatasheet.g:758:1: rule__GenericDatasheet__Group_1__0__Impl : ( 'shortDescription' ) ;
     public final void rule__GenericDatasheet__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalComponentDatasheet.g:762:1: ( ( 'shortDescrition' ) )
-            // InternalComponentDatasheet.g:763:1: ( 'shortDescrition' )
+            // InternalComponentDatasheet.g:762:1: ( ( 'shortDescription' ) )
+            // InternalComponentDatasheet.g:763:1: ( 'shortDescription' )
             {
-            // InternalComponentDatasheet.g:763:1: ( 'shortDescrition' )
-            // InternalComponentDatasheet.g:764:2: 'shortDescrition'
+            // InternalComponentDatasheet.g:763:1: ( 'shortDescription' )
+            // InternalComponentDatasheet.g:764:2: 'shortDescription'
             {
-             before(grammarAccess.getGenericDatasheetAccess().getShortDescritionKeyword_1_0()); 
+             before(grammarAccess.getGenericDatasheetAccess().getShortDescriptionKeyword_1_0()); 
             match(input,29,FOLLOW_2); 
-             after(grammarAccess.getGenericDatasheetAccess().getShortDescritionKeyword_1_0()); 
+             after(grammarAccess.getGenericDatasheetAccess().getShortDescriptionKeyword_1_0()); 
 
             }
 
@@ -2353,31 +2353,31 @@ public class InternalComponentDatasheetParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__GenericDatasheet__Group_1__2__Impl"
-    // InternalComponentDatasheet.g:811:1: rule__GenericDatasheet__Group_1__2__Impl : ( ( rule__GenericDatasheet__ShortDescritionAssignment_1_2 ) ) ;
+    // InternalComponentDatasheet.g:811:1: rule__GenericDatasheet__Group_1__2__Impl : ( ( rule__GenericDatasheet__ShortDescriptionAssignment_1_2 ) ) ;
     public final void rule__GenericDatasheet__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalComponentDatasheet.g:815:1: ( ( ( rule__GenericDatasheet__ShortDescritionAssignment_1_2 ) ) )
-            // InternalComponentDatasheet.g:816:1: ( ( rule__GenericDatasheet__ShortDescritionAssignment_1_2 ) )
+            // InternalComponentDatasheet.g:815:1: ( ( ( rule__GenericDatasheet__ShortDescriptionAssignment_1_2 ) ) )
+            // InternalComponentDatasheet.g:816:1: ( ( rule__GenericDatasheet__ShortDescriptionAssignment_1_2 ) )
             {
-            // InternalComponentDatasheet.g:816:1: ( ( rule__GenericDatasheet__ShortDescritionAssignment_1_2 ) )
-            // InternalComponentDatasheet.g:817:2: ( rule__GenericDatasheet__ShortDescritionAssignment_1_2 )
+            // InternalComponentDatasheet.g:816:1: ( ( rule__GenericDatasheet__ShortDescriptionAssignment_1_2 ) )
+            // InternalComponentDatasheet.g:817:2: ( rule__GenericDatasheet__ShortDescriptionAssignment_1_2 )
             {
-             before(grammarAccess.getGenericDatasheetAccess().getShortDescritionAssignment_1_2()); 
-            // InternalComponentDatasheet.g:818:2: ( rule__GenericDatasheet__ShortDescritionAssignment_1_2 )
-            // InternalComponentDatasheet.g:818:3: rule__GenericDatasheet__ShortDescritionAssignment_1_2
+             before(grammarAccess.getGenericDatasheetAccess().getShortDescriptionAssignment_1_2()); 
+            // InternalComponentDatasheet.g:818:2: ( rule__GenericDatasheet__ShortDescriptionAssignment_1_2 )
+            // InternalComponentDatasheet.g:818:3: rule__GenericDatasheet__ShortDescriptionAssignment_1_2
             {
             pushFollow(FOLLOW_2);
-            rule__GenericDatasheet__ShortDescritionAssignment_1_2();
+            rule__GenericDatasheet__ShortDescriptionAssignment_1_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getGenericDatasheetAccess().getShortDescritionAssignment_1_2()); 
+             after(grammarAccess.getGenericDatasheetAccess().getShortDescriptionAssignment_1_2()); 
 
             }
 
@@ -6799,9 +6799,9 @@ public class InternalComponentDatasheetParser extends AbstractInternalContentAss
     // $ANTLR end "rule__GenericDatasheet__BaseURIAssignment_0_2"
 
 
-    // $ANTLR start "rule__GenericDatasheet__ShortDescritionAssignment_1_2"
-    // InternalComponentDatasheet.g:2193:1: rule__GenericDatasheet__ShortDescritionAssignment_1_2 : ( ruleEString ) ;
-    public final void rule__GenericDatasheet__ShortDescritionAssignment_1_2() throws RecognitionException {
+    // $ANTLR start "rule__GenericDatasheet__ShortDescriptionAssignment_1_2"
+    // InternalComponentDatasheet.g:2193:1: rule__GenericDatasheet__ShortDescriptionAssignment_1_2 : ( ruleEString ) ;
+    public final void rule__GenericDatasheet__ShortDescriptionAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -6812,13 +6812,13 @@ public class InternalComponentDatasheetParser extends AbstractInternalContentAss
             // InternalComponentDatasheet.g:2198:2: ( ruleEString )
             // InternalComponentDatasheet.g:2199:3: ruleEString
             {
-             before(grammarAccess.getGenericDatasheetAccess().getShortDescritionEStringParserRuleCall_1_2_0()); 
+             before(grammarAccess.getGenericDatasheetAccess().getShortDescriptionEStringParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getGenericDatasheetAccess().getShortDescritionEStringParserRuleCall_1_2_0()); 
+             after(grammarAccess.getGenericDatasheetAccess().getShortDescriptionEStringParserRuleCall_1_2_0()); 
 
             }
 
@@ -6837,7 +6837,7 @@ public class InternalComponentDatasheetParser extends AbstractInternalContentAss
         }
         return ;
     }
-    // $ANTLR end "rule__GenericDatasheet__ShortDescritionAssignment_1_2"
+    // $ANTLR end "rule__GenericDatasheet__ShortDescriptionAssignment_1_2"
 
 
     // $ANTLR start "rule__GenericDatasheet__LongDescriptionAssignment_2_2"

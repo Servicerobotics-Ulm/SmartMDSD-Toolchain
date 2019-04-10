@@ -72,13 +72,58 @@ public class SkillRealizationAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseSkillRealizationSet(SkillRealizationSet object) {
-			return createSkillRealizationSetAdapter();
+		public Adapter caseCoordinationModuleRealization(CoordinationModuleRealization object) {
+			return createCoordinationModuleRealizationAdapter();
 		}
 
 		@Override
 		public Adapter caseSkillRealization(SkillRealization object) {
 			return createSkillRealizationAdapter();
+		}
+
+		@Override
+		public Adapter caseAbstractCoordinationAction(AbstractCoordinationAction object) {
+			return createAbstractCoordinationActionAdapter();
+		}
+
+		@Override
+		public Adapter caseAbstractComponentCoordinationAction(AbstractComponentCoordinationAction object) {
+			return createAbstractComponentCoordinationActionAdapter();
+		}
+
+		@Override
+		public Adapter caseComponentCoordinationActionEvent(ComponentCoordinationActionEvent object) {
+			return createComponentCoordinationActionEventAdapter();
+		}
+
+		@Override
+		public Adapter caseComponentCoordinationActionWiring(ComponentCoordinationActionWiring object) {
+			return createComponentCoordinationActionWiringAdapter();
+		}
+
+		@Override
+		public Adapter caseComponentCoordinationActionParameter(ComponentCoordinationActionParameter object) {
+			return createComponentCoordinationActionParameterAdapter();
+		}
+
+		@Override
+		public Adapter caseComponentCoordinationActionActivation(ComponentCoordinationActionActivation object) {
+			return createComponentCoordinationActionActivationAdapter();
+		}
+
+		@Override
+		public Adapter caseCoordinationActionBlock(CoordinationActionBlock object) {
+			return createCoordinationActionBlockAdapter();
+		}
+
+		@Override
+		public Adapter caseEventHandler(EventHandler object) {
+			return createEventHandlerAdapter();
+		}
+
+		@Override
+		public Adapter caseCoordinationInterfaceInstance(CoordinationInterfaceInstance object) {
+			return createCoordinationInterfaceInstanceAdapter();
 		}
 
 		@Override
@@ -115,16 +160,16 @@ public class SkillRealizationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.ecore.behavior.skillRealization.SkillRealizationSet <em>Set</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.ecore.behavior.skillRealization.CoordinationModuleRealization <em>Coordination Module Realization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.ecore.behavior.skillRealization.SkillRealizationSet
+	 * @see org.ecore.behavior.skillRealization.CoordinationModuleRealization
 	 * @generated
 	 */
-	public Adapter createSkillRealizationSetAdapter() {
+	public Adapter createCoordinationModuleRealizationAdapter() {
 		return null;
 	}
 
@@ -139,6 +184,132 @@ public class SkillRealizationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSkillRealizationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.behavior.skillRealization.AbstractCoordinationAction <em>Abstract Coordination Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.behavior.skillRealization.AbstractCoordinationAction
+	 * @generated
+	 */
+	public Adapter createAbstractCoordinationActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.behavior.skillRealization.AbstractComponentCoordinationAction <em>Abstract Component Coordination Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.behavior.skillRealization.AbstractComponentCoordinationAction
+	 * @generated
+	 */
+	public Adapter createAbstractComponentCoordinationActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.behavior.skillRealization.ComponentCoordinationActionEvent <em>Component Coordination Action Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.behavior.skillRealization.ComponentCoordinationActionEvent
+	 * @generated
+	 */
+	public Adapter createComponentCoordinationActionEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.behavior.skillRealization.ComponentCoordinationActionWiring <em>Component Coordination Action Wiring</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.behavior.skillRealization.ComponentCoordinationActionWiring
+	 * @generated
+	 */
+	public Adapter createComponentCoordinationActionWiringAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.behavior.skillRealization.ComponentCoordinationActionParameter <em>Component Coordination Action Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.behavior.skillRealization.ComponentCoordinationActionParameter
+	 * @generated
+	 */
+	public Adapter createComponentCoordinationActionParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.behavior.skillRealization.ComponentCoordinationActionActivation <em>Component Coordination Action Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.behavior.skillRealization.ComponentCoordinationActionActivation
+	 * @generated
+	 */
+	public Adapter createComponentCoordinationActionActivationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.behavior.skillRealization.CoordinationActionBlock <em>Coordination Action Block</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.behavior.skillRealization.CoordinationActionBlock
+	 * @generated
+	 */
+	public Adapter createCoordinationActionBlockAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.behavior.skillRealization.EventHandler <em>Event Handler</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.behavior.skillRealization.EventHandler
+	 * @generated
+	 */
+	public Adapter createEventHandlerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.behavior.skillRealization.CoordinationInterfaceInstance <em>Coordination Interface Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.behavior.skillRealization.CoordinationInterfaceInstance
+	 * @generated
+	 */
+	public Adapter createCoordinationInterfaceInstanceAdapter() {
 		return null;
 	}
 

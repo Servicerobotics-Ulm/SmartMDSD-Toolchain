@@ -66,6 +66,7 @@ class CommObjGenerator2Impl extends AbstractGenerator {
 			fsa.generateFile("info.txt", repo.compileToolchainVersionFile);
 			
 			fsa.generateFile("CMakeLists.txt", ExtendedOutputConfigurationProvider::SMARTSOFT_OUTPUT, repo.generateCmakeListsFile)
+			fsa.generateFile("DomainModelsExtensions.cmake", repo.generateCmakeDomainModelsExtensionsFile)
 			//DEBIAN PACKAGE STUFF
 //			fsa.generateFile("debian/control.user", ExtendedOutputConfigurationProvider::SMARTSOFT_OUTPUT, repo.generateDebianCommObjectControl)
 //			fsa.generateFile("debian/copyright", ExtendedOutputConfigurationProvider::SMARTSOFT_OUTPUT, repo.generateDebianCommObjectCopyright)

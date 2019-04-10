@@ -60,5 +60,4 @@ public abstract class AbstractActivityArchitectureValidator extends AbstractDecl
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ecore.org/system/ActivityArchitecture"));
 		return result;
 	}
-	
 }

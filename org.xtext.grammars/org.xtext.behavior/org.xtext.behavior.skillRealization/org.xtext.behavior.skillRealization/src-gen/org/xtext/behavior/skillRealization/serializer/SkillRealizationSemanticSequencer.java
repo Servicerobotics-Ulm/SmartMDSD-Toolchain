@@ -55,10 +55,15 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.ecore.behavior.skillRealization.ComponentCoordinationActionActivation;
+import org.ecore.behavior.skillRealization.ComponentCoordinationActionEvent;
+import org.ecore.behavior.skillRealization.ComponentCoordinationActionParameter;
+import org.ecore.behavior.skillRealization.CoordinationActionBlock;
+import org.ecore.behavior.skillRealization.CoordinationInterfaceInstance;
+import org.ecore.behavior.skillRealization.CoordinationModuleRealization;
 import org.ecore.behavior.skillRealization.SkillRealization;
 import org.ecore.behavior.skillRealization.SkillRealizationModel;
 import org.ecore.behavior.skillRealization.SkillRealizationPackage;
-import org.ecore.behavior.skillRealization.SkillRealizationSet;
 import org.xtext.behavior.skillRealization.services.SkillRealizationGrammarAccess;
 
 @SuppressWarnings("all")
@@ -75,14 +80,29 @@ public class SkillRealizationSemanticSequencer extends AbstractDelegatingSemanti
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SkillRealizationPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case SkillRealizationPackage.COMPONENT_COORDINATION_ACTION_ACTIVATION:
+				sequence_ComponentCoordinationActionActivation(context, (ComponentCoordinationActionActivation) semanticObject); 
+				return; 
+			case SkillRealizationPackage.COMPONENT_COORDINATION_ACTION_EVENT:
+				sequence_ComponentCoordinationActionEvent(context, (ComponentCoordinationActionEvent) semanticObject); 
+				return; 
+			case SkillRealizationPackage.COMPONENT_COORDINATION_ACTION_PARAMETER:
+				sequence_ComponentCoordinationActionParameter(context, (ComponentCoordinationActionParameter) semanticObject); 
+				return; 
+			case SkillRealizationPackage.COORDINATION_ACTION_BLOCK:
+				sequence_CoordinationActionBlock(context, (CoordinationActionBlock) semanticObject); 
+				return; 
+			case SkillRealizationPackage.COORDINATION_INTERFACE_INSTANCE:
+				sequence_CoordinationInterfaceInstance(context, (CoordinationInterfaceInstance) semanticObject); 
+				return; 
+			case SkillRealizationPackage.COORDINATION_MODULE_REALIZATION:
+				sequence_CoordinationModuleRealization(context, (CoordinationModuleRealization) semanticObject); 
+				return; 
 			case SkillRealizationPackage.SKILL_REALIZATION:
 				sequence_SkillRealization(context, (SkillRealization) semanticObject); 
 				return; 
 			case SkillRealizationPackage.SKILL_REALIZATION_MODEL:
 				sequence_SkillRealizationModel(context, (SkillRealizationModel) semanticObject); 
-				return; 
-			case SkillRealizationPackage.SKILL_REALIZATION_SET:
-				sequence_SkillRealizationSet(context, (SkillRealizationSet) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -91,24 +111,114 @@ public class SkillRealizationSemanticSequencer extends AbstractDelegatingSemanti
 	
 	/**
 	 * Contexts:
-	 *     SkillRealizationModel returns SkillRealizationModel
+	 *     AbstractCoordinationAction returns ComponentCoordinationActionActivation
+	 *     AbstractComponentCoordinationAction returns ComponentCoordinationActionActivation
+	 *     ComponentCoordinationActionActivation returns ComponentCoordinationActionActivation
 	 *
 	 * Constraint:
-	 *     skillsets+=SkillRealizationSet*
+	 *     (coordinationService=[CoordinationInterfaceInstance|ID] state=[ComponentModeDefinition|FQN])
 	 */
-	protected void sequence_SkillRealizationModel(ISerializationContext context, SkillRealizationModel semanticObject) {
+	protected void sequence_ComponentCoordinationActionActivation(ISerializationContext context, ComponentCoordinationActionActivation semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SkillRealizationPackage.Literals.ABSTRACT_COMPONENT_COORDINATION_ACTION__COORDINATION_SERVICE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SkillRealizationPackage.Literals.ABSTRACT_COMPONENT_COORDINATION_ACTION__COORDINATION_SERVICE));
+			if (transientValues.isValueTransient(semanticObject, SkillRealizationPackage.Literals.COMPONENT_COORDINATION_ACTION_ACTIVATION__STATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SkillRealizationPackage.Literals.COMPONENT_COORDINATION_ACTION_ACTIVATION__STATE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getComponentCoordinationActionActivationAccess().getCoordinationServiceCoordinationInterfaceInstanceIDTerminalRuleCall_2_0_1(), semanticObject.eGet(SkillRealizationPackage.Literals.ABSTRACT_COMPONENT_COORDINATION_ACTION__COORDINATION_SERVICE, false));
+		feeder.accept(grammarAccess.getComponentCoordinationActionActivationAccess().getStateComponentModeDefinitionFQNParserRuleCall_4_0_1(), semanticObject.eGet(SkillRealizationPackage.Literals.COMPONENT_COORDINATION_ACTION_ACTIVATION__STATE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractCoordinationAction returns ComponentCoordinationActionEvent
+	 *     AbstractComponentCoordinationAction returns ComponentCoordinationActionEvent
+	 *     ComponentCoordinationActionEvent returns ComponentCoordinationActionEvent
+	 *
+	 * Constraint:
+	 *     coordinationService=[CoordinationInterfaceInstance|ID]
+	 */
+	protected void sequence_ComponentCoordinationActionEvent(ISerializationContext context, ComponentCoordinationActionEvent semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SkillRealizationPackage.Literals.ABSTRACT_COMPONENT_COORDINATION_ACTION__COORDINATION_SERVICE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SkillRealizationPackage.Literals.ABSTRACT_COMPONENT_COORDINATION_ACTION__COORDINATION_SERVICE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getComponentCoordinationActionEventAccess().getCoordinationServiceCoordinationInterfaceInstanceIDTerminalRuleCall_3_0_1(), semanticObject.eGet(SkillRealizationPackage.Literals.ABSTRACT_COMPONENT_COORDINATION_ACTION__COORDINATION_SERVICE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractCoordinationAction returns ComponentCoordinationActionParameter
+	 *     AbstractComponentCoordinationAction returns ComponentCoordinationActionParameter
+	 *     ComponentCoordinationActionParameter returns ComponentCoordinationActionParameter
+	 *
+	 * Constraint:
+	 *     (coordinationService=[CoordinationInterfaceInstance|ID] parameter=[AbstractParameter|FQN] value=STRING?)
+	 */
+	protected void sequence_ComponentCoordinationActionParameter(ISerializationContext context, ComponentCoordinationActionParameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     SkillRealizationSet returns SkillRealizationSet
+	 *     CoordinationActionBlock returns CoordinationActionBlock
 	 *
 	 * Constraint:
-	 *     (name=ID skillDefSet=[SkillDefinitionSet|FQN] skills+=SkillRealization*)
+	 *     actions+=AbstractCoordinationAction*
 	 */
-	protected void sequence_SkillRealizationSet(ISerializationContext context, SkillRealizationSet semanticObject) {
+	protected void sequence_CoordinationActionBlock(ISerializationContext context, CoordinationActionBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     CoordinationInterfaceInstance returns CoordinationInterfaceInstance
+	 *
+	 * Constraint:
+	 *     (coordinationInterfaceDef=[CoordinationServiceDefinition|FQN] name=ID)
+	 */
+	protected void sequence_CoordinationInterfaceInstance(ISerializationContext context, CoordinationInterfaceInstance semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SkillRealizationPackage.Literals.COORDINATION_INTERFACE_INSTANCE__COORDINATION_INTERFACE_DEF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SkillRealizationPackage.Literals.COORDINATION_INTERFACE_INSTANCE__COORDINATION_INTERFACE_DEF));
+			if (transientValues.isValueTransient(semanticObject, SkillRealizationPackage.Literals.COORDINATION_INTERFACE_INSTANCE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SkillRealizationPackage.Literals.COORDINATION_INTERFACE_INSTANCE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCoordinationInterfaceInstanceAccess().getCoordinationInterfaceDefCoordinationServiceDefinitionFQNParserRuleCall_0_0_1(), semanticObject.eGet(SkillRealizationPackage.Literals.COORDINATION_INTERFACE_INSTANCE__COORDINATION_INTERFACE_DEF, false));
+		feeder.accept(grammarAccess.getCoordinationInterfaceInstanceAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     CoordinationModuleRealization returns CoordinationModuleRealization
+	 *
+	 * Constraint:
+	 *     (name=ID coordinationModuleDef=[CoordinationModuleDefinition|FQN] coordInterfaceInsts+=CoordinationInterfaceInstance* skills+=SkillRealization*)
+	 */
+	protected void sequence_CoordinationModuleRealization(ISerializationContext context, CoordinationModuleRealization semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SkillRealizationModel returns SkillRealizationModel
+	 *
+	 * Constraint:
+	 *     modules+=CoordinationModuleRealization*
+	 */
+	protected void sequence_SkillRealizationModel(ISerializationContext context, SkillRealizationModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -118,15 +228,18 @@ public class SkillRealizationSemanticSequencer extends AbstractDelegatingSemanti
 	 *     SkillRealization returns SkillRealization
 	 *
 	 * Constraint:
-	 *     skillDef=[SkillDefinition|FQN]
+	 *     (skillDef=[SkillDefinition|FQN] action=CoordinationActionBlock)
 	 */
 	protected void sequence_SkillRealization(ISerializationContext context, SkillRealization semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, SkillRealizationPackage.Literals.SKILL_REALIZATION__SKILL_DEF) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SkillRealizationPackage.Literals.SKILL_REALIZATION__SKILL_DEF));
+			if (transientValues.isValueTransient(semanticObject, SkillRealizationPackage.Literals.SKILL_REALIZATION__ACTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SkillRealizationPackage.Literals.SKILL_REALIZATION__ACTION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSkillRealizationAccess().getSkillDefSkillDefinitionFQNParserRuleCall_1_0_1(), semanticObject.eGet(SkillRealizationPackage.Literals.SKILL_REALIZATION__SKILL_DEF, false));
+		feeder.accept(grammarAccess.getSkillRealizationAccess().getActionCoordinationActionBlockParserRuleCall_5_0(), semanticObject.getAction());
 		feeder.finish();
 	}
 	

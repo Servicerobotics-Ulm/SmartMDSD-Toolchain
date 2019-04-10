@@ -9,11 +9,10 @@ Require-Bundle: org.xtext.component.componentParameter,
  org.ecore.component.componentParameter,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
- org.antlr.runtime,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
  org.xtext.base.basicAttributes,
  org.xtext.service.parameterDefinition,
  org.xtext.service.parameterDefinition.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.component.componentParameter.ide.contentassist.antlr,
  org.xtext.component.componentParameter.ide.contentassist.antlr.internal
-

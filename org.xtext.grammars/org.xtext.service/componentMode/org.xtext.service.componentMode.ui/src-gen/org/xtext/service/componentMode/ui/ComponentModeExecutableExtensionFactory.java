@@ -45,6 +45,7 @@
 package org.xtext.service.componentMode.ui;
 
 import com.google.inject.Injector;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 import org.xtext.service.componentMode.ui.internal.ComponentModeActivator;
@@ -57,12 +58,13 @@ public class ComponentModeExecutableExtensionFactory extends AbstractGuiceAwareE
 
 	@Override
 	protected Bundle getBundle() {
-		return ComponentModeActivator.getInstance().getBundle();
+		return Platform.getBundle(ComponentModeActivator.PLUGIN_ID);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return ComponentModeActivator.getInstance().getInjector(ComponentModeActivator.ORG_XTEXT_SERVICE_COMPONENTMODE_COMPONENTMODE);
+		ComponentModeActivator activator = ComponentModeActivator.getInstance();
+		return activator != null ? activator.getInjector(ComponentModeActivator.ORG_XTEXT_SERVICE_COMPONENTMODE_COMPONENTMODE) : null;
 	}
-	
+
 }

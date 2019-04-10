@@ -44,5 +44,11 @@
             class="org.xtend.smartsoft.generator.system.SystemGenerator2">
       </generator>
    </extension>
+   <extension
+         point="org.xtext.system.targetPlatform.TargetPlatformGeneratorEP">
+      <generator
+            class="org.xtend.smartsoft.generator.targetPlatform.TargetPlatformGenerator2">
+      </generator>
+   </extension>
 
 </plugin>

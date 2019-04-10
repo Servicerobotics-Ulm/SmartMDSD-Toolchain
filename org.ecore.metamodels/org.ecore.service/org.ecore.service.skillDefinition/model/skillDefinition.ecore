@@ -8,10 +8,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SkillDefinitionRepository">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sets" upperBound="-1" eType="#//SkillDefinitionSet"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
+        eType="#//CoordinationModuleDefinition" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SkillDefinitionSet">
+  <eClassifiers xsi:type="ecore:EClass" name="CoordinationModuleDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="skills" upperBound="-1"
         eType="#//SkillDefinition" containment="true"/>
