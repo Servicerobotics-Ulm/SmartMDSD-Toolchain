@@ -26,6 +26,7 @@ import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.resource.IResourceDescription;
 import org.eclipse.xtext.resource.IResourceDescriptions;
 import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider;
+import org.ecore.base.mixedport.MixedportPackage;
 import org.ecore.component.componentDefinition.AbstractComponentElement;
 import org.ecore.component.componentDefinition.Activity;
 import org.ecore.component.componentDefinition.AnswerPort;
@@ -42,6 +43,7 @@ import org.ecore.service.roboticMiddleware.OpcUa_SeRoNet;
 import org.ecore.service.serviceDefinition.ServiceDefRepository;
 import org.ecore.service.serviceDefinition.ServiceDefinitionPackage;
 import org.sirius.tools.DiagramHelperServices;
+import org.xtext.component.componentDefinition.ui.internal.ComponentDefinitionActivator;
 import org.xtext.service.serviceDefinition.ui.internal.ServiceDefinitionActivator;
 
 import com.google.inject.Injector;
@@ -347,6 +349,16 @@ public class Services {
     	return ServiceDefinitionActivator.getInstance().getInjector(ServiceDefinitionActivator.ORG_XTEXT_SERVICE_SERVICEDEFINITION_SERVICEDEFINITION);
     }
     
+    public Collection<EObject> getAllRosPorts(EObject context) {
+    	Injector injector = getComponentDefinitionInjector();
+    	EClass type = MixedportPackage.eINSTANCE.getMixedPortROSBase();
+    	return geXtextIndexEObjetcsByType(injector, context, type);
+    }
+    
+    private Injector getComponentDefinitionInjector( ) {
+    	return ComponentDefinitionActivator.getInstance().getInjector(ComponentDefinitionActivator.ORG_XTEXT_COMPONENT_COMPONENTDEFINITION_COMPONENTDEFINITION);
+    }
+    
     private Collection<EObject> geXtextIndexEObjetcsByType(Injector injector, EObject context, EClass type) {
     	Collection<EObject> objects = new ArrayList<EObject>();
     	// get resource description from current "context"
@@ -360,12 +372,12 @@ public class Services {
     		// get object descriptions filtered by EClass type
     		Iterable<IEObjectDescription> objectDescriptions = container.getExportedObjectsByType(type);
     		for(IEObjectDescription objectDescription: objectDescriptions) {
-    			EObject serviceRepoProxy = objectDescription.getEObjectOrProxy();
-    			if(serviceRepoProxy.eIsProxy()) {
-    				EObject serviceRepo = context.eResource().getResourceSet().getEObject(objectDescription.getEObjectURI(), true);
-    				objects.add(serviceRepo);
+    			EObject objectOrProxy = objectDescription.getEObjectOrProxy();
+    			if(objectOrProxy.eIsProxy()) {
+    				EObject resolvedObject = context.eResource().getResourceSet().getEObject(objectDescription.getEObjectURI(), true);
+    				objects.add(resolvedObject);
     			} else {
-    				objects.add(serviceRepoProxy);
+    				objects.add(objectOrProxy);
     			}
     		}
     	}

@@ -338,6 +338,15 @@ ruleAbstractComponentElement returns [EObject current=null]
 			$current = $this_DerivedComponentElement_1.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getAbstractComponentElementAccess().getPlainOpcUaPortParserRuleCall_2());
+		}
+		this_PlainOpcUaPort_2=rulePlainOpcUaPort
+		{
+			$current = $this_PlainOpcUaPort_2.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -356,14 +365,34 @@ ruleDerivedComponentElement returns [EObject current=null]
 @after {
 	leaveRule();
 }:
-	{
-		newCompositeNode(grammarAccess.getDerivedComponentElementAccess().getComponentParametersRefParserRuleCall());
-	}
-	this_ComponentParametersRef_0=ruleComponentParametersRef
-	{
-		$current = $this_ComponentParametersRef_0.current;
-		afterParserOrEnumRuleCall();
-	}
+	(
+		{
+			newCompositeNode(grammarAccess.getDerivedComponentElementAccess().getComponentParametersRefParserRuleCall_0());
+		}
+		this_ComponentParametersRef_0=ruleComponentParametersRef
+		{
+			$current = $this_ComponentParametersRef_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getDerivedComponentElementAccess().getMixedPortROSParserRuleCall_1());
+		}
+		this_MixedPortROS_1=ruleMixedPortROS
+		{
+			$current = $this_MixedPortROS_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getDerivedComponentElementAccess().getMixedPortYARPParserRuleCall_2());
+		}
+		this_MixedPortYARP_2=ruleMixedPortYARP
+		{
+			$current = $this_MixedPortYARP_2.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
 ;
 
 // Entry rule entryRuleNamedComponentElement
@@ -415,15 +444,6 @@ ruleNamedComponentElement returns [EObject current=null]
 		this_CoordinationMasterPort_3=ruleCoordinationMasterPort
 		{
 			$current = $this_CoordinationMasterPort_3.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getNamedComponentElementAccess().getPlainOpcUaPortParserRuleCall_4());
-		}
-		this_PlainOpcUaPort_4=rulePlainOpcUaPort
-		{
-			$current = $this_PlainOpcUaPort_4.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -1329,6 +1349,15 @@ ruleAbstractComponentLink returns [EObject current=null]
 			$current = $this_OpcUaClientLink_3.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getAbstractComponentLinkAccess().getMixedPortROSLinkParserRuleCall_4());
+		}
+		this_MixedPortROSLink_4=ruleMixedPortROSLink
+		{
+			$current = $this_MixedPortROSLink_4.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -1417,6 +1446,51 @@ ruleOpcUaClientLink returns [EObject current=null]
 			otherlv_2=';'
 			{
 				newLeafNode(otherlv_2, grammarAccess.getOpcUaClientLinkAccess().getSemicolonKeyword_2());
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleMixedPortROSLink
+entryRuleMixedPortROSLink returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMixedPortROSLinkRule()); }
+	iv_ruleMixedPortROSLink=ruleMixedPortROSLink
+	{ $current=$iv_ruleMixedPortROSLink.current; }
+	EOF;
+
+// Rule MixedPortROSLink
+ruleMixedPortROSLink returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='MixedPortROSLink'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getMixedPortROSLinkAccess().getMixedPortROSLinkKeyword_0());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMixedPortROSLinkRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getMixedPortROSLinkAccess().getMixedportrosMixedPortROSCrossReference_1_0());
+				}
+				ruleFQN
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_2=';'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getMixedPortROSLinkAccess().getSemicolonKeyword_2());
 			}
 		)?
 	)
@@ -2334,6 +2408,90 @@ ruleOpcUaReadServer returns [EObject current=null]
 			otherlv_6=';'
 			{
 				newLeafNode(otherlv_6, grammarAccess.getOpcUaReadServerAccess().getSemicolonKeyword_5());
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleMixedPortROS
+entryRuleMixedPortROS returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMixedPortROSRule()); }
+	iv_ruleMixedPortROS=ruleMixedPortROS
+	{ $current=$iv_ruleMixedPortROS.current; }
+	EOF;
+
+// Rule MixedPortROS
+ruleMixedPortROS returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='MixedPortROS'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getMixedPortROSAccess().getMixedPortROSKeyword_0());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMixedPortROSRule());
+					}
+				}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getMixedPortROSAccess().getPortMixedPortROSBaseCrossReference_1_0());
+				}
+			)
+		)
+		(
+			otherlv_2=';'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getMixedPortROSAccess().getSemicolonKeyword_2());
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleMixedPortYARP
+entryRuleMixedPortYARP returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMixedPortYARPRule()); }
+	iv_ruleMixedPortYARP=ruleMixedPortYARP
+	{ $current=$iv_ruleMixedPortYARP.current; }
+	EOF;
+
+// Rule MixedPortYARP
+ruleMixedPortYARP returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='MixedPortYARP'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getMixedPortYARPAccess().getMixedPortYARPKeyword_0());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMixedPortYARPRule());
+					}
+				}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getMixedPortYARPAccess().getPortMixedPortYARPBaseCrossReference_1_0());
+				}
+			)
+		)
+		(
+			otherlv_2=';'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getMixedPortYARPAccess().getSemicolonKeyword_2());
 			}
 		)?
 	)

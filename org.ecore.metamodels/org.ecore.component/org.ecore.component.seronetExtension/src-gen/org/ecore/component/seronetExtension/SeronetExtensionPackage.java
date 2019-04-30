@@ -111,7 +111,7 @@ public interface SeronetExtensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAIN_OPC_UA_PORT__NAME = ComponentDefinitionPackage.NAMED_COMPONENT_ELEMENT__NAME;
+	int PLAIN_OPC_UA_PORT__NAME = ComponentDefinitionPackage.ABSTRACT_COMPONENT_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Plain Opc Ua Port</em>' class.
@@ -120,7 +120,7 @@ public interface SeronetExtensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAIN_OPC_UA_PORT_FEATURE_COUNT = ComponentDefinitionPackage.NAMED_COMPONENT_ELEMENT_FEATURE_COUNT + 0;
+	int PLAIN_OPC_UA_PORT_FEATURE_COUNT = ComponentDefinitionPackage.ABSTRACT_COMPONENT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.component.seronetExtension.impl.OpcUaDeviceClientImpl <em>Opc Ua Device Client</em>}' class.
@@ -252,6 +252,117 @@ public interface SeronetExtensionPackage extends EPackage {
 	int OPC_UA_CLIENT_LINK_FEATURE_COUNT = ComponentDefinitionPackage.ABSTRACT_COMPONENT_LINK_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.ecore.component.seronetExtension.impl.MixedPortROSImpl <em>Mixed Port ROS</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.ecore.component.seronetExtension.impl.MixedPortROSImpl
+	 * @see org.ecore.component.seronetExtension.impl.SeronetExtensionPackageImpl#getMixedPortROS()
+	 * @generated
+	 */
+	int MIXED_PORT_ROS = 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXED_PORT_ROS__NAME = ComponentDefinitionPackage.DERIVED_COMPONENT_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXED_PORT_ROS__PORT = ComponentDefinitionPackage.DERIVED_COMPONENT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Mixed Port ROS</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXED_PORT_ROS_FEATURE_COUNT = ComponentDefinitionPackage.DERIVED_COMPONENT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.ecore.component.seronetExtension.impl.MixedPortYARPImpl <em>Mixed Port YARP</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.ecore.component.seronetExtension.impl.MixedPortYARPImpl
+	 * @see org.ecore.component.seronetExtension.impl.SeronetExtensionPackageImpl#getMixedPortYARP()
+	 * @generated
+	 */
+	int MIXED_PORT_YARP = 6;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXED_PORT_YARP__NAME = ComponentDefinitionPackage.DERIVED_COMPONENT_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXED_PORT_YARP__PORT = ComponentDefinitionPackage.DERIVED_COMPONENT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Mixed Port YARP</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXED_PORT_YARP_FEATURE_COUNT = ComponentDefinitionPackage.DERIVED_COMPONENT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.ecore.component.seronetExtension.impl.MixedPortROSLinkImpl <em>Mixed Port ROS Link</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.ecore.component.seronetExtension.impl.MixedPortROSLinkImpl
+	 * @see org.ecore.component.seronetExtension.impl.SeronetExtensionPackageImpl#getMixedPortROSLink()
+	 * @generated
+	 */
+	int MIXED_PORT_ROS_LINK = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXED_PORT_ROS_LINK__NAME = ComponentDefinitionPackage.ABSTRACT_COMPONENT_LINK__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Mixedportros</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXED_PORT_ROS_LINK__MIXEDPORTROS = ComponentDefinitionPackage.ABSTRACT_COMPONENT_LINK_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Mixed Port ROS Link</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXED_PORT_ROS_LINK_FEATURE_COUNT = ComponentDefinitionPackage.ABSTRACT_COMPONENT_LINK_FEATURE_COUNT + 1;
+
+	/**
 	 * Returns the meta object for class '{@link org.ecore.component.seronetExtension.SupportedMiddleware <em>Supported Middleware</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -377,6 +488,69 @@ public interface SeronetExtensionPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOpcUaClientLink_Client();
+
+	/**
+	 * Returns the meta object for class '{@link org.ecore.component.seronetExtension.MixedPortROS <em>Mixed Port ROS</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mixed Port ROS</em>'.
+	 * @see org.ecore.component.seronetExtension.MixedPortROS
+	 * @generated
+	 */
+	EClass getMixedPortROS();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.ecore.component.seronetExtension.MixedPortROS#getPort <em>Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Port</em>'.
+	 * @see org.ecore.component.seronetExtension.MixedPortROS#getPort()
+	 * @see #getMixedPortROS()
+	 * @generated
+	 */
+	EReference getMixedPortROS_Port();
+
+	/**
+	 * Returns the meta object for class '{@link org.ecore.component.seronetExtension.MixedPortYARP <em>Mixed Port YARP</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mixed Port YARP</em>'.
+	 * @see org.ecore.component.seronetExtension.MixedPortYARP
+	 * @generated
+	 */
+	EClass getMixedPortYARP();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.ecore.component.seronetExtension.MixedPortYARP#getPort <em>Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Port</em>'.
+	 * @see org.ecore.component.seronetExtension.MixedPortYARP#getPort()
+	 * @see #getMixedPortYARP()
+	 * @generated
+	 */
+	EReference getMixedPortYARP_Port();
+
+	/**
+	 * Returns the meta object for class '{@link org.ecore.component.seronetExtension.MixedPortROSLink <em>Mixed Port ROS Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mixed Port ROS Link</em>'.
+	 * @see org.ecore.component.seronetExtension.MixedPortROSLink
+	 * @generated
+	 */
+	EClass getMixedPortROSLink();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.ecore.component.seronetExtension.MixedPortROSLink#getMixedportros <em>Mixedportros</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Mixedportros</em>'.
+	 * @see org.ecore.component.seronetExtension.MixedPortROSLink#getMixedportros()
+	 * @see #getMixedPortROSLink()
+	 * @generated
+	 */
+	EReference getMixedPortROSLink_Mixedportros();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -505,6 +679,60 @@ public interface SeronetExtensionPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OPC_UA_CLIENT_LINK__CLIENT = eINSTANCE.getOpcUaClientLink_Client();
+
+		/**
+		 * The meta object literal for the '{@link org.ecore.component.seronetExtension.impl.MixedPortROSImpl <em>Mixed Port ROS</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecore.component.seronetExtension.impl.MixedPortROSImpl
+		 * @see org.ecore.component.seronetExtension.impl.SeronetExtensionPackageImpl#getMixedPortROS()
+		 * @generated
+		 */
+		EClass MIXED_PORT_ROS = eINSTANCE.getMixedPortROS();
+
+		/**
+		 * The meta object literal for the '<em><b>Port</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MIXED_PORT_ROS__PORT = eINSTANCE.getMixedPortROS_Port();
+
+		/**
+		 * The meta object literal for the '{@link org.ecore.component.seronetExtension.impl.MixedPortYARPImpl <em>Mixed Port YARP</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecore.component.seronetExtension.impl.MixedPortYARPImpl
+		 * @see org.ecore.component.seronetExtension.impl.SeronetExtensionPackageImpl#getMixedPortYARP()
+		 * @generated
+		 */
+		EClass MIXED_PORT_YARP = eINSTANCE.getMixedPortYARP();
+
+		/**
+		 * The meta object literal for the '<em><b>Port</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MIXED_PORT_YARP__PORT = eINSTANCE.getMixedPortYARP_Port();
+
+		/**
+		 * The meta object literal for the '{@link org.ecore.component.seronetExtension.impl.MixedPortROSLinkImpl <em>Mixed Port ROS Link</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecore.component.seronetExtension.impl.MixedPortROSLinkImpl
+		 * @see org.ecore.component.seronetExtension.impl.SeronetExtensionPackageImpl#getMixedPortROSLink()
+		 * @generated
+		 */
+		EClass MIXED_PORT_ROS_LINK = eINSTANCE.getMixedPortROSLink();
+
+		/**
+		 * The meta object literal for the '<em><b>Mixedportros</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MIXED_PORT_ROS_LINK__MIXEDPORTROS = eINSTANCE.getMixedPortROSLink_Mixedportros();
 
 	}
 

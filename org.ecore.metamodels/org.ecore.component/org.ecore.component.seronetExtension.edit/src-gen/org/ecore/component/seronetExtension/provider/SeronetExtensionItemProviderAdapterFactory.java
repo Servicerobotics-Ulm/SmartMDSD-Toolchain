@@ -195,11 +195,81 @@ public class SeronetExtensionItemProviderAdapterFactory extends SeronetExtension
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.ecore.component.seronetExtension.MixedPortROS} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MixedPortROSItemProvider mixedPortROSItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.ecore.component.seronetExtension.MixedPortROS}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMixedPortROSAdapter() {
+		if (mixedPortROSItemProvider == null) {
+			mixedPortROSItemProvider = new MixedPortROSItemProvider(this);
+		}
+
+		return mixedPortROSItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.ecore.component.seronetExtension.MixedPortYARP} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MixedPortYARPItemProvider mixedPortYARPItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.ecore.component.seronetExtension.MixedPortYARP}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMixedPortYARPAdapter() {
+		if (mixedPortYARPItemProvider == null) {
+			mixedPortYARPItemProvider = new MixedPortYARPItemProvider(this);
+		}
+
+		return mixedPortYARPItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.ecore.component.seronetExtension.MixedPortROSLink} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MixedPortROSLinkItemProvider mixedPortROSLinkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.ecore.component.seronetExtension.MixedPortROSLink}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMixedPortROSLinkAdapter() {
+		if (mixedPortROSLinkItemProvider == null) {
+			mixedPortROSLinkItemProvider = new MixedPortROSLinkItemProvider(this);
+		}
+
+		return mixedPortROSLinkItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -210,6 +280,7 @@ public class SeronetExtensionItemProviderAdapterFactory extends SeronetExtension
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -285,6 +356,7 @@ public class SeronetExtensionItemProviderAdapterFactory extends SeronetExtension
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -295,6 +367,7 @@ public class SeronetExtensionItemProviderAdapterFactory extends SeronetExtension
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -305,6 +378,7 @@ public class SeronetExtensionItemProviderAdapterFactory extends SeronetExtension
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -319,6 +393,7 @@ public class SeronetExtensionItemProviderAdapterFactory extends SeronetExtension
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (supportedMiddlewareItemProvider != null)
 			supportedMiddlewareItemProvider.dispose();
@@ -328,6 +403,12 @@ public class SeronetExtensionItemProviderAdapterFactory extends SeronetExtension
 			opcUaReadServerItemProvider.dispose();
 		if (opcUaClientLinkItemProvider != null)
 			opcUaClientLinkItemProvider.dispose();
+		if (mixedPortROSItemProvider != null)
+			mixedPortROSItemProvider.dispose();
+		if (mixedPortYARPItemProvider != null)
+			mixedPortYARPItemProvider.dispose();
+		if (mixedPortROSLinkItemProvider != null)
+			mixedPortROSLinkItemProvider.dispose();
 	}
 
 	/**
@@ -386,6 +467,14 @@ public class SeronetExtensionItemProviderAdapterFactory extends SeronetExtension
 						.add(createChildParameter(ComponentDefinitionPackage.Literals.COMPONENT_DEFINITION__ELEMENTS,
 								SeronetExtensionFactory.eINSTANCE.createOpcUaReadServer()));
 
+				newChildDescriptors
+						.add(createChildParameter(ComponentDefinitionPackage.Literals.COMPONENT_DEFINITION__ELEMENTS,
+								SeronetExtensionFactory.eINSTANCE.createMixedPortROS()));
+
+				newChildDescriptors
+						.add(createChildParameter(ComponentDefinitionPackage.Literals.COMPONENT_DEFINITION__ELEMENTS,
+								SeronetExtensionFactory.eINSTANCE.createMixedPortYARP()));
+
 				return null;
 			}
 
@@ -413,6 +502,10 @@ public class SeronetExtensionItemProviderAdapterFactory extends SeronetExtension
 				newChildDescriptors
 						.add(createChildParameter(ComponentDefinitionPackage.Literals.COMPONENT_SUB_NODE__LINKS,
 								SeronetExtensionFactory.eINSTANCE.createOpcUaClientLink()));
+
+				newChildDescriptors
+						.add(createChildParameter(ComponentDefinitionPackage.Literals.COMPONENT_SUB_NODE__LINKS,
+								SeronetExtensionFactory.eINSTANCE.createMixedPortROSLink()));
 
 				return null;
 			}

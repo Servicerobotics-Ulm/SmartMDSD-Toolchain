@@ -22,7 +22,8 @@ Require-Bundle: org.ecore.component.componentDefinition,
  org.eclipse.sirius.diagram.ui,
  org.eclipse.sirius.common,
  org.ecore.component.seronetExtension,
- org.ecore.service.componentMode
+ org.ecore.service.componentMode,
+ org.xtext.component.componentDefinition.ui
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: Servicerobotics Ulm

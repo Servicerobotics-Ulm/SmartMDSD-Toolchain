@@ -61,7 +61,7 @@ import org.ecore.component.performanceExtension.ActivationConstraints
  */
 class ComponentDefinitionProposalProvider extends AbstractComponentDefinitionProposalProvider {
 	
-	@Inject private XtextResourceIndex index;
+	@Inject XtextResourceIndex index;
 	
 	override completeComponentDefinition_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 //		super.completeComponentDefinition_Name(model, assignment, context, acceptor)

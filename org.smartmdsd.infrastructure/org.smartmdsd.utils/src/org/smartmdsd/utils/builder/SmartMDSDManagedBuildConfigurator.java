@@ -97,7 +97,14 @@ public class SmartMDSDManagedBuildConfigurator implements IManagedBuilderMakefil
 	@Override
 	public void initialize(IProject project, IManagedBuildInfo info, IProgressMonitor monitor) {
 		this.project = project;
-		
+		try {
+			createBuildFolder(monitor);
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+	}
+
+	protected void createBuildFolder(IProgressMonitor monitor) throws CoreException {
 		String generatorFolderName = Activator.getDefault().getPreferenceStore().getString(SmartMDSDPreferencesPage.PROP_GENERATOR_FOLDER);
 		String buildFolderName = Activator.getDefault().getPreferenceStore().getString(SmartMDSDPreferencesPage.PROP_BUILD_FOLDER);
 		
@@ -105,20 +112,16 @@ public class SmartMDSDManagedBuildConfigurator implements IManagedBuilderMakefil
 		IFolder smartsoftFolder = project.getFolder(generatorFolderName);
 		if (smartsoftFolder.exists()) {
 			if(buildFolder == null || !buildFolder.exists()) {
-				// FIXME: create build-folder in an extra runnable
 				IFolder currentBuildFolder = smartsoftFolder.getFolder(buildFolderName);
 				if (!currentBuildFolder.exists()) {
-					try {
-						currentBuildFolder.create(true, true, monitor);
-					} catch (CoreException e) {
-						e.printStackTrace();
-					}
+					currentBuildFolder.create(true, true, monitor);
+					project.refreshLocal(2, monitor);
 				}
 				buildFolder = currentBuildFolder;
 			}
 		}
 	}
-
+	
 	@Override
 	public boolean isGeneratedResource(IResource resource) {
 		if(resource != null) {
@@ -140,16 +143,19 @@ public class SmartMDSDManagedBuildConfigurator implements IManagedBuilderMakefil
 				"", //$NON-NLS-1$
 				null);
 
-		if(project == null || buildFolder == null) {
+		if(project == null) {
 			return status;
 		}
 
-		
 		final ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();
 		final ILaunchConfigurationType cmakeLauncher = launchManager.getLaunchConfigurationType(CMakeLauncher.LAUNCHER_ID);
 		IWorkspaceRunnable cmakeRunnable = new IWorkspaceRunnable() {
 			@Override
 			public void run(IProgressMonitor monitor) throws CoreException {
+				if(buildFolder == null) {
+					createBuildFolder(monitor);
+				}
+				
 				String launcherName = project.getName();
 				ILaunchConfigurationWorkingCopy cmakeLauncherConfiguration = cmakeLauncher.newInstance(project, launcherName);
 				// the only mandatory parameter is the current project name

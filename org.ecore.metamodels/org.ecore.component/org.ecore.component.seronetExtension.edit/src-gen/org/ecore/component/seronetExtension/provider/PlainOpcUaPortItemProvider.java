@@ -8,11 +8,17 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.ecore.component.componentDefinition.provider.NamedComponentElementItemProvider;
+import org.ecore.base.mixedport.MixedportPackage;
+
+import org.ecore.component.componentDefinition.provider.AbstractComponentElementItemProvider;
 
 import org.ecore.component.seronetExtension.PlainOpcUaPort;
+import org.ecore.component.seronetExtension.SeronetExtensionPackage;
 
 /**
  * This is the item provider adapter for a {@link org.ecore.component.seronetExtension.PlainOpcUaPort} object.
@@ -20,7 +26,7 @@ import org.ecore.component.seronetExtension.PlainOpcUaPort;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PlainOpcUaPortItemProvider extends NamedComponentElementItemProvider {
+public class PlainOpcUaPortItemProvider extends AbstractComponentElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -42,8 +48,25 @@ public class PlainOpcUaPortItemProvider extends NamedComponentElementItemProvide
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_AbstractMixedPortDefinition_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_AbstractMixedPortDefinition_name_feature",
+								"_UI_AbstractMixedPortDefinition_type"),
+						MixedportPackage.Literals.ABSTRACT_MIXED_PORT_DEFINITION__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -90,6 +113,12 @@ public class PlainOpcUaPortItemProvider extends NamedComponentElementItemProvide
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(PlainOpcUaPort.class)) {
+		case SeronetExtensionPackage.PLAIN_OPC_UA_PORT__NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 

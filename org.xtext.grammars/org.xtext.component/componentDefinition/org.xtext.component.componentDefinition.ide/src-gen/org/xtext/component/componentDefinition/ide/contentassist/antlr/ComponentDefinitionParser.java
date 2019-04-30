@@ -73,6 +73,7 @@ public class ComponentDefinitionParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, ComponentDefinitionGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getAbstractComponentElementAccess().getAlternatives(), "rule__AbstractComponentElement__Alternatives");
+			builder.put(grammarAccess.getDerivedComponentElementAccess().getAlternatives(), "rule__DerivedComponentElement__Alternatives");
 			builder.put(grammarAccess.getNamedComponentElementAccess().getAlternatives(), "rule__NamedComponentElement__Alternatives");
 			builder.put(grammarAccess.getComponentSubNodeAccess().getAlternatives(), "rule__ComponentSubNode__Alternatives");
 			builder.put(grammarAccess.getComponentPortAccess().getAlternatives(), "rule__ComponentPort__Alternatives");
@@ -98,6 +99,7 @@ public class ComponentDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRequestHandlerAccess().getGroup(), "rule__RequestHandler__Group__0");
 			builder.put(grammarAccess.getRequestPortLinkAccess().getGroup(), "rule__RequestPortLink__Group__0");
 			builder.put(grammarAccess.getOpcUaClientLinkAccess().getGroup(), "rule__OpcUaClientLink__Group__0");
+			builder.put(grammarAccess.getMixedPortROSLinkAccess().getGroup(), "rule__MixedPortROSLink__Group__0");
 			builder.put(grammarAccess.getComponentSubNodeObserverAccess().getGroup(), "rule__ComponentSubNodeObserver__Group__0");
 			builder.put(grammarAccess.getInputLinkExtensionAccess().getGroup(), "rule__InputLinkExtension__Group__0");
 			builder.put(grammarAccess.getActivationConstraintsAccess().getGroup(), "rule__ActivationConstraints__Group__0");
@@ -114,6 +116,8 @@ public class ComponentDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getGroup_2_1(), "rule__OpcUaDeviceClient__Group_2_1__0");
 			builder.put(grammarAccess.getOpcUaReadServerAccess().getGroup(), "rule__OpcUaReadServer__Group__0");
 			builder.put(grammarAccess.getOpcUaReadServerAccess().getGroup_4(), "rule__OpcUaReadServer__Group_4__0");
+			builder.put(grammarAccess.getMixedPortROSAccess().getGroup(), "rule__MixedPortROS__Group__0");
+			builder.put(grammarAccess.getMixedPortYARPAccess().getGroup(), "rule__MixedPortYARP__Group__0");
 			builder.put(grammarAccess.getCoordinationSlavePortAccess().getGroup(), "rule__CoordinationSlavePort__Group__0");
 			builder.put(grammarAccess.getSkillRealizationsRefAccess().getGroup(), "rule__SkillRealizationsRef__Group__0");
 			builder.put(grammarAccess.getCommunicationServiceUsageRealizationAccess().getGroup(), "rule__CommunicationServiceUsageRealization__Group__0");
@@ -172,6 +176,7 @@ public class ComponentDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRequestHandlerAccess().getLinksAssignment_6(), "rule__RequestHandler__LinksAssignment_6");
 			builder.put(grammarAccess.getRequestPortLinkAccess().getRequestPortAssignment_1(), "rule__RequestPortLink__RequestPortAssignment_1");
 			builder.put(grammarAccess.getOpcUaClientLinkAccess().getClientAssignment_1(), "rule__OpcUaClientLink__ClientAssignment_1");
+			builder.put(grammarAccess.getMixedPortROSLinkAccess().getMixedportrosAssignment_1(), "rule__MixedPortROSLink__MixedportrosAssignment_1");
 			builder.put(grammarAccess.getComponentSubNodeObserverAccess().getSubjectAssignment_1(), "rule__ComponentSubNodeObserver__SubjectAssignment_1");
 			builder.put(grammarAccess.getInputLinkExtensionAccess().getInputPortAssignment_2(), "rule__InputLinkExtension__InputPortAssignment_2");
 			builder.put(grammarAccess.getInputLinkExtensionAccess().getOptionalAssignment_4_0(), "rule__InputLinkExtension__OptionalAssignment_4_0");
@@ -191,6 +196,8 @@ public class ComponentDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOpcUaReadServerAccess().getNameAssignment_1(), "rule__OpcUaReadServer__NameAssignment_1");
 			builder.put(grammarAccess.getOpcUaReadServerAccess().getOutPortAssignment_3(), "rule__OpcUaReadServer__OutPortAssignment_3");
 			builder.put(grammarAccess.getOpcUaReadServerAccess().getPortNumberAssignment_4_1(), "rule__OpcUaReadServer__PortNumberAssignment_4_1");
+			builder.put(grammarAccess.getMixedPortROSAccess().getPortAssignment_1(), "rule__MixedPortROS__PortAssignment_1");
+			builder.put(grammarAccess.getMixedPortYARPAccess().getPortAssignment_1(), "rule__MixedPortYARP__PortAssignment_1");
 			builder.put(grammarAccess.getCoordinationSlavePortAccess().getNameAssignment_1(), "rule__CoordinationSlavePort__NameAssignment_1");
 			builder.put(grammarAccess.getCoordinationSlavePortAccess().getServiceAssignment_3(), "rule__CoordinationSlavePort__ServiceAssignment_3");
 			builder.put(grammarAccess.getCoordinationSlavePortAccess().getElementsAssignment_5(), "rule__CoordinationSlavePort__ElementsAssignment_5");

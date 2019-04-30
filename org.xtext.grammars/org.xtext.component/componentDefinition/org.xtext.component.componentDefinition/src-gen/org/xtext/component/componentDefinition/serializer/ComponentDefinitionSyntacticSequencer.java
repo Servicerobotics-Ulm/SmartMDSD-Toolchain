@@ -68,6 +68,9 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 	protected AbstractElementAlias match_ComponentSubNodeObserver_SemicolonKeyword_2_q;
 	protected AbstractElementAlias match_CoordinationMasterPort_SemicolonKeyword_4_q;
 	protected AbstractElementAlias match_DefaultTrigger_SemicolonKeyword_2_q;
+	protected AbstractElementAlias match_MixedPortROSLink_SemicolonKeyword_2_q;
+	protected AbstractElementAlias match_MixedPortROS_SemicolonKeyword_2_q;
+	protected AbstractElementAlias match_MixedPortYARP_SemicolonKeyword_2_q;
 	protected AbstractElementAlias match_OpcUaClientLink_SemicolonKeyword_2_q;
 	protected AbstractElementAlias match_OpcUaDeviceClient_SemicolonKeyword_3_q;
 	protected AbstractElementAlias match_OpcUaReadServer_SemicolonKeyword_5_q;
@@ -88,6 +91,9 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 		match_ComponentSubNodeObserver_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getComponentSubNodeObserverAccess().getSemicolonKeyword_2());
 		match_CoordinationMasterPort_SemicolonKeyword_4_q = new TokenAlias(false, true, grammarAccess.getCoordinationMasterPortAccess().getSemicolonKeyword_4());
 		match_DefaultTrigger_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getDefaultTriggerAccess().getSemicolonKeyword_2());
+		match_MixedPortROSLink_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getMixedPortROSLinkAccess().getSemicolonKeyword_2());
+		match_MixedPortROS_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getMixedPortROSAccess().getSemicolonKeyword_2());
+		match_MixedPortYARP_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getMixedPortYARPAccess().getSemicolonKeyword_2());
 		match_OpcUaClientLink_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getOpcUaClientLinkAccess().getSemicolonKeyword_2());
 		match_OpcUaDeviceClient_SemicolonKeyword_3_q = new TokenAlias(false, true, grammarAccess.getOpcUaDeviceClientAccess().getSemicolonKeyword_3());
 		match_OpcUaReadServer_SemicolonKeyword_5_q = new TokenAlias(false, true, grammarAccess.getOpcUaReadServerAccess().getSemicolonKeyword_5());
@@ -125,6 +131,12 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 				emit_CoordinationMasterPort_SemicolonKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_DefaultTrigger_SemicolonKeyword_2_q.equals(syntax))
 				emit_DefaultTrigger_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MixedPortROSLink_SemicolonKeyword_2_q.equals(syntax))
+				emit_MixedPortROSLink_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MixedPortROS_SemicolonKeyword_2_q.equals(syntax))
+				emit_MixedPortROS_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MixedPortYARP_SemicolonKeyword_2_q.equals(syntax))
+				emit_MixedPortYARP_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_OpcUaClientLink_SemicolonKeyword_2_q.equals(syntax))
 				emit_OpcUaClientLink_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_OpcUaDeviceClient_SemicolonKeyword_3_q.equals(syntax))
@@ -231,6 +243,39 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 	 *     prescale=EInt (ambiguity) (rule end)
 	 */
 	protected void emit_DefaultTrigger_SemicolonKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     mixedportros=[MixedPortROS|FQN] (ambiguity) (rule end)
+	 */
+	protected void emit_MixedPortROSLink_SemicolonKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     port=[MixedPortROSBase|ID] (ambiguity) (rule end)
+	 */
+	protected void emit_MixedPortROS_SemicolonKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     port=[MixedPortYARPBase|ID] (ambiguity) (rule end)
+	 */
+	protected void emit_MixedPortYARP_SemicolonKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

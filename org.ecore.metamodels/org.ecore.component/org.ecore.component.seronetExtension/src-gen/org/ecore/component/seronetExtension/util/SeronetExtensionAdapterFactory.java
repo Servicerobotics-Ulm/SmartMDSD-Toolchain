@@ -9,10 +9,13 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.ecore.base.mixedport.AbstractMixedPortDefinition;
+import org.ecore.base.mixedport.MixedPortOpcUaBase;
+
 import org.ecore.component.componentDefinition.AbstractComponentElement;
 import org.ecore.component.componentDefinition.AbstractComponentLink;
 import org.ecore.component.componentDefinition.ComponentPortExtension;
-import org.ecore.component.componentDefinition.NamedComponentElement;
+import org.ecore.component.componentDefinition.DerivedComponentElement;
 
 import org.ecore.component.seronetExtension.*;
 
@@ -97,6 +100,21 @@ public class SeronetExtensionAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseMixedPortROS(MixedPortROS object) {
+			return createMixedPortROSAdapter();
+		}
+
+		@Override
+		public Adapter caseMixedPortYARP(MixedPortYARP object) {
+			return createMixedPortYARPAdapter();
+		}
+
+		@Override
+		public Adapter caseMixedPortROSLink(MixedPortROSLink object) {
+			return createMixedPortROSLinkAdapter();
+		}
+
+		@Override
 		public Adapter caseComponentPortExtension(ComponentPortExtension object) {
 			return createComponentPortExtensionAdapter();
 		}
@@ -107,13 +125,23 @@ public class SeronetExtensionAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseNamedComponentElement(NamedComponentElement object) {
-			return createNamedComponentElementAdapter();
+		public Adapter caseAbstractMixedPortDefinition(AbstractMixedPortDefinition object) {
+			return createAbstractMixedPortDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseMixedPortOpcUaBase(MixedPortOpcUaBase object) {
+			return createMixedPortOpcUaBaseAdapter();
 		}
 
 		@Override
 		public Adapter caseAbstractComponentLink(AbstractComponentLink object) {
 			return createAbstractComponentLinkAdapter();
+		}
+
+		@Override
+		public Adapter caseDerivedComponentElement(DerivedComponentElement object) {
+			return createDerivedComponentElementAdapter();
 		}
 
 		@Override
@@ -206,6 +234,48 @@ public class SeronetExtensionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.component.seronetExtension.MixedPortROS <em>Mixed Port ROS</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.component.seronetExtension.MixedPortROS
+	 * @generated
+	 */
+	public Adapter createMixedPortROSAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.component.seronetExtension.MixedPortYARP <em>Mixed Port YARP</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.component.seronetExtension.MixedPortYARP
+	 * @generated
+	 */
+	public Adapter createMixedPortYARPAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.component.seronetExtension.MixedPortROSLink <em>Mixed Port ROS Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.component.seronetExtension.MixedPortROSLink
+	 * @generated
+	 */
+	public Adapter createMixedPortROSLinkAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ecore.component.componentDefinition.ComponentPortExtension <em>Component Port Extension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -234,16 +304,30 @@ public class SeronetExtensionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.ecore.component.componentDefinition.NamedComponentElement <em>Named Component Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.ecore.base.mixedport.AbstractMixedPortDefinition <em>Abstract Mixed Port Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.ecore.component.componentDefinition.NamedComponentElement
+	 * @see org.ecore.base.mixedport.AbstractMixedPortDefinition
 	 * @generated
 	 */
-	public Adapter createNamedComponentElementAdapter() {
+	public Adapter createAbstractMixedPortDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.base.mixedport.MixedPortOpcUaBase <em>Mixed Port Opc Ua Base</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.base.mixedport.MixedPortOpcUaBase
+	 * @generated
+	 */
+	public Adapter createMixedPortOpcUaBaseAdapter() {
 		return null;
 	}
 
@@ -258,6 +342,20 @@ public class SeronetExtensionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAbstractComponentLinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.component.componentDefinition.DerivedComponentElement <em>Derived Component Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.component.componentDefinition.DerivedComponentElement
+	 * @generated
+	 */
+	public Adapter createDerivedComponentElementAdapter() {
 		return null;
 	}
 

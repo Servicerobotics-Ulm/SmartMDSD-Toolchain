@@ -83,6 +83,7 @@ public class OpcUaReadServerImpl extends PlainOpcUaPortImpl implements OpcUaRead
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public OutputPort getOutPort() {
 		if (outPort != null && outPort.eIsProxy()) {
 			InternalEObject oldOutPort = (InternalEObject) outPort;
@@ -110,6 +111,7 @@ public class OpcUaReadServerImpl extends PlainOpcUaPortImpl implements OpcUaRead
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOutPort(OutputPort newOutPort) {
 		OutputPort oldOutPort = outPort;
 		outPort = newOutPort;
@@ -123,6 +125,7 @@ public class OpcUaReadServerImpl extends PlainOpcUaPortImpl implements OpcUaRead
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getPortNumber() {
 		return portNumber;
 	}
@@ -132,6 +135,7 @@ public class OpcUaReadServerImpl extends PlainOpcUaPortImpl implements OpcUaRead
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPortNumber(int newPortNumber) {
 		int oldPortNumber = portNumber;
 		portNumber = newPortNumber;
@@ -220,7 +224,7 @@ public class OpcUaReadServerImpl extends PlainOpcUaPortImpl implements OpcUaRead
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (portNumber: ");
 		result.append(portNumber);
 		result.append(')');

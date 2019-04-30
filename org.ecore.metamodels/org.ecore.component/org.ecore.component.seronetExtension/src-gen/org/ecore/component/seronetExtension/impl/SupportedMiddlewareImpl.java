@@ -86,6 +86,7 @@ public class SupportedMiddlewareImpl extends ComponentPortExtensionImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RoboticMiddleware getMiddleware() {
 		return middleware;
 	}
@@ -114,6 +115,7 @@ public class SupportedMiddlewareImpl extends ComponentPortExtensionImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMiddleware(RoboticMiddleware newMiddleware) {
 		if (newMiddleware != middleware) {
 			NotificationChain msgs = null;
@@ -136,6 +138,7 @@ public class SupportedMiddlewareImpl extends ComponentPortExtensionImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isDefault() {
 		return default_;
 	}
@@ -145,6 +148,7 @@ public class SupportedMiddlewareImpl extends ComponentPortExtensionImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefault(boolean newDefault) {
 		boolean oldDefault = default_;
 		default_ = newDefault;
@@ -245,7 +249,7 @@ public class SupportedMiddlewareImpl extends ComponentPortExtensionImpl implemen
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (default: ");
 		result.append(default_);
 		result.append(')');

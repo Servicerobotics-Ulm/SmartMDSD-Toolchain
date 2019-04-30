@@ -190,12 +190,13 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cNamedComponentElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cDerivedComponentElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cPlainOpcUaPortParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//AbstractComponentElement component::AbstractComponentElement:
-		//	NamedComponentElement | DerivedComponentElement;
+		//	NamedComponentElement | DerivedComponentElement | PlainOpcUaPort;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//NamedComponentElement | DerivedComponentElement
+		//NamedComponentElement | DerivedComponentElement | PlainOpcUaPort
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//NamedComponentElement
@@ -203,17 +204,32 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		
 		//DerivedComponentElement
 		public RuleCall getDerivedComponentElementParserRuleCall_1() { return cDerivedComponentElementParserRuleCall_1; }
+		
+		//PlainOpcUaPort
+		public RuleCall getPlainOpcUaPortParserRuleCall_2() { return cPlainOpcUaPortParserRuleCall_2; }
 	}
 	public class DerivedComponentElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.DerivedComponentElement");
-		private final RuleCall cComponentParametersRefParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cComponentParametersRefParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cMixedPortROSParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cMixedPortYARPParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//DerivedComponentElement component::DerivedComponentElement:
-		//	ComponentParametersRef;
+		//	ComponentParametersRef | MixedPortROS | MixedPortYARP;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//ComponentParametersRef | MixedPortROS | MixedPortYARP
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
 		//ComponentParametersRef
-		public RuleCall getComponentParametersRefParserRuleCall() { return cComponentParametersRefParserRuleCall; }
+		public RuleCall getComponentParametersRefParserRuleCall_0() { return cComponentParametersRefParserRuleCall_0; }
+		
+		//MixedPortROS
+		public RuleCall getMixedPortROSParserRuleCall_1() { return cMixedPortROSParserRuleCall_1; }
+		
+		//MixedPortYARP
+		public RuleCall getMixedPortYARPParserRuleCall_2() { return cMixedPortYARPParserRuleCall_2; }
 	}
 	public class NamedComponentElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.NamedComponentElement");
@@ -222,13 +238,12 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cComponentPortParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cCoordinationSlavePortParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cCoordinationMasterPortParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cPlainOpcUaPortParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//NamedComponentElement component::NamedComponentElement:
-		//	ComponentSubNode | ComponentPort | CoordinationSlavePort | CoordinationMasterPort | PlainOpcUaPort;
+		//	ComponentSubNode | ComponentPort | CoordinationSlavePort | CoordinationMasterPort;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ComponentSubNode | ComponentPort | CoordinationSlavePort | CoordinationMasterPort | PlainOpcUaPort
+		//ComponentSubNode | ComponentPort | CoordinationSlavePort | CoordinationMasterPort
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ComponentSubNode
@@ -242,9 +257,6 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		
 		//CoordinationMasterPort
 		public RuleCall getCoordinationMasterPortParserRuleCall_3() { return cCoordinationMasterPortParserRuleCall_3; }
-		
-		//PlainOpcUaPort
-		public RuleCall getPlainOpcUaPortParserRuleCall_4() { return cPlainOpcUaPortParserRuleCall_4; }
 	}
 	public class ComponentSubNodeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.ComponentSubNode");
@@ -785,12 +797,13 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		private final RuleCall cRequestPortLinkParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cInputLinkExtensionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cOpcUaClientLinkParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cMixedPortROSLinkParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//AbstractComponentLink component::AbstractComponentLink:
-		//	ComponentSubNodeObserver | RequestPortLink | InputLinkExtension | OpcUaClientLink;
+		//	ComponentSubNodeObserver | RequestPortLink | InputLinkExtension | OpcUaClientLink | MixedPortROSLink;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ComponentSubNodeObserver | RequestPortLink | InputLinkExtension | OpcUaClientLink
+		//ComponentSubNodeObserver | RequestPortLink | InputLinkExtension | OpcUaClientLink | MixedPortROSLink
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ComponentSubNodeObserver
@@ -804,6 +817,9 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		
 		//OpcUaClientLink
 		public RuleCall getOpcUaClientLinkParserRuleCall_3() { return cOpcUaClientLinkParserRuleCall_3; }
+		
+		//MixedPortROSLink
+		public RuleCall getMixedPortROSLinkParserRuleCall_4() { return cMixedPortROSLinkParserRuleCall_4; }
 	}
 	public class RequestPortLinkElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.RequestPortLink");
@@ -863,6 +879,37 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		
 		//FQN
 		public RuleCall getClientOpcUaDeviceClientFQNParserRuleCall_1_0_1() { return cClientOpcUaDeviceClientFQNParserRuleCall_1_0_1; }
+		
+		//';'?
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+	}
+	public class MixedPortROSLinkElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.MixedPortROSLink");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cMixedPortROSLinkKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cMixedportrosAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cMixedportrosMixedPortROSCrossReference_1_0 = (CrossReference)cMixedportrosAssignment_1.eContents().get(0);
+		private final RuleCall cMixedportrosMixedPortROSFQNParserRuleCall_1_0_1 = (RuleCall)cMixedportrosMixedPortROSCrossReference_1_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//MixedPortROSLink seronet::MixedPortROSLink:
+		//	'MixedPortROSLink' mixedportros=[seronet::MixedPortROS|FQN] ';'?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'MixedPortROSLink' mixedportros=[seronet::MixedPortROS|FQN] ';'?
+		public Group getGroup() { return cGroup; }
+		
+		//'MixedPortROSLink'
+		public Keyword getMixedPortROSLinkKeyword_0() { return cMixedPortROSLinkKeyword_0; }
+		
+		//mixedportros=[seronet::MixedPortROS|FQN]
+		public Assignment getMixedportrosAssignment_1() { return cMixedportrosAssignment_1; }
+		
+		//[seronet::MixedPortROS|FQN]
+		public CrossReference getMixedportrosMixedPortROSCrossReference_1_0() { return cMixedportrosMixedPortROSCrossReference_1_0; }
+		
+		//FQN
+		public RuleCall getMixedportrosMixedPortROSFQNParserRuleCall_1_0_1() { return cMixedportrosMixedPortROSFQNParserRuleCall_1_0_1; }
 		
 		//';'?
 		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
@@ -1419,6 +1466,68 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		//';'?
 		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
+	public class MixedPortROSElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.MixedPortROS");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cMixedPortROSKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cPortAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cPortMixedPortROSBaseCrossReference_1_0 = (CrossReference)cPortAssignment_1.eContents().get(0);
+		private final RuleCall cPortMixedPortROSBaseIDTerminalRuleCall_1_0_1 = (RuleCall)cPortMixedPortROSBaseCrossReference_1_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//MixedPortROS seronet::MixedPortROS:
+		//	'MixedPortROS' port=[mixedport::MixedPortROSBase] ';'?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'MixedPortROS' port=[mixedport::MixedPortROSBase] ';'?
+		public Group getGroup() { return cGroup; }
+		
+		//'MixedPortROS'
+		public Keyword getMixedPortROSKeyword_0() { return cMixedPortROSKeyword_0; }
+		
+		//port=[mixedport::MixedPortROSBase]
+		public Assignment getPortAssignment_1() { return cPortAssignment_1; }
+		
+		//[mixedport::MixedPortROSBase]
+		public CrossReference getPortMixedPortROSBaseCrossReference_1_0() { return cPortMixedPortROSBaseCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getPortMixedPortROSBaseIDTerminalRuleCall_1_0_1() { return cPortMixedPortROSBaseIDTerminalRuleCall_1_0_1; }
+		
+		//';'?
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+	}
+	public class MixedPortYARPElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.MixedPortYARP");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cMixedPortYARPKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cPortAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cPortMixedPortYARPBaseCrossReference_1_0 = (CrossReference)cPortAssignment_1.eContents().get(0);
+		private final RuleCall cPortMixedPortYARPBaseIDTerminalRuleCall_1_0_1 = (RuleCall)cPortMixedPortYARPBaseCrossReference_1_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//MixedPortYARP seronet::MixedPortYARP:
+		//	'MixedPortYARP' port=[mixedport::MixedPortYARPBase] ';'?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'MixedPortYARP' port=[mixedport::MixedPortYARPBase] ';'?
+		public Group getGroup() { return cGroup; }
+		
+		//'MixedPortYARP'
+		public Keyword getMixedPortYARPKeyword_0() { return cMixedPortYARPKeyword_0; }
+		
+		//port=[mixedport::MixedPortYARPBase]
+		public Assignment getPortAssignment_1() { return cPortAssignment_1; }
+		
+		//[mixedport::MixedPortYARPBase]
+		public CrossReference getPortMixedPortYARPBaseCrossReference_1_0() { return cPortMixedPortYARPBaseCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getPortMixedPortYARPBaseIDTerminalRuleCall_1_0_1() { return cPortMixedPortYARPBaseIDTerminalRuleCall_1_0_1; }
+		
+		//';'?
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+	}
 	public class CoordinationSlavePortElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.CoordinationSlavePort");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1826,6 +1935,7 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 	private final AbstractComponentLinkElements pAbstractComponentLink;
 	private final RequestPortLinkElements pRequestPortLink;
 	private final OpcUaClientLinkElements pOpcUaClientLink;
+	private final MixedPortROSLinkElements pMixedPortROSLink;
 	private final ComponentSubNodeObserverElements pComponentSubNodeObserver;
 	private final InputLinkExtensionElements pInputLinkExtension;
 	private final ActivityExtensionElements pActivityExtension;
@@ -1838,6 +1948,8 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 	private final PlainOpcUaPortElements pPlainOpcUaPort;
 	private final OpcUaDeviceClientElements pOpcUaDeviceClient;
 	private final OpcUaReadServerElements pOpcUaReadServer;
+	private final MixedPortROSElements pMixedPortROS;
+	private final MixedPortYARPElements pMixedPortYARP;
 	private final CoordinationSlavePortElements pCoordinationSlavePort;
 	private final AbstractCoordinationElementElements pAbstractCoordinationElement;
 	private final SkillRealizationsRefElements pSkillRealizationsRef;
@@ -1880,6 +1992,7 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		this.pAbstractComponentLink = new AbstractComponentLinkElements();
 		this.pRequestPortLink = new RequestPortLinkElements();
 		this.pOpcUaClientLink = new OpcUaClientLinkElements();
+		this.pMixedPortROSLink = new MixedPortROSLinkElements();
 		this.pComponentSubNodeObserver = new ComponentSubNodeObserverElements();
 		this.pInputLinkExtension = new InputLinkExtensionElements();
 		this.pActivityExtension = new ActivityExtensionElements();
@@ -1892,6 +2005,8 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		this.pPlainOpcUaPort = new PlainOpcUaPortElements();
 		this.pOpcUaDeviceClient = new OpcUaDeviceClientElements();
 		this.pOpcUaReadServer = new OpcUaReadServerElements();
+		this.pMixedPortROS = new MixedPortROSElements();
+		this.pMixedPortYARP = new MixedPortYARPElements();
 		this.pCoordinationSlavePort = new CoordinationSlavePortElements();
 		this.pAbstractCoordinationElement = new AbstractCoordinationElementElements();
 		this.pSkillRealizationsRef = new SkillRealizationsRefElements();
@@ -1969,7 +2084,7 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//AbstractComponentElement component::AbstractComponentElement:
-	//	NamedComponentElement | DerivedComponentElement;
+	//	NamedComponentElement | DerivedComponentElement | PlainOpcUaPort;
 	public AbstractComponentElementElements getAbstractComponentElementAccess() {
 		return pAbstractComponentElement;
 	}
@@ -1979,7 +2094,7 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//DerivedComponentElement component::DerivedComponentElement:
-	//	ComponentParametersRef;
+	//	ComponentParametersRef | MixedPortROS | MixedPortYARP;
 	public DerivedComponentElementElements getDerivedComponentElementAccess() {
 		return pDerivedComponentElement;
 	}
@@ -1989,7 +2104,7 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//NamedComponentElement component::NamedComponentElement:
-	//	ComponentSubNode | ComponentPort | CoordinationSlavePort | CoordinationMasterPort | PlainOpcUaPort;
+	//	ComponentSubNode | ComponentPort | CoordinationSlavePort | CoordinationMasterPort;
 	public NamedComponentElementElements getNamedComponentElementAccess() {
 		return pNamedComponentElement;
 	}
@@ -2130,7 +2245,7 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//AbstractComponentLink component::AbstractComponentLink:
-	//	ComponentSubNodeObserver | RequestPortLink | InputLinkExtension | OpcUaClientLink;
+	//	ComponentSubNodeObserver | RequestPortLink | InputLinkExtension | OpcUaClientLink | MixedPortROSLink;
 	public AbstractComponentLinkElements getAbstractComponentLinkAccess() {
 		return pAbstractComponentLink;
 	}
@@ -2157,6 +2272,16 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 	
 	public ParserRule getOpcUaClientLinkRule() {
 		return getOpcUaClientLinkAccess().getRule();
+	}
+	
+	//MixedPortROSLink seronet::MixedPortROSLink:
+	//	'MixedPortROSLink' mixedportros=[seronet::MixedPortROS|FQN] ';'?;
+	public MixedPortROSLinkElements getMixedPortROSLinkAccess() {
+		return pMixedPortROSLink;
+	}
+	
+	public ParserRule getMixedPortROSLinkRule() {
+		return getMixedPortROSLinkAccess().getRule();
 	}
 	
 	///**
@@ -2295,6 +2420,26 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 	
 	public ParserRule getOpcUaReadServerRule() {
 		return getOpcUaReadServerAccess().getRule();
+	}
+	
+	//MixedPortROS seronet::MixedPortROS:
+	//	'MixedPortROS' port=[mixedport::MixedPortROSBase] ';'?;
+	public MixedPortROSElements getMixedPortROSAccess() {
+		return pMixedPortROS;
+	}
+	
+	public ParserRule getMixedPortROSRule() {
+		return getMixedPortROSAccess().getRule();
+	}
+	
+	//MixedPortYARP seronet::MixedPortYARP:
+	//	'MixedPortYARP' port=[mixedport::MixedPortYARPBase] ';'?;
+	public MixedPortYARPElements getMixedPortYARPAccess() {
+		return pMixedPortYARP;
+	}
+	
+	public ParserRule getMixedPortYARPRule() {
+		return getMixedPortYARPAccess().getRule();
 	}
 	
 	//CoordinationSlavePort coordination::CoordinationSlavePort:

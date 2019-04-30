@@ -81,6 +81,7 @@ Workflow {
 			referencedResource = "platform:/resource/org.ecore.component.performanceExtension/model/performanceExtension.genmodel"
 			referencedResource = "platform:/resource/org.ecore.component.coordinationExtension/model/coordinationExtension.genmodel"
 			referencedResource = "platform:/resource/org.ecore.component.seronetExtension/model/seronetExtension.genmodel"
+			referencedResource = "platform:/resource/org.ecore.base.mixedport/model/mixedport.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
 

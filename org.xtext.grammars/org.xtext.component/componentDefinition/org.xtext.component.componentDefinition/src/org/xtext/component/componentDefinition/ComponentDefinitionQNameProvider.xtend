@@ -58,6 +58,9 @@ import org.ecore.component.componentParameter.ComponentParametersRef
 import org.ecore.component.componentParameter.ComponentParameterPackage
 import org.ecore.component.seronetExtension.OpcUaClientLink
 import org.ecore.component.seronetExtension.SeronetExtensionPackage
+import org.ecore.component.seronetExtension.MixedPortROS
+import org.ecore.component.seronetExtension.MixedPortYARP
+import org.ecore.component.seronetExtension.MixedPortROSLink
 
 class ComponentDefinitionQNameProvider extends DefaultDeclarativeQualifiedNameProvider {
 	def QualifiedName qualifiedName(InputPortLink link) {
@@ -167,6 +170,51 @@ class ComponentDefinitionQNameProvider extends DefaultDeclarativeQualifiedNamePr
 			// this is the case when the InputLink has been created from within the Sirius editor
 			if(link.eIsSet(SeronetExtensionPackage.Literals.OPC_UA_CLIENT_LINK__CLIENT)) {
 				return parent.append(link.client.name);
+			}
+		}
+        return QualifiedName.EMPTY;
+	}
+	
+	def QualifiedName qualifiedName(MixedPortROS mixedport) {
+		// the qualified name of the parent
+		val parent = super.getFullyQualifiedName(mixedport.eContainer());
+		// the node for the reference feature
+		val nodes = NodeModelUtils.findNodesForFeature(mixedport, SeronetExtensionPackage.Literals.MIXED_PORT_ROS__PORT)
+		if(!nodes.isEmpty()) {
+			return parent.append(NodeModelUtils.getTokenText(nodes.get(0)));
+		} else {
+			if(mixedport.eIsSet(SeronetExtensionPackage.Literals.MIXED_PORT_ROS__PORT)) {
+				return parent.append(mixedport.port.name);
+			}
+		}
+        return QualifiedName.EMPTY;
+	}
+	
+	def QualifiedName qualifiedName(MixedPortROSLink link) {
+		// the qualified name of the parent
+		val parent = super.getFullyQualifiedName(link.eContainer());
+		// the node for the reference feature
+		val nodes = NodeModelUtils.findNodesForFeature(link, SeronetExtensionPackage.Literals.MIXED_PORT_ROS_LINK__MIXEDPORTROS)
+		if(!nodes.isEmpty()) {
+			return parent.append(NodeModelUtils.getTokenText(nodes.get(0)));
+		} else {
+			if(link.eIsSet(SeronetExtensionPackage.Literals.MIXED_PORT_ROS_LINK__MIXEDPORTROS)) {
+				return parent.append(link.mixedportros.name);
+			}
+		}
+        return QualifiedName.EMPTY;
+	}
+	
+	def QualifiedName qualifiedName(MixedPortYARP mixedport) {
+		// the qualified name of the parent
+		val parent = super.getFullyQualifiedName(mixedport.eContainer());
+		// the node for the reference feature
+		val nodes = NodeModelUtils.findNodesForFeature(mixedport, SeronetExtensionPackage.Literals.MIXED_PORT_YARP__PORT)
+		if(!nodes.isEmpty()) {
+			return parent.append(NodeModelUtils.getTokenText(nodes.get(0)));
+		} else {
+			if(mixedport.eIsSet(SeronetExtensionPackage.Literals.MIXED_PORT_YARP__PORT)) {
+				return parent.append(mixedport.port.name);
 			}
 		}
         return QualifiedName.EMPTY;

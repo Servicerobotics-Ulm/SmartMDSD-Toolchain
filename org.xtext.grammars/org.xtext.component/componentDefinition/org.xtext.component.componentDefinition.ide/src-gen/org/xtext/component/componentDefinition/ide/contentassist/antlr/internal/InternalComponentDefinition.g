@@ -206,9 +206,9 @@ ruleDerivedComponentElement
 	}
 	:
 	(
-		{ before(grammarAccess.getDerivedComponentElementAccess().getComponentParametersRefParserRuleCall()); }
-		ruleComponentParametersRef
-		{ after(grammarAccess.getDerivedComponentElementAccess().getComponentParametersRefParserRuleCall()); }
+		{ before(grammarAccess.getDerivedComponentElementAccess().getAlternatives()); }
+		(rule__DerivedComponentElement__Alternatives)
+		{ after(grammarAccess.getDerivedComponentElementAccess().getAlternatives()); }
 	)
 ;
 finally {
@@ -590,6 +590,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleMixedPortROSLink
+entryRuleMixedPortROSLink
+:
+{ before(grammarAccess.getMixedPortROSLinkRule()); }
+	 ruleMixedPortROSLink
+{ after(grammarAccess.getMixedPortROSLinkRule()); } 
+	 EOF 
+;
+
+// Rule MixedPortROSLink
+ruleMixedPortROSLink 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getMixedPortROSLinkAccess().getGroup()); }
+		(rule__MixedPortROSLink__Group__0)
+		{ after(grammarAccess.getMixedPortROSLinkAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRuleComponentSubNodeObserver
 entryRuleComponentSubNodeObserver
 :
@@ -884,6 +909,56 @@ ruleOpcUaReadServer
 		{ before(grammarAccess.getOpcUaReadServerAccess().getGroup()); }
 		(rule__OpcUaReadServer__Group__0)
 		{ after(grammarAccess.getOpcUaReadServerAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleMixedPortROS
+entryRuleMixedPortROS
+:
+{ before(grammarAccess.getMixedPortROSRule()); }
+	 ruleMixedPortROS
+{ after(grammarAccess.getMixedPortROSRule()); } 
+	 EOF 
+;
+
+// Rule MixedPortROS
+ruleMixedPortROS 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getMixedPortROSAccess().getGroup()); }
+		(rule__MixedPortROS__Group__0)
+		{ after(grammarAccess.getMixedPortROSAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleMixedPortYARP
+entryRuleMixedPortYARP
+:
+{ before(grammarAccess.getMixedPortYARPRule()); }
+	 ruleMixedPortYARP
+{ after(grammarAccess.getMixedPortYARPRule()); } 
+	 EOF 
+;
+
+// Rule MixedPortYARP
+ruleMixedPortYARP 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getMixedPortYARPAccess().getGroup()); }
+		(rule__MixedPortYARP__Group__0)
+		{ after(grammarAccess.getMixedPortYARPAccess().getGroup()); }
 	)
 ;
 finally {
@@ -1381,6 +1456,39 @@ rule__AbstractComponentElement__Alternatives
 		ruleDerivedComponentElement
 		{ after(grammarAccess.getAbstractComponentElementAccess().getDerivedComponentElementParserRuleCall_1()); }
 	)
+	|
+	(
+		{ before(grammarAccess.getAbstractComponentElementAccess().getPlainOpcUaPortParserRuleCall_2()); }
+		rulePlainOpcUaPort
+		{ after(grammarAccess.getAbstractComponentElementAccess().getPlainOpcUaPortParserRuleCall_2()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DerivedComponentElement__Alternatives
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getDerivedComponentElementAccess().getComponentParametersRefParserRuleCall_0()); }
+		ruleComponentParametersRef
+		{ after(grammarAccess.getDerivedComponentElementAccess().getComponentParametersRefParserRuleCall_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getDerivedComponentElementAccess().getMixedPortROSParserRuleCall_1()); }
+		ruleMixedPortROS
+		{ after(grammarAccess.getDerivedComponentElementAccess().getMixedPortROSParserRuleCall_1()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getDerivedComponentElementAccess().getMixedPortYARPParserRuleCall_2()); }
+		ruleMixedPortYARP
+		{ after(grammarAccess.getDerivedComponentElementAccess().getMixedPortYARPParserRuleCall_2()); }
+	)
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1413,12 +1521,6 @@ rule__NamedComponentElement__Alternatives
 		{ before(grammarAccess.getNamedComponentElementAccess().getCoordinationMasterPortParserRuleCall_3()); }
 		ruleCoordinationMasterPort
 		{ after(grammarAccess.getNamedComponentElementAccess().getCoordinationMasterPortParserRuleCall_3()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getNamedComponentElementAccess().getPlainOpcUaPortParserRuleCall_4()); }
-		rulePlainOpcUaPort
-		{ after(grammarAccess.getNamedComponentElementAccess().getPlainOpcUaPortParserRuleCall_4()); }
 	)
 ;
 finally {
@@ -1512,6 +1614,12 @@ rule__AbstractComponentLink__Alternatives
 		{ before(grammarAccess.getAbstractComponentLinkAccess().getOpcUaClientLinkParserRuleCall_3()); }
 		ruleOpcUaClientLink
 		{ after(grammarAccess.getAbstractComponentLinkAccess().getOpcUaClientLinkParserRuleCall_3()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getAbstractComponentLinkAccess().getMixedPortROSLinkParserRuleCall_4()); }
+		ruleMixedPortROSLink
+		{ after(grammarAccess.getAbstractComponentLinkAccess().getMixedPortROSLinkParserRuleCall_4()); }
 	)
 ;
 finally {
@@ -3753,6 +3861,87 @@ finally {
 }
 
 
+rule__MixedPortROSLink__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__MixedPortROSLink__Group__0__Impl
+	rule__MixedPortROSLink__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortROSLink__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getMixedPortROSLinkAccess().getMixedPortROSLinkKeyword_0()); }
+	'MixedPortROSLink'
+	{ after(grammarAccess.getMixedPortROSLinkAccess().getMixedPortROSLinkKeyword_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortROSLink__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__MixedPortROSLink__Group__1__Impl
+	rule__MixedPortROSLink__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortROSLink__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getMixedPortROSLinkAccess().getMixedportrosAssignment_1()); }
+	(rule__MixedPortROSLink__MixedportrosAssignment_1)
+	{ after(grammarAccess.getMixedPortROSLinkAccess().getMixedportrosAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortROSLink__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__MixedPortROSLink__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortROSLink__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getMixedPortROSLinkAccess().getSemicolonKeyword_2()); }
+	(';')?
+	{ after(grammarAccess.getMixedPortROSLinkAccess().getSemicolonKeyword_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 rule__ComponentSubNodeObserver__Group__0
 	@init {
 		int stackSize = keepStackSize();
@@ -5366,6 +5555,168 @@ rule__OpcUaReadServer__Group_4__1__Impl
 	{ before(grammarAccess.getOpcUaReadServerAccess().getPortNumberAssignment_4_1()); }
 	(rule__OpcUaReadServer__PortNumberAssignment_4_1)
 	{ after(grammarAccess.getOpcUaReadServerAccess().getPortNumberAssignment_4_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__MixedPortROS__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__MixedPortROS__Group__0__Impl
+	rule__MixedPortROS__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortROS__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getMixedPortROSAccess().getMixedPortROSKeyword_0()); }
+	'MixedPortROS'
+	{ after(grammarAccess.getMixedPortROSAccess().getMixedPortROSKeyword_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortROS__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__MixedPortROS__Group__1__Impl
+	rule__MixedPortROS__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortROS__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getMixedPortROSAccess().getPortAssignment_1()); }
+	(rule__MixedPortROS__PortAssignment_1)
+	{ after(grammarAccess.getMixedPortROSAccess().getPortAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortROS__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__MixedPortROS__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortROS__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getMixedPortROSAccess().getSemicolonKeyword_2()); }
+	(';')?
+	{ after(grammarAccess.getMixedPortROSAccess().getSemicolonKeyword_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__MixedPortYARP__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__MixedPortYARP__Group__0__Impl
+	rule__MixedPortYARP__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortYARP__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getMixedPortYARPAccess().getMixedPortYARPKeyword_0()); }
+	'MixedPortYARP'
+	{ after(grammarAccess.getMixedPortYARPAccess().getMixedPortYARPKeyword_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortYARP__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__MixedPortYARP__Group__1__Impl
+	rule__MixedPortYARP__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortYARP__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getMixedPortYARPAccess().getPortAssignment_1()); }
+	(rule__MixedPortYARP__PortAssignment_1)
+	{ after(grammarAccess.getMixedPortYARPAccess().getPortAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortYARP__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__MixedPortYARP__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortYARP__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getMixedPortYARPAccess().getSemicolonKeyword_2()); }
+	(';')?
+	{ after(grammarAccess.getMixedPortYARPAccess().getSemicolonKeyword_2()); }
 )
 ;
 finally {
@@ -8313,6 +8664,25 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__MixedPortROSLink__MixedportrosAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getMixedPortROSLinkAccess().getMixedportrosMixedPortROSCrossReference_1_0()); }
+		(
+			{ before(grammarAccess.getMixedPortROSLinkAccess().getMixedportrosMixedPortROSFQNParserRuleCall_1_0_1()); }
+			ruleFQN
+			{ after(grammarAccess.getMixedPortROSLinkAccess().getMixedportrosMixedPortROSFQNParserRuleCall_1_0_1()); }
+		)
+		{ after(grammarAccess.getMixedPortROSLinkAccess().getMixedportrosMixedPortROSCrossReference_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__ComponentSubNodeObserver__SubjectAssignment_1
 	@init {
 		int stackSize = keepStackSize();
@@ -8628,6 +8998,44 @@ rule__OpcUaReadServer__PortNumberAssignment_4_1
 		{ before(grammarAccess.getOpcUaReadServerAccess().getPortNumberEIntParserRuleCall_4_1_0()); }
 		ruleEInt
 		{ after(grammarAccess.getOpcUaReadServerAccess().getPortNumberEIntParserRuleCall_4_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortROS__PortAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getMixedPortROSAccess().getPortMixedPortROSBaseCrossReference_1_0()); }
+		(
+			{ before(grammarAccess.getMixedPortROSAccess().getPortMixedPortROSBaseIDTerminalRuleCall_1_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getMixedPortROSAccess().getPortMixedPortROSBaseIDTerminalRuleCall_1_0_1()); }
+		)
+		{ after(grammarAccess.getMixedPortROSAccess().getPortMixedPortROSBaseCrossReference_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MixedPortYARP__PortAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getMixedPortYARPAccess().getPortMixedPortYARPBaseCrossReference_1_0()); }
+		(
+			{ before(grammarAccess.getMixedPortYARPAccess().getPortMixedPortYARPBaseIDTerminalRuleCall_1_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getMixedPortYARPAccess().getPortMixedPortYARPBaseIDTerminalRuleCall_1_0_1()); }
+		)
+		{ after(grammarAccess.getMixedPortYARPAccess().getPortMixedPortYARPBaseCrossReference_1_0()); }
 	)
 ;
 finally {

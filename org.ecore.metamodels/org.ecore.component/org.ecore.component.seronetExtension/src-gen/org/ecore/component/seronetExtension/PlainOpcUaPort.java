@@ -2,7 +2,9 @@
  */
 package org.ecore.component.seronetExtension;
 
-import org.ecore.component.componentDefinition.NamedComponentElement;
+import org.ecore.base.mixedport.MixedPortOpcUaBase;
+
+import org.ecore.component.componentDefinition.AbstractComponentElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +16,5 @@ import org.ecore.component.componentDefinition.NamedComponentElement;
  * @model abstract="true"
  * @generated
  */
-public interface PlainOpcUaPort extends NamedComponentElement {
+public interface PlainOpcUaPort extends AbstractComponentElement, MixedPortOpcUaBase {
 } // PlainOpcUaPort

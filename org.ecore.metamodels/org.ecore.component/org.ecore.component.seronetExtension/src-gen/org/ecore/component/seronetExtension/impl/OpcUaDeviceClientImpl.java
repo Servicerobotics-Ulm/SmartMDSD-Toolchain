@@ -90,6 +90,7 @@ public class OpcUaDeviceClientImpl extends PlainOpcUaPortImpl implements OpcUaDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDeviceURI() {
 		return deviceURI;
 	}
@@ -99,6 +100,7 @@ public class OpcUaDeviceClientImpl extends PlainOpcUaPortImpl implements OpcUaDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDeviceURI(String newDeviceURI) {
 		String oldDeviceURI = deviceURI;
 		deviceURI = newDeviceURI;
@@ -112,6 +114,7 @@ public class OpcUaDeviceClientImpl extends PlainOpcUaPortImpl implements OpcUaDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getOpcuaXmlFile() {
 		return opcuaXmlFile;
 	}
@@ -121,6 +124,7 @@ public class OpcUaDeviceClientImpl extends PlainOpcUaPortImpl implements OpcUaDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOpcuaXmlFile(String newOpcuaXmlFile) {
 		String oldOpcuaXmlFile = opcuaXmlFile;
 		opcuaXmlFile = newOpcuaXmlFile;
@@ -208,7 +212,7 @@ public class OpcUaDeviceClientImpl extends PlainOpcUaPortImpl implements OpcUaDe
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (deviceURI: ");
 		result.append(deviceURI);
 		result.append(", opcuaXmlFile: ");

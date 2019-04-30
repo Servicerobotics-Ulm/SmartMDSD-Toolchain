@@ -8,6 +8,7 @@
       <metamodel href="../../org.ecore.component.seronetExtension/model/seronetExtension.ecore#/"/>
       <metamodel href="../../org.ecore.service.roboticMiddleware/model/roboticMiddleware.ecore#/"/>
       <metamodel href="../../org.ecore.component.coordinationExtension/model/coordinationExtension.ecore#/"/>
+      <metamodel href="../../org.ecore.base.mixedport/model/mixedport.ecore#/"/>
       <filters xsi:type="filter:CompositeFilterDescription" name="CoordinationElementsFilter">
         <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentModesContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='CoordinationSlaveNode'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentParametersContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@edgeMappings[name='CommunicationServiceUsageRealizationEdge']"/>
       </filters>
@@ -805,7 +806,7 @@
           <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="BrandingLogo" position="NORTH_EAST" preconditionExpression="service:self.hasLogo()" imageExpression="[self.logo/]" tooltipExpression="['Branding Logo'/]" mappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']"/>
         </decorationDescriptionsSet>
       </defaultLayer>
-      <additionalLayers name="SeRoNet" icon="/org.sirius.component.design/icons/SeRoNetIcon.png">
+      <additionalLayers name="SeRoNet" icon="/org.sirius.component.design/icons/SeRoNetIcon.png" activeByDefault="true">
         <edgeMappings name="OpcStatusServerOutPortEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentContainerImport']/@borderedNodeMappings[name='OpcUaReadServerNode']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='OutputPortNode']" targetFinderExpression="feature:outPort" sourceFinderExpression="var:self" domainClass="seronetExtension::OpcUaReadServer" useDomainElement="true">
           <style targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -818,6 +819,14 @@
           <style targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="MixedPortROSLinkEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='InputHandlerContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='RequestHandlerContainer']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentContainerImport']/@borderedNodeMappings[name='RosMixedPortNode']" targetFinderExpression="feature:mixedportros" sourceFinderExpression="[self.eContainer()/]" domainClass="seronetExtension::MixedPortROSLink" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
@@ -850,6 +859,12 @@
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
             </borderedNodeMappings>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="RosMixedPortNode" semanticCandidatesExpression="feature:elements" domainClass="seronetExtension::MixedPortROS">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" tooltipExpression="MixedPortROS" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.sirius.component.design/icons/RosPort.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
           </borderedNodeMappings>
         </containerMappings>
         <toolSections name="SeRoNet Tools" icon="/org.sirius.component.design/icons/SeRoNetIcon.png">
@@ -963,6 +978,34 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:0"/>
             </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolGroup" name="ROSToolsGroup">
+            <tools xsi:type="tool_1:NodeCreationDescription" name="MixedPortROS" label="ROS MixedPort" nodeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentContainerImport']/@borderedNodeMappings[name='RosMixedPortNode']">
+              <variable name="container">
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="port" candidatesExpression="service:self.getAllRosPorts()" message="Select an existing RosInterface definition" userDocumentation="Select an existing RosInterface definition"/>
+              </variable>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="seronetExtension::MixedPortROS" referenceName="elements">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="port" valueExpression="var:port"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:EdgeCreationDescription" name="MixedPortROSLink" edgeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@edgeMappings[name='MixedPortROSLinkEdge']">
+              <sourceVariable name="source"/>
+              <targetVariable name="target"/>
+              <sourceViewVariable name="sourceView"/>
+              <targetViewVariable name="targetView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="MixedPortROSLink" referenceName="links">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="mixedportros" valueExpression="var:target"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
           </ownedTools>
         </toolSections>
       </additionalLayers>

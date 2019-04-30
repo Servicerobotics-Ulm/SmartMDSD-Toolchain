@@ -9,7 +9,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PlainOpcUaPort" abstract="true" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//NamedComponentElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PlainOpcUaPort" abstract="true" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//AbstractComponentElement ../../org.ecore.base.mixedport/model/mixedport.ecore#//MixedPortOpcUaBase"/>
   <eClassifiers xsi:type="ecore:EClass" name="OpcUaDeviceClient" eSuperTypes="#//PlainOpcUaPort">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="opcuaXmlFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -23,5 +23,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="OpcUaClientLink" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//AbstractComponentLink">
     <eStructuralFeatures xsi:type="ecore:EReference" name="client" lowerBound="1"
         eType="#//OpcUaDeviceClient"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MixedPortROS" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//DerivedComponentElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" eType="ecore:EClass ../../org.ecore.base.mixedport/model/mixedport.ecore#//MixedPortROSBase"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MixedPortYARP" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//DerivedComponentElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" eType="ecore:EClass ../../org.ecore.base.mixedport/model/mixedport.ecore#//MixedPortYARPBase"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MixedPortROSLink" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//AbstractComponentLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mixedportros" lowerBound="1"
+        eType="#//MixedPortROS"/>
   </eClassifiers>
 </ecore:EPackage>

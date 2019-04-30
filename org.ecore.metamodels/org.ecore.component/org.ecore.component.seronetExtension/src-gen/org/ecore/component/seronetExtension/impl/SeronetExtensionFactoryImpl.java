@@ -64,6 +64,12 @@ public class SeronetExtensionFactoryImpl extends EFactoryImpl implements Seronet
 			return createOpcUaReadServer();
 		case SeronetExtensionPackage.OPC_UA_CLIENT_LINK:
 			return createOpcUaClientLink();
+		case SeronetExtensionPackage.MIXED_PORT_ROS:
+			return createMixedPortROS();
+		case SeronetExtensionPackage.MIXED_PORT_YARP:
+			return createMixedPortYARP();
+		case SeronetExtensionPackage.MIXED_PORT_ROS_LINK:
+			return createMixedPortROSLink();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -74,6 +80,7 @@ public class SeronetExtensionFactoryImpl extends EFactoryImpl implements Seronet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SupportedMiddleware createSupportedMiddleware() {
 		SupportedMiddlewareImpl supportedMiddleware = new SupportedMiddlewareImpl();
 		return supportedMiddleware;
@@ -84,6 +91,7 @@ public class SeronetExtensionFactoryImpl extends EFactoryImpl implements Seronet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public OpcUaDeviceClient createOpcUaDeviceClient() {
 		OpcUaDeviceClientImpl opcUaDeviceClient = new OpcUaDeviceClientImpl();
 		return opcUaDeviceClient;
@@ -94,6 +102,7 @@ public class SeronetExtensionFactoryImpl extends EFactoryImpl implements Seronet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public OpcUaReadServer createOpcUaReadServer() {
 		OpcUaReadServerImpl opcUaReadServer = new OpcUaReadServerImpl();
 		return opcUaReadServer;
@@ -104,6 +113,7 @@ public class SeronetExtensionFactoryImpl extends EFactoryImpl implements Seronet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public OpcUaClientLink createOpcUaClientLink() {
 		OpcUaClientLinkImpl opcUaClientLink = new OpcUaClientLinkImpl();
 		return opcUaClientLink;
@@ -114,6 +124,40 @@ public class SeronetExtensionFactoryImpl extends EFactoryImpl implements Seronet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public MixedPortROS createMixedPortROS() {
+		MixedPortROSImpl mixedPortROS = new MixedPortROSImpl();
+		return mixedPortROS;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MixedPortYARP createMixedPortYARP() {
+		MixedPortYARPImpl mixedPortYARP = new MixedPortYARPImpl();
+		return mixedPortYARP;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MixedPortROSLink createMixedPortROSLink() {
+		MixedPortROSLinkImpl mixedPortROSLink = new MixedPortROSLinkImpl();
+		return mixedPortROSLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public SeronetExtensionPackage getSeronetExtensionPackage() {
 		return (SeronetExtensionPackage) getEPackage();
 	}

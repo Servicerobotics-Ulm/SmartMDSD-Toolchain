@@ -44,7 +44,8 @@ import org.ecore.component.performanceExtension.ActivationConstraints
 import org.ecore.component.componentDefinition.AnswerPort
 import org.ecore.component.componentDefinition.InputPort
 import org.ecore.component.componentDefinition.Activity
-
+import org.ecore.component.seronetExtension.MixedPortROS
+import org.ecore.component.seronetExtension.MixedPortYARP
 import static extension org.ecore.component.componentDefinition.ComponentDefinitionModelUtility.*
 import org.ecore.component.performanceExtension.DefaultTrigger
 import org.ecore.component.performanceExtension.DefaultPeriodicTimer
@@ -431,6 +432,8 @@ class SmartComponent {
 		if(element instanceof CoordinationSlavePort
 			|| element instanceof CoordinationMasterPort
 			|| element instanceof ComponentParametersRef
+			|| element instanceof MixedPortROS
+			|| element instanceof MixedPortYARP
 		) {
 			return true
 		}

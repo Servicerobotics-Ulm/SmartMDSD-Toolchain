@@ -54,6 +54,7 @@ import "http://www.ecore.org/component/CoordinationExtension" as coordination
 import "http://www.ecore.org/behavior/SkillRealization" as skillRealization
 import "http://www.ecore.org/component/SeronetExtension" as seronet
 import "http://www.ecore.org/base/StateMachine" as stateMach
+import "http://www.ecore.org/base/mixedport" as mixedport
 
 ComponentDefModel returns component::ComponentDefModel:
 	{component::ComponentDefModel}
@@ -73,16 +74,16 @@ ComponentDefinition returns component::ComponentDefinition:
 	'}';
 
 AbstractComponentElement returns component::AbstractComponentElement: 
-	NamedComponentElement | DerivedComponentElement
+	NamedComponentElement | DerivedComponentElement | PlainOpcUaPort
 ;
 
 DerivedComponentElement returns component::DerivedComponentElement: 
-	ComponentParametersRef
+	ComponentParametersRef | MixedPortROS | MixedPortYARP
 ;
 
 
 NamedComponentElement returns component::NamedComponentElement: 
-	ComponentSubNode | ComponentPort | CoordinationSlavePort | CoordinationMasterPort | PlainOpcUaPort
+	ComponentSubNode | ComponentPort | CoordinationSlavePort | CoordinationMasterPort
 ;
 
 
@@ -155,7 +156,7 @@ RequestHandler returns component::RequestHandler:
 ;
 
 AbstractComponentLink returns component::AbstractComponentLink: 
-	ComponentSubNodeObserver| RequestPortLink | InputLinkExtension | OpcUaClientLink
+	ComponentSubNodeObserver| RequestPortLink | InputLinkExtension | OpcUaClientLink | MixedPortROSLink
 ;
 
 
@@ -166,6 +167,11 @@ RequestPortLink returns component::RequestPortLink:
 OpcUaClientLink returns seronet::OpcUaClientLink: 
 	'OpcUaClientLink' client=[seronet::OpcUaDeviceClient|FQN] (';')?
 ;
+
+MixedPortROSLink returns seronet::MixedPortROSLink: 
+	'MixedPortROSLink' mixedportros=[seronet::MixedPortROS|FQN] (';')?
+;
+
 
 
 /**
@@ -241,6 +247,14 @@ OpcUaDeviceClient returns seronet::OpcUaDeviceClient:
 
 OpcUaReadServer returns seronet::OpcUaReadServer: 
 	'OpcUaReadServer' name=ID 'dataProviderPort' outPort=[component::OutputPort|FQN] ('portNumber' portNumber=EInt)? (';')?
+;
+
+MixedPortROS returns seronet::MixedPortROS: 
+	'MixedPortROS' port=[mixedport::MixedPortROSBase] (';')?
+;
+
+MixedPortYARP returns seronet::MixedPortYARP: 
+	'MixedPortYARP' port=[mixedport::MixedPortYARPBase] (';')?
 ;
 
 

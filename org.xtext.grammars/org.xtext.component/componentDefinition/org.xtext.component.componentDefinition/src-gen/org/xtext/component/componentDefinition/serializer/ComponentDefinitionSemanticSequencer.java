@@ -83,6 +83,9 @@ import org.ecore.component.performanceExtension.DefaultObservedElementTrigger;
 import org.ecore.component.performanceExtension.DefaultPeriodicTimer;
 import org.ecore.component.performanceExtension.InputLinkExtension;
 import org.ecore.component.performanceExtension.PerformanceExtensionPackage;
+import org.ecore.component.seronetExtension.MixedPortROS;
+import org.ecore.component.seronetExtension.MixedPortROSLink;
+import org.ecore.component.seronetExtension.MixedPortYARP;
 import org.ecore.component.seronetExtension.OpcUaClientLink;
 import org.ecore.component.seronetExtension.OpcUaDeviceClient;
 import org.ecore.component.seronetExtension.OpcUaReadServer;
@@ -212,6 +215,15 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 			}
 		else if (epackage == SeronetExtensionPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case SeronetExtensionPackage.MIXED_PORT_ROS:
+				sequence_MixedPortROS(context, (MixedPortROS) semanticObject); 
+				return; 
+			case SeronetExtensionPackage.MIXED_PORT_ROS_LINK:
+				sequence_MixedPortROSLink(context, (MixedPortROSLink) semanticObject); 
+				return; 
+			case SeronetExtensionPackage.MIXED_PORT_YARP:
+				sequence_MixedPortYARP(context, (MixedPortYARP) semanticObject); 
+				return; 
 			case SeronetExtensionPackage.OPC_UA_CLIENT_LINK:
 				sequence_OpcUaClientLink(context, (OpcUaClientLink) semanticObject); 
 				return; 
@@ -487,6 +499,65 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 	
 	/**
 	 * Contexts:
+	 *     AbstractComponentLink returns MixedPortROSLink
+	 *     MixedPortROSLink returns MixedPortROSLink
+	 *
+	 * Constraint:
+	 *     mixedportros=[MixedPortROS|FQN]
+	 */
+	protected void sequence_MixedPortROSLink(ISerializationContext context, MixedPortROSLink semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SeronetExtensionPackage.Literals.MIXED_PORT_ROS_LINK__MIXEDPORTROS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeronetExtensionPackage.Literals.MIXED_PORT_ROS_LINK__MIXEDPORTROS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMixedPortROSLinkAccess().getMixedportrosMixedPortROSFQNParserRuleCall_1_0_1(), semanticObject.eGet(SeronetExtensionPackage.Literals.MIXED_PORT_ROS_LINK__MIXEDPORTROS, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractComponentElement returns MixedPortROS
+	 *     DerivedComponentElement returns MixedPortROS
+	 *     MixedPortROS returns MixedPortROS
+	 *
+	 * Constraint:
+	 *     port=[MixedPortROSBase|ID]
+	 */
+	protected void sequence_MixedPortROS(ISerializationContext context, MixedPortROS semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SeronetExtensionPackage.Literals.MIXED_PORT_ROS__PORT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeronetExtensionPackage.Literals.MIXED_PORT_ROS__PORT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMixedPortROSAccess().getPortMixedPortROSBaseIDTerminalRuleCall_1_0_1(), semanticObject.eGet(SeronetExtensionPackage.Literals.MIXED_PORT_ROS__PORT, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractComponentElement returns MixedPortYARP
+	 *     DerivedComponentElement returns MixedPortYARP
+	 *     MixedPortYARP returns MixedPortYARP
+	 *
+	 * Constraint:
+	 *     port=[MixedPortYARPBase|ID]
+	 */
+	protected void sequence_MixedPortYARP(ISerializationContext context, MixedPortYARP semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SeronetExtensionPackage.Literals.MIXED_PORT_YARP__PORT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeronetExtensionPackage.Literals.MIXED_PORT_YARP__PORT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMixedPortYARPAccess().getPortMixedPortYARPBaseIDTerminalRuleCall_1_0_1(), semanticObject.eGet(SeronetExtensionPackage.Literals.MIXED_PORT_YARP__PORT, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     AbstractComponentLink returns OpcUaClientLink
 	 *     OpcUaClientLink returns OpcUaClientLink
 	 *
@@ -507,7 +578,6 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 	/**
 	 * Contexts:
 	 *     AbstractComponentElement returns OpcUaDeviceClient
-	 *     NamedComponentElement returns OpcUaDeviceClient
 	 *     PlainOpcUaPort returns OpcUaDeviceClient
 	 *     OpcUaDeviceClient returns OpcUaDeviceClient
 	 *
@@ -522,7 +592,6 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 	/**
 	 * Contexts:
 	 *     AbstractComponentElement returns OpcUaReadServer
-	 *     NamedComponentElement returns OpcUaReadServer
 	 *     PlainOpcUaPort returns OpcUaReadServer
 	 *     OpcUaReadServer returns OpcUaReadServer
 	 *

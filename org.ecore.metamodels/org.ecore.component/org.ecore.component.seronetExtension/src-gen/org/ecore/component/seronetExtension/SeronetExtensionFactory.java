@@ -58,6 +58,33 @@ public interface SeronetExtensionFactory extends EFactory {
 	OpcUaClientLink createOpcUaClientLink();
 
 	/**
+	 * Returns a new object of class '<em>Mixed Port ROS</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mixed Port ROS</em>'.
+	 * @generated
+	 */
+	MixedPortROS createMixedPortROS();
+
+	/**
+	 * Returns a new object of class '<em>Mixed Port YARP</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mixed Port YARP</em>'.
+	 * @generated
+	 */
+	MixedPortYARP createMixedPortYARP();
+
+	/**
+	 * Returns a new object of class '<em>Mixed Port ROS Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mixed Port ROS Link</em>'.
+	 * @generated
+	 */
+	MixedPortROSLink createMixedPortROSLink();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

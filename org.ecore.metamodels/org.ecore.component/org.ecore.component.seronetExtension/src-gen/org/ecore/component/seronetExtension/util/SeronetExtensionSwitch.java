@@ -7,10 +7,13 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.ecore.base.mixedport.AbstractMixedPortDefinition;
+import org.ecore.base.mixedport.MixedPortOpcUaBase;
+
 import org.ecore.component.componentDefinition.AbstractComponentElement;
 import org.ecore.component.componentDefinition.AbstractComponentLink;
 import org.ecore.component.componentDefinition.ComponentPortExtension;
-import org.ecore.component.componentDefinition.NamedComponentElement;
+import org.ecore.component.componentDefinition.DerivedComponentElement;
 
 import org.ecore.component.seronetExtension.*;
 
@@ -84,9 +87,11 @@ public class SeronetExtensionSwitch<T> extends Switch<T> {
 			PlainOpcUaPort plainOpcUaPort = (PlainOpcUaPort) theEObject;
 			T result = casePlainOpcUaPort(plainOpcUaPort);
 			if (result == null)
-				result = caseNamedComponentElement(plainOpcUaPort);
-			if (result == null)
 				result = caseAbstractComponentElement(plainOpcUaPort);
+			if (result == null)
+				result = caseMixedPortOpcUaBase(plainOpcUaPort);
+			if (result == null)
+				result = caseAbstractMixedPortDefinition(plainOpcUaPort);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -97,9 +102,11 @@ public class SeronetExtensionSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = casePlainOpcUaPort(opcUaDeviceClient);
 			if (result == null)
-				result = caseNamedComponentElement(opcUaDeviceClient);
-			if (result == null)
 				result = caseAbstractComponentElement(opcUaDeviceClient);
+			if (result == null)
+				result = caseMixedPortOpcUaBase(opcUaDeviceClient);
+			if (result == null)
+				result = caseAbstractMixedPortDefinition(opcUaDeviceClient);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -110,9 +117,11 @@ public class SeronetExtensionSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = casePlainOpcUaPort(opcUaReadServer);
 			if (result == null)
-				result = caseNamedComponentElement(opcUaReadServer);
-			if (result == null)
 				result = caseAbstractComponentElement(opcUaReadServer);
+			if (result == null)
+				result = caseMixedPortOpcUaBase(opcUaReadServer);
+			if (result == null)
+				result = caseAbstractMixedPortDefinition(opcUaReadServer);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -122,6 +131,37 @@ public class SeronetExtensionSwitch<T> extends Switch<T> {
 			T result = caseOpcUaClientLink(opcUaClientLink);
 			if (result == null)
 				result = caseAbstractComponentLink(opcUaClientLink);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SeronetExtensionPackage.MIXED_PORT_ROS: {
+			MixedPortROS mixedPortROS = (MixedPortROS) theEObject;
+			T result = caseMixedPortROS(mixedPortROS);
+			if (result == null)
+				result = caseDerivedComponentElement(mixedPortROS);
+			if (result == null)
+				result = caseAbstractComponentElement(mixedPortROS);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SeronetExtensionPackage.MIXED_PORT_YARP: {
+			MixedPortYARP mixedPortYARP = (MixedPortYARP) theEObject;
+			T result = caseMixedPortYARP(mixedPortYARP);
+			if (result == null)
+				result = caseDerivedComponentElement(mixedPortYARP);
+			if (result == null)
+				result = caseAbstractComponentElement(mixedPortYARP);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SeronetExtensionPackage.MIXED_PORT_ROS_LINK: {
+			MixedPortROSLink mixedPortROSLink = (MixedPortROSLink) theEObject;
+			T result = caseMixedPortROSLink(mixedPortROSLink);
+			if (result == null)
+				result = caseAbstractComponentLink(mixedPortROSLink);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -207,6 +247,51 @@ public class SeronetExtensionSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mixed Port ROS</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mixed Port ROS</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMixedPortROS(MixedPortROS object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mixed Port YARP</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mixed Port YARP</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMixedPortYARP(MixedPortYARP object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mixed Port ROS Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mixed Port ROS Link</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMixedPortROSLink(MixedPortROSLink object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Component Port Extension</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -237,17 +322,32 @@ public class SeronetExtensionSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Named Component Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Mixed Port Definition</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Named Component Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Mixed Port Definition</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNamedComponentElement(NamedComponentElement object) {
+	public T caseAbstractMixedPortDefinition(AbstractMixedPortDefinition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mixed Port Opc Ua Base</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mixed Port Opc Ua Base</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMixedPortOpcUaBase(MixedPortOpcUaBase object) {
 		return null;
 	}
 
@@ -263,6 +363,21 @@ public class SeronetExtensionSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAbstractComponentLink(AbstractComponentLink object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Derived Component Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Derived Component Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDerivedComponentElement(DerivedComponentElement object) {
 		return null;
 	}
 
