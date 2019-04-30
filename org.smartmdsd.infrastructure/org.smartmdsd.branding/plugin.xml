@@ -40,7 +40,69 @@
                name="preferenceCustomization"
                value="plugin_customization.ini">
          </property>
+         <property
+               name="introTitle"
+               value="Welcome to the SmartMDSD Toolchain">
+         </property>
+         <property
+               name="introBrandingImage"
+               value="product:icons/logo128.png">
+         </property>
+         <property
+               name="introBrandingImageText"
+               value="SmartMDSD Toolchain">
+         </property>
       </product>
    </extension>
-
+   <extension
+         point="org.eclipse.ui.intro">
+      <introProductBinding
+            introId="org.eclipse.ui.intro.universal"
+            productId="org.smartmdsd.branding.product">
+      </introProductBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.eclipse.ui.preferencePages.Workbench"
+            class="org.eclipse.ui.intro.universal.ExtensionFactory:welcomeCustomization"
+            id="org.smartmdsd.branding.introCustomization"
+            name="Welcome Page Customization">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="$nl$/intro/overview.xml">
+      </configExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="$nl$/intro/tutorials.xml">
+      </configExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="$nl$/intro/whatsnew.xml">
+      </configExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="$nl$/intro/resources.xml">
+      </configExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="toc.xml"
+            primary="true">
+      </toc>
+   </extension>
 </plugin>

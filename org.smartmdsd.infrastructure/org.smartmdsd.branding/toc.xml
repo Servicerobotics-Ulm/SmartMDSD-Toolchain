@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<!-- Defines topics that will be inserted under the SmartMDSD Guide help-menu-->
+
+<toc id="smartmdsd" label="SmartMDSD Toolchain Guide" topic="intro/overview.html">
+
+    <anchor id="smartmdsd_Overview"/>
+
+	<topic label="SmartMDSD Toolchain Wiki" href="intro/wiki.html"/>
+
+	<topic label="SmartMDSD Toolchain Tutorials" href="intro/tutorials.html"/>
+	
+	<!--topic label="Concepts" href="concepts/concepts.html">
+		<link toc="topics_Concepts.xml" />
+        <anchor id="smartmdsd_Concepts_Anchor"/>
+	</topic-->
+	
+	<topic label="What's new in the SmartMDSD Toolchain"  href="intro/whatsnew.html"/>
+
+	<topic label="Web Resources"  href="intro/resources.html"/>
+	
+	<topic label="License" href="about.html"/>
+	
+</toc>

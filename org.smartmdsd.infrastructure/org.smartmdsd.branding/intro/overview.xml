@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+  	<extensionContent id="smartmdsd-introExtension" style="css/sample.css" 
+  	                  alt-style="swt/default.properties"
+  	                  name="SmartMDSD Overview Page" path="overview/@">
+		<group style-id="content-group" id="smartmdsd-introLink-group">
+       		<link label="SmartMDSD Toolchain" 
+       		      url="http://org.eclipse.ui.intro/showHelpTopic?id=/org.smartmdsd.branding/intro/overview.html"  
+       		      id="smartmdsd-introLink" 
+       		      style-id="content-link">
+          		<text>Get familiar with the SmartMDSD Toolchain
+          		</text></link>
+       	</group>
+  	</extensionContent>
+ 
+
+</introContent>
