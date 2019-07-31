@@ -111,7 +111,7 @@ public class MixedPortROSLinkImpl extends AbstractComponentLinkImpl implements M
 		}
 		return "";
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

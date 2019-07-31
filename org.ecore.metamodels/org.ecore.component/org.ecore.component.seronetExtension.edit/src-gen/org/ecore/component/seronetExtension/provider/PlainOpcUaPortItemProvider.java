@@ -70,17 +70,6 @@ public class PlainOpcUaPortItemProvider extends AbstractComponentElementItemProv
 	}
 
 	/**
-	 * This returns PlainOpcUaPort.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PlainOpcUaPort"));
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

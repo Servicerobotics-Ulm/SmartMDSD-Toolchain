@@ -11,7 +11,9 @@ package org.ecore.component.seronetExtension;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.ecore.component.seronetExtension.OpcUaDeviceClient#isAutoConnect <em>Auto Connect</em>}</li>
  *   <li>{@link org.ecore.component.seronetExtension.OpcUaDeviceClient#getDeviceURI <em>Device URI</em>}</li>
+ *   <li>{@link org.ecore.component.seronetExtension.OpcUaDeviceClient#getRootObjectPath <em>Root Object Path</em>}</li>
  *   <li>{@link org.ecore.component.seronetExtension.OpcUaDeviceClient#getOpcuaXmlFile <em>Opcua Xml File</em>}</li>
  * </ul>
  *
@@ -71,5 +73,59 @@ public interface OpcUaDeviceClient extends PlainOpcUaPort {
 	 * @generated
 	 */
 	void setOpcuaXmlFile(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Auto Connect</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Auto Connect</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Auto Connect</em>' attribute.
+	 * @see #setAutoConnect(boolean)
+	 * @see org.ecore.component.seronetExtension.SeronetExtensionPackage#getOpcUaDeviceClient_AutoConnect()
+	 * @model default="false" required="true"
+	 * @generated
+	 */
+	boolean isAutoConnect();
+
+	/**
+	 * Sets the value of the '{@link org.ecore.component.seronetExtension.OpcUaDeviceClient#isAutoConnect <em>Auto Connect</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Auto Connect</em>' attribute.
+	 * @see #isAutoConnect()
+	 * @generated
+	 */
+	void setAutoConnect(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Root Object Path</b></em>' attribute.
+	 * The default value is <code>"Server"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Root Object Path</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Root Object Path</em>' attribute.
+	 * @see #setRootObjectPath(String)
+	 * @see org.ecore.component.seronetExtension.SeronetExtensionPackage#getOpcUaDeviceClient_RootObjectPath()
+	 * @model default="Server"
+	 * @generated
+	 */
+	String getRootObjectPath();
+
+	/**
+	 * Sets the value of the '{@link org.ecore.component.seronetExtension.OpcUaDeviceClient#getRootObjectPath <em>Root Object Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Root Object Path</em>' attribute.
+	 * @see #getRootObjectPath()
+	 * @generated
+	 */
+	void setRootObjectPath(String value);
 
 } // OpcUaDeviceClient

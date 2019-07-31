@@ -56,6 +56,9 @@ import org.ecore.component.seronetExtension.SupportedMiddleware
 import org.ecore.component.coordinationExtension.PublicOperationMode
 import org.ecore.component.componentDefinition.InputHandler
 import org.ecore.component.coordinationExtension.CoordinationSlavePort
+import org.ecore.component.componentDefinition.AnswerPort
+import org.ecore.component.componentDefinition.ComponentDefinitionFactory
+import org.ecore.component.componentDefinition.RequestHandler
 
 /**
  * Custom quickfixes.
@@ -242,6 +245,32 @@ class ComponentDefinitionQuickfixProvider extends DefaultQuickfixProvider {
 			element, context |
 			val coordinationSlavePort = (element.eContainer as CoordinationSlavePort)
 			coordinationSlavePort.elements.remove(element)
+		]
+	}
+	
+	@Fix(ComponentDefinitionValidator.MISSING_REQUEST_HANDLER)
+	def fixMissingRequestHandler(Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptor.accept(issue, 
+			'Create a default RequestHandler', 
+			'Create a default RequestHandler', '') [
+			element, context |
+			val port = (element as AnswerPort)
+			val component = (element.eContainer as ComponentDefinition)
+			val handler = ComponentDefinitionFactory.eINSTANCE.createRequestHandler
+			handler.answerPort = port;
+			handler.name = port.name+"Handler"
+			component.elements.add(handler)
+		]
+	}
+	
+	@Fix(ComponentDefinitionValidator.PASSIVE_REQUEST_HANDLER)
+	def fixPassiveRequestHandler(Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptor.accept(issue, 
+			'Make RequestHandler active', 
+			'Make RequestHandler active', '') [
+			element, context |
+			val handler = (element as RequestHandler)
+			handler.activeQueue = true
 		]
 	}
 }

@@ -67,6 +67,7 @@ import org.ecore.component.seronetExtension.SupportedMiddleware
 import org.ecore.service.roboticMiddleware.ACE_SmartSoft
 import java.util.ArrayList
 import org.eclipse.core.runtime.Platform
+import org.ecore.component.seronetExtension.PlainOpcUaPort
 
 class ComponentGenHelpers {
 	@Inject CommObjectGenHelpers comm;
@@ -80,6 +81,7 @@ class ComponentGenHelpers {
 		switch(elem) {
 			NamedComponentElement: elem.name.toFirstUpper
 			DerivedComponentElement: elem.name.toFirstUpper
+			PlainOpcUaPort: elem.name.toFirstUpper
 		}
 	}
 	def nameClass(SmartTimerDummy p) { p.name.toFirstUpper }
@@ -92,6 +94,7 @@ class ComponentGenHelpers {
 		switch(elem) {
 			NamedComponentElement: elem.name.toFirstLower
 			DerivedComponentElement: elem.name.toFirstLower
+			PlainOpcUaPort: elem.name.toFirstLower
 		}
 	}
 	def nameInstance(SmartTimerDummy p) { p.name.toFirstLower }
@@ -104,6 +107,7 @@ class ComponentGenHelpers {
 		switch(elem) {
 			NamedComponentElement: elem.name
 			DerivedComponentElement: elem.name
+			PlainOpcUaPort: elem.name
 		}
 	}
 	def nameOriginal(SmartTimerDummy p) { p.name }

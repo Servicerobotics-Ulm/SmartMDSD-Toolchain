@@ -50,6 +50,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.MultiStatus;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
@@ -62,7 +63,10 @@ public class SmartMDSDManagedBuildConfigurator implements IManagedBuilderMakefil
 	public static final String BUILDER_ID = "org.smartmdsd.utils.smartmdsd.builder";
 	
 	private IProject project = null;
-	private IFolder buildFolder = null;
+	private IPath buildWorkingDir = null;
+	private String generatorFolderName = "";
+	private String buildFolderName = "";
+	
 	
 	@Override
 	public void generateDependencies() throws CoreException {
@@ -71,22 +75,12 @@ public class SmartMDSDManagedBuildConfigurator implements IManagedBuilderMakefil
 
 	@Override
 	public MultiStatus generateMakefiles(IResourceDelta delta) throws CoreException {
-		if(!buildFolder.getFile(getMakefileName()).exists()) {
-			return regenerateMakefiles();
-		}
-		return new MultiStatus(
-				ManagedBuilderCorePlugin.getUniqueIdentifier(),
-				IStatus.INFO,
-				"", //$NON-NLS-1$
-				null);
+		return regenerateMakefiles();
 	}
 
 	@Override
 	public IPath getBuildWorkingDir() {
-		if(buildFolder != null) {
-			return buildFolder.getProjectRelativePath();
-		}
-		return null;
+		return buildWorkingDir;
 	}
 
 	@Override
@@ -97,31 +91,11 @@ public class SmartMDSDManagedBuildConfigurator implements IManagedBuilderMakefil
 	@Override
 	public void initialize(IProject project, IManagedBuildInfo info, IProgressMonitor monitor) {
 		this.project = project;
-		try {
-			createBuildFolder(monitor);
-		} catch (CoreException e) {
-			e.printStackTrace();
-		}
+		this.generatorFolderName = Activator.getDefault().getPreferenceStore().getString(SmartMDSDPreferencesPage.PROP_GENERATOR_FOLDER);
+		this.buildFolderName = Activator.getDefault().getPreferenceStore().getString(SmartMDSDPreferencesPage.PROP_BUILD_FOLDER);
+		this.buildWorkingDir = new Path(generatorFolderName + "/" + buildFolderName);
 	}
 
-	protected void createBuildFolder(IProgressMonitor monitor) throws CoreException {
-		String generatorFolderName = Activator.getDefault().getPreferenceStore().getString(SmartMDSDPreferencesPage.PROP_GENERATOR_FOLDER);
-		String buildFolderName = Activator.getDefault().getPreferenceStore().getString(SmartMDSDPreferencesPage.PROP_BUILD_FOLDER);
-		
-		// create and save build folder
-		IFolder smartsoftFolder = project.getFolder(generatorFolderName);
-		if (smartsoftFolder.exists()) {
-			if(buildFolder == null || !buildFolder.exists()) {
-				IFolder currentBuildFolder = smartsoftFolder.getFolder(buildFolderName);
-				if (!currentBuildFolder.exists()) {
-					currentBuildFolder.create(true, true, monitor);
-					project.refreshLocal(2, monitor);
-				}
-				buildFolder = currentBuildFolder;
-			}
-		}
-	}
-	
 	@Override
 	public boolean isGeneratedResource(IResource resource) {
 		if(resource != null) {
@@ -146,13 +120,14 @@ public class SmartMDSDManagedBuildConfigurator implements IManagedBuilderMakefil
 		if(project == null) {
 			return status;
 		}
-
+		
 		final ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();
 		final ILaunchConfigurationType cmakeLauncher = launchManager.getLaunchConfigurationType(CMakeLauncher.LAUNCHER_ID);
 		IWorkspaceRunnable cmakeRunnable = new IWorkspaceRunnable() {
 			@Override
 			public void run(IProgressMonitor monitor) throws CoreException {
-				if(buildFolder == null) {
+				IFolder buildFolder = project.getFolder(buildWorkingDir);
+				if(!buildFolder.exists()) {
 					createBuildFolder(monitor);
 				}
 				
@@ -169,5 +144,17 @@ public class SmartMDSDManagedBuildConfigurator implements IManagedBuilderMakefil
 		ResourcesPlugin.getWorkspace().run(cmakeRunnable, project, IWorkspace.AVOID_UPDATE, null);		
 		
 		return status;
+	}
+	
+	protected void createBuildFolder(IProgressMonitor monitor) throws CoreException {
+		// create and save build folder
+		IFolder smartsoftFolder = project.getFolder(generatorFolderName);
+		if (smartsoftFolder.exists()) {
+			IFolder buildFolder = smartsoftFolder.getFolder(buildFolderName);
+			if(!buildFolder.exists()) {
+				buildFolder.create(true, true, monitor);
+				project.refreshLocal(2, monitor);
+			}
+		}
 	}
 }

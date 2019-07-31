@@ -66,7 +66,7 @@ class PlainOpcUaStatusServer {
 	@Inject extension OpcUaXmlParser
 	
 	// this variable is used by the recursive method getEntityList(...) to generate a consecutive entity-id 
-	var private currentEntityId = 6000;
+	var currentEntityId = 6000;
 	
 	def getNameInstance(OpcUaReadServer server) {
 		server.name.toFirstLower+"Controller"

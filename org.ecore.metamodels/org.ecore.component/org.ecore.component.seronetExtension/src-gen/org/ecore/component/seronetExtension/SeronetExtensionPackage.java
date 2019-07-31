@@ -142,13 +142,31 @@ public interface SeronetExtensionPackage extends EPackage {
 	int OPC_UA_DEVICE_CLIENT__NAME = PLAIN_OPC_UA_PORT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Auto Connect</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPC_UA_DEVICE_CLIENT__AUTO_CONNECT = PLAIN_OPC_UA_PORT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Device URI</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPC_UA_DEVICE_CLIENT__DEVICE_URI = PLAIN_OPC_UA_PORT_FEATURE_COUNT + 0;
+	int OPC_UA_DEVICE_CLIENT__DEVICE_URI = PLAIN_OPC_UA_PORT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Root Object Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPC_UA_DEVICE_CLIENT__ROOT_OBJECT_PATH = PLAIN_OPC_UA_PORT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Opcua Xml File</b></em>' attribute.
@@ -157,7 +175,7 @@ public interface SeronetExtensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPC_UA_DEVICE_CLIENT__OPCUA_XML_FILE = PLAIN_OPC_UA_PORT_FEATURE_COUNT + 1;
+	int OPC_UA_DEVICE_CLIENT__OPCUA_XML_FILE = PLAIN_OPC_UA_PORT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Opc Ua Device Client</em>' class.
@@ -166,7 +184,7 @@ public interface SeronetExtensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPC_UA_DEVICE_CLIENT_FEATURE_COUNT = PLAIN_OPC_UA_PORT_FEATURE_COUNT + 2;
+	int OPC_UA_DEVICE_CLIENT_FEATURE_COUNT = PLAIN_OPC_UA_PORT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.component.seronetExtension.impl.OpcUaReadServerImpl <em>Opc Ua Read Server</em>}' class.
@@ -437,6 +455,28 @@ public interface SeronetExtensionPackage extends EPackage {
 	EAttribute getOpcUaDeviceClient_OpcuaXmlFile();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.ecore.component.seronetExtension.OpcUaDeviceClient#isAutoConnect <em>Auto Connect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Auto Connect</em>'.
+	 * @see org.ecore.component.seronetExtension.OpcUaDeviceClient#isAutoConnect()
+	 * @see #getOpcUaDeviceClient()
+	 * @generated
+	 */
+	EAttribute getOpcUaDeviceClient_AutoConnect();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.ecore.component.seronetExtension.OpcUaDeviceClient#getRootObjectPath <em>Root Object Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Root Object Path</em>'.
+	 * @see org.ecore.component.seronetExtension.OpcUaDeviceClient#getRootObjectPath()
+	 * @see #getOpcUaDeviceClient()
+	 * @generated
+	 */
+	EAttribute getOpcUaDeviceClient_RootObjectPath();
+
+	/**
 	 * Returns the meta object for class '{@link org.ecore.component.seronetExtension.OpcUaReadServer <em>Opc Ua Read Server</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -635,6 +675,22 @@ public interface SeronetExtensionPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OPC_UA_DEVICE_CLIENT__OPCUA_XML_FILE = eINSTANCE.getOpcUaDeviceClient_OpcuaXmlFile();
+
+		/**
+		 * The meta object literal for the '<em><b>Auto Connect</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPC_UA_DEVICE_CLIENT__AUTO_CONNECT = eINSTANCE.getOpcUaDeviceClient_AutoConnect();
+
+		/**
+		 * The meta object literal for the '<em><b>Root Object Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPC_UA_DEVICE_CLIENT__ROOT_OBJECT_PATH = eINSTANCE.getOpcUaDeviceClient_RootObjectPath();
 
 		/**
 		 * The meta object literal for the '{@link org.ecore.component.seronetExtension.impl.OpcUaReadServerImpl <em>Opc Ua Read Server</em>}' class.

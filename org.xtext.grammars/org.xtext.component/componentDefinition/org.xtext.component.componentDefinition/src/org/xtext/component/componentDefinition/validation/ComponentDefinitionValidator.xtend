@@ -67,6 +67,9 @@ import org.ecore.component.coordinationExtension.CoordinationExtensionPackage
 import org.ecore.component.componentDefinition.InputHandler
 import org.ecore.component.componentDefinition.InputPortLink
 import org.ecore.component.coordinationExtension.CommunicationServiceUsageRealization
+import org.ecore.component.componentDefinition.AnswerPort
+import org.ecore.component.componentDefinition.RequestHandler
+import org.ecore.component.componentDefinition.RequestPortLink
 
 /**
  * This class contains custom validation rules. 
@@ -98,6 +101,9 @@ class ComponentDefinitionValidator extends AbstractComponentDefinitionValidator 
 	
 	public static val INCOMPLETE_COORDINATION_SLAVE_PORT = COMP_DEF_ISSUE_PREFIX + "IncompleteCoordinationSlavePort"
 	public static val DUPLICATE_REALIZATIONS_COORDINATION_SLAVE_PORT = COMP_DEF_ISSUE_PREFIX + "DuplicateRealizationsCoordinationSlavePort"
+	
+	public static val MISSING_REQUEST_HANDLER = COMP_DEF_ISSUE_PREFIX + "MissingRequestHandler"
+	public static val PASSIVE_REQUEST_HANDLER = COMP_DEF_ISSUE_PREFIX + "PassiveRequestHandler"
 	
 	@Check
 	def checkDuplicateActivationConstraints(ActivationConstraints act) {
@@ -305,6 +311,29 @@ class ComponentDefinitionValidator extends AbstractComponentDefinitionValidator 
 					DUPLICATE_REALIZATIONS_COORDINATION_SLAVE_PORT
 				)
 			}
+		}
+	}
+	
+	@Check
+	def checkExistingRequestHandler(AnswerPort port) {
+		val parent = port.eContainer
+		if(parent instanceof ComponentDefinition) {
+			if(!parent.elements.filter(RequestHandler).exists[it.answerPort==port]) {
+				warning(
+					"No RequestHandler has been defined for the AnswerPort "+port.name,
+					null, MISSING_REQUEST_HANDLER 
+				)
+			}
+		}
+	}
+	
+	@Check
+	def checkRequestHandlerHasNoRequestPortLinks(RequestHandler handler) {
+		if(handler.isActiveQueue == false && handler.links.filter(RequestPortLink).size > 0) {
+			warning(
+				"A passive request-handler actively initiates requests which can lead to deadlocks.",
+				null, PASSIVE_REQUEST_HANDLER
+			)
 		}
 	}
 }

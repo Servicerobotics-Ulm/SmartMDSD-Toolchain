@@ -37,9 +37,9 @@ package org.smartmdsd.utils.factories;
 
 import java.util.List;
 
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectNature;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
@@ -147,7 +147,7 @@ public class ModelingProjectFactory {
 		}
 	}
 	
-	public static EList<DRepresentationDescriptor> getRepresentationsFor(IFile modelFile, Session session) throws CoreException {
+	public static EList<DRepresentationDescriptor> getRepresentationsFor(IResource modelFile, Session session) throws CoreException {
 		IProject project = modelFile.getProject();
 		AbstractSmartMDSDNature nature = SmartMDSDNatureHelpers.getFirstSmartMDSDNatureFrom(project);
 		LanguageInterface dsl = nature.getLanguageInterfaceFrom(modelFile);

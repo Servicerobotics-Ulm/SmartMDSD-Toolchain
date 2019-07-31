@@ -72,7 +72,6 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 	protected AbstractElementAlias match_MixedPortROS_SemicolonKeyword_2_q;
 	protected AbstractElementAlias match_MixedPortYARP_SemicolonKeyword_2_q;
 	protected AbstractElementAlias match_OpcUaClientLink_SemicolonKeyword_2_q;
-	protected AbstractElementAlias match_OpcUaDeviceClient_SemicolonKeyword_3_q;
 	protected AbstractElementAlias match_OpcUaReadServer_SemicolonKeyword_5_q;
 	protected AbstractElementAlias match_OperationModeBinding_SemicolonKeyword_2_q;
 	protected AbstractElementAlias match_PrivateOperationMode_SemicolonKeyword_2_q;
@@ -95,7 +94,6 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 		match_MixedPortROS_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getMixedPortROSAccess().getSemicolonKeyword_2());
 		match_MixedPortYARP_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getMixedPortYARPAccess().getSemicolonKeyword_2());
 		match_OpcUaClientLink_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getOpcUaClientLinkAccess().getSemicolonKeyword_2());
-		match_OpcUaDeviceClient_SemicolonKeyword_3_q = new TokenAlias(false, true, grammarAccess.getOpcUaDeviceClientAccess().getSemicolonKeyword_3());
 		match_OpcUaReadServer_SemicolonKeyword_5_q = new TokenAlias(false, true, grammarAccess.getOpcUaReadServerAccess().getSemicolonKeyword_5());
 		match_OperationModeBinding_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getOperationModeBindingAccess().getSemicolonKeyword_2());
 		match_PrivateOperationMode_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getPrivateOperationModeAccess().getSemicolonKeyword_2());
@@ -139,8 +137,6 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 				emit_MixedPortYARP_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_OpcUaClientLink_SemicolonKeyword_2_q.equals(syntax))
 				emit_OpcUaClientLink_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_OpcUaDeviceClient_SemicolonKeyword_3_q.equals(syntax))
-				emit_OpcUaDeviceClient_SemicolonKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_OpcUaReadServer_SemicolonKeyword_5_q.equals(syntax))
 				emit_OpcUaReadServer_SemicolonKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_OperationModeBinding_SemicolonKeyword_2_q.equals(syntax))
@@ -287,19 +283,6 @@ public class ComponentDefinitionSyntacticSequencer extends AbstractSyntacticSequ
 	 *     client=[OpcUaDeviceClient|FQN] (ambiguity) (rule end)
 	 */
 	protected void emit_OpcUaClientLink_SemicolonKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ';'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     deviceURI=EString (ambiguity) (rule end)
-	 *     name=ID (ambiguity) (rule end)
-	 *     opcuaXmlFile=EString (ambiguity) (rule end)
-	 */
-	protected void emit_OpcUaDeviceClient_SemicolonKeyword_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -45,6 +45,7 @@ import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.ui.IEditorPart;
 
 public class SiriusDiagramRepresentationDoubleClickListener implements IDoubleClickListener {
 
@@ -59,7 +60,12 @@ public class SiriusDiagramRepresentationDoubleClickListener implements IDoubleCl
 	    		WorkspaceJob job = new WorkspaceJob("Open Diagram for " + diagram.getName()) {
 					@Override
 					public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
-						diagram.openDiagram(monitor);
+						IEditorPart editor = diagram.openDiagramEditor(monitor);
+						if(editor == null) {
+							// try reloading the diagram session and reopening the editor
+							diagram.reloadDiagram(monitor);
+							diagram.openDiagramEditor(monitor);
+						}
 						return Status.OK_STATUS;
 					}
 	    		};

@@ -16,9 +16,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference seronetExtension.ecore#//SupportedMiddleware/middleware"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute seronetExtension.ecore#//SupportedMiddleware/default"/>
     </genClasses>
-    <genClasses ecoreClass="seronetExtension.ecore#//PlainOpcUaPort"/>
+    <genClasses image="false" ecoreClass="seronetExtension.ecore#//PlainOpcUaPort"/>
     <genClasses ecoreClass="seronetExtension.ecore#//OpcUaDeviceClient">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute seronetExtension.ecore#//OpcUaDeviceClient/autoConnect"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute seronetExtension.ecore#//OpcUaDeviceClient/deviceURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute seronetExtension.ecore#//OpcUaDeviceClient/rootObjectPath"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute seronetExtension.ecore#//OpcUaDeviceClient/opcuaXmlFile"/>
     </genClasses>
     <genClasses ecoreClass="seronetExtension.ecore#//OpcUaReadServer">

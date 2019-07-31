@@ -582,7 +582,7 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 	 *     OpcUaDeviceClient returns OpcUaDeviceClient
 	 *
 	 * Constraint:
-	 *     (name=ID (deviceURI=EString | opcuaXmlFile=EString)*)
+	 *     (name=ID (deviceURI=EString | autoConnect?='autoConnect' | rootObjectPath=EString | opcuaXmlFile=EString)*)
 	 */
 	protected void sequence_OpcUaDeviceClient(ISerializationContext context, OpcUaDeviceClient semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

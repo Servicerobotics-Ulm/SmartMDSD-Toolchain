@@ -36,11 +36,16 @@
 
 package org.smartmdsd.navigator.content;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
+import org.eclipse.ui.IEditorPart;
+import org.smartmdsd.utils.factories.ModelingProjectFactory;
 
 public class SiriusDiagramRepresentationItem {
 	private IResource container;
@@ -53,8 +58,12 @@ public class SiriusDiagramRepresentationItem {
 		this.representation = representation;
 	}
 	
-	public void openDiagram(IProgressMonitor monitor) {
-		DialectUIManager.INSTANCE.openEditor(session, representation.getRepresentation(), monitor);
+	public boolean isLoadedRepresentation() {
+		return (session.isOpen() && representation.isLoadedRepresentation());
+	}
+	
+	public IEditorPart openDiagramEditor(IProgressMonitor monitor) {
+		return DialectUIManager.INSTANCE.openEditor(session, representation.getRepresentation(), monitor);
 	}
 	
 	public IResource getContainer() {
@@ -63,5 +72,17 @@ public class SiriusDiagramRepresentationItem {
 	
 	public String getName() {
 		return representation.getName();
+	}
+	
+	public void reloadDiagram(IProgressMonitor monitor) throws CoreException {
+		IProject project = container.getProject();
+		// get session (which will be loaded on demand, which might take some time)
+		session = ModelingProjectFactory.getProjectSession(project, monitor);
+		EList<DRepresentationDescriptor> representations = ModelingProjectFactory.getRepresentationsFor(container, session);
+		for(DRepresentationDescriptor representation: representations) {
+			if(representation.getName().contentEquals(this.representation.getName())) {
+				this.representation = representation;
+			}
+		}
 	}
 }

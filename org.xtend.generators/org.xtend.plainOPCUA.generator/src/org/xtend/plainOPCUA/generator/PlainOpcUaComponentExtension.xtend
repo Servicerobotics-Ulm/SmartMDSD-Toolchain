@@ -81,7 +81,9 @@ class PlainOpcUaComponentExtension  {
 	private:
 		«FOR opcDeviceClient: component.elements.filter(OpcUaDeviceClient)»
 		OPCUA::«opcDeviceClient.name.toFirstUpper» *«opcDeviceClient.name.toFirstLower»;
+		bool «opcDeviceClient.name.toFirstLower»AutoConnect;
 		std::string «opcDeviceClient.name.toFirstLower»DeviceURI;
+		std::string «opcDeviceClient.name.toFirstLower»RootObjectPath;
 		«ENDFOR»
 		«FOR opcStatusServer: component.elements.filter(OpcUaReadServer)»
 		unsigned short «opcStatusServer.name.toFirstLower»PortNumber;
@@ -121,7 +123,9 @@ class PlainOpcUaComponentExtension  {
 	{
 		«FOR client: component.elements.filter(OpcUaDeviceClient)»
 			«client.name.toFirstLower» = 0;
+			«client.name.toFirstLower»AutoConnect = «client.autoConnect»;
 			«client.name.toFirstLower»DeviceURI = "«client.deviceURI»";
+			«client.name.toFirstLower»RootObjectPath = "«client.rootObjectPath»";
 		«ENDFOR»
 		
 		«FOR opcStatusServer: component.elements.filter(OpcUaReadServer)»
@@ -136,7 +140,9 @@ class PlainOpcUaComponentExtension  {
 	void PlainOpcUa«component.name»Extension::loadParameters(const SmartACE::SmartIniParameter &parameter)
 	{
 		«FOR client: component.elements.filter(OpcUaDeviceClient)»
+			parameter.getBoolean("«client.name»", "autoConnect", «client.name.toFirstLower»AutoConnect);
 			parameter.getString("«client.name»", "deviceURI", «client.name.toFirstLower»DeviceURI);
+			parameter.getString("«client.name»", "rootObjectPath", «client.name.toFirstLower»RootObjectPath);
 		«ENDFOR»
 		«FOR server: component.elements.filter(OpcUaReadServer)»
 			parameter.getInteger("«server.name»", "portNumber", «server.name.toFirstLower»PortNumber);
@@ -158,8 +164,10 @@ class PlainOpcUaComponentExtension  {
 	int PlainOpcUa«component.name»Extension::onStartup()
 	{
 		«FOR client: component.elements.filter(OpcUaDeviceClient)»
-			// connect OPC/UA DeviceClient «client.name»
-			«client.name.toFirstLower»->connect(«client.name.toFirstLower»DeviceURI, "«client.name»", false);
+			if(«client.name.toFirstLower»AutoConnect == true) {
+				// connect OPC/UA DeviceClient «client.name»
+				«client.name.toFirstLower»->connect(«client.name.toFirstLower»DeviceURI, «client.name.toFirstLower»RootObjectPath, false);
+			}
 		«ENDFOR»
 		
 		«FOR opcStatusServer: component.elements.filter(OpcUaReadServer)»

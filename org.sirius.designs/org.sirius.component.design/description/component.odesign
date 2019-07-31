@@ -938,7 +938,11 @@
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
                   <subModelOperations xsi:type="tool:CreateInstance" typeName="seronetExtension::OpcUaDeviceClient" referenceName="elements">
                     <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="['OpcUaClient'+container.elements->size()/]">
-                      <subModelOperations xsi:type="tool:SetValue" featureName="deviceURI" valueExpression="['opc.tcp://localhost:4840'/]"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="deviceURI" valueExpression="['opc.tcp://localhost:4840'/]">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="autoConnect" valueExpression="[true/]">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="rootObjectPath" valueExpression="['Server'/]"/>
+                        </subModelOperations>
+                      </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>

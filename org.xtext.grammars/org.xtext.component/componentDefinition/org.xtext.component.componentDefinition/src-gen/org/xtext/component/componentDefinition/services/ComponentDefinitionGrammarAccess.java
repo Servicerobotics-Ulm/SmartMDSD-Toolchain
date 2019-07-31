@@ -1350,22 +1350,32 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		private final Keyword cOpcUaDeviceClientKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final UnorderedGroup cUnorderedGroup_2 = (UnorderedGroup)cGroup.eContents().get(2);
-		private final Group cGroup_2_0 = (Group)cUnorderedGroup_2.eContents().get(0);
-		private final Keyword cDeviceURIKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
-		private final Assignment cDeviceURIAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
-		private final RuleCall cDeviceURIEStringParserRuleCall_2_0_1_0 = (RuleCall)cDeviceURIAssignment_2_0_1.eContents().get(0);
-		private final Group cGroup_2_1 = (Group)cUnorderedGroup_2.eContents().get(1);
-		private final Keyword cOpcuaXmlFileKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
-		private final Assignment cOpcuaXmlFileAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
-		private final RuleCall cOpcuaXmlFileEStringParserRuleCall_2_1_1_0 = (RuleCall)cOpcuaXmlFileAssignment_2_1_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final UnorderedGroup cUnorderedGroup_3 = (UnorderedGroup)cGroup.eContents().get(3);
+		private final Group cGroup_3_0 = (Group)cUnorderedGroup_3.eContents().get(0);
+		private final Keyword cDeviceURIKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
+		private final Assignment cDeviceURIAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
+		private final RuleCall cDeviceURIEStringParserRuleCall_3_0_1_0 = (RuleCall)cDeviceURIAssignment_3_0_1.eContents().get(0);
+		private final Assignment cAutoConnectAssignment_3_1 = (Assignment)cUnorderedGroup_3.eContents().get(1);
+		private final Keyword cAutoConnectAutoConnectKeyword_3_1_0 = (Keyword)cAutoConnectAssignment_3_1.eContents().get(0);
+		private final Group cGroup_3_2 = (Group)cUnorderedGroup_3.eContents().get(2);
+		private final Keyword cRootObjectPathKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
+		private final Assignment cRootObjectPathAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+		private final RuleCall cRootObjectPathEStringParserRuleCall_3_2_1_0 = (RuleCall)cRootObjectPathAssignment_3_2_1.eContents().get(0);
+		private final Group cGroup_3_3 = (Group)cUnorderedGroup_3.eContents().get(3);
+		private final Keyword cOpcuaXmlFileKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
+		private final Assignment cOpcuaXmlFileAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
+		private final RuleCall cOpcuaXmlFileEStringParserRuleCall_3_3_1_0 = (RuleCall)cOpcuaXmlFileAssignment_3_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//OpcUaDeviceClient seronet::OpcUaDeviceClient:
-		//	'OpcUaDeviceClient' name=ID ('deviceURI' deviceURI=EString & ('opcuaXmlFile' opcuaXmlFile=EString)?) ';'?;
+		//	'OpcUaDeviceClient' name=ID '{' ('deviceURI' deviceURI=EString & autoConnect?='autoConnect'? & ('rootObjectPath'
+		//	rootObjectPath=EString)? & ('opcuaXmlFile' opcuaXmlFile=EString)?)
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'OpcUaDeviceClient' name=ID ('deviceURI' deviceURI=EString & ('opcuaXmlFile' opcuaXmlFile=EString)?) ';'?
+		//'OpcUaDeviceClient' name=ID '{' ('deviceURI' deviceURI=EString & autoConnect?='autoConnect'? & ('rootObjectPath'
+		//rootObjectPath=EString)? & ('opcuaXmlFile' opcuaXmlFile=EString)?) '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'OpcUaDeviceClient'
@@ -1377,35 +1387,57 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//'deviceURI' deviceURI=EString & ('opcuaXmlFile' opcuaXmlFile=EString)?
-		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//'deviceURI' deviceURI=EString & autoConnect?='autoConnect'? & ('rootObjectPath' rootObjectPath=EString)? &
+		//('opcuaXmlFile' opcuaXmlFile=EString)?
+		public UnorderedGroup getUnorderedGroup_3() { return cUnorderedGroup_3; }
 		
 		//'deviceURI' deviceURI=EString
-		public Group getGroup_2_0() { return cGroup_2_0; }
+		public Group getGroup_3_0() { return cGroup_3_0; }
 		
 		//'deviceURI'
-		public Keyword getDeviceURIKeyword_2_0_0() { return cDeviceURIKeyword_2_0_0; }
+		public Keyword getDeviceURIKeyword_3_0_0() { return cDeviceURIKeyword_3_0_0; }
 		
 		//deviceURI=EString
-		public Assignment getDeviceURIAssignment_2_0_1() { return cDeviceURIAssignment_2_0_1; }
+		public Assignment getDeviceURIAssignment_3_0_1() { return cDeviceURIAssignment_3_0_1; }
 		
 		//EString
-		public RuleCall getDeviceURIEStringParserRuleCall_2_0_1_0() { return cDeviceURIEStringParserRuleCall_2_0_1_0; }
+		public RuleCall getDeviceURIEStringParserRuleCall_3_0_1_0() { return cDeviceURIEStringParserRuleCall_3_0_1_0; }
+		
+		//autoConnect?='autoConnect'?
+		public Assignment getAutoConnectAssignment_3_1() { return cAutoConnectAssignment_3_1; }
+		
+		//'autoConnect'
+		public Keyword getAutoConnectAutoConnectKeyword_3_1_0() { return cAutoConnectAutoConnectKeyword_3_1_0; }
+		
+		//('rootObjectPath' rootObjectPath=EString)?
+		public Group getGroup_3_2() { return cGroup_3_2; }
+		
+		//'rootObjectPath'
+		public Keyword getRootObjectPathKeyword_3_2_0() { return cRootObjectPathKeyword_3_2_0; }
+		
+		//rootObjectPath=EString
+		public Assignment getRootObjectPathAssignment_3_2_1() { return cRootObjectPathAssignment_3_2_1; }
+		
+		//EString
+		public RuleCall getRootObjectPathEStringParserRuleCall_3_2_1_0() { return cRootObjectPathEStringParserRuleCall_3_2_1_0; }
 		
 		//('opcuaXmlFile' opcuaXmlFile=EString)?
-		public Group getGroup_2_1() { return cGroup_2_1; }
+		public Group getGroup_3_3() { return cGroup_3_3; }
 		
 		//'opcuaXmlFile'
-		public Keyword getOpcuaXmlFileKeyword_2_1_0() { return cOpcuaXmlFileKeyword_2_1_0; }
+		public Keyword getOpcuaXmlFileKeyword_3_3_0() { return cOpcuaXmlFileKeyword_3_3_0; }
 		
 		//opcuaXmlFile=EString
-		public Assignment getOpcuaXmlFileAssignment_2_1_1() { return cOpcuaXmlFileAssignment_2_1_1; }
+		public Assignment getOpcuaXmlFileAssignment_3_3_1() { return cOpcuaXmlFileAssignment_3_3_1; }
 		
 		//EString
-		public RuleCall getOpcuaXmlFileEStringParserRuleCall_2_1_1_0() { return cOpcuaXmlFileEStringParserRuleCall_2_1_1_0; }
+		public RuleCall getOpcuaXmlFileEStringParserRuleCall_3_3_1_0() { return cOpcuaXmlFileEStringParserRuleCall_3_3_1_0; }
 		
-		//';'?
-		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class OpcUaReadServerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDefinition.ComponentDefinition.OpcUaReadServer");
@@ -2403,7 +2435,9 @@ public class ComponentDefinitionGrammarAccess extends AbstractGrammarElementFind
 	}
 	
 	//OpcUaDeviceClient seronet::OpcUaDeviceClient:
-	//	'OpcUaDeviceClient' name=ID ('deviceURI' deviceURI=EString & ('opcuaXmlFile' opcuaXmlFile=EString)?) ';'?;
+	//	'OpcUaDeviceClient' name=ID '{' ('deviceURI' deviceURI=EString & autoConnect?='autoConnect'? & ('rootObjectPath'
+	//	rootObjectPath=EString)? & ('opcuaXmlFile' opcuaXmlFile=EString)?)
+	//	'}';
 	public OpcUaDeviceClientElements getOpcUaDeviceClientAccess() {
 		return pOpcUaDeviceClient;
 	}

@@ -242,7 +242,14 @@ PlainOpcUaPort returns seronet::PlainOpcUaPort:
 ;
 
 OpcUaDeviceClient returns seronet::OpcUaDeviceClient: 
-	'OpcUaDeviceClient' name=ID ( ('deviceURI' deviceURI=EString) & ('opcuaXmlFile' opcuaXmlFile=EString)? ) (';')?
+	'OpcUaDeviceClient' name=ID '{'
+		( 
+			('deviceURI' deviceURI=EString) & 
+			(autoConnect?='autoConnect')? &
+			('rootObjectPath' rootObjectPath=EString)? &
+			('opcuaXmlFile' opcuaXmlFile=EString)?
+		) 
+	'}'
 ;
 
 OpcUaReadServer returns seronet::OpcUaReadServer: 

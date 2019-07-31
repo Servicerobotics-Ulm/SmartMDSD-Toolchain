@@ -112,8 +112,9 @@ public class ComponentDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDefaultPeriodicTimerAccess().getGroup(), "rule__DefaultPeriodicTimer__Group__0");
 			builder.put(grammarAccess.getDefaultObservedElementTriggerAccess().getGroup(), "rule__DefaultObservedElementTrigger__Group__0");
 			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getGroup(), "rule__OpcUaDeviceClient__Group__0");
-			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getGroup_2_0(), "rule__OpcUaDeviceClient__Group_2_0__0");
-			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getGroup_2_1(), "rule__OpcUaDeviceClient__Group_2_1__0");
+			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getGroup_3_0(), "rule__OpcUaDeviceClient__Group_3_0__0");
+			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getGroup_3_2(), "rule__OpcUaDeviceClient__Group_3_2__0");
+			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getGroup_3_3(), "rule__OpcUaDeviceClient__Group_3_3__0");
 			builder.put(grammarAccess.getOpcUaReadServerAccess().getGroup(), "rule__OpcUaReadServer__Group__0");
 			builder.put(grammarAccess.getOpcUaReadServerAccess().getGroup_4(), "rule__OpcUaReadServer__Group_4__0");
 			builder.put(grammarAccess.getMixedPortROSAccess().getGroup(), "rule__MixedPortROS__Group__0");
@@ -191,8 +192,10 @@ public class ComponentDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDefaultPeriodicTimerAccess().getPeriodicActFreqAssignment_1(), "rule__DefaultPeriodicTimer__PeriodicActFreqAssignment_1");
 			builder.put(grammarAccess.getDefaultObservedElementTriggerAccess().getElementAssignment_1(), "rule__DefaultObservedElementTrigger__ElementAssignment_1");
 			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getNameAssignment_1(), "rule__OpcUaDeviceClient__NameAssignment_1");
-			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getDeviceURIAssignment_2_0_1(), "rule__OpcUaDeviceClient__DeviceURIAssignment_2_0_1");
-			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getOpcuaXmlFileAssignment_2_1_1(), "rule__OpcUaDeviceClient__OpcuaXmlFileAssignment_2_1_1");
+			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getDeviceURIAssignment_3_0_1(), "rule__OpcUaDeviceClient__DeviceURIAssignment_3_0_1");
+			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getAutoConnectAssignment_3_1(), "rule__OpcUaDeviceClient__AutoConnectAssignment_3_1");
+			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getRootObjectPathAssignment_3_2_1(), "rule__OpcUaDeviceClient__RootObjectPathAssignment_3_2_1");
+			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getOpcuaXmlFileAssignment_3_3_1(), "rule__OpcUaDeviceClient__OpcuaXmlFileAssignment_3_3_1");
 			builder.put(grammarAccess.getOpcUaReadServerAccess().getNameAssignment_1(), "rule__OpcUaReadServer__NameAssignment_1");
 			builder.put(grammarAccess.getOpcUaReadServerAccess().getOutPortAssignment_3(), "rule__OpcUaReadServer__OutPortAssignment_3");
 			builder.put(grammarAccess.getOpcUaReadServerAccess().getPortNumberAssignment_4_1(), "rule__OpcUaReadServer__PortNumberAssignment_4_1");
@@ -219,7 +222,7 @@ public class ComponentDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDDS_SmartSoftAccess().getDescriptionAssignment_2_1(), "rule__DDS_SmartSoft__DescriptionAssignment_2_1");
 			builder.put(grammarAccess.getInputLinkExtensionAccess().getUnorderedGroup_4(), "rule__InputLinkExtension__UnorderedGroup_4");
 			builder.put(grammarAccess.getActivationConstraintsAccess().getUnorderedGroup_7(), "rule__ActivationConstraints__UnorderedGroup_7");
-			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_2(), "rule__OpcUaDeviceClient__UnorderedGroup_2");
+			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3(), "rule__OpcUaDeviceClient__UnorderedGroup_3");
 		}
 	}
 	

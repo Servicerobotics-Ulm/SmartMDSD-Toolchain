@@ -7,5 +7,11 @@
             class="org.xtend.coordinationInterface.generator.CoordinationInterfaceGenerator">
       </generator>
    </extension>
+   <extension
+         point="org.xtend.smartsoft.generator.DomainModelsGeneratorExtension">
+      <DomainModelsGeneratorExtension
+            class="org.xtend.coordinationInterface.generator.CoordinationDomainModelsExtension">
+      </DomainModelsGeneratorExtension>
+   </extension>
 
 </plugin>

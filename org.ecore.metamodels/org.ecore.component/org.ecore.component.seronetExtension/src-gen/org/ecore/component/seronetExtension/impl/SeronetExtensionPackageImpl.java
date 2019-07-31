@@ -239,7 +239,7 @@ public class SeronetExtensionPackageImpl extends EPackageImpl implements Seronet
 	 */
 	@Override
 	public EAttribute getOpcUaDeviceClient_DeviceURI() {
-		return (EAttribute) opcUaDeviceClientEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) opcUaDeviceClientEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -249,7 +249,27 @@ public class SeronetExtensionPackageImpl extends EPackageImpl implements Seronet
 	 */
 	@Override
 	public EAttribute getOpcUaDeviceClient_OpcuaXmlFile() {
-		return (EAttribute) opcUaDeviceClientEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) opcUaDeviceClientEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getOpcUaDeviceClient_AutoConnect() {
+		return (EAttribute) opcUaDeviceClientEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getOpcUaDeviceClient_RootObjectPath() {
+		return (EAttribute) opcUaDeviceClientEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -399,7 +419,9 @@ public class SeronetExtensionPackageImpl extends EPackageImpl implements Seronet
 		plainOpcUaPortEClass = createEClass(PLAIN_OPC_UA_PORT);
 
 		opcUaDeviceClientEClass = createEClass(OPC_UA_DEVICE_CLIENT);
+		createEAttribute(opcUaDeviceClientEClass, OPC_UA_DEVICE_CLIENT__AUTO_CONNECT);
 		createEAttribute(opcUaDeviceClientEClass, OPC_UA_DEVICE_CLIENT__DEVICE_URI);
+		createEAttribute(opcUaDeviceClientEClass, OPC_UA_DEVICE_CLIENT__ROOT_OBJECT_PATH);
 		createEAttribute(opcUaDeviceClientEClass, OPC_UA_DEVICE_CLIENT__OPCUA_XML_FILE);
 
 		opcUaReadServerEClass = createEClass(OPC_UA_READ_SERVER);
@@ -481,9 +503,15 @@ public class SeronetExtensionPackageImpl extends EPackageImpl implements Seronet
 
 		initEClass(opcUaDeviceClientEClass, OpcUaDeviceClient.class, "OpcUaDeviceClient", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOpcUaDeviceClient_AutoConnect(), ecorePackage.getEBoolean(), "autoConnect", "false", 1, 1,
+				OpcUaDeviceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOpcUaDeviceClient_DeviceURI(), ecorePackage.getEString(), "deviceURI", null, 0, 1,
 				OpcUaDeviceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOpcUaDeviceClient_RootObjectPath(), ecorePackage.getEString(), "rootObjectPath", "Server", 0,
+				1, OpcUaDeviceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOpcUaDeviceClient_OpcuaXmlFile(), ecorePackage.getEString(), "opcuaXmlFile", null, 0, 1,
 				OpcUaDeviceClient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);

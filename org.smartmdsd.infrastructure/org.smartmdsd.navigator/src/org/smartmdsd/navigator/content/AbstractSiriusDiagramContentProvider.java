@@ -96,7 +96,14 @@ public abstract class AbstractSiriusDiagramContentProvider implements ITreeConte
 			if(modelFile.getFileExtension().contentEquals(getModelFileExtension())) {
 				List<SiriusDiagramRepresentationItem> diagrams = cachedModelMap.get(modelFile);
 				if(diagrams == null) {
-					updateModelDiagram(modelFile);
+					loadDiagramRepresentationsFor(modelFile);
+				} else {
+					// reload diagrams if needed (this should keep the cache up-to-date)
+					for(SiriusDiagramRepresentationItem diagram: diagrams) {
+						if(!diagram.isLoadedRepresentation()) {
+							reloadDiagram(diagram);
+						}
+					}
 				}
 				return diagrams != null ? diagrams.toArray() : NO_CHILDREN;
 			}
@@ -112,7 +119,22 @@ public abstract class AbstractSiriusDiagramContentProvider implements ITreeConte
 		}
 	}
 	
-	protected void updateModelDiagram(IFile modelFile) {
+	protected void reloadDiagram(SiriusDiagramRepresentationItem diagram) {
+		WorkspaceJob reloadDiagramJob = new WorkspaceJob("Load Diagram for "+diagram.getName()) {
+			@Override
+			public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
+				// the actual reloading is done within the diagram item itself
+				diagram.reloadDiagram(monitor);
+				return Status.OK_STATUS;
+			}
+		};
+		// this will provide a better feedback to the user
+		reloadDiagramJob.setUser(true);
+		reloadDiagramJob.setRule(diagram.getContainer());
+		reloadDiagramJob.schedule();
+	}
+	
+	protected void loadDiagramRepresentationsFor(IFile modelFile) {
 		WorkspaceJob loadDiagramJob = new WorkspaceJob("Load Diagram for "+modelFile.getName()) {
 			@Override
 			public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {

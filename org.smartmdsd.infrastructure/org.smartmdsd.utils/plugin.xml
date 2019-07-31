@@ -40,6 +40,12 @@
             id="org.smartmdsd.utils.deployment"
             name="Deploy">
       </command>
+      <command
+            categoryId="org.smartmdsd.utils.commands"
+            description="Open Resource in Debian Terminal"
+            id="org.smartmdsd.utils.terminal"
+            name="Terminal">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
@@ -58,6 +64,10 @@
       <handler
             class="org.smartmdsd.utils.deployment.DeploymentActionHandler"
             commandId="org.smartmdsd.utils.deployment">
+      </handler>
+      <handler
+            class="org.smartmdsd.utils.linux.OpenDebianTerminalCommand"
+            commandId="org.smartmdsd.utils.terminal">
       </handler>
    </extension>
    <extension
@@ -590,6 +600,12 @@
                </with>
             </visibleWhen>
          </command>
+         <command
+               commandId="org.smartmdsd.utils.terminal"
+               icon="icons/terminal.png"
+               label="Open In Terminal"
+               style="push">
+         </command>
       </menuContribution>
       <menuContribution
             allPopups="false"
@@ -891,6 +907,13 @@
             id="org.smartmdsd.utils.launch.cmake"
             modes="run, debug"
             name="CMake"
+            public="false">
+      </launchConfigurationType>
+      <launchConfigurationType
+            delegate="org.smartmdsd.utils.linux.DebianTerminalLauncher"
+            id="org.smartmdsd.utils.debianTerminalLauncher"
+            modes="run, debug"
+            name="DebianTerminal"
             public="false">
       </launchConfigurationType>
    </extension>

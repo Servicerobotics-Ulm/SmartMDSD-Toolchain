@@ -11,7 +11,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PlainOpcUaPort" abstract="true" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//AbstractComponentElement ../../org.ecore.base.mixedport/model/mixedport.ecore#//MixedPortOpcUaBase"/>
   <eClassifiers xsi:type="ecore:EClass" name="OpcUaDeviceClient" eSuperTypes="#//PlainOpcUaPort">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoConnect" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rootObjectPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="Server"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="opcuaXmlFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OpcUaReadServer" eSuperTypes="#//PlainOpcUaPort">

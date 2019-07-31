@@ -78,6 +78,16 @@ public class PlainOpcUaComponentGeneratorExtension implements ComponentGenerator
 	}
 
 	@Override
+	public CharSequence getIniStructDefinition(ComponentDefinition component) {
+		return impl.getIniStructDefinition(component);
+	}
+	
+	@Override
+	public CharSequence getLoadParameters(ComponentDefinition component) {
+		return impl.getLoadParameters(component);
+	}
+	
+	@Override
 	public CharSequence getIniFileParameters(ComponentDefinition component) {
 		return impl.getIniFileParameters(component);
 	}

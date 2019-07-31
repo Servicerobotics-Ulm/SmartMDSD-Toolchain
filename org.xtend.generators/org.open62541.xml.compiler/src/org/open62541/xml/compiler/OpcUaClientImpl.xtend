@@ -235,13 +235,13 @@ class OpcUaClientImpl implements OpcUaClient {
 		OPCUA::StatusCode «objectName»::get«entity.name.toFirstUpper»(«entity.type.cppType» &«entity.name.toFirstLower») const {
 			OPCUA::ValueType genericValue;
 			OPCUA::StatusCode status = getVariableCurrentValue("«entity.name»", genericValue);
-			«entity.name.toFirstLower» = genericValue;
+			«entity.name.toFirstLower» = genericValue«IF entity.type.equals("String")».toString()«ENDIF»;
 			return status;
 		}
 		OPCUA::StatusCode «objectName»::get«entity.name.toFirstUpper»Wait(«entity.type.cppType» &«entity.name.toFirstLower») {
 			OPCUA::ValueType genericValue;
 			OPCUA::StatusCode status = getVariableNextValue("«entity.name»", genericValue);
-			«entity.name.toFirstLower» = genericValue;
+			«entity.name.toFirstLower» = genericValue«IF entity.type.equals("String")».toString()«ENDIF»;
 			return status;
 		}
 		
@@ -268,7 +268,7 @@ class OpcUaClientImpl implements OpcUaClient {
 		 		«var count2=-1»
 		 		«FOR arg: method.outputArguments»
 		 			«IF arg.DataTypeIdentifier == OpcUaXmlParser.SeRoNetARGUMENT.UA_TYPES_STRING»
-		 			«arg.name» = static_cast<const char*>(outputArguments[«count2=count2+1»]);
+		 			«arg.name» = outputArguments[«count2=count2+1»].toString();
 		 			«ELSE»
 		 			«arg.name» = outputArguments[«count2=count2+1»];
 		 			«ENDIF»

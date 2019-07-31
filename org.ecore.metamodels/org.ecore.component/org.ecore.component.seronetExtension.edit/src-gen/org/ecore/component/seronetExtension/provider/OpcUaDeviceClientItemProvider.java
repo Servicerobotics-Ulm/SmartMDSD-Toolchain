@@ -44,7 +44,9 @@ public class OpcUaDeviceClientItemProvider extends PlainOpcUaPortItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAutoConnectPropertyDescriptor(object);
 			addDeviceURIPropertyDescriptor(object);
+			addRootObjectPathPropertyDescriptor(object);
 			addOpcuaXmlFilePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -79,6 +81,38 @@ public class OpcUaDeviceClientItemProvider extends PlainOpcUaPortItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_OpcUaDeviceClient_opcuaXmlFile_feature",
 								"_UI_OpcUaDeviceClient_type"),
 						SeronetExtensionPackage.Literals.OPC_UA_DEVICE_CLIENT__OPCUA_XML_FILE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Auto Connect feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAutoConnectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_OpcUaDeviceClient_autoConnect_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_OpcUaDeviceClient_autoConnect_feature",
+								"_UI_OpcUaDeviceClient_type"),
+						SeronetExtensionPackage.Literals.OPC_UA_DEVICE_CLIENT__AUTO_CONNECT, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Root Object Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRootObjectPathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_OpcUaDeviceClient_rootObjectPath_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_OpcUaDeviceClient_rootObjectPath_feature",
+								"_UI_OpcUaDeviceClient_type"),
+						SeronetExtensionPackage.Literals.OPC_UA_DEVICE_CLIENT__ROOT_OBJECT_PATH, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -128,7 +162,9 @@ public class OpcUaDeviceClientItemProvider extends PlainOpcUaPortItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(OpcUaDeviceClient.class)) {
+		case SeronetExtensionPackage.OPC_UA_DEVICE_CLIENT__AUTO_CONNECT:
 		case SeronetExtensionPackage.OPC_UA_DEVICE_CLIENT__DEVICE_URI:
+		case SeronetExtensionPackage.OPC_UA_DEVICE_CLIENT__ROOT_OBJECT_PATH:
 		case SeronetExtensionPackage.OPC_UA_DEVICE_CLIENT__OPCUA_XML_FILE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

@@ -2,6 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension-point id="ComponentGeneratorExtension" name="ComponentGeneratorExtension" schema="schema/ComponentGeneratorExtension.exsd"/>
+   <extension-point id="DomainModelsGeneratorExtension" name="DomainModelsGeneratorExtension" schema="schema/DomainModelsGeneratorExtension.exsd"/>
    <extension
          point="org.xtext.service.communicationObject.CommunicationObjectGeneratorEP">
       <generator

@@ -69,7 +69,7 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		#ifdef UA_ENABLE_AMALGAMATION
 			#include <open62541.h>
 		#else
-			#include <open62541/ua_client.h>
+			#include <open62541/client.h>
 		#endif
 	#endif
 	
@@ -129,12 +129,11 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		 *  and the namespaceIndex (the second, optional attribute).
 		 *
 		 *  @param objectPath:		the element location within an object specified as a path (linux like path syntax)
-		 *  @param namespaceIndex:	the namespace-index used to create qualified names for the individual element names
 		 *
 		 *  @return the NodeId of the first matching element
 		 *  	- NodeId is set to UA_NODEID_NULL if the element could not be found (use UA_NodeId_isNill(result) to check for nill)
 		 */
-		NodeId browseObjectPath(const std::string &objectPath, const unsigned short namespaceIndex=1) const;
+		NodeId browseObjectPath(const std::string &objectPath) const;
 	
 		/** method to find a sub-element of the given parentNodeId
 		 *
@@ -243,13 +242,14 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		/** this method instantiates and connects the internal OPC UA Client
 		 *
 		 *  This method connects the internal OPC UA Client to the provided OPC UA Server URL.
+		 *  You can specify a full path using a Unix path syntax, e.g. "Server/ServerStatus"
 		 *
 		 *  @param address the OPC UA Server URL
-		 *  @param objectName optional parameter specifying the root object within the server space
+		 *  @param objectPath optional parameter specifying the root object within the server space
 		 *  @param activateUpcalls optional parameter that allows activation/deactivation of the upcall interface of this client
 		 *  @return OPCUA::StatusCode::ALL_OK on succes or OPCUA::StatusCode::ERROR_COMMUNICATION otherwise
 		 */
-		OPCUA::StatusCode connect(const std::string &address = "opc.tcp://localhost:4840", const std::string &objectName="", const bool activateUpcalls=true);
+		OPCUA::StatusCode connect(const std::string &address = "opc.tcp://localhost:4840", const std::string &objectPath="Server", const bool activateUpcalls=true);
 	
 		/** this method disconnects the internal OPC UA Client (if it was connected before)
 		 *
@@ -353,9 +353,9 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	
 	#ifdef HAS_OPCUA
 	#ifndef UA_ENABLE_AMALGAMATION
-	#include <open62541/ua_config_default.h>
-	#include <open62541/ua_client_subscriptions.h>
-	#include <open62541/ua_client_highlevel.h>
+	#include <open62541/client_config_default.h>
+	#include <open62541/client_subscriptions.h>
+	#include <open62541/client_highlevel.h>
 	#endif
 	#endif // HAS_OPCUA
 	
@@ -432,7 +432,7 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 		this->disconnect();
 	}
 	
-	OPCUA::StatusCode GenericClient::connect(const std::string &address, const std::string &objectName, const bool activateUpcalls)
+	OPCUA::StatusCode GenericClient::connect(const std::string &address, const std::string &objectPath, const bool activateUpcalls)
 	{
 		// make sure the client is disconnected in any case
 		this->disconnect();
@@ -463,11 +463,9 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 				return OPCUA::StatusCode::ERROR_COMMUNICATION;
 			}
 	
-			// find the root object using its browseName under the default objects folder
-			rootObjectId = this->findElement(objectName,
-				UA_NODEID_NUMERIC(0, UA_NS0ID_OBJECTSFOLDER), // the the default objects folder as parent
-				UA_NODECLASS_OBJECT // look for object types only
-			);
+			// find the root object using its objectPath under the default objects folder
+			rootObjectId = this->browseObjectPath(objectPath);
+	
 			if(rootObjectId.isNull()) {
 				// if the object could no be found -> disconnect client and return wrong ID
 				this->disconnect();
@@ -511,12 +509,7 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	}
 	
 	#ifdef HAS_OPCUA
-	/**
-	 * This implementation used a somewhat complicated low-level API at the moment because the client's
-	 * high-level API seems not yet to be implemented. This implementation can be simplified in the future when
-	 * the high level API is provided.
-	 */
-	NodeId GenericClient::browseObjectPath(const std::string &objectPath, const unsigned short namespaceIndex) const
+	NodeId GenericClient::browseObjectPath(const std::string &objectPath) const
 	{
 		// lock client mutex
 		std::unique_lock<std::recursive_mutex> lock(clientMutex);
@@ -536,46 +529,14 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	
 		if(path_segments.size() > 0)
 		{
-			// create a UA relative-path struct array and fill it with values
-			UA_RelativePathElement* ua_paths = (UA_RelativePathElement*)UA_Array_new(path_segments.size(), &UA_TYPES[UA_TYPES_RELATIVEPATHELEMENT]);
-			for(size_t i = 0; i < path_segments.size(); i++) {
-				if(i==0) {
-					// the first element is assumed to be the object type, hence, use the UA_NS0ID_ORGANIZES typeId
-					ua_paths[i].referenceTypeId = UA_NODEID_NUMERIC(0, UA_NS0ID_ORGANIZES);
-				} else {
-					// all the following path elements are assumed to be components
-					ua_paths[i].referenceTypeId = UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT);
-				}
-				ua_paths[i].targetName = UA_QUALIFIEDNAME_ALLOC(namespaceIndex, path_segments[i].c_str());
-			}
-	
-			// create the browse-path struct
-			UA_BrowsePath browsePath;
-			UA_BrowsePath_init(&browsePath);
-			// use the default objects foulder as root
-			browsePath.startingNode = UA_NODEID_NUMERIC(0, UA_NS0ID_OBJECTSFOLDER);
-			browsePath.relativePath.elements = ua_paths;
-			browsePath.relativePath.elementsSize = path_segments.size();
-	
-			// create the request struct including the browse path
-			UA_TranslateBrowsePathsToNodeIdsRequest request;
-			UA_TranslateBrowsePathsToNodeIdsRequest_init(&request);
-			request.browsePaths = &browsePath;
-			request.browsePathsSize = 1;
-	
-			// call the browse service
-			UA_TranslateBrowsePathsToNodeIdsResponse response = UA_Client_Service_translateBrowsePathsToNodeIds(client, request);
-	
-			if(response.responseHeader.serviceResult == UA_STATUSCODE_GOOD) {
-				if(response.resultsSize > 0 && response.results[0].targetsSize > 0) {
-					// we just get the first target's node-id (typically there should be just one single target found, if any)
-					nodeId = response.results[0].targets[0].targetId.nodeId;
+			// start iterating from the default objects folder
+			nodeId = NodeId(UA_NS0ID_OBJECTSFOLDER, 0);
+			for(auto segment: path_segments) {
+				// iteratively call find element for all segments, each time using the next nodeId as root
+				if(!nodeId.isNull()) {
+					nodeId = this->findElement(segment, nodeId, UA_NODECLASS_OBJECT);
 				}
 			}
-	
-			// cleanup allocated memory
-			UA_BrowsePath_deleteMembers(&browsePath);
-			UA_TranslateBrowsePathsToNodeIdsResponse_deleteMembers(&response);
 		} // end if(path_elements.size() > 0)
 	
 		// nodeId is UA_NODEID_NULL in case the element has no been found
@@ -994,6 +955,7 @@ class Open62541GenericClientImpl implements Open62541GenericClient
 	
 		// check if client is connected at all (if not, sleep for the minSubscriptionInterval time and return DISCONNECTED)
 		if(client == 0) {
+			lock.unlock();
 			std::this_thread::sleep_for(minSubscriptionInterval);
 			return OPCUA::StatusCode::DISCONNECTED;
 		}

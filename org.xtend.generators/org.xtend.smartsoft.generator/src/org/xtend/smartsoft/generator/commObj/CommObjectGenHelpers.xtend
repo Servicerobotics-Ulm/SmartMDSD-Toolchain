@@ -45,6 +45,9 @@ import org.ecore.base.basicAttributes.AttributeDefinition
 import org.ecore.base.basicAttributes.PrimitiveType
 import org.ecore.base.basicAttributes.PRIMITIVE_TYPE_NAME
 import org.ecore.base.basicAttributes.AbstractAttributeType
+import java.util.Collection
+import java.util.ArrayList
+import org.eclipse.core.runtime.Platform
 
 class CommObjectGenHelpers extends BasicAttributesGenHelpers {
 	override compileAttributeParentTypeName(AttributeDefinition attr) {
@@ -215,4 +218,19 @@ class CommObjectGenHelpers extends BasicAttributesGenHelpers {
 //			default : false
 //		}
 //	}
+
+	def Collection<DomainModelsGeneratorExtension> getDomainModelsGeneratorExtensions() {
+		val result = new ArrayList<DomainModelsGeneratorExtension>();
+		// get all generators plugged-in as extensions
+		val config = Platform.getExtensionRegistry().getConfigurationElementsFor("org.xtend.smartsoft.generator.DomainModelsGeneratorExtension")
+		// for each extension
+		for(ext: config) {
+			// get the "class" object from the extension (which should implement the AbstractGenerator interface)
+			val obj = ext.createExecutableExtension("class")
+			if(obj instanceof DomainModelsGeneratorExtension) {
+				result.add(obj);
+			}
+		}
+		return result;
+	}
 }

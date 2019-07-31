@@ -60,7 +60,7 @@ class Open62541GenericServerImpl implements Open62541GenericServer {
 		#ifdef UA_ENABLE_AMALGAMATION
 			#include <open62541.h>
 		#else
-			#include <open62541/ua_server.h>
+			#include <open62541/server.h>
 		#endif
 	#endif
 	
@@ -237,8 +237,8 @@ class Open62541GenericServerImpl implements Open62541GenericServer {
 	
 	#ifdef HAS_OPCUA
 	#ifndef UA_ENABLE_AMALGAMATION
-	#include <open62541/ua_config_default.h>
-	#include <open62541/ua_log_stdout.h>
+		#include <open62541/server_config_default.h>
+		#include <open62541/plugin/log_stdout.h>
 	#endif
 	#endif // HAS_OPCUA
 	
@@ -343,8 +343,12 @@ class Open62541GenericServerImpl implements Open62541GenericServer {
 		}
 	
 		// setup the OPC UA server
-		config = UA_ServerConfig_new_minimal(portNr, NULL);
-		server = UA_Server_new(config);
+		server = UA_Server_new();
+		config = UA_Server_getConfig(server);
+		UA_ServerConfig_setMinimal(config, portNr, NULL);
+		// TODO: this configuration is only required to get the Prosys OPC UA Client to work,
+		// see issue: https://github.com/open62541/open62541/issues/2702
+		config->verifyRequestTimestamp = UA_RULEHANDLING_WARN;
 	
 		on_read_upcall_bindings[server] = std::bind(&GenericServer::handleOnRead, this, std::placeholders::_1, std::placeholders::_2);
 		on_write_upcall_bindings[server] = std::bind(&GenericServer::handleOnWrite, this, std::placeholders::_1, std::placeholders::_2);
@@ -361,7 +365,6 @@ class Open62541GenericServerImpl implements Open62541GenericServer {
 		#ifdef HAS_OPCUA
 		// cleanup server resources
 		UA_Server_delete(server);
-		UA_ServerConfig_delete(config);
 		#endif // HAS_OPCUA
 	}
 	

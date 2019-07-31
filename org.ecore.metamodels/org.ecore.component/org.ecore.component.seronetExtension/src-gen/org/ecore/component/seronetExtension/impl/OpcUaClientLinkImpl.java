@@ -76,6 +76,7 @@ public class OpcUaClientLinkImpl extends AbstractComponentLinkImpl implements Op
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public OpcUaDeviceClient getClient() {
 		if (client != null && client.eIsProxy()) {
 			InternalEObject oldClient = (InternalEObject) client;
@@ -103,6 +104,7 @@ public class OpcUaClientLinkImpl extends AbstractComponentLinkImpl implements Op
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setClient(OpcUaDeviceClient newClient) {
 		OpcUaDeviceClient oldClient = client;
 		client = newClient;

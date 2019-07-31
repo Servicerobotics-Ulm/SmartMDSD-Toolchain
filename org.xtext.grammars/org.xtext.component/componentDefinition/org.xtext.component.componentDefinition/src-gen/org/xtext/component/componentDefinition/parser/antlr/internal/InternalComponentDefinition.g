@@ -2229,28 +2229,32 @@ ruleOpcUaDeviceClient returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getOpcUaDeviceClientAccess().getLeftCurlyBracketKeyword_2());
+		}
 		(
 			(
 				{ 
-				  getUnorderedGroupHelper().enter(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_2());
+				  getUnorderedGroupHelper().enter(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3());
 				}
 				(
 					(
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_2(), 0)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3(), 0)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_2(), 0);
+						getUnorderedGroupHelper().select(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3(), 0);
 					}
-								({true}?=>(otherlv_3='deviceURI'
+								({true}?=>(otherlv_4='deviceURI'
 								{
-									newLeafNode(otherlv_3, grammarAccess.getOpcUaDeviceClientAccess().getDeviceURIKeyword_2_0_0());
+									newLeafNode(otherlv_4, grammarAccess.getOpcUaDeviceClientAccess().getDeviceURIKeyword_3_0_0());
 								}
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getOpcUaDeviceClientAccess().getDeviceURIEStringParserRuleCall_2_0_1_0());
+											newCompositeNode(grammarAccess.getOpcUaDeviceClientAccess().getDeviceURIEStringParserRuleCall_3_0_1_0());
 										}
-										lv_deviceURI_4_0=ruleEString
+										lv_deviceURI_5_0=ruleEString
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getOpcUaDeviceClientRule());
@@ -2258,7 +2262,7 @@ ruleOpcUaDeviceClient returns [EObject current=null]
 											set(
 												$current,
 												"deviceURI",
-												lv_deviceURI_4_0,
+												lv_deviceURI_5_0,
 												"org.xtext.service.roboticMiddleware.RoboticMiddleware.EString");
 											afterParserOrEnumRuleCall();
 										}
@@ -2266,25 +2270,82 @@ ruleOpcUaDeviceClient returns [EObject current=null]
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_2());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_2(), 1)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3(), 1)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_2(), 1);
+						getUnorderedGroupHelper().select(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3(), 1);
 					}
-								({true}?=>(otherlv_5='opcuaXmlFile'
+								({true}?=>((
+									lv_autoConnect_6_0='autoConnect'
+									{
+										newLeafNode(lv_autoConnect_6_0, grammarAccess.getOpcUaDeviceClientAccess().getAutoConnectAutoConnectKeyword_3_1_0());
+									}
+									{
+										if ($current==null) {
+											$current = createModelElement(grammarAccess.getOpcUaDeviceClientRule());
+										}
+										setWithLastConsumed($current, "autoConnect", true, "autoConnect");
+									}
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3(), 2);
+					}
+								({true}?=>(otherlv_7='rootObjectPath'
 								{
-									newLeafNode(otherlv_5, grammarAccess.getOpcUaDeviceClientAccess().getOpcuaXmlFileKeyword_2_1_0());
+									newLeafNode(otherlv_7, grammarAccess.getOpcUaDeviceClientAccess().getRootObjectPathKeyword_3_2_0());
 								}
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getOpcUaDeviceClientAccess().getOpcuaXmlFileEStringParserRuleCall_2_1_1_0());
+											newCompositeNode(grammarAccess.getOpcUaDeviceClientAccess().getRootObjectPathEStringParserRuleCall_3_2_1_0());
 										}
-										lv_opcuaXmlFile_6_0=ruleEString
+										lv_rootObjectPath_8_0=ruleEString
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getOpcUaDeviceClientRule());
+											}
+											set(
+												$current,
+												"rootObjectPath",
+												lv_rootObjectPath_8_0,
+												"org.xtext.service.roboticMiddleware.RoboticMiddleware.EString");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3(), 3);
+					}
+								({true}?=>(otherlv_9='opcuaXmlFile'
+								{
+									newLeafNode(otherlv_9, grammarAccess.getOpcUaDeviceClientAccess().getOpcuaXmlFileKeyword_3_3_0());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getOpcUaDeviceClientAccess().getOpcuaXmlFileEStringParserRuleCall_3_3_1_0());
+										}
+										lv_opcuaXmlFile_10_0=ruleEString
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getOpcUaDeviceClientRule());
@@ -2292,7 +2353,7 @@ ruleOpcUaDeviceClient returns [EObject current=null]
 											set(
 												$current,
 												"opcuaXmlFile",
-												lv_opcuaXmlFile_6_0,
+												lv_opcuaXmlFile_10_0,
 												"org.xtext.service.roboticMiddleware.RoboticMiddleware.EString");
 											afterParserOrEnumRuleCall();
 										}
@@ -2300,24 +2361,22 @@ ruleOpcUaDeviceClient returns [EObject current=null]
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_2());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3());
 					}
 				)
 			)
 					)+
-					{getUnorderedGroupHelper().canLeave(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_2())}?
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3())}?
 				)
 			)
 				{ 
-				  getUnorderedGroupHelper().leave(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_2());
+				  getUnorderedGroupHelper().leave(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3());
 				}
 		)
-		(
-			otherlv_7=';'
-			{
-				newLeafNode(otherlv_7, grammarAccess.getOpcUaDeviceClientAccess().getSemicolonKeyword_3());
-			}
-		)?
+		otherlv_11='}'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getOpcUaDeviceClientAccess().getRightCurlyBracketKeyword_4());
+		}
 	)
 ;
 

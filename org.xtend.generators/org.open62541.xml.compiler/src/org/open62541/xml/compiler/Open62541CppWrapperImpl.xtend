@@ -140,7 +140,7 @@ class Open62541CppWrapperImpl implements Open62541CppWrapper {
 			#ifdef UA_ENABLE_AMALGAMATION
 				#include <open62541.h>
 			#else
-				#include <open62541/ua_types.h>
+				#include <open62541/types.h>
 			#endif
 		#else
 			#include <sstream>
@@ -275,7 +275,7 @@ class Open62541CppWrapperImpl implements Open62541CppWrapper {
 		
 		#ifdef HAS_OPCUA
 		#ifndef UA_ENABLE_AMALGAMATION
-		#include <open62541/ua_types_generated_handling.h>
+		#include <open62541/types_generated_handling.h>
 		#endif
 		#endif
 		
@@ -856,7 +856,7 @@ class Open62541CppWrapperImpl implements Open62541CppWrapper {
 		#ifdef UA_ENABLE_AMALGAMATION
 			#include <open62541.h>
 		#else
-			#include <open62541/ua_types.h>
+			#include <open62541/types.h>
 		#endif
 	#endif
 	
@@ -953,7 +953,7 @@ class Open62541CppWrapperImpl implements Open62541CppWrapper {
 	
 	#ifdef HAS_OPCUA
 	#ifndef UA_ENABLE_AMALGAMATION
-	#include <open62541/ua_types_generated_handling.h>
+	#include <open62541/types_generated_handling.h>
 	#endif
 	#endif
 	
