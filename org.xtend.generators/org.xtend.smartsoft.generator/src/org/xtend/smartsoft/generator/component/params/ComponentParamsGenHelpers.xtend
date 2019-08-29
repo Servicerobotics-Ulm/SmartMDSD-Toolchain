@@ -130,7 +130,7 @@ class ComponentParamsGenHelpers extends BasicAttributesGenHelpers {
 	def String compileCommObjType(AttributeDefinition attr) {
 		val type = attr.type
 		switch(type) {
-			PrimitiveType case type.typeName <= PRIMITIVE_TYPE_NAME.UINT64: "Integer"
+			PrimitiveType case type.typeName <= PRIMITIVE_TYPE_NAME.INT64: "Integer"
 			PrimitiveType case type.typeName <= PRIMITIVE_TYPE_NAME.DOUBLE: "Double"
 			PrimitiveType case type.typeName == PRIMITIVE_TYPE_NAME.STRING: "String"
 			PrimitiveType case type.typeName == PRIMITIVE_TYPE_NAME.BOOLEAN: "Boolean"
@@ -172,7 +172,7 @@ class ComponentParamsGenHelpers extends BasicAttributesGenHelpers {
 		} else {
 			val type = attr.type
 			switch(type) {
-				PrimitiveType case type.typeName <= PRIMITIVE_TYPE_NAME.UINT64: return '''0'''
+				PrimitiveType case type.typeName <= PRIMITIVE_TYPE_NAME.INT64: return '''0'''
 				PrimitiveType case type.typeName <= PRIMITIVE_TYPE_NAME.DOUBLE: return '''0.0'''
 				PrimitiveType case type.typeName == PRIMITIVE_TYPE_NAME.BOOLEAN: return '''false'''
 				InlineEnumerationType: return '''""'''
@@ -192,7 +192,7 @@ class ComponentParamsGenHelpers extends BasicAttributesGenHelpers {
 	}
 	def getDefaultValue(AbstractAttributeType type) {
 		switch(type) {
-			PrimitiveType case type.typeName <= PRIMITIVE_TYPE_NAME.UINT64: '''0'''
+			PrimitiveType case type.typeName <= PRIMITIVE_TYPE_NAME.INT64: '''0'''
 			PrimitiveType case type.typeName <= PRIMITIVE_TYPE_NAME.DOUBLE: '''0.0'''
 			PrimitiveType case type.typeName == PRIMITIVE_TYPE_NAME.BOOLEAN: '''false'''
 			InlineEnumerationType: '''ENUM_VALUE_UNDEFINED'''

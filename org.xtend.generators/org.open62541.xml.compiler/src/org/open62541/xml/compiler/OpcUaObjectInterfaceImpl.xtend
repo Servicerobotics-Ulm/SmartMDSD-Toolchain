@@ -43,7 +43,6 @@ import com.google.inject.Inject
 class OpcUaObjectInterfaceImpl implements OpcUaObjectInterface {
 	@Inject extension CopyrightHelpers
 	@Inject extension OpcUaXmlParser
-	@Inject extension Open62541CppWrapperImpl
 	
 	override getOpcUaDevice_Interface_HeaderFileName(String objectName) { objectName + "Interface.hh" }
 	
@@ -54,7 +53,7 @@ class OpcUaObjectInterfaceImpl implements OpcUaObjectInterface {
 	#define _«objectName.toUpperCase»_INTERFACE_HH	
 	
 	#include <string>
-	#include "«opcUaStatusCodeHeaderFileName»"
+	#include <OpcUaStatusCode.hh>
 	
 	/**
 	 * This is the public C++ interface that needs to be implemented on

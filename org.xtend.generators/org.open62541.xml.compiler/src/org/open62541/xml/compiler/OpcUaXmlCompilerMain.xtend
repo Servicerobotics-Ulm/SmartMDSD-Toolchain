@@ -60,7 +60,6 @@ class OpcUaXmlCompilerMain {
 		var generateServer = false
 		var generateClient = false
 		var generateMVC = false
-		var generateHtml = false
 		var useTimeStamp = false
 		var TAG = args.get(0).replace(".xml","");
 
@@ -72,7 +71,6 @@ class OpcUaXmlCompilerMain {
 					generateServer = true
 					generateClient = true
 					generateMVC = true
-					generateHtml = true
 				} else if(arg.equals("SERVER")) {
 					generateServer = true
 				} else if(arg.equals("CLIENT")) {
@@ -80,8 +78,6 @@ class OpcUaXmlCompilerMain {
 				} else if(arg.equals("MVC")) {
 					generateServer = true
 					generateMVC = true
-				} else if(arg.equals("HTML")) {
-					generateHtml = true
 				} else if(arg.equals("USE_TS")) {
 					useTimeStamp = true
 				}
@@ -118,11 +114,6 @@ class OpcUaXmlCompilerMain {
 		// create and set-up a Guice Module
 		val injector = Guice.createInjector(new AbstractModule() {
 			override protected configure() {
-				// generic OPC-UA infrastructure
-				binder().bind(Open62541CppWrapper).to(Open62541CppWrapperImpl)
-				binder().bind(Open62541GenericClient).to(Open62541GenericClientImpl)
-				binder().bind(Open62541GenericServer).to(Open62541GenericServerImpl)
-
 				// bind Interface generator	
 				binder().bind(OpcUaObjectInterface).to(OpcUaObjectInterfaceImpl)
 				
@@ -133,7 +124,6 @@ class OpcUaXmlCompilerMain {
 				binder().bind(OpcUaClient).to(OpcUaClientImpl)
 				
 //				binder().bind(OpcUaHtmlView).to(OpcUaHtmlViewImpl)
-				binder().bind(AbstractModelViewController).to(AbstractModelViewControllerImpl)
 				binder().bind(SpecificModelViewController).to(SpecificModelViewControllerImpl)
 				
 				// bind a default encoding provider
@@ -142,100 +132,6 @@ class OpcUaXmlCompilerMain {
 		})
 		injector.injectMembers(fsa)
 		
-		// get generator for open62541-based C++ wrapper classes
-		val open62541CppWrapperGenerator = injector.getInstance(Open62541CppWrapper)
-		
-		val open62541CppWrapperLibName = "Open62541CppWrapper"
-		
-		// generate StatusCode header
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/" + open62541CppWrapperGenerator.opcUaStatusCodeHeaderFileName,
-			open62541CppWrapperGenerator.compileOpcUaStatusCodeHeaderFileContent
-		)
-		
-		// generate ValueType header and implementation
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/" + open62541CppWrapperGenerator.getOpcUaValueTypeHeaderFileName(),
-			open62541CppWrapperGenerator.compileOpcUaValueTypeHeaderFileContent()
-		)
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/" + open62541CppWrapperGenerator.getOpcUaValueTypeSourceFileName(),
-			open62541CppWrapperGenerator.compileOpcUaValueTypeSourceFileContent()
-		)
-		
-		// generate NodeId header and implementation
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/" + open62541CppWrapperGenerator.opcUaNodeIdHeaderFileName,
-			open62541CppWrapperGenerator.compileOpcUaNodeIdHeaderFileContent
-		)
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/" + open62541CppWrapperGenerator.opcUaNodeIdSourceFileName,
-			open62541CppWrapperGenerator.compileOpcUaNodeIdSourceFileContent
-		)
-		
-		// generate CMakeLists.txt and CMake-Config for compiling the open62541 wrapper library
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/" + "CMakeLists.txt",
-			open62541CppWrapperGenerator.compileOpen62541WrapperLibCmake(open62541CppWrapperLibName)
-		)
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/" + open62541CppWrapperLibName+"Config.cmake.in",
-			open62541CppWrapperGenerator.compileOpen62541WrapperLibCmakeConfig
-		)
-
-		val genericClientGenerator = injector.getInstance(Open62541GenericClient)
-		// generate GenericClient header and implementation
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/" + genericClientGenerator.opcUa_GenericClient_HeaderFileName,
-			genericClientGenerator.compileOpcUa_GenericClient_HeaderFileContent
-		)
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/" + genericClientGenerator.opcUa_GenericClient_SourceFileName,
-			genericClientGenerator.compileOpcUa_GenericClient_SourceFileContent
-		)
-		
-		val genericServerGenerator = injector.getInstance(Open62541GenericServer)
-		// generate GenericServer header and implementation
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/" + genericServerGenerator.opcUa_GenericServer_HeaderFileName,
-			genericServerGenerator.compileOpcUa_GenericServer_HeaderFileContent
-		)
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/" + genericServerGenerator.opcUa_GenericServer_SourceFileName,
-			genericServerGenerator.compileOpcUa_GenericServer_SourceFileContent
-		)
-		
-		val abstractMVCGenerator = injector.getInstance(AbstractModelViewController)
-		// generate abstract model header file
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/MVC/" + abstractMVCGenerator.abstractModelHeader,
-			abstractMVCGenerator.compileAbstractModelHeader
-		)
-		// generate abstract model source file
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/MVC/" + abstractMVCGenerator.abstractModelSource,
-			abstractMVCGenerator.compileAbstractModelSource
-		)
-		// generate abstract model-observer header file
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/MVC/" + abstractMVCGenerator.abstractModelObserverHeader,
-			abstractMVCGenerator.compileAbstractModelObserverHeader
-		)
-		// generate abstract model-observer source file
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/MVC/" + abstractMVCGenerator.abstractModelObserverSource,
-			abstractMVCGenerator.compileAbstractModelObserverSource
-		)
-		// generate abstract MVC view header file
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/MVC/" + abstractMVCGenerator.abstractViewHeader,
-			abstractMVCGenerator.compileAbstractViewHeader
-		)
-		// generate abstract MVC controller header file
-		fsa.generateFile(
-			open62541CppWrapperLibName + "/MVC/" + abstractMVCGenerator.abstractControllerHeader,
-			abstractMVCGenerator.compileAbstractControllerHeader
-		)
 		// create the class for parsing the XML file containing the OPC UA Information Model
 		val parser = new OpcUaXmlParser();
 		
@@ -368,8 +264,7 @@ class OpcUaXmlCompilerMain {
 		fsa.generateFile(
 			"CMakeLists.txt",
 			compileSrcGenCMakeLists(
-				open62541CppWrapperLibName,
-				generateMVC,
+				generateServer,
 				generateClient
 			)
 		)
@@ -403,12 +298,9 @@ class OpcUaXmlCompilerMain {
 //		}
 	}
 	
-	def static CharSequence compileSrcGenCMakeLists(String open62541CppWrapperLibName, boolean hasServer, boolean hasClient)
+	def static CharSequence compileSrcGenCMakeLists(boolean hasServer, boolean hasClient)
 	'''
-	CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
-	
-	# compile the «open62541CppWrapperLibName» library
-	ADD_SUBDIRECTORY(«open62541CppWrapperLibName»)
+	CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 	
 	«IF hasServer»
 	# compile the test server
@@ -422,7 +314,7 @@ class OpcUaXmlCompilerMain {
 	
 	def static CharSequence compileTopLevelCMakeLists()
 	'''
-	CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+	CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 	
 	ADD_SUBDIRECTORY(src-gen)
 	'''

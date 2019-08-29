@@ -1,3 +1,9 @@
 
 a#smartmdsd-introLink img { background-image : url(graphics/logo48.png); }
 a#smartmdsd-introLink:hover img { background-image : url(graphics/logo48.png); }
+a#smartmdsd-ds img { background-image : url(graphics/green-star64.png); }
+a#smartmdsd-ds:hover img { background-image : url(graphics/green-star64.png); }
+a#smartmdsd-component img { background-image : url(graphics/component64.png); }
+a#smartmdsd-component:hover img { background-image : url(graphics/component64.png); }
+a#smartmdsd-system img { background-image : url(graphics/jigsaw64.png); }
+a#smartmdsd-system:hover img { background-image : url(graphics/jigsaw64.png); }

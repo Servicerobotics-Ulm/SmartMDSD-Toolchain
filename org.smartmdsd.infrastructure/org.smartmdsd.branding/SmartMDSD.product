@@ -35,13 +35,12 @@ The SmartMDSD Toolchain realizes composition structures defined by the European 
       location="org.smartmdsd.branding"
       startupProgressRect="5,275,445,15"
       startupMessageRect="7,252,445,20"
-      startupForegroundColor="000000" />
+      startupForegroundColor="73D216" />
    <launcher name="SmartMDSD">
       <win useIco="false">
          <bmp/>
       </win>
    </launcher>
-
 
    <vm>
    </vm>

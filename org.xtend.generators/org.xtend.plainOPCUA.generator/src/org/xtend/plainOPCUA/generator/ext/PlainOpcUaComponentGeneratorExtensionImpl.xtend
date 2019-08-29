@@ -137,9 +137,9 @@ class PlainOpcUaComponentGeneratorExtensionImpl implements ComponentGeneratorExt
 	
 	override getCMakeTargetConfiguration(ComponentDefinition component) 
 	'''
-		IF(open62541_FOUND)
-		TARGET_LINK_LIBRARIES(${PROJECT_NAME} open62541)
+		IF(Open62541CppWrapper_FOUND)
+		TARGET_LINK_LIBRARIES(${PROJECT_NAME} Open62541CppWrapper)
 		TARGET_COMPILE_DEFINITIONS(${PROJECT_NAME} PUBLIC HAS_OPCUA)
-		ENDIF(open62541_FOUND)
+		ENDIF(Open62541CppWrapper_FOUND)
 	'''
 }

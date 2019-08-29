@@ -331,12 +331,12 @@ class SpecificModelViewControllerImpl implements SpecificModelViewController
 	
 	override CharSequence compileSpecificCMakeLists(String name)
 	'''
-	CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+	CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 	
 	PROJECT(«name»ServerTest)
 	
 	# find Open62541CppWrapper as the main dependency
-	# FIND_PACKAGE(Open62541CppWrapper)
+	FIND_PACKAGE(Open62541CppWrapper 1.0)
 	
 	# setup default include directoy
 	INCLUDE_DIRECTORIES(
@@ -356,7 +356,7 @@ class SpecificModelViewControllerImpl implements SpecificModelViewController
 	ADD_EXECUTABLE(${PROJECT_NAME} ${SERVER_SRCS})
 	TARGET_LINK_LIBRARIES(${PROJECT_NAME} Open62541CppWrapper)
 	SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES
-	    CXX_STANDARD 11
+	    CXX_STANDARD 14
 	)
 	'''
 }

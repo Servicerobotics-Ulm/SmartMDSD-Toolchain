@@ -3,11 +3,16 @@
     <extensionContent id="smartmdsd-introExtension" 
                       alt-style="swt/default.properties"
                       style="css/sample.css" name="SmartMDSD References" path="webresources/@">
-		<group style-id="content-group" id="smartmdsd-introLink-group">
-       		<link label="SmartMDSD Toolchain" 
+		<group label="SmartMDSD Toolchain" style-id="content-group" id="smartmdsd-introLink-group">
+       		<link label="Further Online Resources" 
        		url="http://org.eclipse.ui.intro/showHelpTopic?id=/org.smartmdsd.branding/intro/resources.html" 
        		id="smartmdsd-introLink" style-id="content-link">
           		<text>Visit SmartMDSD Toolchain Online References</text>
+       		</link>
+       		<link label="Report a bug or an issue"
+       		    url="https://github.com/Servicerobotics-Ulm/SmartMDSD-Toolchain/issues" 
+       		    id="smartmdsd-introLink" style-id="content-link">
+          		<text>Visit SmartMDSD Toolchain Github Repository and file a bug or an issue report in case you find errors. We always are interested in improving the overall quality of our toolchain.</text>
        		</link>
        	</group>
   	</extensionContent>

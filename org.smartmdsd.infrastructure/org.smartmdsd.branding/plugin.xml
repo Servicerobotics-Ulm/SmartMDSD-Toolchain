@@ -26,7 +26,7 @@
          </property>
          <property
                name="startupForegroundColor"
-               value="000000">
+               value="73D216">
          </property>
          <property
                name="startupMessageRect"
@@ -37,20 +37,24 @@
                value="5,275,445,15">
          </property>
          <property
-               name="preferenceCustomization"
-               value="plugin_customization.ini">
-         </property>
-         <property
                name="introTitle"
                value="Welcome to the SmartMDSD Toolchain">
          </property>
          <property
                name="introBrandingImage"
-               value="product:icons/logo128.png">
+               value="product:icons/servicrobotics-ulm-white.bg.png">
          </property>
          <property
                name="introBrandingImageText"
                value="SmartMDSD Toolchain">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+         <property
+               name="introDescription-root"
+               value="Get Started...">
          </property>
       </product>
    </extension>
@@ -61,7 +65,7 @@
             productId="org.smartmdsd.branding.product">
       </introProductBinding>
    </extension>
-   <extension
+   <!--extension
          point="org.eclipse.ui.preferencePages">
       <page
             category="org.eclipse.ui.preferencePages.Workbench"
@@ -69,7 +73,7 @@
             id="org.smartmdsd.branding.introCustomization"
             name="Welcome Page Customization">
       </page>
-   </extension>
+   </extension-->
    <extension
          point="org.eclipse.ui.intro.configExtension">
       <configExtension
@@ -104,5 +108,73 @@
             file="toc.xml"
             primary="true">
       </toc>
+   </extension>
+   <extension
+         point="org.eclipse.ui.cheatsheets.cheatSheetContent">
+      <category
+            id="org.smartmdsd.branding.cheatsheets"
+            name="SmartMDSD Cheat-sheets">
+      </category>
+      <cheatsheet
+            category="org.smartmdsd.branding.cheatsheets"
+            composite="false"
+            contentFile="$nl$/cheatsheets/create_dm_project_cs.xml"
+            id="org.smartmdsd.branding.cheatsheet.domainmodels"
+            name="Create a new Domain-Models Project (Tier 2)">
+         <description>
+            This cheat-sheet shows the steps required to create a new Domain Models Project (Tier 2).
+         </description>
+      </cheatsheet>
+      <cheatsheet
+            category="org.smartmdsd.branding.cheatsheets"
+            composite="false"
+            contentFile="$nl$/cheatsheets/create_component_project_cs.xml"
+            id="org.smartmdsd.branding.cheatsheet.component"
+            name="Create a new Component Project (Tier 3)">
+         <description>
+            This cheat-sheet shows the steps required to create a new Component Project (Tier 3).
+         </description>
+      </cheatsheet>
+      <cheatsheet
+            category="org.smartmdsd.branding.cheatsheets"
+            composite="false"
+            contentFile="$nl$/cheatsheets/create_system_project_cs.xml"
+            id="org.smartmdsd.branding.cheatsheet.system"
+            name="Create a new System Project (Tier 3)">
+         <description>
+            This cheat-sheet shows the steps required to create a new System Project (Tier 3).
+         </description>
+      </cheatsheet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.quicklinks">
+      <url
+            label="About the SmartMDSD Toolchain"
+            description="Learn more about the ecosystem and the SmartMDSD Toolchain that this IDE is based on."
+            icon="icons/logo64.png"
+            importance="medium"
+            location="https://wiki.servicerobotik-ulm.de/smartmdsd-toolchain:start">
+      </url>
+      <url
+            label="Online Tutorials"
+            description="We provide tutorials that guide you step by step through all functions of this IDE."
+            icon="icons/www.png"
+            importance="high"
+            location="https://wiki.servicerobotik-ulm.de/tutorials:">
+      </url>
+      <url
+            label="Online HowTos"
+            description="We provide best practices, tips and tricks to transfer lessons learned in applying the IDE."
+            icon="icons/www.png"
+            importance="high"
+            location="https://wiki.servicerobotik-ulm.de/how-tos:">
+      </url>
+      <url
+            label="Report a bug or an issue"
+            description="We are interested to improve the quality of this IDE."
+            icon="icons/bug.png"
+            importance="low"
+            location="https://github.com/Servicerobotics-Ulm/SmartMDSD-Toolchain/issues">
+      </url>
    </extension>
 </plugin>

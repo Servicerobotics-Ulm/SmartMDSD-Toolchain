@@ -3,21 +3,16 @@
    <page id="overview">
       <group path="page-content/bottom-left" default="true">
          <extension id="orgeclipsecdtdocuserwelcome-introExtension" importance="low"/>
-         <extension id="cdo-introExtension" importance="low"/>
-         <extension id="org.eclipse.mylyn" importance="low"/>
       </group>
       <group path="page-content/bottom-right" default="true">
          <extension id="org.eclipse.egit" importance="low"/>
-         <extension id="org.eclipse.epp.mpc.ui" importance="low"/>
       </group>
       <group path="page-content/top-left">
-         <extension id="smartmdsd-introExtension" importance="low"/>
+         <extension id="smartmdsd-introExtension" importance="medium"/>
          <extension id="org.eclipse.ui.workbench" importance="low"/>
-         <extension id="org.eclipse.team" importance="low"/>
       </group>
       <group path="page-content/top-right">
-         <extension id="org.eclipse.jdt" importance="low"/>
-         <extension id="org.eclipse.pde" importance="low"/>
+         <extension id="org.eclipse.team" importance="low"/>
       </group>
    </page>
    <page id="whatsnew">
@@ -29,7 +24,7 @@
          <extension id="org.eclipse.egit" importance="low"/>
       </group>
       <group path="page-content/top-left">
-         <extension id="smartmdsd-introExtension" importance="low"/>
+         <extension id="smartmdsd-introExtension" importance="medium"/>
          <extension id="org.eclipse.ui.workbench.news" importance="low"/>
          <extension id="org.eclipse.jdt" importance="low"/>
          <extension id="org.eclipse.pde.changes" importance="low"/>
@@ -55,7 +50,7 @@
          <extension id="org.eclipse.egit" importance="low"/>
       </group>
       <group path="page-content/top-left">
-         <extension id="smartmdsd-introExtension" importance="low"/>
+         <extension id="smartmdsd-introExtension" importance="high"/>
          <extension id="org.eclipse.team" importance="low"/>
       </group>
       <group path="page-content/top-right">

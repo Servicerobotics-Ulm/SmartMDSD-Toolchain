@@ -42,7 +42,6 @@ import org.open62541.xml.compiler.OpcUaXmlParser.SeRoNetMETHOD
 
 class OpcUaClientImpl implements OpcUaClient {
 	@Inject extension CopyrightHelpers
-	@Inject extension Open62541GenericClientImpl
 	@Inject extension OpcUaObjectInterfaceImpl
 	@Inject extension OpcUaXmlParser
 	
@@ -62,7 +61,7 @@ class OpcUaClientImpl implements OpcUaClient {
 		#define _«objectName.toUpperCase»_HH
 		
 		// use the generic client implmentation from the Open62541 C++ Wrapper Library
-		#include <«opcUa_GenericClient_HeaderFileName»>
+		#include <OpcUaGenericClient.hh>
 		
 		// implement the abstract interface
 		#include "«objectName.getOpcUaDevice_Interface_HeaderFileName()»"
@@ -85,7 +84,7 @@ class OpcUaClientImpl implements OpcUaClient {
 			virtual bool createClientSpace(const bool activateUpcalls=true) override;
 			
 			// generic upcall method called whenever one of the ntity's values is changed
-			virtual void handleVariableValueUpdate(const std::string &variableName, const OPCUA::ValueType &value) override;
+			virtual void handleVariableValueUpdate(const std::string &variableName, const OPCUA::Variant &value) override;
 			
 			«FOR entity: entityList»
 				// specific method to handle value updates for «entity.name»
@@ -202,7 +201,7 @@ class OpcUaClientImpl implements OpcUaClient {
 			return result;
 		}
 		
-		void «objectName»::handleVariableValueUpdate(const std::string &variableName, const OPCUA::ValueType &value)
+		void «objectName»::handleVariableValueUpdate(const std::string &variableName, const OPCUA::Variant &value)
 		{
 			«FOR entity: entityList»
 			«IF entity != entityList.head»else «ENDIF»if(variableName == "«entity.name»") 
@@ -225,7 +224,7 @@ class OpcUaClientImpl implements OpcUaClient {
 		// generate xml-specific getters and setters
 		«FOR entity: entityList»
 		«entity.type.cppType» «objectName»::get«entity.name.toFirstUpper»() const {
-			OPCUA::ValueType genericValue;
+			OPCUA::Variant genericValue;
 			OPCUA::StatusCode status = getVariableCurrentValue("«entity.name»", genericValue);
 			if(status == OPCUA::StatusCode::ALL_OK) {
 				return genericValue;
@@ -233,13 +232,13 @@ class OpcUaClientImpl implements OpcUaClient {
 			return «entity.type.cppDefaultValue»;
 		}
 		OPCUA::StatusCode «objectName»::get«entity.name.toFirstUpper»(«entity.type.cppType» &«entity.name.toFirstLower») const {
-			OPCUA::ValueType genericValue;
+			OPCUA::Variant genericValue;
 			OPCUA::StatusCode status = getVariableCurrentValue("«entity.name»", genericValue);
 			«entity.name.toFirstLower» = genericValue«IF entity.type.equals("String")».toString()«ENDIF»;
 			return status;
 		}
 		OPCUA::StatusCode «objectName»::get«entity.name.toFirstUpper»Wait(«entity.type.cppType» &«entity.name.toFirstLower») {
-			OPCUA::ValueType genericValue;
+			OPCUA::Variant genericValue;
 			OPCUA::StatusCode status = getVariableNextValue("«entity.name»", genericValue);
 			«entity.name.toFirstLower» = genericValue«IF entity.type.equals("String")».toString()«ENDIF»;
 			return status;
@@ -256,12 +255,12 @@ class OpcUaClientImpl implements OpcUaClient {
 		«FOR method: methodList»
 		 OPCUA::StatusCode «objectName»::call«method.name.toFirstUpper»(«method.cppMethodArgumentsDef»)
 		 {
-		 	std::vector<OPCUA::ValueType> inputArguments(«method.inputArguments.size»);
+		 	std::vector<OPCUA::Variant> inputArguments(«method.inputArguments.size»);
 		 	«var count1=-1»
 		 	«FOR arg: method.inputArguments»
 		 	inputArguments[«count1=count1+1»] = «arg.name»;
 		 	«ENDFOR»
-		 	std::vector<OPCUA::ValueType> outputArguments;
+		 	std::vector<OPCUA::Variant> outputArguments;
 		 	OPCUA::StatusCode status = callMethod(std::string("«method.name»"), inputArguments, outputArguments);
 		 	if(status == OPCUA::StatusCode::ALL_OK)
 		 	{
@@ -316,12 +315,12 @@ class OpcUaClientImpl implements OpcUaClient {
 	
 	override compileOpcUa_DeviceClient_Test_CMakeListsContent(String objectName)
 	'''
-		CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+		CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 		
 		PROJECT(«objectName»ClientTest)
 		
 		# find Open62541CppWrapper as the main dependency
-		# FIND_PACKAGE(Open62541CppWrapper)
+		FIND_PACKAGE(Open62541CppWrapper 1.0)
 		
 		# setup default include directoy
 		INCLUDE_DIRECTORIES(
@@ -339,7 +338,7 @@ class OpcUaClientImpl implements OpcUaClient {
 		ADD_EXECUTABLE(${PROJECT_NAME} ${SERVER_SRCS})
 		TARGET_LINK_LIBRARIES(${PROJECT_NAME} Open62541CppWrapper)
 		SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES
-		    CXX_STANDARD 11
+		    CXX_STANDARD 14
 		)
 	'''
 	

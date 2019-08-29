@@ -44,7 +44,6 @@ import org.open62541.xml.compiler.OpcUaXmlParser.SeRoNetARGUMENT
 class OpcUaServerImpl implements  OpcUaServer {
 	@Inject extension CopyrightHelpers
 	@Inject extension OpcUaObjectInterfaceImpl
-	@Inject extension Open62541GenericServerImpl
 	@Inject extension OpcUaXmlParser
 	
 	override getOpcUaDevice_Server_HeaderFileName(String objectName) { "OpcUa"+objectName + ".hh" }
@@ -58,7 +57,7 @@ class OpcUaServerImpl implements  OpcUaServer {
 	#ifndef _«objectName.toUpperCase»_HH
 	#define _«objectName.toUpperCase»_HH
 	
-	#include <«opcUa_GenericServer_HeaderFileName»>
+	#include <OpcUaGenericServer.hh>
 	
 	#include "«objectName.getOpcUaDevice_Interface_HeaderFileName()»"
 	
@@ -92,7 +91,7 @@ class OpcUaServerImpl implements  OpcUaServer {
 		 *  @param value output argument receives the new value of the OPC UA variable
 		 *
 		 */
-		virtual void handleOnRead(const std::string &browseName, ValueType &value) override;
+		virtual void handleOnRead(const std::string &browseName, Variant &value) override;
 	
 		/** this method notifies about write requests from a remote client for the provided variable name
 		 *
@@ -103,7 +102,7 @@ class OpcUaServerImpl implements  OpcUaServer {
 		 *  @param value the new value of the OPC UA variable
 		 *
 		 */
-		virtual void handleOnWrite(const std::string &browseName, const ValueType &value) override;
+		virtual void handleOnWrite(const std::string &browseName, const Variant &value) override;
 	
 		/** this method notifies about remote method calls from a remote client for the provided OPC UA Method name
 		 *
@@ -115,7 +114,7 @@ class OpcUaServerImpl implements  OpcUaServer {
 		 *  @param outputs a reference to a vector to store the resulting output-argument-values
 		 *
 		 */
-		virtual void handleMethodCall(const std::string &browseName, const std::vector<ValueType> &inputs, std::vector<ValueType> &outputs) override;
+		virtual void handleMethodCall(const std::string &browseName, const std::vector<Variant> &inputs, std::vector<Variant> &outputs) override;
 		
 	public:
 		«objectName»(«objectName»Interface *controller, const unsigned short &portNumber=4840, const bool &activateSignalHandler=true);
@@ -163,12 +162,12 @@ class OpcUaServerImpl implements  OpcUaServer {
 		
 		«FOR method: methodList»
 		// add the method «method.name»
-		std::map<std::string, OPCUA::ValueType> «method.name»InputArguments;
+		std::map<std::string, OPCUA::Variant> «method.name»InputArguments;
 		«FOR input: method.inputArguments»
 		«method.name»InputArguments["«input.name»"] = «input.UADataTypeDefaultValues»;
 		«ENDFOR»
 		
-		std::map<std::string, OPCUA::ValueType> «method.name»OutputArguments;
+		std::map<std::string, OPCUA::Variant> «method.name»OutputArguments;
 		«FOR output: method.outputArguments»
 		«method.name»OutputArguments["«output.name»"] = «output.UADataTypeDefaultValues»;
 		«ENDFOR»
@@ -182,7 +181,7 @@ class OpcUaServerImpl implements  OpcUaServer {
 		return true;
 	}
 	
-	void «objectName»::handleOnRead(const std::string &browseName, ValueType &value)
+	void «objectName»::handleOnRead(const std::string &browseName, Variant &value)
 	{
 		«FOR entity: entityList»
 		«IF entity!=entityList.head»} else «ENDIF»if(browseName == "«entity.name»") {
@@ -194,7 +193,7 @@ class OpcUaServerImpl implements  OpcUaServer {
 		«ENDFOR»
 	}
 	
-	void «objectName»::handleOnWrite(const std::string &browseName, const ValueType &value)
+	void «objectName»::handleOnWrite(const std::string &browseName, const Variant &value)
 	{
 		// propagate the write calls to respective upcalls (only if write access is activated)
 		«FOR entity: entityList.filterWritableEntities»
@@ -204,7 +203,7 @@ class OpcUaServerImpl implements  OpcUaServer {
 		«ENDFOR»
 	}
 	
-	void «objectName»::handleMethodCall(const std::string &browseName, const std::vector<ValueType> &inputs, std::vector<ValueType> &outputs)
+	void «objectName»::handleMethodCall(const std::string &browseName, const std::vector<Variant> &inputs, std::vector<Variant> &outputs)
 	{
 		«FOR method: methodList»
 		«IF method!=methodList.head»} else «ENDIF»if(browseName == "«method.name»") {
@@ -214,7 +213,7 @@ class OpcUaServerImpl implements  OpcUaServer {
 				«var count=-1»
 				«FOR input: method.inputArguments»
 				«IF input.DataTypeIdentifier == SeRoNetARGUMENT.UA_TYPES_STRING»
-				«input.DataTypeString» «input.name» = static_cast<const char*>(inputs[«count=count+1»]);
+				«input.DataTypeString» «input.name» = inputs[«count=count+1»].toString();
 				«ELSE»
 				«input.DataTypeString» «input.name» = inputs[«count=count+1»];
 				«ENDIF»

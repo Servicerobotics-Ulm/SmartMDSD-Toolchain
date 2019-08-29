@@ -172,7 +172,7 @@ class CoordinationInterfaceGeneratorImpl extends AbstractGenerator {
 	
 	# find SmartSoft package
 	#FIND_SMARTSOFT(3.0)
-	FIND_PACKAGE(AceSmartSoft PATHS $ENV{SMART_ROOT_ACE}/build)
+	FIND_PACKAGE(AceSmartSoft PATHS $ENV{SMART_ROOT_ACE}/modules)
 	
 	# these are the regular includes (add your own includes, if needed)
 	INCLUDE_DIRECTORIES(

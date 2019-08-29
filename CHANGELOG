@@ -1,3 +1,11 @@
+SmartMDSD Toolchain v3.10
+	* Add a Universal Intro specification for the Eclipse Welcome Page (see Help->Welcome)
+	* Add new step-by-step cheatsheets for creating DomainModels, Component, and System projects
+	* Update the Plain OPC UA code generator to use the new (external) Open62541CppWrapper library
+	* Small improvements for the Plain OPC UA modeling (such as the new feature to specify the root object path)
+	* New context menu enty to open the currenly selected folder (from the SmartMDSD Explorer) in an external Linux Terminal
+-- Thu, 29 Aug. 2019
+
 SmartMDSD Toolchain v3.9
 	* Upgraded to the new Eclipse base-installation version 2018-12
 	* Major update of the User Interface (UI), see also Release Notes

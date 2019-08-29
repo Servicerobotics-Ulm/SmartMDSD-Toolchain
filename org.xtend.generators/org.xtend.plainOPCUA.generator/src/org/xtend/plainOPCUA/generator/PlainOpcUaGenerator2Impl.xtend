@@ -49,7 +49,6 @@ class PlainOpcUaGenerator2Impl extends AbstractGenerator {
 	// Plain OPC UA extensions
 	@Inject extension PlainOpcUaDeviceClient
 	@Inject extension PlainOpcUaStatusServer
-	@Inject extension PlainOpcUaHelpers
 	@Inject extension PlainOpcUaComponentExtension
 	
 	override doGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
@@ -70,40 +69,26 @@ class PlainOpcUaGenerator2Impl extends AbstractGenerator {
 			)
 			
 			// generate related classes for Plain OPC UA Ports
-			var hasPlainOpcUaClientPorts = false
 			for(opcUaDevClient: comp.elements.filter(OpcUaDeviceClient)) {
 				opcUaDevClient.compilePlainOpcUaDeviceClient(fsa)
-				hasPlainOpcUaClientPorts = true;
 			}
-			var hasPlainOpcUaServerPorts = false
 			for(opcUaStatusServer: comp.elements.filter(OpcUaReadServer)) {
 				opcUaStatusServer.compilePlainOpcUaReadServer(fsa)
-				hasPlainOpcUaServerPorts = true
-			}
-			if(hasPlainOpcUaClientPorts || hasPlainOpcUaServerPorts) {
-				// Generate StatusCode and ValueType helper classes
-				fsa.generatePlainOpcUaHelpers
-				if(hasPlainOpcUaClientPorts == true) {
-					fsa.generatePlainOpcUaGenericClient
-				}
-				if(hasPlainOpcUaServerPorts == true) {
-					fsa.generatePlainOpcUaGenericServer
-				}
 			}
 		}
 	}
 	
 	def compileCMakeFile(ComponentDefinition component) 
 	'''
-	CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+	CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 	
-	FIND_PACKAGE(open62541 QUIET PATHS /usr/local/lib/cmake)
+	FIND_PACKAGE(Open62541CppWrapper 1.0 QUIET)
 
-	IF(open62541_FOUND)
+	IF(Open62541CppWrapper_FOUND)
 		SET(CMAKE_CXX_STANDARD 14)
 		INCLUDE_DIRECTORIES(${CMAKE_CURRENT_LIST_DIR})
 		FILE(GLOB PLAIN_OPCUA_SRCS ${CMAKE_CURRENT_LIST_DIR}/*.cc)
-	ENDIF(open62541_FOUND)
+	ENDIF(Open62541CppWrapper_FOUND)
 	'''
 	
 }
