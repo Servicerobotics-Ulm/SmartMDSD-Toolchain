@@ -164,12 +164,19 @@ class OpcUaServerImpl implements  OpcUaServer {
 		// add the method «method.name»
 		std::map<std::string, OPCUA::Variant> «method.name»InputArguments;
 		«FOR input: method.inputArguments»
-		«method.name»InputArguments["«input.name»"] = «input.UADataTypeDefaultValues»;
+			«IF (input.ValueRank == -1) »
+				«method.name»InputArguments["«input.name»"] = «input.UADataTypeDefaultValues»;				
+			«ELSE»
+				«method.name»InputArguments["«input.name»"] = std::vector<«input.DataTypeString»>(«input.ArrayDimensions»,«input.UADataTypeDefaultValues»);
+			«ENDIF»
 		«ENDFOR»
-		
 		std::map<std::string, OPCUA::Variant> «method.name»OutputArguments;
 		«FOR output: method.outputArguments»
-		«method.name»OutputArguments["«output.name»"] = «output.UADataTypeDefaultValues»;
+			«IF (output.ValueRank == -1) »
+				«method.name»OutputArguments["«output.name»"] = «output.UADataTypeDefaultValues»;				
+			«ELSE»
+				«method.name»OutputArguments["«output.name»"] = std::vector<«output.DataTypeString»>(«output.ArrayDimensions»,«output.UADataTypeDefaultValues»);
+			«ENDIF»		
 		«ENDFOR»
 		
 		if(addMethodNode("«method.name»", «method.name»InputArguments, «method.name»OutputArguments) != true) {
