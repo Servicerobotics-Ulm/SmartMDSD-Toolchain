@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,32 +15,7 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 grammar org.xtext.component.componentDefinition.ComponentDefinition with org.xtext.service.roboticMiddleware.RoboticMiddleware
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
@@ -68,6 +42,7 @@ ServiceRepoImport returns component::ServiceRepoImport:
 ;
 
 ComponentDefinition returns component::ComponentDefinition:
+	(documentation=DOCU_COMMENT)?
 	'ComponentDefinition' name=ID ('logo' logo=STRING)?
 	'{'
 		(elements+=AbstractComponentElement)*
@@ -98,6 +73,7 @@ ComponentPort returns component::ComponentPort:
 
 
 RequestPort returns component::RequestPort: 
+	(documentation=DOCU_COMMENT)?
 	'RequestPort' name=ID 
 	'implements' service=[serviceDefinition::TwoWayCommunicationService|FQN] 
 	'{'
@@ -107,6 +83,7 @@ RequestPort returns component::RequestPort:
 
 
 OutputPort returns component::OutputPort:
+	(documentation=DOCU_COMMENT)?
 	'OutputPort' name=ID 
 	'implements' service=[serviceDefinition::OneWayCommunicationService|FQN] 
 	'realizedBy' activity=[component::Activity|FQN]
@@ -115,13 +92,15 @@ OutputPort returns component::OutputPort:
 	'}'
 ;
 
-AnswerPort returns component::AnswerPort: 
+AnswerPort returns component::AnswerPort:
+	(documentation=DOCU_COMMENT)? 
 	'AnswerPort' name=ID 'implements' service=[serviceDefinition::TwoWayCommunicationService|FQN] '{'
 		extensions+=ComponentPortExtension*
 	'}'
 ;
 
 InputPort returns component::InputPort:
+	(documentation=DOCU_COMMENT)?
 	'InputPort' name=ID 'implements' service=[serviceDefinition::OneWayCommunicationService|FQN] '{'
 		extensions+=ComponentPortExtension*
 	'}'
@@ -266,6 +245,7 @@ MixedPortYARP returns seronet::MixedPortYARP:
 
 
 CoordinationSlavePort returns coordination::CoordinationSlavePort: 
+	(documentation=DOCU_COMMENT)?
 	'CoordinationSlavePort' name=ID 'implements' service=[serviceDefinition::CoordinationServiceDefinition|FQN] '{'
 		(elements+=AbstractCoordinationElement)*
 	'}'
@@ -286,6 +266,7 @@ CommunicationServiceUsageRealization returns coordination::CommunicationServiceU
 
 PublicOperationMode returns coordination::PublicOperationMode:
 	{coordination::PublicOperationMode}
+	(documentation=DOCU_COMMENT)?
 	(isDefaultInit?='default')? 'PublicOperationMode' mode=[modes::ComponentModeDefinition|FQN] '{'
 		('activates' '(' activates+=[coordination::PrivateOperationMode] (',' activates+=[coordination::PrivateOperationMode])* ')')?
 	'}'

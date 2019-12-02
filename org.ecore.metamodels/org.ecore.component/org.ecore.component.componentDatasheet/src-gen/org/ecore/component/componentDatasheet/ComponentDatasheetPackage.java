@@ -4,6 +4,7 @@ package org.ecore.component.componentDatasheet;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -70,86 +71,13 @@ public interface ComponentDatasheetPackage extends EPackage {
 	int COMPONENT_DATASHEET = 0;
 
 	/**
-	 * The feature id for the '<em><b>License</b></em>' containment reference.
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_DATASHEET__LICENSE = GenericDatasheetPackage.GENERIC_DATASHEET__LICENSE;
-
-	/**
-	 * The feature id for the '<em><b>Short Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_DATASHEET__SHORT_DESCRIPTION = GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Long Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_DATASHEET__LONG_DESCRIPTION = GenericDatasheetPackage.GENERIC_DATASHEET__LONG_DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Supplier Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_DATASHEET__SUPPLIER_DESCRIPTION = GenericDatasheetPackage.GENERIC_DATASHEET__SUPPLIER_DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Homepage</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_DATASHEET__HOMEPAGE = GenericDatasheetPackage.GENERIC_DATASHEET__HOMEPAGE;
-
-	/**
-	 * The feature id for the '<em><b>Base URI</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_DATASHEET__BASE_URI = GenericDatasheetPackage.GENERIC_DATASHEET__BASE_URI;
-
-	/**
-	 * The feature id for the '<em><b>Trl</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_DATASHEET__TRL = GenericDatasheetPackage.GENERIC_DATASHEET__TRL;
-
-	/**
-	 * The feature id for the '<em><b>Purpose Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_DATASHEET__PURPOSE_DESCRIPTION = GenericDatasheetPackage.GENERIC_DATASHEET_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Hardware Requirement Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_DATASHEET__HARDWARE_REQUIREMENT_DESCRIPTION = GenericDatasheetPackage.GENERIC_DATASHEET_FEATURE_COUNT
-			+ 1;
+	int COMPONENT_DATASHEET__ELEMENTS = GenericDatasheetPackage.GENERIC_DATASHEET_MODEL__ELEMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' reference.
@@ -158,7 +86,16 @@ public interface ComponentDatasheetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_DATASHEET__COMPONENT = GenericDatasheetPackage.GENERIC_DATASHEET_FEATURE_COUNT + 2;
+	int COMPONENT_DATASHEET__COMPONENT = GenericDatasheetPackage.GENERIC_DATASHEET_MODEL_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_DATASHEET__NAME = GenericDatasheetPackage.GENERIC_DATASHEET_MODEL_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Component Datasheet</em>' class.
@@ -167,7 +104,7 @@ public interface ComponentDatasheetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_DATASHEET_FEATURE_COUNT = GenericDatasheetPackage.GENERIC_DATASHEET_FEATURE_COUNT + 3;
+	int COMPONENT_DATASHEET_FEATURE_COUNT = GenericDatasheetPackage.GENERIC_DATASHEET_MODEL_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Component Datasheet</em>' class.
@@ -176,7 +113,73 @@ public interface ComponentDatasheetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_DATASHEET_OPERATION_COUNT = GenericDatasheetPackage.GENERIC_DATASHEET_OPERATION_COUNT + 0;
+	int COMPONENT_DATASHEET_OPERATION_COUNT = GenericDatasheetPackage.GENERIC_DATASHEET_MODEL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.ecore.component.componentDatasheet.impl.ComponentPortDatasheetImpl <em>Component Port Datasheet</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.ecore.component.componentDatasheet.impl.ComponentPortDatasheetImpl
+	 * @see org.ecore.component.componentDatasheet.impl.ComponentDatasheetPackageImpl#getComponentPortDatasheet()
+	 * @generated
+	 */
+	int COMPONENT_PORT_DATASHEET = 1;
+
+	/**
+	 * The feature id for the '<em><b>Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_PORT_DATASHEET__PORT = GenericDatasheetPackage.ABSTRACT_DATASHEET_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_PORT_DATASHEET__PROPERTIES = GenericDatasheetPackage.ABSTRACT_DATASHEET_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_PORT_DATASHEET__NAME = GenericDatasheetPackage.ABSTRACT_DATASHEET_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Component Port Datasheet</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_PORT_DATASHEET_FEATURE_COUNT = GenericDatasheetPackage.ABSTRACT_DATASHEET_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Component Port Datasheet</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_PORT_DATASHEET_OPERATION_COUNT = GenericDatasheetPackage.ABSTRACT_DATASHEET_ELEMENT_OPERATION_COUNT
+			+ 0;
+
+	/**
+	 * The meta object id for the '{@link org.ecore.component.componentDatasheet.ComponentDatasheetDefaultProperties <em>Default Properties</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.ecore.component.componentDatasheet.ComponentDatasheetDefaultProperties
+	 * @see org.ecore.component.componentDatasheet.impl.ComponentDatasheetPackageImpl#getComponentDatasheetDefaultProperties()
+	 * @generated
+	 */
+	int COMPONENT_DATASHEET_DEFAULT_PROPERTIES = 2;
 
 	/**
 	 * Returns the meta object for class '{@link org.ecore.component.componentDatasheet.ComponentDatasheet <em>Component Datasheet</em>}'.
@@ -189,28 +192,6 @@ public interface ComponentDatasheetPackage extends EPackage {
 	EClass getComponentDatasheet();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.component.componentDatasheet.ComponentDatasheet#getPurposeDescription <em>Purpose Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Purpose Description</em>'.
-	 * @see org.ecore.component.componentDatasheet.ComponentDatasheet#getPurposeDescription()
-	 * @see #getComponentDatasheet()
-	 * @generated
-	 */
-	EAttribute getComponentDatasheet_PurposeDescription();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.component.componentDatasheet.ComponentDatasheet#getHardwareRequirementDescription <em>Hardware Requirement Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Hardware Requirement Description</em>'.
-	 * @see org.ecore.component.componentDatasheet.ComponentDatasheet#getHardwareRequirementDescription()
-	 * @see #getComponentDatasheet()
-	 * @generated
-	 */
-	EAttribute getComponentDatasheet_HardwareRequirementDescription();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.ecore.component.componentDatasheet.ComponentDatasheet#getComponent <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -220,6 +201,70 @@ public interface ComponentDatasheetPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentDatasheet_Component();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.ecore.component.componentDatasheet.ComponentDatasheet#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.ecore.component.componentDatasheet.ComponentDatasheet#getName()
+	 * @see #getComponentDatasheet()
+	 * @generated
+	 */
+	EAttribute getComponentDatasheet_Name();
+
+	/**
+	 * Returns the meta object for class '{@link org.ecore.component.componentDatasheet.ComponentPortDatasheet <em>Component Port Datasheet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Component Port Datasheet</em>'.
+	 * @see org.ecore.component.componentDatasheet.ComponentPortDatasheet
+	 * @generated
+	 */
+	EClass getComponentPortDatasheet();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.ecore.component.componentDatasheet.ComponentPortDatasheet#getPort <em>Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Port</em>'.
+	 * @see org.ecore.component.componentDatasheet.ComponentPortDatasheet#getPort()
+	 * @see #getComponentPortDatasheet()
+	 * @generated
+	 */
+	EReference getComponentPortDatasheet_Port();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.ecore.component.componentDatasheet.ComponentPortDatasheet#getProperties <em>Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Properties</em>'.
+	 * @see org.ecore.component.componentDatasheet.ComponentPortDatasheet#getProperties()
+	 * @see #getComponentPortDatasheet()
+	 * @generated
+	 */
+	EReference getComponentPortDatasheet_Properties();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.ecore.component.componentDatasheet.ComponentPortDatasheet#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.ecore.component.componentDatasheet.ComponentPortDatasheet#getName()
+	 * @see #getComponentPortDatasheet()
+	 * @generated
+	 */
+	EAttribute getComponentPortDatasheet_Name();
+
+	/**
+	 * Returns the meta object for enum '{@link org.ecore.component.componentDatasheet.ComponentDatasheetDefaultProperties <em>Default Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Default Properties</em>'.
+	 * @see org.ecore.component.componentDatasheet.ComponentDatasheetDefaultProperties
+	 * @generated
+	 */
+	EEnum getComponentDatasheetDefaultProperties();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -255,29 +300,64 @@ public interface ComponentDatasheetPackage extends EPackage {
 		EClass COMPONENT_DATASHEET = eINSTANCE.getComponentDatasheet();
 
 		/**
-		 * The meta object literal for the '<em><b>Purpose Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_DATASHEET__PURPOSE_DESCRIPTION = eINSTANCE.getComponentDatasheet_PurposeDescription();
-
-		/**
-		 * The meta object literal for the '<em><b>Hardware Requirement Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_DATASHEET__HARDWARE_REQUIREMENT_DESCRIPTION = eINSTANCE
-				.getComponentDatasheet_HardwareRequirementDescription();
-
-		/**
 		 * The meta object literal for the '<em><b>Component</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference COMPONENT_DATASHEET__COMPONENT = eINSTANCE.getComponentDatasheet_Component();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_DATASHEET__NAME = eINSTANCE.getComponentDatasheet_Name();
+
+		/**
+		 * The meta object literal for the '{@link org.ecore.component.componentDatasheet.impl.ComponentPortDatasheetImpl <em>Component Port Datasheet</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecore.component.componentDatasheet.impl.ComponentPortDatasheetImpl
+		 * @see org.ecore.component.componentDatasheet.impl.ComponentDatasheetPackageImpl#getComponentPortDatasheet()
+		 * @generated
+		 */
+		EClass COMPONENT_PORT_DATASHEET = eINSTANCE.getComponentPortDatasheet();
+
+		/**
+		 * The meta object literal for the '<em><b>Port</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_PORT_DATASHEET__PORT = eINSTANCE.getComponentPortDatasheet_Port();
+
+		/**
+		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_PORT_DATASHEET__PROPERTIES = eINSTANCE.getComponentPortDatasheet_Properties();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_PORT_DATASHEET__NAME = eINSTANCE.getComponentPortDatasheet_Name();
+
+		/**
+		 * The meta object literal for the '{@link org.ecore.component.componentDatasheet.ComponentDatasheetDefaultProperties <em>Default Properties</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecore.component.componentDatasheet.ComponentDatasheetDefaultProperties
+		 * @see org.ecore.component.componentDatasheet.impl.ComponentDatasheetPackageImpl#getComponentDatasheetDefaultProperties()
+		 * @generated
+		 */
+		EEnum COMPONENT_DATASHEET_DEFAULT_PROPERTIES = eINSTANCE.getComponentDatasheetDefaultProperties();
 
 	}
 

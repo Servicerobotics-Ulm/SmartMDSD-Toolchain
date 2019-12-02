@@ -13,7 +13,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.ecore.base.genericDatasheet.provider.GenericDatasheetItemProvider;
+import org.ecore.base.genericDatasheet.provider.GenericDatasheetModelItemProvider;
 
 import org.ecore.service.domainModelsDatasheet.DomainModelsDatasheet;
 import org.ecore.service.domainModelsDatasheet.DomainModelsDatasheetPackage;
@@ -24,7 +24,7 @@ import org.ecore.service.domainModelsDatasheet.DomainModelsDatasheetPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DomainModelsDatasheetItemProvider extends GenericDatasheetItemProvider {
+public class DomainModelsDatasheetItemProvider extends GenericDatasheetModelItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

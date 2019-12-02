@@ -3,8 +3,7 @@
 package org.ecore.service.serviceDefinition;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
+import org.ecore.base.documentation.AbstractDocumentedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,14 +16,13 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.ecore.service.serviceDefinition.AbstractServiceDefinition#getName <em>Name</em>}</li>
  *   <li>{@link org.ecore.service.serviceDefinition.AbstractServiceDefinition#getProperties <em>Properties</em>}</li>
- *   <li>{@link org.ecore.service.serviceDefinition.AbstractServiceDefinition#getPurposeDescription <em>Purpose Description</em>}</li>
  * </ul>
  *
  * @see org.ecore.service.serviceDefinition.ServiceDefinitionPackage#getAbstractServiceDefinition()
  * @model abstract="true"
  * @generated
  */
-public interface AbstractServiceDefinition extends EObject {
+public interface AbstractServiceDefinition extends AbstractDocumentedElement {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,31 +64,5 @@ public interface AbstractServiceDefinition extends EObject {
 	 * @generated
 	 */
 	EList<ServiceProperty> getProperties();
-
-	/**
-	 * Returns the value of the '<em><b>Purpose Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Purpose Description</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Purpose Description</em>' attribute.
-	 * @see #setPurposeDescription(String)
-	 * @see org.ecore.service.serviceDefinition.ServiceDefinitionPackage#getAbstractServiceDefinition_PurposeDescription()
-	 * @model
-	 * @generated
-	 */
-	String getPurposeDescription();
-
-	/**
-	 * Sets the value of the '{@link org.ecore.service.serviceDefinition.AbstractServiceDefinition#getPurposeDescription <em>Purpose Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Purpose Description</em>' attribute.
-	 * @see #getPurposeDescription()
-	 * @generated
-	 */
-	void setPurposeDescription(String value);
 
 } // AbstractServiceDefinition

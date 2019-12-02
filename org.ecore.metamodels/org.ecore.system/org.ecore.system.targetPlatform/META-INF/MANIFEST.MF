@@ -5,6 +5,7 @@ Bundle-SymbolicName: org.ecore.system.targetPlatform;singleton:=true
 Bundle-Version: 3.4.0.qualifier
 Bundle-ClassPath: .
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ org.ecore.base.documentation;visibility:=reexport,
  org.eclipse.core.runtime,
  org.ecore.service.roboticMiddleware;visibility:=reexport
 Bundle-ActivationPolicy: lazy

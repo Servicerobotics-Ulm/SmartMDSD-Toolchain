@@ -21,10 +21,12 @@ Require-Bundle: org.xtext.system.componentArchitecture,
  org.xtext.base.utils,
  org.xtext.service.roboticMiddleware.ui,
  org.ecore.component.seronetExtension,
- org.ecore.system.systemParameter
+ org.ecore.system.systemParameter,
+ org.xtext.base.docuterminals.ui
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.system.componentArchitecture.ui.internal,
  org.xtext.system.componentArchitecture.ui.quickfix,
  org.xtext.system.componentArchitecture.ui.contentassist
 Bundle-Activator: org.xtext.system.componentArchitecture.ui.internal.ComponentArchitectureActivator
+Automatic-Module-Name: org.xtext.system.componentArchitecture.ui

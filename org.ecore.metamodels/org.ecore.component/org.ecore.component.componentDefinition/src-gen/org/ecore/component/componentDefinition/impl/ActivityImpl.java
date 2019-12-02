@@ -66,6 +66,7 @@ public class ActivityImpl extends ComponentSubNodeImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ActivityExtension> getExtensions() {
 		if (extensions == null) {
 			extensions = new EObjectContainmentEList<ActivityExtension>(ActivityExtension.class, this,

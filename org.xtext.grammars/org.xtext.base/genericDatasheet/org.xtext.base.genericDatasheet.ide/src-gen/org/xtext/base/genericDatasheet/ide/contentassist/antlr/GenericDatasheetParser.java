@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2019 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -14,34 +13,9 @@
 //        89075 Ulm
 //        Germany
 //
-//  This file is part of the SmartMDSD Toolchain V3. 
+//  This file is part of the SmartMDSD Toolchain V3.
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.base.genericDatasheet.ide.contentassist.antlr;
 
 import com.google.common.collect.ImmutableMap;
@@ -72,33 +46,23 @@ public class GenericDatasheetParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, GenericDatasheetGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getAbstractLicenseAccess().getAlternatives(), "rule__AbstractLicense__Alternatives");
-			builder.put(grammarAccess.getTRLAccess().getAlternatives(), "rule__TRL__Alternatives");
-			builder.put(grammarAccess.getGenericDatasheetAccess().getGroup_0(), "rule__GenericDatasheet__Group_0__0");
-			builder.put(grammarAccess.getGenericDatasheetAccess().getGroup_1(), "rule__GenericDatasheet__Group_1__0");
-			builder.put(grammarAccess.getGenericDatasheetAccess().getGroup_2(), "rule__GenericDatasheet__Group_2__0");
-			builder.put(grammarAccess.getGenericDatasheetAccess().getGroup_3(), "rule__GenericDatasheet__Group_3__0");
-			builder.put(grammarAccess.getGenericDatasheetAccess().getGroup_4(), "rule__GenericDatasheet__Group_4__0");
-			builder.put(grammarAccess.getGenericDatasheetAccess().getGroup_5(), "rule__GenericDatasheet__Group_5__0");
-			builder.put(grammarAccess.getGenericDatasheetAccess().getGroup_6(), "rule__GenericDatasheet__Group_6__0");
-			builder.put(grammarAccess.getSpdxLicenseAccess().getGroup(), "rule__SpdxLicense__Group__0");
-			builder.put(grammarAccess.getProprietaryLicenseAccess().getGroup(), "rule__ProprietaryLicense__Group__0");
-			builder.put(grammarAccess.getProprietaryLicenseAccess().getGroup_3_0(), "rule__ProprietaryLicense__Group_3_0__0");
-			builder.put(grammarAccess.getProprietaryLicenseAccess().getGroup_3_1(), "rule__ProprietaryLicense__Group_3_1__0");
-			builder.put(grammarAccess.getProprietaryLicenseAccess().getGroup_3_2(), "rule__ProprietaryLicense__Group_3_2__0");
-			builder.put(grammarAccess.getGenericDatasheetAccess().getBaseURIAssignment_0_2(), "rule__GenericDatasheet__BaseURIAssignment_0_2");
-			builder.put(grammarAccess.getGenericDatasheetAccess().getShortDescriptionAssignment_1_2(), "rule__GenericDatasheet__ShortDescriptionAssignment_1_2");
-			builder.put(grammarAccess.getGenericDatasheetAccess().getLongDescriptionAssignment_2_2(), "rule__GenericDatasheet__LongDescriptionAssignment_2_2");
-			builder.put(grammarAccess.getGenericDatasheetAccess().getSupplierDescriptionAssignment_3_2(), "rule__GenericDatasheet__SupplierDescriptionAssignment_3_2");
-			builder.put(grammarAccess.getGenericDatasheetAccess().getHomepageAssignment_4_2(), "rule__GenericDatasheet__HomepageAssignment_4_2");
-			builder.put(grammarAccess.getGenericDatasheetAccess().getTrlAssignment_5_2(), "rule__GenericDatasheet__TrlAssignment_5_2");
-			builder.put(grammarAccess.getGenericDatasheetAccess().getLicenseAssignment_6_2(), "rule__GenericDatasheet__LicenseAssignment_6_2");
-			builder.put(grammarAccess.getSpdxLicenseAccess().getLicenseIDAssignment_2(), "rule__SpdxLicense__LicenseIDAssignment_2");
-			builder.put(grammarAccess.getProprietaryLicenseAccess().getNameAssignment_3_0_2(), "rule__ProprietaryLicense__NameAssignment_3_0_2");
-			builder.put(grammarAccess.getProprietaryLicenseAccess().getFullTextAssignment_3_1_2(), "rule__ProprietaryLicense__FullTextAssignment_3_1_2");
-			builder.put(grammarAccess.getProprietaryLicenseAccess().getUrlAssignment_3_2_2(), "rule__ProprietaryLicense__UrlAssignment_3_2_2");
-			builder.put(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), "rule__GenericDatasheet__UnorderedGroup");
-			builder.put(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3(), "rule__ProprietaryLicense__UnorderedGroup_3");
+			builder.put(grammarAccess.getAbstractDatasheetElementAccess().getAlternatives(), "rule__AbstractDatasheetElement__Alternatives");
+			builder.put(grammarAccess.getMandatoryDatasheetElementNamesAccess().getAlternatives(), "rule__MandatoryDatasheetElementNames__Alternatives");
+			builder.put(grammarAccess.getDatasheetPropertyAccess().getGroup(), "rule__DatasheetProperty__Group__0");
+			builder.put(grammarAccess.getDatasheetPropertyAccess().getGroup_3_0(), "rule__DatasheetProperty__Group_3_0__0");
+			builder.put(grammarAccess.getDatasheetPropertyAccess().getGroup_3_0_2(), "rule__DatasheetProperty__Group_3_0_2__0");
+			builder.put(grammarAccess.getDatasheetPropertyAccess().getGroup_3_1(), "rule__DatasheetProperty__Group_3_1__0");
+			builder.put(grammarAccess.getDatasheetPropertyAccess().getGroup_3_2(), "rule__DatasheetProperty__Group_3_2__0");
+			builder.put(grammarAccess.getMandatoryDatasheetElementAccess().getGroup(), "rule__MandatoryDatasheetElement__Group__0");
+			builder.put(grammarAccess.getGenericDatasheetModelAccess().getElementsAssignment(), "rule__GenericDatasheetModel__ElementsAssignment");
+			builder.put(grammarAccess.getDatasheetPropertyAccess().getNameAssignment_1(), "rule__DatasheetProperty__NameAssignment_1");
+			builder.put(grammarAccess.getDatasheetPropertyAccess().getValueAssignment_3_0_1(), "rule__DatasheetProperty__ValueAssignment_3_0_1");
+			builder.put(grammarAccess.getDatasheetPropertyAccess().getUnitAssignment_3_0_2_1(), "rule__DatasheetProperty__UnitAssignment_3_0_2_1");
+			builder.put(grammarAccess.getDatasheetPropertyAccess().getShortDescriptionAssignment_3_1_1(), "rule__DatasheetProperty__ShortDescriptionAssignment_3_1_1");
+			builder.put(grammarAccess.getDatasheetPropertyAccess().getSemanticIDAssignment_3_2_1(), "rule__DatasheetProperty__SemanticIDAssignment_3_2_1");
+			builder.put(grammarAccess.getMandatoryDatasheetElementAccess().getNameAssignment_0(), "rule__MandatoryDatasheetElement__NameAssignment_0");
+			builder.put(grammarAccess.getMandatoryDatasheetElementAccess().getValueAssignment_1(), "rule__MandatoryDatasheetElement__ValueAssignment_1");
+			builder.put(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3(), "rule__DatasheetProperty__UnorderedGroup_3");
 		}
 	}
 	

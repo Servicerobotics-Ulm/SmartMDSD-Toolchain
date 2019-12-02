@@ -7,6 +7,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.ecore.base.basicAttributes.provider.BasicAttributesEditPlugin;
+import org.ecore.base.documentation.provider.DocumentationEditPlugin;
 
 /**
  * This is the central singleton for the ParameterDefinition edit plugin.
@@ -38,7 +39,7 @@ public final class ParameterDefinitionEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public ParameterDefinitionEditPlugin() {
-		super(new ResourceLocator[] { BasicAttributesEditPlugin.INSTANCE, });
+		super(new ResourceLocator[] { BasicAttributesEditPlugin.INSTANCE, DocumentationEditPlugin.INSTANCE, });
 	}
 
 	/**

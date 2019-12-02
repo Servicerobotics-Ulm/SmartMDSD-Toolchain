@@ -74,6 +74,7 @@ public class SystemParameterFactoryImpl extends EFactoryImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SystemParamModel createSystemParamModel() {
 		SystemParamModelImpl systemParamModel = new SystemParamModelImpl();
 		return systemParamModel;
@@ -84,6 +85,7 @@ public class SystemParameterFactoryImpl extends EFactoryImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentParameterInstance createComponentParameterInstance() {
 		ComponentParameterInstanceImpl componentParameterInstance = new ComponentParameterInstanceImpl();
 		return componentParameterInstance;
@@ -94,6 +96,7 @@ public class SystemParameterFactoryImpl extends EFactoryImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterRefinement createParameterRefinement() {
 		ParameterRefinementImpl parameterRefinement = new ParameterRefinementImpl();
 		return parameterRefinement;
@@ -104,6 +107,7 @@ public class SystemParameterFactoryImpl extends EFactoryImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterStructInstance createParameterStructInstance() {
 		ParameterStructInstanceImpl parameterStructInstance = new ParameterStructInstanceImpl();
 		return parameterStructInstance;
@@ -114,6 +118,7 @@ public class SystemParameterFactoryImpl extends EFactoryImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SystemParameterPackage getSystemParameterPackage() {
 		return (SystemParameterPackage) getEPackage();
 	}

@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,32 +15,7 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.system.systemParameter.services;
 
 import com.google.inject.Inject;
@@ -62,6 +36,7 @@ import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
 import org.xtext.base.basicAttributes.services.BasicAttributesGrammarAccess;
+import org.xtext.base.docuterminals.services.DocuTerminalsGrammarAccess;
 
 @Singleton
 public class SystemParameterGrammarAccess extends AbstractGrammarElementFinder {
@@ -200,49 +175,58 @@ public class SystemParameterGrammarAccess extends AbstractGrammarElementFinder {
 	public class ParameterRefinementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.system.systemParameter.SystemParameter.ParameterRefinement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cParameterRefinementKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cParameterAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cParameterComponentParameterBaseCrossReference_1_0 = (CrossReference)cParameterAssignment_1.eContents().get(0);
-		private final RuleCall cParameterComponentParameterBaseFQNParserRuleCall_1_0_1 = (RuleCall)cParameterComponentParameterBaseCrossReference_1_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cAttributesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cAttributesAttributeRefinementParserRuleCall_3_0 = (RuleCall)cAttributesAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cDocumentationAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDocumentationDOCU_COMMENTTerminalRuleCall_0_0 = (RuleCall)cDocumentationAssignment_0.eContents().get(0);
+		private final Keyword cParameterRefinementKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cParameterAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cParameterComponentParameterBaseCrossReference_2_0 = (CrossReference)cParameterAssignment_2.eContents().get(0);
+		private final RuleCall cParameterComponentParameterBaseFQNParserRuleCall_2_0_1 = (RuleCall)cParameterComponentParameterBaseCrossReference_2_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAttributesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cAttributesAttributeRefinementParserRuleCall_4_0 = (RuleCall)cAttributesAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ParameterRefinement systemParameter::ParameterRefinement:
+		//	documentation=DOCU_COMMENT?
 		//	'ParameterRefinement' parameter=[componentParameter::ComponentParameterBase|FQN]
 		//	'{'
 		//	attributes+=AttributeRefinement*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ParameterRefinement' parameter=[componentParameter::ComponentParameterBase|FQN] '{' attributes+=AttributeRefinement*
-		//'}'
+		//documentation=DOCU_COMMENT? 'ParameterRefinement' parameter=[componentParameter::ComponentParameterBase|FQN] '{'
+		//attributes+=AttributeRefinement* '}'
 		public Group getGroup() { return cGroup; }
 		
+		//documentation=DOCU_COMMENT?
+		public Assignment getDocumentationAssignment_0() { return cDocumentationAssignment_0; }
+		
+		//DOCU_COMMENT
+		public RuleCall getDocumentationDOCU_COMMENTTerminalRuleCall_0_0() { return cDocumentationDOCU_COMMENTTerminalRuleCall_0_0; }
+		
 		//'ParameterRefinement'
-		public Keyword getParameterRefinementKeyword_0() { return cParameterRefinementKeyword_0; }
+		public Keyword getParameterRefinementKeyword_1() { return cParameterRefinementKeyword_1; }
 		
 		//parameter=[componentParameter::ComponentParameterBase|FQN]
-		public Assignment getParameterAssignment_1() { return cParameterAssignment_1; }
+		public Assignment getParameterAssignment_2() { return cParameterAssignment_2; }
 		
 		//[componentParameter::ComponentParameterBase|FQN]
-		public CrossReference getParameterComponentParameterBaseCrossReference_1_0() { return cParameterComponentParameterBaseCrossReference_1_0; }
+		public CrossReference getParameterComponentParameterBaseCrossReference_2_0() { return cParameterComponentParameterBaseCrossReference_2_0; }
 		
 		//FQN
-		public RuleCall getParameterComponentParameterBaseFQNParserRuleCall_1_0_1() { return cParameterComponentParameterBaseFQNParserRuleCall_1_0_1; }
+		public RuleCall getParameterComponentParameterBaseFQNParserRuleCall_2_0_1() { return cParameterComponentParameterBaseFQNParserRuleCall_2_0_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
 		//attributes+=AttributeRefinement*
-		public Assignment getAttributesAssignment_3() { return cAttributesAssignment_3; }
+		public Assignment getAttributesAssignment_4() { return cAttributesAssignment_4; }
 		
 		//AttributeRefinement
-		public RuleCall getAttributesAttributeRefinementParserRuleCall_3_0() { return cAttributesAttributeRefinementParserRuleCall_3_0; }
+		public RuleCall getAttributesAttributeRefinementParserRuleCall_4_0() { return cAttributesAttributeRefinementParserRuleCall_4_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	
 	
@@ -254,14 +238,18 @@ public class SystemParameterGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final BasicAttributesGrammarAccess gaBasicAttributes;
 	
+	private final DocuTerminalsGrammarAccess gaDocuTerminals;
+	
 	private final TerminalsGrammarAccess gaTerminals;
 
 	@Inject
 	public SystemParameterGrammarAccess(GrammarProvider grammarProvider,
 			BasicAttributesGrammarAccess gaBasicAttributes,
+			DocuTerminalsGrammarAccess gaDocuTerminals,
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaBasicAttributes = gaBasicAttributes;
+		this.gaDocuTerminals = gaDocuTerminals;
 		this.gaTerminals = gaTerminals;
 		this.pSystemParamModel = new SystemParamModelElements();
 		this.pComponentParameterInstance = new ComponentParameterInstanceElements();
@@ -292,6 +280,10 @@ public class SystemParameterGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public BasicAttributesGrammarAccess getBasicAttributesGrammarAccess() {
 		return gaBasicAttributes;
+	}
+	
+	public DocuTerminalsGrammarAccess getDocuTerminalsGrammarAccess() {
+		return gaDocuTerminals;
 	}
 	
 	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
@@ -327,6 +319,7 @@ public class SystemParameterGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ParameterRefinement systemParameter::ParameterRefinement:
+	//	documentation=DOCU_COMMENT?
 	//	'ParameterRefinement' parameter=[componentParameter::ComponentParameterBase|FQN]
 	//	'{'
 	//	attributes+=AttributeRefinement*
@@ -340,6 +333,7 @@ public class SystemParameterGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AttributeDefinition attr::AttributeDefinition:
+	//	documentation=DOCU_COMMENT?
 	//	name=ID ':' type=AbstractAttributeType ('=' defaultvalue=AbstractValue)? ';'?;
 	public BasicAttributesGrammarAccess.AttributeDefinitionElements getAttributeDefinitionAccess() {
 		return gaBasicAttributes.getAttributeDefinitionAccess();
@@ -350,6 +344,7 @@ public class SystemParameterGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AttributeRefinement attr::AttributeRefinement:
+	//	documentation=DOCU_COMMENT?
 	//	attribute=[attr::AttributeDefinition|FQN] '=' value=AbstractValue ';'?;
 	public BasicAttributesGrammarAccess.AttributeRefinementElements getAttributeRefinementAccess() {
 		return gaBasicAttributes.getAttributeRefinementAccess();
@@ -514,6 +509,48 @@ public class SystemParameterGrammarAccess extends AbstractGrammarElementFinder {
 		return getSingleValueAccess().getRule();
 	}
 	
+	//AbstractDocumentedElement:
+	//	{AbstractDocumentedElement} documentation=DOCU_COMMENT?;
+	public DocuTerminalsGrammarAccess.AbstractDocumentedElementElements getAbstractDocumentedElementAccess() {
+		return gaDocuTerminals.getAbstractDocumentedElementAccess();
+	}
+	
+	public ParserRule getAbstractDocumentedElementRule() {
+		return getAbstractDocumentedElementAccess().getRule();
+	}
+	
+	//@Override
+	//terminal ML_COMMENT:
+	//	'/*' !'*'->'*/';
+	public TerminalRule getML_COMMENTRule() {
+		return gaDocuTerminals.getML_COMMENTRule();
+	}
+	
+	//terminal fragment ML_DOCUMENTATION:
+	//	'/**'->'*/';
+	public TerminalRule getML_DOCUMENTATIONRule() {
+		return gaDocuTerminals.getML_DOCUMENTATIONRule();
+	}
+	
+	//@Override
+	//terminal SL_COMMENT:
+	//	'//' !'/' !('\n' | '\r')* ('\r'? '\n')?;
+	public TerminalRule getSL_COMMENTRule() {
+		return gaDocuTerminals.getSL_COMMENTRule();
+	}
+	
+	//terminal fragment SL_DOCUMENTATION:
+	//	'///' !('\n' | '\r')* ('\r'? '\n')?;
+	public TerminalRule getSL_DOCUMENTATIONRule() {
+		return gaDocuTerminals.getSL_DOCUMENTATIONRule();
+	}
+	
+	//terminal DOCU_COMMENT:
+	//	ML_DOCUMENTATION | SL_DOCUMENTATION;
+	public TerminalRule getDOCU_COMMENTRule() {
+		return gaDocuTerminals.getDOCU_COMMENTRule();
+	}
+	
 	//terminal ID:
 	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
@@ -531,18 +568,6 @@ public class SystemParameterGrammarAccess extends AbstractGrammarElementFinder {
 	//	"'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
-	}
-	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
-	public TerminalRule getML_COMMENTRule() {
-		return gaTerminals.getML_COMMENTRule();
-	}
-	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
-	public TerminalRule getSL_COMMENTRule() {
-		return gaTerminals.getSL_COMMENTRule();
 	}
 	
 	//terminal WS:

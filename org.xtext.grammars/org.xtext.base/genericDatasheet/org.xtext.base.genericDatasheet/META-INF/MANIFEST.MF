@@ -19,8 +19,9 @@ Export-Package: org.xtext.base.genericDatasheet.scoping,
  org.xtext.base.genericDatasheet.parser.antlr.internal,
  org.xtext.base.genericDatasheet.validation,
  org.xtext.base.genericDatasheet.services,
- org.xtext.base.genericDatasheet.formatting2,
  org.xtext.base.genericDatasheet.parser.antlr,
  org.xtext.base.genericDatasheet.generator,
- org.xtext.base.genericDatasheet
+ org.xtext.base.genericDatasheet,
+ org.xtext.base.genericDatasheet.formatting2
 Import-Package: org.apache.log4j
+Automatic-Module-Name: org.xtext.base.genericDatasheet

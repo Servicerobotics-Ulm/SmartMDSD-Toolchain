@@ -13,13 +13,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.ecore.base.basicAttributes.AttributeRefinement;
 
+import org.ecore.base.documentation.impl.AbstractDocumentedElementImpl;
 import org.ecore.component.componentParameter.ComponentParameterBase;
 
 import org.ecore.system.systemParameter.ParameterRefinement;
@@ -39,7 +38,7 @@ import org.ecore.system.systemParameter.SystemParameterPackage;
  *
  * @generated
  */
-public class ParameterRefinementImpl extends MinimalEObjectImpl.Container implements ParameterRefinement {
+public class ParameterRefinementImpl extends AbstractDocumentedElementImpl implements ParameterRefinement {
 	/**
 	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -84,6 +83,7 @@ public class ParameterRefinementImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentParameterBase getParameter() {
 		if (parameter != null && parameter.eIsProxy()) {
 			InternalEObject oldParameter = (InternalEObject) parameter;
@@ -111,6 +111,7 @@ public class ParameterRefinementImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParameter(ComponentParameterBase newParameter) {
 		ComponentParameterBase oldParameter = parameter;
 		parameter = newParameter;
@@ -124,6 +125,7 @@ public class ParameterRefinementImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AttributeRefinement> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectContainmentEList<AttributeRefinement>(AttributeRefinement.class, this,

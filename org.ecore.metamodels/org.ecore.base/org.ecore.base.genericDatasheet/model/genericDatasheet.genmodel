@@ -10,35 +10,43 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="GenericDatasheet" basePackage="org.ecore.base" disposableProviderFactory="true"
       extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="genericDatasheet.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="genericDatasheet.ecore#//TRL">
-      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL1"/>
-      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL2"/>
-      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL3"/>
-      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL4"/>
-      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL5"/>
-      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL6"/>
-      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL7"/>
-      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL8"/>
-      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/LEVEL9"/>
-      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TRL/UNDEFINED"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="genericDatasheet.ecore#//DefaultDatasheetProperties">
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//DefaultDatasheetProperties/Homepage"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//DefaultDatasheetProperties/SpdxLicense"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//DefaultDatasheetProperties/ProprietaryLicense"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//DefaultDatasheetProperties/Purpose"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//DefaultDatasheetProperties/TechnologyReadinessLevel"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//DefaultDatasheetProperties/Supplier"/>
     </genEnums>
-    <genClasses ecoreClass="genericDatasheet.ecore#//GenericDatasheet">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genericDatasheet.ecore#//GenericDatasheet/license"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/shortDescription"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/longDescription"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/supplierDescription"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/homepage"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/baseURI"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//GenericDatasheet/trl"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="genericDatasheet.ecore#//TechnologyReadinessLevel">
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TechnologyReadinessLevel/TRL1"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TechnologyReadinessLevel/TRL2"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TechnologyReadinessLevel/TRL3"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TechnologyReadinessLevel/TRL4"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TechnologyReadinessLevel/TRL5"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TechnologyReadinessLevel/TRL6"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TechnologyReadinessLevel/TRL7"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TechnologyReadinessLevel/TRL8"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//TechnologyReadinessLevel/TRL9"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="genericDatasheet.ecore#//MandatoryDatasheetElementNames">
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//MandatoryDatasheetElementNames/BaseURI"/>
+      <genEnumLiterals ecoreEnumLiteral="genericDatasheet.ecore#//MandatoryDatasheetElementNames/ShortDescription"/>
+    </genEnums>
+    <genClasses ecoreClass="genericDatasheet.ecore#//DatasheetProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//DatasheetProperty/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//DatasheetProperty/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//DatasheetProperty/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//DatasheetProperty/semanticID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//DatasheetProperty/shortDescription"/>
     </genClasses>
-    <genClasses ecoreClass="genericDatasheet.ecore#//AbstractLicense"/>
-    <genClasses ecoreClass="genericDatasheet.ecore#//SpdxLicense">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//SpdxLicense/licenseID"/>
+    <genClasses ecoreClass="genericDatasheet.ecore#//GenericDatasheetModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference genericDatasheet.ecore#//GenericDatasheetModel/elements"/>
     </genClasses>
-    <genClasses ecoreClass="genericDatasheet.ecore#//ProprietaryLicense">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//ProprietaryLicense/fullText"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//ProprietaryLicense/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//ProprietaryLicense/url"/>
+    <genClasses ecoreClass="genericDatasheet.ecore#//AbstractDatasheetElement"/>
+    <genClasses ecoreClass="genericDatasheet.ecore#//MandatoryDatasheetElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//MandatoryDatasheetElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute genericDatasheet.ecore#//MandatoryDatasheetElement/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

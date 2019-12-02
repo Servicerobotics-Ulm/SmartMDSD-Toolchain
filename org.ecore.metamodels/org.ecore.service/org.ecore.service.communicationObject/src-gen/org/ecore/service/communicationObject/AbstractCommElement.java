@@ -2,7 +2,7 @@
  */
 package org.ecore.service.communicationObject;
 
-import org.eclipse.emf.ecore.EObject;
+import org.ecore.base.documentation.AbstractDocumentedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface AbstractCommElement extends EObject {
+public interface AbstractCommElement extends AbstractDocumentedElement {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

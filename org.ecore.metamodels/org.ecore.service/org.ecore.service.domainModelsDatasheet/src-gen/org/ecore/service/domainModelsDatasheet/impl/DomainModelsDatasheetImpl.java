@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl;
+import org.ecore.base.genericDatasheet.impl.GenericDatasheetModelImpl;
 
 import org.ecore.service.domainModelsDatasheet.DomainModelsDatasheet;
 import org.ecore.service.domainModelsDatasheet.DomainModelsDatasheetPackage;
@@ -26,7 +26,7 @@ import org.ecore.service.domainModelsDatasheet.DomainModelsDatasheetPackage;
  *
  * @generated
  */
-public class DomainModelsDatasheetImpl extends GenericDatasheetImpl implements DomainModelsDatasheet {
+public class DomainModelsDatasheetImpl extends GenericDatasheetModelImpl implements DomainModelsDatasheet {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

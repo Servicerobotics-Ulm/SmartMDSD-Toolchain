@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.ecore.base.basicAttributes.BasicAttributesPackage;
 
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.base.stateMachine.StateMachinePackage;
 
 import org.ecore.component.componentDefinition.ComponentDefinitionPackage;
@@ -155,7 +156,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ComponentArchitecturePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -171,9 +172,10 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 					.getEPackage(ComponentArchitecturePackage.eNS_URI);
 
 		// Obtain or create and register package
-		ComponentArchitecturePackageImpl theComponentArchitecturePackage = (ComponentArchitecturePackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof ComponentArchitecturePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new ComponentArchitecturePackageImpl());
+		Object registeredComponentArchitecturePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ComponentArchitecturePackageImpl theComponentArchitecturePackage = registeredComponentArchitecturePackage instanceof ComponentArchitecturePackageImpl
+				? (ComponentArchitecturePackageImpl) registeredComponentArchitecturePackage
+				: new ComponentArchitecturePackageImpl();
 
 		isInited = true;
 
@@ -189,6 +191,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 		ServiceDefinitionPackage.eINSTANCE.eClass();
 		StateMachinePackage.eINSTANCE.eClass();
 		ComponentModePackage.eINSTANCE.eClass();
+		DocumentationPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theComponentArchitecturePackage.createPackageContents();
@@ -209,6 +212,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSystemComponentArchitecture() {
 		return systemComponentArchitectureEClass;
 	}
@@ -218,6 +222,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSystemComponentArchitecture_Name() {
 		return (EAttribute) systemComponentArchitectureEClass.getEStructuralFeatures().get(0);
 	}
@@ -227,6 +232,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSystemComponentArchitecture_Components() {
 		return (EReference) systemComponentArchitectureEClass.getEStructuralFeatures().get(1);
 	}
@@ -236,6 +242,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSystemComponentArchitecture_Extensions() {
 		return (EReference) systemComponentArchitectureEClass.getEStructuralFeatures().get(2);
 	}
@@ -245,6 +252,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSystemComponentArchitecture_Connections() {
 		return (EReference) systemComponentArchitectureEClass.getEStructuralFeatures().get(3);
 	}
@@ -254,6 +262,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSystemComponentArchitecture_ActivityArch() {
 		return (EReference) systemComponentArchitectureEClass.getEStructuralFeatures().get(4);
 	}
@@ -263,6 +272,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentInstance() {
 		return componentInstanceEClass;
 	}
@@ -272,6 +282,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentInstance_Name() {
 		return (EAttribute) componentInstanceEClass.getEStructuralFeatures().get(0);
 	}
@@ -281,6 +292,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentInstance_Component() {
 		return (EReference) componentInstanceEClass.getEStructuralFeatures().get(1);
 	}
@@ -290,6 +302,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentInstance_Ports() {
 		return (EReference) componentInstanceEClass.getEStructuralFeatures().get(2);
 	}
@@ -299,6 +312,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentInstance_Extensions() {
 		return (EReference) componentInstanceEClass.getEStructuralFeatures().get(3);
 	}
@@ -308,6 +322,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getServiceInstance() {
 		return serviceInstanceEClass;
 	}
@@ -317,6 +332,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getServiceInstance_Port() {
 		return (EReference) serviceInstanceEClass.getEStructuralFeatures().get(0);
 	}
@@ -326,6 +342,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServiceInstance_Name() {
 		return (EAttribute) serviceInstanceEClass.getEStructuralFeatures().get(1);
 	}
@@ -335,6 +352,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRequiredService() {
 		return requiredServiceEClass;
 	}
@@ -344,6 +362,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getProvidedService() {
 		return providedServiceEClass;
 	}
@@ -353,6 +372,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConnection() {
 		return connectionEClass;
 	}
@@ -362,6 +382,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnection_To() {
 		return (EReference) connectionEClass.getEStructuralFeatures().get(0);
 	}
@@ -371,6 +392,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnection_From() {
 		return (EReference) connectionEClass.getEStructuralFeatures().get(1);
 	}
@@ -380,6 +402,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnection_MiddlewareSelection() {
 		return (EReference) connectionEClass.getEStructuralFeatures().get(2);
 	}
@@ -389,6 +412,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnection_Name() {
 		return (EAttribute) connectionEClass.getEStructuralFeatures().get(3);
 	}
@@ -398,6 +422,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSystemExtension() {
 		return systemExtensionEClass;
 	}
@@ -407,6 +432,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentInstanceExtension() {
 		return componentInstanceExtensionEClass;
 	}
@@ -416,6 +442,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getActivityConfigurationMapping() {
 		return activityConfigurationMappingEClass;
 	}
@@ -425,6 +452,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivityConfigurationMapping_Name() {
 		return (EAttribute) activityConfigurationMappingEClass.getEStructuralFeatures().get(0);
 	}
@@ -434,6 +462,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivityConfigurationMapping_Activity() {
 		return (EReference) activityConfigurationMappingEClass.getEStructuralFeatures().get(1);
 	}
@@ -443,6 +472,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivityConfigurationMapping_Config() {
 		return (EReference) activityConfigurationMappingEClass.getEStructuralFeatures().get(2);
 	}
@@ -452,6 +482,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getInputHandlerConfigurationMapping() {
 		return inputHandlerConfigurationMappingEClass;
 	}
@@ -461,6 +492,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInputHandlerConfigurationMapping_Name() {
 		return (EAttribute) inputHandlerConfigurationMappingEClass.getEStructuralFeatures().get(0);
 	}
@@ -470,6 +502,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getInputHandlerConfigurationMapping_Handler() {
 		return (EReference) inputHandlerConfigurationMappingEClass.getEStructuralFeatures().get(1);
 	}
@@ -479,6 +512,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getInputHandlerConfigurationMapping_Config() {
 		return (EReference) inputHandlerConfigurationMappingEClass.getEStructuralFeatures().get(2);
 	}
@@ -488,6 +522,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentInstanceConfigurationElement() {
 		return componentInstanceConfigurationElementEClass;
 	}
@@ -497,6 +532,7 @@ public class ComponentArchitecturePackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentArchitectureFactory getComponentArchitectureFactory() {
 		return (ComponentArchitectureFactory) getEFactoryInstance();
 	}

@@ -2,7 +2,7 @@
  */
 package org.ecore.service.domainModelsDatasheet;
 
-import org.ecore.base.genericDatasheet.GenericDatasheet;
+import org.ecore.base.genericDatasheet.GenericDatasheetModel;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +20,7 @@ import org.ecore.base.genericDatasheet.GenericDatasheet;
  * @model
  * @generated
  */
-public interface DomainModelsDatasheet extends GenericDatasheet {
+public interface DomainModelsDatasheet extends GenericDatasheetModel {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

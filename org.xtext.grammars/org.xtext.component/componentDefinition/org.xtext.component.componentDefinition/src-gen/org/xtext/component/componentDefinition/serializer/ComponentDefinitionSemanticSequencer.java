@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,32 +15,7 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.component.componentDefinition.serializer;
 
 import com.google.inject.Inject;
@@ -54,6 +28,8 @@ import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.ecore.base.documentation.AbstractDocumentedElement;
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.component.componentDefinition.Activity;
 import org.ecore.component.componentDefinition.AnswerPort;
 import org.ecore.component.componentDefinition.ComponentDefModel;
@@ -180,6 +156,12 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 				sequence_SkillRealizationsRef(context, (SkillRealizationsRef) semanticObject); 
 				return; 
 			}
+		else if (epackage == DocumentationPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT:
+				sequence_AbstractDocumentedElement(context, (AbstractDocumentedElement) semanticObject); 
+				return; 
+			}
 		else if (epackage == PerformanceExtensionPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case PerformanceExtensionPackage.ACTIVATION_CONSTRAINTS:
@@ -277,7 +259,7 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 	 *     AnswerPort returns AnswerPort
 	 *
 	 * Constraint:
-	 *     (name=ID service=[TwoWayCommunicationService|FQN] extensions+=ComponentPortExtension*)
+	 *     (documentation=DOCU_COMMENT? name=ID service=[TwoWayCommunicationService|FQN] extensions+=ComponentPortExtension*)
 	 */
 	protected void sequence_AnswerPort(ISerializationContext context, AnswerPort semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -323,7 +305,7 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 	 *     ComponentDefinition returns ComponentDefinition
 	 *
 	 * Constraint:
-	 *     (name=ID logo=STRING? elements+=AbstractComponentElement*)
+	 *     (documentation=DOCU_COMMENT? name=ID logo=STRING? elements+=AbstractComponentElement*)
 	 */
 	protected void sequence_ComponentDefinition(ISerializationContext context, ComponentDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -393,7 +375,7 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 	 *     CoordinationSlavePort returns CoordinationSlavePort
 	 *
 	 * Constraint:
-	 *     (name=ID service=[CoordinationServiceDefinition|FQN] elements+=AbstractCoordinationElement*)
+	 *     (documentation=DOCU_COMMENT? name=ID service=[CoordinationServiceDefinition|FQN] elements+=AbstractCoordinationElement*)
 	 */
 	protected void sequence_CoordinationSlavePort(ISerializationContext context, CoordinationSlavePort semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -490,7 +472,7 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 	 *     InputPort returns InputPort
 	 *
 	 * Constraint:
-	 *     (name=ID service=[OneWayCommunicationService|FQN] extensions+=ComponentPortExtension*)
+	 *     (documentation=DOCU_COMMENT? name=ID service=[OneWayCommunicationService|FQN] extensions+=ComponentPortExtension*)
 	 */
 	protected void sequence_InputPort(ISerializationContext context, InputPort semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -630,7 +612,7 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 	 *     OutputPort returns OutputPort
 	 *
 	 * Constraint:
-	 *     (name=ID service=[OneWayCommunicationService|FQN] activity=[Activity|FQN] extensions+=ComponentPortExtension*)
+	 *     (documentation=DOCU_COMMENT? name=ID service=[OneWayCommunicationService|FQN] activity=[Activity|FQN] extensions+=ComponentPortExtension*)
 	 */
 	protected void sequence_OutputPort(ISerializationContext context, OutputPort semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -662,7 +644,12 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 	 *     PublicOperationMode returns PublicOperationMode
 	 *
 	 * Constraint:
-	 *     (isDefaultInit?='default'? mode=[ComponentModeDefinition|FQN] (activates+=[PrivateOperationMode|ID] activates+=[PrivateOperationMode|ID]*)?)
+	 *     (
+	 *         documentation=DOCU_COMMENT? 
+	 *         isDefaultInit?='default'? 
+	 *         mode=[ComponentModeDefinition|FQN] 
+	 *         (activates+=[PrivateOperationMode|ID] activates+=[PrivateOperationMode|ID]*)?
+	 *     )
 	 */
 	protected void sequence_PublicOperationMode(ISerializationContext context, PublicOperationMode semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -711,7 +698,7 @@ public class ComponentDefinitionSemanticSequencer extends RoboticMiddlewareSeman
 	 *     RequestPort returns RequestPort
 	 *
 	 * Constraint:
-	 *     (name=ID service=[TwoWayCommunicationService|FQN] extensions+=ComponentPortExtension*)
+	 *     (documentation=DOCU_COMMENT? name=ID service=[TwoWayCommunicationService|FQN] extensions+=ComponentPortExtension*)
 	 */
 	protected void sequence_RequestPort(ISerializationContext context, RequestPort semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

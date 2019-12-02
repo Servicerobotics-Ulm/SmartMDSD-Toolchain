@@ -82,6 +82,7 @@ public class CommunicationObjectFactoryImpl extends EFactoryImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CommObjectModel createCommObjectModel() {
 		CommObjectModelImpl commObjectModel = new CommObjectModelImpl();
 		return commObjectModel;
@@ -92,6 +93,7 @@ public class CommunicationObjectFactoryImpl extends EFactoryImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CommObjectsRepository createCommObjectsRepository() {
 		CommObjectsRepositoryImpl commObjectsRepository = new CommObjectsRepositoryImpl();
 		return commObjectsRepository;
@@ -102,6 +104,7 @@ public class CommunicationObjectFactoryImpl extends EFactoryImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CommRepositoryImport createCommRepositoryImport() {
 		CommRepositoryImportImpl commRepositoryImport = new CommRepositoryImportImpl();
 		return commRepositoryImport;
@@ -112,6 +115,7 @@ public class CommunicationObjectFactoryImpl extends EFactoryImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Version createVersion() {
 		VersionImpl version = new VersionImpl();
 		return version;
@@ -122,6 +126,7 @@ public class CommunicationObjectFactoryImpl extends EFactoryImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Enumeration createEnumeration() {
 		EnumerationImpl enumeration = new EnumerationImpl();
 		return enumeration;
@@ -132,6 +137,7 @@ public class CommunicationObjectFactoryImpl extends EFactoryImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CommunicationObject createCommunicationObject() {
 		CommunicationObjectImpl communicationObject = new CommunicationObjectImpl();
 		return communicationObject;
@@ -142,6 +148,7 @@ public class CommunicationObjectFactoryImpl extends EFactoryImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CommElementValue createCommElementValue() {
 		CommElementValueImpl commElementValue = new CommElementValueImpl();
 		return commElementValue;
@@ -152,6 +159,7 @@ public class CommunicationObjectFactoryImpl extends EFactoryImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CommElementReference createCommElementReference() {
 		CommElementReferenceImpl commElementReference = new CommElementReferenceImpl();
 		return commElementReference;
@@ -162,6 +170,7 @@ public class CommunicationObjectFactoryImpl extends EFactoryImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CommunicationObjectPackage getCommunicationObjectPackage() {
 		return (CommunicationObjectPackage) getEPackage();
 	}

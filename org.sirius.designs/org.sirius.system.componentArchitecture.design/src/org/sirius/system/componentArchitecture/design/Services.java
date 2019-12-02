@@ -1,3 +1,21 @@
+//================================================================
+//
+//  Copyright (C) 2016 Alex Lotz, Dennis Stampfer, Matthias Lutz
+//
+//        lotz@hs-ulm.de
+//        stampfer@hs-ulm.de
+//        lutz@hs-ulm.de
+//
+//        Servicerobotik Ulm
+//        Christian Schlegel
+//        Ulm University of Applied Sciences
+//        Prittwitzstr. 10
+//        89075 Ulm
+//        Germany
+//
+//  This file is part of the SmartMDSD Toolchain V3. 
+//
+//================================================================
 package org.sirius.system.componentArchitecture.design;
 
 import java.io.IOException;
@@ -9,6 +27,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -127,8 +146,12 @@ public class Services {
 		if(context instanceof ComponentInstance) {
 			ComponentInstance component = (ComponentInstance)context;
 			if(component.getComponent() != null && component.getComponent().getLogo() != null) {
-				String logoString = component.getComponent().getLogo();
-				IPath logoPath = new Path(logoString);
+				String logoPathString = component.getComponent().getLogo();
+				if(!logoPathString.startsWith(System.getProperty("file.separator"))) {
+					URI uri = component.getComponent().eResource().getURI();
+					logoPathString = uri.trimSegments(1).appendSegment(logoPathString).toPlatformString(true);
+				}
+				IPath logoPath = new Path(logoPathString);
 				IFile logoFile = ResourcesPlugin.getWorkspace().getRoot().getFile(logoPath);
 				if(logoFile.exists()) {
 					return true;
@@ -136,6 +159,25 @@ public class Services {
 			}
 		}
 		return false;
+	}
+	
+	public String getLogoPath(EObject context) {
+		if(context instanceof ComponentInstance) {
+			ComponentInstance component = (ComponentInstance)context;
+			if(component.getComponent() != null && component.getComponent().getLogo() != null) {
+				String logoPathString = component.getComponent().getLogo();
+				if(!logoPathString.startsWith(System.getProperty("file.separator"))) {
+					URI uri = component.getComponent().eResource().getURI();
+					logoPathString = uri.trimSegments(1).appendSegment(logoPathString).toPlatformString(true);
+				}
+				IPath logoPath = new Path(logoPathString);
+				IFile logoFile = ResourcesPlugin.getWorkspace().getRoot().getFile(logoPath);
+				if(logoFile.exists()) {
+					return logoPathString;
+				}
+			}
+		}
+		return "";
 	}
     
     public EObject getComponentParameter(EObject obj) {

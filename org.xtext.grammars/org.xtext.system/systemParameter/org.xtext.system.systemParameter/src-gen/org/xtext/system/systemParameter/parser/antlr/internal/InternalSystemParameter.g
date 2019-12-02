@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,32 +15,7 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 grammar InternalSystemParameter;
 
 options {
@@ -301,9 +275,27 @@ ruleParameterRefinement returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='ParameterRefinement'
+		(
+			(
+				lv_documentation_0_0=RULE_DOCU_COMMENT
+				{
+					newLeafNode(lv_documentation_0_0, grammarAccess.getParameterRefinementAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getParameterRefinementRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"documentation",
+						lv_documentation_0_0,
+						"org.xtext.base.docuterminals.DocuTerminals.DOCU_COMMENT");
+				}
+			)
+		)?
+		otherlv_1='ParameterRefinement'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getParameterRefinementAccess().getParameterRefinementKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getParameterRefinementAccess().getParameterRefinementKeyword_1());
 		}
 		(
 			(
@@ -313,7 +305,7 @@ ruleParameterRefinement returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getParameterRefinementAccess().getParameterComponentParameterBaseCrossReference_1_0());
+					newCompositeNode(grammarAccess.getParameterRefinementAccess().getParameterComponentParameterBaseCrossReference_2_0());
 				}
 				ruleFQN
 				{
@@ -321,16 +313,16 @@ ruleParameterRefinement returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='{'
+		otherlv_3='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getParameterRefinementAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getParameterRefinementAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getParameterRefinementAccess().getAttributesAttributeRefinementParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getParameterRefinementAccess().getAttributesAttributeRefinementParserRuleCall_4_0());
 				}
-				lv_attributes_3_0=ruleAttributeRefinement
+				lv_attributes_4_0=ruleAttributeRefinement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getParameterRefinementRule());
@@ -338,15 +330,15 @@ ruleParameterRefinement returns [EObject current=null]
 					add(
 						$current,
 						"attributes",
-						lv_attributes_3_0,
+						lv_attributes_4_0,
 						"org.xtext.base.basicAttributes.BasicAttributes.AttributeRefinement");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_4='}'
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getParameterRefinementAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getParameterRefinementAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;
@@ -369,13 +361,31 @@ ruleAttributeRefinement returns [EObject current=null]
 	(
 		(
 			(
+				lv_documentation_0_0=RULE_DOCU_COMMENT
+				{
+					newLeafNode(lv_documentation_0_0, grammarAccess.getAttributeRefinementAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAttributeRefinementRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"documentation",
+						lv_documentation_0_0,
+						"org.xtext.base.docuterminals.DocuTerminals.DOCU_COMMENT");
+				}
+			)
+		)?
+		(
+			(
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAttributeRefinementRule());
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getAttributeRefinementAccess().getAttributeAttributeDefinitionCrossReference_0_0());
+					newCompositeNode(grammarAccess.getAttributeRefinementAccess().getAttributeAttributeDefinitionCrossReference_1_0());
 				}
 				ruleFQN
 				{
@@ -383,16 +393,16 @@ ruleAttributeRefinement returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1='='
+		otherlv_2='='
 		{
-			newLeafNode(otherlv_1, grammarAccess.getAttributeRefinementAccess().getEqualsSignKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getAttributeRefinementAccess().getEqualsSignKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAttributeRefinementAccess().getValueAbstractValueParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getAttributeRefinementAccess().getValueAbstractValueParserRuleCall_3_0());
 				}
-				lv_value_2_0=ruleAbstractValue
+				lv_value_3_0=ruleAbstractValue
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAttributeRefinementRule());
@@ -400,16 +410,16 @@ ruleAttributeRefinement returns [EObject current=null]
 					set(
 						$current,
 						"value",
-						lv_value_2_0,
+						lv_value_3_0,
 						"org.xtext.base.basicAttributes.BasicAttributes.AbstractValue");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_3=';'
+			otherlv_4=';'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getAttributeRefinementAccess().getSemicolonKeyword_3());
+				newLeafNode(otherlv_4, grammarAccess.getAttributeRefinementAccess().getSemicolonKeyword_4());
 			}
 		)?
 	)
@@ -1307,15 +1317,21 @@ rulePRIMITIVE_TYPE_NAME returns [Enumerator current=null]
 	)
 ;
 
+RULE_ML_COMMENT : '/*' ~('*') ( options {greedy=false;} : . )*'*/';
+
+fragment RULE_ML_DOCUMENTATION : '/**' ( options {greedy=false;} : . )*'*/';
+
+RULE_SL_COMMENT : '//' ~('/') ~(('\n'|'\r'))* ('\r'? '\n')?;
+
+fragment RULE_SL_DOCUMENTATION : '///' ~(('\n'|'\r'))* ('\r'? '\n')?;
+
+RULE_DOCU_COMMENT : (RULE_ML_DOCUMENTATION|RULE_SL_DOCUMENTATION);
+
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
-
-RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
-
-RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
 
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 

@@ -9,10 +9,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl;
+import org.ecore.base.genericDatasheet.impl.GenericDatasheetModelImpl;
 
 import org.ecore.component.componentDatasheet.ComponentDatasheet;
 import org.ecore.component.componentDatasheet.ComponentDatasheetPackage;
+
 import org.ecore.component.componentDefinition.ComponentDefinition;
 
 /**
@@ -23,54 +24,13 @@ import org.ecore.component.componentDefinition.ComponentDefinition;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.ecore.component.componentDatasheet.impl.ComponentDatasheetImpl#getPurposeDescription <em>Purpose Description</em>}</li>
- *   <li>{@link org.ecore.component.componentDatasheet.impl.ComponentDatasheetImpl#getHardwareRequirementDescription <em>Hardware Requirement Description</em>}</li>
  *   <li>{@link org.ecore.component.componentDatasheet.impl.ComponentDatasheetImpl#getComponent <em>Component</em>}</li>
+ *   <li>{@link org.ecore.component.componentDatasheet.impl.ComponentDatasheetImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ComponentDatasheetImpl extends GenericDatasheetImpl implements ComponentDatasheet {
-	/**
-	 * The default value of the '{@link #getPurposeDescription() <em>Purpose Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPurposeDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PURPOSE_DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPurposeDescription() <em>Purpose Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPurposeDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String purposeDescription = PURPOSE_DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getHardwareRequirementDescription() <em>Hardware Requirement Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHardwareRequirementDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HARDWARE_REQUIREMENT_DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getHardwareRequirementDescription() <em>Hardware Requirement Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHardwareRequirementDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String hardwareRequirementDescription = HARDWARE_REQUIREMENT_DESCRIPTION_EDEFAULT;
-
+public class ComponentDatasheetImpl extends GenericDatasheetModelImpl implements ComponentDatasheet {
 	/**
 	 * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -80,6 +40,16 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	 * @ordered
 	 */
 	protected ComponentDefinition component;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,56 +68,6 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	@Override
 	protected EClass eStaticClass() {
 		return ComponentDatasheetPackage.Literals.COMPONENT_DATASHEET;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getPurposeDescription() {
-		return purposeDescription;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setPurposeDescription(String newPurposeDescription) {
-		String oldPurposeDescription = purposeDescription;
-		purposeDescription = newPurposeDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ComponentDatasheetPackage.COMPONENT_DATASHEET__PURPOSE_DESCRIPTION, oldPurposeDescription,
-					purposeDescription));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getHardwareRequirementDescription() {
-		return hardwareRequirementDescription;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setHardwareRequirementDescription(String newHardwareRequirementDescription) {
-		String oldHardwareRequirementDescription = hardwareRequirementDescription;
-		hardwareRequirementDescription = newHardwareRequirementDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ComponentDatasheetPackage.COMPONENT_DATASHEET__HARDWARE_REQUIREMENT_DESCRIPTION,
-					oldHardwareRequirementDescription, hardwareRequirementDescription));
 	}
 
 	/**
@@ -195,19 +115,30 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public String getName() {
+		if (component != null) {
+			return getComponent().getName();
+		}
+		return "";
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ComponentDatasheetPackage.COMPONENT_DATASHEET__PURPOSE_DESCRIPTION:
-			return getPurposeDescription();
-		case ComponentDatasheetPackage.COMPONENT_DATASHEET__HARDWARE_REQUIREMENT_DESCRIPTION:
-			return getHardwareRequirementDescription();
 		case ComponentDatasheetPackage.COMPONENT_DATASHEET__COMPONENT:
 			if (resolve)
 				return getComponent();
 			return basicGetComponent();
+		case ComponentDatasheetPackage.COMPONENT_DATASHEET__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -220,12 +151,6 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ComponentDatasheetPackage.COMPONENT_DATASHEET__PURPOSE_DESCRIPTION:
-			setPurposeDescription((String) newValue);
-			return;
-		case ComponentDatasheetPackage.COMPONENT_DATASHEET__HARDWARE_REQUIREMENT_DESCRIPTION:
-			setHardwareRequirementDescription((String) newValue);
-			return;
 		case ComponentDatasheetPackage.COMPONENT_DATASHEET__COMPONENT:
 			setComponent((ComponentDefinition) newValue);
 			return;
@@ -241,12 +166,6 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ComponentDatasheetPackage.COMPONENT_DATASHEET__PURPOSE_DESCRIPTION:
-			setPurposeDescription(PURPOSE_DESCRIPTION_EDEFAULT);
-			return;
-		case ComponentDatasheetPackage.COMPONENT_DATASHEET__HARDWARE_REQUIREMENT_DESCRIPTION:
-			setHardwareRequirementDescription(HARDWARE_REQUIREMENT_DESCRIPTION_EDEFAULT);
-			return;
 		case ComponentDatasheetPackage.COMPONENT_DATASHEET__COMPONENT:
 			setComponent((ComponentDefinition) null);
 			return;
@@ -262,35 +181,12 @@ public class ComponentDatasheetImpl extends GenericDatasheetImpl implements Comp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ComponentDatasheetPackage.COMPONENT_DATASHEET__PURPOSE_DESCRIPTION:
-			return PURPOSE_DESCRIPTION_EDEFAULT == null ? purposeDescription != null
-					: !PURPOSE_DESCRIPTION_EDEFAULT.equals(purposeDescription);
-		case ComponentDatasheetPackage.COMPONENT_DATASHEET__HARDWARE_REQUIREMENT_DESCRIPTION:
-			return HARDWARE_REQUIREMENT_DESCRIPTION_EDEFAULT == null ? hardwareRequirementDescription != null
-					: !HARDWARE_REQUIREMENT_DESCRIPTION_EDEFAULT.equals(hardwareRequirementDescription);
 		case ComponentDatasheetPackage.COMPONENT_DATASHEET__COMPONENT:
 			return component != null;
+		case ComponentDatasheetPackage.COMPONENT_DATASHEET__NAME:
+			return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (purposeDescription: ");
-		result.append(purposeDescription);
-		result.append(", hardwareRequirementDescription: ");
-		result.append(hardwareRequirementDescription);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ComponentDatasheetImpl

@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.ecore.base.documentation.DocumentationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -113,13 +114,40 @@ public interface TargetPlatformPackage extends EPackage {
 	int ABSTRACT_TP_ELEMENT = 2;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_TP_ELEMENT__DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The number of structural features of the '<em>Abstract TP Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_TP_ELEMENT_FEATURE_COUNT = 0;
+	int ABSTRACT_TP_ELEMENT_FEATURE_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Multiline Html Documentation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_TP_ELEMENT___GET_MULTILINE_HTML_DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT___GET_MULTILINE_HTML_DOCUMENTATION;
+
+	/**
+	 * The operation id for the '<em>Get First Documentation Line</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_TP_ELEMENT___GET_FIRST_DOCUMENTATION_LINE = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT___GET_FIRST_DOCUMENTATION_LINE;
 
 	/**
 	 * The number of operations of the '<em>Abstract TP Element</em>' class.
@@ -128,7 +156,7 @@ public interface TargetPlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_TP_ELEMENT_OPERATION_COUNT = 0;
+	int ABSTRACT_TP_ELEMENT_OPERATION_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.system.targetPlatform.impl.TargetPlatformDefinitionImpl <em>Definition</em>}' class.
@@ -139,6 +167,15 @@ public interface TargetPlatformPackage extends EPackage {
 	 * @generated
 	 */
 	int TARGET_PLATFORM_DEFINITION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_PLATFORM_DEFINITION__DOCUMENTATION = ABSTRACT_TP_ELEMENT__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -175,6 +212,24 @@ public interface TargetPlatformPackage extends EPackage {
 	 * @ordered
 	 */
 	int TARGET_PLATFORM_DEFINITION_FEATURE_COUNT = ABSTRACT_TP_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Multiline Html Documentation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_PLATFORM_DEFINITION___GET_MULTILINE_HTML_DOCUMENTATION = ABSTRACT_TP_ELEMENT___GET_MULTILINE_HTML_DOCUMENTATION;
+
+	/**
+	 * The operation id for the '<em>Get First Documentation Line</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_PLATFORM_DEFINITION___GET_FIRST_DOCUMENTATION_LINE = ABSTRACT_TP_ELEMENT___GET_FIRST_DOCUMENTATION_LINE;
 
 	/**
 	 * The number of operations of the '<em>Definition</em>' class.
@@ -224,6 +279,15 @@ public interface TargetPlatformPackage extends EPackage {
 	int NETWORK_CONNECTION = 4;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTION__DOCUMENTATION = ABSTRACT_TP_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Endpoint1</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -258,6 +322,24 @@ public interface TargetPlatformPackage extends EPackage {
 	 * @ordered
 	 */
 	int NETWORK_CONNECTION_FEATURE_COUNT = ABSTRACT_TP_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Multiline Html Documentation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTION___GET_MULTILINE_HTML_DOCUMENTATION = ABSTRACT_TP_ELEMENT___GET_MULTILINE_HTML_DOCUMENTATION;
+
+	/**
+	 * The operation id for the '<em>Get First Documentation Line</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTION___GET_FIRST_DOCUMENTATION_LINE = ABSTRACT_TP_ELEMENT___GET_FIRST_DOCUMENTATION_LINE;
 
 	/**
 	 * The number of operations of the '<em>Network Connection</em>' class.

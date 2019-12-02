@@ -8,8 +8,10 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.ecore.base.basicAttributes.provider.BasicAttributesEditPlugin;
 
+import org.ecore.base.documentation.provider.DocumentationEditPlugin;
 import org.ecore.base.stateMachine.provider.StateMachineEditPlugin;
 
+import org.ecore.behavior.skillRealization.provider.SkillRealizationEditPlugin;
 import org.ecore.component.componentDefinition.provider.ComponentDefinitionEditPlugin;
 
 import org.ecore.component.coordinationExtension.provider.CoordinationExtensionEditPlugin;
@@ -23,6 +25,7 @@ import org.ecore.service.coordinationPattern.provider.CoordinationPatternEditPlu
 import org.ecore.service.parameterDefinition.provider.ParameterDefinitionEditPlugin;
 
 import org.ecore.service.serviceDefinition.provider.ServiceDefinitionEditPlugin;
+import org.ecore.service.skillDefinition.provider.SkillDefinitionEditPlugin;
 
 /**
  * This is the central singleton for the ComponentParameter edit plugin.
@@ -58,7 +61,9 @@ public final class ComponentParameterEditPlugin extends EMFPlugin {
 				CommunicationPatternEditPlugin.INSTANCE, ComponentDefinitionEditPlugin.INSTANCE,
 				ComponentModeEditPlugin.INSTANCE, CoordinationExtensionEditPlugin.INSTANCE,
 				CoordinationPatternEditPlugin.INSTANCE, ParameterDefinitionEditPlugin.INSTANCE,
-				ServiceDefinitionEditPlugin.INSTANCE, StateMachineEditPlugin.INSTANCE, });
+				ServiceDefinitionEditPlugin.INSTANCE, StateMachineEditPlugin.INSTANCE,
+				SkillRealizationEditPlugin.INSTANCE, SkillDefinitionEditPlugin.INSTANCE,
+				DocumentationEditPlugin.INSTANCE, });
 	}
 
 	/**

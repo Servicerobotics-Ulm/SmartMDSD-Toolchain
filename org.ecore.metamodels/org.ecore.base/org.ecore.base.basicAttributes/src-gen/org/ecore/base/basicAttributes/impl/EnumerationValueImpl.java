@@ -61,6 +61,7 @@ public class EnumerationValueImpl extends SingleValueImpl implements Enumeration
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EnumerationElement getValue() {
 		if (value != null && value.eIsProxy()) {
 			InternalEObject oldValue = (InternalEObject) value;
@@ -88,6 +89,7 @@ public class EnumerationValueImpl extends SingleValueImpl implements Enumeration
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(EnumerationElement newValue) {
 		EnumerationElement oldValue = value;
 		value = newValue;

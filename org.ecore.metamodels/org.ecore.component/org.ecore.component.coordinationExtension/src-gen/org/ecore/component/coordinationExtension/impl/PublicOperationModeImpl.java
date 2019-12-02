@@ -2,6 +2,7 @@
  */
 package org.ecore.component.coordinationExtension.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -15,6 +16,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import org.ecore.base.documentation.AbstractDocumentedElement;
+import org.ecore.base.documentation.DocumentationPackage;
+import org.ecore.base.documentation.DocumentationUtility;
 import org.ecore.component.coordinationExtension.CoordinationExtensionPackage;
 import org.ecore.component.coordinationExtension.PrivateOperationMode;
 import org.ecore.component.coordinationExtension.PublicOperationMode;
@@ -29,6 +33,7 @@ import org.ecore.service.componentMode.ComponentModeDefinition;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.ecore.component.coordinationExtension.impl.PublicOperationModeImpl#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.ecore.component.coordinationExtension.impl.PublicOperationModeImpl#getActivates <em>Activates</em>}</li>
  *   <li>{@link org.ecore.component.coordinationExtension.impl.PublicOperationModeImpl#getMode <em>Mode</em>}</li>
  *   <li>{@link org.ecore.component.coordinationExtension.impl.PublicOperationModeImpl#getName <em>Name</em>}</li>
@@ -38,6 +43,26 @@ import org.ecore.service.componentMode.ComponentModeDefinition;
  * @generated
  */
 public class PublicOperationModeImpl extends AbstractCoordinationElementImpl implements PublicOperationMode {
+	/**
+	 * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDocumentation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DOCUMENTATION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDocumentation()
+	 * @generated
+	 * @ordered
+	 */
+	protected String documentation = DOCUMENTATION_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getActivates() <em>Activates</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -112,6 +137,32 @@ public class PublicOperationModeImpl extends AbstractCoordinationElementImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public String getDocumentation() {
+		return documentation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDocumentation(String newDocumentation) {
+		String oldDocumentation = documentation;
+		documentation = newDocumentation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					CoordinationExtensionPackage.PUBLIC_OPERATION_MODE__DOCUMENTATION, oldDocumentation,
+					documentation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<PrivateOperationMode> getActivates() {
 		if (activates == null) {
 			activates = new EObjectResolvingEList<PrivateOperationMode>(PrivateOperationMode.class, this,
@@ -125,6 +176,7 @@ public class PublicOperationModeImpl extends AbstractCoordinationElementImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentModeDefinition getMode() {
 		if (mode != null && mode.eIsProxy()) {
 			InternalEObject oldMode = (InternalEObject) mode;
@@ -152,6 +204,7 @@ public class PublicOperationModeImpl extends AbstractCoordinationElementImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMode(ComponentModeDefinition newMode) {
 		ComponentModeDefinition oldMode = mode;
 		mode = newMode;
@@ -186,6 +239,7 @@ public class PublicOperationModeImpl extends AbstractCoordinationElementImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsDefaultInit() {
 		return isDefaultInit;
 	}
@@ -195,6 +249,7 @@ public class PublicOperationModeImpl extends AbstractCoordinationElementImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsDefaultInit(boolean newIsDefaultInit) {
 		boolean oldIsDefaultInit = isDefaultInit;
 		isDefaultInit = newIsDefaultInit;
@@ -207,11 +262,33 @@ public class PublicOperationModeImpl extends AbstractCoordinationElementImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public String getMultilineHtmlDocumentation() {
+		return DocumentationUtility.getMultilineHtmlText(documentation);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public String getFirstDocumentationLine() {
+		return DocumentationUtility.getFirstLine(documentation);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case CoordinationExtensionPackage.PUBLIC_OPERATION_MODE__DOCUMENTATION:
+			return getDocumentation();
 		case CoordinationExtensionPackage.PUBLIC_OPERATION_MODE__ACTIVATES:
 			return getActivates();
 		case CoordinationExtensionPackage.PUBLIC_OPERATION_MODE__MODE:
@@ -235,6 +312,9 @@ public class PublicOperationModeImpl extends AbstractCoordinationElementImpl imp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case CoordinationExtensionPackage.PUBLIC_OPERATION_MODE__DOCUMENTATION:
+			setDocumentation((String) newValue);
+			return;
 		case CoordinationExtensionPackage.PUBLIC_OPERATION_MODE__ACTIVATES:
 			getActivates().clear();
 			getActivates().addAll((Collection<? extends PrivateOperationMode>) newValue);
@@ -257,6 +337,9 @@ public class PublicOperationModeImpl extends AbstractCoordinationElementImpl imp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case CoordinationExtensionPackage.PUBLIC_OPERATION_MODE__DOCUMENTATION:
+			setDocumentation(DOCUMENTATION_EDEFAULT);
+			return;
 		case CoordinationExtensionPackage.PUBLIC_OPERATION_MODE__ACTIVATES:
 			getActivates().clear();
 			return;
@@ -278,6 +361,9 @@ public class PublicOperationModeImpl extends AbstractCoordinationElementImpl imp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case CoordinationExtensionPackage.PUBLIC_OPERATION_MODE__DOCUMENTATION:
+			return DOCUMENTATION_EDEFAULT == null ? documentation != null
+					: !DOCUMENTATION_EDEFAULT.equals(documentation);
 		case CoordinationExtensionPackage.PUBLIC_OPERATION_MODE__ACTIVATES:
 			return activates != null && !activates.isEmpty();
 		case CoordinationExtensionPackage.PUBLIC_OPERATION_MODE__MODE:
@@ -296,12 +382,86 @@ public class PublicOperationModeImpl extends AbstractCoordinationElementImpl imp
 	 * @generated
 	 */
 	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == AbstractDocumentedElement.class) {
+			switch (derivedFeatureID) {
+			case CoordinationExtensionPackage.PUBLIC_OPERATION_MODE__DOCUMENTATION:
+				return DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == AbstractDocumentedElement.class) {
+			switch (baseFeatureID) {
+			case DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION:
+				return CoordinationExtensionPackage.PUBLIC_OPERATION_MODE__DOCUMENTATION;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == AbstractDocumentedElement.class) {
+			switch (baseOperationID) {
+			case DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT___GET_MULTILINE_HTML_DOCUMENTATION:
+				return CoordinationExtensionPackage.PUBLIC_OPERATION_MODE___GET_MULTILINE_HTML_DOCUMENTATION;
+			case DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT___GET_FIRST_DOCUMENTATION_LINE:
+				return CoordinationExtensionPackage.PUBLIC_OPERATION_MODE___GET_FIRST_DOCUMENTATION_LINE;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case CoordinationExtensionPackage.PUBLIC_OPERATION_MODE___GET_MULTILINE_HTML_DOCUMENTATION:
+			return getMultilineHtmlDocumentation();
+		case CoordinationExtensionPackage.PUBLIC_OPERATION_MODE___GET_FIRST_DOCUMENTATION_LINE:
+			return getFirstDocumentationLine();
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isDefaultInit: ");
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (documentation: ");
+		result.append(documentation);
+		result.append(", isDefaultInit: ");
 		result.append(isDefaultInit);
 		result.append(')');
 		return result.toString();

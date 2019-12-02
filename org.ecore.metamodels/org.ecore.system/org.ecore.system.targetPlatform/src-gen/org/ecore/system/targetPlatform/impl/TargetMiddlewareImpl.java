@@ -63,6 +63,7 @@ public class TargetMiddlewareImpl extends AbstractTPSubNodeImpl implements Targe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RoboticMiddleware getMiddleware() {
 		return middleware;
 	}
@@ -91,6 +92,7 @@ public class TargetMiddlewareImpl extends AbstractTPSubNodeImpl implements Targe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMiddleware(RoboticMiddleware newMiddleware) {
 		if (newMiddleware != middleware) {
 			NotificationChain msgs = null;

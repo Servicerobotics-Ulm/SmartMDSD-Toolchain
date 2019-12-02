@@ -1,4 +1,4 @@
-//--------------------------------------------------------------------------
+//================================================================
 //
 //  Copyright (C) 2018 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
@@ -15,24 +15,7 @@
 //
 //  This file is part of the SmartSoft MDSD Toolchain. 
 //
-// Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-//
-// 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-// 
-// 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the 
-//    documentation and/or other materials provided with the distribution.
-// 
-// 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this 
-//    software without specific prior written permission.
-// 
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
-// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS 
-// BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
-// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-// POSSIBILITY OF SUCH DAMAGE.
-//
-//--------------------------------------------------------------------------
+//================================================================
 package org.xtend.component.datasheet.generator
 
 import org.eclipse.xtext.generator.AbstractGenerator
@@ -42,7 +25,6 @@ import org.eclipse.xtext.generator.IGeneratorContext
 import com.google.inject.Inject
 import org.eclipse.xtext.documentation.IEObjectDocumentationProvider
 import org.ecore.component.componentDatasheet.ComponentDatasheet
-import org.ecore.base.genericDatasheet.SpdxLicense
 import org.ecore.component.componentDefinition.ComponentPort
 import org.ecore.component.componentDefinition.OutputPort
 import org.ecore.service.serviceDefinition.ForkingServiceDefinition
@@ -60,6 +42,12 @@ import org.eclipse.xtext.resource.FileExtensionProvider
 import java.util.Collection
 import java.util.HashSet
 import org.ecore.component.componentDefinition.RequestPort
+import org.ecore.base.genericDatasheet.DatasheetProperty
+import org.ecore.base.genericDatasheet.MandatoryDatasheetElement
+import org.ecore.base.genericDatasheet.MandatoryDatasheetElementNames
+import org.ecore.base.genericDatasheet.GenericDatasheetModel
+import org.ecore.base.genericDatasheet.DefaultDatasheetProperties
+import org.ecore.base.genericDatasheet.AbstractDatasheetElement
 
 class ComponentDatasheetGeneratorImpl extends AbstractGenerator {
 	@Inject IEObjectDocumentationProvider doc;
@@ -100,6 +88,53 @@ class ComponentDatasheetGeneratorImpl extends AbstractGenerator {
 	
 	def getRepo(CommunicationServiceDefinition svc) {
 		return (svc.eContainer as ServiceDefRepository)
+	}
+	
+	def getBaseURI(GenericDatasheetModel ds) {
+		val base_uri = ds.elements.filter(MandatoryDatasheetElement).findFirst[it.name.equals(MandatoryDatasheetElementNames.BASE_URI)]
+		if(base_uri !== null) {
+			return base_uri.value
+		}
+		return ""
+	}
+	
+	def getShortDescription(GenericDatasheetModel ds) {
+		val base_uri = ds.elements.filter(MandatoryDatasheetElement).findFirst[it.name.equals(MandatoryDatasheetElementNames.SHORT_DESCRIPTION)]
+		if(base_uri !== null) {
+			return base_uri.value
+		}
+		return ""
+	}
+	
+	def compile(AbstractDatasheetElement element) {
+		if(element instanceof DatasheetProperty) {
+			switch(element.name) {
+				case DefaultDatasheetProperties.SPDX_LICENSE.literal:
+					'''
+					# License will contain SPDX License Identifier
+					# see https://spdx.org/licenses/
+					t1:license <http://spdx.org/licenses/«element.value».html>;
+					'''
+				case DefaultDatasheetProperties.TECHNOLOGY_READINESS_LEVEL.literal:
+					'''
+					# Technology Readiness Scale, e.g.
+					# http://www.innovationseeds.eu/Virtual_Library/Knowledge/TLR_Scale.kl
+					# Level 1 to level 9.
+					# plus trl:undefined for undefined TRL
+					t1:trl t1:TRL_Level«element.value.substring(element.value.length-1)»;
+					'''
+				case DefaultDatasheetProperties.HOMEPAGE.literal:
+					'''
+					# The webpage with additional information about this component
+					t1:homepage "«element.value»"^^xsd:anyURI;
+					'''
+				default: 
+					'''
+					# DatasheetProperty «element.name»
+					t1:«element.name.toFirstLower»Description "«element.value»";
+					'''
+			}
+		}
 	}
 	
 	def compileRdfDatasheet(ComponentDatasheet ds)
@@ -149,9 +184,9 @@ class ComponentDatasheetGeneratorImpl extends AbstractGenerator {
 	t3:«ds.component.name» a robmosys:ComponentDefinition;
 		a owl:Ontology ;
 		owl:imports <http://robmosys.eu/rdf/composition-structures> ;
-		«IF ds.license instanceof SpdxLicense»
-		owl:imports <http://spdx.org/licenses/«(ds.license as SpdxLicense).licenseID»>;
-		«ENDIF»
+		«FOR license: ds.elements.filter(DatasheetProperty).filter[it.name.equals(DefaultDatasheetProperties.SPDX_LICENSE.literal)]»
+		owl:imports <http://spdx.org/licenses/«license.value»>;
+		«ENDFOR»
 		«FOR dm_ds: ds.allDomainModelDatasheets.sortBy(c|c.name.toString)»
 		owl:imports <«dm_ds.baseURI»/DomainModels/«dm_ds.name»> ;
 		«ENDFOR»
@@ -163,44 +198,17 @@ class ComponentDatasheetGeneratorImpl extends AbstractGenerator {
 		# Abstract. 1-sentence, very brief, description about this component.
 		t1:shortDescription "«ds.shortDescription»";
 	
-		«IF ds.longDescription !== null && ds.longDescription.length > 4»
+		«IF ds.component !== null && ds.component.documentation !== null»
 		# A long description of this component
-		t1:description """«ds.longDescription.substring(2, ds.longDescription.length-4)»""";
+		t1:description """
+		«ds.component.multilineHtmlDocumentation»
+		""";
 		«ENDIF»
+		
+		«FOR element: ds.elements»
+		«element.compile»
+		«ENDFOR»
 	
-		«IF ds.license instanceof SpdxLicense»
-		# License will contain SPDX License Identifier
-		# see https://spdx.org/licenses/
-		t1:license <http://spdx.org/licenses/«(ds.license as SpdxLicense).licenseID»>;
-		«ENDIF»
-		
-		
-		# Technology Readiness Scale, e.g.
-		# http://www.innovationseeds.eu/Virtual_Library/Knowledge/TLR_Scale.kl
-		# Level 1 to level 9.
-		# plus trl:undefined for undefined TRL
-		t1:trl t1:TRL_«ds.trl.literal»;
-		
-		«IF ds.homepage !== null»
-		# The webpage with additional information about this component
-		t1:homepage "«ds.homepage»"^^xsd:anyURI;
-		«ENDIF»
-	
-		«IF ds.supplierDescription !== null»
-		# Name of the supplier/institution
-		# either “literal” with datatype xsd:string or IRI
-		t1:supplierDescription "«ds.supplierDescription»";
-		«ENDIF»
-		
-		# Purpose/Capability of this component.
-		t1:purposeDescription "«ds.purposeDescription»";
-		
-		«IF ds.hardwareRequirementDescription !== null»
-		# In case it is a hardware access component, state the
-		# name of the hardware sensor/actuator here.
-		t1:hardwareRequirementDescription "«ds.hardwareRequirementDescription»";
-		«ENDIF»
-		
 		# Services this component provides or requires
 		«FOR port: ds.component.elements.filter(ComponentPort)»
 		# ComponentPort «port.name»

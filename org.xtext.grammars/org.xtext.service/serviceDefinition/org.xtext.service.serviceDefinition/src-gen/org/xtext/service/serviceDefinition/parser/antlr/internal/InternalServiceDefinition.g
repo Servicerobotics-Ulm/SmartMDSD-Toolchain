@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,32 +15,7 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 grammar InternalServiceDefinition;
 
 options {
@@ -274,30 +248,6 @@ ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	)
 ;
 
-// Entry rule entryRuleEString
-entryRuleEString returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getEStringRule()); }
-	iv_ruleEString=ruleEString
-	{ $current=$iv_ruleEString.current.getText(); }
-	EOF;
-
-// Rule EString
-ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	this_STRING_0=RULE_STRING
-	{
-		$current.merge(this_STRING_0);
-	}
-	{
-		newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall());
-	}
-;
-
 // Entry rule entryRuleServiceDefRepository
 entryRuleServiceDefRepository returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getServiceDefRepositoryRule()); }
@@ -314,15 +264,33 @@ ruleServiceDefRepository returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='ServiceDefRepository'
+		(
+			(
+				lv_documentation_0_0=RULE_DOCU_COMMENT
+				{
+					newLeafNode(lv_documentation_0_0, grammarAccess.getServiceDefRepositoryAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getServiceDefRepositoryRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"documentation",
+						lv_documentation_0_0,
+						"org.xtext.base.docuterminals.DocuTerminals.DOCU_COMMENT");
+				}
+			)
+		)?
+		otherlv_1='ServiceDefRepository'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getServiceDefRepositoryAccess().getServiceDefRepositoryKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getServiceDefRepositoryAccess().getServiceDefRepositoryKeyword_1());
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_name_2_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getServiceDefRepositoryAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getServiceDefRepositoryAccess().getNameIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -331,22 +299,22 @@ ruleServiceDefRepository returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_2_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
 		(
-			otherlv_2='version'
+			otherlv_3='version'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getServiceDefRepositoryAccess().getVersionKeyword_2_0());
+				newLeafNode(otherlv_3, grammarAccess.getServiceDefRepositoryAccess().getVersionKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getServiceDefRepositoryAccess().getVersionServiceRepoVersionParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getServiceDefRepositoryAccess().getVersionServiceRepoVersionParserRuleCall_3_1_0());
 					}
-					lv_version_3_0=ruleServiceRepoVersion
+					lv_version_4_0=ruleServiceRepoVersion
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getServiceDefRepositoryRule());
@@ -354,23 +322,23 @@ ruleServiceDefRepository returns [EObject current=null]
 						set(
 							$current,
 							"version",
-							lv_version_3_0,
+							lv_version_4_0,
 							"org.xtext.service.serviceDefinition.ServiceDefinition.ServiceRepoVersion");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_4='{'
+		otherlv_5='{'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getServiceDefRepositoryAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getServiceDefRepositoryAccess().getLeftCurlyBracketKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getServiceDefRepositoryAccess().getServicesAbstractServiceDefinitionParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getServiceDefRepositoryAccess().getServicesAbstractServiceDefinitionParserRuleCall_5_0());
 				}
-				lv_services_5_0=ruleAbstractServiceDefinition
+				lv_services_6_0=ruleAbstractServiceDefinition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getServiceDefRepositoryRule());
@@ -378,15 +346,15 @@ ruleServiceDefRepository returns [EObject current=null]
 					add(
 						$current,
 						"services",
-						lv_services_5_0,
+						lv_services_6_0,
 						"org.xtext.service.serviceDefinition.ServiceDefinition.AbstractServiceDefinition");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_6='}'
+		otherlv_7='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getServiceDefRepositoryAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_7, grammarAccess.getServiceDefRepositoryAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;
@@ -622,15 +590,33 @@ ruleForkingServiceDefinition returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='ForkingServiceDefinition'
+		(
+			(
+				lv_documentation_0_0=RULE_DOCU_COMMENT
+				{
+					newLeafNode(lv_documentation_0_0, grammarAccess.getForkingServiceDefinitionAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getForkingServiceDefinitionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"documentation",
+						lv_documentation_0_0,
+						"org.xtext.base.docuterminals.DocuTerminals.DOCU_COMMENT");
+				}
+			)
+		)?
+		otherlv_1='ForkingServiceDefinition'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getForkingServiceDefinitionAccess().getForkingServiceDefinitionKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getForkingServiceDefinitionAccess().getForkingServiceDefinitionKeyword_1());
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_name_2_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getForkingServiceDefinitionAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getForkingServiceDefinitionAccess().getNameIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -639,21 +625,21 @@ ruleForkingServiceDefinition returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_2_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
-		otherlv_2='{'
+		otherlv_3='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getForkingServiceDefinitionAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getForkingServiceDefinitionAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getForkingServiceDefinitionAccess().getPatternForkingPatternInstanceParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getForkingServiceDefinitionAccess().getPatternForkingPatternInstanceParserRuleCall_4_0());
 				}
-				lv_pattern_3_0=ruleForkingPatternInstance
+				lv_pattern_4_0=ruleForkingPatternInstance
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getForkingServiceDefinitionRule());
@@ -661,43 +647,18 @@ ruleForkingServiceDefinition returns [EObject current=null]
 					set(
 						$current,
 						"pattern",
-						lv_pattern_3_0,
+						lv_pattern_4_0,
 						"org.xtext.service.serviceDefinition.ServiceDefinition.ForkingPatternInstance");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_4='purposeDescription'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getForkingServiceDefinitionAccess().getPurposeDescriptionKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getForkingServiceDefinitionAccess().getPurposeDescriptionEStringParserRuleCall_4_1_0());
-					}
-					lv_purposeDescription_5_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getForkingServiceDefinitionRule());
-						}
-						set(
-							$current,
-							"purposeDescription",
-							lv_purposeDescription_5_0,
-							"org.xtext.service.serviceDefinition.ServiceDefinition.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
 			(
 				{
 					newCompositeNode(grammarAccess.getForkingServiceDefinitionAccess().getPropertiesServicePropertyParserRuleCall_5_0());
 				}
-				lv_properties_6_0=ruleServiceProperty
+				lv_properties_5_0=ruleServiceProperty
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getForkingServiceDefinitionRule());
@@ -705,15 +666,15 @@ ruleForkingServiceDefinition returns [EObject current=null]
 					add(
 						$current,
 						"properties",
-						lv_properties_6_0,
+						lv_properties_5_0,
 						"org.xtext.service.serviceDefinition.ServiceDefinition.ServiceProperty");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_7='}'
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getForkingServiceDefinitionAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getForkingServiceDefinitionAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;
@@ -734,15 +695,33 @@ ruleJoyningServiceDefinition returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='JoiningServiceDefinition'
+		(
+			(
+				lv_documentation_0_0=RULE_DOCU_COMMENT
+				{
+					newLeafNode(lv_documentation_0_0, grammarAccess.getJoyningServiceDefinitionAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getJoyningServiceDefinitionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"documentation",
+						lv_documentation_0_0,
+						"org.xtext.base.docuterminals.DocuTerminals.DOCU_COMMENT");
+				}
+			)
+		)?
+		otherlv_1='JoiningServiceDefinition'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getJoyningServiceDefinitionAccess().getJoiningServiceDefinitionKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getJoyningServiceDefinitionAccess().getJoiningServiceDefinitionKeyword_1());
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_name_2_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getJoyningServiceDefinitionAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getJoyningServiceDefinitionAccess().getNameIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -751,21 +730,21 @@ ruleJoyningServiceDefinition returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_2_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
-		otherlv_2='{'
+		otherlv_3='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getJoyningServiceDefinitionAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getJoyningServiceDefinitionAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getJoyningServiceDefinitionAccess().getPatternJoiningPatternInstanceParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getJoyningServiceDefinitionAccess().getPatternJoiningPatternInstanceParserRuleCall_4_0());
 				}
-				lv_pattern_3_0=ruleJoiningPatternInstance
+				lv_pattern_4_0=ruleJoiningPatternInstance
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getJoyningServiceDefinitionRule());
@@ -773,43 +752,18 @@ ruleJoyningServiceDefinition returns [EObject current=null]
 					set(
 						$current,
 						"pattern",
-						lv_pattern_3_0,
+						lv_pattern_4_0,
 						"org.xtext.service.serviceDefinition.ServiceDefinition.JoiningPatternInstance");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_4='purposeDescription'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getJoyningServiceDefinitionAccess().getPurposeDescriptionKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getJoyningServiceDefinitionAccess().getPurposeDescriptionEStringParserRuleCall_4_1_0());
-					}
-					lv_purposeDescription_5_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getJoyningServiceDefinitionRule());
-						}
-						set(
-							$current,
-							"purposeDescription",
-							lv_purposeDescription_5_0,
-							"org.xtext.service.serviceDefinition.ServiceDefinition.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
 			(
 				{
 					newCompositeNode(grammarAccess.getJoyningServiceDefinitionAccess().getPropertiesServicePropertyParserRuleCall_5_0());
 				}
-				lv_properties_6_0=ruleServiceProperty
+				lv_properties_5_0=ruleServiceProperty
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getJoyningServiceDefinitionRule());
@@ -817,15 +771,15 @@ ruleJoyningServiceDefinition returns [EObject current=null]
 					add(
 						$current,
 						"properties",
-						lv_properties_6_0,
+						lv_properties_5_0,
 						"org.xtext.service.serviceDefinition.ServiceDefinition.ServiceProperty");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_7='}'
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getJoyningServiceDefinitionAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getJoyningServiceDefinitionAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;
@@ -846,15 +800,33 @@ ruleRequestAnswerServiceDefinition returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='RequestAnswerServiceDefinition'
+		(
+			(
+				lv_documentation_0_0=RULE_DOCU_COMMENT
+				{
+					newLeafNode(lv_documentation_0_0, grammarAccess.getRequestAnswerServiceDefinitionAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRequestAnswerServiceDefinitionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"documentation",
+						lv_documentation_0_0,
+						"org.xtext.base.docuterminals.DocuTerminals.DOCU_COMMENT");
+				}
+			)
+		)?
+		otherlv_1='RequestAnswerServiceDefinition'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getRequestAnswerServiceDefinitionAccess().getRequestAnswerServiceDefinitionKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getRequestAnswerServiceDefinitionAccess().getRequestAnswerServiceDefinitionKeyword_1());
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_name_2_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getRequestAnswerServiceDefinitionAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getRequestAnswerServiceDefinitionAccess().getNameIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -863,21 +835,21 @@ ruleRequestAnswerServiceDefinition returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_2_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
-		otherlv_2='{'
+		otherlv_3='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getRequestAnswerServiceDefinitionAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getRequestAnswerServiceDefinitionAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPatternRequestAnswerPatternParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPatternRequestAnswerPatternParserRuleCall_4_0());
 				}
-				lv_pattern_3_0=ruleRequestAnswerPattern
+				lv_pattern_4_0=ruleRequestAnswerPattern
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRequestAnswerServiceDefinitionRule());
@@ -885,43 +857,18 @@ ruleRequestAnswerServiceDefinition returns [EObject current=null]
 					set(
 						$current,
 						"pattern",
-						lv_pattern_3_0,
+						lv_pattern_4_0,
 						"org.xtext.service.serviceDefinition.ServiceDefinition.RequestAnswerPattern");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_4='purposeDescription'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getRequestAnswerServiceDefinitionAccess().getPurposeDescriptionKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPurposeDescriptionEStringParserRuleCall_4_1_0());
-					}
-					lv_purposeDescription_5_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getRequestAnswerServiceDefinitionRule());
-						}
-						set(
-							$current,
-							"purposeDescription",
-							lv_purposeDescription_5_0,
-							"org.xtext.service.serviceDefinition.ServiceDefinition.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
 			(
 				{
 					newCompositeNode(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPropertiesServicePropertyParserRuleCall_5_0());
 				}
-				lv_properties_6_0=ruleServiceProperty
+				lv_properties_5_0=ruleServiceProperty
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRequestAnswerServiceDefinitionRule());
@@ -929,15 +876,15 @@ ruleRequestAnswerServiceDefinition returns [EObject current=null]
 					add(
 						$current,
 						"properties",
-						lv_properties_6_0,
+						lv_properties_5_0,
 						"org.xtext.service.serviceDefinition.ServiceDefinition.ServiceProperty");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_7='}'
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getRequestAnswerServiceDefinitionAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getRequestAnswerServiceDefinitionAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;
@@ -958,15 +905,33 @@ ruleCoordinationServiceDefinition returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='CoordinationServiceDefinition'
+		(
+			(
+				lv_documentation_0_0=RULE_DOCU_COMMENT
+				{
+					newLeafNode(lv_documentation_0_0, grammarAccess.getCoordinationServiceDefinitionAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCoordinationServiceDefinitionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"documentation",
+						lv_documentation_0_0,
+						"org.xtext.base.docuterminals.DocuTerminals.DOCU_COMMENT");
+				}
+			)
+		)?
+		otherlv_1='CoordinationServiceDefinition'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getCoordinationServiceDefinitionAccess().getCoordinationServiceDefinitionKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getCoordinationServiceDefinitionAccess().getCoordinationServiceDefinitionKeyword_1());
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_name_2_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getCoordinationServiceDefinitionAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getCoordinationServiceDefinitionAccess().getNameIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -975,66 +940,32 @@ ruleCoordinationServiceDefinition returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_2_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
-		otherlv_2='{'
+		otherlv_3='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getCoordinationServiceDefinitionAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getCoordinationServiceDefinitionAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
 			(
 				{ 
-				  getUnorderedGroupHelper().enter(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3());
+				  getUnorderedGroupHelper().enter(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4());
 				}
 				(
 					(
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 0)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 0)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 0);
-					}
-								({true}?=>(otherlv_4='purposeDescription'
-								{
-									newLeafNode(otherlv_4, grammarAccess.getCoordinationServiceDefinitionAccess().getPurposeDescriptionKeyword_3_0_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getCoordinationServiceDefinitionAccess().getPurposeDescriptionEStringParserRuleCall_3_0_1_0());
-										}
-										lv_purposeDescription_5_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getCoordinationServiceDefinitionRule());
-											}
-											set(
-												$current,
-												"purposeDescription",
-												lv_purposeDescription_5_0,
-												"org.xtext.service.serviceDefinition.ServiceDefinition.EString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 1)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 1);
+						getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 0);
 					}
 								({true}?=>((
 									{
-										newCompositeNode(grammarAccess.getCoordinationServiceDefinitionAccess().getStatePatternStatePatternParserRuleCall_3_1_0());
+										newCompositeNode(grammarAccess.getCoordinationServiceDefinitionAccess().getStatePatternStatePatternParserRuleCall_4_0_0());
 									}
-									lv_statePattern_6_0=ruleStatePattern
+									lv_statePattern_5_0=ruleStatePattern
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getCoordinationServiceDefinitionRule());
@@ -1042,27 +973,27 @@ ruleCoordinationServiceDefinition returns [EObject current=null]
 										set(
 											$current,
 											"statePattern",
-											lv_statePattern_6_0,
+											lv_statePattern_5_0,
 											"org.xtext.service.serviceDefinition.ServiceDefinition.StatePattern");
 										afterParserOrEnumRuleCall();
 									}
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 2)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 1)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 2);
+						getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 1);
 					}
 								({true}?=>((
 									{
-										newCompositeNode(grammarAccess.getCoordinationServiceDefinitionAccess().getParameterPatternParameterPatternParserRuleCall_3_2_0());
+										newCompositeNode(grammarAccess.getCoordinationServiceDefinitionAccess().getParameterPatternParameterPatternParserRuleCall_4_1_0());
 									}
-									lv_parameterPattern_7_0=ruleParameterPattern
+									lv_parameterPattern_6_0=ruleParameterPattern
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getCoordinationServiceDefinitionRule());
@@ -1070,27 +1001,27 @@ ruleCoordinationServiceDefinition returns [EObject current=null]
 										set(
 											$current,
 											"parameterPattern",
-											lv_parameterPattern_7_0,
+											lv_parameterPattern_6_0,
 											"org.xtext.service.serviceDefinition.ServiceDefinition.ParameterPattern");
 										afterParserOrEnumRuleCall();
 									}
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 3)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 2)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 3);
+						getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 2);
 					}
 								({true}?=>((
 									{
-										newCompositeNode(grammarAccess.getCoordinationServiceDefinitionAccess().getMonitoringPatternMonitoringPatternParserRuleCall_3_3_0());
+										newCompositeNode(grammarAccess.getCoordinationServiceDefinitionAccess().getMonitoringPatternMonitoringPatternParserRuleCall_4_2_0());
 									}
-									lv_monitoringPattern_8_0=ruleMonitoringPattern
+									lv_monitoringPattern_7_0=ruleMonitoringPattern
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getCoordinationServiceDefinitionRule());
@@ -1098,27 +1029,27 @@ ruleCoordinationServiceDefinition returns [EObject current=null]
 										set(
 											$current,
 											"monitoringPattern",
-											lv_monitoringPattern_8_0,
+											lv_monitoringPattern_7_0,
 											"org.xtext.service.serviceDefinition.ServiceDefinition.MonitoringPattern");
 										afterParserOrEnumRuleCall();
 									}
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 4)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 3)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 4);
+						getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 3);
 					}
 								({true}?=>((
 									{
-										newCompositeNode(grammarAccess.getCoordinationServiceDefinitionAccess().getWiringPatternDynamicWiringPatternParserRuleCall_3_4_0());
+										newCompositeNode(grammarAccess.getCoordinationServiceDefinitionAccess().getWiringPatternDynamicWiringPatternParserRuleCall_4_3_0());
 									}
-									lv_wiringPattern_9_0=ruleDynamicWiringPattern
+									lv_wiringPattern_8_0=ruleDynamicWiringPattern
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getCoordinationServiceDefinitionRule());
@@ -1126,14 +1057,14 @@ ruleCoordinationServiceDefinition returns [EObject current=null]
 										set(
 											$current,
 											"wiringPattern",
-											lv_wiringPattern_9_0,
+											lv_wiringPattern_8_0,
 											"org.xtext.service.serviceDefinition.ServiceDefinition.DynamicWiringPattern");
 										afterParserOrEnumRuleCall();
 									}
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4());
 					}
 				)
 			)
@@ -1141,15 +1072,15 @@ ruleCoordinationServiceDefinition returns [EObject current=null]
 				)
 			)
 				{ 
-				  getUnorderedGroupHelper().leave(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3());
+				  getUnorderedGroupHelper().leave(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4());
 				}
 		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCoordinationServiceDefinitionAccess().getServicesCommunicationServiceUsageParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getCoordinationServiceDefinitionAccess().getServicesCommunicationServiceUsageParserRuleCall_5_0());
 				}
-				lv_services_10_0=ruleCommunicationServiceUsage
+				lv_services_9_0=ruleCommunicationServiceUsage
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCoordinationServiceDefinitionRule());
@@ -1157,7 +1088,7 @@ ruleCoordinationServiceDefinition returns [EObject current=null]
 					add(
 						$current,
 						"services",
-						lv_services_10_0,
+						lv_services_9_0,
 						"org.xtext.service.serviceDefinition.ServiceDefinition.CommunicationServiceUsage");
 					afterParserOrEnumRuleCall();
 				}
@@ -1166,9 +1097,9 @@ ruleCoordinationServiceDefinition returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCoordinationServiceDefinitionAccess().getPropertiesServicePropertyParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getCoordinationServiceDefinitionAccess().getPropertiesServicePropertyParserRuleCall_6_0());
 				}
-				lv_properties_11_0=ruleServiceProperty
+				lv_properties_10_0=ruleServiceProperty
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCoordinationServiceDefinitionRule());
@@ -1176,15 +1107,15 @@ ruleCoordinationServiceDefinition returns [EObject current=null]
 					add(
 						$current,
 						"properties",
-						lv_properties_11_0,
+						lv_properties_10_0,
 						"org.xtext.service.serviceDefinition.ServiceDefinition.ServiceProperty");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_12='}'
+		otherlv_11='}'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getCoordinationServiceDefinitionAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_11, grammarAccess.getCoordinationServiceDefinitionAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;
@@ -1984,15 +1915,21 @@ ruleServiceProperty returns [EObject current=null]
 	)
 ;
 
+RULE_ML_COMMENT : '/*' ~('*') ( options {greedy=false;} : . )*'*/';
+
+fragment RULE_ML_DOCUMENTATION : '/**' ( options {greedy=false;} : . )*'*/';
+
+RULE_SL_COMMENT : '//' ~('/') ~(('\n'|'\r'))* ('\r'? '\n')?;
+
+fragment RULE_SL_DOCUMENTATION : '///' ~(('\n'|'\r'))* ('\r'? '\n')?;
+
+RULE_DOCU_COMMENT : (RULE_ML_DOCUMENTATION|RULE_SL_DOCUMENTATION);
+
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
-
-RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
-
-RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
 
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 

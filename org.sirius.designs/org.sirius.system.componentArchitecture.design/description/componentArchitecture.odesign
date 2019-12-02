@@ -277,6 +277,17 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="DDS_SmartSoft" label="DDS/SmartSoft Backend" containerMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='MiddlewareSelectionContainer']">
+              <variable name="container">
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="connection" candidatesExpression="[container.connections/]" message="Select Connection edge"/>
+              </variable>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:connection">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="roboticMiddleware::DDS_SmartSoft" referenceName="middlewareSelection"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
             <tools xsi:type="tool_1:ContainerCreationDescription" name="ACE_SmartSoft" label="ACE/SmartSoft Backend" containerMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='MiddlewareSelectionContainer']">
               <variable name="container">
                 <subVariables xsi:type="tool:SelectModelElementVariable" name="connection" candidatesExpression="[container.connections/]" message="Select Connection edge"/>
@@ -293,7 +304,7 @@
       </additionalLayers>
       <additionalLayers name="BrandingLogos" icon="/org.sirius.tools/icons/comp.png" activeByDefault="true">
         <decorationDescriptionsSet>
-          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="ComponentLogo" position="NORTH_EAST" preconditionExpression="service:self.hasLogo()" imageExpression="[self.component.logo/]" tooltipExpression="['Branding Logo'/]" mappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="ComponentLogo" position="NORTH_EAST" preconditionExpression="service:self.hasLogo()" imageExpression="service:self.getLogoPath()" tooltipExpression="['Branding Logo'/]" mappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']"/>
         </decorationDescriptionsSet>
       </additionalLayers>
     </ownedRepresentations>

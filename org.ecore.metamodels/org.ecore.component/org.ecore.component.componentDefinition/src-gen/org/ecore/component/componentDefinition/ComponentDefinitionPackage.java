@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.ecore.base.documentation.DocumentationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,13 +115,22 @@ public interface ComponentDefinitionPackage extends EPackage {
 	int COMPONENT_DEFINITION = 1;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_DEFINITION__DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_DEFINITION__NAME = 0;
+	int COMPONENT_DEFINITION__NAME = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -129,7 +139,7 @@ public interface ComponentDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_DEFINITION__ELEMENTS = 1;
+	int COMPONENT_DEFINITION__ELEMENTS = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Logo</b></em>' attribute.
@@ -138,7 +148,7 @@ public interface ComponentDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_DEFINITION__LOGO = 2;
+	int COMPONENT_DEFINITION__LOGO = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Component Definition</em>' class.
@@ -147,7 +157,25 @@ public interface ComponentDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_DEFINITION_FEATURE_COUNT = 3;
+	int COMPONENT_DEFINITION_FEATURE_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Multiline Html Documentation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_DEFINITION___GET_MULTILINE_HTML_DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT___GET_MULTILINE_HTML_DOCUMENTATION;
+
+	/**
+	 * The operation id for the '<em>Get First Documentation Line</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_DEFINITION___GET_FIRST_DOCUMENTATION_LINE = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT___GET_FIRST_DOCUMENTATION_LINE;
 
 	/**
 	 * The number of operations of the '<em>Component Definition</em>' class.
@@ -156,7 +184,7 @@ public interface ComponentDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_DEFINITION_OPERATION_COUNT = 0;
+	int COMPONENT_DEFINITION_OPERATION_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.component.componentDefinition.impl.AbstractComponentElementImpl <em>Abstract Component Element</em>}' class.
@@ -473,13 +501,22 @@ public interface ComponentDefinitionPackage extends EPackage {
 	int COMPONENT_PORT__NAME = NAMED_COMPONENT_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_PORT__DOCUMENTATION = NAMED_COMPONENT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PORT__EXTENSIONS = NAMED_COMPONENT_ELEMENT_FEATURE_COUNT + 0;
+	int COMPONENT_PORT__EXTENSIONS = NAMED_COMPONENT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Component Port</em>' class.
@@ -488,7 +525,25 @@ public interface ComponentDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PORT_FEATURE_COUNT = NAMED_COMPONENT_ELEMENT_FEATURE_COUNT + 1;
+	int COMPONENT_PORT_FEATURE_COUNT = NAMED_COMPONENT_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Multiline Html Documentation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_PORT___GET_MULTILINE_HTML_DOCUMENTATION = NAMED_COMPONENT_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get First Documentation Line</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_PORT___GET_FIRST_DOCUMENTATION_LINE = NAMED_COMPONENT_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Component Port</em>' class.
@@ -497,7 +552,7 @@ public interface ComponentDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PORT_OPERATION_COUNT = NAMED_COMPONENT_ELEMENT_OPERATION_COUNT + 0;
+	int COMPONENT_PORT_OPERATION_COUNT = NAMED_COMPONENT_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.component.componentDefinition.impl.OutputPortImpl <em>Output Port</em>}' class.
@@ -517,6 +572,15 @@ public interface ComponentDefinitionPackage extends EPackage {
 	 * @ordered
 	 */
 	int OUTPUT_PORT__NAME = COMPONENT_PORT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PORT__DOCUMENTATION = COMPONENT_PORT__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -555,6 +619,24 @@ public interface ComponentDefinitionPackage extends EPackage {
 	int OUTPUT_PORT_FEATURE_COUNT = COMPONENT_PORT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Multiline Html Documentation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PORT___GET_MULTILINE_HTML_DOCUMENTATION = COMPONENT_PORT___GET_MULTILINE_HTML_DOCUMENTATION;
+
+	/**
+	 * The operation id for the '<em>Get First Documentation Line</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PORT___GET_FIRST_DOCUMENTATION_LINE = COMPONENT_PORT___GET_FIRST_DOCUMENTATION_LINE;
+
+	/**
 	 * The number of operations of the '<em>Output Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -583,6 +665,15 @@ public interface ComponentDefinitionPackage extends EPackage {
 	int REQUEST_PORT__NAME = COMPONENT_PORT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUEST_PORT__DOCUMENTATION = COMPONENT_PORT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -608,6 +699,24 @@ public interface ComponentDefinitionPackage extends EPackage {
 	 * @ordered
 	 */
 	int REQUEST_PORT_FEATURE_COUNT = COMPONENT_PORT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Multiline Html Documentation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUEST_PORT___GET_MULTILINE_HTML_DOCUMENTATION = COMPONENT_PORT___GET_MULTILINE_HTML_DOCUMENTATION;
+
+	/**
+	 * The operation id for the '<em>Get First Documentation Line</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUEST_PORT___GET_FIRST_DOCUMENTATION_LINE = COMPONENT_PORT___GET_FIRST_DOCUMENTATION_LINE;
 
 	/**
 	 * The number of operations of the '<em>Request Port</em>' class.
@@ -638,6 +747,15 @@ public interface ComponentDefinitionPackage extends EPackage {
 	int INPUT_PORT__NAME = COMPONENT_PORT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PORT__DOCUMENTATION = COMPONENT_PORT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -663,6 +781,24 @@ public interface ComponentDefinitionPackage extends EPackage {
 	 * @ordered
 	 */
 	int INPUT_PORT_FEATURE_COUNT = COMPONENT_PORT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Multiline Html Documentation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PORT___GET_MULTILINE_HTML_DOCUMENTATION = COMPONENT_PORT___GET_MULTILINE_HTML_DOCUMENTATION;
+
+	/**
+	 * The operation id for the '<em>Get First Documentation Line</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PORT___GET_FIRST_DOCUMENTATION_LINE = COMPONENT_PORT___GET_FIRST_DOCUMENTATION_LINE;
 
 	/**
 	 * The number of operations of the '<em>Input Port</em>' class.
@@ -693,6 +829,15 @@ public interface ComponentDefinitionPackage extends EPackage {
 	int ANSWER_PORT__NAME = COMPONENT_PORT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANSWER_PORT__DOCUMENTATION = COMPONENT_PORT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -718,6 +863,24 @@ public interface ComponentDefinitionPackage extends EPackage {
 	 * @ordered
 	 */
 	int ANSWER_PORT_FEATURE_COUNT = COMPONENT_PORT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Multiline Html Documentation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANSWER_PORT___GET_MULTILINE_HTML_DOCUMENTATION = COMPONENT_PORT___GET_MULTILINE_HTML_DOCUMENTATION;
+
+	/**
+	 * The operation id for the '<em>Get First Documentation Line</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANSWER_PORT___GET_FIRST_DOCUMENTATION_LINE = COMPONENT_PORT___GET_FIRST_DOCUMENTATION_LINE;
 
 	/**
 	 * The number of operations of the '<em>Answer Port</em>' class.

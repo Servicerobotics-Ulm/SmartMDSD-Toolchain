@@ -37,8 +37,6 @@ Require-Bundle: com.google.inject,
  org.xtext.component.componentParameter.ui,
  org.ecore.component.componentDatasheet,
  org.xtext.component.componentDatasheet.ui,
- org.ecore.component.componentDocumentation,
- org.xtext.component.componentDocumentation.ui,
  org.ecore.system.componentArchitecture,
  org.xtext.system.componentArchitecture.ui,
  org.ecore.system.targetPlatform,
@@ -54,7 +52,10 @@ Require-Bundle: com.google.inject,
  org.xtext.behavior.taskRealization.ui,
  org.xtext.service.skillDefinition.ui,
  org.xtext.behavior.taskDefinition.ui,
- org.xtext.behavior.skillRealization.ui
+ org.xtext.behavior.skillRealization.ui,
+ org.ecore.system.systemDatasheet,
+ org.xtext.system.systemDatasheet.ui,
+ org.eclipse.core.variables
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: org.smartmdsd.utils
 Bundle-ActivationPolicy: lazy

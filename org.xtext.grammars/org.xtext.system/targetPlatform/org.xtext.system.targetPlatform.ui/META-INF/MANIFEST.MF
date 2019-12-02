@@ -18,10 +18,12 @@ Require-Bundle: org.xtext.system.targetPlatform,
  org.eclipse.xtext.builder,
  org.eclipse.xtend.lib;bundle-version="2.14.0";resolution:=optional,
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
- org.xtext.service.roboticMiddleware.ui
+ org.xtext.service.roboticMiddleware.ui,
+ org.xtext.base.docuterminals.ui
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.system.targetPlatform.ui.quickfix,
  org.xtext.system.targetPlatform.ui.contentassist,
  org.xtext.system.targetPlatform.ui.internal
 Bundle-Activator: org.xtext.system.targetPlatform.ui.internal.TargetPlatformActivator
+Automatic-Module-Name: org.xtext.system.targetPlatform.ui

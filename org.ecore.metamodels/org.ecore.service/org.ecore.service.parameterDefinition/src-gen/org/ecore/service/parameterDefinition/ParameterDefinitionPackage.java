@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.ecore.base.documentation.DocumentationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -104,13 +105,22 @@ public interface ParameterDefinitionPackage extends EPackage {
 	int PARAMETER_SET_REPOSITORY = 1;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_SET_REPOSITORY__DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_SET_REPOSITORY__NAME = 0;
+	int PARAMETER_SET_REPOSITORY__NAME = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Sets</b></em>' containment reference list.
@@ -119,7 +129,7 @@ public interface ParameterDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_SET_REPOSITORY__SETS = 1;
+	int PARAMETER_SET_REPOSITORY__SETS = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Set Repository</em>' class.
@@ -128,7 +138,7 @@ public interface ParameterDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_SET_REPOSITORY_FEATURE_COUNT = 2;
+	int PARAMETER_SET_REPOSITORY_FEATURE_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.service.parameterDefinition.impl.ParameterSetDefinitionImpl <em>Parameter Set Definition</em>}' class.
@@ -141,13 +151,22 @@ public interface ParameterDefinitionPackage extends EPackage {
 	int PARAMETER_SET_DEFINITION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_SET_DEFINITION__DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_SET_DEFINITION__NAME = 0;
+	int PARAMETER_SET_DEFINITION__NAME = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -156,7 +175,7 @@ public interface ParameterDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_SET_DEFINITION__PARAMETERS = 1;
+	int PARAMETER_SET_DEFINITION__PARAMETERS = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Extends</b></em>' reference list.
@@ -165,7 +184,7 @@ public interface ParameterDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_SET_DEFINITION__EXTENDS = 2;
+	int PARAMETER_SET_DEFINITION__EXTENDS = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Set Definition</em>' class.
@@ -174,7 +193,7 @@ public interface ParameterDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_SET_DEFINITION_FEATURE_COUNT = 3;
+	int PARAMETER_SET_DEFINITION_FEATURE_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.service.parameterDefinition.impl.AbstractParameterImpl <em>Abstract Parameter</em>}' class.
@@ -187,13 +206,22 @@ public interface ParameterDefinitionPackage extends EPackage {
 	int ABSTRACT_PARAMETER = 3;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_PARAMETER__DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_PARAMETER__NAME = 0;
+	int ABSTRACT_PARAMETER__NAME = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -202,7 +230,7 @@ public interface ParameterDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_PARAMETER__ATTRIBUTES = 1;
+	int ABSTRACT_PARAMETER__ATTRIBUTES = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Parameter</em>' class.
@@ -211,7 +239,7 @@ public interface ParameterDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_PARAMETER_FEATURE_COUNT = 2;
+	int ABSTRACT_PARAMETER_FEATURE_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.service.parameterDefinition.impl.ParameterDefinitionImpl <em>Parameter Definition</em>}' class.
@@ -222,6 +250,15 @@ public interface ParameterDefinitionPackage extends EPackage {
 	 * @generated
 	 */
 	int PARAMETER_DEFINITION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_DEFINITION__DOCUMENTATION = ABSTRACT_PARAMETER__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -259,6 +296,15 @@ public interface ParameterDefinitionPackage extends EPackage {
 	 * @generated
 	 */
 	int TRIGGER_DEFINITION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_DEFINITION__DOCUMENTATION = ABSTRACT_PARAMETER__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

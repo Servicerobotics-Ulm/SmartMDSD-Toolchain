@@ -93,6 +93,7 @@ public class NetworkConnectionImpl extends AbstractTPElementImpl implements Netw
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NetworkInterface getEndpoint1() {
 		if (endpoint1 != null && endpoint1.eIsProxy()) {
 			InternalEObject oldEndpoint1 = (InternalEObject) endpoint1;
@@ -120,6 +121,7 @@ public class NetworkConnectionImpl extends AbstractTPElementImpl implements Netw
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEndpoint1(NetworkInterface newEndpoint1) {
 		NetworkInterface oldEndpoint1 = endpoint1;
 		endpoint1 = newEndpoint1;
@@ -133,6 +135,7 @@ public class NetworkConnectionImpl extends AbstractTPElementImpl implements Netw
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NetworkInterface getEndpoint2() {
 		if (endpoint2 != null && endpoint2.eIsProxy()) {
 			InternalEObject oldEndpoint2 = (InternalEObject) endpoint2;
@@ -160,6 +163,7 @@ public class NetworkConnectionImpl extends AbstractTPElementImpl implements Netw
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEndpoint2(NetworkInterface newEndpoint2) {
 		NetworkInterface oldEndpoint2 = endpoint2;
 		endpoint2 = newEndpoint2;
@@ -173,6 +177,7 @@ public class NetworkConnectionImpl extends AbstractTPElementImpl implements Netw
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getKind() {
 		return kind;
 	}
@@ -182,6 +187,7 @@ public class NetworkConnectionImpl extends AbstractTPElementImpl implements Netw
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setKind(String newKind) {
 		String oldKind = kind;
 		kind = newKind;
@@ -282,7 +288,7 @@ public class NetworkConnectionImpl extends AbstractTPElementImpl implements Netw
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (kind: ");
 		result.append(kind);
 		result.append(')');

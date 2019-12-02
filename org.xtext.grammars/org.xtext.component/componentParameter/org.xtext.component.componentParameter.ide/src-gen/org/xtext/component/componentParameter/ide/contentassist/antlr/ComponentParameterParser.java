@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,32 +15,7 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.component.componentParameter.ide.contentassist.antlr;
 
 import com.google.common.collect.ImmutableMap;
@@ -73,9 +47,9 @@ public class ComponentParameterParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, ComponentParameterGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getAbstractComponentParameterAccess().getAlternatives(), "rule__AbstractComponentParameter__Alternatives");
-			builder.put(grammarAccess.getExtendedTriggerAccess().getAlternatives_2(), "rule__ExtendedTrigger__Alternatives_2");
+			builder.put(grammarAccess.getExtendedTriggerAccess().getAlternatives_3(), "rule__ExtendedTrigger__Alternatives_3");
 			builder.put(grammarAccess.getAbstractParameterInstanceAccess().getAlternatives(), "rule__AbstractParameterInstance__Alternatives");
-			builder.put(grammarAccess.getTriggerInstanceAccess().getAlternatives_2(), "rule__TriggerInstance__Alternatives_2");
+			builder.put(grammarAccess.getTriggerInstanceAccess().getAlternatives_3(), "rule__TriggerInstance__Alternatives_3");
 			builder.put(grammarAccess.getAbstractParameterAccess().getAlternatives(), "rule__AbstractParameter__Alternatives");
 			builder.put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
 			builder.put(grammarAccess.getEDoubleAccess().getAlternatives_4_0(), "rule__EDouble__Alternatives_4_0");
@@ -98,12 +72,12 @@ public class ComponentParameterParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getParamDefRepoImportAccess().getGroup(), "rule__ParamDefRepoImport__Group__0");
 			builder.put(grammarAccess.getParameterSetRepositoryAccess().getGroup(), "rule__ParameterSetRepository__Group__0");
 			builder.put(grammarAccess.getParameterSetDefinitionAccess().getGroup(), "rule__ParameterSetDefinition__Group__0");
-			builder.put(grammarAccess.getParameterSetDefinitionAccess().getGroup_2(), "rule__ParameterSetDefinition__Group_2__0");
-			builder.put(grammarAccess.getParameterSetDefinitionAccess().getGroup_2_2(), "rule__ParameterSetDefinition__Group_2_2__0");
+			builder.put(grammarAccess.getParameterSetDefinitionAccess().getGroup_3(), "rule__ParameterSetDefinition__Group_3__0");
+			builder.put(grammarAccess.getParameterSetDefinitionAccess().getGroup_3_2(), "rule__ParameterSetDefinition__Group_3_2__0");
 			builder.put(grammarAccess.getParameterDefinitionAccess().getGroup(), "rule__ParameterDefinition__Group__0");
 			builder.put(grammarAccess.getTriggerDefinitionAccess().getGroup(), "rule__TriggerDefinition__Group__0");
 			builder.put(grammarAccess.getAttributeDefinitionAccess().getGroup(), "rule__AttributeDefinition__Group__0");
-			builder.put(grammarAccess.getAttributeDefinitionAccess().getGroup_3(), "rule__AttributeDefinition__Group_3__0");
+			builder.put(grammarAccess.getAttributeDefinitionAccess().getGroup_4(), "rule__AttributeDefinition__Group_4__0");
 			builder.put(grammarAccess.getAttributeRefinementAccess().getGroup(), "rule__AttributeRefinement__Group__0");
 			builder.put(grammarAccess.getFQNAccess().getGroup(), "rule__FQN__Group__0");
 			builder.put(grammarAccess.getFQNAccess().getGroup_1(), "rule__FQN__Group_1__0");
@@ -122,42 +96,55 @@ public class ComponentParameterParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSingleValueAccess().getGroup_2(), "rule__SingleValue__Group_2__0");
 			builder.put(grammarAccess.getSingleValueAccess().getGroup_3(), "rule__SingleValue__Group_3__0");
 			builder.put(grammarAccess.getSingleValueAccess().getGroup_4(), "rule__SingleValue__Group_4__0");
+			builder.put(grammarAccess.getAbstractDocumentedElementAccess().getGroup(), "rule__AbstractDocumentedElement__Group__0");
 			builder.put(grammarAccess.getComponentParamModelAccess().getImportsAssignment_1(), "rule__ComponentParamModel__ImportsAssignment_1");
 			builder.put(grammarAccess.getComponentParamModelAccess().getParametrizationAssignment_2(), "rule__ComponentParamModel__ParametrizationAssignment_2");
 			builder.put(grammarAccess.getComponentParameterAccess().getNameAssignment_1(), "rule__ComponentParameter__NameAssignment_1");
 			builder.put(grammarAccess.getComponentParameterAccess().getComponentAssignment_2_1(), "rule__ComponentParameter__ComponentAssignment_2_1");
 			builder.put(grammarAccess.getComponentParameterAccess().getParametersAssignment_4(), "rule__ComponentParameter__ParametersAssignment_4");
-			builder.put(grammarAccess.getInternalParameterAccess().getNameAssignment_1(), "rule__InternalParameter__NameAssignment_1");
-			builder.put(grammarAccess.getInternalParameterAccess().getAttributesAssignment_3(), "rule__InternalParameter__AttributesAssignment_3");
-			builder.put(grammarAccess.getExtendedParameterAccess().getNameAssignment_1(), "rule__ExtendedParameter__NameAssignment_1");
-			builder.put(grammarAccess.getExtendedParameterAccess().getAttributesAssignment_3(), "rule__ExtendedParameter__AttributesAssignment_3");
-			builder.put(grammarAccess.getExtendedTriggerAccess().getNameAssignment_1(), "rule__ExtendedTrigger__NameAssignment_1");
-			builder.put(grammarAccess.getExtendedTriggerAccess().getActiveAssignment_2_0(), "rule__ExtendedTrigger__ActiveAssignment_2_0");
-			builder.put(grammarAccess.getExtendedTriggerAccess().getAttributesAssignment_4(), "rule__ExtendedTrigger__AttributesAssignment_4");
-			builder.put(grammarAccess.getParameterSetInstanceAccess().getParamSetAssignment_1(), "rule__ParameterSetInstance__ParamSetAssignment_1");
-			builder.put(grammarAccess.getParameterSetInstanceAccess().getParameterInstancesAssignment_3(), "rule__ParameterSetInstance__ParameterInstancesAssignment_3");
-			builder.put(grammarAccess.getTriggerInstanceAccess().getTriggerDefAssignment_1(), "rule__TriggerInstance__TriggerDefAssignment_1");
-			builder.put(grammarAccess.getTriggerInstanceAccess().getActiveAssignment_2_0(), "rule__TriggerInstance__ActiveAssignment_2_0");
-			builder.put(grammarAccess.getParameterInstanceAccess().getParameterDefAssignment_1(), "rule__ParameterInstance__ParameterDefAssignment_1");
-			builder.put(grammarAccess.getParameterInstanceAccess().getAttributesAssignment_3(), "rule__ParameterInstance__AttributesAssignment_3");
+			builder.put(grammarAccess.getInternalParameterAccess().getDocumentationAssignment_0(), "rule__InternalParameter__DocumentationAssignment_0");
+			builder.put(grammarAccess.getInternalParameterAccess().getNameAssignment_2(), "rule__InternalParameter__NameAssignment_2");
+			builder.put(grammarAccess.getInternalParameterAccess().getAttributesAssignment_4(), "rule__InternalParameter__AttributesAssignment_4");
+			builder.put(grammarAccess.getExtendedParameterAccess().getDocumentationAssignment_0(), "rule__ExtendedParameter__DocumentationAssignment_0");
+			builder.put(grammarAccess.getExtendedParameterAccess().getNameAssignment_2(), "rule__ExtendedParameter__NameAssignment_2");
+			builder.put(grammarAccess.getExtendedParameterAccess().getAttributesAssignment_4(), "rule__ExtendedParameter__AttributesAssignment_4");
+			builder.put(grammarAccess.getExtendedTriggerAccess().getDocumentationAssignment_0(), "rule__ExtendedTrigger__DocumentationAssignment_0");
+			builder.put(grammarAccess.getExtendedTriggerAccess().getNameAssignment_2(), "rule__ExtendedTrigger__NameAssignment_2");
+			builder.put(grammarAccess.getExtendedTriggerAccess().getActiveAssignment_3_0(), "rule__ExtendedTrigger__ActiveAssignment_3_0");
+			builder.put(grammarAccess.getExtendedTriggerAccess().getAttributesAssignment_5(), "rule__ExtendedTrigger__AttributesAssignment_5");
+			builder.put(grammarAccess.getParameterSetInstanceAccess().getDocumentationAssignment_0(), "rule__ParameterSetInstance__DocumentationAssignment_0");
+			builder.put(grammarAccess.getParameterSetInstanceAccess().getParamSetAssignment_2(), "rule__ParameterSetInstance__ParamSetAssignment_2");
+			builder.put(grammarAccess.getParameterSetInstanceAccess().getParameterInstancesAssignment_4(), "rule__ParameterSetInstance__ParameterInstancesAssignment_4");
+			builder.put(grammarAccess.getTriggerInstanceAccess().getDocumentationAssignment_0(), "rule__TriggerInstance__DocumentationAssignment_0");
+			builder.put(grammarAccess.getTriggerInstanceAccess().getTriggerDefAssignment_2(), "rule__TriggerInstance__TriggerDefAssignment_2");
+			builder.put(grammarAccess.getTriggerInstanceAccess().getActiveAssignment_3_0(), "rule__TriggerInstance__ActiveAssignment_3_0");
+			builder.put(grammarAccess.getParameterInstanceAccess().getDocumentationAssignment_0(), "rule__ParameterInstance__DocumentationAssignment_0");
+			builder.put(grammarAccess.getParameterInstanceAccess().getParameterDefAssignment_2(), "rule__ParameterInstance__ParameterDefAssignment_2");
+			builder.put(grammarAccess.getParameterInstanceAccess().getAttributesAssignment_4(), "rule__ParameterInstance__AttributesAssignment_4");
 			builder.put(grammarAccess.getParamDefModelAccess().getImportsAssignment_1(), "rule__ParamDefModel__ImportsAssignment_1");
 			builder.put(grammarAccess.getParamDefModelAccess().getRepositoryAssignment_2(), "rule__ParamDefModel__RepositoryAssignment_2");
 			builder.put(grammarAccess.getParamDefRepoImportAccess().getImportedNamespaceAssignment_1(), "rule__ParamDefRepoImport__ImportedNamespaceAssignment_1");
-			builder.put(grammarAccess.getParameterSetRepositoryAccess().getNameAssignment_1(), "rule__ParameterSetRepository__NameAssignment_1");
-			builder.put(grammarAccess.getParameterSetRepositoryAccess().getSetsAssignment_3(), "rule__ParameterSetRepository__SetsAssignment_3");
-			builder.put(grammarAccess.getParameterSetDefinitionAccess().getNameAssignment_1(), "rule__ParameterSetDefinition__NameAssignment_1");
-			builder.put(grammarAccess.getParameterSetDefinitionAccess().getExtendsAssignment_2_1(), "rule__ParameterSetDefinition__ExtendsAssignment_2_1");
-			builder.put(grammarAccess.getParameterSetDefinitionAccess().getExtendsAssignment_2_2_1(), "rule__ParameterSetDefinition__ExtendsAssignment_2_2_1");
-			builder.put(grammarAccess.getParameterSetDefinitionAccess().getParametersAssignment_4(), "rule__ParameterSetDefinition__ParametersAssignment_4");
-			builder.put(grammarAccess.getParameterDefinitionAccess().getNameAssignment_1(), "rule__ParameterDefinition__NameAssignment_1");
-			builder.put(grammarAccess.getParameterDefinitionAccess().getAttributesAssignment_3(), "rule__ParameterDefinition__AttributesAssignment_3");
-			builder.put(grammarAccess.getTriggerDefinitionAccess().getNameAssignment_1(), "rule__TriggerDefinition__NameAssignment_1");
-			builder.put(grammarAccess.getTriggerDefinitionAccess().getAttributesAssignment_3(), "rule__TriggerDefinition__AttributesAssignment_3");
-			builder.put(grammarAccess.getAttributeDefinitionAccess().getNameAssignment_0(), "rule__AttributeDefinition__NameAssignment_0");
-			builder.put(grammarAccess.getAttributeDefinitionAccess().getTypeAssignment_2(), "rule__AttributeDefinition__TypeAssignment_2");
-			builder.put(grammarAccess.getAttributeDefinitionAccess().getDefaultvalueAssignment_3_1(), "rule__AttributeDefinition__DefaultvalueAssignment_3_1");
-			builder.put(grammarAccess.getAttributeRefinementAccess().getAttributeAssignment_0(), "rule__AttributeRefinement__AttributeAssignment_0");
-			builder.put(grammarAccess.getAttributeRefinementAccess().getValueAssignment_2(), "rule__AttributeRefinement__ValueAssignment_2");
+			builder.put(grammarAccess.getParameterSetRepositoryAccess().getDocumentationAssignment_0(), "rule__ParameterSetRepository__DocumentationAssignment_0");
+			builder.put(grammarAccess.getParameterSetRepositoryAccess().getNameAssignment_2(), "rule__ParameterSetRepository__NameAssignment_2");
+			builder.put(grammarAccess.getParameterSetRepositoryAccess().getSetsAssignment_4(), "rule__ParameterSetRepository__SetsAssignment_4");
+			builder.put(grammarAccess.getParameterSetDefinitionAccess().getDocumentationAssignment_0(), "rule__ParameterSetDefinition__DocumentationAssignment_0");
+			builder.put(grammarAccess.getParameterSetDefinitionAccess().getNameAssignment_2(), "rule__ParameterSetDefinition__NameAssignment_2");
+			builder.put(grammarAccess.getParameterSetDefinitionAccess().getExtendsAssignment_3_1(), "rule__ParameterSetDefinition__ExtendsAssignment_3_1");
+			builder.put(grammarAccess.getParameterSetDefinitionAccess().getExtendsAssignment_3_2_1(), "rule__ParameterSetDefinition__ExtendsAssignment_3_2_1");
+			builder.put(grammarAccess.getParameterSetDefinitionAccess().getParametersAssignment_5(), "rule__ParameterSetDefinition__ParametersAssignment_5");
+			builder.put(grammarAccess.getParameterDefinitionAccess().getDocumentationAssignment_0(), "rule__ParameterDefinition__DocumentationAssignment_0");
+			builder.put(grammarAccess.getParameterDefinitionAccess().getNameAssignment_2(), "rule__ParameterDefinition__NameAssignment_2");
+			builder.put(grammarAccess.getParameterDefinitionAccess().getAttributesAssignment_4(), "rule__ParameterDefinition__AttributesAssignment_4");
+			builder.put(grammarAccess.getTriggerDefinitionAccess().getDocumentationAssignment_0(), "rule__TriggerDefinition__DocumentationAssignment_0");
+			builder.put(grammarAccess.getTriggerDefinitionAccess().getNameAssignment_2(), "rule__TriggerDefinition__NameAssignment_2");
+			builder.put(grammarAccess.getTriggerDefinitionAccess().getAttributesAssignment_4(), "rule__TriggerDefinition__AttributesAssignment_4");
+			builder.put(grammarAccess.getAttributeDefinitionAccess().getDocumentationAssignment_0(), "rule__AttributeDefinition__DocumentationAssignment_0");
+			builder.put(grammarAccess.getAttributeDefinitionAccess().getNameAssignment_1(), "rule__AttributeDefinition__NameAssignment_1");
+			builder.put(grammarAccess.getAttributeDefinitionAccess().getTypeAssignment_3(), "rule__AttributeDefinition__TypeAssignment_3");
+			builder.put(grammarAccess.getAttributeDefinitionAccess().getDefaultvalueAssignment_4_1(), "rule__AttributeDefinition__DefaultvalueAssignment_4_1");
+			builder.put(grammarAccess.getAttributeRefinementAccess().getDocumentationAssignment_0(), "rule__AttributeRefinement__DocumentationAssignment_0");
+			builder.put(grammarAccess.getAttributeRefinementAccess().getAttributeAssignment_1(), "rule__AttributeRefinement__AttributeAssignment_1");
+			builder.put(grammarAccess.getAttributeRefinementAccess().getValueAssignment_3(), "rule__AttributeRefinement__ValueAssignment_3");
 			builder.put(grammarAccess.getEnumerationElementAccess().getNameAssignment_0(), "rule__EnumerationElement__NameAssignment_0");
 			builder.put(grammarAccess.getEnumerationElementAccess().getValueAssignment_1_1(), "rule__EnumerationElement__ValueAssignment_1_1");
 			builder.put(grammarAccess.getInlineEnumerationTypeAccess().getArrayAssignment_1(), "rule__InlineEnumerationType__ArrayAssignment_1");
@@ -172,6 +159,7 @@ public class ComponentParameterParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSingleValueAccess().getValueAssignment_2_1(), "rule__SingleValue__ValueAssignment_2_1");
 			builder.put(grammarAccess.getSingleValueAccess().getValueAssignment_3_1(), "rule__SingleValue__ValueAssignment_3_1");
 			builder.put(grammarAccess.getSingleValueAccess().getValueAssignment_4_1(), "rule__SingleValue__ValueAssignment_4_1");
+			builder.put(grammarAccess.getAbstractDocumentedElementAccess().getDocumentationAssignment_1(), "rule__AbstractDocumentedElement__DocumentationAssignment_1");
 		}
 	}
 	

@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2019 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,35 +15,19 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.base.genericDatasheet.ui.quickfix
 
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
+import org.eclipse.xtext.ui.editor.quickfix.Fix
+import org.xtext.base.genericDatasheet.validation.GenericDatasheetValidator
+import org.eclipse.xtext.validation.Issue
+import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
+import org.ecore.base.genericDatasheet.DatasheetProperty
+import org.ecore.base.genericDatasheet.TechnologyReadinessLevel
+import org.ecore.base.genericDatasheet.MandatoryDatasheetElementNames
+import org.ecore.base.genericDatasheet.GenericDatasheetModel
+import org.ecore.base.genericDatasheet.GenericDatasheetFactory
 
 /**
  * Custom quickfixes.
@@ -62,4 +45,53 @@ class GenericDatasheetQuickfixProvider extends DefaultQuickfixProvider {
 //			xtextDocument.replace(issue.offset, 1, firstLetter.toUpperCase)
 //		]
 //	}
+
+	@Fix(GenericDatasheetValidator.INVALID_SPDX_URI)
+	def fixSPDXURI(Issue issue, IssueResolutionAcceptor acceptor) {
+		val text = "Fix semantic URI using SPDX ID "+issue.data.get(0)
+		acceptor.accept(issue, text,text, null) [
+			element, context |
+			val property = element as DatasheetProperty
+			val spdx_uri = "https://spdx.org/licenses/" + issue.data.get(0) + ".html"
+			property.semanticID = spdx_uri
+		]
+	}
+	
+	@Fix(GenericDatasheetValidator.INVALID_TRL_VALUE)
+	def fixTRLValue(Issue issue, IssueResolutionAcceptor acceptor) {
+		for(trl: TechnologyReadinessLevel.VALUES) {
+			val text = "Change value to " + trl.literal
+			acceptor.accept(issue, text, text, null) [
+				element, context |
+				val property = element as DatasheetProperty
+				property.value = trl.literal
+			]
+		}
+	}
+	
+	@Fix(GenericDatasheetValidator.UNDEFINED_BASE_URI)
+	def addDefaultBaseURI(Issue issue, IssueResolutionAcceptor acceptor) {
+		val text = "Create default Base URI http://www.servicerobotik-ulm.de"
+		acceptor.accept(issue, text,text, null) [
+			element, context |
+			val model = element as GenericDatasheetModel
+			val baseURI = GenericDatasheetFactory.eINSTANCE.createMandatoryDatasheetElement
+			baseURI.name = MandatoryDatasheetElementNames.BASE_URI
+			baseURI.value = "http://www.servicerobotik-ulm.de"
+			model.elements.add(baseURI)
+		]
+	}
+	
+	@Fix(GenericDatasheetValidator.UNDEFINED_SHORT_DESCRIPTION)
+	def addDefaultShortDescription(Issue issue, IssueResolutionAcceptor acceptor) {
+		val text = "Create default short description"
+		acceptor.accept(issue, text,text, null) [
+			element, context |
+			val model = element as GenericDatasheetModel
+			val description = GenericDatasheetFactory.eINSTANCE.createMandatoryDatasheetElement
+			description.name = MandatoryDatasheetElementNames.SHORT_DESCRIPTION
+			description.value = "TODO: add short description for "+model.eResource.URI.segment(1)
+			model.elements.add(description)
+		]
+	}
 }

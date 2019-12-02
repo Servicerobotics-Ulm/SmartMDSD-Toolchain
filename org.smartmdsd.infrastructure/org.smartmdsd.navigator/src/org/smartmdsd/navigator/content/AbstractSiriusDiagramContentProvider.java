@@ -1,41 +1,24 @@
-//--------------------------------------------------------------------------
+//==============================================================
 //
-//  Copyright (C) 2019 Alex Lotz, Dennis Stampfer, Matthias Lutz
+// Copyright (C) 2019 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
-//        lotz@hs-ulm.de
-//        stampfer@hs-ulm.de
-//        lutz@hs-ulm.de
+//      lotz@hs-ulm.de
+//      stampfer@hs-ulm.de
+//      lutz@hs-ulm.de
 //
-//        Servicerobotics Ulm
-//        Christian Schlegel
-//        University of Applied Sciences
-//        Prittwitzstr. 10
-//        89075 Ulm
-//        Germany
+//      Servicerobotics Ulm
+//      Christian Schlegel
+//      Ulm University of Applied Sciences
+//      Prittwitzstr. 10
+//      89075 Ulm
+//      Germany
 //
-//  This file is part of the SmartSoft MDSD Toolchain. 
+// This file is part of the SmartSoft MDSD Toolchain v3. 
 //
-// Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-//
-// 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-// 
-// 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the 
-//    documentation and/or other materials provided with the distribution.
-// 
-// 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this 
-//    software without specific prior written permission.
-// 
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
-// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS 
-// BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
-// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-// POSSIBILITY OF SUCH DAMAGE.
-//
-//--------------------------------------------------------------------------
-
+//==============================================================
 package org.smartmdsd.navigator.content;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -55,6 +38,8 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.smartmdsd.utils.factories.ModelingProjectFactory;
 
 public abstract class AbstractSiriusDiagramContentProvider implements ITreeContentProvider {
@@ -120,7 +105,7 @@ public abstract class AbstractSiriusDiagramContentProvider implements ITreeConte
 	}
 	
 	protected void reloadDiagram(SiriusDiagramRepresentationItem diagram) {
-		WorkspaceJob reloadDiagramJob = new WorkspaceJob("Load Diagram for "+diagram.getName()) {
+		WorkspaceJob reloadDiagramJob = new WorkspaceJob("Reload diagram(s) for "+diagram.getName()) {
 			@Override
 			public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
 				// the actual reloading is done within the diagram item itself
@@ -135,10 +120,16 @@ public abstract class AbstractSiriusDiagramContentProvider implements ITreeConte
 	}
 	
 	protected void loadDiagramRepresentationsFor(IFile modelFile) {
-		WorkspaceJob loadDiagramJob = new WorkspaceJob("Load Diagram for "+modelFile.getName()) {
+		// we use a workspace modify operation instead of a Job because the WorkspaceModifyOperation
+		// enforces a progress dialog which provides a better UI feedback for the user
+		WorkspaceModifyOperation loadDiagramOperation = new WorkspaceModifyOperation(modelFile) {
 			@Override
-			public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
+			protected void execute(IProgressMonitor monitor)
+					throws CoreException, InvocationTargetException, InterruptedException {
 				IProject project = modelFile.getProject();
+				
+				monitor.setTaskName("Load Sirius-diagram(s) for "+modelFile.getName());
+				
 				// get session (which will be loaded on demand, which might take some time)
 				Session session = ModelingProjectFactory.getProjectSession(project, monitor);
 
@@ -150,22 +141,25 @@ public abstract class AbstractSiriusDiagramContentProvider implements ITreeConte
 				}
 				// store the diagram-list in our internal cache for faster future access
 				cachedModelMap.put(modelFile, diagrams);
-				
-				// execute the viewer-refresh from within a UI thread
-				Display.getDefault().asyncExec(new Runnable() {
-					@Override
-					public void run() {
-						if(viewer != null) {
-							viewer.refresh(modelFile);
-						}
-					}
-				});
-				return Status.OK_STATUS;
 			}
 		};
-		// this will provide a better feedback to the user
-		loadDiagramJob.setUser(true);
-		loadDiagramJob.setRule(modelFile);
-		loadDiagramJob.schedule();
+		
+		try {
+			// execute the diagram load operation with a progress dialog (to show a better user feedback)
+			PlatformUI.getWorkbench().getProgressService().run(true, true, loadDiagramOperation);
+			// execute the viewer-refresh from within a UI thread
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					if(viewer != null) {
+						viewer.refresh(modelFile);
+					}
+				}
+			});
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }

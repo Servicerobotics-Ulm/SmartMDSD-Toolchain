@@ -83,6 +83,7 @@ public class ComponentParamModelImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentParameter getParametrization() {
 		return parametrization;
 	}
@@ -112,6 +113,7 @@ public class ComponentParamModelImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParametrization(ComponentParameter newParametrization) {
 		if (newParametrization != parametrization) {
 			NotificationChain msgs = null;
@@ -137,6 +139,7 @@ public class ComponentParamModelImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ParamDefRepoImport> getImports() {
 		if (imports == null) {
 			imports = new EObjectContainmentEList<ParamDefRepoImport>(ParamDefRepoImport.class, this,

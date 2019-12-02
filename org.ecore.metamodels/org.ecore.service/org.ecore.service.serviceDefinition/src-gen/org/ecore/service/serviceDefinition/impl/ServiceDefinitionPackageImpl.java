@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.ecore.base.basicAttributes.BasicAttributesPackage;
 
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.base.stateMachine.StateMachinePackage;
 
 import org.ecore.service.communicationObject.CommunicationObjectPackage;
@@ -173,7 +174,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ServiceDefinitionPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -188,20 +189,22 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 			return (ServiceDefinitionPackage) EPackage.Registry.INSTANCE.getEPackage(ServiceDefinitionPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ServiceDefinitionPackageImpl theServiceDefinitionPackage = (ServiceDefinitionPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof ServiceDefinitionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new ServiceDefinitionPackageImpl());
+		Object registeredServiceDefinitionPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ServiceDefinitionPackageImpl theServiceDefinitionPackage = registeredServiceDefinitionPackage instanceof ServiceDefinitionPackageImpl
+				? (ServiceDefinitionPackageImpl) registeredServiceDefinitionPackage
+				: new ServiceDefinitionPackageImpl();
 
 		isInited = true;
 
 		// Initialize simple dependencies
+		BasicAttributesPackage.eINSTANCE.eClass();
 		CommunicationObjectPackage.eINSTANCE.eClass();
 		CommunicationPatternPackage.eINSTANCE.eClass();
-		CoordinationPatternPackage.eINSTANCE.eClass();
-		ParameterDefinitionPackage.eINSTANCE.eClass();
-		BasicAttributesPackage.eINSTANCE.eClass();
-		StateMachinePackage.eINSTANCE.eClass();
 		ComponentModePackage.eINSTANCE.eClass();
+		CoordinationPatternPackage.eINSTANCE.eClass();
+		DocumentationPackage.eINSTANCE.eClass();
+		ParameterDefinitionPackage.eINSTANCE.eClass();
+		StateMachinePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theServiceDefinitionPackage.createPackageContents();
@@ -222,6 +225,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getServiceDefModel() {
 		return serviceDefModelEClass;
 	}
@@ -231,6 +235,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getServiceDefModel_Imports() {
 		return (EReference) serviceDefModelEClass.getEStructuralFeatures().get(0);
 	}
@@ -240,6 +245,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getServiceDefModel_Repository() {
 		return (EReference) serviceDefModelEClass.getEStructuralFeatures().get(1);
 	}
@@ -249,6 +255,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getServiceDefRepository() {
 		return serviceDefRepositoryEClass;
 	}
@@ -258,6 +265,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServiceDefRepository_Name() {
 		return (EAttribute) serviceDefRepositoryEClass.getEStructuralFeatures().get(0);
 	}
@@ -267,6 +275,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getServiceDefRepository_Version() {
 		return (EReference) serviceDefRepositoryEClass.getEStructuralFeatures().get(1);
 	}
@@ -276,6 +285,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getServiceDefRepository_Services() {
 		return (EReference) serviceDefRepositoryEClass.getEStructuralFeatures().get(2);
 	}
@@ -285,6 +295,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractServiceDefinition() {
 		return abstractServiceDefinitionEClass;
 	}
@@ -294,6 +305,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractServiceDefinition_Name() {
 		return (EAttribute) abstractServiceDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -303,6 +315,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractServiceDefinition_Properties() {
 		return (EReference) abstractServiceDefinitionEClass.getEStructuralFeatures().get(1);
 	}
@@ -312,15 +325,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAbstractServiceDefinition_PurposeDescription() {
-		return (EAttribute) abstractServiceDefinitionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@Override
 	public EClass getCommRepoImport() {
 		return commRepoImportEClass;
 	}
@@ -330,6 +335,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCommRepoImport_ImportedNamespace() {
 		return (EAttribute) commRepoImportEClass.getEStructuralFeatures().get(0);
 	}
@@ -339,6 +345,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getServiceRepoVersion() {
 		return serviceRepoVersionEClass;
 	}
@@ -348,6 +355,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServiceRepoVersion_Major() {
 		return (EAttribute) serviceRepoVersionEClass.getEStructuralFeatures().get(0);
 	}
@@ -357,6 +365,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServiceRepoVersion_Minor() {
 		return (EAttribute) serviceRepoVersionEClass.getEStructuralFeatures().get(1);
 	}
@@ -366,6 +375,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServiceRepoVersion_Patch() {
 		return (EAttribute) serviceRepoVersionEClass.getEStructuralFeatures().get(2);
 	}
@@ -375,6 +385,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getServiceProperty() {
 		return servicePropertyEClass;
 	}
@@ -384,6 +395,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServiceProperty_Name() {
 		return (EAttribute) servicePropertyEClass.getEStructuralFeatures().get(0);
 	}
@@ -393,6 +405,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCommunicationServiceDefinition() {
 		return communicationServiceDefinitionEClass;
 	}
@@ -402,6 +415,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCoordinationServiceDefinition() {
 		return coordinationServiceDefinitionEClass;
 	}
@@ -411,6 +425,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCoordinationServiceDefinition_StatePattern() {
 		return (EReference) coordinationServiceDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -420,6 +435,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCoordinationServiceDefinition_ParameterPattern() {
 		return (EReference) coordinationServiceDefinitionEClass.getEStructuralFeatures().get(1);
 	}
@@ -429,6 +445,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCoordinationServiceDefinition_WiringPattern() {
 		return (EReference) coordinationServiceDefinitionEClass.getEStructuralFeatures().get(2);
 	}
@@ -438,6 +455,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCoordinationServiceDefinition_MonitoringPattern() {
 		return (EReference) coordinationServiceDefinitionEClass.getEStructuralFeatures().get(3);
 	}
@@ -447,6 +465,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCoordinationServiceDefinition_Services() {
 		return (EReference) coordinationServiceDefinitionEClass.getEStructuralFeatures().get(4);
 	}
@@ -456,6 +475,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getForkingServiceDefinition() {
 		return forkingServiceDefinitionEClass;
 	}
@@ -465,6 +485,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getForkingServiceDefinition_Pattern() {
 		return (EReference) forkingServiceDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -474,6 +495,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRequestAnswerServiceDefinition() {
 		return requestAnswerServiceDefinitionEClass;
 	}
@@ -483,6 +505,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRequestAnswerServiceDefinition_Pattern() {
 		return (EReference) requestAnswerServiceDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -492,6 +515,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOneWayCommunicationService() {
 		return oneWayCommunicationServiceEClass;
 	}
@@ -501,6 +525,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTwoWayCommunicationService() {
 		return twoWayCommunicationServiceEClass;
 	}
@@ -510,6 +535,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCommunicationServiceUsage() {
 		return communicationServiceUsageEClass;
 	}
@@ -519,6 +545,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCommunicationServiceUsage_Name() {
 		return (EAttribute) communicationServiceUsageEClass.getEStructuralFeatures().get(0);
 	}
@@ -528,6 +555,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCommunicationServiceUsage_Uses() {
 		return (EReference) communicationServiceUsageEClass.getEStructuralFeatures().get(1);
 	}
@@ -537,6 +565,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getJoiningServiceDefinition() {
 		return joiningServiceDefinitionEClass;
 	}
@@ -546,6 +575,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getJoiningServiceDefinition_Pattern() {
 		return (EReference) joiningServiceDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -555,6 +585,7 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceDefinitionFactory getServiceDefinitionFactory() {
 		return (ServiceDefinitionFactory) getEFactoryInstance();
 	}
@@ -591,7 +622,6 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 		abstractServiceDefinitionEClass = createEClass(ABSTRACT_SERVICE_DEFINITION);
 		createEAttribute(abstractServiceDefinitionEClass, ABSTRACT_SERVICE_DEFINITION__NAME);
 		createEReference(abstractServiceDefinitionEClass, ABSTRACT_SERVICE_DEFINITION__PROPERTIES);
-		createEAttribute(abstractServiceDefinitionEClass, ABSTRACT_SERVICE_DEFINITION__PURPOSE_DESCRIPTION);
 
 		commRepoImportEClass = createEClass(COMM_REPO_IMPORT);
 		createEAttribute(commRepoImportEClass, COMM_REPO_IMPORT__IMPORTED_NAMESPACE);
@@ -656,6 +686,8 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		DocumentationPackage theDocumentationPackage = (DocumentationPackage) EPackage.Registry.INSTANCE
+				.getEPackage(DocumentationPackage.eNS_URI);
 		CoordinationPatternPackage theCoordinationPatternPackage = (CoordinationPatternPackage) EPackage.Registry.INSTANCE
 				.getEPackage(CoordinationPatternPackage.eNS_URI);
 		CommunicationPatternPackage theCommunicationPatternPackage = (CommunicationPatternPackage) EPackage.Registry.INSTANCE
@@ -666,6 +698,8 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		serviceDefRepositoryEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
+		abstractServiceDefinitionEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
 		communicationServiceDefinitionEClass.getESuperTypes().add(this.getAbstractServiceDefinition());
 		coordinationServiceDefinitionEClass.getESuperTypes().add(this.getAbstractServiceDefinition());
 		forkingServiceDefinitionEClass.getESuperTypes().add(this.getOneWayCommunicationService());
@@ -704,9 +738,6 @@ public class ServiceDefinitionPackageImpl extends EPackageImpl implements Servic
 		initEReference(getAbstractServiceDefinition_Properties(), this.getServiceProperty(), null, "properties", null,
 				0, -1, AbstractServiceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractServiceDefinition_PurposeDescription(), ecorePackage.getEString(),
-				"purposeDescription", null, 0, 1, AbstractServiceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(commRepoImportEClass, CommRepoImport.class, "CommRepoImport", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

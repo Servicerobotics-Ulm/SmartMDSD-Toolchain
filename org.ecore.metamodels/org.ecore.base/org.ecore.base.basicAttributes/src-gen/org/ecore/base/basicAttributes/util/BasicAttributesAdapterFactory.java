@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.ecore.base.basicAttributes.*;
+import org.ecore.base.documentation.AbstractDocumentedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -139,6 +140,11 @@ public class BasicAttributesAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseEnumerationValue(EnumerationValue object) {
 			return createEnumerationValueAdapter();
+		}
+
+		@Override
+		public Adapter caseAbstractDocumentedElement(AbstractDocumentedElement object) {
+			return createAbstractDocumentedElementAdapter();
 		}
 
 		@Override
@@ -367,6 +373,20 @@ public class BasicAttributesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEnumerationValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.base.documentation.AbstractDocumentedElement <em>Abstract Documented Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.base.documentation.AbstractDocumentedElement
+	 * @generated
+	 */
+	public Adapter createAbstractDocumentedElementAdapter() {
 		return null;
 	}
 

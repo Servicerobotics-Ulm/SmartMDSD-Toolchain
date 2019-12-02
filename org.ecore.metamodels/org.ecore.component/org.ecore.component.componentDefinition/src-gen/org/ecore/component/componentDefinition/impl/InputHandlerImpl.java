@@ -81,6 +81,7 @@ public class InputHandlerImpl extends ComponentSubNodeImpl implements InputHandl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isActiveQueue() {
 		return activeQueue;
 	}
@@ -90,6 +91,7 @@ public class InputHandlerImpl extends ComponentSubNodeImpl implements InputHandl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setActiveQueue(boolean newActiveQueue) {
 		boolean oldActiveQueue = activeQueue;
 		activeQueue = newActiveQueue;
@@ -103,6 +105,7 @@ public class InputHandlerImpl extends ComponentSubNodeImpl implements InputHandl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InputPort getInputPort() {
 		if (inputPort != null && inputPort.eIsProxy()) {
 			InternalEObject oldInputPort = (InternalEObject) inputPort;
@@ -130,6 +133,7 @@ public class InputHandlerImpl extends ComponentSubNodeImpl implements InputHandl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInputPort(InputPort newInputPort) {
 		InputPort oldInputPort = inputPort;
 		inputPort = newInputPort;
@@ -218,7 +222,7 @@ public class InputHandlerImpl extends ComponentSubNodeImpl implements InputHandl
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (activeQueue: ");
 		result.append(activeQueue);
 		result.append(')');

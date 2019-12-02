@@ -82,6 +82,7 @@ public class CommObjectModelImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CommObjectsRepository getRepository() {
 		return repository;
 	}
@@ -110,6 +111,7 @@ public class CommObjectModelImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRepository(CommObjectsRepository newRepository) {
 		if (newRepository != repository) {
 			NotificationChain msgs = null;
@@ -132,6 +134,7 @@ public class CommObjectModelImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CommRepositoryImport> getImports() {
 		if (imports == null) {
 			imports = new EObjectContainmentEList<CommRepositoryImport>(CommRepositoryImport.class, this,

@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,32 +15,7 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.service.parameterDefinition.serializer;
 
 import com.google.inject.Inject;
@@ -67,6 +41,8 @@ import org.ecore.base.basicAttributes.InlineEnumerationType;
 import org.ecore.base.basicAttributes.IntValue;
 import org.ecore.base.basicAttributes.PrimitiveType;
 import org.ecore.base.basicAttributes.StringValue;
+import org.ecore.base.documentation.AbstractDocumentedElement;
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.service.parameterDefinition.ParamDefModel;
 import org.ecore.service.parameterDefinition.ParamDefRepoImport;
 import org.ecore.service.parameterDefinition.ParameterDefinition;
@@ -126,6 +102,12 @@ public class ParameterDefinitionSemanticSequencer extends BasicAttributesSemanti
 				return; 
 			case BasicAttributesPackage.STRING_VALUE:
 				sequence_SingleValue(context, (StringValue) semanticObject); 
+				return; 
+			}
+		else if (epackage == DocumentationPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT:
+				sequence_AbstractDocumentedElement(context, (AbstractDocumentedElement) semanticObject); 
 				return; 
 			}
 		else if (epackage == ParameterDefinitionPackage.eINSTANCE)
@@ -189,7 +171,7 @@ public class ParameterDefinitionSemanticSequencer extends BasicAttributesSemanti
 	 *     ParameterDefinition returns ParameterDefinition
 	 *
 	 * Constraint:
-	 *     (name=ID attributes+=AttributeDefinition*)
+	 *     (documentation=DOCU_COMMENT? name=ID attributes+=AttributeDefinition*)
 	 */
 	protected void sequence_ParameterDefinition(ISerializationContext context, ParameterDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -201,7 +183,12 @@ public class ParameterDefinitionSemanticSequencer extends BasicAttributesSemanti
 	 *     ParameterSetDefinition returns ParameterSetDefinition
 	 *
 	 * Constraint:
-	 *     (name=ID (extends+=[ParameterSetDefinition|FQN] extends+=[ParameterSetDefinition|FQN]*)? parameters+=AbstractParameter*)
+	 *     (
+	 *         documentation=DOCU_COMMENT? 
+	 *         name=ID 
+	 *         (extends+=[ParameterSetDefinition|FQN] extends+=[ParameterSetDefinition|FQN]*)? 
+	 *         parameters+=AbstractParameter*
+	 *     )
 	 */
 	protected void sequence_ParameterSetDefinition(ISerializationContext context, ParameterSetDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -213,7 +200,7 @@ public class ParameterDefinitionSemanticSequencer extends BasicAttributesSemanti
 	 *     ParameterSetRepository returns ParameterSetRepository
 	 *
 	 * Constraint:
-	 *     (name=ID sets+=ParameterSetDefinition*)
+	 *     (documentation=DOCU_COMMENT? name=ID sets+=ParameterSetDefinition*)
 	 */
 	protected void sequence_ParameterSetRepository(ISerializationContext context, ParameterSetRepository semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -226,7 +213,7 @@ public class ParameterDefinitionSemanticSequencer extends BasicAttributesSemanti
 	 *     TriggerDefinition returns TriggerDefinition
 	 *
 	 * Constraint:
-	 *     (name=ID attributes+=AttributeDefinition*)
+	 *     (documentation=DOCU_COMMENT? name=ID attributes+=AttributeDefinition*)
 	 */
 	protected void sequence_TriggerDefinition(ISerializationContext context, TriggerDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

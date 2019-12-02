@@ -67,6 +67,7 @@ public class CommunicationObjectImpl extends AbstractCommElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AttributeDefinition> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectContainmentEList<AttributeDefinition>(AttributeDefinition.class, this,

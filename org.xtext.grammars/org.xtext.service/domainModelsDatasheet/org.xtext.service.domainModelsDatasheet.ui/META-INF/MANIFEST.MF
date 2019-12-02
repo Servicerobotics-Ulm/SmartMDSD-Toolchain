@@ -5,9 +5,9 @@ Bundle-Vendor: Servicerobotics Ulm
 Bundle-Version: 3.7.0.qualifier
 Bundle-SymbolicName: org.xtext.service.domainModelsDatasheet.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.xtext.service.domainModelsDatasheet,
+Require-Bundle: org.ecore.service.domainModelsDatasheet,
+ org.xtext.service.domainModelsDatasheet,
  org.xtext.service.domainModelsDatasheet.ide,
- org.ecore.service.domainModelsDatasheet,
  org.eclipse.xtext.ui,
  org.eclipse.xtext.ui.shared,
  org.eclipse.xtext.ui.codetemplates.ui,
@@ -19,10 +19,12 @@ Require-Bundle: org.xtext.service.domainModelsDatasheet,
  org.eclipse.xtend.lib;bundle-version="2.14.0";resolution:=optional,
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.xtext.base.genericDatasheet,
- org.xtext.base.genericDatasheet.ui
+ org.xtext.base.genericDatasheet.ui,
+ org.smartmdsd.metadata.indexer
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.service.domainModelsDatasheet.ui.contentassist,
  org.xtext.service.domainModelsDatasheet.ui.quickfix,
  org.xtext.service.domainModelsDatasheet.ui.internal
 Bundle-Activator: org.xtext.service.domainModelsDatasheet.ui.internal.DomainModelsDatasheetActivator
+Automatic-Module-Name: org.xtext.service.domainModelsDatasheet.ui

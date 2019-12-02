@@ -62,6 +62,7 @@ public class RequestPortImpl extends ComponentPortImpl implements RequestPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TwoWayCommunicationService getService() {
 		if (service != null && service.eIsProxy()) {
 			InternalEObject oldService = (InternalEObject) service;
@@ -89,6 +90,7 @@ public class RequestPortImpl extends ComponentPortImpl implements RequestPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setService(TwoWayCommunicationService newService) {
 		TwoWayCommunicationService oldService = service;
 		service = newService;

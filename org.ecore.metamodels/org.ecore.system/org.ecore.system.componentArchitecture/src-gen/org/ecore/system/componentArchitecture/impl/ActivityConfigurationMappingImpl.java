@@ -108,6 +108,7 @@ public class ActivityConfigurationMappingImpl extends ComponentInstanceConfigura
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Activity getActivity() {
 		if (activity != null && activity.eIsProxy()) {
 			InternalEObject oldActivity = (InternalEObject) activity;
@@ -136,6 +137,7 @@ public class ActivityConfigurationMappingImpl extends ComponentInstanceConfigura
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setActivity(Activity newActivity) {
 		Activity oldActivity = activity;
 		activity = newActivity;
@@ -149,6 +151,7 @@ public class ActivityConfigurationMappingImpl extends ComponentInstanceConfigura
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActivityNode getConfig() {
 		if (config != null && config.eIsProxy()) {
 			InternalEObject oldConfig = (InternalEObject) config;
@@ -176,6 +179,7 @@ public class ActivityConfigurationMappingImpl extends ComponentInstanceConfigura
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConfig(ActivityNode newConfig) {
 		ActivityNode oldConfig = config;
 		config = newConfig;

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.ecore.base.basicAttributes.BasicAttributesPackage;
 
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.base.stateMachine.StateMachinePackage;
 
 import org.ecore.behavior.skillRealization.SkillRealizationPackage;
@@ -131,7 +132,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link CoordinationExtensionPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -147,9 +148,10 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 					.getEPackage(CoordinationExtensionPackage.eNS_URI);
 
 		// Obtain or create and register package
-		CoordinationExtensionPackageImpl theCoordinationExtensionPackage = (CoordinationExtensionPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof CoordinationExtensionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new CoordinationExtensionPackageImpl());
+		Object registeredCoordinationExtensionPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		CoordinationExtensionPackageImpl theCoordinationExtensionPackage = registeredCoordinationExtensionPackage instanceof CoordinationExtensionPackageImpl
+				? (CoordinationExtensionPackageImpl) registeredCoordinationExtensionPackage
+				: new CoordinationExtensionPackageImpl();
 
 		isInited = true;
 
@@ -165,6 +167,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 		SkillDefinitionPackage.eINSTANCE.eClass();
 		SkillRealizationPackage.eINSTANCE.eClass();
 		StateMachinePackage.eINSTANCE.eClass();
+		DocumentationPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theCoordinationExtensionPackage.createPackageContents();
@@ -185,6 +188,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPublicOperationMode() {
 		return publicOperationModeEClass;
 	}
@@ -194,6 +198,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPublicOperationMode_Activates() {
 		return (EReference) publicOperationModeEClass.getEStructuralFeatures().get(0);
 	}
@@ -203,6 +208,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPublicOperationMode_Mode() {
 		return (EReference) publicOperationModeEClass.getEStructuralFeatures().get(1);
 	}
@@ -212,6 +218,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPublicOperationMode_Name() {
 		return (EAttribute) publicOperationModeEClass.getEStructuralFeatures().get(2);
 	}
@@ -221,6 +228,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPublicOperationMode_IsDefaultInit() {
 		return (EAttribute) publicOperationModeEClass.getEStructuralFeatures().get(3);
 	}
@@ -230,6 +238,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPrivateOperationMode() {
 		return privateOperationModeEClass;
 	}
@@ -239,6 +248,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPrivateOperationMode_Name() {
 		return (EAttribute) privateOperationModeEClass.getEStructuralFeatures().get(0);
 	}
@@ -248,6 +258,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCoordinationSlavePort() {
 		return coordinationSlavePortEClass;
 	}
@@ -257,6 +268,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCoordinationSlavePort_Elements() {
 		return (EReference) coordinationSlavePortEClass.getEStructuralFeatures().get(0);
 	}
@@ -266,6 +278,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCoordinationSlavePort_Service() {
 		return (EReference) coordinationSlavePortEClass.getEStructuralFeatures().get(1);
 	}
@@ -275,6 +288,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractCoordinationElement() {
 		return abstractCoordinationElementEClass;
 	}
@@ -284,6 +298,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCoordinationMasterPort() {
 		return coordinationMasterPortEClass;
 	}
@@ -293,6 +308,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCoordinationMasterPort_Service() {
 		return (EReference) coordinationMasterPortEClass.getEStructuralFeatures().get(0);
 	}
@@ -302,6 +318,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOperationModeBinding() {
 		return operationModeBindingEClass;
 	}
@@ -311,6 +328,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getOperationModeBinding_Mode() {
 		return (EReference) operationModeBindingEClass.getEStructuralFeatures().get(0);
 	}
@@ -320,6 +338,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getOperationModeBinding_Name() {
 		return (EAttribute) operationModeBindingEClass.getEStructuralFeatures().get(1);
 	}
@@ -329,6 +348,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCommunicationServiceUsageRealization() {
 		return communicationServiceUsageRealizationEClass;
 	}
@@ -338,6 +358,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCommunicationServiceUsageRealization_ServiceUsage() {
 		return (EReference) communicationServiceUsageRealizationEClass.getEStructuralFeatures().get(0);
 	}
@@ -347,6 +368,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCommunicationServiceUsageRealization_ComponentPort() {
 		return (EReference) communicationServiceUsageRealizationEClass.getEStructuralFeatures().get(1);
 	}
@@ -356,6 +378,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSkillRealizationsRef() {
 		return skillRealizationsRefEClass;
 	}
@@ -365,6 +388,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSkillRealizationsRef_SkillRealizationCoordModuleRef() {
 		return (EReference) skillRealizationsRefEClass.getEStructuralFeatures().get(0);
 	}
@@ -374,6 +398,7 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CoordinationExtensionFactory getCoordinationExtensionFactory() {
 		return (CoordinationExtensionFactory) getEFactoryInstance();
 	}
@@ -455,6 +480,8 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		DocumentationPackage theDocumentationPackage = (DocumentationPackage) EPackage.Registry.INSTANCE
+				.getEPackage(DocumentationPackage.eNS_URI);
 		ComponentModePackage theComponentModePackage = (ComponentModePackage) EPackage.Registry.INSTANCE
 				.getEPackage(ComponentModePackage.eNS_URI);
 		ComponentDefinitionPackage theComponentDefinitionPackage = (ComponentDefinitionPackage) EPackage.Registry.INSTANCE
@@ -470,8 +497,10 @@ public class CoordinationExtensionPackageImpl extends EPackageImpl implements Co
 
 		// Add supertypes to classes
 		publicOperationModeEClass.getESuperTypes().add(this.getAbstractCoordinationElement());
+		publicOperationModeEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
 		privateOperationModeEClass.getESuperTypes().add(this.getAbstractCoordinationElement());
 		coordinationSlavePortEClass.getESuperTypes().add(theComponentDefinitionPackage.getNamedComponentElement());
+		coordinationSlavePortEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
 		coordinationMasterPortEClass.getESuperTypes().add(theComponentDefinitionPackage.getNamedComponentElement());
 		operationModeBindingEClass.getESuperTypes().add(theComponentDefinitionPackage.getActivityExtension());
 		communicationServiceUsageRealizationEClass.getESuperTypes().add(this.getAbstractCoordinationElement());

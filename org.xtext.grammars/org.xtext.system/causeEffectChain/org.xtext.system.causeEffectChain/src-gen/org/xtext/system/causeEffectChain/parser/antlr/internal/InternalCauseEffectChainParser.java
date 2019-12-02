@@ -90,7 +90,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleCuaseEffectChainModel"
-    // InternalCauseEffectChain.g:106:1: entryRuleCuaseEffectChainModel returns [EObject current=null] : iv_ruleCuaseEffectChainModel= ruleCuaseEffectChainModel EOF ;
+    // InternalCauseEffectChain.g:80:1: entryRuleCuaseEffectChainModel returns [EObject current=null] : iv_ruleCuaseEffectChainModel= ruleCuaseEffectChainModel EOF ;
     public final EObject entryRuleCuaseEffectChainModel() throws RecognitionException {
         EObject current = null;
 
@@ -98,8 +98,8 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalCauseEffectChain.g:106:62: (iv_ruleCuaseEffectChainModel= ruleCuaseEffectChainModel EOF )
-            // InternalCauseEffectChain.g:107:2: iv_ruleCuaseEffectChainModel= ruleCuaseEffectChainModel EOF
+            // InternalCauseEffectChain.g:80:62: (iv_ruleCuaseEffectChainModel= ruleCuaseEffectChainModel EOF )
+            // InternalCauseEffectChain.g:81:2: iv_ruleCuaseEffectChainModel= ruleCuaseEffectChainModel EOF
             {
              newCompositeNode(grammarAccess.getCuaseEffectChainModelRule()); 
             pushFollow(FOLLOW_1);
@@ -126,7 +126,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleCuaseEffectChainModel"
-    // InternalCauseEffectChain.g:113:1: ruleCuaseEffectChainModel returns [EObject current=null] : (otherlv_0= 'CuaseEffectChainModel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'refinesActivityArch' ( ( ruleFQN ) ) otherlv_4= '{' ( (lv_chains_5_0= ruleActivityChain ) )* otherlv_6= '}' ) ;
+    // InternalCauseEffectChain.g:87:1: ruleCuaseEffectChainModel returns [EObject current=null] : (otherlv_0= 'CuaseEffectChainModel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'refinesActivityArch' ( ( ruleFQN ) ) otherlv_4= '{' ( (lv_chains_5_0= ruleActivityChain ) )* otherlv_6= '}' ) ;
     public final EObject ruleCuaseEffectChainModel() throws RecognitionException {
         EObject current = null;
 
@@ -142,21 +142,21 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalCauseEffectChain.g:119:2: ( (otherlv_0= 'CuaseEffectChainModel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'refinesActivityArch' ( ( ruleFQN ) ) otherlv_4= '{' ( (lv_chains_5_0= ruleActivityChain ) )* otherlv_6= '}' ) )
-            // InternalCauseEffectChain.g:120:2: (otherlv_0= 'CuaseEffectChainModel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'refinesActivityArch' ( ( ruleFQN ) ) otherlv_4= '{' ( (lv_chains_5_0= ruleActivityChain ) )* otherlv_6= '}' )
+            // InternalCauseEffectChain.g:93:2: ( (otherlv_0= 'CuaseEffectChainModel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'refinesActivityArch' ( ( ruleFQN ) ) otherlv_4= '{' ( (lv_chains_5_0= ruleActivityChain ) )* otherlv_6= '}' ) )
+            // InternalCauseEffectChain.g:94:2: (otherlv_0= 'CuaseEffectChainModel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'refinesActivityArch' ( ( ruleFQN ) ) otherlv_4= '{' ( (lv_chains_5_0= ruleActivityChain ) )* otherlv_6= '}' )
             {
-            // InternalCauseEffectChain.g:120:2: (otherlv_0= 'CuaseEffectChainModel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'refinesActivityArch' ( ( ruleFQN ) ) otherlv_4= '{' ( (lv_chains_5_0= ruleActivityChain ) )* otherlv_6= '}' )
-            // InternalCauseEffectChain.g:121:3: otherlv_0= 'CuaseEffectChainModel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'refinesActivityArch' ( ( ruleFQN ) ) otherlv_4= '{' ( (lv_chains_5_0= ruleActivityChain ) )* otherlv_6= '}'
+            // InternalCauseEffectChain.g:94:2: (otherlv_0= 'CuaseEffectChainModel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'refinesActivityArch' ( ( ruleFQN ) ) otherlv_4= '{' ( (lv_chains_5_0= ruleActivityChain ) )* otherlv_6= '}' )
+            // InternalCauseEffectChain.g:95:3: otherlv_0= 'CuaseEffectChainModel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'refinesActivityArch' ( ( ruleFQN ) ) otherlv_4= '{' ( (lv_chains_5_0= ruleActivityChain ) )* otherlv_6= '}'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCuaseEffectChainModelAccess().getCuaseEffectChainModelKeyword_0());
             		
-            // InternalCauseEffectChain.g:125:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalCauseEffectChain.g:126:4: (lv_name_1_0= RULE_ID )
+            // InternalCauseEffectChain.g:99:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalCauseEffectChain.g:100:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalCauseEffectChain.g:126:4: (lv_name_1_0= RULE_ID )
-            // InternalCauseEffectChain.g:127:5: lv_name_1_0= RULE_ID
+            // InternalCauseEffectChain.g:100:4: (lv_name_1_0= RULE_ID )
+            // InternalCauseEffectChain.g:101:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_4); 
 
@@ -182,11 +182,11 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
             			newLeafNode(otherlv_2, grammarAccess.getCuaseEffectChainModelAccess().getRefinesActivityArchKeyword_2());
             		
-            // InternalCauseEffectChain.g:147:3: ( ( ruleFQN ) )
-            // InternalCauseEffectChain.g:148:4: ( ruleFQN )
+            // InternalCauseEffectChain.g:121:3: ( ( ruleFQN ) )
+            // InternalCauseEffectChain.g:122:4: ( ruleFQN )
             {
-            // InternalCauseEffectChain.g:148:4: ( ruleFQN )
-            // InternalCauseEffectChain.g:149:5: ruleFQN
+            // InternalCauseEffectChain.g:122:4: ( ruleFQN )
+            // InternalCauseEffectChain.g:123:5: ruleFQN
             {
 
             					if (current==null) {
@@ -214,7 +214,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
             			newLeafNode(otherlv_4, grammarAccess.getCuaseEffectChainModelAccess().getLeftCurlyBracketKeyword_4());
             		
-            // InternalCauseEffectChain.g:167:3: ( (lv_chains_5_0= ruleActivityChain ) )*
+            // InternalCauseEffectChain.g:141:3: ( (lv_chains_5_0= ruleActivityChain ) )*
             loop1:
             do {
                 int alt1=2;
@@ -227,10 +227,10 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalCauseEffectChain.g:168:4: (lv_chains_5_0= ruleActivityChain )
+            	    // InternalCauseEffectChain.g:142:4: (lv_chains_5_0= ruleActivityChain )
             	    {
-            	    // InternalCauseEffectChain.g:168:4: (lv_chains_5_0= ruleActivityChain )
-            	    // InternalCauseEffectChain.g:169:5: lv_chains_5_0= ruleActivityChain
+            	    // InternalCauseEffectChain.g:142:4: (lv_chains_5_0= ruleActivityChain )
+            	    // InternalCauseEffectChain.g:143:5: lv_chains_5_0= ruleActivityChain
             	    {
 
             	    					newCompositeNode(grammarAccess.getCuaseEffectChainModelAccess().getChainsActivityChainParserRuleCall_5_0());
@@ -290,7 +290,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleEInt"
-    // InternalCauseEffectChain.g:194:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // InternalCauseEffectChain.g:168:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -298,8 +298,8 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalCauseEffectChain.g:194:44: (iv_ruleEInt= ruleEInt EOF )
-            // InternalCauseEffectChain.g:195:2: iv_ruleEInt= ruleEInt EOF
+            // InternalCauseEffectChain.g:168:44: (iv_ruleEInt= ruleEInt EOF )
+            // InternalCauseEffectChain.g:169:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
             pushFollow(FOLLOW_1);
@@ -326,7 +326,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleEInt"
-    // InternalCauseEffectChain.g:201:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // InternalCauseEffectChain.g:175:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -337,13 +337,13 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalCauseEffectChain.g:207:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // InternalCauseEffectChain.g:208:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalCauseEffectChain.g:181:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // InternalCauseEffectChain.g:182:2: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // InternalCauseEffectChain.g:208:2: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // InternalCauseEffectChain.g:209:3: (kw= '-' )? this_INT_1= RULE_INT
+            // InternalCauseEffectChain.g:182:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalCauseEffectChain.g:183:3: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // InternalCauseEffectChain.g:209:3: (kw= '-' )?
+            // InternalCauseEffectChain.g:183:3: (kw= '-' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -352,7 +352,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
             }
             switch (alt2) {
                 case 1 :
-                    // InternalCauseEffectChain.g:210:4: kw= '-'
+                    // InternalCauseEffectChain.g:184:4: kw= '-'
                     {
                     kw=(Token)match(input,15,FOLLOW_7); 
 
@@ -395,7 +395,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleFQN"
-    // InternalCauseEffectChain.g:227:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
+    // InternalCauseEffectChain.g:201:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
     public final String entryRuleFQN() throws RecognitionException {
         String current = null;
 
@@ -403,8 +403,8 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalCauseEffectChain.g:227:43: (iv_ruleFQN= ruleFQN EOF )
-            // InternalCauseEffectChain.g:228:2: iv_ruleFQN= ruleFQN EOF
+            // InternalCauseEffectChain.g:201:43: (iv_ruleFQN= ruleFQN EOF )
+            // InternalCauseEffectChain.g:202:2: iv_ruleFQN= ruleFQN EOF
             {
              newCompositeNode(grammarAccess.getFQNRule()); 
             pushFollow(FOLLOW_1);
@@ -431,7 +431,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleFQN"
-    // InternalCauseEffectChain.g:234:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // InternalCauseEffectChain.g:208:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleFQN() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -443,11 +443,11 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalCauseEffectChain.g:240:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // InternalCauseEffectChain.g:241:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalCauseEffectChain.g:214:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // InternalCauseEffectChain.g:215:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // InternalCauseEffectChain.g:241:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // InternalCauseEffectChain.g:242:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // InternalCauseEffectChain.g:215:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalCauseEffectChain.g:216:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_8); 
 
@@ -456,7 +456,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
             			newLeafNode(this_ID_0, grammarAccess.getFQNAccess().getIDTerminalRuleCall_0());
             		
-            // InternalCauseEffectChain.g:249:3: (kw= '.' this_ID_2= RULE_ID )*
+            // InternalCauseEffectChain.g:223:3: (kw= '.' this_ID_2= RULE_ID )*
             loop3:
             do {
                 int alt3=2;
@@ -469,7 +469,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalCauseEffectChain.g:250:4: kw= '.' this_ID_2= RULE_ID
+            	    // InternalCauseEffectChain.g:224:4: kw= '.' this_ID_2= RULE_ID
             	    {
             	    kw=(Token)match(input,16,FOLLOW_3); 
 
@@ -515,7 +515,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleActivityChain"
-    // InternalCauseEffectChain.g:267:1: entryRuleActivityChain returns [EObject current=null] : iv_ruleActivityChain= ruleActivityChain EOF ;
+    // InternalCauseEffectChain.g:241:1: entryRuleActivityChain returns [EObject current=null] : iv_ruleActivityChain= ruleActivityChain EOF ;
     public final EObject entryRuleActivityChain() throws RecognitionException {
         EObject current = null;
 
@@ -523,8 +523,8 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalCauseEffectChain.g:267:54: (iv_ruleActivityChain= ruleActivityChain EOF )
-            // InternalCauseEffectChain.g:268:2: iv_ruleActivityChain= ruleActivityChain EOF
+            // InternalCauseEffectChain.g:241:54: (iv_ruleActivityChain= ruleActivityChain EOF )
+            // InternalCauseEffectChain.g:242:2: iv_ruleActivityChain= ruleActivityChain EOF
             {
              newCompositeNode(grammarAccess.getActivityChainRule()); 
             pushFollow(FOLLOW_1);
@@ -551,7 +551,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleActivityChain"
-    // InternalCauseEffectChain.g:274:1: ruleActivityChain returns [EObject current=null] : ( () otherlv_1= 'ActivityChain' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'chainLinks' otherlv_5= '{' ( (lv_chainLinks_6_0= ruleAbstractChainLink ) ) (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )* otherlv_9= '}' )? ( ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) ) ) otherlv_13= '}' ) ;
+    // InternalCauseEffectChain.g:248:1: ruleActivityChain returns [EObject current=null] : ( () otherlv_1= 'ActivityChain' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'chainLinks' otherlv_5= '{' ( (lv_chainLinks_6_0= ruleAbstractChainLink ) ) (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )* otherlv_9= '}' )? ( ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) ) ) otherlv_13= '}' ) ;
     public final EObject ruleActivityChain() throws RecognitionException {
         EObject current = null;
 
@@ -576,14 +576,14 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalCauseEffectChain.g:280:2: ( ( () otherlv_1= 'ActivityChain' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'chainLinks' otherlv_5= '{' ( (lv_chainLinks_6_0= ruleAbstractChainLink ) ) (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )* otherlv_9= '}' )? ( ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) ) ) otherlv_13= '}' ) )
-            // InternalCauseEffectChain.g:281:2: ( () otherlv_1= 'ActivityChain' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'chainLinks' otherlv_5= '{' ( (lv_chainLinks_6_0= ruleAbstractChainLink ) ) (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )* otherlv_9= '}' )? ( ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) ) ) otherlv_13= '}' )
+            // InternalCauseEffectChain.g:254:2: ( ( () otherlv_1= 'ActivityChain' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'chainLinks' otherlv_5= '{' ( (lv_chainLinks_6_0= ruleAbstractChainLink ) ) (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )* otherlv_9= '}' )? ( ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) ) ) otherlv_13= '}' ) )
+            // InternalCauseEffectChain.g:255:2: ( () otherlv_1= 'ActivityChain' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'chainLinks' otherlv_5= '{' ( (lv_chainLinks_6_0= ruleAbstractChainLink ) ) (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )* otherlv_9= '}' )? ( ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) ) ) otherlv_13= '}' )
             {
-            // InternalCauseEffectChain.g:281:2: ( () otherlv_1= 'ActivityChain' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'chainLinks' otherlv_5= '{' ( (lv_chainLinks_6_0= ruleAbstractChainLink ) ) (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )* otherlv_9= '}' )? ( ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) ) ) otherlv_13= '}' )
-            // InternalCauseEffectChain.g:282:3: () otherlv_1= 'ActivityChain' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'chainLinks' otherlv_5= '{' ( (lv_chainLinks_6_0= ruleAbstractChainLink ) ) (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )* otherlv_9= '}' )? ( ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) ) ) otherlv_13= '}'
+            // InternalCauseEffectChain.g:255:2: ( () otherlv_1= 'ActivityChain' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'chainLinks' otherlv_5= '{' ( (lv_chainLinks_6_0= ruleAbstractChainLink ) ) (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )* otherlv_9= '}' )? ( ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) ) ) otherlv_13= '}' )
+            // InternalCauseEffectChain.g:256:3: () otherlv_1= 'ActivityChain' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'chainLinks' otherlv_5= '{' ( (lv_chainLinks_6_0= ruleAbstractChainLink ) ) (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )* otherlv_9= '}' )? ( ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) ) ) otherlv_13= '}'
             {
-            // InternalCauseEffectChain.g:282:3: ()
-            // InternalCauseEffectChain.g:283:4: 
+            // InternalCauseEffectChain.g:256:3: ()
+            // InternalCauseEffectChain.g:257:4: 
             {
 
             				current = forceCreateModelElement(
@@ -597,11 +597,11 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
             			newLeafNode(otherlv_1, grammarAccess.getActivityChainAccess().getActivityChainKeyword_1());
             		
-            // InternalCauseEffectChain.g:293:3: ( (lv_name_2_0= RULE_ID ) )
-            // InternalCauseEffectChain.g:294:4: (lv_name_2_0= RULE_ID )
+            // InternalCauseEffectChain.g:267:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalCauseEffectChain.g:268:4: (lv_name_2_0= RULE_ID )
             {
-            // InternalCauseEffectChain.g:294:4: (lv_name_2_0= RULE_ID )
-            // InternalCauseEffectChain.g:295:5: lv_name_2_0= RULE_ID
+            // InternalCauseEffectChain.g:268:4: (lv_name_2_0= RULE_ID )
+            // InternalCauseEffectChain.g:269:5: lv_name_2_0= RULE_ID
             {
             lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_5); 
 
@@ -627,7 +627,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
             			newLeafNode(otherlv_3, grammarAccess.getActivityChainAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalCauseEffectChain.g:315:3: (otherlv_4= 'chainLinks' otherlv_5= '{' ( (lv_chainLinks_6_0= ruleAbstractChainLink ) ) (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )* otherlv_9= '}' )?
+            // InternalCauseEffectChain.g:289:3: (otherlv_4= 'chainLinks' otherlv_5= '{' ( (lv_chainLinks_6_0= ruleAbstractChainLink ) ) (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )* otherlv_9= '}' )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -636,7 +636,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
             }
             switch (alt5) {
                 case 1 :
-                    // InternalCauseEffectChain.g:316:4: otherlv_4= 'chainLinks' otherlv_5= '{' ( (lv_chainLinks_6_0= ruleAbstractChainLink ) ) (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )* otherlv_9= '}'
+                    // InternalCauseEffectChain.g:290:4: otherlv_4= 'chainLinks' otherlv_5= '{' ( (lv_chainLinks_6_0= ruleAbstractChainLink ) ) (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )* otherlv_9= '}'
                     {
                     otherlv_4=(Token)match(input,18,FOLLOW_5); 
 
@@ -646,11 +646,11 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
                     				newLeafNode(otherlv_5, grammarAccess.getActivityChainAccess().getLeftCurlyBracketKeyword_4_1());
                     			
-                    // InternalCauseEffectChain.g:324:4: ( (lv_chainLinks_6_0= ruleAbstractChainLink ) )
-                    // InternalCauseEffectChain.g:325:5: (lv_chainLinks_6_0= ruleAbstractChainLink )
+                    // InternalCauseEffectChain.g:298:4: ( (lv_chainLinks_6_0= ruleAbstractChainLink ) )
+                    // InternalCauseEffectChain.g:299:5: (lv_chainLinks_6_0= ruleAbstractChainLink )
                     {
-                    // InternalCauseEffectChain.g:325:5: (lv_chainLinks_6_0= ruleAbstractChainLink )
-                    // InternalCauseEffectChain.g:326:6: lv_chainLinks_6_0= ruleAbstractChainLink
+                    // InternalCauseEffectChain.g:299:5: (lv_chainLinks_6_0= ruleAbstractChainLink )
+                    // InternalCauseEffectChain.g:300:6: lv_chainLinks_6_0= ruleAbstractChainLink
                     {
 
                     						newCompositeNode(grammarAccess.getActivityChainAccess().getChainLinksAbstractChainLinkParserRuleCall_4_2_0());
@@ -677,7 +677,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    // InternalCauseEffectChain.g:343:4: (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )*
+                    // InternalCauseEffectChain.g:317:4: (otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) ) )*
                     loop4:
                     do {
                         int alt4=2;
@@ -690,17 +690,17 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalCauseEffectChain.g:344:5: otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) )
+                    	    // InternalCauseEffectChain.g:318:5: otherlv_7= '->' ( (lv_chainLinks_8_0= ruleAbstractChainLink ) )
                     	    {
                     	    otherlv_7=(Token)match(input,19,FOLLOW_10); 
 
                     	    					newLeafNode(otherlv_7, grammarAccess.getActivityChainAccess().getHyphenMinusGreaterThanSignKeyword_4_3_0());
                     	    				
-                    	    // InternalCauseEffectChain.g:348:5: ( (lv_chainLinks_8_0= ruleAbstractChainLink ) )
-                    	    // InternalCauseEffectChain.g:349:6: (lv_chainLinks_8_0= ruleAbstractChainLink )
+                    	    // InternalCauseEffectChain.g:322:5: ( (lv_chainLinks_8_0= ruleAbstractChainLink ) )
+                    	    // InternalCauseEffectChain.g:323:6: (lv_chainLinks_8_0= ruleAbstractChainLink )
                     	    {
-                    	    // InternalCauseEffectChain.g:349:6: (lv_chainLinks_8_0= ruleAbstractChainLink )
-                    	    // InternalCauseEffectChain.g:350:7: lv_chainLinks_8_0= ruleAbstractChainLink
+                    	    // InternalCauseEffectChain.g:323:6: (lv_chainLinks_8_0= ruleAbstractChainLink )
+                    	    // InternalCauseEffectChain.g:324:7: lv_chainLinks_8_0= ruleAbstractChainLink
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getActivityChainAccess().getChainLinksAbstractChainLinkParserRuleCall_4_3_1_0());
@@ -746,19 +746,19 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalCauseEffectChain.g:373:3: ( ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) ) )
-            // InternalCauseEffectChain.g:374:4: ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) )
+            // InternalCauseEffectChain.g:347:3: ( ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) ) )
+            // InternalCauseEffectChain.g:348:4: ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) )
             {
-            // InternalCauseEffectChain.g:374:4: ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) )
-            // InternalCauseEffectChain.g:375:5: ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* )
+            // InternalCauseEffectChain.g:348:4: ( ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* ) )
+            // InternalCauseEffectChain.g:349:5: ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* )
             {
              
             				  getUnorderedGroupHelper().enter(grammarAccess.getActivityChainAccess().getUnorderedGroup_5());
             				
-            // InternalCauseEffectChain.g:378:5: ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* )
-            // InternalCauseEffectChain.g:379:6: ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )*
+            // InternalCauseEffectChain.g:352:5: ( ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )* )
+            // InternalCauseEffectChain.g:353:6: ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )*
             {
-            // InternalCauseEffectChain.g:379:6: ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )*
+            // InternalCauseEffectChain.g:353:6: ( ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) ) )*
             loop6:
             do {
                 int alt6=3;
@@ -774,31 +774,31 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalCauseEffectChain.g:380:4: ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) )
+            	    // InternalCauseEffectChain.g:354:4: ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) )
             	    {
-            	    // InternalCauseEffectChain.g:380:4: ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) )
-            	    // InternalCauseEffectChain.g:381:5: {...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) )
+            	    // InternalCauseEffectChain.g:354:4: ({...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) ) )
+            	    // InternalCauseEffectChain.g:355:5: {...}? => ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getActivityChainAccess().getUnorderedGroup_5(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleActivityChain", "getUnorderedGroupHelper().canSelect(grammarAccess.getActivityChainAccess().getUnorderedGroup_5(), 0)");
             	    }
-            	    // InternalCauseEffectChain.g:381:110: ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) )
-            	    // InternalCauseEffectChain.g:382:6: ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) )
+            	    // InternalCauseEffectChain.g:355:110: ( ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) ) )
+            	    // InternalCauseEffectChain.g:356:6: ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getActivityChainAccess().getUnorderedGroup_5(), 0);
             	    					
-            	    // InternalCauseEffectChain.g:385:9: ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) )
-            	    // InternalCauseEffectChain.g:385:10: {...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) )
+            	    // InternalCauseEffectChain.g:359:9: ({...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) ) )
+            	    // InternalCauseEffectChain.g:359:10: {...}? => ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleActivityChain", "true");
             	    }
-            	    // InternalCauseEffectChain.g:385:19: ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) )
-            	    // InternalCauseEffectChain.g:385:20: (lv_desiredMinResponse_11_0= ruleMinResponseTime )
+            	    // InternalCauseEffectChain.g:359:19: ( (lv_desiredMinResponse_11_0= ruleMinResponseTime ) )
+            	    // InternalCauseEffectChain.g:359:20: (lv_desiredMinResponse_11_0= ruleMinResponseTime )
             	    {
-            	    // InternalCauseEffectChain.g:385:20: (lv_desiredMinResponse_11_0= ruleMinResponseTime )
-            	    // InternalCauseEffectChain.g:386:10: lv_desiredMinResponse_11_0= ruleMinResponseTime
+            	    // InternalCauseEffectChain.g:359:20: (lv_desiredMinResponse_11_0= ruleMinResponseTime )
+            	    // InternalCauseEffectChain.g:360:10: lv_desiredMinResponse_11_0= ruleMinResponseTime
             	    {
 
             	    										newCompositeNode(grammarAccess.getActivityChainAccess().getDesiredMinResponseMinResponseTimeParserRuleCall_5_0_0());
@@ -841,31 +841,31 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
             	    }
             	    break;
             	case 2 :
-            	    // InternalCauseEffectChain.g:408:4: ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) )
+            	    // InternalCauseEffectChain.g:382:4: ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) )
             	    {
-            	    // InternalCauseEffectChain.g:408:4: ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) )
-            	    // InternalCauseEffectChain.g:409:5: {...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) )
+            	    // InternalCauseEffectChain.g:382:4: ({...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) ) )
+            	    // InternalCauseEffectChain.g:383:5: {...}? => ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getActivityChainAccess().getUnorderedGroup_5(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleActivityChain", "getUnorderedGroupHelper().canSelect(grammarAccess.getActivityChainAccess().getUnorderedGroup_5(), 1)");
             	    }
-            	    // InternalCauseEffectChain.g:409:110: ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) )
-            	    // InternalCauseEffectChain.g:410:6: ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) )
+            	    // InternalCauseEffectChain.g:383:110: ( ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) ) )
+            	    // InternalCauseEffectChain.g:384:6: ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getActivityChainAccess().getUnorderedGroup_5(), 1);
             	    					
-            	    // InternalCauseEffectChain.g:413:9: ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) )
-            	    // InternalCauseEffectChain.g:413:10: {...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) )
+            	    // InternalCauseEffectChain.g:387:9: ({...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) ) )
+            	    // InternalCauseEffectChain.g:387:10: {...}? => ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleActivityChain", "true");
             	    }
-            	    // InternalCauseEffectChain.g:413:19: ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) )
-            	    // InternalCauseEffectChain.g:413:20: (lv_desiredMaxResponse_12_0= ruleMaxResponseTime )
+            	    // InternalCauseEffectChain.g:387:19: ( (lv_desiredMaxResponse_12_0= ruleMaxResponseTime ) )
+            	    // InternalCauseEffectChain.g:387:20: (lv_desiredMaxResponse_12_0= ruleMaxResponseTime )
             	    {
-            	    // InternalCauseEffectChain.g:413:20: (lv_desiredMaxResponse_12_0= ruleMaxResponseTime )
-            	    // InternalCauseEffectChain.g:414:10: lv_desiredMaxResponse_12_0= ruleMaxResponseTime
+            	    // InternalCauseEffectChain.g:387:20: (lv_desiredMaxResponse_12_0= ruleMaxResponseTime )
+            	    // InternalCauseEffectChain.g:388:10: lv_desiredMaxResponse_12_0= ruleMaxResponseTime
             	    {
 
             	    										newCompositeNode(grammarAccess.getActivityChainAccess().getDesiredMaxResponseMaxResponseTimeParserRuleCall_5_1_0());
@@ -952,7 +952,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleAbstractChainLink"
-    // InternalCauseEffectChain.g:451:1: entryRuleAbstractChainLink returns [EObject current=null] : iv_ruleAbstractChainLink= ruleAbstractChainLink EOF ;
+    // InternalCauseEffectChain.g:425:1: entryRuleAbstractChainLink returns [EObject current=null] : iv_ruleAbstractChainLink= ruleAbstractChainLink EOF ;
     public final EObject entryRuleAbstractChainLink() throws RecognitionException {
         EObject current = null;
 
@@ -960,8 +960,8 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalCauseEffectChain.g:451:58: (iv_ruleAbstractChainLink= ruleAbstractChainLink EOF )
-            // InternalCauseEffectChain.g:452:2: iv_ruleAbstractChainLink= ruleAbstractChainLink EOF
+            // InternalCauseEffectChain.g:425:58: (iv_ruleAbstractChainLink= ruleAbstractChainLink EOF )
+            // InternalCauseEffectChain.g:426:2: iv_ruleAbstractChainLink= ruleAbstractChainLink EOF
             {
              newCompositeNode(grammarAccess.getAbstractChainLinkRule()); 
             pushFollow(FOLLOW_1);
@@ -988,7 +988,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleAbstractChainLink"
-    // InternalCauseEffectChain.g:458:1: ruleAbstractChainLink returns [EObject current=null] : (this_ActivityLink_0= ruleActivityLink | this_InputHandlerLink_1= ruleInputHandlerLink ) ;
+    // InternalCauseEffectChain.g:432:1: ruleAbstractChainLink returns [EObject current=null] : (this_ActivityLink_0= ruleActivityLink | this_InputHandlerLink_1= ruleInputHandlerLink ) ;
     public final EObject ruleAbstractChainLink() throws RecognitionException {
         EObject current = null;
 
@@ -1001,10 +1001,10 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalCauseEffectChain.g:464:2: ( (this_ActivityLink_0= ruleActivityLink | this_InputHandlerLink_1= ruleInputHandlerLink ) )
-            // InternalCauseEffectChain.g:465:2: (this_ActivityLink_0= ruleActivityLink | this_InputHandlerLink_1= ruleInputHandlerLink )
+            // InternalCauseEffectChain.g:438:2: ( (this_ActivityLink_0= ruleActivityLink | this_InputHandlerLink_1= ruleInputHandlerLink ) )
+            // InternalCauseEffectChain.g:439:2: (this_ActivityLink_0= ruleActivityLink | this_InputHandlerLink_1= ruleInputHandlerLink )
             {
-            // InternalCauseEffectChain.g:465:2: (this_ActivityLink_0= ruleActivityLink | this_InputHandlerLink_1= ruleInputHandlerLink )
+            // InternalCauseEffectChain.g:439:2: (this_ActivityLink_0= ruleActivityLink | this_InputHandlerLink_1= ruleInputHandlerLink )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1022,7 +1022,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
             }
             switch (alt7) {
                 case 1 :
-                    // InternalCauseEffectChain.g:466:3: this_ActivityLink_0= ruleActivityLink
+                    // InternalCauseEffectChain.g:440:3: this_ActivityLink_0= ruleActivityLink
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractChainLinkAccess().getActivityLinkParserRuleCall_0());
@@ -1040,7 +1040,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 2 :
-                    // InternalCauseEffectChain.g:475:3: this_InputHandlerLink_1= ruleInputHandlerLink
+                    // InternalCauseEffectChain.g:449:3: this_InputHandlerLink_1= ruleInputHandlerLink
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractChainLinkAccess().getInputHandlerLinkParserRuleCall_1());
@@ -1080,7 +1080,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleActivityLink"
-    // InternalCauseEffectChain.g:487:1: entryRuleActivityLink returns [EObject current=null] : iv_ruleActivityLink= ruleActivityLink EOF ;
+    // InternalCauseEffectChain.g:461:1: entryRuleActivityLink returns [EObject current=null] : iv_ruleActivityLink= ruleActivityLink EOF ;
     public final EObject entryRuleActivityLink() throws RecognitionException {
         EObject current = null;
 
@@ -1088,8 +1088,8 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalCauseEffectChain.g:487:53: (iv_ruleActivityLink= ruleActivityLink EOF )
-            // InternalCauseEffectChain.g:488:2: iv_ruleActivityLink= ruleActivityLink EOF
+            // InternalCauseEffectChain.g:461:53: (iv_ruleActivityLink= ruleActivityLink EOF )
+            // InternalCauseEffectChain.g:462:2: iv_ruleActivityLink= ruleActivityLink EOF
             {
              newCompositeNode(grammarAccess.getActivityLinkRule()); 
             pushFollow(FOLLOW_1);
@@ -1116,7 +1116,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleActivityLink"
-    // InternalCauseEffectChain.g:494:1: ruleActivityLink returns [EObject current=null] : (otherlv_0= 'act.' ( ( ruleFQN ) ) ) ;
+    // InternalCauseEffectChain.g:468:1: ruleActivityLink returns [EObject current=null] : (otherlv_0= 'act.' ( ( ruleFQN ) ) ) ;
     public final EObject ruleActivityLink() throws RecognitionException {
         EObject current = null;
 
@@ -1126,21 +1126,21 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalCauseEffectChain.g:500:2: ( (otherlv_0= 'act.' ( ( ruleFQN ) ) ) )
-            // InternalCauseEffectChain.g:501:2: (otherlv_0= 'act.' ( ( ruleFQN ) ) )
+            // InternalCauseEffectChain.g:474:2: ( (otherlv_0= 'act.' ( ( ruleFQN ) ) ) )
+            // InternalCauseEffectChain.g:475:2: (otherlv_0= 'act.' ( ( ruleFQN ) ) )
             {
-            // InternalCauseEffectChain.g:501:2: (otherlv_0= 'act.' ( ( ruleFQN ) ) )
-            // InternalCauseEffectChain.g:502:3: otherlv_0= 'act.' ( ( ruleFQN ) )
+            // InternalCauseEffectChain.g:475:2: (otherlv_0= 'act.' ( ( ruleFQN ) ) )
+            // InternalCauseEffectChain.g:476:3: otherlv_0= 'act.' ( ( ruleFQN ) )
             {
             otherlv_0=(Token)match(input,20,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getActivityLinkAccess().getActKeyword_0());
             		
-            // InternalCauseEffectChain.g:506:3: ( ( ruleFQN ) )
-            // InternalCauseEffectChain.g:507:4: ( ruleFQN )
+            // InternalCauseEffectChain.g:480:3: ( ( ruleFQN ) )
+            // InternalCauseEffectChain.g:481:4: ( ruleFQN )
             {
-            // InternalCauseEffectChain.g:507:4: ( ruleFQN )
-            // InternalCauseEffectChain.g:508:5: ruleFQN
+            // InternalCauseEffectChain.g:481:4: ( ruleFQN )
+            // InternalCauseEffectChain.g:482:5: ruleFQN
             {
 
             					if (current==null) {
@@ -1187,7 +1187,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleInputHandlerLink"
-    // InternalCauseEffectChain.g:526:1: entryRuleInputHandlerLink returns [EObject current=null] : iv_ruleInputHandlerLink= ruleInputHandlerLink EOF ;
+    // InternalCauseEffectChain.g:500:1: entryRuleInputHandlerLink returns [EObject current=null] : iv_ruleInputHandlerLink= ruleInputHandlerLink EOF ;
     public final EObject entryRuleInputHandlerLink() throws RecognitionException {
         EObject current = null;
 
@@ -1195,8 +1195,8 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalCauseEffectChain.g:526:57: (iv_ruleInputHandlerLink= ruleInputHandlerLink EOF )
-            // InternalCauseEffectChain.g:527:2: iv_ruleInputHandlerLink= ruleInputHandlerLink EOF
+            // InternalCauseEffectChain.g:500:57: (iv_ruleInputHandlerLink= ruleInputHandlerLink EOF )
+            // InternalCauseEffectChain.g:501:2: iv_ruleInputHandlerLink= ruleInputHandlerLink EOF
             {
              newCompositeNode(grammarAccess.getInputHandlerLinkRule()); 
             pushFollow(FOLLOW_1);
@@ -1223,7 +1223,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleInputHandlerLink"
-    // InternalCauseEffectChain.g:533:1: ruleInputHandlerLink returns [EObject current=null] : (otherlv_0= 'hnd.' ( ( ruleFQN ) ) ) ;
+    // InternalCauseEffectChain.g:507:1: ruleInputHandlerLink returns [EObject current=null] : (otherlv_0= 'hnd.' ( ( ruleFQN ) ) ) ;
     public final EObject ruleInputHandlerLink() throws RecognitionException {
         EObject current = null;
 
@@ -1233,21 +1233,21 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalCauseEffectChain.g:539:2: ( (otherlv_0= 'hnd.' ( ( ruleFQN ) ) ) )
-            // InternalCauseEffectChain.g:540:2: (otherlv_0= 'hnd.' ( ( ruleFQN ) ) )
+            // InternalCauseEffectChain.g:513:2: ( (otherlv_0= 'hnd.' ( ( ruleFQN ) ) ) )
+            // InternalCauseEffectChain.g:514:2: (otherlv_0= 'hnd.' ( ( ruleFQN ) ) )
             {
-            // InternalCauseEffectChain.g:540:2: (otherlv_0= 'hnd.' ( ( ruleFQN ) ) )
-            // InternalCauseEffectChain.g:541:3: otherlv_0= 'hnd.' ( ( ruleFQN ) )
+            // InternalCauseEffectChain.g:514:2: (otherlv_0= 'hnd.' ( ( ruleFQN ) ) )
+            // InternalCauseEffectChain.g:515:3: otherlv_0= 'hnd.' ( ( ruleFQN ) )
             {
             otherlv_0=(Token)match(input,21,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getInputHandlerLinkAccess().getHndKeyword_0());
             		
-            // InternalCauseEffectChain.g:545:3: ( ( ruleFQN ) )
-            // InternalCauseEffectChain.g:546:4: ( ruleFQN )
+            // InternalCauseEffectChain.g:519:3: ( ( ruleFQN ) )
+            // InternalCauseEffectChain.g:520:4: ( ruleFQN )
             {
-            // InternalCauseEffectChain.g:546:4: ( ruleFQN )
-            // InternalCauseEffectChain.g:547:5: ruleFQN
+            // InternalCauseEffectChain.g:520:4: ( ruleFQN )
+            // InternalCauseEffectChain.g:521:5: ruleFQN
             {
 
             					if (current==null) {
@@ -1294,7 +1294,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleMinResponseTime"
-    // InternalCauseEffectChain.g:565:1: entryRuleMinResponseTime returns [EObject current=null] : iv_ruleMinResponseTime= ruleMinResponseTime EOF ;
+    // InternalCauseEffectChain.g:539:1: entryRuleMinResponseTime returns [EObject current=null] : iv_ruleMinResponseTime= ruleMinResponseTime EOF ;
     public final EObject entryRuleMinResponseTime() throws RecognitionException {
         EObject current = null;
 
@@ -1302,8 +1302,8 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalCauseEffectChain.g:565:56: (iv_ruleMinResponseTime= ruleMinResponseTime EOF )
-            // InternalCauseEffectChain.g:566:2: iv_ruleMinResponseTime= ruleMinResponseTime EOF
+            // InternalCauseEffectChain.g:539:56: (iv_ruleMinResponseTime= ruleMinResponseTime EOF )
+            // InternalCauseEffectChain.g:540:2: iv_ruleMinResponseTime= ruleMinResponseTime EOF
             {
              newCompositeNode(grammarAccess.getMinResponseTimeRule()); 
             pushFollow(FOLLOW_1);
@@ -1330,7 +1330,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleMinResponseTime"
-    // InternalCauseEffectChain.g:572:1: ruleMinResponseTime returns [EObject current=null] : (otherlv_0= 'desiredMinResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? ) ;
+    // InternalCauseEffectChain.g:546:1: ruleMinResponseTime returns [EObject current=null] : (otherlv_0= 'desiredMinResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? ) ;
     public final EObject ruleMinResponseTime() throws RecognitionException {
         EObject current = null;
 
@@ -1345,21 +1345,21 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalCauseEffectChain.g:578:2: ( (otherlv_0= 'desiredMinResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? ) )
-            // InternalCauseEffectChain.g:579:2: (otherlv_0= 'desiredMinResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? )
+            // InternalCauseEffectChain.g:552:2: ( (otherlv_0= 'desiredMinResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? ) )
+            // InternalCauseEffectChain.g:553:2: (otherlv_0= 'desiredMinResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? )
             {
-            // InternalCauseEffectChain.g:579:2: (otherlv_0= 'desiredMinResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? )
-            // InternalCauseEffectChain.g:580:3: otherlv_0= 'desiredMinResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )?
+            // InternalCauseEffectChain.g:553:2: (otherlv_0= 'desiredMinResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? )
+            // InternalCauseEffectChain.g:554:3: otherlv_0= 'desiredMinResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )?
             {
             otherlv_0=(Token)match(input,22,FOLLOW_13); 
 
             			newLeafNode(otherlv_0, grammarAccess.getMinResponseTimeAccess().getDesiredMinResponseKeyword_0());
             		
-            // InternalCauseEffectChain.g:584:3: ( (lv_value_1_0= ruleEInt ) )
-            // InternalCauseEffectChain.g:585:4: (lv_value_1_0= ruleEInt )
+            // InternalCauseEffectChain.g:558:3: ( (lv_value_1_0= ruleEInt ) )
+            // InternalCauseEffectChain.g:559:4: (lv_value_1_0= ruleEInt )
             {
-            // InternalCauseEffectChain.g:585:4: (lv_value_1_0= ruleEInt )
-            // InternalCauseEffectChain.g:586:5: lv_value_1_0= ruleEInt
+            // InternalCauseEffectChain.g:559:4: (lv_value_1_0= ruleEInt )
+            // InternalCauseEffectChain.g:560:5: lv_value_1_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getMinResponseTimeAccess().getValueEIntParserRuleCall_1_0());
@@ -1386,11 +1386,11 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalCauseEffectChain.g:603:3: ( (lv_unit_2_0= ruleTimeUnit ) )
-            // InternalCauseEffectChain.g:604:4: (lv_unit_2_0= ruleTimeUnit )
+            // InternalCauseEffectChain.g:577:3: ( (lv_unit_2_0= ruleTimeUnit ) )
+            // InternalCauseEffectChain.g:578:4: (lv_unit_2_0= ruleTimeUnit )
             {
-            // InternalCauseEffectChain.g:604:4: (lv_unit_2_0= ruleTimeUnit )
-            // InternalCauseEffectChain.g:605:5: lv_unit_2_0= ruleTimeUnit
+            // InternalCauseEffectChain.g:578:4: (lv_unit_2_0= ruleTimeUnit )
+            // InternalCauseEffectChain.g:579:5: lv_unit_2_0= ruleTimeUnit
             {
 
             					newCompositeNode(grammarAccess.getMinResponseTimeAccess().getUnitTimeUnitEnumRuleCall_2_0());
@@ -1417,7 +1417,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalCauseEffectChain.g:622:3: (otherlv_3= ';' )?
+            // InternalCauseEffectChain.g:596:3: (otherlv_3= ';' )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1426,7 +1426,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
             }
             switch (alt8) {
                 case 1 :
-                    // InternalCauseEffectChain.g:623:4: otherlv_3= ';'
+                    // InternalCauseEffectChain.g:597:4: otherlv_3= ';'
                     {
                     otherlv_3=(Token)match(input,23,FOLLOW_2); 
 
@@ -1461,7 +1461,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleMaxResponseTime"
-    // InternalCauseEffectChain.g:632:1: entryRuleMaxResponseTime returns [EObject current=null] : iv_ruleMaxResponseTime= ruleMaxResponseTime EOF ;
+    // InternalCauseEffectChain.g:606:1: entryRuleMaxResponseTime returns [EObject current=null] : iv_ruleMaxResponseTime= ruleMaxResponseTime EOF ;
     public final EObject entryRuleMaxResponseTime() throws RecognitionException {
         EObject current = null;
 
@@ -1469,8 +1469,8 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalCauseEffectChain.g:632:56: (iv_ruleMaxResponseTime= ruleMaxResponseTime EOF )
-            // InternalCauseEffectChain.g:633:2: iv_ruleMaxResponseTime= ruleMaxResponseTime EOF
+            // InternalCauseEffectChain.g:606:56: (iv_ruleMaxResponseTime= ruleMaxResponseTime EOF )
+            // InternalCauseEffectChain.g:607:2: iv_ruleMaxResponseTime= ruleMaxResponseTime EOF
             {
              newCompositeNode(grammarAccess.getMaxResponseTimeRule()); 
             pushFollow(FOLLOW_1);
@@ -1497,7 +1497,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleMaxResponseTime"
-    // InternalCauseEffectChain.g:639:1: ruleMaxResponseTime returns [EObject current=null] : (otherlv_0= 'desiredMaxResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? ) ;
+    // InternalCauseEffectChain.g:613:1: ruleMaxResponseTime returns [EObject current=null] : (otherlv_0= 'desiredMaxResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? ) ;
     public final EObject ruleMaxResponseTime() throws RecognitionException {
         EObject current = null;
 
@@ -1512,21 +1512,21 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalCauseEffectChain.g:645:2: ( (otherlv_0= 'desiredMaxResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? ) )
-            // InternalCauseEffectChain.g:646:2: (otherlv_0= 'desiredMaxResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? )
+            // InternalCauseEffectChain.g:619:2: ( (otherlv_0= 'desiredMaxResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? ) )
+            // InternalCauseEffectChain.g:620:2: (otherlv_0= 'desiredMaxResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? )
             {
-            // InternalCauseEffectChain.g:646:2: (otherlv_0= 'desiredMaxResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? )
-            // InternalCauseEffectChain.g:647:3: otherlv_0= 'desiredMaxResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )?
+            // InternalCauseEffectChain.g:620:2: (otherlv_0= 'desiredMaxResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )? )
+            // InternalCauseEffectChain.g:621:3: otherlv_0= 'desiredMaxResponse' ( (lv_value_1_0= ruleEInt ) ) ( (lv_unit_2_0= ruleTimeUnit ) ) (otherlv_3= ';' )?
             {
             otherlv_0=(Token)match(input,24,FOLLOW_13); 
 
             			newLeafNode(otherlv_0, grammarAccess.getMaxResponseTimeAccess().getDesiredMaxResponseKeyword_0());
             		
-            // InternalCauseEffectChain.g:651:3: ( (lv_value_1_0= ruleEInt ) )
-            // InternalCauseEffectChain.g:652:4: (lv_value_1_0= ruleEInt )
+            // InternalCauseEffectChain.g:625:3: ( (lv_value_1_0= ruleEInt ) )
+            // InternalCauseEffectChain.g:626:4: (lv_value_1_0= ruleEInt )
             {
-            // InternalCauseEffectChain.g:652:4: (lv_value_1_0= ruleEInt )
-            // InternalCauseEffectChain.g:653:5: lv_value_1_0= ruleEInt
+            // InternalCauseEffectChain.g:626:4: (lv_value_1_0= ruleEInt )
+            // InternalCauseEffectChain.g:627:5: lv_value_1_0= ruleEInt
             {
 
             					newCompositeNode(grammarAccess.getMaxResponseTimeAccess().getValueEIntParserRuleCall_1_0());
@@ -1553,11 +1553,11 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalCauseEffectChain.g:670:3: ( (lv_unit_2_0= ruleTimeUnit ) )
-            // InternalCauseEffectChain.g:671:4: (lv_unit_2_0= ruleTimeUnit )
+            // InternalCauseEffectChain.g:644:3: ( (lv_unit_2_0= ruleTimeUnit ) )
+            // InternalCauseEffectChain.g:645:4: (lv_unit_2_0= ruleTimeUnit )
             {
-            // InternalCauseEffectChain.g:671:4: (lv_unit_2_0= ruleTimeUnit )
-            // InternalCauseEffectChain.g:672:5: lv_unit_2_0= ruleTimeUnit
+            // InternalCauseEffectChain.g:645:4: (lv_unit_2_0= ruleTimeUnit )
+            // InternalCauseEffectChain.g:646:5: lv_unit_2_0= ruleTimeUnit
             {
 
             					newCompositeNode(grammarAccess.getMaxResponseTimeAccess().getUnitTimeUnitEnumRuleCall_2_0());
@@ -1584,7 +1584,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalCauseEffectChain.g:689:3: (otherlv_3= ';' )?
+            // InternalCauseEffectChain.g:663:3: (otherlv_3= ';' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1593,7 +1593,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
             }
             switch (alt9) {
                 case 1 :
-                    // InternalCauseEffectChain.g:690:4: otherlv_3= ';'
+                    // InternalCauseEffectChain.g:664:4: otherlv_3= ';'
                     {
                     otherlv_3=(Token)match(input,23,FOLLOW_2); 
 
@@ -1628,7 +1628,7 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleTimeUnit"
-    // InternalCauseEffectChain.g:699:1: ruleTimeUnit returns [Enumerator current=null] : ( (enumLiteral_0= 'sec' ) | (enumLiteral_1= 'ms' ) | (enumLiteral_2= 'us' ) ) ;
+    // InternalCauseEffectChain.g:673:1: ruleTimeUnit returns [Enumerator current=null] : ( (enumLiteral_0= 'sec' ) | (enumLiteral_1= 'ms' ) | (enumLiteral_2= 'us' ) ) ;
     public final Enumerator ruleTimeUnit() throws RecognitionException {
         Enumerator current = null;
 
@@ -1640,10 +1640,10 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalCauseEffectChain.g:705:2: ( ( (enumLiteral_0= 'sec' ) | (enumLiteral_1= 'ms' ) | (enumLiteral_2= 'us' ) ) )
-            // InternalCauseEffectChain.g:706:2: ( (enumLiteral_0= 'sec' ) | (enumLiteral_1= 'ms' ) | (enumLiteral_2= 'us' ) )
+            // InternalCauseEffectChain.g:679:2: ( ( (enumLiteral_0= 'sec' ) | (enumLiteral_1= 'ms' ) | (enumLiteral_2= 'us' ) ) )
+            // InternalCauseEffectChain.g:680:2: ( (enumLiteral_0= 'sec' ) | (enumLiteral_1= 'ms' ) | (enumLiteral_2= 'us' ) )
             {
-            // InternalCauseEffectChain.g:706:2: ( (enumLiteral_0= 'sec' ) | (enumLiteral_1= 'ms' ) | (enumLiteral_2= 'us' ) )
+            // InternalCauseEffectChain.g:680:2: ( (enumLiteral_0= 'sec' ) | (enumLiteral_1= 'ms' ) | (enumLiteral_2= 'us' ) )
             int alt10=3;
             switch ( input.LA(1) ) {
             case 25:
@@ -1670,10 +1670,10 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
 
             switch (alt10) {
                 case 1 :
-                    // InternalCauseEffectChain.g:707:3: (enumLiteral_0= 'sec' )
+                    // InternalCauseEffectChain.g:681:3: (enumLiteral_0= 'sec' )
                     {
-                    // InternalCauseEffectChain.g:707:3: (enumLiteral_0= 'sec' )
-                    // InternalCauseEffectChain.g:708:4: enumLiteral_0= 'sec'
+                    // InternalCauseEffectChain.g:681:3: (enumLiteral_0= 'sec' )
+                    // InternalCauseEffectChain.g:682:4: enumLiteral_0= 'sec'
                     {
                     enumLiteral_0=(Token)match(input,25,FOLLOW_2); 
 
@@ -1687,10 +1687,10 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 2 :
-                    // InternalCauseEffectChain.g:715:3: (enumLiteral_1= 'ms' )
+                    // InternalCauseEffectChain.g:689:3: (enumLiteral_1= 'ms' )
                     {
-                    // InternalCauseEffectChain.g:715:3: (enumLiteral_1= 'ms' )
-                    // InternalCauseEffectChain.g:716:4: enumLiteral_1= 'ms'
+                    // InternalCauseEffectChain.g:689:3: (enumLiteral_1= 'ms' )
+                    // InternalCauseEffectChain.g:690:4: enumLiteral_1= 'ms'
                     {
                     enumLiteral_1=(Token)match(input,26,FOLLOW_2); 
 
@@ -1704,10 +1704,10 @@ public class InternalCauseEffectChainParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 3 :
-                    // InternalCauseEffectChain.g:723:3: (enumLiteral_2= 'us' )
+                    // InternalCauseEffectChain.g:697:3: (enumLiteral_2= 'us' )
                     {
-                    // InternalCauseEffectChain.g:723:3: (enumLiteral_2= 'us' )
-                    // InternalCauseEffectChain.g:724:4: enumLiteral_2= 'us'
+                    // InternalCauseEffectChain.g:697:3: (enumLiteral_2= 'us' )
+                    // InternalCauseEffectChain.g:698:4: enumLiteral_2= 'us'
                     {
                     enumLiteral_2=(Token)match(input,27,FOLLOW_2); 
 

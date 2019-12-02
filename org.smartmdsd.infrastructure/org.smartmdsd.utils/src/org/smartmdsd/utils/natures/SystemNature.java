@@ -1,4 +1,4 @@
-//--------------------------------------------------------------------------
+//===============================================================
 //
 //  Copyright (C) 2019 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
@@ -8,31 +8,14 @@
 //
 //        Servicerobotics Ulm
 //        Christian Schlegel
-//        University of Applied Sciences
+//        Ulm University of Applied Sciences
 //        Prittwitzstr. 10
 //        89075 Ulm
 //        Germany
 //
-//  This file is part of the SmartSoft MDSD Toolchain. 
+//  This file is part of the SmartSoft MDSD Toolchain v3. 
 //
-// Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-//
-// 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-// 
-// 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the 
-//    documentation and/or other materials provided with the distribution.
-// 
-// 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this 
-//    software without specific prior written permission.
-// 
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
-// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS 
-// BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
-// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-// POSSIBILITY OF SUCH DAMAGE.
-//
-//--------------------------------------------------------------------------
+//===============================================================
 package org.smartmdsd.utils.natures;
 
 import java.util.Arrays;
@@ -53,6 +36,8 @@ import org.eclipse.ui.IEditorDescriptor;
 import org.eclipse.ui.IEditorRegistry;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.xtext.resource.FileExtensionProvider;
+import org.smartmdsd.utils.Activator;
+import org.smartmdsd.utils.SmartMDSDPreferencesPage;
 import org.smartmdsd.utils.builder.CDTProjectHelpers;
 import org.xtext.system.activityArchitecture.ui.internal.ActivityArchitectureActivator;
 import org.xtext.system.causeEffectChain.ui.internal.CauseEffectChainActivator;
@@ -60,6 +45,7 @@ import org.xtext.system.componentArchitecture.ui.internal.ComponentArchitectureA
 import org.xtext.system.deployment.ui.internal.DeploymentActivator;
 import org.xtext.system.systemParameter.ui.internal.SystemParameterActivator;
 import org.xtext.system.targetPlatform.ui.internal.TargetPlatformActivator;
+import org.xtext.system.systemDatasheet.ui.internal.SystemDatasheetActivator;
 
 import com.google.inject.Injector;
 
@@ -76,7 +62,8 @@ public class SystemNature extends AbstractSmartMDSDNature {
 					@Override
 					public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
 						try {
-							CDTProjectHelpers.addDefaultSettingsTo(project, monitor);
+							String activeBuildType = Activator.getDefault().getPreferenceStore().getString(SmartMDSDPreferencesPage.PROP_CMAKE_BUILD_TYPE);
+							CDTProjectHelpers.addDefaultSettingsTo(project, activeBuildType, monitor);
 						} catch (BuildException e) {
 							e.printStackTrace();
 							return Status.CANCEL_STATUS;
@@ -97,6 +84,7 @@ public class SystemNature extends AbstractSmartMDSDNature {
 		SystemActivityArchitecture (ActivityArchitectureActivator.ORG_XTEXT_SYSTEM_ACTIVITYARCHITECTURE_ACTIVITYARCHITECTURE),
 		CauseEffectChains (CauseEffectChainActivator.ORG_XTEXT_SYSTEM_CAUSEEFFECTCHAIN_CAUSEEFFECTCHAIN),
 		SystemParameters (SystemParameterActivator.ORG_XTEXT_SYSTEM_SYSTEMPARAMETER_SYSTEMPARAMETER),
+		SystemDatasheet (SystemDatasheetActivator.ORG_XTEXT_SYSTEM_SYSTEMDATASHEET_SYSTEMDATASHEET),
 		TargetPlatform (TargetPlatformActivator.ORG_XTEXT_SYSTEM_TARGETPLATFORM_TARGETPLATFORM),
 		Deployment (DeploymentActivator.ORG_XTEXT_SYSTEM_DEPLOYMENT_DEPLOYMENT);
 		
@@ -141,6 +129,8 @@ public class SystemNature extends AbstractSmartMDSDNature {
 				return CauseEffectChainActivator.getInstance().getInjector(languageID);
 			case SystemParameters:
 				return SystemParameterActivator.getInstance().getInjector(languageID);
+			case SystemDatasheet:
+				return SystemDatasheetActivator.getInstance().getInjector(languageID);
 			case TargetPlatform:
 				return TargetPlatformActivator.getInstance().getInjector(languageID);
 			case Deployment:

@@ -3,6 +3,7 @@
 package org.ecore.component.componentDefinition;
 
 import org.eclipse.emf.common.util.EList;
+import org.ecore.base.documentation.AbstractDocumentedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface ComponentPort extends NamedComponentElement {
+public interface ComponentPort extends NamedComponentElement, AbstractDocumentedElement {
 	/**
 	 * Returns the value of the '<em><b>Extensions</b></em>' containment reference list.
 	 * The list contents are of type {@link org.ecore.component.componentDefinition.ComponentPortExtension}.

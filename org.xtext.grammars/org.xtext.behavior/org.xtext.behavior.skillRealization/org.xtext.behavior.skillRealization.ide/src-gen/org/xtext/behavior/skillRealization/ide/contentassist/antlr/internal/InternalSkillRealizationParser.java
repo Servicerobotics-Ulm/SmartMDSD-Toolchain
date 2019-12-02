@@ -89,11 +89,11 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "entryRuleSkillRealizationModel"
-    // InternalSkillRealization.g:94:1: entryRuleSkillRealizationModel : ruleSkillRealizationModel EOF ;
+    // InternalSkillRealization.g:68:1: entryRuleSkillRealizationModel : ruleSkillRealizationModel EOF ;
     public final void entryRuleSkillRealizationModel() throws RecognitionException {
         try {
-            // InternalSkillRealization.g:95:1: ( ruleSkillRealizationModel EOF )
-            // InternalSkillRealization.g:96:1: ruleSkillRealizationModel EOF
+            // InternalSkillRealization.g:69:1: ( ruleSkillRealizationModel EOF )
+            // InternalSkillRealization.g:70:1: ruleSkillRealizationModel EOF
             {
              before(grammarAccess.getSkillRealizationModelRule()); 
             pushFollow(FOLLOW_1);
@@ -119,21 +119,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleSkillRealizationModel"
-    // InternalSkillRealization.g:103:1: ruleSkillRealizationModel : ( ( rule__SkillRealizationModel__Group__0 ) ) ;
+    // InternalSkillRealization.g:77:1: ruleSkillRealizationModel : ( ( rule__SkillRealizationModel__Group__0 ) ) ;
     public final void ruleSkillRealizationModel() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:107:2: ( ( ( rule__SkillRealizationModel__Group__0 ) ) )
-            // InternalSkillRealization.g:108:2: ( ( rule__SkillRealizationModel__Group__0 ) )
+            // InternalSkillRealization.g:81:2: ( ( ( rule__SkillRealizationModel__Group__0 ) ) )
+            // InternalSkillRealization.g:82:2: ( ( rule__SkillRealizationModel__Group__0 ) )
             {
-            // InternalSkillRealization.g:108:2: ( ( rule__SkillRealizationModel__Group__0 ) )
-            // InternalSkillRealization.g:109:3: ( rule__SkillRealizationModel__Group__0 )
+            // InternalSkillRealization.g:82:2: ( ( rule__SkillRealizationModel__Group__0 ) )
+            // InternalSkillRealization.g:83:3: ( rule__SkillRealizationModel__Group__0 )
             {
              before(grammarAccess.getSkillRealizationModelAccess().getGroup()); 
-            // InternalSkillRealization.g:110:3: ( rule__SkillRealizationModel__Group__0 )
-            // InternalSkillRealization.g:110:4: rule__SkillRealizationModel__Group__0
+            // InternalSkillRealization.g:84:3: ( rule__SkillRealizationModel__Group__0 )
+            // InternalSkillRealization.g:84:4: rule__SkillRealizationModel__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__SkillRealizationModel__Group__0();
@@ -166,11 +166,11 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "entryRuleFQN"
-    // InternalSkillRealization.g:119:1: entryRuleFQN : ruleFQN EOF ;
+    // InternalSkillRealization.g:93:1: entryRuleFQN : ruleFQN EOF ;
     public final void entryRuleFQN() throws RecognitionException {
         try {
-            // InternalSkillRealization.g:120:1: ( ruleFQN EOF )
-            // InternalSkillRealization.g:121:1: ruleFQN EOF
+            // InternalSkillRealization.g:94:1: ( ruleFQN EOF )
+            // InternalSkillRealization.g:95:1: ruleFQN EOF
             {
              before(grammarAccess.getFQNRule()); 
             pushFollow(FOLLOW_1);
@@ -196,21 +196,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleFQN"
-    // InternalSkillRealization.g:128:1: ruleFQN : ( ( rule__FQN__Group__0 ) ) ;
+    // InternalSkillRealization.g:102:1: ruleFQN : ( ( rule__FQN__Group__0 ) ) ;
     public final void ruleFQN() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:132:2: ( ( ( rule__FQN__Group__0 ) ) )
-            // InternalSkillRealization.g:133:2: ( ( rule__FQN__Group__0 ) )
+            // InternalSkillRealization.g:106:2: ( ( ( rule__FQN__Group__0 ) ) )
+            // InternalSkillRealization.g:107:2: ( ( rule__FQN__Group__0 ) )
             {
-            // InternalSkillRealization.g:133:2: ( ( rule__FQN__Group__0 ) )
-            // InternalSkillRealization.g:134:3: ( rule__FQN__Group__0 )
+            // InternalSkillRealization.g:107:2: ( ( rule__FQN__Group__0 ) )
+            // InternalSkillRealization.g:108:3: ( rule__FQN__Group__0 )
             {
              before(grammarAccess.getFQNAccess().getGroup()); 
-            // InternalSkillRealization.g:135:3: ( rule__FQN__Group__0 )
-            // InternalSkillRealization.g:135:4: rule__FQN__Group__0
+            // InternalSkillRealization.g:109:3: ( rule__FQN__Group__0 )
+            // InternalSkillRealization.g:109:4: rule__FQN__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__FQN__Group__0();
@@ -243,11 +243,11 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "entryRuleCoordinationModuleRealization"
-    // InternalSkillRealization.g:144:1: entryRuleCoordinationModuleRealization : ruleCoordinationModuleRealization EOF ;
+    // InternalSkillRealization.g:118:1: entryRuleCoordinationModuleRealization : ruleCoordinationModuleRealization EOF ;
     public final void entryRuleCoordinationModuleRealization() throws RecognitionException {
         try {
-            // InternalSkillRealization.g:145:1: ( ruleCoordinationModuleRealization EOF )
-            // InternalSkillRealization.g:146:1: ruleCoordinationModuleRealization EOF
+            // InternalSkillRealization.g:119:1: ( ruleCoordinationModuleRealization EOF )
+            // InternalSkillRealization.g:120:1: ruleCoordinationModuleRealization EOF
             {
              before(grammarAccess.getCoordinationModuleRealizationRule()); 
             pushFollow(FOLLOW_1);
@@ -273,21 +273,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleCoordinationModuleRealization"
-    // InternalSkillRealization.g:153:1: ruleCoordinationModuleRealization : ( ( rule__CoordinationModuleRealization__Group__0 ) ) ;
+    // InternalSkillRealization.g:127:1: ruleCoordinationModuleRealization : ( ( rule__CoordinationModuleRealization__Group__0 ) ) ;
     public final void ruleCoordinationModuleRealization() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:157:2: ( ( ( rule__CoordinationModuleRealization__Group__0 ) ) )
-            // InternalSkillRealization.g:158:2: ( ( rule__CoordinationModuleRealization__Group__0 ) )
+            // InternalSkillRealization.g:131:2: ( ( ( rule__CoordinationModuleRealization__Group__0 ) ) )
+            // InternalSkillRealization.g:132:2: ( ( rule__CoordinationModuleRealization__Group__0 ) )
             {
-            // InternalSkillRealization.g:158:2: ( ( rule__CoordinationModuleRealization__Group__0 ) )
-            // InternalSkillRealization.g:159:3: ( rule__CoordinationModuleRealization__Group__0 )
+            // InternalSkillRealization.g:132:2: ( ( rule__CoordinationModuleRealization__Group__0 ) )
+            // InternalSkillRealization.g:133:3: ( rule__CoordinationModuleRealization__Group__0 )
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getGroup()); 
-            // InternalSkillRealization.g:160:3: ( rule__CoordinationModuleRealization__Group__0 )
-            // InternalSkillRealization.g:160:4: rule__CoordinationModuleRealization__Group__0
+            // InternalSkillRealization.g:134:3: ( rule__CoordinationModuleRealization__Group__0 )
+            // InternalSkillRealization.g:134:4: rule__CoordinationModuleRealization__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__CoordinationModuleRealization__Group__0();
@@ -320,11 +320,11 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "entryRuleCoordinationInterfaceInstance"
-    // InternalSkillRealization.g:169:1: entryRuleCoordinationInterfaceInstance : ruleCoordinationInterfaceInstance EOF ;
+    // InternalSkillRealization.g:143:1: entryRuleCoordinationInterfaceInstance : ruleCoordinationInterfaceInstance EOF ;
     public final void entryRuleCoordinationInterfaceInstance() throws RecognitionException {
         try {
-            // InternalSkillRealization.g:170:1: ( ruleCoordinationInterfaceInstance EOF )
-            // InternalSkillRealization.g:171:1: ruleCoordinationInterfaceInstance EOF
+            // InternalSkillRealization.g:144:1: ( ruleCoordinationInterfaceInstance EOF )
+            // InternalSkillRealization.g:145:1: ruleCoordinationInterfaceInstance EOF
             {
              before(grammarAccess.getCoordinationInterfaceInstanceRule()); 
             pushFollow(FOLLOW_1);
@@ -350,21 +350,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleCoordinationInterfaceInstance"
-    // InternalSkillRealization.g:178:1: ruleCoordinationInterfaceInstance : ( ( rule__CoordinationInterfaceInstance__Group__0 ) ) ;
+    // InternalSkillRealization.g:152:1: ruleCoordinationInterfaceInstance : ( ( rule__CoordinationInterfaceInstance__Group__0 ) ) ;
     public final void ruleCoordinationInterfaceInstance() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:182:2: ( ( ( rule__CoordinationInterfaceInstance__Group__0 ) ) )
-            // InternalSkillRealization.g:183:2: ( ( rule__CoordinationInterfaceInstance__Group__0 ) )
+            // InternalSkillRealization.g:156:2: ( ( ( rule__CoordinationInterfaceInstance__Group__0 ) ) )
+            // InternalSkillRealization.g:157:2: ( ( rule__CoordinationInterfaceInstance__Group__0 ) )
             {
-            // InternalSkillRealization.g:183:2: ( ( rule__CoordinationInterfaceInstance__Group__0 ) )
-            // InternalSkillRealization.g:184:3: ( rule__CoordinationInterfaceInstance__Group__0 )
+            // InternalSkillRealization.g:157:2: ( ( rule__CoordinationInterfaceInstance__Group__0 ) )
+            // InternalSkillRealization.g:158:3: ( rule__CoordinationInterfaceInstance__Group__0 )
             {
              before(grammarAccess.getCoordinationInterfaceInstanceAccess().getGroup()); 
-            // InternalSkillRealization.g:185:3: ( rule__CoordinationInterfaceInstance__Group__0 )
-            // InternalSkillRealization.g:185:4: rule__CoordinationInterfaceInstance__Group__0
+            // InternalSkillRealization.g:159:3: ( rule__CoordinationInterfaceInstance__Group__0 )
+            // InternalSkillRealization.g:159:4: rule__CoordinationInterfaceInstance__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__CoordinationInterfaceInstance__Group__0();
@@ -397,11 +397,11 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "entryRuleSkillRealization"
-    // InternalSkillRealization.g:194:1: entryRuleSkillRealization : ruleSkillRealization EOF ;
+    // InternalSkillRealization.g:168:1: entryRuleSkillRealization : ruleSkillRealization EOF ;
     public final void entryRuleSkillRealization() throws RecognitionException {
         try {
-            // InternalSkillRealization.g:195:1: ( ruleSkillRealization EOF )
-            // InternalSkillRealization.g:196:1: ruleSkillRealization EOF
+            // InternalSkillRealization.g:169:1: ( ruleSkillRealization EOF )
+            // InternalSkillRealization.g:170:1: ruleSkillRealization EOF
             {
              before(grammarAccess.getSkillRealizationRule()); 
             pushFollow(FOLLOW_1);
@@ -427,21 +427,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleSkillRealization"
-    // InternalSkillRealization.g:203:1: ruleSkillRealization : ( ( rule__SkillRealization__Group__0 ) ) ;
+    // InternalSkillRealization.g:177:1: ruleSkillRealization : ( ( rule__SkillRealization__Group__0 ) ) ;
     public final void ruleSkillRealization() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:207:2: ( ( ( rule__SkillRealization__Group__0 ) ) )
-            // InternalSkillRealization.g:208:2: ( ( rule__SkillRealization__Group__0 ) )
+            // InternalSkillRealization.g:181:2: ( ( ( rule__SkillRealization__Group__0 ) ) )
+            // InternalSkillRealization.g:182:2: ( ( rule__SkillRealization__Group__0 ) )
             {
-            // InternalSkillRealization.g:208:2: ( ( rule__SkillRealization__Group__0 ) )
-            // InternalSkillRealization.g:209:3: ( rule__SkillRealization__Group__0 )
+            // InternalSkillRealization.g:182:2: ( ( rule__SkillRealization__Group__0 ) )
+            // InternalSkillRealization.g:183:3: ( rule__SkillRealization__Group__0 )
             {
              before(grammarAccess.getSkillRealizationAccess().getGroup()); 
-            // InternalSkillRealization.g:210:3: ( rule__SkillRealization__Group__0 )
-            // InternalSkillRealization.g:210:4: rule__SkillRealization__Group__0
+            // InternalSkillRealization.g:184:3: ( rule__SkillRealization__Group__0 )
+            // InternalSkillRealization.g:184:4: rule__SkillRealization__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__SkillRealization__Group__0();
@@ -474,11 +474,11 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "entryRuleCoordinationActionBlock"
-    // InternalSkillRealization.g:219:1: entryRuleCoordinationActionBlock : ruleCoordinationActionBlock EOF ;
+    // InternalSkillRealization.g:193:1: entryRuleCoordinationActionBlock : ruleCoordinationActionBlock EOF ;
     public final void entryRuleCoordinationActionBlock() throws RecognitionException {
         try {
-            // InternalSkillRealization.g:220:1: ( ruleCoordinationActionBlock EOF )
-            // InternalSkillRealization.g:221:1: ruleCoordinationActionBlock EOF
+            // InternalSkillRealization.g:194:1: ( ruleCoordinationActionBlock EOF )
+            // InternalSkillRealization.g:195:1: ruleCoordinationActionBlock EOF
             {
              before(grammarAccess.getCoordinationActionBlockRule()); 
             pushFollow(FOLLOW_1);
@@ -504,21 +504,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleCoordinationActionBlock"
-    // InternalSkillRealization.g:228:1: ruleCoordinationActionBlock : ( ( rule__CoordinationActionBlock__Group__0 ) ) ;
+    // InternalSkillRealization.g:202:1: ruleCoordinationActionBlock : ( ( rule__CoordinationActionBlock__Group__0 ) ) ;
     public final void ruleCoordinationActionBlock() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:232:2: ( ( ( rule__CoordinationActionBlock__Group__0 ) ) )
-            // InternalSkillRealization.g:233:2: ( ( rule__CoordinationActionBlock__Group__0 ) )
+            // InternalSkillRealization.g:206:2: ( ( ( rule__CoordinationActionBlock__Group__0 ) ) )
+            // InternalSkillRealization.g:207:2: ( ( rule__CoordinationActionBlock__Group__0 ) )
             {
-            // InternalSkillRealization.g:233:2: ( ( rule__CoordinationActionBlock__Group__0 ) )
-            // InternalSkillRealization.g:234:3: ( rule__CoordinationActionBlock__Group__0 )
+            // InternalSkillRealization.g:207:2: ( ( rule__CoordinationActionBlock__Group__0 ) )
+            // InternalSkillRealization.g:208:3: ( rule__CoordinationActionBlock__Group__0 )
             {
              before(grammarAccess.getCoordinationActionBlockAccess().getGroup()); 
-            // InternalSkillRealization.g:235:3: ( rule__CoordinationActionBlock__Group__0 )
-            // InternalSkillRealization.g:235:4: rule__CoordinationActionBlock__Group__0
+            // InternalSkillRealization.g:209:3: ( rule__CoordinationActionBlock__Group__0 )
+            // InternalSkillRealization.g:209:4: rule__CoordinationActionBlock__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__CoordinationActionBlock__Group__0();
@@ -551,11 +551,11 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "entryRuleAbstractCoordinationAction"
-    // InternalSkillRealization.g:244:1: entryRuleAbstractCoordinationAction : ruleAbstractCoordinationAction EOF ;
+    // InternalSkillRealization.g:218:1: entryRuleAbstractCoordinationAction : ruleAbstractCoordinationAction EOF ;
     public final void entryRuleAbstractCoordinationAction() throws RecognitionException {
         try {
-            // InternalSkillRealization.g:245:1: ( ruleAbstractCoordinationAction EOF )
-            // InternalSkillRealization.g:246:1: ruleAbstractCoordinationAction EOF
+            // InternalSkillRealization.g:219:1: ( ruleAbstractCoordinationAction EOF )
+            // InternalSkillRealization.g:220:1: ruleAbstractCoordinationAction EOF
             {
              before(grammarAccess.getAbstractCoordinationActionRule()); 
             pushFollow(FOLLOW_1);
@@ -581,17 +581,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleAbstractCoordinationAction"
-    // InternalSkillRealization.g:253:1: ruleAbstractCoordinationAction : ( ruleAbstractComponentCoordinationAction ) ;
+    // InternalSkillRealization.g:227:1: ruleAbstractCoordinationAction : ( ruleAbstractComponentCoordinationAction ) ;
     public final void ruleAbstractCoordinationAction() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:257:2: ( ( ruleAbstractComponentCoordinationAction ) )
-            // InternalSkillRealization.g:258:2: ( ruleAbstractComponentCoordinationAction )
+            // InternalSkillRealization.g:231:2: ( ( ruleAbstractComponentCoordinationAction ) )
+            // InternalSkillRealization.g:232:2: ( ruleAbstractComponentCoordinationAction )
             {
-            // InternalSkillRealization.g:258:2: ( ruleAbstractComponentCoordinationAction )
-            // InternalSkillRealization.g:259:3: ruleAbstractComponentCoordinationAction
+            // InternalSkillRealization.g:232:2: ( ruleAbstractComponentCoordinationAction )
+            // InternalSkillRealization.g:233:3: ruleAbstractComponentCoordinationAction
             {
              before(grammarAccess.getAbstractCoordinationActionAccess().getAbstractComponentCoordinationActionParserRuleCall()); 
             pushFollow(FOLLOW_2);
@@ -622,11 +622,11 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "entryRuleAbstractComponentCoordinationAction"
-    // InternalSkillRealization.g:269:1: entryRuleAbstractComponentCoordinationAction : ruleAbstractComponentCoordinationAction EOF ;
+    // InternalSkillRealization.g:243:1: entryRuleAbstractComponentCoordinationAction : ruleAbstractComponentCoordinationAction EOF ;
     public final void entryRuleAbstractComponentCoordinationAction() throws RecognitionException {
         try {
-            // InternalSkillRealization.g:270:1: ( ruleAbstractComponentCoordinationAction EOF )
-            // InternalSkillRealization.g:271:1: ruleAbstractComponentCoordinationAction EOF
+            // InternalSkillRealization.g:244:1: ( ruleAbstractComponentCoordinationAction EOF )
+            // InternalSkillRealization.g:245:1: ruleAbstractComponentCoordinationAction EOF
             {
              before(grammarAccess.getAbstractComponentCoordinationActionRule()); 
             pushFollow(FOLLOW_1);
@@ -652,21 +652,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleAbstractComponentCoordinationAction"
-    // InternalSkillRealization.g:278:1: ruleAbstractComponentCoordinationAction : ( ( rule__AbstractComponentCoordinationAction__Alternatives ) ) ;
+    // InternalSkillRealization.g:252:1: ruleAbstractComponentCoordinationAction : ( ( rule__AbstractComponentCoordinationAction__Alternatives ) ) ;
     public final void ruleAbstractComponentCoordinationAction() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:282:2: ( ( ( rule__AbstractComponentCoordinationAction__Alternatives ) ) )
-            // InternalSkillRealization.g:283:2: ( ( rule__AbstractComponentCoordinationAction__Alternatives ) )
+            // InternalSkillRealization.g:256:2: ( ( ( rule__AbstractComponentCoordinationAction__Alternatives ) ) )
+            // InternalSkillRealization.g:257:2: ( ( rule__AbstractComponentCoordinationAction__Alternatives ) )
             {
-            // InternalSkillRealization.g:283:2: ( ( rule__AbstractComponentCoordinationAction__Alternatives ) )
-            // InternalSkillRealization.g:284:3: ( rule__AbstractComponentCoordinationAction__Alternatives )
+            // InternalSkillRealization.g:257:2: ( ( rule__AbstractComponentCoordinationAction__Alternatives ) )
+            // InternalSkillRealization.g:258:3: ( rule__AbstractComponentCoordinationAction__Alternatives )
             {
              before(grammarAccess.getAbstractComponentCoordinationActionAccess().getAlternatives()); 
-            // InternalSkillRealization.g:285:3: ( rule__AbstractComponentCoordinationAction__Alternatives )
-            // InternalSkillRealization.g:285:4: rule__AbstractComponentCoordinationAction__Alternatives
+            // InternalSkillRealization.g:259:3: ( rule__AbstractComponentCoordinationAction__Alternatives )
+            // InternalSkillRealization.g:259:4: rule__AbstractComponentCoordinationAction__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__AbstractComponentCoordinationAction__Alternatives();
@@ -699,11 +699,11 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "entryRuleComponentCoordinationActionParameter"
-    // InternalSkillRealization.g:294:1: entryRuleComponentCoordinationActionParameter : ruleComponentCoordinationActionParameter EOF ;
+    // InternalSkillRealization.g:268:1: entryRuleComponentCoordinationActionParameter : ruleComponentCoordinationActionParameter EOF ;
     public final void entryRuleComponentCoordinationActionParameter() throws RecognitionException {
         try {
-            // InternalSkillRealization.g:295:1: ( ruleComponentCoordinationActionParameter EOF )
-            // InternalSkillRealization.g:296:1: ruleComponentCoordinationActionParameter EOF
+            // InternalSkillRealization.g:269:1: ( ruleComponentCoordinationActionParameter EOF )
+            // InternalSkillRealization.g:270:1: ruleComponentCoordinationActionParameter EOF
             {
              before(grammarAccess.getComponentCoordinationActionParameterRule()); 
             pushFollow(FOLLOW_1);
@@ -729,21 +729,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleComponentCoordinationActionParameter"
-    // InternalSkillRealization.g:303:1: ruleComponentCoordinationActionParameter : ( ( rule__ComponentCoordinationActionParameter__Group__0 ) ) ;
+    // InternalSkillRealization.g:277:1: ruleComponentCoordinationActionParameter : ( ( rule__ComponentCoordinationActionParameter__Group__0 ) ) ;
     public final void ruleComponentCoordinationActionParameter() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:307:2: ( ( ( rule__ComponentCoordinationActionParameter__Group__0 ) ) )
-            // InternalSkillRealization.g:308:2: ( ( rule__ComponentCoordinationActionParameter__Group__0 ) )
+            // InternalSkillRealization.g:281:2: ( ( ( rule__ComponentCoordinationActionParameter__Group__0 ) ) )
+            // InternalSkillRealization.g:282:2: ( ( rule__ComponentCoordinationActionParameter__Group__0 ) )
             {
-            // InternalSkillRealization.g:308:2: ( ( rule__ComponentCoordinationActionParameter__Group__0 ) )
-            // InternalSkillRealization.g:309:3: ( rule__ComponentCoordinationActionParameter__Group__0 )
+            // InternalSkillRealization.g:282:2: ( ( rule__ComponentCoordinationActionParameter__Group__0 ) )
+            // InternalSkillRealization.g:283:3: ( rule__ComponentCoordinationActionParameter__Group__0 )
             {
              before(grammarAccess.getComponentCoordinationActionParameterAccess().getGroup()); 
-            // InternalSkillRealization.g:310:3: ( rule__ComponentCoordinationActionParameter__Group__0 )
-            // InternalSkillRealization.g:310:4: rule__ComponentCoordinationActionParameter__Group__0
+            // InternalSkillRealization.g:284:3: ( rule__ComponentCoordinationActionParameter__Group__0 )
+            // InternalSkillRealization.g:284:4: rule__ComponentCoordinationActionParameter__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ComponentCoordinationActionParameter__Group__0();
@@ -776,11 +776,11 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "entryRuleComponentCoordinationActionActivation"
-    // InternalSkillRealization.g:319:1: entryRuleComponentCoordinationActionActivation : ruleComponentCoordinationActionActivation EOF ;
+    // InternalSkillRealization.g:293:1: entryRuleComponentCoordinationActionActivation : ruleComponentCoordinationActionActivation EOF ;
     public final void entryRuleComponentCoordinationActionActivation() throws RecognitionException {
         try {
-            // InternalSkillRealization.g:320:1: ( ruleComponentCoordinationActionActivation EOF )
-            // InternalSkillRealization.g:321:1: ruleComponentCoordinationActionActivation EOF
+            // InternalSkillRealization.g:294:1: ( ruleComponentCoordinationActionActivation EOF )
+            // InternalSkillRealization.g:295:1: ruleComponentCoordinationActionActivation EOF
             {
              before(grammarAccess.getComponentCoordinationActionActivationRule()); 
             pushFollow(FOLLOW_1);
@@ -806,21 +806,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleComponentCoordinationActionActivation"
-    // InternalSkillRealization.g:328:1: ruleComponentCoordinationActionActivation : ( ( rule__ComponentCoordinationActionActivation__Group__0 ) ) ;
+    // InternalSkillRealization.g:302:1: ruleComponentCoordinationActionActivation : ( ( rule__ComponentCoordinationActionActivation__Group__0 ) ) ;
     public final void ruleComponentCoordinationActionActivation() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:332:2: ( ( ( rule__ComponentCoordinationActionActivation__Group__0 ) ) )
-            // InternalSkillRealization.g:333:2: ( ( rule__ComponentCoordinationActionActivation__Group__0 ) )
+            // InternalSkillRealization.g:306:2: ( ( ( rule__ComponentCoordinationActionActivation__Group__0 ) ) )
+            // InternalSkillRealization.g:307:2: ( ( rule__ComponentCoordinationActionActivation__Group__0 ) )
             {
-            // InternalSkillRealization.g:333:2: ( ( rule__ComponentCoordinationActionActivation__Group__0 ) )
-            // InternalSkillRealization.g:334:3: ( rule__ComponentCoordinationActionActivation__Group__0 )
+            // InternalSkillRealization.g:307:2: ( ( rule__ComponentCoordinationActionActivation__Group__0 ) )
+            // InternalSkillRealization.g:308:3: ( rule__ComponentCoordinationActionActivation__Group__0 )
             {
              before(grammarAccess.getComponentCoordinationActionActivationAccess().getGroup()); 
-            // InternalSkillRealization.g:335:3: ( rule__ComponentCoordinationActionActivation__Group__0 )
-            // InternalSkillRealization.g:335:4: rule__ComponentCoordinationActionActivation__Group__0
+            // InternalSkillRealization.g:309:3: ( rule__ComponentCoordinationActionActivation__Group__0 )
+            // InternalSkillRealization.g:309:4: rule__ComponentCoordinationActionActivation__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ComponentCoordinationActionActivation__Group__0();
@@ -853,11 +853,11 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "entryRuleComponentCoordinationActionEvent"
-    // InternalSkillRealization.g:344:1: entryRuleComponentCoordinationActionEvent : ruleComponentCoordinationActionEvent EOF ;
+    // InternalSkillRealization.g:318:1: entryRuleComponentCoordinationActionEvent : ruleComponentCoordinationActionEvent EOF ;
     public final void entryRuleComponentCoordinationActionEvent() throws RecognitionException {
         try {
-            // InternalSkillRealization.g:345:1: ( ruleComponentCoordinationActionEvent EOF )
-            // InternalSkillRealization.g:346:1: ruleComponentCoordinationActionEvent EOF
+            // InternalSkillRealization.g:319:1: ( ruleComponentCoordinationActionEvent EOF )
+            // InternalSkillRealization.g:320:1: ruleComponentCoordinationActionEvent EOF
             {
              before(grammarAccess.getComponentCoordinationActionEventRule()); 
             pushFollow(FOLLOW_1);
@@ -883,21 +883,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleComponentCoordinationActionEvent"
-    // InternalSkillRealization.g:353:1: ruleComponentCoordinationActionEvent : ( ( rule__ComponentCoordinationActionEvent__Group__0 ) ) ;
+    // InternalSkillRealization.g:327:1: ruleComponentCoordinationActionEvent : ( ( rule__ComponentCoordinationActionEvent__Group__0 ) ) ;
     public final void ruleComponentCoordinationActionEvent() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:357:2: ( ( ( rule__ComponentCoordinationActionEvent__Group__0 ) ) )
-            // InternalSkillRealization.g:358:2: ( ( rule__ComponentCoordinationActionEvent__Group__0 ) )
+            // InternalSkillRealization.g:331:2: ( ( ( rule__ComponentCoordinationActionEvent__Group__0 ) ) )
+            // InternalSkillRealization.g:332:2: ( ( rule__ComponentCoordinationActionEvent__Group__0 ) )
             {
-            // InternalSkillRealization.g:358:2: ( ( rule__ComponentCoordinationActionEvent__Group__0 ) )
-            // InternalSkillRealization.g:359:3: ( rule__ComponentCoordinationActionEvent__Group__0 )
+            // InternalSkillRealization.g:332:2: ( ( rule__ComponentCoordinationActionEvent__Group__0 ) )
+            // InternalSkillRealization.g:333:3: ( rule__ComponentCoordinationActionEvent__Group__0 )
             {
              before(grammarAccess.getComponentCoordinationActionEventAccess().getGroup()); 
-            // InternalSkillRealization.g:360:3: ( rule__ComponentCoordinationActionEvent__Group__0 )
-            // InternalSkillRealization.g:360:4: rule__ComponentCoordinationActionEvent__Group__0
+            // InternalSkillRealization.g:334:3: ( rule__ComponentCoordinationActionEvent__Group__0 )
+            // InternalSkillRealization.g:334:4: rule__ComponentCoordinationActionEvent__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ComponentCoordinationActionEvent__Group__0();
@@ -930,13 +930,13 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AbstractComponentCoordinationAction__Alternatives"
-    // InternalSkillRealization.g:368:1: rule__AbstractComponentCoordinationAction__Alternatives : ( ( ruleComponentCoordinationActionParameter ) | ( ruleComponentCoordinationActionActivation ) | ( ruleComponentCoordinationActionEvent ) );
+    // InternalSkillRealization.g:342:1: rule__AbstractComponentCoordinationAction__Alternatives : ( ( ruleComponentCoordinationActionParameter ) | ( ruleComponentCoordinationActionActivation ) | ( ruleComponentCoordinationActionEvent ) );
     public final void rule__AbstractComponentCoordinationAction__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:372:1: ( ( ruleComponentCoordinationActionParameter ) | ( ruleComponentCoordinationActionActivation ) | ( ruleComponentCoordinationActionEvent ) )
+            // InternalSkillRealization.g:346:1: ( ( ruleComponentCoordinationActionParameter ) | ( ruleComponentCoordinationActionActivation ) | ( ruleComponentCoordinationActionEvent ) )
             int alt1=3;
             switch ( input.LA(1) ) {
             case 23:
@@ -963,10 +963,10 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
             switch (alt1) {
                 case 1 :
-                    // InternalSkillRealization.g:373:2: ( ruleComponentCoordinationActionParameter )
+                    // InternalSkillRealization.g:347:2: ( ruleComponentCoordinationActionParameter )
                     {
-                    // InternalSkillRealization.g:373:2: ( ruleComponentCoordinationActionParameter )
-                    // InternalSkillRealization.g:374:3: ruleComponentCoordinationActionParameter
+                    // InternalSkillRealization.g:347:2: ( ruleComponentCoordinationActionParameter )
+                    // InternalSkillRealization.g:348:3: ruleComponentCoordinationActionParameter
                     {
                      before(grammarAccess.getAbstractComponentCoordinationActionAccess().getComponentCoordinationActionParameterParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -982,10 +982,10 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalSkillRealization.g:379:2: ( ruleComponentCoordinationActionActivation )
+                    // InternalSkillRealization.g:353:2: ( ruleComponentCoordinationActionActivation )
                     {
-                    // InternalSkillRealization.g:379:2: ( ruleComponentCoordinationActionActivation )
-                    // InternalSkillRealization.g:380:3: ruleComponentCoordinationActionActivation
+                    // InternalSkillRealization.g:353:2: ( ruleComponentCoordinationActionActivation )
+                    // InternalSkillRealization.g:354:3: ruleComponentCoordinationActionActivation
                     {
                      before(grammarAccess.getAbstractComponentCoordinationActionAccess().getComponentCoordinationActionActivationParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1001,10 +1001,10 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 3 :
-                    // InternalSkillRealization.g:385:2: ( ruleComponentCoordinationActionEvent )
+                    // InternalSkillRealization.g:359:2: ( ruleComponentCoordinationActionEvent )
                     {
-                    // InternalSkillRealization.g:385:2: ( ruleComponentCoordinationActionEvent )
-                    // InternalSkillRealization.g:386:3: ruleComponentCoordinationActionEvent
+                    // InternalSkillRealization.g:359:2: ( ruleComponentCoordinationActionEvent )
+                    // InternalSkillRealization.g:360:3: ruleComponentCoordinationActionEvent
                     {
                      before(grammarAccess.getAbstractComponentCoordinationActionAccess().getComponentCoordinationActionEventParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -1037,14 +1037,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealizationModel__Group__0"
-    // InternalSkillRealization.g:395:1: rule__SkillRealizationModel__Group__0 : rule__SkillRealizationModel__Group__0__Impl rule__SkillRealizationModel__Group__1 ;
+    // InternalSkillRealization.g:369:1: rule__SkillRealizationModel__Group__0 : rule__SkillRealizationModel__Group__0__Impl rule__SkillRealizationModel__Group__1 ;
     public final void rule__SkillRealizationModel__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:399:1: ( rule__SkillRealizationModel__Group__0__Impl rule__SkillRealizationModel__Group__1 )
-            // InternalSkillRealization.g:400:2: rule__SkillRealizationModel__Group__0__Impl rule__SkillRealizationModel__Group__1
+            // InternalSkillRealization.g:373:1: ( rule__SkillRealizationModel__Group__0__Impl rule__SkillRealizationModel__Group__1 )
+            // InternalSkillRealization.g:374:2: rule__SkillRealizationModel__Group__0__Impl rule__SkillRealizationModel__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__SkillRealizationModel__Group__0__Impl();
@@ -1075,21 +1075,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealizationModel__Group__0__Impl"
-    // InternalSkillRealization.g:407:1: rule__SkillRealizationModel__Group__0__Impl : ( () ) ;
+    // InternalSkillRealization.g:381:1: rule__SkillRealizationModel__Group__0__Impl : ( () ) ;
     public final void rule__SkillRealizationModel__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:411:1: ( ( () ) )
-            // InternalSkillRealization.g:412:1: ( () )
+            // InternalSkillRealization.g:385:1: ( ( () ) )
+            // InternalSkillRealization.g:386:1: ( () )
             {
-            // InternalSkillRealization.g:412:1: ( () )
-            // InternalSkillRealization.g:413:2: ()
+            // InternalSkillRealization.g:386:1: ( () )
+            // InternalSkillRealization.g:387:2: ()
             {
              before(grammarAccess.getSkillRealizationModelAccess().getSkillRealizationModelAction_0()); 
-            // InternalSkillRealization.g:414:2: ()
-            // InternalSkillRealization.g:414:3: 
+            // InternalSkillRealization.g:388:2: ()
+            // InternalSkillRealization.g:388:3: 
             {
             }
 
@@ -1112,14 +1112,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealizationModel__Group__1"
-    // InternalSkillRealization.g:422:1: rule__SkillRealizationModel__Group__1 : rule__SkillRealizationModel__Group__1__Impl rule__SkillRealizationModel__Group__2 ;
+    // InternalSkillRealization.g:396:1: rule__SkillRealizationModel__Group__1 : rule__SkillRealizationModel__Group__1__Impl rule__SkillRealizationModel__Group__2 ;
     public final void rule__SkillRealizationModel__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:426:1: ( rule__SkillRealizationModel__Group__1__Impl rule__SkillRealizationModel__Group__2 )
-            // InternalSkillRealization.g:427:2: rule__SkillRealizationModel__Group__1__Impl rule__SkillRealizationModel__Group__2
+            // InternalSkillRealization.g:400:1: ( rule__SkillRealizationModel__Group__1__Impl rule__SkillRealizationModel__Group__2 )
+            // InternalSkillRealization.g:401:2: rule__SkillRealizationModel__Group__1__Impl rule__SkillRealizationModel__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__SkillRealizationModel__Group__1__Impl();
@@ -1150,17 +1150,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealizationModel__Group__1__Impl"
-    // InternalSkillRealization.g:434:1: rule__SkillRealizationModel__Group__1__Impl : ( 'SkillRealizationModel' ) ;
+    // InternalSkillRealization.g:408:1: rule__SkillRealizationModel__Group__1__Impl : ( 'SkillRealizationModel' ) ;
     public final void rule__SkillRealizationModel__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:438:1: ( ( 'SkillRealizationModel' ) )
-            // InternalSkillRealization.g:439:1: ( 'SkillRealizationModel' )
+            // InternalSkillRealization.g:412:1: ( ( 'SkillRealizationModel' ) )
+            // InternalSkillRealization.g:413:1: ( 'SkillRealizationModel' )
             {
-            // InternalSkillRealization.g:439:1: ( 'SkillRealizationModel' )
-            // InternalSkillRealization.g:440:2: 'SkillRealizationModel'
+            // InternalSkillRealization.g:413:1: ( 'SkillRealizationModel' )
+            // InternalSkillRealization.g:414:2: 'SkillRealizationModel'
             {
              before(grammarAccess.getSkillRealizationModelAccess().getSkillRealizationModelKeyword_1()); 
             match(input,11,FOLLOW_2); 
@@ -1187,14 +1187,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealizationModel__Group__2"
-    // InternalSkillRealization.g:449:1: rule__SkillRealizationModel__Group__2 : rule__SkillRealizationModel__Group__2__Impl rule__SkillRealizationModel__Group__3 ;
+    // InternalSkillRealization.g:423:1: rule__SkillRealizationModel__Group__2 : rule__SkillRealizationModel__Group__2__Impl rule__SkillRealizationModel__Group__3 ;
     public final void rule__SkillRealizationModel__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:453:1: ( rule__SkillRealizationModel__Group__2__Impl rule__SkillRealizationModel__Group__3 )
-            // InternalSkillRealization.g:454:2: rule__SkillRealizationModel__Group__2__Impl rule__SkillRealizationModel__Group__3
+            // InternalSkillRealization.g:427:1: ( rule__SkillRealizationModel__Group__2__Impl rule__SkillRealizationModel__Group__3 )
+            // InternalSkillRealization.g:428:2: rule__SkillRealizationModel__Group__2__Impl rule__SkillRealizationModel__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__SkillRealizationModel__Group__2__Impl();
@@ -1225,17 +1225,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealizationModel__Group__2__Impl"
-    // InternalSkillRealization.g:461:1: rule__SkillRealizationModel__Group__2__Impl : ( '{' ) ;
+    // InternalSkillRealization.g:435:1: rule__SkillRealizationModel__Group__2__Impl : ( '{' ) ;
     public final void rule__SkillRealizationModel__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:465:1: ( ( '{' ) )
-            // InternalSkillRealization.g:466:1: ( '{' )
+            // InternalSkillRealization.g:439:1: ( ( '{' ) )
+            // InternalSkillRealization.g:440:1: ( '{' )
             {
-            // InternalSkillRealization.g:466:1: ( '{' )
-            // InternalSkillRealization.g:467:2: '{'
+            // InternalSkillRealization.g:440:1: ( '{' )
+            // InternalSkillRealization.g:441:2: '{'
             {
              before(grammarAccess.getSkillRealizationModelAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,12,FOLLOW_2); 
@@ -1262,14 +1262,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealizationModel__Group__3"
-    // InternalSkillRealization.g:476:1: rule__SkillRealizationModel__Group__3 : rule__SkillRealizationModel__Group__3__Impl rule__SkillRealizationModel__Group__4 ;
+    // InternalSkillRealization.g:450:1: rule__SkillRealizationModel__Group__3 : rule__SkillRealizationModel__Group__3__Impl rule__SkillRealizationModel__Group__4 ;
     public final void rule__SkillRealizationModel__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:480:1: ( rule__SkillRealizationModel__Group__3__Impl rule__SkillRealizationModel__Group__4 )
-            // InternalSkillRealization.g:481:2: rule__SkillRealizationModel__Group__3__Impl rule__SkillRealizationModel__Group__4
+            // InternalSkillRealization.g:454:1: ( rule__SkillRealizationModel__Group__3__Impl rule__SkillRealizationModel__Group__4 )
+            // InternalSkillRealization.g:455:2: rule__SkillRealizationModel__Group__3__Impl rule__SkillRealizationModel__Group__4
             {
             pushFollow(FOLLOW_5);
             rule__SkillRealizationModel__Group__3__Impl();
@@ -1300,20 +1300,20 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealizationModel__Group__3__Impl"
-    // InternalSkillRealization.g:488:1: rule__SkillRealizationModel__Group__3__Impl : ( ( rule__SkillRealizationModel__ModulesAssignment_3 )* ) ;
+    // InternalSkillRealization.g:462:1: rule__SkillRealizationModel__Group__3__Impl : ( ( rule__SkillRealizationModel__ModulesAssignment_3 )* ) ;
     public final void rule__SkillRealizationModel__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:492:1: ( ( ( rule__SkillRealizationModel__ModulesAssignment_3 )* ) )
-            // InternalSkillRealization.g:493:1: ( ( rule__SkillRealizationModel__ModulesAssignment_3 )* )
+            // InternalSkillRealization.g:466:1: ( ( ( rule__SkillRealizationModel__ModulesAssignment_3 )* ) )
+            // InternalSkillRealization.g:467:1: ( ( rule__SkillRealizationModel__ModulesAssignment_3 )* )
             {
-            // InternalSkillRealization.g:493:1: ( ( rule__SkillRealizationModel__ModulesAssignment_3 )* )
-            // InternalSkillRealization.g:494:2: ( rule__SkillRealizationModel__ModulesAssignment_3 )*
+            // InternalSkillRealization.g:467:1: ( ( rule__SkillRealizationModel__ModulesAssignment_3 )* )
+            // InternalSkillRealization.g:468:2: ( rule__SkillRealizationModel__ModulesAssignment_3 )*
             {
              before(grammarAccess.getSkillRealizationModelAccess().getModulesAssignment_3()); 
-            // InternalSkillRealization.g:495:2: ( rule__SkillRealizationModel__ModulesAssignment_3 )*
+            // InternalSkillRealization.g:469:2: ( rule__SkillRealizationModel__ModulesAssignment_3 )*
             loop2:
             do {
                 int alt2=2;
@@ -1326,7 +1326,7 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalSkillRealization.g:495:3: rule__SkillRealizationModel__ModulesAssignment_3
+            	    // InternalSkillRealization.g:469:3: rule__SkillRealizationModel__ModulesAssignment_3
             	    {
             	    pushFollow(FOLLOW_6);
             	    rule__SkillRealizationModel__ModulesAssignment_3();
@@ -1365,14 +1365,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealizationModel__Group__4"
-    // InternalSkillRealization.g:503:1: rule__SkillRealizationModel__Group__4 : rule__SkillRealizationModel__Group__4__Impl ;
+    // InternalSkillRealization.g:477:1: rule__SkillRealizationModel__Group__4 : rule__SkillRealizationModel__Group__4__Impl ;
     public final void rule__SkillRealizationModel__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:507:1: ( rule__SkillRealizationModel__Group__4__Impl )
-            // InternalSkillRealization.g:508:2: rule__SkillRealizationModel__Group__4__Impl
+            // InternalSkillRealization.g:481:1: ( rule__SkillRealizationModel__Group__4__Impl )
+            // InternalSkillRealization.g:482:2: rule__SkillRealizationModel__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SkillRealizationModel__Group__4__Impl();
@@ -1398,17 +1398,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealizationModel__Group__4__Impl"
-    // InternalSkillRealization.g:514:1: rule__SkillRealizationModel__Group__4__Impl : ( '}' ) ;
+    // InternalSkillRealization.g:488:1: rule__SkillRealizationModel__Group__4__Impl : ( '}' ) ;
     public final void rule__SkillRealizationModel__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:518:1: ( ( '}' ) )
-            // InternalSkillRealization.g:519:1: ( '}' )
+            // InternalSkillRealization.g:492:1: ( ( '}' ) )
+            // InternalSkillRealization.g:493:1: ( '}' )
             {
-            // InternalSkillRealization.g:519:1: ( '}' )
-            // InternalSkillRealization.g:520:2: '}'
+            // InternalSkillRealization.g:493:1: ( '}' )
+            // InternalSkillRealization.g:494:2: '}'
             {
              before(grammarAccess.getSkillRealizationModelAccess().getRightCurlyBracketKeyword_4()); 
             match(input,13,FOLLOW_2); 
@@ -1435,14 +1435,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group__0"
-    // InternalSkillRealization.g:530:1: rule__FQN__Group__0 : rule__FQN__Group__0__Impl rule__FQN__Group__1 ;
+    // InternalSkillRealization.g:504:1: rule__FQN__Group__0 : rule__FQN__Group__0__Impl rule__FQN__Group__1 ;
     public final void rule__FQN__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:534:1: ( rule__FQN__Group__0__Impl rule__FQN__Group__1 )
-            // InternalSkillRealization.g:535:2: rule__FQN__Group__0__Impl rule__FQN__Group__1
+            // InternalSkillRealization.g:508:1: ( rule__FQN__Group__0__Impl rule__FQN__Group__1 )
+            // InternalSkillRealization.g:509:2: rule__FQN__Group__0__Impl rule__FQN__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__FQN__Group__0__Impl();
@@ -1473,17 +1473,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group__0__Impl"
-    // InternalSkillRealization.g:542:1: rule__FQN__Group__0__Impl : ( RULE_ID ) ;
+    // InternalSkillRealization.g:516:1: rule__FQN__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__FQN__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:546:1: ( ( RULE_ID ) )
-            // InternalSkillRealization.g:547:1: ( RULE_ID )
+            // InternalSkillRealization.g:520:1: ( ( RULE_ID ) )
+            // InternalSkillRealization.g:521:1: ( RULE_ID )
             {
-            // InternalSkillRealization.g:547:1: ( RULE_ID )
-            // InternalSkillRealization.g:548:2: RULE_ID
+            // InternalSkillRealization.g:521:1: ( RULE_ID )
+            // InternalSkillRealization.g:522:2: RULE_ID
             {
              before(grammarAccess.getFQNAccess().getIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -1510,14 +1510,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group__1"
-    // InternalSkillRealization.g:557:1: rule__FQN__Group__1 : rule__FQN__Group__1__Impl ;
+    // InternalSkillRealization.g:531:1: rule__FQN__Group__1 : rule__FQN__Group__1__Impl ;
     public final void rule__FQN__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:561:1: ( rule__FQN__Group__1__Impl )
-            // InternalSkillRealization.g:562:2: rule__FQN__Group__1__Impl
+            // InternalSkillRealization.g:535:1: ( rule__FQN__Group__1__Impl )
+            // InternalSkillRealization.g:536:2: rule__FQN__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FQN__Group__1__Impl();
@@ -1543,20 +1543,20 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group__1__Impl"
-    // InternalSkillRealization.g:568:1: rule__FQN__Group__1__Impl : ( ( rule__FQN__Group_1__0 )* ) ;
+    // InternalSkillRealization.g:542:1: rule__FQN__Group__1__Impl : ( ( rule__FQN__Group_1__0 )* ) ;
     public final void rule__FQN__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:572:1: ( ( ( rule__FQN__Group_1__0 )* ) )
-            // InternalSkillRealization.g:573:1: ( ( rule__FQN__Group_1__0 )* )
+            // InternalSkillRealization.g:546:1: ( ( ( rule__FQN__Group_1__0 )* ) )
+            // InternalSkillRealization.g:547:1: ( ( rule__FQN__Group_1__0 )* )
             {
-            // InternalSkillRealization.g:573:1: ( ( rule__FQN__Group_1__0 )* )
-            // InternalSkillRealization.g:574:2: ( rule__FQN__Group_1__0 )*
+            // InternalSkillRealization.g:547:1: ( ( rule__FQN__Group_1__0 )* )
+            // InternalSkillRealization.g:548:2: ( rule__FQN__Group_1__0 )*
             {
              before(grammarAccess.getFQNAccess().getGroup_1()); 
-            // InternalSkillRealization.g:575:2: ( rule__FQN__Group_1__0 )*
+            // InternalSkillRealization.g:549:2: ( rule__FQN__Group_1__0 )*
             loop3:
             do {
                 int alt3=2;
@@ -1569,7 +1569,7 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalSkillRealization.g:575:3: rule__FQN__Group_1__0
+            	    // InternalSkillRealization.g:549:3: rule__FQN__Group_1__0
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__FQN__Group_1__0();
@@ -1608,14 +1608,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group_1__0"
-    // InternalSkillRealization.g:584:1: rule__FQN__Group_1__0 : rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 ;
+    // InternalSkillRealization.g:558:1: rule__FQN__Group_1__0 : rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 ;
     public final void rule__FQN__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:588:1: ( rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 )
-            // InternalSkillRealization.g:589:2: rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1
+            // InternalSkillRealization.g:562:1: ( rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 )
+            // InternalSkillRealization.g:563:2: rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1
             {
             pushFollow(FOLLOW_9);
             rule__FQN__Group_1__0__Impl();
@@ -1646,17 +1646,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group_1__0__Impl"
-    // InternalSkillRealization.g:596:1: rule__FQN__Group_1__0__Impl : ( '.' ) ;
+    // InternalSkillRealization.g:570:1: rule__FQN__Group_1__0__Impl : ( '.' ) ;
     public final void rule__FQN__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:600:1: ( ( '.' ) )
-            // InternalSkillRealization.g:601:1: ( '.' )
+            // InternalSkillRealization.g:574:1: ( ( '.' ) )
+            // InternalSkillRealization.g:575:1: ( '.' )
             {
-            // InternalSkillRealization.g:601:1: ( '.' )
-            // InternalSkillRealization.g:602:2: '.'
+            // InternalSkillRealization.g:575:1: ( '.' )
+            // InternalSkillRealization.g:576:2: '.'
             {
              before(grammarAccess.getFQNAccess().getFullStopKeyword_1_0()); 
             match(input,14,FOLLOW_2); 
@@ -1683,14 +1683,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group_1__1"
-    // InternalSkillRealization.g:611:1: rule__FQN__Group_1__1 : rule__FQN__Group_1__1__Impl ;
+    // InternalSkillRealization.g:585:1: rule__FQN__Group_1__1 : rule__FQN__Group_1__1__Impl ;
     public final void rule__FQN__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:615:1: ( rule__FQN__Group_1__1__Impl )
-            // InternalSkillRealization.g:616:2: rule__FQN__Group_1__1__Impl
+            // InternalSkillRealization.g:589:1: ( rule__FQN__Group_1__1__Impl )
+            // InternalSkillRealization.g:590:2: rule__FQN__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FQN__Group_1__1__Impl();
@@ -1716,17 +1716,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group_1__1__Impl"
-    // InternalSkillRealization.g:622:1: rule__FQN__Group_1__1__Impl : ( RULE_ID ) ;
+    // InternalSkillRealization.g:596:1: rule__FQN__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__FQN__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:626:1: ( ( RULE_ID ) )
-            // InternalSkillRealization.g:627:1: ( RULE_ID )
+            // InternalSkillRealization.g:600:1: ( ( RULE_ID ) )
+            // InternalSkillRealization.g:601:1: ( RULE_ID )
             {
-            // InternalSkillRealization.g:627:1: ( RULE_ID )
-            // InternalSkillRealization.g:628:2: RULE_ID
+            // InternalSkillRealization.g:601:1: ( RULE_ID )
+            // InternalSkillRealization.g:602:2: RULE_ID
             {
              before(grammarAccess.getFQNAccess().getIDTerminalRuleCall_1_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -1753,14 +1753,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__0"
-    // InternalSkillRealization.g:638:1: rule__CoordinationModuleRealization__Group__0 : rule__CoordinationModuleRealization__Group__0__Impl rule__CoordinationModuleRealization__Group__1 ;
+    // InternalSkillRealization.g:612:1: rule__CoordinationModuleRealization__Group__0 : rule__CoordinationModuleRealization__Group__0__Impl rule__CoordinationModuleRealization__Group__1 ;
     public final void rule__CoordinationModuleRealization__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:642:1: ( rule__CoordinationModuleRealization__Group__0__Impl rule__CoordinationModuleRealization__Group__1 )
-            // InternalSkillRealization.g:643:2: rule__CoordinationModuleRealization__Group__0__Impl rule__CoordinationModuleRealization__Group__1
+            // InternalSkillRealization.g:616:1: ( rule__CoordinationModuleRealization__Group__0__Impl rule__CoordinationModuleRealization__Group__1 )
+            // InternalSkillRealization.g:617:2: rule__CoordinationModuleRealization__Group__0__Impl rule__CoordinationModuleRealization__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__CoordinationModuleRealization__Group__0__Impl();
@@ -1791,17 +1791,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__0__Impl"
-    // InternalSkillRealization.g:650:1: rule__CoordinationModuleRealization__Group__0__Impl : ( 'CoordinationModuleRealization' ) ;
+    // InternalSkillRealization.g:624:1: rule__CoordinationModuleRealization__Group__0__Impl : ( 'CoordinationModuleRealization' ) ;
     public final void rule__CoordinationModuleRealization__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:654:1: ( ( 'CoordinationModuleRealization' ) )
-            // InternalSkillRealization.g:655:1: ( 'CoordinationModuleRealization' )
+            // InternalSkillRealization.g:628:1: ( ( 'CoordinationModuleRealization' ) )
+            // InternalSkillRealization.g:629:1: ( 'CoordinationModuleRealization' )
             {
-            // InternalSkillRealization.g:655:1: ( 'CoordinationModuleRealization' )
-            // InternalSkillRealization.g:656:2: 'CoordinationModuleRealization'
+            // InternalSkillRealization.g:629:1: ( 'CoordinationModuleRealization' )
+            // InternalSkillRealization.g:630:2: 'CoordinationModuleRealization'
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getCoordinationModuleRealizationKeyword_0()); 
             match(input,15,FOLLOW_2); 
@@ -1828,14 +1828,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__1"
-    // InternalSkillRealization.g:665:1: rule__CoordinationModuleRealization__Group__1 : rule__CoordinationModuleRealization__Group__1__Impl rule__CoordinationModuleRealization__Group__2 ;
+    // InternalSkillRealization.g:639:1: rule__CoordinationModuleRealization__Group__1 : rule__CoordinationModuleRealization__Group__1__Impl rule__CoordinationModuleRealization__Group__2 ;
     public final void rule__CoordinationModuleRealization__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:669:1: ( rule__CoordinationModuleRealization__Group__1__Impl rule__CoordinationModuleRealization__Group__2 )
-            // InternalSkillRealization.g:670:2: rule__CoordinationModuleRealization__Group__1__Impl rule__CoordinationModuleRealization__Group__2
+            // InternalSkillRealization.g:643:1: ( rule__CoordinationModuleRealization__Group__1__Impl rule__CoordinationModuleRealization__Group__2 )
+            // InternalSkillRealization.g:644:2: rule__CoordinationModuleRealization__Group__1__Impl rule__CoordinationModuleRealization__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__CoordinationModuleRealization__Group__1__Impl();
@@ -1866,21 +1866,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__1__Impl"
-    // InternalSkillRealization.g:677:1: rule__CoordinationModuleRealization__Group__1__Impl : ( ( rule__CoordinationModuleRealization__NameAssignment_1 ) ) ;
+    // InternalSkillRealization.g:651:1: rule__CoordinationModuleRealization__Group__1__Impl : ( ( rule__CoordinationModuleRealization__NameAssignment_1 ) ) ;
     public final void rule__CoordinationModuleRealization__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:681:1: ( ( ( rule__CoordinationModuleRealization__NameAssignment_1 ) ) )
-            // InternalSkillRealization.g:682:1: ( ( rule__CoordinationModuleRealization__NameAssignment_1 ) )
+            // InternalSkillRealization.g:655:1: ( ( ( rule__CoordinationModuleRealization__NameAssignment_1 ) ) )
+            // InternalSkillRealization.g:656:1: ( ( rule__CoordinationModuleRealization__NameAssignment_1 ) )
             {
-            // InternalSkillRealization.g:682:1: ( ( rule__CoordinationModuleRealization__NameAssignment_1 ) )
-            // InternalSkillRealization.g:683:2: ( rule__CoordinationModuleRealization__NameAssignment_1 )
+            // InternalSkillRealization.g:656:1: ( ( rule__CoordinationModuleRealization__NameAssignment_1 ) )
+            // InternalSkillRealization.g:657:2: ( rule__CoordinationModuleRealization__NameAssignment_1 )
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getNameAssignment_1()); 
-            // InternalSkillRealization.g:684:2: ( rule__CoordinationModuleRealization__NameAssignment_1 )
-            // InternalSkillRealization.g:684:3: rule__CoordinationModuleRealization__NameAssignment_1
+            // InternalSkillRealization.g:658:2: ( rule__CoordinationModuleRealization__NameAssignment_1 )
+            // InternalSkillRealization.g:658:3: rule__CoordinationModuleRealization__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__CoordinationModuleRealization__NameAssignment_1();
@@ -1913,14 +1913,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__2"
-    // InternalSkillRealization.g:692:1: rule__CoordinationModuleRealization__Group__2 : rule__CoordinationModuleRealization__Group__2__Impl rule__CoordinationModuleRealization__Group__3 ;
+    // InternalSkillRealization.g:666:1: rule__CoordinationModuleRealization__Group__2 : rule__CoordinationModuleRealization__Group__2__Impl rule__CoordinationModuleRealization__Group__3 ;
     public final void rule__CoordinationModuleRealization__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:696:1: ( rule__CoordinationModuleRealization__Group__2__Impl rule__CoordinationModuleRealization__Group__3 )
-            // InternalSkillRealization.g:697:2: rule__CoordinationModuleRealization__Group__2__Impl rule__CoordinationModuleRealization__Group__3
+            // InternalSkillRealization.g:670:1: ( rule__CoordinationModuleRealization__Group__2__Impl rule__CoordinationModuleRealization__Group__3 )
+            // InternalSkillRealization.g:671:2: rule__CoordinationModuleRealization__Group__2__Impl rule__CoordinationModuleRealization__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__CoordinationModuleRealization__Group__2__Impl();
@@ -1951,17 +1951,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__2__Impl"
-    // InternalSkillRealization.g:704:1: rule__CoordinationModuleRealization__Group__2__Impl : ( 'coordModuleDef' ) ;
+    // InternalSkillRealization.g:678:1: rule__CoordinationModuleRealization__Group__2__Impl : ( 'coordModuleDef' ) ;
     public final void rule__CoordinationModuleRealization__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:708:1: ( ( 'coordModuleDef' ) )
-            // InternalSkillRealization.g:709:1: ( 'coordModuleDef' )
+            // InternalSkillRealization.g:682:1: ( ( 'coordModuleDef' ) )
+            // InternalSkillRealization.g:683:1: ( 'coordModuleDef' )
             {
-            // InternalSkillRealization.g:709:1: ( 'coordModuleDef' )
-            // InternalSkillRealization.g:710:2: 'coordModuleDef'
+            // InternalSkillRealization.g:683:1: ( 'coordModuleDef' )
+            // InternalSkillRealization.g:684:2: 'coordModuleDef'
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getCoordModuleDefKeyword_2()); 
             match(input,16,FOLLOW_2); 
@@ -1988,14 +1988,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__3"
-    // InternalSkillRealization.g:719:1: rule__CoordinationModuleRealization__Group__3 : rule__CoordinationModuleRealization__Group__3__Impl rule__CoordinationModuleRealization__Group__4 ;
+    // InternalSkillRealization.g:693:1: rule__CoordinationModuleRealization__Group__3 : rule__CoordinationModuleRealization__Group__3__Impl rule__CoordinationModuleRealization__Group__4 ;
     public final void rule__CoordinationModuleRealization__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:723:1: ( rule__CoordinationModuleRealization__Group__3__Impl rule__CoordinationModuleRealization__Group__4 )
-            // InternalSkillRealization.g:724:2: rule__CoordinationModuleRealization__Group__3__Impl rule__CoordinationModuleRealization__Group__4
+            // InternalSkillRealization.g:697:1: ( rule__CoordinationModuleRealization__Group__3__Impl rule__CoordinationModuleRealization__Group__4 )
+            // InternalSkillRealization.g:698:2: rule__CoordinationModuleRealization__Group__3__Impl rule__CoordinationModuleRealization__Group__4
             {
             pushFollow(FOLLOW_11);
             rule__CoordinationModuleRealization__Group__3__Impl();
@@ -2026,21 +2026,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__3__Impl"
-    // InternalSkillRealization.g:731:1: rule__CoordinationModuleRealization__Group__3__Impl : ( ( rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3 ) ) ;
+    // InternalSkillRealization.g:705:1: rule__CoordinationModuleRealization__Group__3__Impl : ( ( rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3 ) ) ;
     public final void rule__CoordinationModuleRealization__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:735:1: ( ( ( rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3 ) ) )
-            // InternalSkillRealization.g:736:1: ( ( rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3 ) )
+            // InternalSkillRealization.g:709:1: ( ( ( rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3 ) ) )
+            // InternalSkillRealization.g:710:1: ( ( rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3 ) )
             {
-            // InternalSkillRealization.g:736:1: ( ( rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3 ) )
-            // InternalSkillRealization.g:737:2: ( rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3 )
+            // InternalSkillRealization.g:710:1: ( ( rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3 ) )
+            // InternalSkillRealization.g:711:2: ( rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3 )
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getCoordinationModuleDefAssignment_3()); 
-            // InternalSkillRealization.g:738:2: ( rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3 )
-            // InternalSkillRealization.g:738:3: rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3
+            // InternalSkillRealization.g:712:2: ( rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3 )
+            // InternalSkillRealization.g:712:3: rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3();
@@ -2073,14 +2073,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__4"
-    // InternalSkillRealization.g:746:1: rule__CoordinationModuleRealization__Group__4 : rule__CoordinationModuleRealization__Group__4__Impl rule__CoordinationModuleRealization__Group__5 ;
+    // InternalSkillRealization.g:720:1: rule__CoordinationModuleRealization__Group__4 : rule__CoordinationModuleRealization__Group__4__Impl rule__CoordinationModuleRealization__Group__5 ;
     public final void rule__CoordinationModuleRealization__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:750:1: ( rule__CoordinationModuleRealization__Group__4__Impl rule__CoordinationModuleRealization__Group__5 )
-            // InternalSkillRealization.g:751:2: rule__CoordinationModuleRealization__Group__4__Impl rule__CoordinationModuleRealization__Group__5
+            // InternalSkillRealization.g:724:1: ( rule__CoordinationModuleRealization__Group__4__Impl rule__CoordinationModuleRealization__Group__5 )
+            // InternalSkillRealization.g:725:2: rule__CoordinationModuleRealization__Group__4__Impl rule__CoordinationModuleRealization__Group__5
             {
             pushFollow(FOLLOW_4);
             rule__CoordinationModuleRealization__Group__4__Impl();
@@ -2111,17 +2111,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__4__Impl"
-    // InternalSkillRealization.g:758:1: rule__CoordinationModuleRealization__Group__4__Impl : ( 'uses' ) ;
+    // InternalSkillRealization.g:732:1: rule__CoordinationModuleRealization__Group__4__Impl : ( 'uses' ) ;
     public final void rule__CoordinationModuleRealization__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:762:1: ( ( 'uses' ) )
-            // InternalSkillRealization.g:763:1: ( 'uses' )
+            // InternalSkillRealization.g:736:1: ( ( 'uses' ) )
+            // InternalSkillRealization.g:737:1: ( 'uses' )
             {
-            // InternalSkillRealization.g:763:1: ( 'uses' )
-            // InternalSkillRealization.g:764:2: 'uses'
+            // InternalSkillRealization.g:737:1: ( 'uses' )
+            // InternalSkillRealization.g:738:2: 'uses'
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getUsesKeyword_4()); 
             match(input,17,FOLLOW_2); 
@@ -2148,14 +2148,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__5"
-    // InternalSkillRealization.g:773:1: rule__CoordinationModuleRealization__Group__5 : rule__CoordinationModuleRealization__Group__5__Impl rule__CoordinationModuleRealization__Group__6 ;
+    // InternalSkillRealization.g:747:1: rule__CoordinationModuleRealization__Group__5 : rule__CoordinationModuleRealization__Group__5__Impl rule__CoordinationModuleRealization__Group__6 ;
     public final void rule__CoordinationModuleRealization__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:777:1: ( rule__CoordinationModuleRealization__Group__5__Impl rule__CoordinationModuleRealization__Group__6 )
-            // InternalSkillRealization.g:778:2: rule__CoordinationModuleRealization__Group__5__Impl rule__CoordinationModuleRealization__Group__6
+            // InternalSkillRealization.g:751:1: ( rule__CoordinationModuleRealization__Group__5__Impl rule__CoordinationModuleRealization__Group__6 )
+            // InternalSkillRealization.g:752:2: rule__CoordinationModuleRealization__Group__5__Impl rule__CoordinationModuleRealization__Group__6
             {
             pushFollow(FOLLOW_12);
             rule__CoordinationModuleRealization__Group__5__Impl();
@@ -2186,17 +2186,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__5__Impl"
-    // InternalSkillRealization.g:785:1: rule__CoordinationModuleRealization__Group__5__Impl : ( '{' ) ;
+    // InternalSkillRealization.g:759:1: rule__CoordinationModuleRealization__Group__5__Impl : ( '{' ) ;
     public final void rule__CoordinationModuleRealization__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:789:1: ( ( '{' ) )
-            // InternalSkillRealization.g:790:1: ( '{' )
+            // InternalSkillRealization.g:763:1: ( ( '{' ) )
+            // InternalSkillRealization.g:764:1: ( '{' )
             {
-            // InternalSkillRealization.g:790:1: ( '{' )
-            // InternalSkillRealization.g:791:2: '{'
+            // InternalSkillRealization.g:764:1: ( '{' )
+            // InternalSkillRealization.g:765:2: '{'
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getLeftCurlyBracketKeyword_5()); 
             match(input,12,FOLLOW_2); 
@@ -2223,14 +2223,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__6"
-    // InternalSkillRealization.g:800:1: rule__CoordinationModuleRealization__Group__6 : rule__CoordinationModuleRealization__Group__6__Impl rule__CoordinationModuleRealization__Group__7 ;
+    // InternalSkillRealization.g:774:1: rule__CoordinationModuleRealization__Group__6 : rule__CoordinationModuleRealization__Group__6__Impl rule__CoordinationModuleRealization__Group__7 ;
     public final void rule__CoordinationModuleRealization__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:804:1: ( rule__CoordinationModuleRealization__Group__6__Impl rule__CoordinationModuleRealization__Group__7 )
-            // InternalSkillRealization.g:805:2: rule__CoordinationModuleRealization__Group__6__Impl rule__CoordinationModuleRealization__Group__7
+            // InternalSkillRealization.g:778:1: ( rule__CoordinationModuleRealization__Group__6__Impl rule__CoordinationModuleRealization__Group__7 )
+            // InternalSkillRealization.g:779:2: rule__CoordinationModuleRealization__Group__6__Impl rule__CoordinationModuleRealization__Group__7
             {
             pushFollow(FOLLOW_12);
             rule__CoordinationModuleRealization__Group__6__Impl();
@@ -2261,20 +2261,20 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__6__Impl"
-    // InternalSkillRealization.g:812:1: rule__CoordinationModuleRealization__Group__6__Impl : ( ( rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6 )* ) ;
+    // InternalSkillRealization.g:786:1: rule__CoordinationModuleRealization__Group__6__Impl : ( ( rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6 )* ) ;
     public final void rule__CoordinationModuleRealization__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:816:1: ( ( ( rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6 )* ) )
-            // InternalSkillRealization.g:817:1: ( ( rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6 )* )
+            // InternalSkillRealization.g:790:1: ( ( ( rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6 )* ) )
+            // InternalSkillRealization.g:791:1: ( ( rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6 )* )
             {
-            // InternalSkillRealization.g:817:1: ( ( rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6 )* )
-            // InternalSkillRealization.g:818:2: ( rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6 )*
+            // InternalSkillRealization.g:791:1: ( ( rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6 )* )
+            // InternalSkillRealization.g:792:2: ( rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6 )*
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getCoordInterfaceInstsAssignment_6()); 
-            // InternalSkillRealization.g:819:2: ( rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6 )*
+            // InternalSkillRealization.g:793:2: ( rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6 )*
             loop4:
             do {
                 int alt4=2;
@@ -2287,7 +2287,7 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalSkillRealization.g:819:3: rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6
+            	    // InternalSkillRealization.g:793:3: rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6
             	    {
             	    pushFollow(FOLLOW_13);
             	    rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6();
@@ -2326,14 +2326,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__7"
-    // InternalSkillRealization.g:827:1: rule__CoordinationModuleRealization__Group__7 : rule__CoordinationModuleRealization__Group__7__Impl rule__CoordinationModuleRealization__Group__8 ;
+    // InternalSkillRealization.g:801:1: rule__CoordinationModuleRealization__Group__7 : rule__CoordinationModuleRealization__Group__7__Impl rule__CoordinationModuleRealization__Group__8 ;
     public final void rule__CoordinationModuleRealization__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:831:1: ( rule__CoordinationModuleRealization__Group__7__Impl rule__CoordinationModuleRealization__Group__8 )
-            // InternalSkillRealization.g:832:2: rule__CoordinationModuleRealization__Group__7__Impl rule__CoordinationModuleRealization__Group__8
+            // InternalSkillRealization.g:805:1: ( rule__CoordinationModuleRealization__Group__7__Impl rule__CoordinationModuleRealization__Group__8 )
+            // InternalSkillRealization.g:806:2: rule__CoordinationModuleRealization__Group__7__Impl rule__CoordinationModuleRealization__Group__8
             {
             pushFollow(FOLLOW_4);
             rule__CoordinationModuleRealization__Group__7__Impl();
@@ -2364,17 +2364,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__7__Impl"
-    // InternalSkillRealization.g:839:1: rule__CoordinationModuleRealization__Group__7__Impl : ( '}' ) ;
+    // InternalSkillRealization.g:813:1: rule__CoordinationModuleRealization__Group__7__Impl : ( '}' ) ;
     public final void rule__CoordinationModuleRealization__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:843:1: ( ( '}' ) )
-            // InternalSkillRealization.g:844:1: ( '}' )
+            // InternalSkillRealization.g:817:1: ( ( '}' ) )
+            // InternalSkillRealization.g:818:1: ( '}' )
             {
-            // InternalSkillRealization.g:844:1: ( '}' )
-            // InternalSkillRealization.g:845:2: '}'
+            // InternalSkillRealization.g:818:1: ( '}' )
+            // InternalSkillRealization.g:819:2: '}'
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getRightCurlyBracketKeyword_7()); 
             match(input,13,FOLLOW_2); 
@@ -2401,14 +2401,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__8"
-    // InternalSkillRealization.g:854:1: rule__CoordinationModuleRealization__Group__8 : rule__CoordinationModuleRealization__Group__8__Impl rule__CoordinationModuleRealization__Group__9 ;
+    // InternalSkillRealization.g:828:1: rule__CoordinationModuleRealization__Group__8 : rule__CoordinationModuleRealization__Group__8__Impl rule__CoordinationModuleRealization__Group__9 ;
     public final void rule__CoordinationModuleRealization__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:858:1: ( rule__CoordinationModuleRealization__Group__8__Impl rule__CoordinationModuleRealization__Group__9 )
-            // InternalSkillRealization.g:859:2: rule__CoordinationModuleRealization__Group__8__Impl rule__CoordinationModuleRealization__Group__9
+            // InternalSkillRealization.g:832:1: ( rule__CoordinationModuleRealization__Group__8__Impl rule__CoordinationModuleRealization__Group__9 )
+            // InternalSkillRealization.g:833:2: rule__CoordinationModuleRealization__Group__8__Impl rule__CoordinationModuleRealization__Group__9
             {
             pushFollow(FOLLOW_14);
             rule__CoordinationModuleRealization__Group__8__Impl();
@@ -2439,17 +2439,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__8__Impl"
-    // InternalSkillRealization.g:866:1: rule__CoordinationModuleRealization__Group__8__Impl : ( '{' ) ;
+    // InternalSkillRealization.g:840:1: rule__CoordinationModuleRealization__Group__8__Impl : ( '{' ) ;
     public final void rule__CoordinationModuleRealization__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:870:1: ( ( '{' ) )
-            // InternalSkillRealization.g:871:1: ( '{' )
+            // InternalSkillRealization.g:844:1: ( ( '{' ) )
+            // InternalSkillRealization.g:845:1: ( '{' )
             {
-            // InternalSkillRealization.g:871:1: ( '{' )
-            // InternalSkillRealization.g:872:2: '{'
+            // InternalSkillRealization.g:845:1: ( '{' )
+            // InternalSkillRealization.g:846:2: '{'
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getLeftCurlyBracketKeyword_8()); 
             match(input,12,FOLLOW_2); 
@@ -2476,14 +2476,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__9"
-    // InternalSkillRealization.g:881:1: rule__CoordinationModuleRealization__Group__9 : rule__CoordinationModuleRealization__Group__9__Impl rule__CoordinationModuleRealization__Group__10 ;
+    // InternalSkillRealization.g:855:1: rule__CoordinationModuleRealization__Group__9 : rule__CoordinationModuleRealization__Group__9__Impl rule__CoordinationModuleRealization__Group__10 ;
     public final void rule__CoordinationModuleRealization__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:885:1: ( rule__CoordinationModuleRealization__Group__9__Impl rule__CoordinationModuleRealization__Group__10 )
-            // InternalSkillRealization.g:886:2: rule__CoordinationModuleRealization__Group__9__Impl rule__CoordinationModuleRealization__Group__10
+            // InternalSkillRealization.g:859:1: ( rule__CoordinationModuleRealization__Group__9__Impl rule__CoordinationModuleRealization__Group__10 )
+            // InternalSkillRealization.g:860:2: rule__CoordinationModuleRealization__Group__9__Impl rule__CoordinationModuleRealization__Group__10
             {
             pushFollow(FOLLOW_14);
             rule__CoordinationModuleRealization__Group__9__Impl();
@@ -2514,20 +2514,20 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__9__Impl"
-    // InternalSkillRealization.g:893:1: rule__CoordinationModuleRealization__Group__9__Impl : ( ( rule__CoordinationModuleRealization__SkillsAssignment_9 )* ) ;
+    // InternalSkillRealization.g:867:1: rule__CoordinationModuleRealization__Group__9__Impl : ( ( rule__CoordinationModuleRealization__SkillsAssignment_9 )* ) ;
     public final void rule__CoordinationModuleRealization__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:897:1: ( ( ( rule__CoordinationModuleRealization__SkillsAssignment_9 )* ) )
-            // InternalSkillRealization.g:898:1: ( ( rule__CoordinationModuleRealization__SkillsAssignment_9 )* )
+            // InternalSkillRealization.g:871:1: ( ( ( rule__CoordinationModuleRealization__SkillsAssignment_9 )* ) )
+            // InternalSkillRealization.g:872:1: ( ( rule__CoordinationModuleRealization__SkillsAssignment_9 )* )
             {
-            // InternalSkillRealization.g:898:1: ( ( rule__CoordinationModuleRealization__SkillsAssignment_9 )* )
-            // InternalSkillRealization.g:899:2: ( rule__CoordinationModuleRealization__SkillsAssignment_9 )*
+            // InternalSkillRealization.g:872:1: ( ( rule__CoordinationModuleRealization__SkillsAssignment_9 )* )
+            // InternalSkillRealization.g:873:2: ( rule__CoordinationModuleRealization__SkillsAssignment_9 )*
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getSkillsAssignment_9()); 
-            // InternalSkillRealization.g:900:2: ( rule__CoordinationModuleRealization__SkillsAssignment_9 )*
+            // InternalSkillRealization.g:874:2: ( rule__CoordinationModuleRealization__SkillsAssignment_9 )*
             loop5:
             do {
                 int alt5=2;
@@ -2540,7 +2540,7 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalSkillRealization.g:900:3: rule__CoordinationModuleRealization__SkillsAssignment_9
+            	    // InternalSkillRealization.g:874:3: rule__CoordinationModuleRealization__SkillsAssignment_9
             	    {
             	    pushFollow(FOLLOW_15);
             	    rule__CoordinationModuleRealization__SkillsAssignment_9();
@@ -2579,14 +2579,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__10"
-    // InternalSkillRealization.g:908:1: rule__CoordinationModuleRealization__Group__10 : rule__CoordinationModuleRealization__Group__10__Impl ;
+    // InternalSkillRealization.g:882:1: rule__CoordinationModuleRealization__Group__10 : rule__CoordinationModuleRealization__Group__10__Impl ;
     public final void rule__CoordinationModuleRealization__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:912:1: ( rule__CoordinationModuleRealization__Group__10__Impl )
-            // InternalSkillRealization.g:913:2: rule__CoordinationModuleRealization__Group__10__Impl
+            // InternalSkillRealization.g:886:1: ( rule__CoordinationModuleRealization__Group__10__Impl )
+            // InternalSkillRealization.g:887:2: rule__CoordinationModuleRealization__Group__10__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CoordinationModuleRealization__Group__10__Impl();
@@ -2612,17 +2612,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__Group__10__Impl"
-    // InternalSkillRealization.g:919:1: rule__CoordinationModuleRealization__Group__10__Impl : ( '}' ) ;
+    // InternalSkillRealization.g:893:1: rule__CoordinationModuleRealization__Group__10__Impl : ( '}' ) ;
     public final void rule__CoordinationModuleRealization__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:923:1: ( ( '}' ) )
-            // InternalSkillRealization.g:924:1: ( '}' )
+            // InternalSkillRealization.g:897:1: ( ( '}' ) )
+            // InternalSkillRealization.g:898:1: ( '}' )
             {
-            // InternalSkillRealization.g:924:1: ( '}' )
-            // InternalSkillRealization.g:925:2: '}'
+            // InternalSkillRealization.g:898:1: ( '}' )
+            // InternalSkillRealization.g:899:2: '}'
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getRightCurlyBracketKeyword_10()); 
             match(input,13,FOLLOW_2); 
@@ -2649,14 +2649,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationInterfaceInstance__Group__0"
-    // InternalSkillRealization.g:935:1: rule__CoordinationInterfaceInstance__Group__0 : rule__CoordinationInterfaceInstance__Group__0__Impl rule__CoordinationInterfaceInstance__Group__1 ;
+    // InternalSkillRealization.g:909:1: rule__CoordinationInterfaceInstance__Group__0 : rule__CoordinationInterfaceInstance__Group__0__Impl rule__CoordinationInterfaceInstance__Group__1 ;
     public final void rule__CoordinationInterfaceInstance__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:939:1: ( rule__CoordinationInterfaceInstance__Group__0__Impl rule__CoordinationInterfaceInstance__Group__1 )
-            // InternalSkillRealization.g:940:2: rule__CoordinationInterfaceInstance__Group__0__Impl rule__CoordinationInterfaceInstance__Group__1
+            // InternalSkillRealization.g:913:1: ( rule__CoordinationInterfaceInstance__Group__0__Impl rule__CoordinationInterfaceInstance__Group__1 )
+            // InternalSkillRealization.g:914:2: rule__CoordinationInterfaceInstance__Group__0__Impl rule__CoordinationInterfaceInstance__Group__1
             {
             pushFollow(FOLLOW_16);
             rule__CoordinationInterfaceInstance__Group__0__Impl();
@@ -2687,21 +2687,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationInterfaceInstance__Group__0__Impl"
-    // InternalSkillRealization.g:947:1: rule__CoordinationInterfaceInstance__Group__0__Impl : ( ( rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0 ) ) ;
+    // InternalSkillRealization.g:921:1: rule__CoordinationInterfaceInstance__Group__0__Impl : ( ( rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0 ) ) ;
     public final void rule__CoordinationInterfaceInstance__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:951:1: ( ( ( rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0 ) ) )
-            // InternalSkillRealization.g:952:1: ( ( rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0 ) )
+            // InternalSkillRealization.g:925:1: ( ( ( rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0 ) ) )
+            // InternalSkillRealization.g:926:1: ( ( rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0 ) )
             {
-            // InternalSkillRealization.g:952:1: ( ( rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0 ) )
-            // InternalSkillRealization.g:953:2: ( rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0 )
+            // InternalSkillRealization.g:926:1: ( ( rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0 ) )
+            // InternalSkillRealization.g:927:2: ( rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0 )
             {
              before(grammarAccess.getCoordinationInterfaceInstanceAccess().getCoordinationInterfaceDefAssignment_0()); 
-            // InternalSkillRealization.g:954:2: ( rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0 )
-            // InternalSkillRealization.g:954:3: rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0
+            // InternalSkillRealization.g:928:2: ( rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0 )
+            // InternalSkillRealization.g:928:3: rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0();
@@ -2734,14 +2734,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationInterfaceInstance__Group__1"
-    // InternalSkillRealization.g:962:1: rule__CoordinationInterfaceInstance__Group__1 : rule__CoordinationInterfaceInstance__Group__1__Impl rule__CoordinationInterfaceInstance__Group__2 ;
+    // InternalSkillRealization.g:936:1: rule__CoordinationInterfaceInstance__Group__1 : rule__CoordinationInterfaceInstance__Group__1__Impl rule__CoordinationInterfaceInstance__Group__2 ;
     public final void rule__CoordinationInterfaceInstance__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:966:1: ( rule__CoordinationInterfaceInstance__Group__1__Impl rule__CoordinationInterfaceInstance__Group__2 )
-            // InternalSkillRealization.g:967:2: rule__CoordinationInterfaceInstance__Group__1__Impl rule__CoordinationInterfaceInstance__Group__2
+            // InternalSkillRealization.g:940:1: ( rule__CoordinationInterfaceInstance__Group__1__Impl rule__CoordinationInterfaceInstance__Group__2 )
+            // InternalSkillRealization.g:941:2: rule__CoordinationInterfaceInstance__Group__1__Impl rule__CoordinationInterfaceInstance__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__CoordinationInterfaceInstance__Group__1__Impl();
@@ -2772,17 +2772,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationInterfaceInstance__Group__1__Impl"
-    // InternalSkillRealization.g:974:1: rule__CoordinationInterfaceInstance__Group__1__Impl : ( 'intsName' ) ;
+    // InternalSkillRealization.g:948:1: rule__CoordinationInterfaceInstance__Group__1__Impl : ( 'intsName' ) ;
     public final void rule__CoordinationInterfaceInstance__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:978:1: ( ( 'intsName' ) )
-            // InternalSkillRealization.g:979:1: ( 'intsName' )
+            // InternalSkillRealization.g:952:1: ( ( 'intsName' ) )
+            // InternalSkillRealization.g:953:1: ( 'intsName' )
             {
-            // InternalSkillRealization.g:979:1: ( 'intsName' )
-            // InternalSkillRealization.g:980:2: 'intsName'
+            // InternalSkillRealization.g:953:1: ( 'intsName' )
+            // InternalSkillRealization.g:954:2: 'intsName'
             {
              before(grammarAccess.getCoordinationInterfaceInstanceAccess().getIntsNameKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -2809,14 +2809,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationInterfaceInstance__Group__2"
-    // InternalSkillRealization.g:989:1: rule__CoordinationInterfaceInstance__Group__2 : rule__CoordinationInterfaceInstance__Group__2__Impl ;
+    // InternalSkillRealization.g:963:1: rule__CoordinationInterfaceInstance__Group__2 : rule__CoordinationInterfaceInstance__Group__2__Impl ;
     public final void rule__CoordinationInterfaceInstance__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:993:1: ( rule__CoordinationInterfaceInstance__Group__2__Impl )
-            // InternalSkillRealization.g:994:2: rule__CoordinationInterfaceInstance__Group__2__Impl
+            // InternalSkillRealization.g:967:1: ( rule__CoordinationInterfaceInstance__Group__2__Impl )
+            // InternalSkillRealization.g:968:2: rule__CoordinationInterfaceInstance__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CoordinationInterfaceInstance__Group__2__Impl();
@@ -2842,21 +2842,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationInterfaceInstance__Group__2__Impl"
-    // InternalSkillRealization.g:1000:1: rule__CoordinationInterfaceInstance__Group__2__Impl : ( ( rule__CoordinationInterfaceInstance__NameAssignment_2 ) ) ;
+    // InternalSkillRealization.g:974:1: rule__CoordinationInterfaceInstance__Group__2__Impl : ( ( rule__CoordinationInterfaceInstance__NameAssignment_2 ) ) ;
     public final void rule__CoordinationInterfaceInstance__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1004:1: ( ( ( rule__CoordinationInterfaceInstance__NameAssignment_2 ) ) )
-            // InternalSkillRealization.g:1005:1: ( ( rule__CoordinationInterfaceInstance__NameAssignment_2 ) )
+            // InternalSkillRealization.g:978:1: ( ( ( rule__CoordinationInterfaceInstance__NameAssignment_2 ) ) )
+            // InternalSkillRealization.g:979:1: ( ( rule__CoordinationInterfaceInstance__NameAssignment_2 ) )
             {
-            // InternalSkillRealization.g:1005:1: ( ( rule__CoordinationInterfaceInstance__NameAssignment_2 ) )
-            // InternalSkillRealization.g:1006:2: ( rule__CoordinationInterfaceInstance__NameAssignment_2 )
+            // InternalSkillRealization.g:979:1: ( ( rule__CoordinationInterfaceInstance__NameAssignment_2 ) )
+            // InternalSkillRealization.g:980:2: ( rule__CoordinationInterfaceInstance__NameAssignment_2 )
             {
              before(grammarAccess.getCoordinationInterfaceInstanceAccess().getNameAssignment_2()); 
-            // InternalSkillRealization.g:1007:2: ( rule__CoordinationInterfaceInstance__NameAssignment_2 )
-            // InternalSkillRealization.g:1007:3: rule__CoordinationInterfaceInstance__NameAssignment_2
+            // InternalSkillRealization.g:981:2: ( rule__CoordinationInterfaceInstance__NameAssignment_2 )
+            // InternalSkillRealization.g:981:3: rule__CoordinationInterfaceInstance__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__CoordinationInterfaceInstance__NameAssignment_2();
@@ -2889,14 +2889,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__0"
-    // InternalSkillRealization.g:1016:1: rule__SkillRealization__Group__0 : rule__SkillRealization__Group__0__Impl rule__SkillRealization__Group__1 ;
+    // InternalSkillRealization.g:990:1: rule__SkillRealization__Group__0 : rule__SkillRealization__Group__0__Impl rule__SkillRealization__Group__1 ;
     public final void rule__SkillRealization__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1020:1: ( rule__SkillRealization__Group__0__Impl rule__SkillRealization__Group__1 )
-            // InternalSkillRealization.g:1021:2: rule__SkillRealization__Group__0__Impl rule__SkillRealization__Group__1
+            // InternalSkillRealization.g:994:1: ( rule__SkillRealization__Group__0__Impl rule__SkillRealization__Group__1 )
+            // InternalSkillRealization.g:995:2: rule__SkillRealization__Group__0__Impl rule__SkillRealization__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__SkillRealization__Group__0__Impl();
@@ -2927,17 +2927,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__0__Impl"
-    // InternalSkillRealization.g:1028:1: rule__SkillRealization__Group__0__Impl : ( 'SkillRealization' ) ;
+    // InternalSkillRealization.g:1002:1: rule__SkillRealization__Group__0__Impl : ( 'SkillRealization' ) ;
     public final void rule__SkillRealization__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1032:1: ( ( 'SkillRealization' ) )
-            // InternalSkillRealization.g:1033:1: ( 'SkillRealization' )
+            // InternalSkillRealization.g:1006:1: ( ( 'SkillRealization' ) )
+            // InternalSkillRealization.g:1007:1: ( 'SkillRealization' )
             {
-            // InternalSkillRealization.g:1033:1: ( 'SkillRealization' )
-            // InternalSkillRealization.g:1034:2: 'SkillRealization'
+            // InternalSkillRealization.g:1007:1: ( 'SkillRealization' )
+            // InternalSkillRealization.g:1008:2: 'SkillRealization'
             {
              before(grammarAccess.getSkillRealizationAccess().getSkillRealizationKeyword_0()); 
             match(input,19,FOLLOW_2); 
@@ -2964,14 +2964,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__1"
-    // InternalSkillRealization.g:1043:1: rule__SkillRealization__Group__1 : rule__SkillRealization__Group__1__Impl rule__SkillRealization__Group__2 ;
+    // InternalSkillRealization.g:1017:1: rule__SkillRealization__Group__1 : rule__SkillRealization__Group__1__Impl rule__SkillRealization__Group__2 ;
     public final void rule__SkillRealization__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1047:1: ( rule__SkillRealization__Group__1__Impl rule__SkillRealization__Group__2 )
-            // InternalSkillRealization.g:1048:2: rule__SkillRealization__Group__1__Impl rule__SkillRealization__Group__2
+            // InternalSkillRealization.g:1021:1: ( rule__SkillRealization__Group__1__Impl rule__SkillRealization__Group__2 )
+            // InternalSkillRealization.g:1022:2: rule__SkillRealization__Group__1__Impl rule__SkillRealization__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__SkillRealization__Group__1__Impl();
@@ -3002,21 +3002,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__1__Impl"
-    // InternalSkillRealization.g:1055:1: rule__SkillRealization__Group__1__Impl : ( ( rule__SkillRealization__SkillDefAssignment_1 ) ) ;
+    // InternalSkillRealization.g:1029:1: rule__SkillRealization__Group__1__Impl : ( ( rule__SkillRealization__SkillDefAssignment_1 ) ) ;
     public final void rule__SkillRealization__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1059:1: ( ( ( rule__SkillRealization__SkillDefAssignment_1 ) ) )
-            // InternalSkillRealization.g:1060:1: ( ( rule__SkillRealization__SkillDefAssignment_1 ) )
+            // InternalSkillRealization.g:1033:1: ( ( ( rule__SkillRealization__SkillDefAssignment_1 ) ) )
+            // InternalSkillRealization.g:1034:1: ( ( rule__SkillRealization__SkillDefAssignment_1 ) )
             {
-            // InternalSkillRealization.g:1060:1: ( ( rule__SkillRealization__SkillDefAssignment_1 ) )
-            // InternalSkillRealization.g:1061:2: ( rule__SkillRealization__SkillDefAssignment_1 )
+            // InternalSkillRealization.g:1034:1: ( ( rule__SkillRealization__SkillDefAssignment_1 ) )
+            // InternalSkillRealization.g:1035:2: ( rule__SkillRealization__SkillDefAssignment_1 )
             {
              before(grammarAccess.getSkillRealizationAccess().getSkillDefAssignment_1()); 
-            // InternalSkillRealization.g:1062:2: ( rule__SkillRealization__SkillDefAssignment_1 )
-            // InternalSkillRealization.g:1062:3: rule__SkillRealization__SkillDefAssignment_1
+            // InternalSkillRealization.g:1036:2: ( rule__SkillRealization__SkillDefAssignment_1 )
+            // InternalSkillRealization.g:1036:3: rule__SkillRealization__SkillDefAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__SkillRealization__SkillDefAssignment_1();
@@ -3049,14 +3049,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__2"
-    // InternalSkillRealization.g:1070:1: rule__SkillRealization__Group__2 : rule__SkillRealization__Group__2__Impl rule__SkillRealization__Group__3 ;
+    // InternalSkillRealization.g:1044:1: rule__SkillRealization__Group__2 : rule__SkillRealization__Group__2__Impl rule__SkillRealization__Group__3 ;
     public final void rule__SkillRealization__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1074:1: ( rule__SkillRealization__Group__2__Impl rule__SkillRealization__Group__3 )
-            // InternalSkillRealization.g:1075:2: rule__SkillRealization__Group__2__Impl rule__SkillRealization__Group__3
+            // InternalSkillRealization.g:1048:1: ( rule__SkillRealization__Group__2__Impl rule__SkillRealization__Group__3 )
+            // InternalSkillRealization.g:1049:2: rule__SkillRealization__Group__2__Impl rule__SkillRealization__Group__3
             {
             pushFollow(FOLLOW_17);
             rule__SkillRealization__Group__2__Impl();
@@ -3087,17 +3087,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__2__Impl"
-    // InternalSkillRealization.g:1082:1: rule__SkillRealization__Group__2__Impl : ( '{' ) ;
+    // InternalSkillRealization.g:1056:1: rule__SkillRealization__Group__2__Impl : ( '{' ) ;
     public final void rule__SkillRealization__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1086:1: ( ( '{' ) )
-            // InternalSkillRealization.g:1087:1: ( '{' )
+            // InternalSkillRealization.g:1060:1: ( ( '{' ) )
+            // InternalSkillRealization.g:1061:1: ( '{' )
             {
-            // InternalSkillRealization.g:1087:1: ( '{' )
-            // InternalSkillRealization.g:1088:2: '{'
+            // InternalSkillRealization.g:1061:1: ( '{' )
+            // InternalSkillRealization.g:1062:2: '{'
             {
              before(grammarAccess.getSkillRealizationAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,12,FOLLOW_2); 
@@ -3124,14 +3124,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__3"
-    // InternalSkillRealization.g:1097:1: rule__SkillRealization__Group__3 : rule__SkillRealization__Group__3__Impl rule__SkillRealization__Group__4 ;
+    // InternalSkillRealization.g:1071:1: rule__SkillRealization__Group__3 : rule__SkillRealization__Group__3__Impl rule__SkillRealization__Group__4 ;
     public final void rule__SkillRealization__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1101:1: ( rule__SkillRealization__Group__3__Impl rule__SkillRealization__Group__4 )
-            // InternalSkillRealization.g:1102:2: rule__SkillRealization__Group__3__Impl rule__SkillRealization__Group__4
+            // InternalSkillRealization.g:1075:1: ( rule__SkillRealization__Group__3__Impl rule__SkillRealization__Group__4 )
+            // InternalSkillRealization.g:1076:2: rule__SkillRealization__Group__3__Impl rule__SkillRealization__Group__4
             {
             pushFollow(FOLLOW_18);
             rule__SkillRealization__Group__3__Impl();
@@ -3162,17 +3162,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__3__Impl"
-    // InternalSkillRealization.g:1109:1: rule__SkillRealization__Group__3__Impl : ( 'action' ) ;
+    // InternalSkillRealization.g:1083:1: rule__SkillRealization__Group__3__Impl : ( 'action' ) ;
     public final void rule__SkillRealization__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1113:1: ( ( 'action' ) )
-            // InternalSkillRealization.g:1114:1: ( 'action' )
+            // InternalSkillRealization.g:1087:1: ( ( 'action' ) )
+            // InternalSkillRealization.g:1088:1: ( 'action' )
             {
-            // InternalSkillRealization.g:1114:1: ( 'action' )
-            // InternalSkillRealization.g:1115:2: 'action'
+            // InternalSkillRealization.g:1088:1: ( 'action' )
+            // InternalSkillRealization.g:1089:2: 'action'
             {
              before(grammarAccess.getSkillRealizationAccess().getActionKeyword_3()); 
             match(input,20,FOLLOW_2); 
@@ -3199,14 +3199,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__4"
-    // InternalSkillRealization.g:1124:1: rule__SkillRealization__Group__4 : rule__SkillRealization__Group__4__Impl rule__SkillRealization__Group__5 ;
+    // InternalSkillRealization.g:1098:1: rule__SkillRealization__Group__4 : rule__SkillRealization__Group__4__Impl rule__SkillRealization__Group__5 ;
     public final void rule__SkillRealization__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1128:1: ( rule__SkillRealization__Group__4__Impl rule__SkillRealization__Group__5 )
-            // InternalSkillRealization.g:1129:2: rule__SkillRealization__Group__4__Impl rule__SkillRealization__Group__5
+            // InternalSkillRealization.g:1102:1: ( rule__SkillRealization__Group__4__Impl rule__SkillRealization__Group__5 )
+            // InternalSkillRealization.g:1103:2: rule__SkillRealization__Group__4__Impl rule__SkillRealization__Group__5
             {
             pushFollow(FOLLOW_19);
             rule__SkillRealization__Group__4__Impl();
@@ -3237,17 +3237,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__4__Impl"
-    // InternalSkillRealization.g:1136:1: rule__SkillRealization__Group__4__Impl : ( '(' ) ;
+    // InternalSkillRealization.g:1110:1: rule__SkillRealization__Group__4__Impl : ( '(' ) ;
     public final void rule__SkillRealization__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1140:1: ( ( '(' ) )
-            // InternalSkillRealization.g:1141:1: ( '(' )
+            // InternalSkillRealization.g:1114:1: ( ( '(' ) )
+            // InternalSkillRealization.g:1115:1: ( '(' )
             {
-            // InternalSkillRealization.g:1141:1: ( '(' )
-            // InternalSkillRealization.g:1142:2: '('
+            // InternalSkillRealization.g:1115:1: ( '(' )
+            // InternalSkillRealization.g:1116:2: '('
             {
              before(grammarAccess.getSkillRealizationAccess().getLeftParenthesisKeyword_4()); 
             match(input,21,FOLLOW_2); 
@@ -3274,14 +3274,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__5"
-    // InternalSkillRealization.g:1151:1: rule__SkillRealization__Group__5 : rule__SkillRealization__Group__5__Impl rule__SkillRealization__Group__6 ;
+    // InternalSkillRealization.g:1125:1: rule__SkillRealization__Group__5 : rule__SkillRealization__Group__5__Impl rule__SkillRealization__Group__6 ;
     public final void rule__SkillRealization__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1155:1: ( rule__SkillRealization__Group__5__Impl rule__SkillRealization__Group__6 )
-            // InternalSkillRealization.g:1156:2: rule__SkillRealization__Group__5__Impl rule__SkillRealization__Group__6
+            // InternalSkillRealization.g:1129:1: ( rule__SkillRealization__Group__5__Impl rule__SkillRealization__Group__6 )
+            // InternalSkillRealization.g:1130:2: rule__SkillRealization__Group__5__Impl rule__SkillRealization__Group__6
             {
             pushFollow(FOLLOW_20);
             rule__SkillRealization__Group__5__Impl();
@@ -3312,21 +3312,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__5__Impl"
-    // InternalSkillRealization.g:1163:1: rule__SkillRealization__Group__5__Impl : ( ( rule__SkillRealization__ActionAssignment_5 ) ) ;
+    // InternalSkillRealization.g:1137:1: rule__SkillRealization__Group__5__Impl : ( ( rule__SkillRealization__ActionAssignment_5 ) ) ;
     public final void rule__SkillRealization__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1167:1: ( ( ( rule__SkillRealization__ActionAssignment_5 ) ) )
-            // InternalSkillRealization.g:1168:1: ( ( rule__SkillRealization__ActionAssignment_5 ) )
+            // InternalSkillRealization.g:1141:1: ( ( ( rule__SkillRealization__ActionAssignment_5 ) ) )
+            // InternalSkillRealization.g:1142:1: ( ( rule__SkillRealization__ActionAssignment_5 ) )
             {
-            // InternalSkillRealization.g:1168:1: ( ( rule__SkillRealization__ActionAssignment_5 ) )
-            // InternalSkillRealization.g:1169:2: ( rule__SkillRealization__ActionAssignment_5 )
+            // InternalSkillRealization.g:1142:1: ( ( rule__SkillRealization__ActionAssignment_5 ) )
+            // InternalSkillRealization.g:1143:2: ( rule__SkillRealization__ActionAssignment_5 )
             {
              before(grammarAccess.getSkillRealizationAccess().getActionAssignment_5()); 
-            // InternalSkillRealization.g:1170:2: ( rule__SkillRealization__ActionAssignment_5 )
-            // InternalSkillRealization.g:1170:3: rule__SkillRealization__ActionAssignment_5
+            // InternalSkillRealization.g:1144:2: ( rule__SkillRealization__ActionAssignment_5 )
+            // InternalSkillRealization.g:1144:3: rule__SkillRealization__ActionAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__SkillRealization__ActionAssignment_5();
@@ -3359,14 +3359,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__6"
-    // InternalSkillRealization.g:1178:1: rule__SkillRealization__Group__6 : rule__SkillRealization__Group__6__Impl rule__SkillRealization__Group__7 ;
+    // InternalSkillRealization.g:1152:1: rule__SkillRealization__Group__6 : rule__SkillRealization__Group__6__Impl rule__SkillRealization__Group__7 ;
     public final void rule__SkillRealization__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1182:1: ( rule__SkillRealization__Group__6__Impl rule__SkillRealization__Group__7 )
-            // InternalSkillRealization.g:1183:2: rule__SkillRealization__Group__6__Impl rule__SkillRealization__Group__7
+            // InternalSkillRealization.g:1156:1: ( rule__SkillRealization__Group__6__Impl rule__SkillRealization__Group__7 )
+            // InternalSkillRealization.g:1157:2: rule__SkillRealization__Group__6__Impl rule__SkillRealization__Group__7
             {
             pushFollow(FOLLOW_21);
             rule__SkillRealization__Group__6__Impl();
@@ -3397,17 +3397,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__6__Impl"
-    // InternalSkillRealization.g:1190:1: rule__SkillRealization__Group__6__Impl : ( ')' ) ;
+    // InternalSkillRealization.g:1164:1: rule__SkillRealization__Group__6__Impl : ( ')' ) ;
     public final void rule__SkillRealization__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1194:1: ( ( ')' ) )
-            // InternalSkillRealization.g:1195:1: ( ')' )
+            // InternalSkillRealization.g:1168:1: ( ( ')' ) )
+            // InternalSkillRealization.g:1169:1: ( ')' )
             {
-            // InternalSkillRealization.g:1195:1: ( ')' )
-            // InternalSkillRealization.g:1196:2: ')'
+            // InternalSkillRealization.g:1169:1: ( ')' )
+            // InternalSkillRealization.g:1170:2: ')'
             {
              before(grammarAccess.getSkillRealizationAccess().getRightParenthesisKeyword_6()); 
             match(input,22,FOLLOW_2); 
@@ -3434,14 +3434,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__7"
-    // InternalSkillRealization.g:1205:1: rule__SkillRealization__Group__7 : rule__SkillRealization__Group__7__Impl ;
+    // InternalSkillRealization.g:1179:1: rule__SkillRealization__Group__7 : rule__SkillRealization__Group__7__Impl ;
     public final void rule__SkillRealization__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1209:1: ( rule__SkillRealization__Group__7__Impl )
-            // InternalSkillRealization.g:1210:2: rule__SkillRealization__Group__7__Impl
+            // InternalSkillRealization.g:1183:1: ( rule__SkillRealization__Group__7__Impl )
+            // InternalSkillRealization.g:1184:2: rule__SkillRealization__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SkillRealization__Group__7__Impl();
@@ -3467,17 +3467,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__Group__7__Impl"
-    // InternalSkillRealization.g:1216:1: rule__SkillRealization__Group__7__Impl : ( '}' ) ;
+    // InternalSkillRealization.g:1190:1: rule__SkillRealization__Group__7__Impl : ( '}' ) ;
     public final void rule__SkillRealization__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1220:1: ( ( '}' ) )
-            // InternalSkillRealization.g:1221:1: ( '}' )
+            // InternalSkillRealization.g:1194:1: ( ( '}' ) )
+            // InternalSkillRealization.g:1195:1: ( '}' )
             {
-            // InternalSkillRealization.g:1221:1: ( '}' )
-            // InternalSkillRealization.g:1222:2: '}'
+            // InternalSkillRealization.g:1195:1: ( '}' )
+            // InternalSkillRealization.g:1196:2: '}'
             {
              before(grammarAccess.getSkillRealizationAccess().getRightCurlyBracketKeyword_7()); 
             match(input,13,FOLLOW_2); 
@@ -3504,14 +3504,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationActionBlock__Group__0"
-    // InternalSkillRealization.g:1232:1: rule__CoordinationActionBlock__Group__0 : rule__CoordinationActionBlock__Group__0__Impl rule__CoordinationActionBlock__Group__1 ;
+    // InternalSkillRealization.g:1206:1: rule__CoordinationActionBlock__Group__0 : rule__CoordinationActionBlock__Group__0__Impl rule__CoordinationActionBlock__Group__1 ;
     public final void rule__CoordinationActionBlock__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1236:1: ( rule__CoordinationActionBlock__Group__0__Impl rule__CoordinationActionBlock__Group__1 )
-            // InternalSkillRealization.g:1237:2: rule__CoordinationActionBlock__Group__0__Impl rule__CoordinationActionBlock__Group__1
+            // InternalSkillRealization.g:1210:1: ( rule__CoordinationActionBlock__Group__0__Impl rule__CoordinationActionBlock__Group__1 )
+            // InternalSkillRealization.g:1211:2: rule__CoordinationActionBlock__Group__0__Impl rule__CoordinationActionBlock__Group__1
             {
             pushFollow(FOLLOW_19);
             rule__CoordinationActionBlock__Group__0__Impl();
@@ -3542,21 +3542,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationActionBlock__Group__0__Impl"
-    // InternalSkillRealization.g:1244:1: rule__CoordinationActionBlock__Group__0__Impl : ( () ) ;
+    // InternalSkillRealization.g:1218:1: rule__CoordinationActionBlock__Group__0__Impl : ( () ) ;
     public final void rule__CoordinationActionBlock__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1248:1: ( ( () ) )
-            // InternalSkillRealization.g:1249:1: ( () )
+            // InternalSkillRealization.g:1222:1: ( ( () ) )
+            // InternalSkillRealization.g:1223:1: ( () )
             {
-            // InternalSkillRealization.g:1249:1: ( () )
-            // InternalSkillRealization.g:1250:2: ()
+            // InternalSkillRealization.g:1223:1: ( () )
+            // InternalSkillRealization.g:1224:2: ()
             {
              before(grammarAccess.getCoordinationActionBlockAccess().getCoordinationActionBlockAction_0()); 
-            // InternalSkillRealization.g:1251:2: ()
-            // InternalSkillRealization.g:1251:3: 
+            // InternalSkillRealization.g:1225:2: ()
+            // InternalSkillRealization.g:1225:3: 
             {
             }
 
@@ -3579,14 +3579,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationActionBlock__Group__1"
-    // InternalSkillRealization.g:1259:1: rule__CoordinationActionBlock__Group__1 : rule__CoordinationActionBlock__Group__1__Impl ;
+    // InternalSkillRealization.g:1233:1: rule__CoordinationActionBlock__Group__1 : rule__CoordinationActionBlock__Group__1__Impl ;
     public final void rule__CoordinationActionBlock__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1263:1: ( rule__CoordinationActionBlock__Group__1__Impl )
-            // InternalSkillRealization.g:1264:2: rule__CoordinationActionBlock__Group__1__Impl
+            // InternalSkillRealization.g:1237:1: ( rule__CoordinationActionBlock__Group__1__Impl )
+            // InternalSkillRealization.g:1238:2: rule__CoordinationActionBlock__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CoordinationActionBlock__Group__1__Impl();
@@ -3612,20 +3612,20 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationActionBlock__Group__1__Impl"
-    // InternalSkillRealization.g:1270:1: rule__CoordinationActionBlock__Group__1__Impl : ( ( rule__CoordinationActionBlock__ActionsAssignment_1 )* ) ;
+    // InternalSkillRealization.g:1244:1: rule__CoordinationActionBlock__Group__1__Impl : ( ( rule__CoordinationActionBlock__ActionsAssignment_1 )* ) ;
     public final void rule__CoordinationActionBlock__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1274:1: ( ( ( rule__CoordinationActionBlock__ActionsAssignment_1 )* ) )
-            // InternalSkillRealization.g:1275:1: ( ( rule__CoordinationActionBlock__ActionsAssignment_1 )* )
+            // InternalSkillRealization.g:1248:1: ( ( ( rule__CoordinationActionBlock__ActionsAssignment_1 )* ) )
+            // InternalSkillRealization.g:1249:1: ( ( rule__CoordinationActionBlock__ActionsAssignment_1 )* )
             {
-            // InternalSkillRealization.g:1275:1: ( ( rule__CoordinationActionBlock__ActionsAssignment_1 )* )
-            // InternalSkillRealization.g:1276:2: ( rule__CoordinationActionBlock__ActionsAssignment_1 )*
+            // InternalSkillRealization.g:1249:1: ( ( rule__CoordinationActionBlock__ActionsAssignment_1 )* )
+            // InternalSkillRealization.g:1250:2: ( rule__CoordinationActionBlock__ActionsAssignment_1 )*
             {
              before(grammarAccess.getCoordinationActionBlockAccess().getActionsAssignment_1()); 
-            // InternalSkillRealization.g:1277:2: ( rule__CoordinationActionBlock__ActionsAssignment_1 )*
+            // InternalSkillRealization.g:1251:2: ( rule__CoordinationActionBlock__ActionsAssignment_1 )*
             loop6:
             do {
                 int alt6=2;
@@ -3638,7 +3638,7 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalSkillRealization.g:1277:3: rule__CoordinationActionBlock__ActionsAssignment_1
+            	    // InternalSkillRealization.g:1251:3: rule__CoordinationActionBlock__ActionsAssignment_1
             	    {
             	    pushFollow(FOLLOW_22);
             	    rule__CoordinationActionBlock__ActionsAssignment_1();
@@ -3677,14 +3677,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group__0"
-    // InternalSkillRealization.g:1286:1: rule__ComponentCoordinationActionParameter__Group__0 : rule__ComponentCoordinationActionParameter__Group__0__Impl rule__ComponentCoordinationActionParameter__Group__1 ;
+    // InternalSkillRealization.g:1260:1: rule__ComponentCoordinationActionParameter__Group__0 : rule__ComponentCoordinationActionParameter__Group__0__Impl rule__ComponentCoordinationActionParameter__Group__1 ;
     public final void rule__ComponentCoordinationActionParameter__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1290:1: ( rule__ComponentCoordinationActionParameter__Group__0__Impl rule__ComponentCoordinationActionParameter__Group__1 )
-            // InternalSkillRealization.g:1291:2: rule__ComponentCoordinationActionParameter__Group__0__Impl rule__ComponentCoordinationActionParameter__Group__1
+            // InternalSkillRealization.g:1264:1: ( rule__ComponentCoordinationActionParameter__Group__0__Impl rule__ComponentCoordinationActionParameter__Group__1 )
+            // InternalSkillRealization.g:1265:2: rule__ComponentCoordinationActionParameter__Group__0__Impl rule__ComponentCoordinationActionParameter__Group__1
             {
             pushFollow(FOLLOW_23);
             rule__ComponentCoordinationActionParameter__Group__0__Impl();
@@ -3715,17 +3715,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group__0__Impl"
-    // InternalSkillRealization.g:1298:1: rule__ComponentCoordinationActionParameter__Group__0__Impl : ( 'tcl-param' ) ;
+    // InternalSkillRealization.g:1272:1: rule__ComponentCoordinationActionParameter__Group__0__Impl : ( 'tcl-param' ) ;
     public final void rule__ComponentCoordinationActionParameter__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1302:1: ( ( 'tcl-param' ) )
-            // InternalSkillRealization.g:1303:1: ( 'tcl-param' )
+            // InternalSkillRealization.g:1276:1: ( ( 'tcl-param' ) )
+            // InternalSkillRealization.g:1277:1: ( 'tcl-param' )
             {
-            // InternalSkillRealization.g:1303:1: ( 'tcl-param' )
-            // InternalSkillRealization.g:1304:2: 'tcl-param'
+            // InternalSkillRealization.g:1277:1: ( 'tcl-param' )
+            // InternalSkillRealization.g:1278:2: 'tcl-param'
             {
              before(grammarAccess.getComponentCoordinationActionParameterAccess().getTclParamKeyword_0()); 
             match(input,23,FOLLOW_2); 
@@ -3752,14 +3752,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group__1"
-    // InternalSkillRealization.g:1313:1: rule__ComponentCoordinationActionParameter__Group__1 : rule__ComponentCoordinationActionParameter__Group__1__Impl rule__ComponentCoordinationActionParameter__Group__2 ;
+    // InternalSkillRealization.g:1287:1: rule__ComponentCoordinationActionParameter__Group__1 : rule__ComponentCoordinationActionParameter__Group__1__Impl rule__ComponentCoordinationActionParameter__Group__2 ;
     public final void rule__ComponentCoordinationActionParameter__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1317:1: ( rule__ComponentCoordinationActionParameter__Group__1__Impl rule__ComponentCoordinationActionParameter__Group__2 )
-            // InternalSkillRealization.g:1318:2: rule__ComponentCoordinationActionParameter__Group__1__Impl rule__ComponentCoordinationActionParameter__Group__2
+            // InternalSkillRealization.g:1291:1: ( rule__ComponentCoordinationActionParameter__Group__1__Impl rule__ComponentCoordinationActionParameter__Group__2 )
+            // InternalSkillRealization.g:1292:2: rule__ComponentCoordinationActionParameter__Group__1__Impl rule__ComponentCoordinationActionParameter__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__ComponentCoordinationActionParameter__Group__1__Impl();
@@ -3790,17 +3790,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group__1__Impl"
-    // InternalSkillRealization.g:1325:1: rule__ComponentCoordinationActionParameter__Group__1__Impl : ( ':server' ) ;
+    // InternalSkillRealization.g:1299:1: rule__ComponentCoordinationActionParameter__Group__1__Impl : ( ':server' ) ;
     public final void rule__ComponentCoordinationActionParameter__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1329:1: ( ( ':server' ) )
-            // InternalSkillRealization.g:1330:1: ( ':server' )
+            // InternalSkillRealization.g:1303:1: ( ( ':server' ) )
+            // InternalSkillRealization.g:1304:1: ( ':server' )
             {
-            // InternalSkillRealization.g:1330:1: ( ':server' )
-            // InternalSkillRealization.g:1331:2: ':server'
+            // InternalSkillRealization.g:1304:1: ( ':server' )
+            // InternalSkillRealization.g:1305:2: ':server'
             {
              before(grammarAccess.getComponentCoordinationActionParameterAccess().getServerKeyword_1()); 
             match(input,24,FOLLOW_2); 
@@ -3827,14 +3827,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group__2"
-    // InternalSkillRealization.g:1340:1: rule__ComponentCoordinationActionParameter__Group__2 : rule__ComponentCoordinationActionParameter__Group__2__Impl rule__ComponentCoordinationActionParameter__Group__3 ;
+    // InternalSkillRealization.g:1314:1: rule__ComponentCoordinationActionParameter__Group__2 : rule__ComponentCoordinationActionParameter__Group__2__Impl rule__ComponentCoordinationActionParameter__Group__3 ;
     public final void rule__ComponentCoordinationActionParameter__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1344:1: ( rule__ComponentCoordinationActionParameter__Group__2__Impl rule__ComponentCoordinationActionParameter__Group__3 )
-            // InternalSkillRealization.g:1345:2: rule__ComponentCoordinationActionParameter__Group__2__Impl rule__ComponentCoordinationActionParameter__Group__3
+            // InternalSkillRealization.g:1318:1: ( rule__ComponentCoordinationActionParameter__Group__2__Impl rule__ComponentCoordinationActionParameter__Group__3 )
+            // InternalSkillRealization.g:1319:2: rule__ComponentCoordinationActionParameter__Group__2__Impl rule__ComponentCoordinationActionParameter__Group__3
             {
             pushFollow(FOLLOW_24);
             rule__ComponentCoordinationActionParameter__Group__2__Impl();
@@ -3865,21 +3865,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group__2__Impl"
-    // InternalSkillRealization.g:1352:1: rule__ComponentCoordinationActionParameter__Group__2__Impl : ( ( rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2 ) ) ;
+    // InternalSkillRealization.g:1326:1: rule__ComponentCoordinationActionParameter__Group__2__Impl : ( ( rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2 ) ) ;
     public final void rule__ComponentCoordinationActionParameter__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1356:1: ( ( ( rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2 ) ) )
-            // InternalSkillRealization.g:1357:1: ( ( rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2 ) )
+            // InternalSkillRealization.g:1330:1: ( ( ( rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2 ) ) )
+            // InternalSkillRealization.g:1331:1: ( ( rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2 ) )
             {
-            // InternalSkillRealization.g:1357:1: ( ( rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2 ) )
-            // InternalSkillRealization.g:1358:2: ( rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2 )
+            // InternalSkillRealization.g:1331:1: ( ( rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2 ) )
+            // InternalSkillRealization.g:1332:2: ( rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2 )
             {
              before(grammarAccess.getComponentCoordinationActionParameterAccess().getCoordinationServiceAssignment_2()); 
-            // InternalSkillRealization.g:1359:2: ( rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2 )
-            // InternalSkillRealization.g:1359:3: rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2
+            // InternalSkillRealization.g:1333:2: ( rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2 )
+            // InternalSkillRealization.g:1333:3: rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2();
@@ -3912,14 +3912,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group__3"
-    // InternalSkillRealization.g:1367:1: rule__ComponentCoordinationActionParameter__Group__3 : rule__ComponentCoordinationActionParameter__Group__3__Impl rule__ComponentCoordinationActionParameter__Group__4 ;
+    // InternalSkillRealization.g:1341:1: rule__ComponentCoordinationActionParameter__Group__3 : rule__ComponentCoordinationActionParameter__Group__3__Impl rule__ComponentCoordinationActionParameter__Group__4 ;
     public final void rule__ComponentCoordinationActionParameter__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1371:1: ( rule__ComponentCoordinationActionParameter__Group__3__Impl rule__ComponentCoordinationActionParameter__Group__4 )
-            // InternalSkillRealization.g:1372:2: rule__ComponentCoordinationActionParameter__Group__3__Impl rule__ComponentCoordinationActionParameter__Group__4
+            // InternalSkillRealization.g:1345:1: ( rule__ComponentCoordinationActionParameter__Group__3__Impl rule__ComponentCoordinationActionParameter__Group__4 )
+            // InternalSkillRealization.g:1346:2: rule__ComponentCoordinationActionParameter__Group__3__Impl rule__ComponentCoordinationActionParameter__Group__4
             {
             pushFollow(FOLLOW_9);
             rule__ComponentCoordinationActionParameter__Group__3__Impl();
@@ -3950,17 +3950,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group__3__Impl"
-    // InternalSkillRealization.g:1379:1: rule__ComponentCoordinationActionParameter__Group__3__Impl : ( ':param' ) ;
+    // InternalSkillRealization.g:1353:1: rule__ComponentCoordinationActionParameter__Group__3__Impl : ( ':param' ) ;
     public final void rule__ComponentCoordinationActionParameter__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1383:1: ( ( ':param' ) )
-            // InternalSkillRealization.g:1384:1: ( ':param' )
+            // InternalSkillRealization.g:1357:1: ( ( ':param' ) )
+            // InternalSkillRealization.g:1358:1: ( ':param' )
             {
-            // InternalSkillRealization.g:1384:1: ( ':param' )
-            // InternalSkillRealization.g:1385:2: ':param'
+            // InternalSkillRealization.g:1358:1: ( ':param' )
+            // InternalSkillRealization.g:1359:2: ':param'
             {
              before(grammarAccess.getComponentCoordinationActionParameterAccess().getParamKeyword_3()); 
             match(input,25,FOLLOW_2); 
@@ -3987,14 +3987,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group__4"
-    // InternalSkillRealization.g:1394:1: rule__ComponentCoordinationActionParameter__Group__4 : rule__ComponentCoordinationActionParameter__Group__4__Impl rule__ComponentCoordinationActionParameter__Group__5 ;
+    // InternalSkillRealization.g:1368:1: rule__ComponentCoordinationActionParameter__Group__4 : rule__ComponentCoordinationActionParameter__Group__4__Impl rule__ComponentCoordinationActionParameter__Group__5 ;
     public final void rule__ComponentCoordinationActionParameter__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1398:1: ( rule__ComponentCoordinationActionParameter__Group__4__Impl rule__ComponentCoordinationActionParameter__Group__5 )
-            // InternalSkillRealization.g:1399:2: rule__ComponentCoordinationActionParameter__Group__4__Impl rule__ComponentCoordinationActionParameter__Group__5
+            // InternalSkillRealization.g:1372:1: ( rule__ComponentCoordinationActionParameter__Group__4__Impl rule__ComponentCoordinationActionParameter__Group__5 )
+            // InternalSkillRealization.g:1373:2: rule__ComponentCoordinationActionParameter__Group__4__Impl rule__ComponentCoordinationActionParameter__Group__5
             {
             pushFollow(FOLLOW_25);
             rule__ComponentCoordinationActionParameter__Group__4__Impl();
@@ -4025,21 +4025,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group__4__Impl"
-    // InternalSkillRealization.g:1406:1: rule__ComponentCoordinationActionParameter__Group__4__Impl : ( ( rule__ComponentCoordinationActionParameter__ParameterAssignment_4 ) ) ;
+    // InternalSkillRealization.g:1380:1: rule__ComponentCoordinationActionParameter__Group__4__Impl : ( ( rule__ComponentCoordinationActionParameter__ParameterAssignment_4 ) ) ;
     public final void rule__ComponentCoordinationActionParameter__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1410:1: ( ( ( rule__ComponentCoordinationActionParameter__ParameterAssignment_4 ) ) )
-            // InternalSkillRealization.g:1411:1: ( ( rule__ComponentCoordinationActionParameter__ParameterAssignment_4 ) )
+            // InternalSkillRealization.g:1384:1: ( ( ( rule__ComponentCoordinationActionParameter__ParameterAssignment_4 ) ) )
+            // InternalSkillRealization.g:1385:1: ( ( rule__ComponentCoordinationActionParameter__ParameterAssignment_4 ) )
             {
-            // InternalSkillRealization.g:1411:1: ( ( rule__ComponentCoordinationActionParameter__ParameterAssignment_4 ) )
-            // InternalSkillRealization.g:1412:2: ( rule__ComponentCoordinationActionParameter__ParameterAssignment_4 )
+            // InternalSkillRealization.g:1385:1: ( ( rule__ComponentCoordinationActionParameter__ParameterAssignment_4 ) )
+            // InternalSkillRealization.g:1386:2: ( rule__ComponentCoordinationActionParameter__ParameterAssignment_4 )
             {
              before(grammarAccess.getComponentCoordinationActionParameterAccess().getParameterAssignment_4()); 
-            // InternalSkillRealization.g:1413:2: ( rule__ComponentCoordinationActionParameter__ParameterAssignment_4 )
-            // InternalSkillRealization.g:1413:3: rule__ComponentCoordinationActionParameter__ParameterAssignment_4
+            // InternalSkillRealization.g:1387:2: ( rule__ComponentCoordinationActionParameter__ParameterAssignment_4 )
+            // InternalSkillRealization.g:1387:3: rule__ComponentCoordinationActionParameter__ParameterAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__ComponentCoordinationActionParameter__ParameterAssignment_4();
@@ -4072,14 +4072,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group__5"
-    // InternalSkillRealization.g:1421:1: rule__ComponentCoordinationActionParameter__Group__5 : rule__ComponentCoordinationActionParameter__Group__5__Impl ;
+    // InternalSkillRealization.g:1395:1: rule__ComponentCoordinationActionParameter__Group__5 : rule__ComponentCoordinationActionParameter__Group__5__Impl ;
     public final void rule__ComponentCoordinationActionParameter__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1425:1: ( rule__ComponentCoordinationActionParameter__Group__5__Impl )
-            // InternalSkillRealization.g:1426:2: rule__ComponentCoordinationActionParameter__Group__5__Impl
+            // InternalSkillRealization.g:1399:1: ( rule__ComponentCoordinationActionParameter__Group__5__Impl )
+            // InternalSkillRealization.g:1400:2: rule__ComponentCoordinationActionParameter__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ComponentCoordinationActionParameter__Group__5__Impl();
@@ -4105,20 +4105,20 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group__5__Impl"
-    // InternalSkillRealization.g:1432:1: rule__ComponentCoordinationActionParameter__Group__5__Impl : ( ( rule__ComponentCoordinationActionParameter__Group_5__0 )? ) ;
+    // InternalSkillRealization.g:1406:1: rule__ComponentCoordinationActionParameter__Group__5__Impl : ( ( rule__ComponentCoordinationActionParameter__Group_5__0 )? ) ;
     public final void rule__ComponentCoordinationActionParameter__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1436:1: ( ( ( rule__ComponentCoordinationActionParameter__Group_5__0 )? ) )
-            // InternalSkillRealization.g:1437:1: ( ( rule__ComponentCoordinationActionParameter__Group_5__0 )? )
+            // InternalSkillRealization.g:1410:1: ( ( ( rule__ComponentCoordinationActionParameter__Group_5__0 )? ) )
+            // InternalSkillRealization.g:1411:1: ( ( rule__ComponentCoordinationActionParameter__Group_5__0 )? )
             {
-            // InternalSkillRealization.g:1437:1: ( ( rule__ComponentCoordinationActionParameter__Group_5__0 )? )
-            // InternalSkillRealization.g:1438:2: ( rule__ComponentCoordinationActionParameter__Group_5__0 )?
+            // InternalSkillRealization.g:1411:1: ( ( rule__ComponentCoordinationActionParameter__Group_5__0 )? )
+            // InternalSkillRealization.g:1412:2: ( rule__ComponentCoordinationActionParameter__Group_5__0 )?
             {
              before(grammarAccess.getComponentCoordinationActionParameterAccess().getGroup_5()); 
-            // InternalSkillRealization.g:1439:2: ( rule__ComponentCoordinationActionParameter__Group_5__0 )?
+            // InternalSkillRealization.g:1413:2: ( rule__ComponentCoordinationActionParameter__Group_5__0 )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -4127,7 +4127,7 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
             }
             switch (alt7) {
                 case 1 :
-                    // InternalSkillRealization.g:1439:3: rule__ComponentCoordinationActionParameter__Group_5__0
+                    // InternalSkillRealization.g:1413:3: rule__ComponentCoordinationActionParameter__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ComponentCoordinationActionParameter__Group_5__0();
@@ -4163,14 +4163,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group_5__0"
-    // InternalSkillRealization.g:1448:1: rule__ComponentCoordinationActionParameter__Group_5__0 : rule__ComponentCoordinationActionParameter__Group_5__0__Impl rule__ComponentCoordinationActionParameter__Group_5__1 ;
+    // InternalSkillRealization.g:1422:1: rule__ComponentCoordinationActionParameter__Group_5__0 : rule__ComponentCoordinationActionParameter__Group_5__0__Impl rule__ComponentCoordinationActionParameter__Group_5__1 ;
     public final void rule__ComponentCoordinationActionParameter__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1452:1: ( rule__ComponentCoordinationActionParameter__Group_5__0__Impl rule__ComponentCoordinationActionParameter__Group_5__1 )
-            // InternalSkillRealization.g:1453:2: rule__ComponentCoordinationActionParameter__Group_5__0__Impl rule__ComponentCoordinationActionParameter__Group_5__1
+            // InternalSkillRealization.g:1426:1: ( rule__ComponentCoordinationActionParameter__Group_5__0__Impl rule__ComponentCoordinationActionParameter__Group_5__1 )
+            // InternalSkillRealization.g:1427:2: rule__ComponentCoordinationActionParameter__Group_5__0__Impl rule__ComponentCoordinationActionParameter__Group_5__1
             {
             pushFollow(FOLLOW_26);
             rule__ComponentCoordinationActionParameter__Group_5__0__Impl();
@@ -4201,17 +4201,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group_5__0__Impl"
-    // InternalSkillRealization.g:1460:1: rule__ComponentCoordinationActionParameter__Group_5__0__Impl : ( ':paramvalue' ) ;
+    // InternalSkillRealization.g:1434:1: rule__ComponentCoordinationActionParameter__Group_5__0__Impl : ( ':paramvalue' ) ;
     public final void rule__ComponentCoordinationActionParameter__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1464:1: ( ( ':paramvalue' ) )
-            // InternalSkillRealization.g:1465:1: ( ':paramvalue' )
+            // InternalSkillRealization.g:1438:1: ( ( ':paramvalue' ) )
+            // InternalSkillRealization.g:1439:1: ( ':paramvalue' )
             {
-            // InternalSkillRealization.g:1465:1: ( ':paramvalue' )
-            // InternalSkillRealization.g:1466:2: ':paramvalue'
+            // InternalSkillRealization.g:1439:1: ( ':paramvalue' )
+            // InternalSkillRealization.g:1440:2: ':paramvalue'
             {
              before(grammarAccess.getComponentCoordinationActionParameterAccess().getParamvalueKeyword_5_0()); 
             match(input,26,FOLLOW_2); 
@@ -4238,14 +4238,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group_5__1"
-    // InternalSkillRealization.g:1475:1: rule__ComponentCoordinationActionParameter__Group_5__1 : rule__ComponentCoordinationActionParameter__Group_5__1__Impl ;
+    // InternalSkillRealization.g:1449:1: rule__ComponentCoordinationActionParameter__Group_5__1 : rule__ComponentCoordinationActionParameter__Group_5__1__Impl ;
     public final void rule__ComponentCoordinationActionParameter__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1479:1: ( rule__ComponentCoordinationActionParameter__Group_5__1__Impl )
-            // InternalSkillRealization.g:1480:2: rule__ComponentCoordinationActionParameter__Group_5__1__Impl
+            // InternalSkillRealization.g:1453:1: ( rule__ComponentCoordinationActionParameter__Group_5__1__Impl )
+            // InternalSkillRealization.g:1454:2: rule__ComponentCoordinationActionParameter__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ComponentCoordinationActionParameter__Group_5__1__Impl();
@@ -4271,21 +4271,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__Group_5__1__Impl"
-    // InternalSkillRealization.g:1486:1: rule__ComponentCoordinationActionParameter__Group_5__1__Impl : ( ( rule__ComponentCoordinationActionParameter__ValueAssignment_5_1 ) ) ;
+    // InternalSkillRealization.g:1460:1: rule__ComponentCoordinationActionParameter__Group_5__1__Impl : ( ( rule__ComponentCoordinationActionParameter__ValueAssignment_5_1 ) ) ;
     public final void rule__ComponentCoordinationActionParameter__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1490:1: ( ( ( rule__ComponentCoordinationActionParameter__ValueAssignment_5_1 ) ) )
-            // InternalSkillRealization.g:1491:1: ( ( rule__ComponentCoordinationActionParameter__ValueAssignment_5_1 ) )
+            // InternalSkillRealization.g:1464:1: ( ( ( rule__ComponentCoordinationActionParameter__ValueAssignment_5_1 ) ) )
+            // InternalSkillRealization.g:1465:1: ( ( rule__ComponentCoordinationActionParameter__ValueAssignment_5_1 ) )
             {
-            // InternalSkillRealization.g:1491:1: ( ( rule__ComponentCoordinationActionParameter__ValueAssignment_5_1 ) )
-            // InternalSkillRealization.g:1492:2: ( rule__ComponentCoordinationActionParameter__ValueAssignment_5_1 )
+            // InternalSkillRealization.g:1465:1: ( ( rule__ComponentCoordinationActionParameter__ValueAssignment_5_1 ) )
+            // InternalSkillRealization.g:1466:2: ( rule__ComponentCoordinationActionParameter__ValueAssignment_5_1 )
             {
              before(grammarAccess.getComponentCoordinationActionParameterAccess().getValueAssignment_5_1()); 
-            // InternalSkillRealization.g:1493:2: ( rule__ComponentCoordinationActionParameter__ValueAssignment_5_1 )
-            // InternalSkillRealization.g:1493:3: rule__ComponentCoordinationActionParameter__ValueAssignment_5_1
+            // InternalSkillRealization.g:1467:2: ( rule__ComponentCoordinationActionParameter__ValueAssignment_5_1 )
+            // InternalSkillRealization.g:1467:3: rule__ComponentCoordinationActionParameter__ValueAssignment_5_1
             {
             pushFollow(FOLLOW_2);
             rule__ComponentCoordinationActionParameter__ValueAssignment_5_1();
@@ -4318,14 +4318,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionActivation__Group__0"
-    // InternalSkillRealization.g:1502:1: rule__ComponentCoordinationActionActivation__Group__0 : rule__ComponentCoordinationActionActivation__Group__0__Impl rule__ComponentCoordinationActionActivation__Group__1 ;
+    // InternalSkillRealization.g:1476:1: rule__ComponentCoordinationActionActivation__Group__0 : rule__ComponentCoordinationActionActivation__Group__0__Impl rule__ComponentCoordinationActionActivation__Group__1 ;
     public final void rule__ComponentCoordinationActionActivation__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1506:1: ( rule__ComponentCoordinationActionActivation__Group__0__Impl rule__ComponentCoordinationActionActivation__Group__1 )
-            // InternalSkillRealization.g:1507:2: rule__ComponentCoordinationActionActivation__Group__0__Impl rule__ComponentCoordinationActionActivation__Group__1
+            // InternalSkillRealization.g:1480:1: ( rule__ComponentCoordinationActionActivation__Group__0__Impl rule__ComponentCoordinationActionActivation__Group__1 )
+            // InternalSkillRealization.g:1481:2: rule__ComponentCoordinationActionActivation__Group__0__Impl rule__ComponentCoordinationActionActivation__Group__1
             {
             pushFollow(FOLLOW_23);
             rule__ComponentCoordinationActionActivation__Group__0__Impl();
@@ -4356,17 +4356,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionActivation__Group__0__Impl"
-    // InternalSkillRealization.g:1514:1: rule__ComponentCoordinationActionActivation__Group__0__Impl : ( 'tcl-state' ) ;
+    // InternalSkillRealization.g:1488:1: rule__ComponentCoordinationActionActivation__Group__0__Impl : ( 'tcl-state' ) ;
     public final void rule__ComponentCoordinationActionActivation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1518:1: ( ( 'tcl-state' ) )
-            // InternalSkillRealization.g:1519:1: ( 'tcl-state' )
+            // InternalSkillRealization.g:1492:1: ( ( 'tcl-state' ) )
+            // InternalSkillRealization.g:1493:1: ( 'tcl-state' )
             {
-            // InternalSkillRealization.g:1519:1: ( 'tcl-state' )
-            // InternalSkillRealization.g:1520:2: 'tcl-state'
+            // InternalSkillRealization.g:1493:1: ( 'tcl-state' )
+            // InternalSkillRealization.g:1494:2: 'tcl-state'
             {
              before(grammarAccess.getComponentCoordinationActionActivationAccess().getTclStateKeyword_0()); 
             match(input,27,FOLLOW_2); 
@@ -4393,14 +4393,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionActivation__Group__1"
-    // InternalSkillRealization.g:1529:1: rule__ComponentCoordinationActionActivation__Group__1 : rule__ComponentCoordinationActionActivation__Group__1__Impl rule__ComponentCoordinationActionActivation__Group__2 ;
+    // InternalSkillRealization.g:1503:1: rule__ComponentCoordinationActionActivation__Group__1 : rule__ComponentCoordinationActionActivation__Group__1__Impl rule__ComponentCoordinationActionActivation__Group__2 ;
     public final void rule__ComponentCoordinationActionActivation__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1533:1: ( rule__ComponentCoordinationActionActivation__Group__1__Impl rule__ComponentCoordinationActionActivation__Group__2 )
-            // InternalSkillRealization.g:1534:2: rule__ComponentCoordinationActionActivation__Group__1__Impl rule__ComponentCoordinationActionActivation__Group__2
+            // InternalSkillRealization.g:1507:1: ( rule__ComponentCoordinationActionActivation__Group__1__Impl rule__ComponentCoordinationActionActivation__Group__2 )
+            // InternalSkillRealization.g:1508:2: rule__ComponentCoordinationActionActivation__Group__1__Impl rule__ComponentCoordinationActionActivation__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__ComponentCoordinationActionActivation__Group__1__Impl();
@@ -4431,17 +4431,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionActivation__Group__1__Impl"
-    // InternalSkillRealization.g:1541:1: rule__ComponentCoordinationActionActivation__Group__1__Impl : ( ':server' ) ;
+    // InternalSkillRealization.g:1515:1: rule__ComponentCoordinationActionActivation__Group__1__Impl : ( ':server' ) ;
     public final void rule__ComponentCoordinationActionActivation__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1545:1: ( ( ':server' ) )
-            // InternalSkillRealization.g:1546:1: ( ':server' )
+            // InternalSkillRealization.g:1519:1: ( ( ':server' ) )
+            // InternalSkillRealization.g:1520:1: ( ':server' )
             {
-            // InternalSkillRealization.g:1546:1: ( ':server' )
-            // InternalSkillRealization.g:1547:2: ':server'
+            // InternalSkillRealization.g:1520:1: ( ':server' )
+            // InternalSkillRealization.g:1521:2: ':server'
             {
              before(grammarAccess.getComponentCoordinationActionActivationAccess().getServerKeyword_1()); 
             match(input,24,FOLLOW_2); 
@@ -4468,14 +4468,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionActivation__Group__2"
-    // InternalSkillRealization.g:1556:1: rule__ComponentCoordinationActionActivation__Group__2 : rule__ComponentCoordinationActionActivation__Group__2__Impl rule__ComponentCoordinationActionActivation__Group__3 ;
+    // InternalSkillRealization.g:1530:1: rule__ComponentCoordinationActionActivation__Group__2 : rule__ComponentCoordinationActionActivation__Group__2__Impl rule__ComponentCoordinationActionActivation__Group__3 ;
     public final void rule__ComponentCoordinationActionActivation__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1560:1: ( rule__ComponentCoordinationActionActivation__Group__2__Impl rule__ComponentCoordinationActionActivation__Group__3 )
-            // InternalSkillRealization.g:1561:2: rule__ComponentCoordinationActionActivation__Group__2__Impl rule__ComponentCoordinationActionActivation__Group__3
+            // InternalSkillRealization.g:1534:1: ( rule__ComponentCoordinationActionActivation__Group__2__Impl rule__ComponentCoordinationActionActivation__Group__3 )
+            // InternalSkillRealization.g:1535:2: rule__ComponentCoordinationActionActivation__Group__2__Impl rule__ComponentCoordinationActionActivation__Group__3
             {
             pushFollow(FOLLOW_27);
             rule__ComponentCoordinationActionActivation__Group__2__Impl();
@@ -4506,21 +4506,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionActivation__Group__2__Impl"
-    // InternalSkillRealization.g:1568:1: rule__ComponentCoordinationActionActivation__Group__2__Impl : ( ( rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2 ) ) ;
+    // InternalSkillRealization.g:1542:1: rule__ComponentCoordinationActionActivation__Group__2__Impl : ( ( rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2 ) ) ;
     public final void rule__ComponentCoordinationActionActivation__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1572:1: ( ( ( rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2 ) ) )
-            // InternalSkillRealization.g:1573:1: ( ( rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2 ) )
+            // InternalSkillRealization.g:1546:1: ( ( ( rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2 ) ) )
+            // InternalSkillRealization.g:1547:1: ( ( rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2 ) )
             {
-            // InternalSkillRealization.g:1573:1: ( ( rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2 ) )
-            // InternalSkillRealization.g:1574:2: ( rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2 )
+            // InternalSkillRealization.g:1547:1: ( ( rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2 ) )
+            // InternalSkillRealization.g:1548:2: ( rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2 )
             {
              before(grammarAccess.getComponentCoordinationActionActivationAccess().getCoordinationServiceAssignment_2()); 
-            // InternalSkillRealization.g:1575:2: ( rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2 )
-            // InternalSkillRealization.g:1575:3: rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2
+            // InternalSkillRealization.g:1549:2: ( rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2 )
+            // InternalSkillRealization.g:1549:3: rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2();
@@ -4553,14 +4553,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionActivation__Group__3"
-    // InternalSkillRealization.g:1583:1: rule__ComponentCoordinationActionActivation__Group__3 : rule__ComponentCoordinationActionActivation__Group__3__Impl rule__ComponentCoordinationActionActivation__Group__4 ;
+    // InternalSkillRealization.g:1557:1: rule__ComponentCoordinationActionActivation__Group__3 : rule__ComponentCoordinationActionActivation__Group__3__Impl rule__ComponentCoordinationActionActivation__Group__4 ;
     public final void rule__ComponentCoordinationActionActivation__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1587:1: ( rule__ComponentCoordinationActionActivation__Group__3__Impl rule__ComponentCoordinationActionActivation__Group__4 )
-            // InternalSkillRealization.g:1588:2: rule__ComponentCoordinationActionActivation__Group__3__Impl rule__ComponentCoordinationActionActivation__Group__4
+            // InternalSkillRealization.g:1561:1: ( rule__ComponentCoordinationActionActivation__Group__3__Impl rule__ComponentCoordinationActionActivation__Group__4 )
+            // InternalSkillRealization.g:1562:2: rule__ComponentCoordinationActionActivation__Group__3__Impl rule__ComponentCoordinationActionActivation__Group__4
             {
             pushFollow(FOLLOW_9);
             rule__ComponentCoordinationActionActivation__Group__3__Impl();
@@ -4591,17 +4591,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionActivation__Group__3__Impl"
-    // InternalSkillRealization.g:1595:1: rule__ComponentCoordinationActionActivation__Group__3__Impl : ( ':state' ) ;
+    // InternalSkillRealization.g:1569:1: rule__ComponentCoordinationActionActivation__Group__3__Impl : ( ':state' ) ;
     public final void rule__ComponentCoordinationActionActivation__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1599:1: ( ( ':state' ) )
-            // InternalSkillRealization.g:1600:1: ( ':state' )
+            // InternalSkillRealization.g:1573:1: ( ( ':state' ) )
+            // InternalSkillRealization.g:1574:1: ( ':state' )
             {
-            // InternalSkillRealization.g:1600:1: ( ':state' )
-            // InternalSkillRealization.g:1601:2: ':state'
+            // InternalSkillRealization.g:1574:1: ( ':state' )
+            // InternalSkillRealization.g:1575:2: ':state'
             {
              before(grammarAccess.getComponentCoordinationActionActivationAccess().getStateKeyword_3()); 
             match(input,28,FOLLOW_2); 
@@ -4628,14 +4628,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionActivation__Group__4"
-    // InternalSkillRealization.g:1610:1: rule__ComponentCoordinationActionActivation__Group__4 : rule__ComponentCoordinationActionActivation__Group__4__Impl ;
+    // InternalSkillRealization.g:1584:1: rule__ComponentCoordinationActionActivation__Group__4 : rule__ComponentCoordinationActionActivation__Group__4__Impl ;
     public final void rule__ComponentCoordinationActionActivation__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1614:1: ( rule__ComponentCoordinationActionActivation__Group__4__Impl )
-            // InternalSkillRealization.g:1615:2: rule__ComponentCoordinationActionActivation__Group__4__Impl
+            // InternalSkillRealization.g:1588:1: ( rule__ComponentCoordinationActionActivation__Group__4__Impl )
+            // InternalSkillRealization.g:1589:2: rule__ComponentCoordinationActionActivation__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ComponentCoordinationActionActivation__Group__4__Impl();
@@ -4661,21 +4661,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionActivation__Group__4__Impl"
-    // InternalSkillRealization.g:1621:1: rule__ComponentCoordinationActionActivation__Group__4__Impl : ( ( rule__ComponentCoordinationActionActivation__StateAssignment_4 ) ) ;
+    // InternalSkillRealization.g:1595:1: rule__ComponentCoordinationActionActivation__Group__4__Impl : ( ( rule__ComponentCoordinationActionActivation__StateAssignment_4 ) ) ;
     public final void rule__ComponentCoordinationActionActivation__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1625:1: ( ( ( rule__ComponentCoordinationActionActivation__StateAssignment_4 ) ) )
-            // InternalSkillRealization.g:1626:1: ( ( rule__ComponentCoordinationActionActivation__StateAssignment_4 ) )
+            // InternalSkillRealization.g:1599:1: ( ( ( rule__ComponentCoordinationActionActivation__StateAssignment_4 ) ) )
+            // InternalSkillRealization.g:1600:1: ( ( rule__ComponentCoordinationActionActivation__StateAssignment_4 ) )
             {
-            // InternalSkillRealization.g:1626:1: ( ( rule__ComponentCoordinationActionActivation__StateAssignment_4 ) )
-            // InternalSkillRealization.g:1627:2: ( rule__ComponentCoordinationActionActivation__StateAssignment_4 )
+            // InternalSkillRealization.g:1600:1: ( ( rule__ComponentCoordinationActionActivation__StateAssignment_4 ) )
+            // InternalSkillRealization.g:1601:2: ( rule__ComponentCoordinationActionActivation__StateAssignment_4 )
             {
              before(grammarAccess.getComponentCoordinationActionActivationAccess().getStateAssignment_4()); 
-            // InternalSkillRealization.g:1628:2: ( rule__ComponentCoordinationActionActivation__StateAssignment_4 )
-            // InternalSkillRealization.g:1628:3: rule__ComponentCoordinationActionActivation__StateAssignment_4
+            // InternalSkillRealization.g:1602:2: ( rule__ComponentCoordinationActionActivation__StateAssignment_4 )
+            // InternalSkillRealization.g:1602:3: rule__ComponentCoordinationActionActivation__StateAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__ComponentCoordinationActionActivation__StateAssignment_4();
@@ -4708,14 +4708,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionEvent__Group__0"
-    // InternalSkillRealization.g:1637:1: rule__ComponentCoordinationActionEvent__Group__0 : rule__ComponentCoordinationActionEvent__Group__0__Impl rule__ComponentCoordinationActionEvent__Group__1 ;
+    // InternalSkillRealization.g:1611:1: rule__ComponentCoordinationActionEvent__Group__0 : rule__ComponentCoordinationActionEvent__Group__0__Impl rule__ComponentCoordinationActionEvent__Group__1 ;
     public final void rule__ComponentCoordinationActionEvent__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1641:1: ( rule__ComponentCoordinationActionEvent__Group__0__Impl rule__ComponentCoordinationActionEvent__Group__1 )
-            // InternalSkillRealization.g:1642:2: rule__ComponentCoordinationActionEvent__Group__0__Impl rule__ComponentCoordinationActionEvent__Group__1
+            // InternalSkillRealization.g:1615:1: ( rule__ComponentCoordinationActionEvent__Group__0__Impl rule__ComponentCoordinationActionEvent__Group__1 )
+            // InternalSkillRealization.g:1616:2: rule__ComponentCoordinationActionEvent__Group__0__Impl rule__ComponentCoordinationActionEvent__Group__1
             {
             pushFollow(FOLLOW_28);
             rule__ComponentCoordinationActionEvent__Group__0__Impl();
@@ -4746,17 +4746,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionEvent__Group__0__Impl"
-    // InternalSkillRealization.g:1649:1: rule__ComponentCoordinationActionEvent__Group__0__Impl : ( 'tcl-activate-event' ) ;
+    // InternalSkillRealization.g:1623:1: rule__ComponentCoordinationActionEvent__Group__0__Impl : ( 'tcl-activate-event' ) ;
     public final void rule__ComponentCoordinationActionEvent__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1653:1: ( ( 'tcl-activate-event' ) )
-            // InternalSkillRealization.g:1654:1: ( 'tcl-activate-event' )
+            // InternalSkillRealization.g:1627:1: ( ( 'tcl-activate-event' ) )
+            // InternalSkillRealization.g:1628:1: ( 'tcl-activate-event' )
             {
-            // InternalSkillRealization.g:1654:1: ( 'tcl-activate-event' )
-            // InternalSkillRealization.g:1655:2: 'tcl-activate-event'
+            // InternalSkillRealization.g:1628:1: ( 'tcl-activate-event' )
+            // InternalSkillRealization.g:1629:2: 'tcl-activate-event'
             {
              before(grammarAccess.getComponentCoordinationActionEventAccess().getTclActivateEventKeyword_0()); 
             match(input,29,FOLLOW_2); 
@@ -4783,14 +4783,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionEvent__Group__1"
-    // InternalSkillRealization.g:1664:1: rule__ComponentCoordinationActionEvent__Group__1 : rule__ComponentCoordinationActionEvent__Group__1__Impl rule__ComponentCoordinationActionEvent__Group__2 ;
+    // InternalSkillRealization.g:1638:1: rule__ComponentCoordinationActionEvent__Group__1 : rule__ComponentCoordinationActionEvent__Group__1__Impl rule__ComponentCoordinationActionEvent__Group__2 ;
     public final void rule__ComponentCoordinationActionEvent__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1668:1: ( rule__ComponentCoordinationActionEvent__Group__1__Impl rule__ComponentCoordinationActionEvent__Group__2 )
-            // InternalSkillRealization.g:1669:2: rule__ComponentCoordinationActionEvent__Group__1__Impl rule__ComponentCoordinationActionEvent__Group__2
+            // InternalSkillRealization.g:1642:1: ( rule__ComponentCoordinationActionEvent__Group__1__Impl rule__ComponentCoordinationActionEvent__Group__2 )
+            // InternalSkillRealization.g:1643:2: rule__ComponentCoordinationActionEvent__Group__1__Impl rule__ComponentCoordinationActionEvent__Group__2
             {
             pushFollow(FOLLOW_23);
             rule__ComponentCoordinationActionEvent__Group__1__Impl();
@@ -4821,17 +4821,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionEvent__Group__1__Impl"
-    // InternalSkillRealization.g:1676:1: rule__ComponentCoordinationActionEvent__Group__1__Impl : ( ':name' ) ;
+    // InternalSkillRealization.g:1650:1: rule__ComponentCoordinationActionEvent__Group__1__Impl : ( ':name' ) ;
     public final void rule__ComponentCoordinationActionEvent__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1680:1: ( ( ':name' ) )
-            // InternalSkillRealization.g:1681:1: ( ':name' )
+            // InternalSkillRealization.g:1654:1: ( ( ':name' ) )
+            // InternalSkillRealization.g:1655:1: ( ':name' )
             {
-            // InternalSkillRealization.g:1681:1: ( ':name' )
-            // InternalSkillRealization.g:1682:2: ':name'
+            // InternalSkillRealization.g:1655:1: ( ':name' )
+            // InternalSkillRealization.g:1656:2: ':name'
             {
              before(grammarAccess.getComponentCoordinationActionEventAccess().getNameKeyword_1()); 
             match(input,30,FOLLOW_2); 
@@ -4858,14 +4858,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionEvent__Group__2"
-    // InternalSkillRealization.g:1691:1: rule__ComponentCoordinationActionEvent__Group__2 : rule__ComponentCoordinationActionEvent__Group__2__Impl rule__ComponentCoordinationActionEvent__Group__3 ;
+    // InternalSkillRealization.g:1665:1: rule__ComponentCoordinationActionEvent__Group__2 : rule__ComponentCoordinationActionEvent__Group__2__Impl rule__ComponentCoordinationActionEvent__Group__3 ;
     public final void rule__ComponentCoordinationActionEvent__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1695:1: ( rule__ComponentCoordinationActionEvent__Group__2__Impl rule__ComponentCoordinationActionEvent__Group__3 )
-            // InternalSkillRealization.g:1696:2: rule__ComponentCoordinationActionEvent__Group__2__Impl rule__ComponentCoordinationActionEvent__Group__3
+            // InternalSkillRealization.g:1669:1: ( rule__ComponentCoordinationActionEvent__Group__2__Impl rule__ComponentCoordinationActionEvent__Group__3 )
+            // InternalSkillRealization.g:1670:2: rule__ComponentCoordinationActionEvent__Group__2__Impl rule__ComponentCoordinationActionEvent__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__ComponentCoordinationActionEvent__Group__2__Impl();
@@ -4896,17 +4896,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionEvent__Group__2__Impl"
-    // InternalSkillRealization.g:1703:1: rule__ComponentCoordinationActionEvent__Group__2__Impl : ( ':server' ) ;
+    // InternalSkillRealization.g:1677:1: rule__ComponentCoordinationActionEvent__Group__2__Impl : ( ':server' ) ;
     public final void rule__ComponentCoordinationActionEvent__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1707:1: ( ( ':server' ) )
-            // InternalSkillRealization.g:1708:1: ( ':server' )
+            // InternalSkillRealization.g:1681:1: ( ( ':server' ) )
+            // InternalSkillRealization.g:1682:1: ( ':server' )
             {
-            // InternalSkillRealization.g:1708:1: ( ':server' )
-            // InternalSkillRealization.g:1709:2: ':server'
+            // InternalSkillRealization.g:1682:1: ( ':server' )
+            // InternalSkillRealization.g:1683:2: ':server'
             {
              before(grammarAccess.getComponentCoordinationActionEventAccess().getServerKeyword_2()); 
             match(input,24,FOLLOW_2); 
@@ -4933,14 +4933,14 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionEvent__Group__3"
-    // InternalSkillRealization.g:1718:1: rule__ComponentCoordinationActionEvent__Group__3 : rule__ComponentCoordinationActionEvent__Group__3__Impl ;
+    // InternalSkillRealization.g:1692:1: rule__ComponentCoordinationActionEvent__Group__3 : rule__ComponentCoordinationActionEvent__Group__3__Impl ;
     public final void rule__ComponentCoordinationActionEvent__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1722:1: ( rule__ComponentCoordinationActionEvent__Group__3__Impl )
-            // InternalSkillRealization.g:1723:2: rule__ComponentCoordinationActionEvent__Group__3__Impl
+            // InternalSkillRealization.g:1696:1: ( rule__ComponentCoordinationActionEvent__Group__3__Impl )
+            // InternalSkillRealization.g:1697:2: rule__ComponentCoordinationActionEvent__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ComponentCoordinationActionEvent__Group__3__Impl();
@@ -4966,21 +4966,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionEvent__Group__3__Impl"
-    // InternalSkillRealization.g:1729:1: rule__ComponentCoordinationActionEvent__Group__3__Impl : ( ( rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3 ) ) ;
+    // InternalSkillRealization.g:1703:1: rule__ComponentCoordinationActionEvent__Group__3__Impl : ( ( rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3 ) ) ;
     public final void rule__ComponentCoordinationActionEvent__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1733:1: ( ( ( rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3 ) ) )
-            // InternalSkillRealization.g:1734:1: ( ( rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3 ) )
+            // InternalSkillRealization.g:1707:1: ( ( ( rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3 ) ) )
+            // InternalSkillRealization.g:1708:1: ( ( rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3 ) )
             {
-            // InternalSkillRealization.g:1734:1: ( ( rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3 ) )
-            // InternalSkillRealization.g:1735:2: ( rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3 )
+            // InternalSkillRealization.g:1708:1: ( ( rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3 ) )
+            // InternalSkillRealization.g:1709:2: ( rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3 )
             {
              before(grammarAccess.getComponentCoordinationActionEventAccess().getCoordinationServiceAssignment_3()); 
-            // InternalSkillRealization.g:1736:2: ( rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3 )
-            // InternalSkillRealization.g:1736:3: rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3
+            // InternalSkillRealization.g:1710:2: ( rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3 )
+            // InternalSkillRealization.g:1710:3: rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3();
@@ -5013,17 +5013,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealizationModel__ModulesAssignment_3"
-    // InternalSkillRealization.g:1745:1: rule__SkillRealizationModel__ModulesAssignment_3 : ( ruleCoordinationModuleRealization ) ;
+    // InternalSkillRealization.g:1719:1: rule__SkillRealizationModel__ModulesAssignment_3 : ( ruleCoordinationModuleRealization ) ;
     public final void rule__SkillRealizationModel__ModulesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1749:1: ( ( ruleCoordinationModuleRealization ) )
-            // InternalSkillRealization.g:1750:2: ( ruleCoordinationModuleRealization )
+            // InternalSkillRealization.g:1723:1: ( ( ruleCoordinationModuleRealization ) )
+            // InternalSkillRealization.g:1724:2: ( ruleCoordinationModuleRealization )
             {
-            // InternalSkillRealization.g:1750:2: ( ruleCoordinationModuleRealization )
-            // InternalSkillRealization.g:1751:3: ruleCoordinationModuleRealization
+            // InternalSkillRealization.g:1724:2: ( ruleCoordinationModuleRealization )
+            // InternalSkillRealization.g:1725:3: ruleCoordinationModuleRealization
             {
              before(grammarAccess.getSkillRealizationModelAccess().getModulesCoordinationModuleRealizationParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -5054,17 +5054,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__NameAssignment_1"
-    // InternalSkillRealization.g:1760:1: rule__CoordinationModuleRealization__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSkillRealization.g:1734:1: rule__CoordinationModuleRealization__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__CoordinationModuleRealization__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1764:1: ( ( RULE_ID ) )
-            // InternalSkillRealization.g:1765:2: ( RULE_ID )
+            // InternalSkillRealization.g:1738:1: ( ( RULE_ID ) )
+            // InternalSkillRealization.g:1739:2: ( RULE_ID )
             {
-            // InternalSkillRealization.g:1765:2: ( RULE_ID )
-            // InternalSkillRealization.g:1766:3: RULE_ID
+            // InternalSkillRealization.g:1739:2: ( RULE_ID )
+            // InternalSkillRealization.g:1740:3: RULE_ID
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5091,21 +5091,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3"
-    // InternalSkillRealization.g:1775:1: rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3 : ( ( ruleFQN ) ) ;
+    // InternalSkillRealization.g:1749:1: rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3 : ( ( ruleFQN ) ) ;
     public final void rule__CoordinationModuleRealization__CoordinationModuleDefAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1779:1: ( ( ( ruleFQN ) ) )
-            // InternalSkillRealization.g:1780:2: ( ( ruleFQN ) )
+            // InternalSkillRealization.g:1753:1: ( ( ( ruleFQN ) ) )
+            // InternalSkillRealization.g:1754:2: ( ( ruleFQN ) )
             {
-            // InternalSkillRealization.g:1780:2: ( ( ruleFQN ) )
-            // InternalSkillRealization.g:1781:3: ( ruleFQN )
+            // InternalSkillRealization.g:1754:2: ( ( ruleFQN ) )
+            // InternalSkillRealization.g:1755:3: ( ruleFQN )
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getCoordinationModuleDefCoordinationModuleDefinitionCrossReference_3_0()); 
-            // InternalSkillRealization.g:1782:3: ( ruleFQN )
-            // InternalSkillRealization.g:1783:4: ruleFQN
+            // InternalSkillRealization.g:1756:3: ( ruleFQN )
+            // InternalSkillRealization.g:1757:4: ruleFQN
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getCoordinationModuleDefCoordinationModuleDefinitionFQNParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
@@ -5140,17 +5140,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6"
-    // InternalSkillRealization.g:1794:1: rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6 : ( ruleCoordinationInterfaceInstance ) ;
+    // InternalSkillRealization.g:1768:1: rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6 : ( ruleCoordinationInterfaceInstance ) ;
     public final void rule__CoordinationModuleRealization__CoordInterfaceInstsAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1798:1: ( ( ruleCoordinationInterfaceInstance ) )
-            // InternalSkillRealization.g:1799:2: ( ruleCoordinationInterfaceInstance )
+            // InternalSkillRealization.g:1772:1: ( ( ruleCoordinationInterfaceInstance ) )
+            // InternalSkillRealization.g:1773:2: ( ruleCoordinationInterfaceInstance )
             {
-            // InternalSkillRealization.g:1799:2: ( ruleCoordinationInterfaceInstance )
-            // InternalSkillRealization.g:1800:3: ruleCoordinationInterfaceInstance
+            // InternalSkillRealization.g:1773:2: ( ruleCoordinationInterfaceInstance )
+            // InternalSkillRealization.g:1774:3: ruleCoordinationInterfaceInstance
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getCoordInterfaceInstsCoordinationInterfaceInstanceParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -5181,17 +5181,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationModuleRealization__SkillsAssignment_9"
-    // InternalSkillRealization.g:1809:1: rule__CoordinationModuleRealization__SkillsAssignment_9 : ( ruleSkillRealization ) ;
+    // InternalSkillRealization.g:1783:1: rule__CoordinationModuleRealization__SkillsAssignment_9 : ( ruleSkillRealization ) ;
     public final void rule__CoordinationModuleRealization__SkillsAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1813:1: ( ( ruleSkillRealization ) )
-            // InternalSkillRealization.g:1814:2: ( ruleSkillRealization )
+            // InternalSkillRealization.g:1787:1: ( ( ruleSkillRealization ) )
+            // InternalSkillRealization.g:1788:2: ( ruleSkillRealization )
             {
-            // InternalSkillRealization.g:1814:2: ( ruleSkillRealization )
-            // InternalSkillRealization.g:1815:3: ruleSkillRealization
+            // InternalSkillRealization.g:1788:2: ( ruleSkillRealization )
+            // InternalSkillRealization.g:1789:3: ruleSkillRealization
             {
              before(grammarAccess.getCoordinationModuleRealizationAccess().getSkillsSkillRealizationParserRuleCall_9_0()); 
             pushFollow(FOLLOW_2);
@@ -5222,21 +5222,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0"
-    // InternalSkillRealization.g:1824:1: rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0 : ( ( ruleFQN ) ) ;
+    // InternalSkillRealization.g:1798:1: rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0 : ( ( ruleFQN ) ) ;
     public final void rule__CoordinationInterfaceInstance__CoordinationInterfaceDefAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1828:1: ( ( ( ruleFQN ) ) )
-            // InternalSkillRealization.g:1829:2: ( ( ruleFQN ) )
+            // InternalSkillRealization.g:1802:1: ( ( ( ruleFQN ) ) )
+            // InternalSkillRealization.g:1803:2: ( ( ruleFQN ) )
             {
-            // InternalSkillRealization.g:1829:2: ( ( ruleFQN ) )
-            // InternalSkillRealization.g:1830:3: ( ruleFQN )
+            // InternalSkillRealization.g:1803:2: ( ( ruleFQN ) )
+            // InternalSkillRealization.g:1804:3: ( ruleFQN )
             {
              before(grammarAccess.getCoordinationInterfaceInstanceAccess().getCoordinationInterfaceDefCoordinationServiceDefinitionCrossReference_0_0()); 
-            // InternalSkillRealization.g:1831:3: ( ruleFQN )
-            // InternalSkillRealization.g:1832:4: ruleFQN
+            // InternalSkillRealization.g:1805:3: ( ruleFQN )
+            // InternalSkillRealization.g:1806:4: ruleFQN
             {
              before(grammarAccess.getCoordinationInterfaceInstanceAccess().getCoordinationInterfaceDefCoordinationServiceDefinitionFQNParserRuleCall_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -5271,17 +5271,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationInterfaceInstance__NameAssignment_2"
-    // InternalSkillRealization.g:1843:1: rule__CoordinationInterfaceInstance__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalSkillRealization.g:1817:1: rule__CoordinationInterfaceInstance__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__CoordinationInterfaceInstance__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1847:1: ( ( RULE_ID ) )
-            // InternalSkillRealization.g:1848:2: ( RULE_ID )
+            // InternalSkillRealization.g:1821:1: ( ( RULE_ID ) )
+            // InternalSkillRealization.g:1822:2: ( RULE_ID )
             {
-            // InternalSkillRealization.g:1848:2: ( RULE_ID )
-            // InternalSkillRealization.g:1849:3: RULE_ID
+            // InternalSkillRealization.g:1822:2: ( RULE_ID )
+            // InternalSkillRealization.g:1823:3: RULE_ID
             {
              before(grammarAccess.getCoordinationInterfaceInstanceAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5308,21 +5308,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__SkillDefAssignment_1"
-    // InternalSkillRealization.g:1858:1: rule__SkillRealization__SkillDefAssignment_1 : ( ( ruleFQN ) ) ;
+    // InternalSkillRealization.g:1832:1: rule__SkillRealization__SkillDefAssignment_1 : ( ( ruleFQN ) ) ;
     public final void rule__SkillRealization__SkillDefAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1862:1: ( ( ( ruleFQN ) ) )
-            // InternalSkillRealization.g:1863:2: ( ( ruleFQN ) )
+            // InternalSkillRealization.g:1836:1: ( ( ( ruleFQN ) ) )
+            // InternalSkillRealization.g:1837:2: ( ( ruleFQN ) )
             {
-            // InternalSkillRealization.g:1863:2: ( ( ruleFQN ) )
-            // InternalSkillRealization.g:1864:3: ( ruleFQN )
+            // InternalSkillRealization.g:1837:2: ( ( ruleFQN ) )
+            // InternalSkillRealization.g:1838:3: ( ruleFQN )
             {
              before(grammarAccess.getSkillRealizationAccess().getSkillDefSkillDefinitionCrossReference_1_0()); 
-            // InternalSkillRealization.g:1865:3: ( ruleFQN )
-            // InternalSkillRealization.g:1866:4: ruleFQN
+            // InternalSkillRealization.g:1839:3: ( ruleFQN )
+            // InternalSkillRealization.g:1840:4: ruleFQN
             {
              before(grammarAccess.getSkillRealizationAccess().getSkillDefSkillDefinitionFQNParserRuleCall_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -5357,17 +5357,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SkillRealization__ActionAssignment_5"
-    // InternalSkillRealization.g:1877:1: rule__SkillRealization__ActionAssignment_5 : ( ruleCoordinationActionBlock ) ;
+    // InternalSkillRealization.g:1851:1: rule__SkillRealization__ActionAssignment_5 : ( ruleCoordinationActionBlock ) ;
     public final void rule__SkillRealization__ActionAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1881:1: ( ( ruleCoordinationActionBlock ) )
-            // InternalSkillRealization.g:1882:2: ( ruleCoordinationActionBlock )
+            // InternalSkillRealization.g:1855:1: ( ( ruleCoordinationActionBlock ) )
+            // InternalSkillRealization.g:1856:2: ( ruleCoordinationActionBlock )
             {
-            // InternalSkillRealization.g:1882:2: ( ruleCoordinationActionBlock )
-            // InternalSkillRealization.g:1883:3: ruleCoordinationActionBlock
+            // InternalSkillRealization.g:1856:2: ( ruleCoordinationActionBlock )
+            // InternalSkillRealization.g:1857:3: ruleCoordinationActionBlock
             {
              before(grammarAccess.getSkillRealizationAccess().getActionCoordinationActionBlockParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -5398,17 +5398,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CoordinationActionBlock__ActionsAssignment_1"
-    // InternalSkillRealization.g:1892:1: rule__CoordinationActionBlock__ActionsAssignment_1 : ( ruleAbstractCoordinationAction ) ;
+    // InternalSkillRealization.g:1866:1: rule__CoordinationActionBlock__ActionsAssignment_1 : ( ruleAbstractCoordinationAction ) ;
     public final void rule__CoordinationActionBlock__ActionsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1896:1: ( ( ruleAbstractCoordinationAction ) )
-            // InternalSkillRealization.g:1897:2: ( ruleAbstractCoordinationAction )
+            // InternalSkillRealization.g:1870:1: ( ( ruleAbstractCoordinationAction ) )
+            // InternalSkillRealization.g:1871:2: ( ruleAbstractCoordinationAction )
             {
-            // InternalSkillRealization.g:1897:2: ( ruleAbstractCoordinationAction )
-            // InternalSkillRealization.g:1898:3: ruleAbstractCoordinationAction
+            // InternalSkillRealization.g:1871:2: ( ruleAbstractCoordinationAction )
+            // InternalSkillRealization.g:1872:3: ruleAbstractCoordinationAction
             {
              before(grammarAccess.getCoordinationActionBlockAccess().getActionsAbstractCoordinationActionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5439,21 +5439,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2"
-    // InternalSkillRealization.g:1907:1: rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalSkillRealization.g:1881:1: rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__ComponentCoordinationActionParameter__CoordinationServiceAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1911:1: ( ( ( RULE_ID ) ) )
-            // InternalSkillRealization.g:1912:2: ( ( RULE_ID ) )
+            // InternalSkillRealization.g:1885:1: ( ( ( RULE_ID ) ) )
+            // InternalSkillRealization.g:1886:2: ( ( RULE_ID ) )
             {
-            // InternalSkillRealization.g:1912:2: ( ( RULE_ID ) )
-            // InternalSkillRealization.g:1913:3: ( RULE_ID )
+            // InternalSkillRealization.g:1886:2: ( ( RULE_ID ) )
+            // InternalSkillRealization.g:1887:3: ( RULE_ID )
             {
              before(grammarAccess.getComponentCoordinationActionParameterAccess().getCoordinationServiceCoordinationInterfaceInstanceCrossReference_2_0()); 
-            // InternalSkillRealization.g:1914:3: ( RULE_ID )
-            // InternalSkillRealization.g:1915:4: RULE_ID
+            // InternalSkillRealization.g:1888:3: ( RULE_ID )
+            // InternalSkillRealization.g:1889:4: RULE_ID
             {
              before(grammarAccess.getComponentCoordinationActionParameterAccess().getCoordinationServiceCoordinationInterfaceInstanceIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5484,21 +5484,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__ParameterAssignment_4"
-    // InternalSkillRealization.g:1926:1: rule__ComponentCoordinationActionParameter__ParameterAssignment_4 : ( ( ruleFQN ) ) ;
+    // InternalSkillRealization.g:1900:1: rule__ComponentCoordinationActionParameter__ParameterAssignment_4 : ( ( ruleFQN ) ) ;
     public final void rule__ComponentCoordinationActionParameter__ParameterAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1930:1: ( ( ( ruleFQN ) ) )
-            // InternalSkillRealization.g:1931:2: ( ( ruleFQN ) )
+            // InternalSkillRealization.g:1904:1: ( ( ( ruleFQN ) ) )
+            // InternalSkillRealization.g:1905:2: ( ( ruleFQN ) )
             {
-            // InternalSkillRealization.g:1931:2: ( ( ruleFQN ) )
-            // InternalSkillRealization.g:1932:3: ( ruleFQN )
+            // InternalSkillRealization.g:1905:2: ( ( ruleFQN ) )
+            // InternalSkillRealization.g:1906:3: ( ruleFQN )
             {
              before(grammarAccess.getComponentCoordinationActionParameterAccess().getParameterAbstractParameterCrossReference_4_0()); 
-            // InternalSkillRealization.g:1933:3: ( ruleFQN )
-            // InternalSkillRealization.g:1934:4: ruleFQN
+            // InternalSkillRealization.g:1907:3: ( ruleFQN )
+            // InternalSkillRealization.g:1908:4: ruleFQN
             {
              before(grammarAccess.getComponentCoordinationActionParameterAccess().getParameterAbstractParameterFQNParserRuleCall_4_0_1()); 
             pushFollow(FOLLOW_2);
@@ -5533,17 +5533,17 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionParameter__ValueAssignment_5_1"
-    // InternalSkillRealization.g:1945:1: rule__ComponentCoordinationActionParameter__ValueAssignment_5_1 : ( RULE_STRING ) ;
+    // InternalSkillRealization.g:1919:1: rule__ComponentCoordinationActionParameter__ValueAssignment_5_1 : ( RULE_STRING ) ;
     public final void rule__ComponentCoordinationActionParameter__ValueAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1949:1: ( ( RULE_STRING ) )
-            // InternalSkillRealization.g:1950:2: ( RULE_STRING )
+            // InternalSkillRealization.g:1923:1: ( ( RULE_STRING ) )
+            // InternalSkillRealization.g:1924:2: ( RULE_STRING )
             {
-            // InternalSkillRealization.g:1950:2: ( RULE_STRING )
-            // InternalSkillRealization.g:1951:3: RULE_STRING
+            // InternalSkillRealization.g:1924:2: ( RULE_STRING )
+            // InternalSkillRealization.g:1925:3: RULE_STRING
             {
              before(grammarAccess.getComponentCoordinationActionParameterAccess().getValueSTRINGTerminalRuleCall_5_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -5570,21 +5570,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2"
-    // InternalSkillRealization.g:1960:1: rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalSkillRealization.g:1934:1: rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__ComponentCoordinationActionActivation__CoordinationServiceAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1964:1: ( ( ( RULE_ID ) ) )
-            // InternalSkillRealization.g:1965:2: ( ( RULE_ID ) )
+            // InternalSkillRealization.g:1938:1: ( ( ( RULE_ID ) ) )
+            // InternalSkillRealization.g:1939:2: ( ( RULE_ID ) )
             {
-            // InternalSkillRealization.g:1965:2: ( ( RULE_ID ) )
-            // InternalSkillRealization.g:1966:3: ( RULE_ID )
+            // InternalSkillRealization.g:1939:2: ( ( RULE_ID ) )
+            // InternalSkillRealization.g:1940:3: ( RULE_ID )
             {
              before(grammarAccess.getComponentCoordinationActionActivationAccess().getCoordinationServiceCoordinationInterfaceInstanceCrossReference_2_0()); 
-            // InternalSkillRealization.g:1967:3: ( RULE_ID )
-            // InternalSkillRealization.g:1968:4: RULE_ID
+            // InternalSkillRealization.g:1941:3: ( RULE_ID )
+            // InternalSkillRealization.g:1942:4: RULE_ID
             {
              before(grammarAccess.getComponentCoordinationActionActivationAccess().getCoordinationServiceCoordinationInterfaceInstanceIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5615,21 +5615,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionActivation__StateAssignment_4"
-    // InternalSkillRealization.g:1979:1: rule__ComponentCoordinationActionActivation__StateAssignment_4 : ( ( ruleFQN ) ) ;
+    // InternalSkillRealization.g:1953:1: rule__ComponentCoordinationActionActivation__StateAssignment_4 : ( ( ruleFQN ) ) ;
     public final void rule__ComponentCoordinationActionActivation__StateAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:1983:1: ( ( ( ruleFQN ) ) )
-            // InternalSkillRealization.g:1984:2: ( ( ruleFQN ) )
+            // InternalSkillRealization.g:1957:1: ( ( ( ruleFQN ) ) )
+            // InternalSkillRealization.g:1958:2: ( ( ruleFQN ) )
             {
-            // InternalSkillRealization.g:1984:2: ( ( ruleFQN ) )
-            // InternalSkillRealization.g:1985:3: ( ruleFQN )
+            // InternalSkillRealization.g:1958:2: ( ( ruleFQN ) )
+            // InternalSkillRealization.g:1959:3: ( ruleFQN )
             {
              before(grammarAccess.getComponentCoordinationActionActivationAccess().getStateComponentModeDefinitionCrossReference_4_0()); 
-            // InternalSkillRealization.g:1986:3: ( ruleFQN )
-            // InternalSkillRealization.g:1987:4: ruleFQN
+            // InternalSkillRealization.g:1960:3: ( ruleFQN )
+            // InternalSkillRealization.g:1961:4: ruleFQN
             {
              before(grammarAccess.getComponentCoordinationActionActivationAccess().getStateComponentModeDefinitionFQNParserRuleCall_4_0_1()); 
             pushFollow(FOLLOW_2);
@@ -5664,21 +5664,21 @@ public class InternalSkillRealizationParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3"
-    // InternalSkillRealization.g:1998:1: rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalSkillRealization.g:1972:1: rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__ComponentCoordinationActionEvent__CoordinationServiceAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSkillRealization.g:2002:1: ( ( ( RULE_ID ) ) )
-            // InternalSkillRealization.g:2003:2: ( ( RULE_ID ) )
+            // InternalSkillRealization.g:1976:1: ( ( ( RULE_ID ) ) )
+            // InternalSkillRealization.g:1977:2: ( ( RULE_ID ) )
             {
-            // InternalSkillRealization.g:2003:2: ( ( RULE_ID ) )
-            // InternalSkillRealization.g:2004:3: ( RULE_ID )
+            // InternalSkillRealization.g:1977:2: ( ( RULE_ID ) )
+            // InternalSkillRealization.g:1978:3: ( RULE_ID )
             {
              before(grammarAccess.getComponentCoordinationActionEventAccess().getCoordinationServiceCoordinationInterfaceInstanceCrossReference_3_0()); 
-            // InternalSkillRealization.g:2005:3: ( RULE_ID )
-            // InternalSkillRealization.g:2006:4: RULE_ID
+            // InternalSkillRealization.g:1979:3: ( RULE_ID )
+            // InternalSkillRealization.g:1980:4: RULE_ID
             {
              before(grammarAccess.getComponentCoordinationActionEventAccess().getCoordinationServiceCoordinationInterfaceInstanceIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 

@@ -32,6 +32,15 @@ public interface ComponentDatasheetFactory extends EFactory {
 	ComponentDatasheet createComponentDatasheet();
 
 	/**
+	 * Returns a new object of class '<em>Component Port Datasheet</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Component Port Datasheet</em>'.
+	 * @generated
+	 */
+	ComponentPortDatasheet createComponentPortDatasheet();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

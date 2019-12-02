@@ -7,7 +7,8 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import org.ecore.base.genericDatasheet.GenericDatasheet;
+import org.ecore.base.genericDatasheet.AbstractDatasheetElement;
+import org.ecore.base.genericDatasheet.GenericDatasheetModel;
 
 import org.ecore.component.componentDatasheet.*;
 
@@ -72,7 +73,16 @@ public class ComponentDatasheetSwitch<T> extends Switch<T> {
 			ComponentDatasheet componentDatasheet = (ComponentDatasheet) theEObject;
 			T result = caseComponentDatasheet(componentDatasheet);
 			if (result == null)
-				result = caseGenericDatasheet(componentDatasheet);
+				result = caseGenericDatasheetModel(componentDatasheet);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ComponentDatasheetPackage.COMPONENT_PORT_DATASHEET: {
+			ComponentPortDatasheet componentPortDatasheet = (ComponentPortDatasheet) theEObject;
+			T result = caseComponentPortDatasheet(componentPortDatasheet);
+			if (result == null)
+				result = caseAbstractDatasheetElement(componentPortDatasheet);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -98,17 +108,47 @@ public class ComponentDatasheetSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Generic Datasheet</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Component Port Datasheet</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Generic Datasheet</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Component Port Datasheet</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGenericDatasheet(GenericDatasheet object) {
+	public T caseComponentPortDatasheet(ComponentPortDatasheet object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGenericDatasheetModel(GenericDatasheetModel object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Datasheet Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Datasheet Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractDatasheetElement(AbstractDatasheetElement object) {
 		return null;
 	}
 

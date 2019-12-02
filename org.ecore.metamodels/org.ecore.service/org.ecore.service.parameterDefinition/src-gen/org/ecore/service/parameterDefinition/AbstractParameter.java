@@ -3,10 +3,8 @@
 package org.ecore.service.parameterDefinition;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
-
 import org.ecore.base.basicAttributes.AttributeDefinition;
+import org.ecore.base.documentation.AbstractDocumentedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +23,7 @@ import org.ecore.base.basicAttributes.AttributeDefinition;
  * @model abstract="true"
  * @generated
  */
-public interface AbstractParameter extends EObject {
+public interface AbstractParameter extends AbstractDocumentedElement {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -63,6 +63,7 @@ public class JoiningServiceDefinitionImpl extends OneWayCommunicationServiceImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public JoiningPattern getPattern() {
 		return pattern;
 	}
@@ -91,6 +92,7 @@ public class JoiningServiceDefinitionImpl extends OneWayCommunicationServiceImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPattern(JoiningPattern newPattern) {
 		if (newPattern != pattern) {
 			NotificationChain msgs = null;

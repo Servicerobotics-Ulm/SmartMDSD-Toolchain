@@ -6,7 +6,7 @@
     modelPluginID="org.ecore.service.serviceDefinition" modelName="ServiceDefinition"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="../../org.ecore.service.communicationObject/model/communicationObject.genmodel#//communicationObject ../../org.ecore.service.communicationPattern/model/communicationPattern.genmodel#//communicationPattern ../../org.ecore.service.coordinationPattern/model/coordinationPattern.genmodel#//coordinationPattern ../../org.ecore.service.parameterDefinition/model/parameterDefinition.genmodel#//parameterDefinition ../../org.ecore.base.basicAttributes/model/basicAttributes.genmodel#//basicAttributes ../../org.ecore.base.stateMachine/model/stateMachine.genmodel#//stateMachine ../../org.ecore.service.componentMode/model/componentMode.genmodel#//componentMode"
+    usedGenPackages="../../org.ecore.base.basicAttributes/model/basicAttributes.genmodel#//basicAttributes ../../org.ecore.service.communicationObject/model/communicationObject.genmodel#//communicationObject ../../org.ecore.service.communicationPattern/model/communicationPattern.genmodel#//communicationPattern ../../org.ecore.service.componentMode/model/componentMode.genmodel#//componentMode ../../org.ecore.service.coordinationPattern/model/coordinationPattern.genmodel#//coordinationPattern ../../org.ecore.base.documentation/model/documentation.genmodel#//documentation ../../org.ecore.service.parameterDefinition/model/parameterDefinition.genmodel#//parameterDefinition ../../org.ecore.base.stateMachine/model/stateMachine.genmodel#//stateMachine"
     importOrganizing="true">
   <foreignModel>serviceDefinition.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
@@ -24,7 +24,6 @@
     <genClasses ecoreClass="serviceDefinition.ecore#//AbstractServiceDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute serviceDefinition.ecore#//AbstractServiceDefinition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference serviceDefinition.ecore#//AbstractServiceDefinition/properties"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute serviceDefinition.ecore#//AbstractServiceDefinition/purposeDescription"/>
     </genClasses>
     <genClasses ecoreClass="serviceDefinition.ecore#//CommRepoImport">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute serviceDefinition.ecore#//CommRepoImport/importedNamespace"/>

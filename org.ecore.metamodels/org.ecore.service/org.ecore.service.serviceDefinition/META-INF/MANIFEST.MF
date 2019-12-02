@@ -14,7 +14,8 @@ Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.ecore.service.componentMode;visibility:=reexport,
  org.ecore.base.basicAttributes;visibility:=reexport,
  org.eclipse.xtext.xbase.lib,
- org.eclipse.jface
+ org.eclipse.jface,
+ org.ecore.base.documentation;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin

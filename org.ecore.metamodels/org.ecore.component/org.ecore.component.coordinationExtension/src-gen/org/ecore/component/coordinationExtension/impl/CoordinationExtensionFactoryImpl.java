@@ -80,6 +80,7 @@ public class CoordinationExtensionFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PublicOperationMode createPublicOperationMode() {
 		PublicOperationModeImpl publicOperationMode = new PublicOperationModeImpl();
 		return publicOperationMode;
@@ -90,6 +91,7 @@ public class CoordinationExtensionFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PrivateOperationMode createPrivateOperationMode() {
 		PrivateOperationModeImpl privateOperationMode = new PrivateOperationModeImpl();
 		return privateOperationMode;
@@ -100,6 +102,7 @@ public class CoordinationExtensionFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CoordinationSlavePort createCoordinationSlavePort() {
 		CoordinationSlavePortImpl coordinationSlavePort = new CoordinationSlavePortImpl();
 		return coordinationSlavePort;
@@ -110,6 +113,7 @@ public class CoordinationExtensionFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CoordinationMasterPort createCoordinationMasterPort() {
 		CoordinationMasterPortImpl coordinationMasterPort = new CoordinationMasterPortImpl();
 		return coordinationMasterPort;
@@ -120,6 +124,7 @@ public class CoordinationExtensionFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public OperationModeBinding createOperationModeBinding() {
 		OperationModeBindingImpl operationModeBinding = new OperationModeBindingImpl();
 		return operationModeBinding;
@@ -130,6 +135,7 @@ public class CoordinationExtensionFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CommunicationServiceUsageRealization createCommunicationServiceUsageRealization() {
 		CommunicationServiceUsageRealizationImpl communicationServiceUsageRealization = new CommunicationServiceUsageRealizationImpl();
 		return communicationServiceUsageRealization;
@@ -140,6 +146,7 @@ public class CoordinationExtensionFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SkillRealizationsRef createSkillRealizationsRef() {
 		SkillRealizationsRefImpl skillRealizationsRef = new SkillRealizationsRefImpl();
 		return skillRealizationsRef;
@@ -150,6 +157,7 @@ public class CoordinationExtensionFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CoordinationExtensionPackage getCoordinationExtensionPackage() {
 		return (CoordinationExtensionPackage) getEPackage();
 	}

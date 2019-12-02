@@ -2,6 +2,20 @@
 
 This file contains the release notes for the SmartMDSD Toolchain version 3.x. For each release, it provides important information to users to support them in switching from one specific version the previous version. This includes information and instructions how to migrate content from one version to another.
 
+## v3.11
+
+This is a maintainance release mostly motivated by the updated background infrastructure. Most notably, the **SmartSoft Component Developer API** has been updated from version 1.0 to **version 1.1**, and the **ACE/SmartSoft Kernel** has been updated from version 3.1 to **version 3.2**. Therefore the Toolchain's internal C++ code generators have been updated and now generate consistently towards the updated background infrastructure. This also means that if you have not yet updated your current background infrastructure, then you should do so **before** using this new Toolchain update.
+
+As pre-announced in the previous release, the **old UI now has been deactivated** in this release. This means, that **from now on you have to use the new UI** by opening the new Eclipse perspectives introduced in the release v3.9 (see release notes below).
+
+The SmartMDSD Preferences page has been revised (see the menu: **Window -> Preferences -> SmartMDSD**). Here you can now also specify the default **build type Debug/Release** which will be used to either include debug symbols into the binaries (default), or exclude it to reduce the overall footprint. Moreover, here you can select the used **ROS distribution for building ROS mixed port components**. The toolchain initially searches the default location **/opt/ros** and selects the first found distribution. In case you have more than one, here you can change the required distro. The Toolchain build process automatically sets related ROS environment variables as described here (see "4. Building projects inside Eclipse"):
+
+http://wiki.ros.org/IDEs
+
+Please note, the ROS build feature is rather new/experimental and might not yet work in all situations. In case it does not work, as a backup strategy, you can compile the project from within a bash terminal with the ROS setup initiated from .bashrc.
+
+This release also includes a few minor usability improvements. Most notably, recursive build now works from within the Toolchain with a considerable improvement of the overall build performance: each dependency now is only built once (and not multiple times as before). While you still can build projects from a bash terminal if needed, the Toolchain build now is the recommended way.
+
 ## v3.10
 
 This is a minor release, mostly focusing on bugfixing and smaller usability improvements. The biggest change concerns the Plain OPC UA usage which now requires the new **[Open62541CppWrapper library](https://github.com/Servicerobotics-Ulm/Open62541CppWrapper)** to be installed. Moreover, the Welcome page has been extended with new tutorials, links and cheat-sheets (use the menu Help->Welcome, or Help->Cheat sheets...). Finally, a new context menu has been added: when right-clicking on any folder within the SmartMDSD Project Explorer, you now can open this folder directly within a Linux terminal. Other than tha, all the previous major features from the last release v3.9 remain unchanged. Please note, that the old UI (mentioned in v3.9 below) is curretly still active, however, it will be likely removed in one of the next releases, so we encourage using the new UI from now on and to update your projects as described below in the v3.9 section.

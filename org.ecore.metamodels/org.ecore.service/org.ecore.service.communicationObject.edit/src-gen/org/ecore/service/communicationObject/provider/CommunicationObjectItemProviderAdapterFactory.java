@@ -292,6 +292,7 @@ public class CommunicationObjectItemProviderAdapterFactory extends Communication
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -302,6 +303,7 @@ public class CommunicationObjectItemProviderAdapterFactory extends Communication
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -377,6 +379,7 @@ public class CommunicationObjectItemProviderAdapterFactory extends Communication
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -387,6 +390,7 @@ public class CommunicationObjectItemProviderAdapterFactory extends Communication
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -397,6 +401,7 @@ public class CommunicationObjectItemProviderAdapterFactory extends Communication
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -411,6 +416,7 @@ public class CommunicationObjectItemProviderAdapterFactory extends Communication
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (commObjectModelItemProvider != null)
 			commObjectModelItemProvider.dispose();

@@ -74,6 +74,7 @@ public class OutputPortImpl extends ComponentPortImpl implements OutputPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public OneWayCommunicationService getService() {
 		if (service != null && service.eIsProxy()) {
 			InternalEObject oldService = (InternalEObject) service;
@@ -101,6 +102,7 @@ public class OutputPortImpl extends ComponentPortImpl implements OutputPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setService(OneWayCommunicationService newService) {
 		OneWayCommunicationService oldService = service;
 		service = newService;
@@ -114,6 +116,7 @@ public class OutputPortImpl extends ComponentPortImpl implements OutputPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Activity getActivity() {
 		if (activity != null && activity.eIsProxy()) {
 			InternalEObject oldActivity = (InternalEObject) activity;
@@ -141,6 +144,7 @@ public class OutputPortImpl extends ComponentPortImpl implements OutputPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setActivity(Activity newActivity) {
 		Activity oldActivity = activity;
 		activity = newActivity;

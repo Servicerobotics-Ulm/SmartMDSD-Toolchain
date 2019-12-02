@@ -104,6 +104,7 @@ public class SystemParamModelImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ComponentParameterInstance> getComponents() {
 		if (components == null) {
 			components = new EObjectContainmentEList<ComponentParameterInstance>(ComponentParameterInstance.class, this,
@@ -117,6 +118,7 @@ public class SystemParamModelImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SystemComponentArchitecture getSystem() {
 		if (system != null && system.eIsProxy()) {
 			InternalEObject oldSystem = (InternalEObject) system;
@@ -144,6 +146,7 @@ public class SystemParamModelImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSystem(SystemComponentArchitecture newSystem) {
 		SystemComponentArchitecture oldSystem = system;
 		system = newSystem;
@@ -157,6 +160,7 @@ public class SystemParamModelImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -166,6 +170,7 @@ public class SystemParamModelImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -280,7 +285,7 @@ public class SystemParamModelImpl extends MinimalEObjectImpl.Container implement
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

@@ -13,11 +13,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.ecore.base.documentation.impl.AbstractDocumentedElementImpl;
 import org.ecore.service.communicationObject.AbstractCommElement;
 import org.ecore.service.communicationObject.CommObjectsRepository;
 import org.ecore.service.communicationObject.CommunicationObjectPackage;
@@ -39,7 +38,7 @@ import org.ecore.service.communicationObject.Version;
  *
  * @generated
  */
-public class CommObjectsRepositoryImpl extends MinimalEObjectImpl.Container implements CommObjectsRepository {
+public class CommObjectsRepositoryImpl extends AbstractDocumentedElementImpl implements CommObjectsRepository {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -124,6 +123,7 @@ public class CommObjectsRepositoryImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -133,6 +133,7 @@ public class CommObjectsRepositoryImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -146,6 +147,7 @@ public class CommObjectsRepositoryImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AbstractCommElement> getElements() {
 		if (elements == null) {
 			elements = new EObjectContainmentEList<AbstractCommElement>(AbstractCommElement.class, this,
@@ -159,6 +161,7 @@ public class CommObjectsRepositoryImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Version getVersion() {
 		return version;
 	}
@@ -187,6 +190,7 @@ public class CommObjectsRepositoryImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVersion(Version newVersion) {
 		if (newVersion != version) {
 			NotificationChain msgs = null;
@@ -211,6 +215,7 @@ public class CommObjectsRepositoryImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDependency() {
 		return dependency;
 	}
@@ -220,6 +225,7 @@ public class CommObjectsRepositoryImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDependency(String newDependency) {
 		String oldDependency = dependency;
 		dependency = newDependency;
@@ -344,7 +350,7 @@ public class CommObjectsRepositoryImpl extends MinimalEObjectImpl.Container impl
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", dependency: ");

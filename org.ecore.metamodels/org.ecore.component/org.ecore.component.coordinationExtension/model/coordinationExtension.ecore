@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="coordinationExtension" nsURI="http://www.ecore.org/component/CoordinationExtension"
     nsPrefix="CoordinationExtension">
-  <eClassifiers xsi:type="ecore:EClass" name="PublicOperationMode" eSuperTypes="#//AbstractCoordinationElement">
+  <eClassifiers xsi:type="ecore:EClass" name="PublicOperationMode" eSuperTypes="#//AbstractCoordinationElement ../../org.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="activates" upperBound="-1"
         eType="#//PrivateOperationMode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mode" lowerBound="1" eType="ecore:EClass ../../org.ecore.service.componentMode/model/componentMode.ecore#//ComponentModeDefinition"/>
@@ -14,7 +14,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="PrivateOperationMode" eSuperTypes="#//AbstractCoordinationElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CoordinationSlavePort" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//NamedComponentElement">
+  <eClassifiers xsi:type="ecore:EClass" name="CoordinationSlavePort" eSuperTypes="../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//NamedComponentElement ../../org.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//AbstractCoordinationElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="service" lowerBound="1"

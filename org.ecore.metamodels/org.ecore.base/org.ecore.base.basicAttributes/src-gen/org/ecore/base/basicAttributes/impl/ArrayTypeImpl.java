@@ -70,6 +70,7 @@ public class ArrayTypeImpl extends MinimalEObjectImpl.Container implements Array
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLength() {
 		return length;
 	}
@@ -79,6 +80,7 @@ public class ArrayTypeImpl extends MinimalEObjectImpl.Container implements Array
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLength(String newLength) {
 		String oldLength = length;
 		length = newLength;
@@ -155,7 +157,7 @@ public class ArrayTypeImpl extends MinimalEObjectImpl.Container implements Array
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (length: ");
 		result.append(length);
 		result.append(')');

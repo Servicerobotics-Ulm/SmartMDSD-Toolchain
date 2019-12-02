@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.ecore.base.basicAttributes.BasicAttributesPackage;
 
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.service.communicationObject.AbstractCommElement;
 import org.ecore.service.communicationObject.CommElementReference;
 import org.ecore.service.communicationObject.CommElementValue;
@@ -121,7 +122,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link CommunicationObjectPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -137,14 +138,16 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 					.getEPackage(CommunicationObjectPackage.eNS_URI);
 
 		// Obtain or create and register package
-		CommunicationObjectPackageImpl theCommunicationObjectPackage = (CommunicationObjectPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof CommunicationObjectPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new CommunicationObjectPackageImpl());
+		Object registeredCommunicationObjectPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		CommunicationObjectPackageImpl theCommunicationObjectPackage = registeredCommunicationObjectPackage instanceof CommunicationObjectPackageImpl
+				? (CommunicationObjectPackageImpl) registeredCommunicationObjectPackage
+				: new CommunicationObjectPackageImpl();
 
 		isInited = true;
 
 		// Initialize simple dependencies
 		BasicAttributesPackage.eINSTANCE.eClass();
+		DocumentationPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theCommunicationObjectPackage.createPackageContents();
@@ -165,6 +168,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCommObjectModel() {
 		return commObjectModelEClass;
 	}
@@ -174,6 +178,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCommObjectModel_Repository() {
 		return (EReference) commObjectModelEClass.getEStructuralFeatures().get(0);
 	}
@@ -183,6 +188,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCommObjectModel_Imports() {
 		return (EReference) commObjectModelEClass.getEStructuralFeatures().get(1);
 	}
@@ -192,6 +198,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCommObjectsRepository() {
 		return commObjectsRepositoryEClass;
 	}
@@ -201,6 +208,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCommObjectsRepository_Name() {
 		return (EAttribute) commObjectsRepositoryEClass.getEStructuralFeatures().get(0);
 	}
@@ -210,6 +218,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCommObjectsRepository_Elements() {
 		return (EReference) commObjectsRepositoryEClass.getEStructuralFeatures().get(1);
 	}
@@ -219,6 +228,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCommObjectsRepository_Version() {
 		return (EReference) commObjectsRepositoryEClass.getEStructuralFeatures().get(2);
 	}
@@ -228,6 +238,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCommObjectsRepository_Dependency() {
 		return (EAttribute) commObjectsRepositoryEClass.getEStructuralFeatures().get(3);
 	}
@@ -237,6 +248,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractCommElement() {
 		return abstractCommElementEClass;
 	}
@@ -246,6 +258,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractCommElement_Name() {
 		return (EAttribute) abstractCommElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -255,6 +268,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCommRepositoryImport() {
 		return commRepositoryImportEClass;
 	}
@@ -264,6 +278,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCommRepositoryImport_ImportedNamespace() {
 		return (EAttribute) commRepositoryImportEClass.getEStructuralFeatures().get(0);
 	}
@@ -273,6 +288,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getVersion() {
 		return versionEClass;
 	}
@@ -282,6 +298,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVersion_Major() {
 		return (EAttribute) versionEClass.getEStructuralFeatures().get(0);
 	}
@@ -291,6 +308,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVersion_Minor() {
 		return (EAttribute) versionEClass.getEStructuralFeatures().get(1);
 	}
@@ -300,6 +318,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVersion_Patch() {
 		return (EAttribute) versionEClass.getEStructuralFeatures().get(2);
 	}
@@ -309,6 +328,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEnumeration() {
 		return enumerationEClass;
 	}
@@ -318,6 +338,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEnumeration_Enums() {
 		return (EReference) enumerationEClass.getEStructuralFeatures().get(0);
 	}
@@ -327,6 +348,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCommunicationObject() {
 		return communicationObjectEClass;
 	}
@@ -336,6 +358,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCommunicationObject_Attributes() {
 		return (EReference) communicationObjectEClass.getEStructuralFeatures().get(0);
 	}
@@ -345,6 +368,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCommElementValue() {
 		return commElementValueEClass;
 	}
@@ -354,6 +378,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCommElementValue_Value() {
 		return (EReference) commElementValueEClass.getEStructuralFeatures().get(0);
 	}
@@ -363,6 +388,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCommElementReference() {
 		return commElementReferenceEClass;
 	}
@@ -372,6 +398,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCommElementReference_TypeName() {
 		return (EReference) commElementReferenceEClass.getEStructuralFeatures().get(0);
 	}
@@ -381,6 +408,7 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CommunicationObjectFactory getCommunicationObjectFactory() {
 		return (CommunicationObjectFactory) getEFactoryInstance();
 	}
@@ -464,6 +492,8 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		DocumentationPackage theDocumentationPackage = (DocumentationPackage) EPackage.Registry.INSTANCE
+				.getEPackage(DocumentationPackage.eNS_URI);
 		BasicAttributesPackage theBasicAttributesPackage = (BasicAttributesPackage) EPackage.Registry.INSTANCE
 				.getEPackage(BasicAttributesPackage.eNS_URI);
 
@@ -472,6 +502,8 @@ public class CommunicationObjectPackageImpl extends EPackageImpl implements Comm
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		commObjectsRepositoryEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
+		abstractCommElementEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
 		enumerationEClass.getESuperTypes().add(this.getAbstractCommElement());
 		communicationObjectEClass.getESuperTypes().add(this.getAbstractCommElement());
 		commElementValueEClass.getESuperTypes().add(theBasicAttributesPackage.getSingleValue());

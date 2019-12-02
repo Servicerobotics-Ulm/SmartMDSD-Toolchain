@@ -64,6 +64,7 @@ public class CoordinationMasterPortImpl extends NamedComponentElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CoordinationServiceDefinition getService() {
 		if (service != null && service.eIsProxy()) {
 			InternalEObject oldService = (InternalEObject) service;
@@ -91,6 +92,7 @@ public class CoordinationMasterPortImpl extends NamedComponentElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setService(CoordinationServiceDefinition newService) {
 		CoordinationServiceDefinition oldService = service;
 		service = newService;

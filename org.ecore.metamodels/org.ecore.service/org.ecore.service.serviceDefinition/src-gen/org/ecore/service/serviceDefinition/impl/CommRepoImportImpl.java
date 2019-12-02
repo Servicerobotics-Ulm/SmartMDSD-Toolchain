@@ -70,6 +70,7 @@ public class CommRepoImportImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getImportedNamespace() {
 		return importedNamespace;
 	}
@@ -79,6 +80,7 @@ public class CommRepoImportImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setImportedNamespace(String newImportedNamespace) {
 		String oldImportedNamespace = importedNamespace;
 		importedNamespace = newImportedNamespace;
@@ -157,7 +159,7 @@ public class CommRepoImportImpl extends MinimalEObjectImpl.Container implements 
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (importedNamespace: ");
 		result.append(importedNamespace);
 		result.append(')');

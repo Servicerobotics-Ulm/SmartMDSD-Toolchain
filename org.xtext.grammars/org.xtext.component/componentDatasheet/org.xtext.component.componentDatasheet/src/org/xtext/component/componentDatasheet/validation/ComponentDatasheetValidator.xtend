@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,41 +15,11 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.component.componentDatasheet.validation
 
 import org.eclipse.xtext.validation.Check
-import java.net.URL
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.io.IOException
 import org.ecore.component.componentDatasheet.ComponentDatasheet
-import org.ecore.component.componentDatasheet.ComponentDatasheetPackage
 
 /**
  * This class contains custom validation rules. 
@@ -59,7 +28,8 @@ import org.ecore.component.componentDatasheet.ComponentDatasheetPackage
  */
 class ComponentDatasheetValidator extends AbstractComponentDatasheetValidator {
 	
-	public static val INVALID_PURPOSE = 'invalidPurpose'
+	public static val MISSING_DOCU = 'missingDocumentation'
+	public static val MISSING_BASE_URI = 'missingBaseURI'
 	
 //	public static val INVALID_NAME = 'invalidName'
 //
@@ -72,34 +42,14 @@ class ComponentDatasheetValidator extends AbstractComponentDatasheetValidator {
 //		}
 //	}
 	
-	
 	@Check
-	def checkPurpose(ComponentDatasheet ds) {
-		var URL url;
-		var validId = false;
-		try {
-		    url = new URL("platform:/plugin/org.xtext.component.componentDatasheet/purposes.txt");
-		    val inputStream = url.openConnection().getInputStream();
-		    val in = new BufferedReader(new InputStreamReader(inputStream));
-		    var String inputLine;
-		 
-		    while ((inputLine = in.readLine()) !== null) {
-		    	if(ds.purposeDescription==inputLine) {
-		    		validId = true;
-		    	}
-		    }
-		 
-		    in.close();
-		 
-		} catch (IOException e) {
-		    e.printStackTrace();
-		}
-		
-		if(validId == false) {
-			warning("Invalid Purpose-Description, see platform:/plugin/org.xtext.component.componentDatasheet/purposes.txt for valid definitions.",
-				ComponentDatasheetPackage.Literals.COMPONENT_DATASHEET__PURPOSE_DESCRIPTION,
-				INVALID_PURPOSE
-			)
-		}
+	def checkHasMandatoryProperties(ComponentDatasheet ds) {
+//		if(ds.properties === null || !ds.properties.exists[it.name == MandatoryProperty.BASE_URI.literal]) {
+//			warning("Mandatory Base-URI property is missing", ComponentDatasheetPackage.Literals.ABSTRACT_COMPONENT_PORT_DATASHEET__NAME, MISSING_BASE_URI)
+//		}
+//		if(ds.comment === null) {
+//			warning("Mandatory Documentation comment is missing", DocumentationPackage.Literals.ABSTRACT_DOCUMENTED_ELEMENT__COMMENT, MISSING_DOCU)
+//		}
 	}
+	
 }

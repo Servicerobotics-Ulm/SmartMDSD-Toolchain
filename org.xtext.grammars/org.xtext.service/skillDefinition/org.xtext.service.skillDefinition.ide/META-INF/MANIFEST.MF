@@ -10,7 +10,8 @@ Require-Bundle: org.xtext.service.skillDefinition,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
- org.xtext.base.basicAttributes
+ org.xtext.base.basicAttributes,
+ org.xtext.base.docuterminals
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.service.skillDefinition.ide.contentassist.antlr.internal,
  org.xtext.service.skillDefinition.ide.contentassist.antlr

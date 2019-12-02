@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.ecore.base.basicAttributes.BasicAttributesPackage;
 
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.base.mixedport.MixedportPackage;
 
 import org.ecore.base.stateMachine.StateMachinePackage;
@@ -167,6 +168,7 @@ public class SeronetExtensionPackageImpl extends EPackageImpl implements Seronet
 		RoboticMiddlewarePackage.eINSTANCE.eClass();
 		ServiceDefinitionPackage.eINSTANCE.eClass();
 		StateMachinePackage.eINSTANCE.eClass();
+		DocumentationPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theSeronetExtensionPackage.createPackageContents();

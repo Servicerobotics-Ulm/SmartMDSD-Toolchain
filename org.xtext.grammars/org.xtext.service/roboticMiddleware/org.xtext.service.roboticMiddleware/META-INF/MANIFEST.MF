@@ -12,7 +12,9 @@ Require-Bundle: org.ecore.service.roboticMiddleware,
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
  org.eclipse.xtext.util,
- org.eclipse.xtend.lib;bundle-version="2.14.0"
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.ecore.base.documentation,
+ org.xtext.base.docuterminals
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.service.roboticMiddleware.parser.antlr.internal,
  org.xtext.service.roboticMiddleware.parser.antlr,
@@ -24,3 +26,4 @@ Export-Package: org.xtext.service.roboticMiddleware.parser.antlr.internal,
  org.xtext.service.roboticMiddleware.services,
  org.xtext.service.roboticMiddleware.validation
 Import-Package: org.apache.log4j
+Automatic-Module-Name: org.xtext.service.roboticMiddleware

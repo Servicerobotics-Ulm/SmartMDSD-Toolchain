@@ -10,12 +10,15 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.ecore.base.genericDatasheet.AbstractLicense;
-import org.ecore.base.genericDatasheet.GenericDatasheet;
+import org.ecore.base.genericDatasheet.AbstractDatasheetElement;
+import org.ecore.base.genericDatasheet.DatasheetProperty;
+import org.ecore.base.genericDatasheet.DefaultDatasheetProperties;
 import org.ecore.base.genericDatasheet.GenericDatasheetFactory;
+import org.ecore.base.genericDatasheet.GenericDatasheetModel;
 import org.ecore.base.genericDatasheet.GenericDatasheetPackage;
-import org.ecore.base.genericDatasheet.ProprietaryLicense;
-import org.ecore.base.genericDatasheet.SpdxLicense;
+import org.ecore.base.genericDatasheet.MandatoryDatasheetElement;
+import org.ecore.base.genericDatasheet.MandatoryDatasheetElementNames;
+import org.ecore.base.genericDatasheet.TechnologyReadinessLevel;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,35 +32,49 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass genericDatasheetEClass = null;
+	private EClass datasheetPropertyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass abstractLicenseEClass = null;
+	private EClass genericDatasheetModelEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass spdxLicenseEClass = null;
+	private EClass abstractDatasheetElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass proprietaryLicenseEClass = null;
+	private EClass mandatoryDatasheetElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum trlEEnum = null;
+	private EEnum defaultDatasheetPropertiesEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum technologyReadinessLevelEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum mandatoryDatasheetElementNamesEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -129,8 +146,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public EClass getGenericDatasheet() {
-		return genericDatasheetEClass;
+	public EClass getDatasheetProperty() {
+		return datasheetPropertyEClass;
 	}
 
 	/**
@@ -139,8 +156,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public EReference getGenericDatasheet_License() {
-		return (EReference) genericDatasheetEClass.getEStructuralFeatures().get(0);
+	public EAttribute getDatasheetProperty_Name() {
+		return (EAttribute) datasheetPropertyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -149,8 +166,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGenericDatasheet_ShortDescription() {
-		return (EAttribute) genericDatasheetEClass.getEStructuralFeatures().get(1);
+	public EAttribute getDatasheetProperty_Value() {
+		return (EAttribute) datasheetPropertyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -159,8 +176,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGenericDatasheet_LongDescription() {
-		return (EAttribute) genericDatasheetEClass.getEStructuralFeatures().get(2);
+	public EAttribute getDatasheetProperty_Unit() {
+		return (EAttribute) datasheetPropertyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -169,8 +186,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGenericDatasheet_SupplierDescription() {
-		return (EAttribute) genericDatasheetEClass.getEStructuralFeatures().get(3);
+	public EAttribute getDatasheetProperty_SemanticID() {
+		return (EAttribute) datasheetPropertyEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -179,8 +196,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGenericDatasheet_Homepage() {
-		return (EAttribute) genericDatasheetEClass.getEStructuralFeatures().get(4);
+	public EAttribute getDatasheetProperty_ShortDescription() {
+		return (EAttribute) datasheetPropertyEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -189,8 +206,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGenericDatasheet_BaseURI() {
-		return (EAttribute) genericDatasheetEClass.getEStructuralFeatures().get(5);
+	public EClass getGenericDatasheetModel() {
+		return genericDatasheetModelEClass;
 	}
 
 	/**
@@ -199,8 +216,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGenericDatasheet_Trl() {
-		return (EAttribute) genericDatasheetEClass.getEStructuralFeatures().get(6);
+	public EReference getGenericDatasheetModel_Elements() {
+		return (EReference) genericDatasheetModelEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -209,8 +226,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public EClass getAbstractLicense() {
-		return abstractLicenseEClass;
+	public EClass getAbstractDatasheetElement() {
+		return abstractDatasheetElementEClass;
 	}
 
 	/**
@@ -219,8 +236,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public EClass getSpdxLicense() {
-		return spdxLicenseEClass;
+	public EClass getMandatoryDatasheetElement() {
+		return mandatoryDatasheetElementEClass;
 	}
 
 	/**
@@ -229,8 +246,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSpdxLicense_LicenseID() {
-		return (EAttribute) spdxLicenseEClass.getEStructuralFeatures().get(0);
+	public EAttribute getMandatoryDatasheetElement_Name() {
+		return (EAttribute) mandatoryDatasheetElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -239,8 +256,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public EClass getProprietaryLicense() {
-		return proprietaryLicenseEClass;
+	public EAttribute getMandatoryDatasheetElement_Value() {
+		return (EAttribute) mandatoryDatasheetElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -249,8 +266,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProprietaryLicense_FullText() {
-		return (EAttribute) proprietaryLicenseEClass.getEStructuralFeatures().get(0);
+	public EEnum getDefaultDatasheetProperties() {
+		return defaultDatasheetPropertiesEEnum;
 	}
 
 	/**
@@ -259,8 +276,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProprietaryLicense_Name() {
-		return (EAttribute) proprietaryLicenseEClass.getEStructuralFeatures().get(1);
+	public EEnum getTechnologyReadinessLevel() {
+		return technologyReadinessLevelEEnum;
 	}
 
 	/**
@@ -269,18 +286,8 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProprietaryLicense_Url() {
-		return (EAttribute) proprietaryLicenseEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getTRL() {
-		return trlEEnum;
+	public EEnum getMandatoryDatasheetElementNames() {
+		return mandatoryDatasheetElementNamesEEnum;
 	}
 
 	/**
@@ -313,27 +320,26 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 		isCreated = true;
 
 		// Create classes and their features
-		genericDatasheetEClass = createEClass(GENERIC_DATASHEET);
-		createEReference(genericDatasheetEClass, GENERIC_DATASHEET__LICENSE);
-		createEAttribute(genericDatasheetEClass, GENERIC_DATASHEET__SHORT_DESCRIPTION);
-		createEAttribute(genericDatasheetEClass, GENERIC_DATASHEET__LONG_DESCRIPTION);
-		createEAttribute(genericDatasheetEClass, GENERIC_DATASHEET__SUPPLIER_DESCRIPTION);
-		createEAttribute(genericDatasheetEClass, GENERIC_DATASHEET__HOMEPAGE);
-		createEAttribute(genericDatasheetEClass, GENERIC_DATASHEET__BASE_URI);
-		createEAttribute(genericDatasheetEClass, GENERIC_DATASHEET__TRL);
+		datasheetPropertyEClass = createEClass(DATASHEET_PROPERTY);
+		createEAttribute(datasheetPropertyEClass, DATASHEET_PROPERTY__NAME);
+		createEAttribute(datasheetPropertyEClass, DATASHEET_PROPERTY__VALUE);
+		createEAttribute(datasheetPropertyEClass, DATASHEET_PROPERTY__UNIT);
+		createEAttribute(datasheetPropertyEClass, DATASHEET_PROPERTY__SEMANTIC_ID);
+		createEAttribute(datasheetPropertyEClass, DATASHEET_PROPERTY__SHORT_DESCRIPTION);
 
-		abstractLicenseEClass = createEClass(ABSTRACT_LICENSE);
+		genericDatasheetModelEClass = createEClass(GENERIC_DATASHEET_MODEL);
+		createEReference(genericDatasheetModelEClass, GENERIC_DATASHEET_MODEL__ELEMENTS);
 
-		spdxLicenseEClass = createEClass(SPDX_LICENSE);
-		createEAttribute(spdxLicenseEClass, SPDX_LICENSE__LICENSE_ID);
+		abstractDatasheetElementEClass = createEClass(ABSTRACT_DATASHEET_ELEMENT);
 
-		proprietaryLicenseEClass = createEClass(PROPRIETARY_LICENSE);
-		createEAttribute(proprietaryLicenseEClass, PROPRIETARY_LICENSE__FULL_TEXT);
-		createEAttribute(proprietaryLicenseEClass, PROPRIETARY_LICENSE__NAME);
-		createEAttribute(proprietaryLicenseEClass, PROPRIETARY_LICENSE__URL);
+		mandatoryDatasheetElementEClass = createEClass(MANDATORY_DATASHEET_ELEMENT);
+		createEAttribute(mandatoryDatasheetElementEClass, MANDATORY_DATASHEET_ELEMENT__NAME);
+		createEAttribute(mandatoryDatasheetElementEClass, MANDATORY_DATASHEET_ELEMENT__VALUE);
 
 		// Create enums
-		trlEEnum = createEEnum(TRL);
+		defaultDatasheetPropertiesEEnum = createEEnum(DEFAULT_DATASHEET_PROPERTIES);
+		technologyReadinessLevelEEnum = createEEnum(TECHNOLOGY_READINESS_LEVEL);
+		mandatoryDatasheetElementNamesEEnum = createEEnum(MANDATORY_DATASHEET_ELEMENT_NAMES);
 	}
 
 	/**
@@ -365,66 +371,70 @@ public class GenericDatasheetPackageImpl extends EPackageImpl implements Generic
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		spdxLicenseEClass.getESuperTypes().add(this.getAbstractLicense());
-		proprietaryLicenseEClass.getESuperTypes().add(this.getAbstractLicense());
+		datasheetPropertyEClass.getESuperTypes().add(this.getAbstractDatasheetElement());
+		mandatoryDatasheetElementEClass.getESuperTypes().add(this.getAbstractDatasheetElement());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(genericDatasheetEClass, GenericDatasheet.class, "GenericDatasheet", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(datasheetPropertyEClass, DatasheetProperty.class, "DatasheetProperty", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGenericDatasheet_License(), this.getAbstractLicense(), null, "license", null, 0, 1,
-				GenericDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGenericDatasheet_ShortDescription(), ecorePackage.getEString(), "shortDescription", null, 1,
-				1, GenericDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+		initEAttribute(getDatasheetProperty_Name(), ecorePackage.getEString(), "name", null, 1, 1,
+				DatasheetProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatasheetProperty_Value(), ecorePackage.getEString(), "value", null, 1, 1,
+				DatasheetProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatasheetProperty_Unit(), ecorePackage.getEString(), "unit", null, 0, 1,
+				DatasheetProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatasheetProperty_SemanticID(), ecorePackage.getEString(), "semanticID", null, 0, 1,
+				DatasheetProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatasheetProperty_ShortDescription(), ecorePackage.getEString(), "shortDescription", null, 0,
+				1, DatasheetProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGenericDatasheet_LongDescription(), ecorePackage.getEString(), "longDescription", null, 0, 1,
-				GenericDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGenericDatasheet_SupplierDescription(), ecorePackage.getEString(), "supplierDescription",
-				null, 0, 1, GenericDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGenericDatasheet_Homepage(), ecorePackage.getEString(), "homepage", null, 0, 1,
-				GenericDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGenericDatasheet_BaseURI(), ecorePackage.getEString(), "baseURI", null, 1, 1,
-				GenericDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGenericDatasheet_Trl(), this.getTRL(), "trl", "Undefined", 0, 1, GenericDatasheet.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(abstractLicenseEClass, AbstractLicense.class, "AbstractLicense", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(spdxLicenseEClass, SpdxLicense.class, "SpdxLicense", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSpdxLicense_LicenseID(), ecorePackage.getEString(), "licenseID", null, 1, 1,
-				SpdxLicense.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-
-		initEClass(proprietaryLicenseEClass, ProprietaryLicense.class, "ProprietaryLicense", !IS_ABSTRACT,
+		initEClass(genericDatasheetModelEClass, GenericDatasheetModel.class, "GenericDatasheetModel", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProprietaryLicense_FullText(), ecorePackage.getEString(), "fullText", null, 0, 1,
-				ProprietaryLicense.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProprietaryLicense_Name(), ecorePackage.getEString(), "name", null, 0, 1,
-				ProprietaryLicense.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProprietaryLicense_Url(), ecorePackage.getEString(), "url", null, 0, 1,
-				ProprietaryLicense.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
+		initEReference(getGenericDatasheetModel_Elements(), this.getAbstractDatasheetElement(), null, "elements", null,
+				0, -1, GenericDatasheetModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(abstractDatasheetElementEClass, AbstractDatasheetElement.class, "AbstractDatasheetElement",
+				IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(mandatoryDatasheetElementEClass, MandatoryDatasheetElement.class, "MandatoryDatasheetElement",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMandatoryDatasheetElement_Name(), this.getMandatoryDatasheetElementNames(), "name", null, 1,
+				1, MandatoryDatasheetElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMandatoryDatasheetElement_Value(), ecorePackage.getEString(), "value", null, 0, 1,
+				MandatoryDatasheetElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(trlEEnum, org.ecore.base.genericDatasheet.TRL.class, "TRL");
-		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL1);
-		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL2);
-		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL3);
-		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL4);
-		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL5);
-		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL6);
-		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL7);
-		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL8);
-		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.LEVEL9);
-		addEEnumLiteral(trlEEnum, org.ecore.base.genericDatasheet.TRL.UNDEFINED);
+		initEEnum(defaultDatasheetPropertiesEEnum, DefaultDatasheetProperties.class, "DefaultDatasheetProperties");
+		addEEnumLiteral(defaultDatasheetPropertiesEEnum, DefaultDatasheetProperties.HOMEPAGE);
+		addEEnumLiteral(defaultDatasheetPropertiesEEnum, DefaultDatasheetProperties.SPDX_LICENSE);
+		addEEnumLiteral(defaultDatasheetPropertiesEEnum, DefaultDatasheetProperties.PROPRIETARY_LICENSE);
+		addEEnumLiteral(defaultDatasheetPropertiesEEnum, DefaultDatasheetProperties.PURPOSE);
+		addEEnumLiteral(defaultDatasheetPropertiesEEnum, DefaultDatasheetProperties.TECHNOLOGY_READINESS_LEVEL);
+		addEEnumLiteral(defaultDatasheetPropertiesEEnum, DefaultDatasheetProperties.SUPPLIER);
+
+		initEEnum(technologyReadinessLevelEEnum, TechnologyReadinessLevel.class, "TechnologyReadinessLevel");
+		addEEnumLiteral(technologyReadinessLevelEEnum, TechnologyReadinessLevel.TRL1);
+		addEEnumLiteral(technologyReadinessLevelEEnum, TechnologyReadinessLevel.TRL2);
+		addEEnumLiteral(technologyReadinessLevelEEnum, TechnologyReadinessLevel.TRL3);
+		addEEnumLiteral(technologyReadinessLevelEEnum, TechnologyReadinessLevel.TRL4);
+		addEEnumLiteral(technologyReadinessLevelEEnum, TechnologyReadinessLevel.TRL5);
+		addEEnumLiteral(technologyReadinessLevelEEnum, TechnologyReadinessLevel.TRL6);
+		addEEnumLiteral(technologyReadinessLevelEEnum, TechnologyReadinessLevel.TRL7);
+		addEEnumLiteral(technologyReadinessLevelEEnum, TechnologyReadinessLevel.TRL8);
+		addEEnumLiteral(technologyReadinessLevelEEnum, TechnologyReadinessLevel.TRL9);
+
+		initEEnum(mandatoryDatasheetElementNamesEEnum, MandatoryDatasheetElementNames.class,
+				"MandatoryDatasheetElementNames");
+		addEEnumLiteral(mandatoryDatasheetElementNamesEEnum, MandatoryDatasheetElementNames.BASE_URI);
+		addEEnumLiteral(mandatoryDatasheetElementNamesEEnum, MandatoryDatasheetElementNames.SHORT_DESCRIPTION);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -119,6 +119,7 @@ public class CoordinationServiceDefinitionImpl extends AbstractServiceDefinition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StatePattern getStatePattern() {
 		return statePattern;
 	}
@@ -148,6 +149,7 @@ public class CoordinationServiceDefinitionImpl extends AbstractServiceDefinition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStatePattern(StatePattern newStatePattern) {
 		if (newStatePattern != statePattern) {
 			NotificationChain msgs = null;
@@ -171,6 +173,7 @@ public class CoordinationServiceDefinitionImpl extends AbstractServiceDefinition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterPattern getParameterPattern() {
 		return parameterPattern;
 	}
@@ -200,6 +203,7 @@ public class CoordinationServiceDefinitionImpl extends AbstractServiceDefinition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParameterPattern(ParameterPattern newParameterPattern) {
 		if (newParameterPattern != parameterPattern) {
 			NotificationChain msgs = null;
@@ -227,6 +231,7 @@ public class CoordinationServiceDefinitionImpl extends AbstractServiceDefinition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DynamicWiringPattern getWiringPattern() {
 		return wiringPattern;
 	}
@@ -256,6 +261,7 @@ public class CoordinationServiceDefinitionImpl extends AbstractServiceDefinition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setWiringPattern(DynamicWiringPattern newWiringPattern) {
 		if (newWiringPattern != wiringPattern) {
 			NotificationChain msgs = null;
@@ -279,6 +285,7 @@ public class CoordinationServiceDefinitionImpl extends AbstractServiceDefinition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MonitoringPattern getMonitoringPattern() {
 		return monitoringPattern;
 	}
@@ -308,6 +315,7 @@ public class CoordinationServiceDefinitionImpl extends AbstractServiceDefinition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMonitoringPattern(MonitoringPattern newMonitoringPattern) {
 		if (newMonitoringPattern != monitoringPattern) {
 			NotificationChain msgs = null;
@@ -335,6 +343,7 @@ public class CoordinationServiceDefinitionImpl extends AbstractServiceDefinition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CommunicationServiceUsage> getServices() {
 		if (services == null) {
 			services = new EObjectContainmentEList<CommunicationServiceUsage>(CommunicationServiceUsage.class, this,

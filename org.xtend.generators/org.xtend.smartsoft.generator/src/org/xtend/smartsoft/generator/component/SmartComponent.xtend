@@ -1,7 +1,8 @@
-//--------------------------------------------------------------------------
+//===============================================================
 //
 //  Copyright (C) 2013 Alex Lotz, Matthias Lutz, Dennis Stampfer
 //  Copyright (C) 2009-2011 Dennis Stampfer, Andreas Steck
+//  Copyright (C) since 2012 Alex lotz
 //
 //        lotz@hs-ulm.de
 //        lutz@hs-ulm.de
@@ -16,23 +17,7 @@
 //
 //  This file is part of the SmartSoft MDSD Toolchain. 
 //
-//  This library is free software; you can redistribute it and/or
-//  modify it under the terms of the GNU Lesser General Public
-//  License as published by the Free Software Foundation; either
-//  version 2.1 of the License, or (at your option) any later version.
-//
-//  This library is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-//  Lesser General Public License for more details.
-//
-//  You should have received a copy of the GNU Lesser General Public
-//  License along with this library; if not, write to the Free Software
-//  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-//
-//--------------------------------------------------------------------------
-
-
+//===============================================================
 package org.xtend.smartsoft.generator.component
 
 import com.google.inject.Inject
@@ -225,11 +210,11 @@ class SmartComponent {
 			#include "«input.UpcallManagerHeaderFileName»"
 		«ENDFOR»
 		
-		// include input-handler
+		// include input-handler(s)
 		«FOR handler : component.inputHandlers.sortBy(e | e.name)»
 			#include "«handler.InputHandlerUserHeaderFileName»"
 		«ENDFOR»
-		// include input-handler
+		// include request-handler(s)
 		«FOR handler : component.requestHandlers.sortBy(e | e.name)»
 			#include "«handler.QueryServerHandlerUserHeaderFileName»"
 		«ENDFOR»
@@ -328,14 +313,14 @@ class SmartComponent {
 			«FOR output: component.outputPorts.sortBy[it.name]»
 				«output.portDefinition» *«output.nameInstance»;
 				«IF output.isEventServer»
-				Smart::IEventTestHandler<«output.getCommObjectCppList(true)»> *«output.nameInstance»EventTestHandler; 
+				std::shared_ptr<Smart::IEventTestHandler<«output.getCommObjectCppList(true)»>> «output.nameInstance»EventTestHandler;
 				«ENDIF»
 			«ENDFOR»
 			
 			// define answer-ports
 			«FOR answer: component.answerPorts.sortBy[it.name]»
 				«answer.portDefinition» *«answer.nameInstance»;
-				Smart::QueryServerTaskTrigger<«answer.inputHandlerCommObject»,SmartACE::QueryId> *«answer.nameInstance»InputTaskTrigger;
+				Smart::QueryServerTaskTrigger<«answer.inputHandlerCommObject»> *«answer.nameInstance»InputTaskTrigger;
 			«ENDFOR»
 			
 			// define request-handlers
@@ -477,7 +462,7 @@ class SmartComponent {
 				«ELSEIF element instanceof AnswerPort»
 					«element.nameInstance»InputTaskTrigger = NULL;
 				«ELSEIF element.isEventServer»
-					«element.nameInstance»EventTestHandler = NULL; 
+					«element.nameInstance»EventTestHandler = nullptr; 
 				«ENDIF»
 			«ENDFOR»
 «««		    «FOR cl : component.eAllContents.filter(typeof(org.eclipse.uml2.uml.Port)).toIterable.sortBy(e | e.name)»
@@ -684,16 +669,21 @@ class SmartComponent {
 				// create event-test handlers (if needed)
 				«FOR output: component.outputPorts.sortBy[it.name]»
 					«IF output.isEventServer»
-						«output.nameInstance»EventTestHandler = new «output.nameClass»EventTestHandler();
+						«output.nameInstance»EventTestHandler = std::make_shared<«output.nameClass»EventTestHandler>();
 					«ENDIF»
 				«ENDFOR»
 				
 				// create server ports
 				// TODO: set minCycleTime from Ini-file
 				«FOR server: component.allServerPorts.sortBy[it.name]»
-					«server.nameInstance» = portFactoryRegistry[connections.«server.nameInstance».roboticMiddleware]->create«server.nameClass»(connections.«server.nameInstance».serviceName«IF server.isEventServer», «server.nameInstance»EventTestHandler«ENDIF»);
+					«IF server.isEventServer»
+						«server.nameInstance»EventTestHandler = std::make_shared<«server.nameClass»EventTestHandler>();
+						«server.nameInstance» = portFactoryRegistry[connections.«server.nameInstance».roboticMiddleware]->create«server.nameClass»(connections.«server.nameInstance».serviceName, «server.nameInstance»EventTestHandler);
+					«ELSE»
+						«server.nameInstance» = portFactoryRegistry[connections.«server.nameInstance».roboticMiddleware]->create«server.nameClass»(connections.«server.nameInstance».serviceName);
+					«ENDIF»
 					«IF server instanceof AnswerPort»
-						«server.nameInstance»InputTaskTrigger = new Smart::QueryServerTaskTrigger<«server.inputHandlerCommObject»,SmartACE::QueryId>(«server.nameInstance»);
+						«server.nameInstance»InputTaskTrigger = new Smart::QueryServerTaskTrigger<«server.inputHandlerCommObject»>(«server.nameInstance»);
 					«ENDIF»
 				«ENDFOR»
 				
@@ -924,7 +914,7 @@ class SmartComponent {
 			// destroy event-test handlers (if needed)
 			«FOR output: component.outputPorts.sortBy[it.name]»
 				«IF output.isEventServer»
-					delete «output.nameInstance»EventTestHandler;
+					«output.nameInstance»EventTestHandler;
 				«ENDIF»
 			«ENDFOR»
 			

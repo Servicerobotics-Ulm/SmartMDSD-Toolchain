@@ -8,6 +8,8 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.ecore.base.basicAttributes.provider.BasicAttributesEditPlugin;
 
+import org.ecore.base.documentation.provider.DocumentationEditPlugin;
+
 import org.ecore.base.genericDatasheet.provider.GenericDatasheetEditPlugin;
 
 import org.ecore.base.stateMachine.provider.StateMachineEditPlugin;
@@ -59,8 +61,9 @@ public final class ComponentDatasheetEditPlugin extends EMFPlugin {
 		super(new ResourceLocator[] { BasicAttributesEditPlugin.INSTANCE, CommunicationObjectEditPlugin.INSTANCE,
 				CommunicationPatternEditPlugin.INSTANCE, ComponentDefinitionEditPlugin.INSTANCE,
 				ComponentModeEditPlugin.INSTANCE, CoordinationPatternEditPlugin.INSTANCE,
-				GenericDatasheetEditPlugin.INSTANCE, ParameterDefinitionEditPlugin.INSTANCE,
-				ServiceDefinitionEditPlugin.INSTANCE, StateMachineEditPlugin.INSTANCE, });
+				DocumentationEditPlugin.INSTANCE, GenericDatasheetEditPlugin.INSTANCE,
+				ParameterDefinitionEditPlugin.INSTANCE, ServiceDefinitionEditPlugin.INSTANCE,
+				StateMachineEditPlugin.INSTANCE, });
 	}
 
 	/**

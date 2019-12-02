@@ -3,9 +3,7 @@
 package org.ecore.system.targetPlatform.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
+import org.ecore.base.documentation.impl.AbstractDocumentedElementImpl;
 import org.ecore.system.targetPlatform.AbstractTPElement;
 import org.ecore.system.targetPlatform.TargetPlatformPackage;
 
@@ -16,7 +14,7 @@ import org.ecore.system.targetPlatform.TargetPlatformPackage;
  *
  * @generated
  */
-public abstract class AbstractTPElementImpl extends MinimalEObjectImpl.Container implements AbstractTPElement {
+public abstract class AbstractTPElementImpl extends AbstractDocumentedElementImpl implements AbstractTPElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

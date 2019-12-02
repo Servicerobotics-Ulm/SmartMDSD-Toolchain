@@ -129,6 +129,7 @@ public class SystemComponentArchitectureImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -138,6 +139,7 @@ public class SystemComponentArchitectureImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -151,6 +153,7 @@ public class SystemComponentArchitectureImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ComponentInstance> getComponents() {
 		if (components == null) {
 			components = new EObjectContainmentEList<ComponentInstance>(ComponentInstance.class, this,
@@ -164,6 +167,7 @@ public class SystemComponentArchitectureImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SystemExtension> getExtensions() {
 		if (extensions == null) {
 			extensions = new EObjectContainmentEList<SystemExtension>(SystemExtension.class, this,
@@ -177,6 +181,7 @@ public class SystemComponentArchitectureImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Connection> getConnections() {
 		if (connections == null) {
 			connections = new EObjectContainmentEList<Connection>(Connection.class, this,
@@ -190,6 +195,7 @@ public class SystemComponentArchitectureImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActivityArchitectureModel getActivityArch() {
 		if (activityArch != null && activityArch.eIsProxy()) {
 			InternalEObject oldActivityArch = (InternalEObject) activityArch;
@@ -218,6 +224,7 @@ public class SystemComponentArchitectureImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setActivityArch(ActivityArchitectureModel newActivityArch) {
 		ActivityArchitectureModel oldActivityArch = activityArch;
 		activityArch = newActivityArch;
@@ -359,7 +366,7 @@ public class SystemComponentArchitectureImpl extends MinimalEObjectImpl.Containe
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

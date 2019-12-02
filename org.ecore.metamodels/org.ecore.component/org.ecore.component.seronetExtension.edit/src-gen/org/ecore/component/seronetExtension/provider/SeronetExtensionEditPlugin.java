@@ -8,6 +8,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.ecore.base.basicAttributes.provider.BasicAttributesEditPlugin;
 
+import org.ecore.base.documentation.provider.DocumentationEditPlugin;
 import org.ecore.base.mixedport.provider.MixedportEditPlugin;
 
 import org.ecore.base.stateMachine.provider.StateMachineEditPlugin;
@@ -62,7 +63,8 @@ public final class SeronetExtensionEditPlugin extends EMFPlugin {
 				CommunicationPatternEditPlugin.INSTANCE, ComponentDefinitionEditPlugin.INSTANCE,
 				ComponentModeEditPlugin.INSTANCE, CoordinationPatternEditPlugin.INSTANCE, MixedportEditPlugin.INSTANCE,
 				ParameterDefinitionEditPlugin.INSTANCE, RoboticMiddlewareEditPlugin.INSTANCE,
-				ServiceDefinitionEditPlugin.INSTANCE, StateMachineEditPlugin.INSTANCE, });
+				ServiceDefinitionEditPlugin.INSTANCE, StateMachineEditPlugin.INSTANCE,
+				DocumentationEditPlugin.INSTANCE, });
 	}
 
 	/**

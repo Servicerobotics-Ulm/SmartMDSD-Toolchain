@@ -934,10 +934,10 @@ public class InternalActivityArchitectureLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalActivityArchitecture.g:1807:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalActivityArchitecture.g:1807:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalActivityArchitecture.g:1781:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalActivityArchitecture.g:1781:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalActivityArchitecture.g:1807:11: ( '^' )?
+            // InternalActivityArchitecture.g:1781:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -946,7 +946,7 @@ public class InternalActivityArchitectureLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalActivityArchitecture.g:1807:11: '^'
+                    // InternalActivityArchitecture.g:1781:11: '^'
                     {
                     match('^'); 
 
@@ -964,7 +964,7 @@ public class InternalActivityArchitectureLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalActivityArchitecture.g:1807:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalActivityArchitecture.g:1781:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1013,10 +1013,10 @@ public class InternalActivityArchitectureLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalActivityArchitecture.g:1809:10: ( ( '0' .. '9' )+ )
-            // InternalActivityArchitecture.g:1809:12: ( '0' .. '9' )+
+            // InternalActivityArchitecture.g:1783:10: ( ( '0' .. '9' )+ )
+            // InternalActivityArchitecture.g:1783:12: ( '0' .. '9' )+
             {
-            // InternalActivityArchitecture.g:1809:12: ( '0' .. '9' )+
+            // InternalActivityArchitecture.g:1783:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1030,7 +1030,7 @@ public class InternalActivityArchitectureLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalActivityArchitecture.g:1809:13: '0' .. '9'
+            	    // InternalActivityArchitecture.g:1783:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1062,10 +1062,10 @@ public class InternalActivityArchitectureLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalActivityArchitecture.g:1811:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalActivityArchitecture.g:1811:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalActivityArchitecture.g:1785:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalActivityArchitecture.g:1785:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalActivityArchitecture.g:1811:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalActivityArchitecture.g:1785:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1083,10 +1083,10 @@ public class InternalActivityArchitectureLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalActivityArchitecture.g:1811:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalActivityArchitecture.g:1785:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalActivityArchitecture.g:1811:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalActivityArchitecture.g:1785:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1102,7 +1102,7 @@ public class InternalActivityArchitectureLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalActivityArchitecture.g:1811:21: '\\\\' .
+                    	    // InternalActivityArchitecture.g:1785:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1110,7 +1110,7 @@ public class InternalActivityArchitectureLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalActivityArchitecture.g:1811:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalActivityArchitecture.g:1785:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1135,10 +1135,10 @@ public class InternalActivityArchitectureLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalActivityArchitecture.g:1811:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalActivityArchitecture.g:1785:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalActivityArchitecture.g:1811:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalActivityArchitecture.g:1785:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1154,7 +1154,7 @@ public class InternalActivityArchitectureLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalActivityArchitecture.g:1811:54: '\\\\' .
+                    	    // InternalActivityArchitecture.g:1785:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1162,7 +1162,7 @@ public class InternalActivityArchitectureLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalActivityArchitecture.g:1811:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalActivityArchitecture.g:1785:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1205,12 +1205,12 @@ public class InternalActivityArchitectureLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalActivityArchitecture.g:1813:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalActivityArchitecture.g:1813:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalActivityArchitecture.g:1787:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalActivityArchitecture.g:1787:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalActivityArchitecture.g:1813:24: ( options {greedy=false; } : . )*
+            // InternalActivityArchitecture.g:1787:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1235,7 +1235,7 @@ public class InternalActivityArchitectureLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalActivityArchitecture.g:1813:52: .
+            	    // InternalActivityArchitecture.g:1787:52: .
             	    {
             	    matchAny(); 
 
@@ -1265,12 +1265,12 @@ public class InternalActivityArchitectureLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalActivityArchitecture.g:1815:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalActivityArchitecture.g:1815:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalActivityArchitecture.g:1789:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalActivityArchitecture.g:1789:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalActivityArchitecture.g:1815:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalActivityArchitecture.g:1789:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1283,7 +1283,7 @@ public class InternalActivityArchitectureLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalActivityArchitecture.g:1815:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalActivityArchitecture.g:1789:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1303,7 +1303,7 @@ public class InternalActivityArchitectureLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalActivityArchitecture.g:1815:40: ( ( '\\r' )? '\\n' )?
+            // InternalActivityArchitecture.g:1789:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1312,9 +1312,9 @@ public class InternalActivityArchitectureLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalActivityArchitecture.g:1815:41: ( '\\r' )? '\\n'
+                    // InternalActivityArchitecture.g:1789:41: ( '\\r' )? '\\n'
                     {
-                    // InternalActivityArchitecture.g:1815:41: ( '\\r' )?
+                    // InternalActivityArchitecture.g:1789:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1323,7 +1323,7 @@ public class InternalActivityArchitectureLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalActivityArchitecture.g:1815:41: '\\r'
+                            // InternalActivityArchitecture.g:1789:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1355,10 +1355,10 @@ public class InternalActivityArchitectureLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalActivityArchitecture.g:1817:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalActivityArchitecture.g:1817:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalActivityArchitecture.g:1791:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalActivityArchitecture.g:1791:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalActivityArchitecture.g:1817:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalActivityArchitecture.g:1791:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1412,8 +1412,8 @@ public class InternalActivityArchitectureLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalActivityArchitecture.g:1819:16: ( . )
-            // InternalActivityArchitecture.g:1819:18: .
+            // InternalActivityArchitecture.g:1793:16: ( . )
+            // InternalActivityArchitecture.g:1793:18: .
             {
             matchAny(); 
 

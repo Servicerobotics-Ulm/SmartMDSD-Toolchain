@@ -1,0 +1,43 @@
+//================================================================
+//
+//  Copyright (C) 2019 Alex Lotz, Dennis Stampfer, Matthias Lutz
+//
+//        lotz@hs-ulm.de
+//        stampfer@hs-ulm.de
+//        lutz@hs-ulm.de
+//
+//        Servicerobotik Ulm
+//        Christian Schlegel
+//        Ulm University of Applied Sciences
+//        Prittwitzstr. 10
+//        89075 Ulm
+//        Germany
+//
+//  This file is part of the SmartMDSD Toolchain V3. 
+//
+//================================================================
+grammar org.xtext.system.datasheetPropertyChecks.SystemDatasheetPropertyChecks with org.eclipse.xtext.common.Terminals
+
+import "http://www.ecore.org/system/DatasheetPropertyChecks" 
+import "http://www.ecore.org/system/ComponentArchitecture" as componentArchitecture
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+SystemDatasheetPropertyChecksModel returns SystemDatasheetPropertyChecksModel:
+	'SystemDatasheetPropertyChecksModel' system=[componentArchitecture::SystemComponentArchitecture]
+	'{'
+		checks+=DatasheetPropertyCheck*
+	'}';
+
+
+DatasheetPropertyCheck returns DatasheetPropertyCheck:
+	{DatasheetPropertyCheck}
+	function=EvaluationFunction propertyName=ID operator=EvaluationOperator propertyValue=STRING (propertyUnit=STRING)? (';')?
+;
+
+
+enum EvaluationFunction returns EvaluationFunction:
+	FOR_ALL = '∀' | SUM = 'Σ' | EXISTS = '∃';
+
+enum EvaluationOperator returns EvaluationOperator:
+	EQ = '==' | NEQ = '!=' | LT = '<' | LET = '<=' | GET = '>=' | GT = '>' | COMPATIBLE_TO = 'compatible_to';
+

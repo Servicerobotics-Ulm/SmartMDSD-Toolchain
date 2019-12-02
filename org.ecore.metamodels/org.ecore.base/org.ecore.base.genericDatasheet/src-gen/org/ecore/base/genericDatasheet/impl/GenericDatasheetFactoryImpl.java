@@ -57,12 +57,12 @@ public class GenericDatasheetFactoryImpl extends EFactoryImpl implements Generic
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case GenericDatasheetPackage.GENERIC_DATASHEET:
-			return createGenericDatasheet();
-		case GenericDatasheetPackage.SPDX_LICENSE:
-			return createSpdxLicense();
-		case GenericDatasheetPackage.PROPRIETARY_LICENSE:
-			return createProprietaryLicense();
+		case GenericDatasheetPackage.DATASHEET_PROPERTY:
+			return createDatasheetProperty();
+		case GenericDatasheetPackage.GENERIC_DATASHEET_MODEL:
+			return createGenericDatasheetModel();
+		case GenericDatasheetPackage.MANDATORY_DATASHEET_ELEMENT:
+			return createMandatoryDatasheetElement();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -76,8 +76,12 @@ public class GenericDatasheetFactoryImpl extends EFactoryImpl implements Generic
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case GenericDatasheetPackage.TRL:
-			return createTRLFromString(eDataType, initialValue);
+		case GenericDatasheetPackage.DEFAULT_DATASHEET_PROPERTIES:
+			return createDefaultDatasheetPropertiesFromString(eDataType, initialValue);
+		case GenericDatasheetPackage.TECHNOLOGY_READINESS_LEVEL:
+			return createTechnologyReadinessLevelFromString(eDataType, initialValue);
+		case GenericDatasheetPackage.MANDATORY_DATASHEET_ELEMENT_NAMES:
+			return createMandatoryDatasheetElementNamesFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -91,8 +95,12 @@ public class GenericDatasheetFactoryImpl extends EFactoryImpl implements Generic
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case GenericDatasheetPackage.TRL:
-			return convertTRLToString(eDataType, instanceValue);
+		case GenericDatasheetPackage.DEFAULT_DATASHEET_PROPERTIES:
+			return convertDefaultDatasheetPropertiesToString(eDataType, instanceValue);
+		case GenericDatasheetPackage.TECHNOLOGY_READINESS_LEVEL:
+			return convertTechnologyReadinessLevelToString(eDataType, instanceValue);
+		case GenericDatasheetPackage.MANDATORY_DATASHEET_ELEMENT_NAMES:
+			return convertMandatoryDatasheetElementNamesToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -104,9 +112,9 @@ public class GenericDatasheetFactoryImpl extends EFactoryImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public GenericDatasheet createGenericDatasheet() {
-		GenericDatasheetImpl genericDatasheet = new GenericDatasheetImpl();
-		return genericDatasheet;
+	public DatasheetProperty createDatasheetProperty() {
+		DatasheetPropertyImpl datasheetProperty = new DatasheetPropertyImpl();
+		return datasheetProperty;
 	}
 
 	/**
@@ -115,9 +123,9 @@ public class GenericDatasheetFactoryImpl extends EFactoryImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public SpdxLicense createSpdxLicense() {
-		SpdxLicenseImpl spdxLicense = new SpdxLicenseImpl();
-		return spdxLicense;
+	public GenericDatasheetModel createGenericDatasheetModel() {
+		GenericDatasheetModelImpl genericDatasheetModel = new GenericDatasheetModelImpl();
+		return genericDatasheetModel;
 	}
 
 	/**
@@ -126,9 +134,9 @@ public class GenericDatasheetFactoryImpl extends EFactoryImpl implements Generic
 	 * @generated
 	 */
 	@Override
-	public ProprietaryLicense createProprietaryLicense() {
-		ProprietaryLicenseImpl proprietaryLicense = new ProprietaryLicenseImpl();
-		return proprietaryLicense;
+	public MandatoryDatasheetElement createMandatoryDatasheetElement() {
+		MandatoryDatasheetElementImpl mandatoryDatasheetElement = new MandatoryDatasheetElementImpl();
+		return mandatoryDatasheetElement;
 	}
 
 	/**
@@ -136,8 +144,9 @@ public class GenericDatasheetFactoryImpl extends EFactoryImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TRL createTRLFromString(EDataType eDataType, String initialValue) {
-		TRL result = TRL.get(initialValue);
+	public DefaultDatasheetProperties createDefaultDatasheetPropertiesFromString(EDataType eDataType,
+			String initialValue) {
+		DefaultDatasheetProperties result = DefaultDatasheetProperties.get(initialValue);
 		if (result == null)
 			throw new IllegalArgumentException(
 					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -149,7 +158,52 @@ public class GenericDatasheetFactoryImpl extends EFactoryImpl implements Generic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertTRLToString(EDataType eDataType, Object instanceValue) {
+	public String convertDefaultDatasheetPropertiesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TechnologyReadinessLevel createTechnologyReadinessLevelFromString(EDataType eDataType, String initialValue) {
+		TechnologyReadinessLevel result = TechnologyReadinessLevel.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTechnologyReadinessLevelToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MandatoryDatasheetElementNames createMandatoryDatasheetElementNamesFromString(EDataType eDataType,
+			String initialValue) {
+		MandatoryDatasheetElementNames result = MandatoryDatasheetElementNames.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMandatoryDatasheetElementNamesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

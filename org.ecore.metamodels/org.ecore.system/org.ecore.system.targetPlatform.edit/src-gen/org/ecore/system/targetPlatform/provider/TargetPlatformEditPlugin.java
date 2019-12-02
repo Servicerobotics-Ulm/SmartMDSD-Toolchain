@@ -6,6 +6,7 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.ecore.base.documentation.provider.DocumentationEditPlugin;
 import org.ecore.service.roboticMiddleware.provider.RoboticMiddlewareEditPlugin;
 
 /**
@@ -38,7 +39,7 @@ public final class TargetPlatformEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public TargetPlatformEditPlugin() {
-		super(new ResourceLocator[] { RoboticMiddlewareEditPlugin.INSTANCE, });
+		super(new ResourceLocator[] { DocumentationEditPlugin.INSTANCE, RoboticMiddlewareEditPlugin.INSTANCE, });
 	}
 
 	/**

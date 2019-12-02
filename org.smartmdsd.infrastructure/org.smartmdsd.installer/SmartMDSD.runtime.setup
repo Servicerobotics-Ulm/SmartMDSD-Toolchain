@@ -6,7 +6,7 @@
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     name="SmartMDSD"
-    label="SmartMDSD Toolchain v3.9">
+    label="SmartMDSD Toolchain">
   <setupTask
       xsi:type="setup.p2:P2Task">
     <requirement
@@ -22,10 +22,26 @@
         filter=""/>
     <requirement
         name="org.eclipse.emf.compare.feature.group"/>
+    <requirement
+        name="org.eclipse.mylyn.wikitext.editors_feature.feature.group"/>
+    <requirement
+        name="com.cthing.cmakeed.feature.feature.group"/>
     <repository
-        url="https://web2.servicerobotik-ulm.de/files/SmartMDSD_Toolchain/updatesite/v3.9"/>
+        url="https://web2.servicerobotik-ulm.de/files/SmartMDSD_Toolchain/updatesite/latest"/>
+    <repository
+        url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update"/>
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
   </setupTask>
+  <setupTask
+      xsi:type="setup:EclipseIniTask"
+      id="SmartMDSD-product"
+      option="-product"
+      value="org.smartmdsd.branding.product"/>
+  <setupTask
+      xsi:type="setup:EclipseIniTask"
+      id="SmartMDSD-splash"
+      option="-showsplash"
+      value="org.smartmdsd.branding"/>
   <setupTask
       xsi:type="setup:EclipseIniTask"
       option="-Xmx"
@@ -64,22 +80,31 @@
       </setupTask>
     </setupTask>
   </setupTask>
-  <project name="SeRoNet-ROS-MixedPort"
-      label="SeRoNet ROS MixedPort (experimental)">
+  <project name="ROS-Mixedport"
+      label="">
     <setupTask
         xsi:type="setup.p2:P2Task">
       <requirement
-          name="de.seronet_projekt.mixedport.ros.feature.feature.group"/>
+          name="org.smartmdsd.ros.mixedport.feature.group"/>
+      <repository
+          url="https://web2.servicerobotik-ulm.de/files/SmartMDSD_Toolchain/updatesite/ros-mixedport/latest/"/>
     </setupTask>
     <stream
-        name="v3.8"
-        label="ROS-MixedPort v3.8">
-      <description></description>
-    </stream>
-    <description>Extends the SmartMDSD Toolchain with a ROS MixedPort Component (experimental feature)</description>
+        name="ROS-Mixedport"/>
   </project>
-  <stream name="v3.9"
-      label="SmartMDSD Toolchain v3.9"/>
+  <project name="OPCUA-Backend">
+    <setupTask
+        xsi:type="setup.p2:P2Task">
+      <requirement
+          name="de.seronet_projekt.opcua.backend.feature.group"/>
+      <repository
+          url="https://web2.servicerobotik-ulm.de/files/SmartMDSD_Toolchain/updatesite/opcua-backend/latest/"/>
+    </setupTask>
+    <stream
+        name="OPCUA-Backend"/>
+  </project>
+  <stream name="Toolchain-latest"
+      label="SmartMDSD Toolchain"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>

@@ -19,4 +19,11 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated componentDatasheet -->
+      <extender
+            uri="http://www.ecore.org/base/genericDatasheet"
+            class="org.ecore.component.componentDatasheet.provider.ComponentDatasheetItemProviderAdapterFactory$GenericDatasheetChildCreationExtender"/>
+   </extension>
+
 </plugin>

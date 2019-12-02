@@ -62,6 +62,7 @@ public class SkillRealizationsRefImpl extends AbstractCoordinationElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CoordinationModuleRealization getSkillRealizationCoordModuleRef() {
 		if (skillRealizationCoordModuleRef != null && skillRealizationCoordModuleRef.eIsProxy()) {
 			InternalEObject oldSkillRealizationCoordModuleRef = (InternalEObject) skillRealizationCoordModuleRef;
@@ -91,6 +92,7 @@ public class SkillRealizationsRefImpl extends AbstractCoordinationElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSkillRealizationCoordModuleRef(CoordinationModuleRealization newSkillRealizationCoordModuleRef) {
 		CoordinationModuleRealization oldSkillRealizationCoordModuleRef = skillRealizationCoordModuleRef;
 		skillRealizationCoordModuleRef = newSkillRealizationCoordModuleRef;

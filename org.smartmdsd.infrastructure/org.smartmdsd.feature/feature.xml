@@ -2,7 +2,7 @@
 <feature
       id="org.smartmdsd.toolchain"
       label="SmartMDSD-Toolchain"
-      version="3.10.0.qualifier"
+      version="3.11.0.qualifier"
       provider-name="Servicerobotics Ulm"
       plugin="org.smartmdsd.branding"
       os="linux,win32"
@@ -55,7 +55,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
    </license>
 
    <url>
-      <update label="SmartMDSD" url="https://web2.servicerobotik-ulm.de/files/SmartMDSD_Toolchain/updatesite/v3.9/"/>
+      <update label="SmartMDSD" url="https://web2.servicerobotik-ulm.de/files/SmartMDSD_Toolchain/updatesite/latest/"/>
    </url>
 
    <plugin
@@ -123,20 +123,6 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 
    <plugin
          id="org.ecore.component.componentDefinition.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.ecore.component.componentDocumentation"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.ecore.component.componentDocumentation.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -521,27 +507,6 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
          unpack="false"/>
 
    <plugin
-         id="org.xtext.component.componentDocumentation"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.xtext.component.componentDocumentation.ide"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.xtext.component.componentDocumentation.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.xtext.component.componentParameter"
          download-size="0"
          install-size="0"
@@ -885,13 +850,6 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
          unpack="false"/>
 
    <plugin
-         id="org.smartsoft.utils"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.smartmdsd.branding"
          download-size="0"
          install-size="0"
@@ -899,13 +857,6 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 
    <plugin
          id="org.v2.to.v3.converter"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.project.creation.wizards"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -1102,6 +1053,118 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 
    <plugin
          id="org.ecore.base.mixedport.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ecore.base.documentation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ecore.base.documentation.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ecore.system.datasheetPropertyChecks"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ecore.system.datasheetPropertyChecks.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ecore.system.systemDatasheet"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ecore.system.systemDatasheet.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.smartmdsd.metadata.indexer"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.base.docuterminals"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.base.docuterminals.ide"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.base.docuterminals.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.system.datasheetPropertyChecks"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.system.datasheetPropertyChecks.ide"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.system.datasheetPropertyChecks.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.system.systemDatasheet"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.system.systemDatasheet.ide"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.xtext.system.systemDatasheet.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"

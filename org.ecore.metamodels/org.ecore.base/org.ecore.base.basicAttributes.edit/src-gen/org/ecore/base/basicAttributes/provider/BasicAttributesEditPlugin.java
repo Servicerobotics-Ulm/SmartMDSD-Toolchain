@@ -5,6 +5,7 @@ package org.ecore.base.basicAttributes.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.ecore.base.documentation.provider.DocumentationEditPlugin;
 
 /**
  * This is the central singleton for the BasicAttributes edit plugin.
@@ -36,7 +37,7 @@ public final class BasicAttributesEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public BasicAttributesEditPlugin() {
-		super(new ResourceLocator[] {});
+		super(new ResourceLocator[] { DocumentationEditPlugin.INSTANCE, });
 	}
 
 	/**

@@ -8,7 +8,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
         eType="#//ServiceRepoImport" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentDefinition">
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentDefinition" eSuperTypes="../../org.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//AbstractComponentElement" containment="true"/>
@@ -47,7 +47,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="service" lowerBound="1"
         eType="ecore:EClass ../../org.ecore.service.serviceDefinition/model/serviceDefinition.ecore#//TwoWayCommunicationService"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentPort" abstract="true" eSuperTypes="#//NamedComponentElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentPort" abstract="true" eSuperTypes="#//NamedComponentElement ../../org.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="extensions" upperBound="-1"
         eType="#//ComponentPortExtension" containment="true"/>
   </eClassifiers>

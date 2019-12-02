@@ -11,8 +11,10 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.ecore.base.basicAttributes.BasicAttributesPackage;
 
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.base.stateMachine.StateMachinePackage;
 
+import org.ecore.behavior.skillRealization.SkillRealizationPackage;
 import org.ecore.component.componentDefinition.ComponentDefinitionPackage;
 
 import org.ecore.component.componentParameter.AbstractComponentParameter;
@@ -42,6 +44,7 @@ import org.ecore.service.coordinationPattern.CoordinationPatternPackage;
 import org.ecore.service.parameterDefinition.ParameterDefinitionPackage;
 
 import org.ecore.service.serviceDefinition.ServiceDefinitionPackage;
+import org.ecore.service.skillDefinition.SkillDefinitionPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -169,7 +172,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ComponentParameterPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -185,9 +188,10 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 					.getEPackage(ComponentParameterPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ComponentParameterPackageImpl theComponentParameterPackage = (ComponentParameterPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof ComponentParameterPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new ComponentParameterPackageImpl());
+		Object registeredComponentParameterPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ComponentParameterPackageImpl theComponentParameterPackage = registeredComponentParameterPackage instanceof ComponentParameterPackageImpl
+				? (ComponentParameterPackageImpl) registeredComponentParameterPackage
+				: new ComponentParameterPackageImpl();
 
 		isInited = true;
 
@@ -202,6 +206,9 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 		ParameterDefinitionPackage.eINSTANCE.eClass();
 		ServiceDefinitionPackage.eINSTANCE.eClass();
 		StateMachinePackage.eINSTANCE.eClass();
+		SkillRealizationPackage.eINSTANCE.eClass();
+		SkillDefinitionPackage.eINSTANCE.eClass();
+		DocumentationPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theComponentParameterPackage.createPackageContents();
@@ -222,6 +229,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentParameter() {
 		return componentParameterEClass;
 	}
@@ -231,6 +239,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentParameter_Parameters() {
 		return (EReference) componentParameterEClass.getEStructuralFeatures().get(0);
 	}
@@ -240,6 +249,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentParameter_Component() {
 		return (EReference) componentParameterEClass.getEStructuralFeatures().get(1);
 	}
@@ -249,6 +259,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentParameter_Name() {
 		return (EAttribute) componentParameterEClass.getEStructuralFeatures().get(2);
 	}
@@ -258,6 +269,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractComponentParameter() {
 		return abstractComponentParameterEClass;
 	}
@@ -267,6 +279,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentParameterBase() {
 		return componentParameterBaseEClass;
 	}
@@ -276,6 +289,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getInternalParameter() {
 		return internalParameterEClass;
 	}
@@ -285,6 +299,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInternalParameter_Name() {
 		return (EAttribute) internalParameterEClass.getEStructuralFeatures().get(0);
 	}
@@ -294,6 +309,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getInternalParameter_Attributes() {
 		return (EReference) internalParameterEClass.getEStructuralFeatures().get(1);
 	}
@@ -303,6 +319,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getExtendedParameter() {
 		return extendedParameterEClass;
 	}
@@ -312,6 +329,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExtendedParameter_Name() {
 		return (EAttribute) extendedParameterEClass.getEStructuralFeatures().get(0);
 	}
@@ -321,6 +339,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getExtendedParameter_Attributes() {
 		return (EReference) extendedParameterEClass.getEStructuralFeatures().get(1);
 	}
@@ -330,6 +349,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getExtendedTrigger() {
 		return extendedTriggerEClass;
 	}
@@ -339,6 +359,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExtendedTrigger_Name() {
 		return (EAttribute) extendedTriggerEClass.getEStructuralFeatures().get(0);
 	}
@@ -348,6 +369,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExtendedTrigger_Active() {
 		return (EAttribute) extendedTriggerEClass.getEStructuralFeatures().get(1);
 	}
@@ -357,6 +379,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getExtendedTrigger_Attributes() {
 		return (EReference) extendedTriggerEClass.getEStructuralFeatures().get(2);
 	}
@@ -366,6 +389,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterSetInstance() {
 		return parameterSetInstanceEClass;
 	}
@@ -375,6 +399,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterSetInstance_ParameterInstances() {
 		return (EReference) parameterSetInstanceEClass.getEStructuralFeatures().get(0);
 	}
@@ -384,6 +409,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterSetInstance_ParamSet() {
 		return (EReference) parameterSetInstanceEClass.getEStructuralFeatures().get(1);
 	}
@@ -393,6 +419,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameterSetInstance_Name() {
 		return (EAttribute) parameterSetInstanceEClass.getEStructuralFeatures().get(2);
 	}
@@ -402,6 +429,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractParameterInstance() {
 		return abstractParameterInstanceEClass;
 	}
@@ -411,6 +439,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTriggerInstance() {
 		return triggerInstanceEClass;
 	}
@@ -420,6 +449,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTriggerInstance_TriggerDef() {
 		return (EReference) triggerInstanceEClass.getEStructuralFeatures().get(0);
 	}
@@ -429,6 +459,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTriggerInstance_Active() {
 		return (EAttribute) triggerInstanceEClass.getEStructuralFeatures().get(1);
 	}
@@ -438,6 +469,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTriggerInstance_Name() {
 		return (EAttribute) triggerInstanceEClass.getEStructuralFeatures().get(2);
 	}
@@ -447,6 +479,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterInstance() {
 		return parameterInstanceEClass;
 	}
@@ -456,6 +489,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterInstance_ParameterDef() {
 		return (EReference) parameterInstanceEClass.getEStructuralFeatures().get(0);
 	}
@@ -465,6 +499,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterInstance_Attributes() {
 		return (EReference) parameterInstanceEClass.getEStructuralFeatures().get(1);
 	}
@@ -474,6 +509,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameterInstance_Name() {
 		return (EAttribute) parameterInstanceEClass.getEStructuralFeatures().get(2);
 	}
@@ -483,6 +519,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentParamModel() {
 		return componentParamModelEClass;
 	}
@@ -492,6 +529,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentParamModel_Parametrization() {
 		return (EReference) componentParamModelEClass.getEStructuralFeatures().get(0);
 	}
@@ -501,6 +539,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentParamModel_Imports() {
 		return (EReference) componentParamModelEClass.getEStructuralFeatures().get(1);
 	}
@@ -510,6 +549,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentParametersRef() {
 		return componentParametersRefEClass;
 	}
@@ -519,6 +559,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentParametersRef_Parameter() {
 		return (EReference) componentParametersRefEClass.getEStructuralFeatures().get(0);
 	}
@@ -528,6 +569,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentParametersRef_Slave() {
 		return (EReference) componentParametersRefEClass.getEStructuralFeatures().get(1);
 	}
@@ -537,6 +579,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentRunTimeParameterBase() {
 		return componentRunTimeParameterBaseEClass;
 	}
@@ -546,6 +589,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentParameterFactory getComponentParameterFactory() {
 		return (ComponentParameterFactory) getEFactoryInstance();
 	}
@@ -647,6 +691,8 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 		// Obtain other dependent packages
 		ComponentDefinitionPackage theComponentDefinitionPackage = (ComponentDefinitionPackage) EPackage.Registry.INSTANCE
 				.getEPackage(ComponentDefinitionPackage.eNS_URI);
+		DocumentationPackage theDocumentationPackage = (DocumentationPackage) EPackage.Registry.INSTANCE
+				.getEPackage(DocumentationPackage.eNS_URI);
 		BasicAttributesPackage theBasicAttributesPackage = (BasicAttributesPackage) EPackage.Registry.INSTANCE
 				.getEPackage(BasicAttributesPackage.eNS_URI);
 		ParameterDefinitionPackage theParameterDefinitionPackage = (ParameterDefinitionPackage) EPackage.Registry.INSTANCE
@@ -659,6 +705,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		abstractComponentParameterEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
 		internalParameterEClass.getESuperTypes().add(this.getAbstractComponentParameter());
 		internalParameterEClass.getESuperTypes().add(this.getComponentParameterBase());
 		extendedParameterEClass.getESuperTypes().add(this.getAbstractComponentParameter());
@@ -667,6 +714,7 @@ public class ComponentParameterPackageImpl extends EPackageImpl implements Compo
 		extendedTriggerEClass.getESuperTypes().add(this.getAbstractComponentParameter());
 		extendedTriggerEClass.getESuperTypes().add(this.getComponentRunTimeParameterBase());
 		parameterSetInstanceEClass.getESuperTypes().add(this.getAbstractComponentParameter());
+		abstractParameterInstanceEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
 		triggerInstanceEClass.getESuperTypes().add(this.getAbstractParameterInstance());
 		triggerInstanceEClass.getESuperTypes().add(this.getComponentRunTimeParameterBase());
 		parameterInstanceEClass.getESuperTypes().add(this.getAbstractParameterInstance());

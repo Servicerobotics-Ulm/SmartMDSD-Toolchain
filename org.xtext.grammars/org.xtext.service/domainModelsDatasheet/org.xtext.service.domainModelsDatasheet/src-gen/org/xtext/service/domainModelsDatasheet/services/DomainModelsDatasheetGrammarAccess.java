@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2019 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,32 +15,7 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.service.domainModelsDatasheet.services;
 
 import com.google.inject.Inject;
@@ -71,17 +45,17 @@ public class DomainModelsDatasheetGrammarAccess extends AbstractGrammarElementFi
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final RuleCall cGenericDatasheetParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final RuleCall cGenericDatasheetModelParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//DomainModelsDatasheet:
 		//	'DomainModelsDatasheet' name=ID
 		//	'{'
-		//	GenericDatasheet
+		//	GenericDatasheetModel
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'DomainModelsDatasheet' name=ID '{' GenericDatasheet '}'
+		//'DomainModelsDatasheet' name=ID '{' GenericDatasheetModel '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'DomainModelsDatasheet'
@@ -96,8 +70,8 @@ public class DomainModelsDatasheetGrammarAccess extends AbstractGrammarElementFi
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//GenericDatasheet
-		public RuleCall getGenericDatasheetParserRuleCall_3() { return cGenericDatasheetParserRuleCall_3; }
+		//GenericDatasheetModel
+		public RuleCall getGenericDatasheetModelParserRuleCall_3() { return cGenericDatasheetModelParserRuleCall_3; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
@@ -156,7 +130,7 @@ public class DomainModelsDatasheetGrammarAccess extends AbstractGrammarElementFi
 	//DomainModelsDatasheet:
 	//	'DomainModelsDatasheet' name=ID
 	//	'{'
-	//	GenericDatasheet
+	//	GenericDatasheetModel
 	//	'}';
 	public DomainModelsDatasheetElements getDomainModelsDatasheetAccess() {
 		return pDomainModelsDatasheet;
@@ -166,76 +140,56 @@ public class DomainModelsDatasheetGrammarAccess extends AbstractGrammarElementFi
 		return getDomainModelsDatasheetAccess().getRule();
 	}
 	
-	//fragment GenericDatasheet:
-	//	'baseURI' ':'? baseURI=EString & 'shortDescription' ':'? shortDescription=EString & ('longDescription' ':'?
-	//	longDescription=TEXT_BLOCK)? & ('supplierDescription' ':'? supplierDescription=EString)? & ('homepage' ':'?
-	//	homepage=EString)? & ('trl' ':'? trl=TRL)? & ('license' ':'? license=AbstractLicense)?;
-	public GenericDatasheetGrammarAccess.GenericDatasheetElements getGenericDatasheetAccess() {
-		return gaGenericDatasheet.getGenericDatasheetAccess();
+	//fragment GenericDatasheetModel:
+	//	elements+=AbstractDatasheetElement*;
+	public GenericDatasheetGrammarAccess.GenericDatasheetModelElements getGenericDatasheetModelAccess() {
+		return gaGenericDatasheet.getGenericDatasheetModelAccess();
 	}
 	
-	public ParserRule getGenericDatasheetRule() {
-		return getGenericDatasheetAccess().getRule();
+	public ParserRule getGenericDatasheetModelRule() {
+		return getGenericDatasheetModelAccess().getRule();
 	}
 	
-	//terminal TEXT_BLOCK:
-	//	'$%'->'%$';
-	public TerminalRule getTEXT_BLOCKRule() {
-		return gaGenericDatasheet.getTEXT_BLOCKRule();
+	//AbstractDatasheetElement:
+	//	DatasheetProperty | MandatoryDatasheetElement;
+	public GenericDatasheetGrammarAccess.AbstractDatasheetElementElements getAbstractDatasheetElementAccess() {
+		return gaGenericDatasheet.getAbstractDatasheetElementAccess();
 	}
 	
-	//AbstractLicense:
-	//	SpdxLicense | ProprietaryLicense;
-	public GenericDatasheetGrammarAccess.AbstractLicenseElements getAbstractLicenseAccess() {
-		return gaGenericDatasheet.getAbstractLicenseAccess();
+	public ParserRule getAbstractDatasheetElementRule() {
+		return getAbstractDatasheetElementAccess().getRule();
 	}
 	
-	public ParserRule getAbstractLicenseRule() {
-		return getAbstractLicenseAccess().getRule();
-	}
-	
-	//EString:
-	//	STRING;
-	public GenericDatasheetGrammarAccess.EStringElements getEStringAccess() {
-		return gaGenericDatasheet.getEStringAccess();
-	}
-	
-	public ParserRule getEStringRule() {
-		return getEStringAccess().getRule();
-	}
-	
-	//enum TRL:
-	//	LEVEL1='Level1' | LEVEL2='Level2' | LEVEL3='Level3' | LEVEL4='Level4' | LEVEL5='Level5' | LEVEL6='Level6' |
-	//	LEVEL7='Level7' | LEVEL8='Level8' | LEVEL9='Level9' | UNDEFINED='Undefined';
-	public GenericDatasheetGrammarAccess.TRLElements getTRLAccess() {
-		return gaGenericDatasheet.getTRLAccess();
-	}
-	
-	public EnumRule getTRLRule() {
-		return getTRLAccess().getRule();
-	}
-	
-	//SpdxLicense:
-	//	'spdx' '(' licenseID=EString ')';
-	public GenericDatasheetGrammarAccess.SpdxLicenseElements getSpdxLicenseAccess() {
-		return gaGenericDatasheet.getSpdxLicenseAccess();
-	}
-	
-	public ParserRule getSpdxLicenseRule() {
-		return getSpdxLicenseAccess().getRule();
-	}
-	
-	//ProprietaryLicense:
-	//	{ProprietaryLicense}
-	//	'proprietary'
-	//	'{' ('name' ':'? name=EString & ('fullText' ':'? fullText=EString)? & ('URL' ':'? url=EString)?)
+	//DatasheetProperty:
+	//	'DatasheetProperty' name=ID '{' ('value' value=STRING ('unit' unit=STRING)? & ('shortDescription'
+	//	shortDescription=STRING)? & ('semanticID' semanticID=STRING)?)
 	//	'}';
-	public GenericDatasheetGrammarAccess.ProprietaryLicenseElements getProprietaryLicenseAccess() {
-		return gaGenericDatasheet.getProprietaryLicenseAccess();
+	public GenericDatasheetGrammarAccess.DatasheetPropertyElements getDatasheetPropertyAccess() {
+		return gaGenericDatasheet.getDatasheetPropertyAccess();
 	}
 	
-	public ParserRule getProprietaryLicenseRule() {
-		return getProprietaryLicenseAccess().getRule();
+	public ParserRule getDatasheetPropertyRule() {
+		return getDatasheetPropertyAccess().getRule();
+	}
+	
+	//enum MandatoryDatasheetElementNames:
+	//	BaseURI | ShortDescription;
+	public GenericDatasheetGrammarAccess.MandatoryDatasheetElementNamesElements getMandatoryDatasheetElementNamesAccess() {
+		return gaGenericDatasheet.getMandatoryDatasheetElementNamesAccess();
+	}
+	
+	public EnumRule getMandatoryDatasheetElementNamesRule() {
+		return getMandatoryDatasheetElementNamesAccess().getRule();
+	}
+	
+	//MandatoryDatasheetElement:
+	//	name=MandatoryDatasheetElementNames value=STRING;
+	public GenericDatasheetGrammarAccess.MandatoryDatasheetElementElements getMandatoryDatasheetElementAccess() {
+		return gaGenericDatasheet.getMandatoryDatasheetElementAccess();
+	}
+	
+	public ParserRule getMandatoryDatasheetElementRule() {
+		return getMandatoryDatasheetElementAccess().getRule();
 	}
 	
 	//terminal ID:

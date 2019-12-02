@@ -127,6 +127,7 @@ public class BasicAttributesFactoryImpl extends EFactoryImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AttributeDefinition createAttributeDefinition() {
 		AttributeDefinitionImpl attributeDefinition = new AttributeDefinitionImpl();
 		return attributeDefinition;
@@ -137,6 +138,7 @@ public class BasicAttributesFactoryImpl extends EFactoryImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AttributeRefinement createAttributeRefinement() {
 		AttributeRefinementImpl attributeRefinement = new AttributeRefinementImpl();
 		return attributeRefinement;
@@ -147,6 +149,7 @@ public class BasicAttributesFactoryImpl extends EFactoryImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PrimitiveType createPrimitiveType() {
 		PrimitiveTypeImpl primitiveType = new PrimitiveTypeImpl();
 		return primitiveType;
@@ -157,6 +160,7 @@ public class BasicAttributesFactoryImpl extends EFactoryImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SingleValue createSingleValue() {
 		SingleValueImpl singleValue = new SingleValueImpl();
 		return singleValue;
@@ -167,6 +171,7 @@ public class BasicAttributesFactoryImpl extends EFactoryImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ArrayValue createArrayValue() {
 		ArrayValueImpl arrayValue = new ArrayValueImpl();
 		return arrayValue;
@@ -177,6 +182,7 @@ public class BasicAttributesFactoryImpl extends EFactoryImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ArrayType createArrayType() {
 		ArrayTypeImpl arrayType = new ArrayTypeImpl();
 		return arrayType;
@@ -187,6 +193,7 @@ public class BasicAttributesFactoryImpl extends EFactoryImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FloatingPointValue createFloatingPointValue() {
 		FloatingPointValueImpl floatingPointValue = new FloatingPointValueImpl();
 		return floatingPointValue;
@@ -197,6 +204,7 @@ public class BasicAttributesFactoryImpl extends EFactoryImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IntValue createIntValue() {
 		IntValueImpl intValue = new IntValueImpl();
 		return intValue;
@@ -207,6 +215,7 @@ public class BasicAttributesFactoryImpl extends EFactoryImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StringValue createStringValue() {
 		StringValueImpl stringValue = new StringValueImpl();
 		return stringValue;
@@ -217,6 +226,7 @@ public class BasicAttributesFactoryImpl extends EFactoryImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BoolValue createBoolValue() {
 		BoolValueImpl boolValue = new BoolValueImpl();
 		return boolValue;
@@ -227,6 +237,7 @@ public class BasicAttributesFactoryImpl extends EFactoryImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InlineEnumerationType createInlineEnumerationType() {
 		InlineEnumerationTypeImpl inlineEnumerationType = new InlineEnumerationTypeImpl();
 		return inlineEnumerationType;
@@ -237,6 +248,7 @@ public class BasicAttributesFactoryImpl extends EFactoryImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EnumerationElement createEnumerationElement() {
 		EnumerationElementImpl enumerationElement = new EnumerationElementImpl();
 		return enumerationElement;
@@ -247,6 +259,7 @@ public class BasicAttributesFactoryImpl extends EFactoryImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EnumerationValue createEnumerationValue() {
 		EnumerationValueImpl enumerationValue = new EnumerationValueImpl();
 		return enumerationValue;
@@ -297,6 +310,7 @@ public class BasicAttributesFactoryImpl extends EFactoryImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BasicAttributesPackage getBasicAttributesPackage() {
 		return (BasicAttributesPackage) getEPackage();
 	}

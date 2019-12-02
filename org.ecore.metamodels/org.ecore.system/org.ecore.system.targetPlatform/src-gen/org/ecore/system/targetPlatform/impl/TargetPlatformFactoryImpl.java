@@ -86,6 +86,7 @@ public class TargetPlatformFactoryImpl extends EFactoryImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TargetPlatformModel createTargetPlatformModel() {
 		TargetPlatformModelImpl targetPlatformModel = new TargetPlatformModelImpl();
 		return targetPlatformModel;
@@ -96,6 +97,7 @@ public class TargetPlatformFactoryImpl extends EFactoryImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TargetPlatformDefinition createTargetPlatformDefinition() {
 		TargetPlatformDefinitionImpl targetPlatformDefinition = new TargetPlatformDefinitionImpl();
 		return targetPlatformDefinition;
@@ -106,6 +108,7 @@ public class TargetPlatformFactoryImpl extends EFactoryImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NetworkConnection createNetworkConnection() {
 		NetworkConnectionImpl networkConnection = new NetworkConnectionImpl();
 		return networkConnection;
@@ -116,6 +119,7 @@ public class TargetPlatformFactoryImpl extends EFactoryImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NetworkInterface createNetworkInterface() {
 		NetworkInterfaceImpl networkInterface = new NetworkInterfaceImpl();
 		return networkInterface;
@@ -126,6 +130,7 @@ public class TargetPlatformFactoryImpl extends EFactoryImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CPU createCPU() {
 		CPUImpl cpu = new CPUImpl();
 		return cpu;
@@ -136,6 +141,7 @@ public class TargetPlatformFactoryImpl extends EFactoryImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LoginAccount createLoginAccount() {
 		LoginAccountImpl loginAccount = new LoginAccountImpl();
 		return loginAccount;
@@ -146,6 +152,7 @@ public class TargetPlatformFactoryImpl extends EFactoryImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Windows createWindows() {
 		WindowsImpl windows = new WindowsImpl();
 		return windows;
@@ -156,6 +163,7 @@ public class TargetPlatformFactoryImpl extends EFactoryImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Linux createLinux() {
 		LinuxImpl linux = new LinuxImpl();
 		return linux;
@@ -166,6 +174,7 @@ public class TargetPlatformFactoryImpl extends EFactoryImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MacOS createMacOS() {
 		MacOSImpl macOS = new MacOSImpl();
 		return macOS;
@@ -176,6 +185,7 @@ public class TargetPlatformFactoryImpl extends EFactoryImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TargetMiddleware createTargetMiddleware() {
 		TargetMiddlewareImpl targetMiddleware = new TargetMiddlewareImpl();
 		return targetMiddleware;
@@ -186,6 +196,7 @@ public class TargetPlatformFactoryImpl extends EFactoryImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TargetPlatformPackage getTargetPlatformPackage() {
 		return (TargetPlatformPackage) getEPackage();
 	}

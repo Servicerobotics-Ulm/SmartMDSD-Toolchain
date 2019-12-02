@@ -11,8 +11,10 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.ecore.base.basicAttributes.BasicAttributesPackage;
 
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.base.stateMachine.StateMachinePackage;
 
+import org.ecore.behavior.skillRealization.SkillRealizationPackage;
 import org.ecore.component.componentDefinition.ComponentDefinitionPackage;
 
 import org.ecore.component.componentParameter.ComponentParameterPackage;
@@ -30,6 +32,7 @@ import org.ecore.service.parameterDefinition.ParameterDefinitionPackage;
 import org.ecore.service.roboticMiddleware.RoboticMiddlewarePackage;
 
 import org.ecore.service.serviceDefinition.ServiceDefinitionPackage;
+import org.ecore.service.skillDefinition.SkillDefinitionPackage;
 import org.ecore.system.activityArchitecture.ActivityArchitecturePackage;
 
 import org.ecore.system.componentArchitecture.ComponentArchitecturePackage;
@@ -104,7 +107,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link SystemParameterPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -119,9 +122,10 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 			return (SystemParameterPackage) EPackage.Registry.INSTANCE.getEPackage(SystemParameterPackage.eNS_URI);
 
 		// Obtain or create and register package
-		SystemParameterPackageImpl theSystemParameterPackage = (SystemParameterPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof SystemParameterPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new SystemParameterPackageImpl());
+		Object registeredSystemParameterPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		SystemParameterPackageImpl theSystemParameterPackage = registeredSystemParameterPackage instanceof SystemParameterPackageImpl
+				? (SystemParameterPackageImpl) registeredSystemParameterPackage
+				: new SystemParameterPackageImpl();
 
 		isInited = true;
 
@@ -140,6 +144,9 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 		RoboticMiddlewarePackage.eINSTANCE.eClass();
 		CoordinationExtensionPackage.eINSTANCE.eClass();
 		ComponentModePackage.eINSTANCE.eClass();
+		DocumentationPackage.eINSTANCE.eClass();
+		SkillRealizationPackage.eINSTANCE.eClass();
+		SkillDefinitionPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theSystemParameterPackage.createPackageContents();
@@ -160,6 +167,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSystemParamModel() {
 		return systemParamModelEClass;
 	}
@@ -169,6 +177,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSystemParamModel_Components() {
 		return (EReference) systemParamModelEClass.getEStructuralFeatures().get(0);
 	}
@@ -178,6 +187,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSystemParamModel_System() {
 		return (EReference) systemParamModelEClass.getEStructuralFeatures().get(1);
 	}
@@ -187,6 +197,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSystemParamModel_Name() {
 		return (EAttribute) systemParamModelEClass.getEStructuralFeatures().get(2);
 	}
@@ -196,6 +207,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentParameterInstance() {
 		return componentParameterInstanceEClass;
 	}
@@ -205,6 +217,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentParameterInstance_ComponentInstance() {
 		return (EReference) componentParameterInstanceEClass.getEStructuralFeatures().get(0);
 	}
@@ -214,6 +227,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentParameterInstance_Parameters() {
 		return (EReference) componentParameterInstanceEClass.getEStructuralFeatures().get(1);
 	}
@@ -223,6 +237,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentParameterInstance_Name() {
 		return (EAttribute) componentParameterInstanceEClass.getEStructuralFeatures().get(2);
 	}
@@ -232,6 +247,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentParameterInstance_ComponentParam() {
 		return (EReference) componentParameterInstanceEClass.getEStructuralFeatures().get(3);
 	}
@@ -241,6 +257,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterRefinement() {
 		return parameterRefinementEClass;
 	}
@@ -250,6 +267,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterRefinement_Parameter() {
 		return (EReference) parameterRefinementEClass.getEStructuralFeatures().get(0);
 	}
@@ -259,6 +277,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterRefinement_Attributes() {
 		return (EReference) parameterRefinementEClass.getEStructuralFeatures().get(1);
 	}
@@ -268,6 +287,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterStructInstance() {
 		return parameterStructInstanceEClass;
 	}
@@ -277,6 +297,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterStructInstance_Parameter() {
 		return (EReference) parameterStructInstanceEClass.getEStructuralFeatures().get(0);
 	}
@@ -286,6 +307,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameterStructInstance_Name() {
 		return (EAttribute) parameterStructInstanceEClass.getEStructuralFeatures().get(1);
 	}
@@ -295,6 +317,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SystemParameterFactory getSystemParameterFactory() {
 		return (SystemParameterFactory) getEFactoryInstance();
 	}
@@ -368,6 +391,8 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 				.getEPackage(ComponentArchitecturePackage.eNS_URI);
 		ComponentParameterPackage theComponentParameterPackage = (ComponentParameterPackage) EPackage.Registry.INSTANCE
 				.getEPackage(ComponentParameterPackage.eNS_URI);
+		DocumentationPackage theDocumentationPackage = (DocumentationPackage) EPackage.Registry.INSTANCE
+				.getEPackage(DocumentationPackage.eNS_URI);
 		BasicAttributesPackage theBasicAttributesPackage = (BasicAttributesPackage) EPackage.Registry.INSTANCE
 				.getEPackage(BasicAttributesPackage.eNS_URI);
 
@@ -376,6 +401,7 @@ public class SystemParameterPackageImpl extends EPackageImpl implements SystemPa
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		parameterRefinementEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
 		parameterStructInstanceEClass.getESuperTypes()
 				.add(theComponentArchitecturePackage.getComponentInstanceExtension());
 

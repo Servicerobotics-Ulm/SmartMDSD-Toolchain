@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,32 +15,7 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.component.componentParameter.services;
 
 import com.google.inject.Inject;
@@ -63,6 +37,7 @@ import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
 import org.xtext.base.basicAttributes.services.BasicAttributesGrammarAccess;
+import org.xtext.base.docuterminals.services.DocuTerminalsGrammarAccess;
 import org.xtext.service.parameterDefinition.services.ParameterDefinitionGrammarAccess;
 
 @Singleton
@@ -193,132 +168,41 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	public class InternalParameterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentParameter.ComponentParameter.InternalParameter");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cInternalParameterKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cAttributesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cAttributesAttributeDefinitionParserRuleCall_3_0 = (RuleCall)cAttributesAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cDocumentationAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDocumentationDOCU_COMMENTTerminalRuleCall_0_0 = (RuleCall)cDocumentationAssignment_0.eContents().get(0);
+		private final Keyword cInternalParameterKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAttributesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cAttributesAttributeDefinitionParserRuleCall_4_0 = (RuleCall)cAttributesAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//InternalParameter componentParam::InternalParameter:
+		//	documentation=DOCU_COMMENT?
 		//	'InternalParameter' name=ID
 		//	'{'
 		//	attributes+=BasicAttributes::AttributeDefinition*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'InternalParameter' name=ID '{' attributes+=BasicAttributes::AttributeDefinition* '}'
+		//documentation=DOCU_COMMENT? 'InternalParameter' name=ID '{' attributes+=BasicAttributes::AttributeDefinition* '}'
 		public Group getGroup() { return cGroup; }
+		
+		//documentation=DOCU_COMMENT?
+		public Assignment getDocumentationAssignment_0() { return cDocumentationAssignment_0; }
+		
+		//DOCU_COMMENT
+		public RuleCall getDocumentationDOCU_COMMENTTerminalRuleCall_0_0() { return cDocumentationDOCU_COMMENTTerminalRuleCall_0_0; }
 		
 		//'InternalParameter'
-		public Keyword getInternalParameterKeyword_0() { return cInternalParameterKeyword_0; }
+		public Keyword getInternalParameterKeyword_1() { return cInternalParameterKeyword_1; }
 		
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//attributes+=BasicAttributes::AttributeDefinition*
-		public Assignment getAttributesAssignment_3() { return cAttributesAssignment_3; }
-		
-		//BasicAttributes::AttributeDefinition
-		public RuleCall getAttributesAttributeDefinitionParserRuleCall_3_0() { return cAttributesAttributeDefinitionParserRuleCall_3_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
-	}
-	public class ExtendedParameterElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentParameter.ComponentParameter.ExtendedParameter");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cExtendedParameterKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cAttributesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cAttributesAttributeDefinitionParserRuleCall_3_0 = (RuleCall)cAttributesAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//ExtendedParameter componentParam::ExtendedParameter:
-		//	'ExtendedParameter' name=ID
-		//	'{'
-		//	attributes+=BasicAttributes::AttributeDefinition*
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'ExtendedParameter' name=ID '{' attributes+=BasicAttributes::AttributeDefinition* '}'
-		public Group getGroup() { return cGroup; }
-		
-		//'ExtendedParameter'
-		public Keyword getExtendedParameterKeyword_0() { return cExtendedParameterKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//attributes+=BasicAttributes::AttributeDefinition*
-		public Assignment getAttributesAssignment_3() { return cAttributesAssignment_3; }
-		
-		//BasicAttributes::AttributeDefinition
-		public RuleCall getAttributesAttributeDefinitionParserRuleCall_3_0() { return cAttributesAttributeDefinitionParserRuleCall_3_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
-	}
-	public class ExtendedTriggerElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentParameter.ComponentParameter.ExtendedTrigger");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cExtendedTriggerKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Assignment cActiveAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
-		private final Keyword cActiveActiveKeyword_2_0_0 = (Keyword)cActiveAssignment_2_0.eContents().get(0);
-		private final Keyword cPassiveKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cAttributesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cAttributesAttributeDefinitionParserRuleCall_4_0 = (RuleCall)cAttributesAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//ExtendedTrigger componentParam::ExtendedTrigger:
-		//	'ExtendedTrigger' name=ID (active?='active' | 'passive')
-		//	'{'
-		//	attributes+=BasicAttributes::AttributeDefinition*
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'ExtendedTrigger' name=ID (active?='active' | 'passive') '{' attributes+=BasicAttributes::AttributeDefinition* '}'
-		public Group getGroup() { return cGroup; }
-		
-		//'ExtendedTrigger'
-		public Keyword getExtendedTriggerKeyword_0() { return cExtendedTriggerKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//active?='active' | 'passive'
-		public Alternatives getAlternatives_2() { return cAlternatives_2; }
-		
-		//active?='active'
-		public Assignment getActiveAssignment_2_0() { return cActiveAssignment_2_0; }
-		
-		//'active'
-		public Keyword getActiveActiveKeyword_2_0_0() { return cActiveActiveKeyword_2_0_0; }
-		
-		//'passive'
-		public Keyword getPassiveKeyword_2_1() { return cPassiveKeyword_2_1; }
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -332,52 +216,180 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
+	public class ExtendedParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentParameter.ComponentParameter.ExtendedParameter");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cDocumentationAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDocumentationDOCU_COMMENTTerminalRuleCall_0_0 = (RuleCall)cDocumentationAssignment_0.eContents().get(0);
+		private final Keyword cExtendedParameterKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAttributesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cAttributesAttributeDefinitionParserRuleCall_4_0 = (RuleCall)cAttributesAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//ExtendedParameter componentParam::ExtendedParameter:
+		//	documentation=DOCU_COMMENT?
+		//	'ExtendedParameter' name=ID
+		//	'{'
+		//	attributes+=BasicAttributes::AttributeDefinition*
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//documentation=DOCU_COMMENT? 'ExtendedParameter' name=ID '{' attributes+=BasicAttributes::AttributeDefinition* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//documentation=DOCU_COMMENT?
+		public Assignment getDocumentationAssignment_0() { return cDocumentationAssignment_0; }
+		
+		//DOCU_COMMENT
+		public RuleCall getDocumentationDOCU_COMMENTTerminalRuleCall_0_0() { return cDocumentationDOCU_COMMENTTerminalRuleCall_0_0; }
+		
+		//'ExtendedParameter'
+		public Keyword getExtendedParameterKeyword_1() { return cExtendedParameterKeyword_1; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//attributes+=BasicAttributes::AttributeDefinition*
+		public Assignment getAttributesAssignment_4() { return cAttributesAssignment_4; }
+		
+		//BasicAttributes::AttributeDefinition
+		public RuleCall getAttributesAttributeDefinitionParserRuleCall_4_0() { return cAttributesAttributeDefinitionParserRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class ExtendedTriggerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentParameter.ComponentParameter.ExtendedTrigger");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cDocumentationAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDocumentationDOCU_COMMENTTerminalRuleCall_0_0 = (RuleCall)cDocumentationAssignment_0.eContents().get(0);
+		private final Keyword cExtendedTriggerKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Assignment cActiveAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final Keyword cActiveActiveKeyword_3_0_0 = (Keyword)cActiveAssignment_3_0.eContents().get(0);
+		private final Keyword cPassiveKeyword_3_1 = (Keyword)cAlternatives_3.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cAttributesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cAttributesAttributeDefinitionParserRuleCall_5_0 = (RuleCall)cAttributesAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//ExtendedTrigger componentParam::ExtendedTrigger:
+		//	documentation=DOCU_COMMENT?
+		//	'ExtendedTrigger' name=ID (active?='active' | 'passive')
+		//	'{'
+		//	attributes+=BasicAttributes::AttributeDefinition*
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//documentation=DOCU_COMMENT? 'ExtendedTrigger' name=ID (active?='active' | 'passive') '{'
+		//attributes+=BasicAttributes::AttributeDefinition* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//documentation=DOCU_COMMENT?
+		public Assignment getDocumentationAssignment_0() { return cDocumentationAssignment_0; }
+		
+		//DOCU_COMMENT
+		public RuleCall getDocumentationDOCU_COMMENTTerminalRuleCall_0_0() { return cDocumentationDOCU_COMMENTTerminalRuleCall_0_0; }
+		
+		//'ExtendedTrigger'
+		public Keyword getExtendedTriggerKeyword_1() { return cExtendedTriggerKeyword_1; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		
+		//active?='active' | 'passive'
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		
+		//active?='active'
+		public Assignment getActiveAssignment_3_0() { return cActiveAssignment_3_0; }
+		
+		//'active'
+		public Keyword getActiveActiveKeyword_3_0_0() { return cActiveActiveKeyword_3_0_0; }
+		
+		//'passive'
+		public Keyword getPassiveKeyword_3_1() { return cPassiveKeyword_3_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		
+		//attributes+=BasicAttributes::AttributeDefinition*
+		public Assignment getAttributesAssignment_5() { return cAttributesAssignment_5; }
+		
+		//BasicAttributes::AttributeDefinition
+		public RuleCall getAttributesAttributeDefinitionParserRuleCall_5_0() { return cAttributesAttributeDefinitionParserRuleCall_5_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
 	public class ParameterSetInstanceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentParameter.ComponentParameter.ParameterSetInstance");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cParameterSetInstanceKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cParamSetAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cParamSetParameterSetDefinitionCrossReference_1_0 = (CrossReference)cParamSetAssignment_1.eContents().get(0);
-		private final RuleCall cParamSetParameterSetDefinitionFQNParserRuleCall_1_0_1 = (RuleCall)cParamSetParameterSetDefinitionCrossReference_1_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cParameterInstancesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cParameterInstancesAbstractParameterInstanceParserRuleCall_3_0 = (RuleCall)cParameterInstancesAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cDocumentationAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDocumentationDOCU_COMMENTTerminalRuleCall_0_0 = (RuleCall)cDocumentationAssignment_0.eContents().get(0);
+		private final Keyword cParameterSetInstanceKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cParamSetAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cParamSetParameterSetDefinitionCrossReference_2_0 = (CrossReference)cParamSetAssignment_2.eContents().get(0);
+		private final RuleCall cParamSetParameterSetDefinitionFQNParserRuleCall_2_0_1 = (RuleCall)cParamSetParameterSetDefinitionCrossReference_2_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cParameterInstancesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cParameterInstancesAbstractParameterInstanceParserRuleCall_4_0 = (RuleCall)cParameterInstancesAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ParameterSetInstance componentParam::ParameterSetInstance:
+		//	documentation=DOCU_COMMENT?
 		//	'ParameterSetInstance' paramSet=[parameterDefinition::ParameterSetDefinition|FQN]
 		//	'{'
 		//	parameterInstances+=AbstractParameterInstance*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ParameterSetInstance' paramSet=[parameterDefinition::ParameterSetDefinition|FQN] '{'
+		//documentation=DOCU_COMMENT? 'ParameterSetInstance' paramSet=[parameterDefinition::ParameterSetDefinition|FQN] '{'
 		//parameterInstances+=AbstractParameterInstance* '}'
 		public Group getGroup() { return cGroup; }
 		
+		//documentation=DOCU_COMMENT?
+		public Assignment getDocumentationAssignment_0() { return cDocumentationAssignment_0; }
+		
+		//DOCU_COMMENT
+		public RuleCall getDocumentationDOCU_COMMENTTerminalRuleCall_0_0() { return cDocumentationDOCU_COMMENTTerminalRuleCall_0_0; }
+		
 		//'ParameterSetInstance'
-		public Keyword getParameterSetInstanceKeyword_0() { return cParameterSetInstanceKeyword_0; }
+		public Keyword getParameterSetInstanceKeyword_1() { return cParameterSetInstanceKeyword_1; }
 		
 		//paramSet=[parameterDefinition::ParameterSetDefinition|FQN]
-		public Assignment getParamSetAssignment_1() { return cParamSetAssignment_1; }
+		public Assignment getParamSetAssignment_2() { return cParamSetAssignment_2; }
 		
 		//[parameterDefinition::ParameterSetDefinition|FQN]
-		public CrossReference getParamSetParameterSetDefinitionCrossReference_1_0() { return cParamSetParameterSetDefinitionCrossReference_1_0; }
+		public CrossReference getParamSetParameterSetDefinitionCrossReference_2_0() { return cParamSetParameterSetDefinitionCrossReference_2_0; }
 		
 		//FQN
-		public RuleCall getParamSetParameterSetDefinitionFQNParserRuleCall_1_0_1() { return cParamSetParameterSetDefinitionFQNParserRuleCall_1_0_1; }
+		public RuleCall getParamSetParameterSetDefinitionFQNParserRuleCall_2_0_1() { return cParamSetParameterSetDefinitionFQNParserRuleCall_2_0_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
 		//parameterInstances+=AbstractParameterInstance*
-		public Assignment getParameterInstancesAssignment_3() { return cParameterInstancesAssignment_3; }
+		public Assignment getParameterInstancesAssignment_4() { return cParameterInstancesAssignment_4; }
 		
 		//AbstractParameterInstance
-		public RuleCall getParameterInstancesAbstractParameterInstanceParserRuleCall_3_0() { return cParameterInstancesAbstractParameterInstanceParserRuleCall_3_0; }
+		public RuleCall getParameterInstancesAbstractParameterInstanceParserRuleCall_4_0() { return cParameterInstancesAbstractParameterInstanceParserRuleCall_4_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class AbstractParameterInstanceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentParameter.ComponentParameter.AbstractParameterInstance");
@@ -401,96 +413,115 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	public class TriggerInstanceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentParameter.ComponentParameter.TriggerInstance");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTriggerInstanceKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cTriggerDefAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cTriggerDefTriggerDefinitionCrossReference_1_0 = (CrossReference)cTriggerDefAssignment_1.eContents().get(0);
-		private final RuleCall cTriggerDefTriggerDefinitionFQNParserRuleCall_1_0_1 = (RuleCall)cTriggerDefTriggerDefinitionCrossReference_1_0.eContents().get(1);
-		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Assignment cActiveAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
-		private final Keyword cActiveActiveKeyword_2_0_0 = (Keyword)cActiveAssignment_2_0.eContents().get(0);
-		private final Keyword cPassiveKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
-		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cDocumentationAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDocumentationDOCU_COMMENTTerminalRuleCall_0_0 = (RuleCall)cDocumentationAssignment_0.eContents().get(0);
+		private final Keyword cTriggerInstanceKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTriggerDefAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cTriggerDefTriggerDefinitionCrossReference_2_0 = (CrossReference)cTriggerDefAssignment_2.eContents().get(0);
+		private final RuleCall cTriggerDefTriggerDefinitionFQNParserRuleCall_2_0_1 = (RuleCall)cTriggerDefTriggerDefinitionCrossReference_2_0.eContents().get(1);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Assignment cActiveAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final Keyword cActiveActiveKeyword_3_0_0 = (Keyword)cActiveAssignment_3_0.eContents().get(0);
+		private final Keyword cPassiveKeyword_3_1 = (Keyword)cAlternatives_3.eContents().get(1);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//TriggerInstance componentParam::TriggerInstance:
+		//	documentation=DOCU_COMMENT?
 		//	'TriggerInstance' triggerDef=[parameterDefinition::TriggerDefinition|FQN] (active?='active' | 'passive') ';'?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'TriggerInstance' triggerDef=[parameterDefinition::TriggerDefinition|FQN] (active?='active' | 'passive') ';'?
+		//documentation=DOCU_COMMENT? 'TriggerInstance' triggerDef=[parameterDefinition::TriggerDefinition|FQN] (active?='active'
+		//| 'passive') ';'?
 		public Group getGroup() { return cGroup; }
 		
+		//documentation=DOCU_COMMENT?
+		public Assignment getDocumentationAssignment_0() { return cDocumentationAssignment_0; }
+		
+		//DOCU_COMMENT
+		public RuleCall getDocumentationDOCU_COMMENTTerminalRuleCall_0_0() { return cDocumentationDOCU_COMMENTTerminalRuleCall_0_0; }
+		
 		//'TriggerInstance'
-		public Keyword getTriggerInstanceKeyword_0() { return cTriggerInstanceKeyword_0; }
+		public Keyword getTriggerInstanceKeyword_1() { return cTriggerInstanceKeyword_1; }
 		
 		//triggerDef=[parameterDefinition::TriggerDefinition|FQN]
-		public Assignment getTriggerDefAssignment_1() { return cTriggerDefAssignment_1; }
+		public Assignment getTriggerDefAssignment_2() { return cTriggerDefAssignment_2; }
 		
 		//[parameterDefinition::TriggerDefinition|FQN]
-		public CrossReference getTriggerDefTriggerDefinitionCrossReference_1_0() { return cTriggerDefTriggerDefinitionCrossReference_1_0; }
+		public CrossReference getTriggerDefTriggerDefinitionCrossReference_2_0() { return cTriggerDefTriggerDefinitionCrossReference_2_0; }
 		
 		//FQN
-		public RuleCall getTriggerDefTriggerDefinitionFQNParserRuleCall_1_0_1() { return cTriggerDefTriggerDefinitionFQNParserRuleCall_1_0_1; }
+		public RuleCall getTriggerDefTriggerDefinitionFQNParserRuleCall_2_0_1() { return cTriggerDefTriggerDefinitionFQNParserRuleCall_2_0_1; }
 		
 		//active?='active' | 'passive'
-		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
 		//active?='active'
-		public Assignment getActiveAssignment_2_0() { return cActiveAssignment_2_0; }
+		public Assignment getActiveAssignment_3_0() { return cActiveAssignment_3_0; }
 		
 		//'active'
-		public Keyword getActiveActiveKeyword_2_0_0() { return cActiveActiveKeyword_2_0_0; }
+		public Keyword getActiveActiveKeyword_3_0_0() { return cActiveActiveKeyword_3_0_0; }
 		
 		//'passive'
-		public Keyword getPassiveKeyword_2_1() { return cPassiveKeyword_2_1; }
+		public Keyword getPassiveKeyword_3_1() { return cPassiveKeyword_3_1; }
 		
 		//';'?
-		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 	}
 	public class ParameterInstanceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentParameter.ComponentParameter.ParameterInstance");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cParameterInstanceKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cParameterDefAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cParameterDefParameterDefinitionCrossReference_1_0 = (CrossReference)cParameterDefAssignment_1.eContents().get(0);
-		private final RuleCall cParameterDefParameterDefinitionFQNParserRuleCall_1_0_1 = (RuleCall)cParameterDefParameterDefinitionCrossReference_1_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cAttributesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cAttributesAttributeRefinementParserRuleCall_3_0 = (RuleCall)cAttributesAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cDocumentationAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDocumentationDOCU_COMMENTTerminalRuleCall_0_0 = (RuleCall)cDocumentationAssignment_0.eContents().get(0);
+		private final Keyword cParameterInstanceKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cParameterDefAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cParameterDefParameterDefinitionCrossReference_2_0 = (CrossReference)cParameterDefAssignment_2.eContents().get(0);
+		private final RuleCall cParameterDefParameterDefinitionFQNParserRuleCall_2_0_1 = (RuleCall)cParameterDefParameterDefinitionCrossReference_2_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAttributesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cAttributesAttributeRefinementParserRuleCall_4_0 = (RuleCall)cAttributesAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ParameterInstance componentParam::ParameterInstance:
+		//	documentation=DOCU_COMMENT?
 		//	'ParameterInstance' parameterDef=[parameterDefinition::ParameterDefinition|FQN]
 		//	'{'
 		//	attributes+=BasicAttributes::AttributeRefinement*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ParameterInstance' parameterDef=[parameterDefinition::ParameterDefinition|FQN] '{'
+		//documentation=DOCU_COMMENT? 'ParameterInstance' parameterDef=[parameterDefinition::ParameterDefinition|FQN] '{'
 		//attributes+=BasicAttributes::AttributeRefinement* '}'
 		public Group getGroup() { return cGroup; }
 		
+		//documentation=DOCU_COMMENT?
+		public Assignment getDocumentationAssignment_0() { return cDocumentationAssignment_0; }
+		
+		//DOCU_COMMENT
+		public RuleCall getDocumentationDOCU_COMMENTTerminalRuleCall_0_0() { return cDocumentationDOCU_COMMENTTerminalRuleCall_0_0; }
+		
 		//'ParameterInstance'
-		public Keyword getParameterInstanceKeyword_0() { return cParameterInstanceKeyword_0; }
+		public Keyword getParameterInstanceKeyword_1() { return cParameterInstanceKeyword_1; }
 		
 		//parameterDef=[parameterDefinition::ParameterDefinition|FQN]
-		public Assignment getParameterDefAssignment_1() { return cParameterDefAssignment_1; }
+		public Assignment getParameterDefAssignment_2() { return cParameterDefAssignment_2; }
 		
 		//[parameterDefinition::ParameterDefinition|FQN]
-		public CrossReference getParameterDefParameterDefinitionCrossReference_1_0() { return cParameterDefParameterDefinitionCrossReference_1_0; }
+		public CrossReference getParameterDefParameterDefinitionCrossReference_2_0() { return cParameterDefParameterDefinitionCrossReference_2_0; }
 		
 		//FQN
-		public RuleCall getParameterDefParameterDefinitionFQNParserRuleCall_1_0_1() { return cParameterDefParameterDefinitionFQNParserRuleCall_1_0_1; }
+		public RuleCall getParameterDefParameterDefinitionFQNParserRuleCall_2_0_1() { return cParameterDefParameterDefinitionFQNParserRuleCall_2_0_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
 		//attributes+=BasicAttributes::AttributeRefinement*
-		public Assignment getAttributesAssignment_3() { return cAttributesAssignment_3; }
+		public Assignment getAttributesAssignment_4() { return cAttributesAssignment_4; }
 		
 		//BasicAttributes::AttributeRefinement
-		public RuleCall getAttributesAttributeRefinementParserRuleCall_3_0() { return cAttributesAttributeRefinementParserRuleCall_3_0; }
+		public RuleCall getAttributesAttributeRefinementParserRuleCall_4_0() { return cAttributesAttributeRefinementParserRuleCall_4_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	
 	
@@ -511,16 +542,20 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	
 	private final BasicAttributesGrammarAccess gaBasicAttributes;
 	
+	private final DocuTerminalsGrammarAccess gaDocuTerminals;
+	
 	private final TerminalsGrammarAccess gaTerminals;
 
 	@Inject
 	public ComponentParameterGrammarAccess(GrammarProvider grammarProvider,
 			ParameterDefinitionGrammarAccess gaParameterDefinition,
 			BasicAttributesGrammarAccess gaBasicAttributes,
+			DocuTerminalsGrammarAccess gaDocuTerminals,
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaParameterDefinition = gaParameterDefinition;
 		this.gaBasicAttributes = gaBasicAttributes;
+		this.gaDocuTerminals = gaDocuTerminals;
 		this.gaTerminals = gaTerminals;
 		this.pComponentParamModel = new ComponentParamModelElements();
 		this.pComponentParameter = new ComponentParameterElements();
@@ -564,6 +599,10 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 		return gaBasicAttributes;
 	}
 	
+	public DocuTerminalsGrammarAccess getDocuTerminalsGrammarAccess() {
+		return gaDocuTerminals;
+	}
+	
 	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
 		return gaTerminals;
 	}
@@ -604,6 +643,7 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	//InternalParameter componentParam::InternalParameter:
+	//	documentation=DOCU_COMMENT?
 	//	'InternalParameter' name=ID
 	//	'{'
 	//	attributes+=BasicAttributes::AttributeDefinition*
@@ -617,6 +657,7 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	//ExtendedParameter componentParam::ExtendedParameter:
+	//	documentation=DOCU_COMMENT?
 	//	'ExtendedParameter' name=ID
 	//	'{'
 	//	attributes+=BasicAttributes::AttributeDefinition*
@@ -630,6 +671,7 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	//ExtendedTrigger componentParam::ExtendedTrigger:
+	//	documentation=DOCU_COMMENT?
 	//	'ExtendedTrigger' name=ID (active?='active' | 'passive')
 	//	'{'
 	//	attributes+=BasicAttributes::AttributeDefinition*
@@ -643,6 +685,7 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	//ParameterSetInstance componentParam::ParameterSetInstance:
+	//	documentation=DOCU_COMMENT?
 	//	'ParameterSetInstance' paramSet=[parameterDefinition::ParameterSetDefinition|FQN]
 	//	'{'
 	//	parameterInstances+=AbstractParameterInstance*
@@ -666,6 +709,7 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	//TriggerInstance componentParam::TriggerInstance:
+	//	documentation=DOCU_COMMENT?
 	//	'TriggerInstance' triggerDef=[parameterDefinition::TriggerDefinition|FQN] (active?='active' | 'passive') ';'?;
 	public TriggerInstanceElements getTriggerInstanceAccess() {
 		return pTriggerInstance;
@@ -676,6 +720,7 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	//ParameterInstance componentParam::ParameterInstance:
+	//	documentation=DOCU_COMMENT?
 	//	'ParameterInstance' parameterDef=[parameterDefinition::ParameterDefinition|FQN]
 	//	'{'
 	//	attributes+=BasicAttributes::AttributeRefinement*
@@ -721,6 +766,7 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	//ParameterSetRepository param::ParameterSetRepository:
+	//	documentation=DOCU_COMMENT?
 	//	'ParameterSetRepository' name=ID
 	//	'{'
 	//	sets+=ParameterSetDefinition*
@@ -734,6 +780,7 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	//ParameterSetDefinition param::ParameterSetDefinition:
+	//	documentation=DOCU_COMMENT?
 	//	'ParameterSet' name=ID ('extends' extends+=[param::ParameterSetDefinition|FQN] (","
 	//	extends+=[param::ParameterSetDefinition|FQN])*)?
 	//	'{'
@@ -758,6 +805,7 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	//ParameterDefinition param::ParameterDefinition:
+	//	documentation=DOCU_COMMENT?
 	//	'Parameter' name=ID
 	//	'{'
 	//	attributes+=AttributeDefinition*
@@ -771,6 +819,7 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	//TriggerDefinition param::TriggerDefinition:
+	//	documentation=DOCU_COMMENT?
 	//	'Trigger' name=ID
 	//	'{'
 	//	attributes+=AttributeDefinition*
@@ -784,6 +833,7 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	//AttributeDefinition attr::AttributeDefinition:
+	//	documentation=DOCU_COMMENT?
 	//	name=ID ':' type=AbstractAttributeType ('=' defaultvalue=AbstractValue)? ';'?;
 	public BasicAttributesGrammarAccess.AttributeDefinitionElements getAttributeDefinitionAccess() {
 		return gaBasicAttributes.getAttributeDefinitionAccess();
@@ -794,6 +844,7 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	//AttributeRefinement attr::AttributeRefinement:
+	//	documentation=DOCU_COMMENT?
 	//	attribute=[attr::AttributeDefinition|FQN] '=' value=AbstractValue ';'?;
 	public BasicAttributesGrammarAccess.AttributeRefinementElements getAttributeRefinementAccess() {
 		return gaBasicAttributes.getAttributeRefinementAccess();
@@ -958,6 +1009,48 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 		return getSingleValueAccess().getRule();
 	}
 	
+	//AbstractDocumentedElement:
+	//	{AbstractDocumentedElement} documentation=DOCU_COMMENT?;
+	public DocuTerminalsGrammarAccess.AbstractDocumentedElementElements getAbstractDocumentedElementAccess() {
+		return gaDocuTerminals.getAbstractDocumentedElementAccess();
+	}
+	
+	public ParserRule getAbstractDocumentedElementRule() {
+		return getAbstractDocumentedElementAccess().getRule();
+	}
+	
+	//@Override
+	//terminal ML_COMMENT:
+	//	'/*' !'*'->'*/';
+	public TerminalRule getML_COMMENTRule() {
+		return gaDocuTerminals.getML_COMMENTRule();
+	}
+	
+	//terminal fragment ML_DOCUMENTATION:
+	//	'/**'->'*/';
+	public TerminalRule getML_DOCUMENTATIONRule() {
+		return gaDocuTerminals.getML_DOCUMENTATIONRule();
+	}
+	
+	//@Override
+	//terminal SL_COMMENT:
+	//	'//' !'/' !('\n' | '\r')* ('\r'? '\n')?;
+	public TerminalRule getSL_COMMENTRule() {
+		return gaDocuTerminals.getSL_COMMENTRule();
+	}
+	
+	//terminal fragment SL_DOCUMENTATION:
+	//	'///' !('\n' | '\r')* ('\r'? '\n')?;
+	public TerminalRule getSL_DOCUMENTATIONRule() {
+		return gaDocuTerminals.getSL_DOCUMENTATIONRule();
+	}
+	
+	//terminal DOCU_COMMENT:
+	//	ML_DOCUMENTATION | SL_DOCUMENTATION;
+	public TerminalRule getDOCU_COMMENTRule() {
+		return gaDocuTerminals.getDOCU_COMMENTRule();
+	}
+	
 	//terminal ID:
 	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
@@ -975,18 +1068,6 @@ public class ComponentParameterGrammarAccess extends AbstractGrammarElementFinde
 	//	"'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
-	}
-	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
-	public TerminalRule getML_COMMENTRule() {
-		return gaTerminals.getML_COMMENTRule();
-	}
-	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
-	public TerminalRule getSL_COMMENTRule() {
-		return gaTerminals.getSL_COMMENTRule();
 	}
 	
 	//terminal WS:

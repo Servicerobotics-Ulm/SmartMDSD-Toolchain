@@ -76,6 +76,7 @@ public class CommunicationServiceUsageRealizationImpl extends AbstractCoordinati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CommunicationServiceUsage getServiceUsage() {
 		if (serviceUsage != null && serviceUsage.eIsProxy()) {
 			InternalEObject oldServiceUsage = (InternalEObject) serviceUsage;
@@ -104,6 +105,7 @@ public class CommunicationServiceUsageRealizationImpl extends AbstractCoordinati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setServiceUsage(CommunicationServiceUsage newServiceUsage) {
 		CommunicationServiceUsage oldServiceUsage = serviceUsage;
 		serviceUsage = newServiceUsage;
@@ -118,6 +120,7 @@ public class CommunicationServiceUsageRealizationImpl extends AbstractCoordinati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentPort getComponentPort() {
 		if (componentPort != null && componentPort.eIsProxy()) {
 			InternalEObject oldComponentPort = (InternalEObject) componentPort;
@@ -146,6 +149,7 @@ public class CommunicationServiceUsageRealizationImpl extends AbstractCoordinati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentPort(ComponentPort newComponentPort) {
 		ComponentPort oldComponentPort = componentPort;
 		componentPort = newComponentPort;

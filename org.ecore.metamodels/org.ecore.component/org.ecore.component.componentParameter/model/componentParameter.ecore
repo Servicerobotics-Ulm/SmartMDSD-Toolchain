@@ -8,7 +8,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="ecore:EClass ../../org.ecore.component.componentDefinition/model/componentDefinition.ecore#//ComponentDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractComponentParameter" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractComponentParameter" abstract="true"
+      eSuperTypes="../../org.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentParameterBase" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="InternalParameter" eSuperTypes="#//AbstractComponentParameter #//ComponentParameterBase">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -38,7 +39,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" transient="true" unsettable="true" derived="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractParameterInstance" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractParameterInstance" abstract="true"
+      eSuperTypes="../../org.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="TriggerInstance" eSuperTypes="#//AbstractParameterInstance #//ComponentRunTimeParameterBase">
     <eStructuralFeatures xsi:type="ecore:EReference" name="triggerDef" lowerBound="1"
         eType="ecore:EClass ../../org.ecore.service.parameterDefinition/model/parameterDefinition.ecore#//TriggerDefinition"/>

@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.ecore.base.documentation.DocumentationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -103,13 +104,22 @@ public interface ServiceDefinitionPackage extends EPackage {
 	int SERVICE_DEF_REPOSITORY = 1;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_DEF_REPOSITORY__DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_DEF_REPOSITORY__NAME = 0;
+	int SERVICE_DEF_REPOSITORY__NAME = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' containment reference.
@@ -118,7 +128,7 @@ public interface ServiceDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_DEF_REPOSITORY__VERSION = 1;
+	int SERVICE_DEF_REPOSITORY__VERSION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' containment reference list.
@@ -127,7 +137,7 @@ public interface ServiceDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_DEF_REPOSITORY__SERVICES = 2;
+	int SERVICE_DEF_REPOSITORY__SERVICES = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Service Def Repository</em>' class.
@@ -136,7 +146,7 @@ public interface ServiceDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_DEF_REPOSITORY_FEATURE_COUNT = 3;
+	int SERVICE_DEF_REPOSITORY_FEATURE_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.service.serviceDefinition.impl.AbstractServiceDefinitionImpl <em>Abstract Service Definition</em>}' class.
@@ -149,13 +159,22 @@ public interface ServiceDefinitionPackage extends EPackage {
 	int ABSTRACT_SERVICE_DEFINITION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_SERVICE_DEFINITION__DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_SERVICE_DEFINITION__NAME = 0;
+	int ABSTRACT_SERVICE_DEFINITION__NAME = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -164,16 +183,7 @@ public interface ServiceDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_SERVICE_DEFINITION__PROPERTIES = 1;
-
-	/**
-	 * The feature id for the '<em><b>Purpose Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_SERVICE_DEFINITION__PURPOSE_DESCRIPTION = 2;
+	int ABSTRACT_SERVICE_DEFINITION__PROPERTIES = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Service Definition</em>' class.
@@ -182,7 +192,7 @@ public interface ServiceDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_SERVICE_DEFINITION_FEATURE_COUNT = 3;
+	int ABSTRACT_SERVICE_DEFINITION_FEATURE_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.service.serviceDefinition.impl.CommRepoImportImpl <em>Comm Repo Import</em>}' class.
@@ -297,6 +307,15 @@ public interface ServiceDefinitionPackage extends EPackage {
 	int COMMUNICATION_SERVICE_DEFINITION = 6;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_SERVICE_DEFINITION__DOCUMENTATION = ABSTRACT_SERVICE_DEFINITION__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -313,15 +332,6 @@ public interface ServiceDefinitionPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_SERVICE_DEFINITION__PROPERTIES = ABSTRACT_SERVICE_DEFINITION__PROPERTIES;
-
-	/**
-	 * The feature id for the '<em><b>Purpose Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_SERVICE_DEFINITION__PURPOSE_DESCRIPTION = ABSTRACT_SERVICE_DEFINITION__PURPOSE_DESCRIPTION;
 
 	/**
 	 * The number of structural features of the '<em>Communication Service Definition</em>' class.
@@ -343,6 +353,15 @@ public interface ServiceDefinitionPackage extends EPackage {
 	int COORDINATION_SERVICE_DEFINITION = 7;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_SERVICE_DEFINITION__DOCUMENTATION = ABSTRACT_SERVICE_DEFINITION__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -359,15 +378,6 @@ public interface ServiceDefinitionPackage extends EPackage {
 	 * @ordered
 	 */
 	int COORDINATION_SERVICE_DEFINITION__PROPERTIES = ABSTRACT_SERVICE_DEFINITION__PROPERTIES;
-
-	/**
-	 * The feature id for the '<em><b>Purpose Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COORDINATION_SERVICE_DEFINITION__PURPOSE_DESCRIPTION = ABSTRACT_SERVICE_DEFINITION__PURPOSE_DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>State Pattern</b></em>' containment reference.
@@ -434,6 +444,15 @@ public interface ServiceDefinitionPackage extends EPackage {
 	int ONE_WAY_COMMUNICATION_SERVICE = 10;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONE_WAY_COMMUNICATION_SERVICE__DOCUMENTATION = COMMUNICATION_SERVICE_DEFINITION__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -450,15 +469,6 @@ public interface ServiceDefinitionPackage extends EPackage {
 	 * @ordered
 	 */
 	int ONE_WAY_COMMUNICATION_SERVICE__PROPERTIES = COMMUNICATION_SERVICE_DEFINITION__PROPERTIES;
-
-	/**
-	 * The feature id for the '<em><b>Purpose Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ONE_WAY_COMMUNICATION_SERVICE__PURPOSE_DESCRIPTION = COMMUNICATION_SERVICE_DEFINITION__PURPOSE_DESCRIPTION;
 
 	/**
 	 * The number of structural features of the '<em>One Way Communication Service</em>' class.
@@ -480,6 +490,15 @@ public interface ServiceDefinitionPackage extends EPackage {
 	int FORKING_SERVICE_DEFINITION = 8;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORKING_SERVICE_DEFINITION__DOCUMENTATION = ONE_WAY_COMMUNICATION_SERVICE__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -496,15 +515,6 @@ public interface ServiceDefinitionPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORKING_SERVICE_DEFINITION__PROPERTIES = ONE_WAY_COMMUNICATION_SERVICE__PROPERTIES;
-
-	/**
-	 * The feature id for the '<em><b>Purpose Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORKING_SERVICE_DEFINITION__PURPOSE_DESCRIPTION = ONE_WAY_COMMUNICATION_SERVICE__PURPOSE_DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -535,6 +545,15 @@ public interface ServiceDefinitionPackage extends EPackage {
 	int TWO_WAY_COMMUNICATION_SERVICE = 11;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TWO_WAY_COMMUNICATION_SERVICE__DOCUMENTATION = COMMUNICATION_SERVICE_DEFINITION__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -551,15 +570,6 @@ public interface ServiceDefinitionPackage extends EPackage {
 	 * @ordered
 	 */
 	int TWO_WAY_COMMUNICATION_SERVICE__PROPERTIES = COMMUNICATION_SERVICE_DEFINITION__PROPERTIES;
-
-	/**
-	 * The feature id for the '<em><b>Purpose Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TWO_WAY_COMMUNICATION_SERVICE__PURPOSE_DESCRIPTION = COMMUNICATION_SERVICE_DEFINITION__PURPOSE_DESCRIPTION;
 
 	/**
 	 * The number of structural features of the '<em>Two Way Communication Service</em>' class.
@@ -581,6 +591,15 @@ public interface ServiceDefinitionPackage extends EPackage {
 	int REQUEST_ANSWER_SERVICE_DEFINITION = 9;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUEST_ANSWER_SERVICE_DEFINITION__DOCUMENTATION = TWO_WAY_COMMUNICATION_SERVICE__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -597,15 +616,6 @@ public interface ServiceDefinitionPackage extends EPackage {
 	 * @ordered
 	 */
 	int REQUEST_ANSWER_SERVICE_DEFINITION__PROPERTIES = TWO_WAY_COMMUNICATION_SERVICE__PROPERTIES;
-
-	/**
-	 * The feature id for the '<em><b>Purpose Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUEST_ANSWER_SERVICE_DEFINITION__PURPOSE_DESCRIPTION = TWO_WAY_COMMUNICATION_SERVICE__PURPOSE_DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -673,6 +683,15 @@ public interface ServiceDefinitionPackage extends EPackage {
 	int JOINING_SERVICE_DEFINITION = 13;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOINING_SERVICE_DEFINITION__DOCUMENTATION = ONE_WAY_COMMUNICATION_SERVICE__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -689,15 +708,6 @@ public interface ServiceDefinitionPackage extends EPackage {
 	 * @ordered
 	 */
 	int JOINING_SERVICE_DEFINITION__PROPERTIES = ONE_WAY_COMMUNICATION_SERVICE__PROPERTIES;
-
-	/**
-	 * The feature id for the '<em><b>Purpose Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOINING_SERVICE_DEFINITION__PURPOSE_DESCRIPTION = ONE_WAY_COMMUNICATION_SERVICE__PURPOSE_DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -823,17 +833,6 @@ public interface ServiceDefinitionPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAbstractServiceDefinition_Properties();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.service.serviceDefinition.AbstractServiceDefinition#getPurposeDescription <em>Purpose Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Purpose Description</em>'.
-	 * @see org.ecore.service.serviceDefinition.AbstractServiceDefinition#getPurposeDescription()
-	 * @see #getAbstractServiceDefinition()
-	 * @generated
-	 */
-	EAttribute getAbstractServiceDefinition_PurposeDescription();
 
 	/**
 	 * Returns the meta object for class '{@link org.ecore.service.serviceDefinition.CommRepoImport <em>Comm Repo Import</em>}'.
@@ -1217,15 +1216,6 @@ public interface ServiceDefinitionPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ABSTRACT_SERVICE_DEFINITION__PROPERTIES = eINSTANCE.getAbstractServiceDefinition_Properties();
-
-		/**
-		 * The meta object literal for the '<em><b>Purpose Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ABSTRACT_SERVICE_DEFINITION__PURPOSE_DESCRIPTION = eINSTANCE
-				.getAbstractServiceDefinition_PurposeDescription();
 
 		/**
 		 * The meta object literal for the '{@link org.ecore.service.serviceDefinition.impl.CommRepoImportImpl <em>Comm Repo Import</em>}' class.

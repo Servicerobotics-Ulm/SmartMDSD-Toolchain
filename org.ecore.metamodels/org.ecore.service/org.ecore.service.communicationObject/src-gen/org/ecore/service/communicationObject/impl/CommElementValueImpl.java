@@ -63,6 +63,7 @@ public class CommElementValueImpl extends SingleValueImpl implements CommElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AbstractCommElement getValue() {
 		if (value != null && value.eIsProxy()) {
 			InternalEObject oldValue = (InternalEObject) value;
@@ -90,6 +91,7 @@ public class CommElementValueImpl extends SingleValueImpl implements CommElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(AbstractCommElement newValue) {
 		AbstractCommElement oldValue = value;
 		value = newValue;

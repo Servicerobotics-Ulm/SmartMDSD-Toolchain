@@ -1,4 +1,4 @@
-//--------------------------------------------------------------------------
+//===============================================================
 //
 //  Copyright (C) 2013 Alex Lotz, Matthias Lutz, Dennis Stampfer
 //
@@ -15,21 +15,7 @@
 //
 //  This file is part of the SmartSoft MDSD Toolchain. 
 //
-//  This library is free software; you can redistribute it and/or
-//  modify it under the terms of the GNU Lesser General Public
-//  License as published by the Free Software Foundation; either
-//  version 2.1 of the License, or (at your option) any later version.
-//
-//  This library is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-//  Lesser General Public License for more details.
-//
-//  You should have received a copy of the GNU Lesser General Public
-//  License along with this library; if not, write to the Free Software
-//  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-//
-//--------------------------------------------------------------------------
+//===============================================================
 package org.xtend.smartsoft.generator.component
 
 import com.google.inject.Inject
@@ -94,7 +80,7 @@ class SmartQueryHandler {
 	«ENDFOR»
 	
 	class «handler.nameClass»Core 
-	:	public Smart::IQueryServerHandler<«handler.answerPort.getCommObjectCppList(true)», SmartACE::QueryId>
+	:	public Smart::IInputHandler<std::pair<Smart::QueryIdPtr,«handler.answerPort.communicationObjects.get("Request").fullyQualifiedNameCpp»>>
 	,	public Smart::TaskTriggerSubject
 	«FOR obs: handler.observers.sortBy[it.nameClass]»
 	,	public «obs.subject.nodeObserverInterfaceClassName»
@@ -104,6 +90,10 @@ class SmartQueryHandler {
 	«ENDFOR»
 	{
 	private:
+	virtual void handle_input(const std::pair<Smart::QueryIdPtr,«handler.answerPort.communicationObjects.get("Request").fullyQualifiedNameCpp»> &input) override {
+		this->handleQuery(input.first, input.second);
+	}
+	
 	«FOR inLink: handler.inputLinks.sortBy[it.name]»
 		Smart::StatusCode «inLink.inputPort.nameInstance»Status;
 		«inLink.inputPort.inputHandlerCommObject» «inLink.inputPort.nameInstance»Object;
@@ -137,9 +127,15 @@ class SmartQueryHandler {
 			
 		«ENDFOR»
 	public:
-		«handler.nameClass»Core(Smart::IQueryServerPattern<«handler.answerPort.getCommObjectCppList(false)», SmartACE::QueryId>* server);
-		virtual ~«handler.nameClass»Core();
-		//virtual void handleQuery(const SmartACE::QueryId &id, const «handler.answerPort.communicationObjects.get("Request").fullyQualifiedNameCpp»& request);
+		using IQueryServer = Smart::IQueryServerPattern<«handler.answerPort.getCommObjectCppList(true)»>;
+		using QueryId = Smart::QueryIdPtr;
+		«handler.nameClass»Core(IQueryServer *server);
+		virtual ~«handler.nameClass»Core() = default;
+		
+	protected:
+		IQueryServer *server;
+		//this user-method has to be implemented in derived classes
+		virtual void handleQuery(const QueryId &id, const «handler.answerPort.communicationObjects.get("Request").fullyQualifiedNameCpp»& request) = 0;
 	};
 	#endif
 	'''
@@ -162,17 +158,13 @@ class SmartQueryHandler {
 		«ENDIF»
 	«ENDFOR»
 	
-	«handler.nameClass»Core::«handler.nameClass»Core(Smart::IQueryServerPattern<«handler.answerPort.getCommObjectCppList(false)», SmartACE::QueryId>* server)
-	:	Smart::IQueryServerHandler<«handler.answerPort.getCommObjectCppList(true)», SmartACE::QueryId>(server)
+	«handler.nameClass»Core::«handler.nameClass»Core(IQueryServer* server)
+	:	Smart::IInputHandler<std::pair<Smart::QueryIdPtr,«handler.answerPort.communicationObjects.get("Request").fullyQualifiedNameCpp»>>(server)
+	,	server(server)
 	«FOR inLink: handler.inputLinks.sortBy[it.name]»
 	,	«inLink.inputPort.nameInstance»Status(Smart::SMART_DISCONNECTED)
 	,	«inLink.inputPort.nameInstance»Object()
 	«ENDFOR»
-	{
-		
-	}
-	
-	«handler.nameClass»Core::~«handler.nameClass»Core()
 	{
 		
 	}
@@ -205,9 +197,9 @@ class SmartQueryHandler {
 		virtual void on_update_from(const «obs.nameClass»* «obs.nameInstance»);
 		«ENDFOR»	
 	public:
-		«handler.nameClass»(Smart::IQueryServerPattern<«handler.answerPort.getCommObjectCppList(false)», SmartACE::QueryId>* server);
-		virtual ~«handler.nameClass»();
-		virtual void handleQuery(const SmartACE::QueryId &id, const «handler.answerPort.communicationObjects.get("Request").fullyQualifiedNameCpp»& request);
+		«handler.nameClass»(IQueryServer *server);
+		virtual ~«handler.nameClass»() = default;
+		virtual void handleQuery(const QueryId &id, const «handler.answerPort.communicationObjects.get("Request").fullyQualifiedNameCpp»& request);
 	};
 	#endif
 	'''
@@ -221,13 +213,8 @@ class SmartQueryHandler {
 	#include "«handler.QueryServerHandlerUserHeaderFileName»"
 	#include "«(handler.eContainer as ComponentDefinition).getCompHeaderFilename»"
 	
-	«handler.nameClass»::«handler.nameClass»(Smart::IQueryServerPattern<«handler.answerPort.getCommObjectCppList(false)», SmartACE::QueryId>* server)
+	«handler.nameClass»::«handler.nameClass»(IQueryServer *server)
 	:	«handler.nameClass»Core(server)
-	{
-		
-	}
-	
-	«handler.nameClass»::~«handler.nameClass»()
 	{
 		
 	}
@@ -240,7 +227,7 @@ class SmartQueryHandler {
 	}
 	«ENDFOR»
 	
-	void «handler.nameClass»::handleQuery(const SmartACE::QueryId &id, const «handler.answerPort.communicationObjects.get("Request").fullyQualifiedNameCpp»& request) 
+	void «handler.nameClass»::handleQuery(const Smart::QueryIdPtr &id, const «handler.answerPort.communicationObjects.get("Request").fullyQualifiedNameCpp»& request) 
 	{
 		«handler.answerPort.communicationObjects.get("Answer").fullyQualifiedNameCpp» answer;
 		

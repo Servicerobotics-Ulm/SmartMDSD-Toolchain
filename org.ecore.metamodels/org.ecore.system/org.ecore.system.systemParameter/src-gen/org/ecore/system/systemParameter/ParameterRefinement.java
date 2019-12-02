@@ -3,11 +3,9 @@
 package org.ecore.system.systemParameter;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
-
 import org.ecore.base.basicAttributes.AttributeRefinement;
 
+import org.ecore.base.documentation.AbstractDocumentedElement;
 import org.ecore.component.componentParameter.ComponentParameterBase;
 
 /**
@@ -27,7 +25,7 @@ import org.ecore.component.componentParameter.ComponentParameterBase;
  * @model
  * @generated
  */
-public interface ParameterRefinement extends EObject {
+public interface ParameterRefinement extends AbstractDocumentedElement {
 	/**
 	 * Returns the value of the '<em><b>Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->

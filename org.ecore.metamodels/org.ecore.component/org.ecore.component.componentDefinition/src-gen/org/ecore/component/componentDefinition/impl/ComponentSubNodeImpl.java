@@ -66,6 +66,7 @@ public abstract class ComponentSubNodeImpl extends NamedComponentElementImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AbstractComponentLink> getLinks() {
 		if (links == null) {
 			links = new EObjectContainmentEList<AbstractComponentLink>(AbstractComponentLink.class, this,

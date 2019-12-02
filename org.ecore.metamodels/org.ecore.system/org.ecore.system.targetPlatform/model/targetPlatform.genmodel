@@ -6,7 +6,7 @@
     modelPluginID="org.ecore.system.targetPlatform" templateDirectory="" modelName="TargetPlatform"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="../../org.ecore.service.roboticMiddleware/model/roboticMiddleware.genmodel#//roboticMiddleware"
+    usedGenPackages="../../org.ecore.base.documentation/model/documentation.genmodel#//documentation ../../org.ecore.service.roboticMiddleware/model/roboticMiddleware.genmodel#//roboticMiddleware"
     operationReflection="true" importOrganizing="true">
   <foreignModel>targetPlatform.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>

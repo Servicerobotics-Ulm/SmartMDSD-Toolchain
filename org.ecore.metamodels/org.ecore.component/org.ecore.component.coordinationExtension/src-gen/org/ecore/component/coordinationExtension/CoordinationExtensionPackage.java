@@ -98,13 +98,22 @@ public interface CoordinationExtensionPackage extends EPackage {
 	int PUBLIC_OPERATION_MODE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUBLIC_OPERATION_MODE__DOCUMENTATION = ABSTRACT_COORDINATION_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Activates</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLIC_OPERATION_MODE__ACTIVATES = ABSTRACT_COORDINATION_ELEMENT_FEATURE_COUNT + 0;
+	int PUBLIC_OPERATION_MODE__ACTIVATES = ABSTRACT_COORDINATION_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Mode</b></em>' reference.
@@ -113,7 +122,7 @@ public interface CoordinationExtensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLIC_OPERATION_MODE__MODE = ABSTRACT_COORDINATION_ELEMENT_FEATURE_COUNT + 1;
+	int PUBLIC_OPERATION_MODE__MODE = ABSTRACT_COORDINATION_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -122,7 +131,7 @@ public interface CoordinationExtensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLIC_OPERATION_MODE__NAME = ABSTRACT_COORDINATION_ELEMENT_FEATURE_COUNT + 2;
+	int PUBLIC_OPERATION_MODE__NAME = ABSTRACT_COORDINATION_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Is Default Init</b></em>' attribute.
@@ -131,7 +140,7 @@ public interface CoordinationExtensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLIC_OPERATION_MODE__IS_DEFAULT_INIT = ABSTRACT_COORDINATION_ELEMENT_FEATURE_COUNT + 3;
+	int PUBLIC_OPERATION_MODE__IS_DEFAULT_INIT = ABSTRACT_COORDINATION_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Public Operation Mode</em>' class.
@@ -140,7 +149,25 @@ public interface CoordinationExtensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLIC_OPERATION_MODE_FEATURE_COUNT = ABSTRACT_COORDINATION_ELEMENT_FEATURE_COUNT + 4;
+	int PUBLIC_OPERATION_MODE_FEATURE_COUNT = ABSTRACT_COORDINATION_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Get Multiline Html Documentation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUBLIC_OPERATION_MODE___GET_MULTILINE_HTML_DOCUMENTATION = ABSTRACT_COORDINATION_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get First Documentation Line</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUBLIC_OPERATION_MODE___GET_FIRST_DOCUMENTATION_LINE = ABSTRACT_COORDINATION_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Public Operation Mode</em>' class.
@@ -149,7 +176,7 @@ public interface CoordinationExtensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLIC_OPERATION_MODE_OPERATION_COUNT = ABSTRACT_COORDINATION_ELEMENT_OPERATION_COUNT + 0;
+	int PUBLIC_OPERATION_MODE_OPERATION_COUNT = ABSTRACT_COORDINATION_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.component.coordinationExtension.impl.PrivateOperationModeImpl <em>Private Operation Mode</em>}' class.
@@ -208,13 +235,22 @@ public interface CoordinationExtensionPackage extends EPackage {
 	int COORDINATION_SLAVE_PORT__NAME = ComponentDefinitionPackage.NAMED_COMPONENT_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_SLAVE_PORT__DOCUMENTATION = ComponentDefinitionPackage.NAMED_COMPONENT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_SLAVE_PORT__ELEMENTS = ComponentDefinitionPackage.NAMED_COMPONENT_ELEMENT_FEATURE_COUNT + 0;
+	int COORDINATION_SLAVE_PORT__ELEMENTS = ComponentDefinitionPackage.NAMED_COMPONENT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Service</b></em>' reference.
@@ -223,7 +259,7 @@ public interface CoordinationExtensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_SLAVE_PORT__SERVICE = ComponentDefinitionPackage.NAMED_COMPONENT_ELEMENT_FEATURE_COUNT + 1;
+	int COORDINATION_SLAVE_PORT__SERVICE = ComponentDefinitionPackage.NAMED_COMPONENT_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Coordination Slave Port</em>' class.
@@ -232,7 +268,27 @@ public interface CoordinationExtensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_SLAVE_PORT_FEATURE_COUNT = ComponentDefinitionPackage.NAMED_COMPONENT_ELEMENT_FEATURE_COUNT + 2;
+	int COORDINATION_SLAVE_PORT_FEATURE_COUNT = ComponentDefinitionPackage.NAMED_COMPONENT_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Multiline Html Documentation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_SLAVE_PORT___GET_MULTILINE_HTML_DOCUMENTATION = ComponentDefinitionPackage.NAMED_COMPONENT_ELEMENT_OPERATION_COUNT
+			+ 0;
+
+	/**
+	 * The operation id for the '<em>Get First Documentation Line</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_SLAVE_PORT___GET_FIRST_DOCUMENTATION_LINE = ComponentDefinitionPackage.NAMED_COMPONENT_ELEMENT_OPERATION_COUNT
+			+ 1;
 
 	/**
 	 * The number of operations of the '<em>Coordination Slave Port</em>' class.
@@ -242,7 +298,7 @@ public interface CoordinationExtensionPackage extends EPackage {
 	 * @ordered
 	 */
 	int COORDINATION_SLAVE_PORT_OPERATION_COUNT = ComponentDefinitionPackage.NAMED_COMPONENT_ELEMENT_OPERATION_COUNT
-			+ 0;
+			+ 2;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.component.coordinationExtension.impl.CoordinationMasterPortImpl <em>Coordination Master Port</em>}' class.

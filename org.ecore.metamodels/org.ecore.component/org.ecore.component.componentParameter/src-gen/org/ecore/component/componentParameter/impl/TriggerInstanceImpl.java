@@ -94,6 +94,7 @@ public class TriggerInstanceImpl extends AbstractParameterInstanceImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TriggerDefinition getTriggerDef() {
 		if (triggerDef != null && triggerDef.eIsProxy()) {
 			InternalEObject oldTriggerDef = (InternalEObject) triggerDef;
@@ -121,6 +122,7 @@ public class TriggerInstanceImpl extends AbstractParameterInstanceImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTriggerDef(TriggerDefinition newTriggerDef) {
 		TriggerDefinition oldTriggerDef = triggerDef;
 		triggerDef = newTriggerDef;
@@ -134,6 +136,7 @@ public class TriggerInstanceImpl extends AbstractParameterInstanceImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isActive() {
 		return active;
 	}
@@ -143,6 +146,7 @@ public class TriggerInstanceImpl extends AbstractParameterInstanceImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setActive(boolean newActive) {
 		boolean oldActive = active;
 		active = newActive;
@@ -256,7 +260,7 @@ public class TriggerInstanceImpl extends AbstractParameterInstanceImpl implement
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (active: ");
 		result.append(active);
 		result.append(')');

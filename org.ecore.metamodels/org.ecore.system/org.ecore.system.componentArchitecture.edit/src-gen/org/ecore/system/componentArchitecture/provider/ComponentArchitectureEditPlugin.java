@@ -8,6 +8,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.ecore.base.basicAttributes.provider.BasicAttributesEditPlugin;
 
+import org.ecore.base.documentation.provider.DocumentationEditPlugin;
 import org.ecore.base.stateMachine.provider.StateMachineEditPlugin;
 
 import org.ecore.component.componentDefinition.provider.ComponentDefinitionEditPlugin;
@@ -60,8 +61,8 @@ public final class ComponentArchitectureEditPlugin extends EMFPlugin {
 				CommunicationObjectEditPlugin.INSTANCE, CommunicationPatternEditPlugin.INSTANCE,
 				ComponentDefinitionEditPlugin.INSTANCE, CoordinationPatternEditPlugin.INSTANCE,
 				ParameterDefinitionEditPlugin.INSTANCE, RoboticMiddlewareEditPlugin.INSTANCE,
-				ServiceDefinitionEditPlugin.INSTANCE, StateMachineEditPlugin.INSTANCE,
-				ComponentModeEditPlugin.INSTANCE, });
+				ServiceDefinitionEditPlugin.INSTANCE, StateMachineEditPlugin.INSTANCE, ComponentModeEditPlugin.INSTANCE,
+				DocumentationEditPlugin.INSTANCE, });
 	}
 
 	/**

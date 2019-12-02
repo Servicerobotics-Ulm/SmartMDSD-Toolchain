@@ -22,45 +22,25 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalComponentDatasheetParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_TEXT_BLOCK", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'ComponentDatasheet'", "'{'", "'purposeDescription'", "':'", "'hardwareRequirementDescription'", "'}'", "'baseURI'", "'shortDescription'", "'longDescription'", "'supplierDescription'", "'homepage'", "'trl'", "'license'", "'spdx'", "'('", "')'", "'proprietary'", "'name'", "'fullText'", "'URL'", "'Level1'", "'Level2'", "'Level3'", "'Level4'", "'Level5'", "'Level6'", "'Level7'", "'Level8'", "'Level9'", "'Undefined'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'ComponentDatasheet'", "'{'", "'}'", "'ComponentPortDatasheet'", "'DatasheetProperty'", "'value'", "'unit'", "'shortDescription'", "'semanticID'", "'BaseURI'", "'ShortDescription'"
     };
-    public static final int RULE_STRING=6;
-    public static final int RULE_TEXT_BLOCK=5;
-    public static final int RULE_SL_COMMENT=9;
+    public static final int RULE_STRING=5;
+    public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__37=37;
     public static final int T__16=16;
-    public static final int T__38=38;
     public static final int T__17=17;
-    public static final int T__39=39;
     public static final int T__18=18;
-    public static final int T__33=33;
+    public static final int T__11=11;
     public static final int T__12=12;
-    public static final int T__34=34;
     public static final int T__13=13;
-    public static final int T__35=35;
     public static final int T__14=14;
-    public static final int T__36=36;
     public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
     public static final int RULE_ID=4;
-    public static final int RULE_WS=10;
-    public static final int RULE_ANY_OTHER=11;
-    public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int T__28=28;
-    public static final int RULE_INT=7;
-    public static final int T__29=29;
-    public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=8;
-    public static final int T__23=23;
-    public static final int T__24=24;
-    public static final int T__25=25;
-    public static final int T__40=40;
-    public static final int T__41=41;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_INT=6;
+    public static final int RULE_ML_COMMENT=7;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -104,7 +84,7 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleComponentDatasheet"
-    // InternalComponentDatasheet.g:106:1: entryRuleComponentDatasheet returns [EObject current=null] : iv_ruleComponentDatasheet= ruleComponentDatasheet EOF ;
+    // InternalComponentDatasheet.g:80:1: entryRuleComponentDatasheet returns [EObject current=null] : iv_ruleComponentDatasheet= ruleComponentDatasheet EOF ;
     public final EObject entryRuleComponentDatasheet() throws RecognitionException {
         EObject current = null;
 
@@ -112,8 +92,8 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
 
 
         try {
-            // InternalComponentDatasheet.g:106:59: (iv_ruleComponentDatasheet= ruleComponentDatasheet EOF )
-            // InternalComponentDatasheet.g:107:2: iv_ruleComponentDatasheet= ruleComponentDatasheet EOF
+            // InternalComponentDatasheet.g:80:59: (iv_ruleComponentDatasheet= ruleComponentDatasheet EOF )
+            // InternalComponentDatasheet.g:81:2: iv_ruleComponentDatasheet= ruleComponentDatasheet EOF
             {
              newCompositeNode(grammarAccess.getComponentDatasheetRule()); 
             pushFollow(FOLLOW_1);
@@ -140,44 +120,36 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleComponentDatasheet"
-    // InternalComponentDatasheet.g:113:1: ruleComponentDatasheet returns [EObject current=null] : (otherlv_0= 'ComponentDatasheet' ( (otherlv_1= RULE_ID ) ) otherlv_2= '{' this_GenericDatasheet_3= ruleGenericDatasheet[$current] ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) ) ) )* ) ) ) otherlv_11= '}' ) ;
+    // InternalComponentDatasheet.g:87:1: ruleComponentDatasheet returns [EObject current=null] : (otherlv_0= 'ComponentDatasheet' ( (otherlv_1= RULE_ID ) ) otherlv_2= '{' this_GenericDatasheetModel_3= ruleGenericDatasheetModel[$current] otherlv_4= '}' ) ;
     public final EObject ruleComponentDatasheet() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
-        Token otherlv_5=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
-        Token otherlv_9=null;
-        Token otherlv_11=null;
-        EObject this_GenericDatasheet_3 = null;
-
-        AntlrDatatypeRuleToken lv_purposeDescription_7_0 = null;
-
-        AntlrDatatypeRuleToken lv_hardwareRequirementDescription_10_0 = null;
+        Token otherlv_4=null;
+        EObject this_GenericDatasheetModel_3 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalComponentDatasheet.g:119:2: ( (otherlv_0= 'ComponentDatasheet' ( (otherlv_1= RULE_ID ) ) otherlv_2= '{' this_GenericDatasheet_3= ruleGenericDatasheet[$current] ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) ) ) )* ) ) ) otherlv_11= '}' ) )
-            // InternalComponentDatasheet.g:120:2: (otherlv_0= 'ComponentDatasheet' ( (otherlv_1= RULE_ID ) ) otherlv_2= '{' this_GenericDatasheet_3= ruleGenericDatasheet[$current] ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) ) ) )* ) ) ) otherlv_11= '}' )
+            // InternalComponentDatasheet.g:93:2: ( (otherlv_0= 'ComponentDatasheet' ( (otherlv_1= RULE_ID ) ) otherlv_2= '{' this_GenericDatasheetModel_3= ruleGenericDatasheetModel[$current] otherlv_4= '}' ) )
+            // InternalComponentDatasheet.g:94:2: (otherlv_0= 'ComponentDatasheet' ( (otherlv_1= RULE_ID ) ) otherlv_2= '{' this_GenericDatasheetModel_3= ruleGenericDatasheetModel[$current] otherlv_4= '}' )
             {
-            // InternalComponentDatasheet.g:120:2: (otherlv_0= 'ComponentDatasheet' ( (otherlv_1= RULE_ID ) ) otherlv_2= '{' this_GenericDatasheet_3= ruleGenericDatasheet[$current] ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) ) ) )* ) ) ) otherlv_11= '}' )
-            // InternalComponentDatasheet.g:121:3: otherlv_0= 'ComponentDatasheet' ( (otherlv_1= RULE_ID ) ) otherlv_2= '{' this_GenericDatasheet_3= ruleGenericDatasheet[$current] ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) ) ) )* ) ) ) otherlv_11= '}'
+            // InternalComponentDatasheet.g:94:2: (otherlv_0= 'ComponentDatasheet' ( (otherlv_1= RULE_ID ) ) otherlv_2= '{' this_GenericDatasheetModel_3= ruleGenericDatasheetModel[$current] otherlv_4= '}' )
+            // InternalComponentDatasheet.g:95:3: otherlv_0= 'ComponentDatasheet' ( (otherlv_1= RULE_ID ) ) otherlv_2= '{' this_GenericDatasheetModel_3= ruleGenericDatasheetModel[$current] otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,12,FOLLOW_3); 
+            otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getComponentDatasheetAccess().getComponentDatasheetKeyword_0());
             		
-            // InternalComponentDatasheet.g:125:3: ( (otherlv_1= RULE_ID ) )
-            // InternalComponentDatasheet.g:126:4: (otherlv_1= RULE_ID )
+            // InternalComponentDatasheet.g:99:3: ( (otherlv_1= RULE_ID ) )
+            // InternalComponentDatasheet.g:100:4: (otherlv_1= RULE_ID )
             {
-            // InternalComponentDatasheet.g:126:4: (otherlv_1= RULE_ID )
-            // InternalComponentDatasheet.g:127:5: otherlv_1= RULE_ID
+            // InternalComponentDatasheet.g:100:4: (otherlv_1= RULE_ID )
+            // InternalComponentDatasheet.g:101:5: otherlv_1= RULE_ID
             {
 
             					if (current==null) {
@@ -194,7 +166,7 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_2=(Token)match(input,13,FOLLOW_5); 
+            otherlv_2=(Token)match(input,12,FOLLOW_5); 
 
             			newLeafNode(otherlv_2, grammarAccess.getComponentDatasheetAccess().getLeftCurlyBracketKeyword_2());
             		
@@ -202,261 +174,20 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
             			if (current==null) {
             				current = createModelElement(grammarAccess.getComponentDatasheetRule());
             			}
-            			newCompositeNode(grammarAccess.getComponentDatasheetAccess().getGenericDatasheetParserRuleCall_3());
+            			newCompositeNode(grammarAccess.getComponentDatasheetAccess().getGenericDatasheetModelParserRuleCall_3());
             		
             pushFollow(FOLLOW_6);
-            this_GenericDatasheet_3=ruleGenericDatasheet(current);
+            this_GenericDatasheetModel_3=ruleGenericDatasheetModel(current);
 
             state._fsp--;
 
 
-            			current = this_GenericDatasheet_3;
+            			current = this_GenericDatasheetModel_3;
             			afterParserOrEnumRuleCall();
             		
-            // InternalComponentDatasheet.g:153:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) ) ) )* ) ) )
-            // InternalComponentDatasheet.g:154:4: ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) ) ) )* ) )
-            {
-            // InternalComponentDatasheet.g:154:4: ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) ) ) )* ) )
-            // InternalComponentDatasheet.g:155:5: ( ( ({...}? => ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) ) ) )* )
-            {
-             
-            				  getUnorderedGroupHelper().enter(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4());
-            				
-            // InternalComponentDatasheet.g:158:5: ( ( ({...}? => ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) ) ) )* )
-            // InternalComponentDatasheet.g:159:6: ( ({...}? => ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) ) ) )*
-            {
-            // InternalComponentDatasheet.g:159:6: ( ({...}? => ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) ) ) )*
-            loop3:
-            do {
-                int alt3=3;
-                int LA3_0 = input.LA(1);
+            otherlv_4=(Token)match(input,13,FOLLOW_2); 
 
-                if ( LA3_0 == 14 && getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4(), 0) ) {
-                    alt3=1;
-                }
-                else if ( LA3_0 == 16 && getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4(), 1) ) {
-                    alt3=2;
-                }
-
-
-                switch (alt3) {
-            	case 1 :
-            	    // InternalComponentDatasheet.g:160:4: ({...}? => ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) ) )
-            	    {
-            	    // InternalComponentDatasheet.g:160:4: ({...}? => ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) ) )
-            	    // InternalComponentDatasheet.g:161:5: {...}? => ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4(), 0) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentDatasheet", "getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4(), 0)");
-            	    }
-            	    // InternalComponentDatasheet.g:161:115: ( ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) ) )
-            	    // InternalComponentDatasheet.g:162:6: ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) )
-            	    {
-
-            	    						getUnorderedGroupHelper().select(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4(), 0);
-            	    					
-            	    // InternalComponentDatasheet.g:165:9: ({...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) ) )
-            	    // InternalComponentDatasheet.g:165:10: {...}? => (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentDatasheet", "true");
-            	    }
-            	    // InternalComponentDatasheet.g:165:19: (otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) ) )
-            	    // InternalComponentDatasheet.g:165:20: otherlv_5= 'purposeDescription' (otherlv_6= ':' )? ( (lv_purposeDescription_7_0= ruleEString ) )
-            	    {
-            	    otherlv_5=(Token)match(input,14,FOLLOW_7); 
-
-            	    									newLeafNode(otherlv_5, grammarAccess.getComponentDatasheetAccess().getPurposeDescriptionKeyword_4_0_0());
-            	    								
-            	    // InternalComponentDatasheet.g:169:9: (otherlv_6= ':' )?
-            	    int alt1=2;
-            	    int LA1_0 = input.LA(1);
-
-            	    if ( (LA1_0==15) ) {
-            	        alt1=1;
-            	    }
-            	    switch (alt1) {
-            	        case 1 :
-            	            // InternalComponentDatasheet.g:170:10: otherlv_6= ':'
-            	            {
-            	            otherlv_6=(Token)match(input,15,FOLLOW_7); 
-
-            	            										newLeafNode(otherlv_6, grammarAccess.getComponentDatasheetAccess().getColonKeyword_4_0_1());
-            	            									
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // InternalComponentDatasheet.g:175:9: ( (lv_purposeDescription_7_0= ruleEString ) )
-            	    // InternalComponentDatasheet.g:176:10: (lv_purposeDescription_7_0= ruleEString )
-            	    {
-            	    // InternalComponentDatasheet.g:176:10: (lv_purposeDescription_7_0= ruleEString )
-            	    // InternalComponentDatasheet.g:177:11: lv_purposeDescription_7_0= ruleEString
-            	    {
-
-            	    											newCompositeNode(grammarAccess.getComponentDatasheetAccess().getPurposeDescriptionEStringParserRuleCall_4_0_2_0());
-            	    										
-            	    pushFollow(FOLLOW_6);
-            	    lv_purposeDescription_7_0=ruleEString();
-
-            	    state._fsp--;
-
-
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getComponentDatasheetRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"purposeDescription",
-            	    												lv_purposeDescription_7_0,
-            	    												"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4());
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 2 :
-            	    // InternalComponentDatasheet.g:200:4: ({...}? => ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) ) )
-            	    {
-            	    // InternalComponentDatasheet.g:200:4: ({...}? => ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) ) )
-            	    // InternalComponentDatasheet.g:201:5: {...}? => ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4(), 1) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentDatasheet", "getUnorderedGroupHelper().canSelect(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4(), 1)");
-            	    }
-            	    // InternalComponentDatasheet.g:201:115: ( ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) ) )
-            	    // InternalComponentDatasheet.g:202:6: ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) )
-            	    {
-
-            	    						getUnorderedGroupHelper().select(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4(), 1);
-            	    					
-            	    // InternalComponentDatasheet.g:205:9: ({...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) ) )
-            	    // InternalComponentDatasheet.g:205:10: {...}? => (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleComponentDatasheet", "true");
-            	    }
-            	    // InternalComponentDatasheet.g:205:19: (otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) ) )
-            	    // InternalComponentDatasheet.g:205:20: otherlv_8= 'hardwareRequirementDescription' (otherlv_9= ':' )? ( (lv_hardwareRequirementDescription_10_0= ruleEString ) )
-            	    {
-            	    otherlv_8=(Token)match(input,16,FOLLOW_7); 
-
-            	    									newLeafNode(otherlv_8, grammarAccess.getComponentDatasheetAccess().getHardwareRequirementDescriptionKeyword_4_1_0());
-            	    								
-            	    // InternalComponentDatasheet.g:209:9: (otherlv_9= ':' )?
-            	    int alt2=2;
-            	    int LA2_0 = input.LA(1);
-
-            	    if ( (LA2_0==15) ) {
-            	        alt2=1;
-            	    }
-            	    switch (alt2) {
-            	        case 1 :
-            	            // InternalComponentDatasheet.g:210:10: otherlv_9= ':'
-            	            {
-            	            otherlv_9=(Token)match(input,15,FOLLOW_7); 
-
-            	            										newLeafNode(otherlv_9, grammarAccess.getComponentDatasheetAccess().getColonKeyword_4_1_1());
-            	            									
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // InternalComponentDatasheet.g:215:9: ( (lv_hardwareRequirementDescription_10_0= ruleEString ) )
-            	    // InternalComponentDatasheet.g:216:10: (lv_hardwareRequirementDescription_10_0= ruleEString )
-            	    {
-            	    // InternalComponentDatasheet.g:216:10: (lv_hardwareRequirementDescription_10_0= ruleEString )
-            	    // InternalComponentDatasheet.g:217:11: lv_hardwareRequirementDescription_10_0= ruleEString
-            	    {
-
-            	    											newCompositeNode(grammarAccess.getComponentDatasheetAccess().getHardwareRequirementDescriptionEStringParserRuleCall_4_1_2_0());
-            	    										
-            	    pushFollow(FOLLOW_6);
-            	    lv_hardwareRequirementDescription_10_0=ruleEString();
-
-            	    state._fsp--;
-
-
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getComponentDatasheetRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"hardwareRequirementDescription",
-            	    												lv_hardwareRequirementDescription_10_0,
-            	    												"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4());
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop3;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-             
-            				  getUnorderedGroupHelper().leave(grammarAccess.getComponentDatasheetAccess().getUnorderedGroup_4());
-            				
-
-            }
-
-            otherlv_11=(Token)match(input,17,FOLLOW_2); 
-
-            			newLeafNode(otherlv_11, grammarAccess.getComponentDatasheetAccess().getRightCurlyBracketKeyword_5());
+            			newLeafNode(otherlv_4, grammarAccess.getComponentDatasheetAccess().getRightCurlyBracketKeyword_4());
             		
 
             }
@@ -480,166 +211,636 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
     // $ANTLR end "ruleComponentDatasheet"
 
 
-    // $ANTLR start "ruleGenericDatasheet"
-    // InternalComponentDatasheet.g:256:1: ruleGenericDatasheet[EObject in_current] returns [EObject current=in_current] : ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) ) ) ;
-    public final EObject ruleGenericDatasheet(EObject in_current) throws RecognitionException {
-        EObject current = in_current;
+    // $ANTLR start "entryRuleAbstractDatasheetElement"
+    // InternalComponentDatasheet.g:135:1: entryRuleAbstractDatasheetElement returns [EObject current=null] : iv_ruleAbstractDatasheetElement= ruleAbstractDatasheetElement EOF ;
+    public final EObject entryRuleAbstractDatasheetElement() throws RecognitionException {
+        EObject current = null;
 
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token otherlv_8=null;
-        Token lv_longDescription_9_0=null;
-        Token otherlv_10=null;
-        Token otherlv_11=null;
-        Token otherlv_13=null;
-        Token otherlv_14=null;
-        Token otherlv_16=null;
-        Token otherlv_17=null;
-        Token otherlv_19=null;
-        Token otherlv_20=null;
-        AntlrDatatypeRuleToken lv_baseURI_3_0 = null;
+        EObject iv_ruleAbstractDatasheetElement = null;
 
-        AntlrDatatypeRuleToken lv_shortDescription_6_0 = null;
 
-        AntlrDatatypeRuleToken lv_supplierDescription_12_0 = null;
+        try {
+            // InternalComponentDatasheet.g:135:65: (iv_ruleAbstractDatasheetElement= ruleAbstractDatasheetElement EOF )
+            // InternalComponentDatasheet.g:136:2: iv_ruleAbstractDatasheetElement= ruleAbstractDatasheetElement EOF
+            {
+             newCompositeNode(grammarAccess.getAbstractDatasheetElementRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleAbstractDatasheetElement=ruleAbstractDatasheetElement();
 
-        AntlrDatatypeRuleToken lv_homepage_15_0 = null;
+            state._fsp--;
 
-        Enumerator lv_trl_18_0 = null;
+             current =iv_ruleAbstractDatasheetElement; 
+            match(input,EOF,FOLLOW_2); 
 
-        EObject lv_license_21_0 = null;
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleAbstractDatasheetElement"
+
+
+    // $ANTLR start "ruleAbstractDatasheetElement"
+    // InternalComponentDatasheet.g:142:1: ruleAbstractDatasheetElement returns [EObject current=null] : (this_DatasheetProperty_0= ruleDatasheetProperty | this_MandatoryDatasheetElement_1= ruleMandatoryDatasheetElement | this_ComponentPortDatasheet_2= ruleComponentPortDatasheet ) ;
+    public final EObject ruleAbstractDatasheetElement() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_DatasheetProperty_0 = null;
+
+        EObject this_MandatoryDatasheetElement_1 = null;
+
+        EObject this_ComponentPortDatasheet_2 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalComponentDatasheet.g:262:2: ( ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) ) ) )
-            // InternalComponentDatasheet.g:263:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) ) )
+            // InternalComponentDatasheet.g:148:2: ( (this_DatasheetProperty_0= ruleDatasheetProperty | this_MandatoryDatasheetElement_1= ruleMandatoryDatasheetElement | this_ComponentPortDatasheet_2= ruleComponentPortDatasheet ) )
+            // InternalComponentDatasheet.g:149:2: (this_DatasheetProperty_0= ruleDatasheetProperty | this_MandatoryDatasheetElement_1= ruleMandatoryDatasheetElement | this_ComponentPortDatasheet_2= ruleComponentPortDatasheet )
             {
-            // InternalComponentDatasheet.g:263:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) ) )
-            // InternalComponentDatasheet.g:264:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) )
+            // InternalComponentDatasheet.g:149:2: (this_DatasheetProperty_0= ruleDatasheetProperty | this_MandatoryDatasheetElement_1= ruleMandatoryDatasheetElement | this_ComponentPortDatasheet_2= ruleComponentPortDatasheet )
+            int alt1=3;
+            switch ( input.LA(1) ) {
+            case 15:
+                {
+                alt1=1;
+                }
+                break;
+            case 20:
+            case 21:
+                {
+                alt1=2;
+                }
+                break;
+            case 14:
+                {
+                alt1=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 1, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt1) {
+                case 1 :
+                    // InternalComponentDatasheet.g:150:3: this_DatasheetProperty_0= ruleDatasheetProperty
+                    {
+
+                    			newCompositeNode(grammarAccess.getAbstractDatasheetElementAccess().getDatasheetPropertyParserRuleCall_0());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_DatasheetProperty_0=ruleDatasheetProperty();
+
+                    state._fsp--;
+
+
+                    			current = this_DatasheetProperty_0;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalComponentDatasheet.g:159:3: this_MandatoryDatasheetElement_1= ruleMandatoryDatasheetElement
+                    {
+
+                    			newCompositeNode(grammarAccess.getAbstractDatasheetElementAccess().getMandatoryDatasheetElementParserRuleCall_1());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_MandatoryDatasheetElement_1=ruleMandatoryDatasheetElement();
+
+                    state._fsp--;
+
+
+                    			current = this_MandatoryDatasheetElement_1;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 3 :
+                    // InternalComponentDatasheet.g:168:3: this_ComponentPortDatasheet_2= ruleComponentPortDatasheet
+                    {
+
+                    			newCompositeNode(grammarAccess.getAbstractDatasheetElementAccess().getComponentPortDatasheetParserRuleCall_2());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_ComponentPortDatasheet_2=ruleComponentPortDatasheet();
+
+                    state._fsp--;
+
+
+                    			current = this_ComponentPortDatasheet_2;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleAbstractDatasheetElement"
+
+
+    // $ANTLR start "entryRuleComponentPortDatasheet"
+    // InternalComponentDatasheet.g:180:1: entryRuleComponentPortDatasheet returns [EObject current=null] : iv_ruleComponentPortDatasheet= ruleComponentPortDatasheet EOF ;
+    public final EObject entryRuleComponentPortDatasheet() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleComponentPortDatasheet = null;
+
+
+        try {
+            // InternalComponentDatasheet.g:180:63: (iv_ruleComponentPortDatasheet= ruleComponentPortDatasheet EOF )
+            // InternalComponentDatasheet.g:181:2: iv_ruleComponentPortDatasheet= ruleComponentPortDatasheet EOF
             {
-            // InternalComponentDatasheet.g:264:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?) )
-            // InternalComponentDatasheet.g:265:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?)
+             newCompositeNode(grammarAccess.getComponentPortDatasheetRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleComponentPortDatasheet=ruleComponentPortDatasheet();
+
+            state._fsp--;
+
+             current =iv_ruleComponentPortDatasheet; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleComponentPortDatasheet"
+
+
+    // $ANTLR start "ruleComponentPortDatasheet"
+    // InternalComponentDatasheet.g:187:1: ruleComponentPortDatasheet returns [EObject current=null] : (otherlv_0= 'ComponentPortDatasheet' ( (otherlv_1= RULE_ID ) ) otherlv_2= '{' ( (lv_properties_3_0= ruleDatasheetProperty ) )* otherlv_4= '}' ) ;
+    public final EObject ruleComponentPortDatasheet() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        EObject lv_properties_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalComponentDatasheet.g:193:2: ( (otherlv_0= 'ComponentPortDatasheet' ( (otherlv_1= RULE_ID ) ) otherlv_2= '{' ( (lv_properties_3_0= ruleDatasheetProperty ) )* otherlv_4= '}' ) )
+            // InternalComponentDatasheet.g:194:2: (otherlv_0= 'ComponentPortDatasheet' ( (otherlv_1= RULE_ID ) ) otherlv_2= '{' ( (lv_properties_3_0= ruleDatasheetProperty ) )* otherlv_4= '}' )
             {
-             
-            			  getUnorderedGroupHelper().enter(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
-            			
-            // InternalComponentDatasheet.g:268:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?)
-            // InternalComponentDatasheet.g:269:5: ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+ {...}?
+            // InternalComponentDatasheet.g:194:2: (otherlv_0= 'ComponentPortDatasheet' ( (otherlv_1= RULE_ID ) ) otherlv_2= '{' ( (lv_properties_3_0= ruleDatasheetProperty ) )* otherlv_4= '}' )
+            // InternalComponentDatasheet.g:195:3: otherlv_0= 'ComponentPortDatasheet' ( (otherlv_1= RULE_ID ) ) otherlv_2= '{' ( (lv_properties_3_0= ruleDatasheetProperty ) )* otherlv_4= '}'
             {
-            // InternalComponentDatasheet.g:269:5: ( ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) ) )+
-            int cnt11=0;
-            loop11:
+            otherlv_0=(Token)match(input,14,FOLLOW_3); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getComponentPortDatasheetAccess().getComponentPortDatasheetKeyword_0());
+            		
+            // InternalComponentDatasheet.g:199:3: ( (otherlv_1= RULE_ID ) )
+            // InternalComponentDatasheet.g:200:4: (otherlv_1= RULE_ID )
+            {
+            // InternalComponentDatasheet.g:200:4: (otherlv_1= RULE_ID )
+            // InternalComponentDatasheet.g:201:5: otherlv_1= RULE_ID
+            {
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getComponentPortDatasheetRule());
+            					}
+            				
+            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_4); 
+
+            					newLeafNode(otherlv_1, grammarAccess.getComponentPortDatasheetAccess().getPortComponentPortCrossReference_1_0());
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,12,FOLLOW_7); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getComponentPortDatasheetAccess().getLeftCurlyBracketKeyword_2());
+            		
+            // InternalComponentDatasheet.g:216:3: ( (lv_properties_3_0= ruleDatasheetProperty ) )*
+            loop2:
             do {
-                int alt11=8;
-                int LA11_0 = input.LA(1);
+                int alt2=2;
+                int LA2_0 = input.LA(1);
 
-                if ( LA11_0 == 18 && getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 0) ) {
-                    alt11=1;
-                }
-                else if ( LA11_0 == 19 && getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 1) ) {
-                    alt11=2;
-                }
-                else if ( LA11_0 == 20 && getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 2) ) {
-                    alt11=3;
-                }
-                else if ( LA11_0 == 21 && getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 3) ) {
-                    alt11=4;
-                }
-                else if ( LA11_0 == 22 && getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 4) ) {
-                    alt11=5;
-                }
-                else if ( LA11_0 == 23 && getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 5) ) {
-                    alt11=6;
-                }
-                else if ( LA11_0 == 24 && getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 6) ) {
-                    alt11=7;
+                if ( (LA2_0==15) ) {
+                    alt2=1;
                 }
 
 
-                switch (alt11) {
+                switch (alt2) {
             	case 1 :
-            	    // InternalComponentDatasheet.g:270:3: ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) )
+            	    // InternalComponentDatasheet.g:217:4: (lv_properties_3_0= ruleDatasheetProperty )
             	    {
-            	    // InternalComponentDatasheet.g:270:3: ({...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) ) )
-            	    // InternalComponentDatasheet.g:271:4: {...}? => ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 0) ) {
-            	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 0)");
-            	    }
-            	    // InternalComponentDatasheet.g:271:110: ( ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) ) )
-            	    // InternalComponentDatasheet.g:272:5: ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) )
+            	    // InternalComponentDatasheet.g:217:4: (lv_properties_3_0= ruleDatasheetProperty )
+            	    // InternalComponentDatasheet.g:218:5: lv_properties_3_0= ruleDatasheetProperty
             	    {
 
-            	    					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 0);
+            	    					newCompositeNode(grammarAccess.getComponentPortDatasheetAccess().getPropertiesDatasheetPropertyParserRuleCall_3_0());
             	    				
-            	    // InternalComponentDatasheet.g:275:8: ({...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) ) )
-            	    // InternalComponentDatasheet.g:275:9: {...}? => (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "true");
-            	    }
-            	    // InternalComponentDatasheet.g:275:18: (otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) ) )
-            	    // InternalComponentDatasheet.g:275:19: otherlv_1= 'baseURI' (otherlv_2= ':' )? ( (lv_baseURI_3_0= ruleEString ) )
-            	    {
-            	    otherlv_1=(Token)match(input,18,FOLLOW_7); 
-
-            	    								newLeafNode(otherlv_1, grammarAccess.getGenericDatasheetAccess().getBaseURIKeyword_0_0());
-            	    							
-            	    // InternalComponentDatasheet.g:279:8: (otherlv_2= ':' )?
-            	    int alt4=2;
-            	    int LA4_0 = input.LA(1);
-
-            	    if ( (LA4_0==15) ) {
-            	        alt4=1;
-            	    }
-            	    switch (alt4) {
-            	        case 1 :
-            	            // InternalComponentDatasheet.g:280:9: otherlv_2= ':'
-            	            {
-            	            otherlv_2=(Token)match(input,15,FOLLOW_7); 
-
-            	            									newLeafNode(otherlv_2, grammarAccess.getGenericDatasheetAccess().getColonKeyword_0_1());
-            	            								
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // InternalComponentDatasheet.g:285:8: ( (lv_baseURI_3_0= ruleEString ) )
-            	    // InternalComponentDatasheet.g:286:9: (lv_baseURI_3_0= ruleEString )
-            	    {
-            	    // InternalComponentDatasheet.g:286:9: (lv_baseURI_3_0= ruleEString )
-            	    // InternalComponentDatasheet.g:287:10: lv_baseURI_3_0= ruleEString
-            	    {
-
-            	    										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getBaseURIEStringParserRuleCall_0_2_0());
-            	    									
-            	    pushFollow(FOLLOW_8);
-            	    lv_baseURI_3_0=ruleEString();
+            	    pushFollow(FOLLOW_7);
+            	    lv_properties_3_0=ruleDatasheetProperty();
 
             	    state._fsp--;
 
 
-            	    										if (current==null) {
-            	    											current = createModelElementForParent(grammarAccess.getGenericDatasheetRule());
-            	    										}
-            	    										set(
-            	    											current,
-            	    											"baseURI",
-            	    											lv_baseURI_3_0,
-            	    											"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
-            	    										afterParserOrEnumRuleCall();
-            	    									
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getComponentPortDatasheetRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"properties",
+            	    						lv_properties_3_0,
+            	    						"org.xtext.base.genericDatasheet.GenericDatasheet.DatasheetProperty");
+            	    					afterParserOrEnumRuleCall();
+            	    				
 
             	    }
 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop2;
+                }
+            } while (true);
+
+            otherlv_4=(Token)match(input,13,FOLLOW_2); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getComponentPortDatasheetAccess().getRightCurlyBracketKeyword_4());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleComponentPortDatasheet"
+
+
+    // $ANTLR start "ruleGenericDatasheetModel"
+    // InternalComponentDatasheet.g:244:1: ruleGenericDatasheetModel[EObject in_current] returns [EObject current=in_current] : ( (lv_elements_0_0= ruleAbstractDatasheetElement ) )* ;
+    public final EObject ruleGenericDatasheetModel(EObject in_current) throws RecognitionException {
+        EObject current = in_current;
+
+        EObject lv_elements_0_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalComponentDatasheet.g:250:2: ( ( (lv_elements_0_0= ruleAbstractDatasheetElement ) )* )
+            // InternalComponentDatasheet.g:251:2: ( (lv_elements_0_0= ruleAbstractDatasheetElement ) )*
+            {
+            // InternalComponentDatasheet.g:251:2: ( (lv_elements_0_0= ruleAbstractDatasheetElement ) )*
+            loop3:
+            do {
+                int alt3=2;
+                int LA3_0 = input.LA(1);
+
+                if ( ((LA3_0>=14 && LA3_0<=15)||(LA3_0>=20 && LA3_0<=21)) ) {
+                    alt3=1;
+                }
+
+
+                switch (alt3) {
+            	case 1 :
+            	    // InternalComponentDatasheet.g:252:3: (lv_elements_0_0= ruleAbstractDatasheetElement )
+            	    {
+            	    // InternalComponentDatasheet.g:252:3: (lv_elements_0_0= ruleAbstractDatasheetElement )
+            	    // InternalComponentDatasheet.g:253:4: lv_elements_0_0= ruleAbstractDatasheetElement
+            	    {
+
+            	    				newCompositeNode(grammarAccess.getGenericDatasheetModelAccess().getElementsAbstractDatasheetElementParserRuleCall_0());
+            	    			
+            	    pushFollow(FOLLOW_8);
+            	    lv_elements_0_0=ruleAbstractDatasheetElement();
+
+            	    state._fsp--;
+
+
+            	    				if (current==null) {
+            	    					current = createModelElementForParent(grammarAccess.getGenericDatasheetModelRule());
+            	    				}
+            	    				add(
+            	    					current,
+            	    					"elements",
+            	    					lv_elements_0_0,
+            	    					"org.xtext.component.componentDatasheet.ComponentDatasheet.AbstractDatasheetElement");
+            	    				afterParserOrEnumRuleCall();
+            	    			
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop3;
+                }
+            } while (true);
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleGenericDatasheetModel"
+
+
+    // $ANTLR start "entryRuleDatasheetProperty"
+    // InternalComponentDatasheet.g:273:1: entryRuleDatasheetProperty returns [EObject current=null] : iv_ruleDatasheetProperty= ruleDatasheetProperty EOF ;
+    public final EObject entryRuleDatasheetProperty() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleDatasheetProperty = null;
+
+
+        try {
+            // InternalComponentDatasheet.g:273:58: (iv_ruleDatasheetProperty= ruleDatasheetProperty EOF )
+            // InternalComponentDatasheet.g:274:2: iv_ruleDatasheetProperty= ruleDatasheetProperty EOF
+            {
+             newCompositeNode(grammarAccess.getDatasheetPropertyRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleDatasheetProperty=ruleDatasheetProperty();
+
+            state._fsp--;
+
+             current =iv_ruleDatasheetProperty; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleDatasheetProperty"
+
+
+    // $ANTLR start "ruleDatasheetProperty"
+    // InternalComponentDatasheet.g:280:1: ruleDatasheetProperty returns [EObject current=null] : (otherlv_0= 'DatasheetProperty' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' ) ;
+    public final EObject ruleDatasheetProperty() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        Token lv_value_5_0=null;
+        Token otherlv_6=null;
+        Token lv_unit_7_0=null;
+        Token otherlv_8=null;
+        Token lv_shortDescription_9_0=null;
+        Token otherlv_10=null;
+        Token lv_semanticID_11_0=null;
+        Token otherlv_12=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalComponentDatasheet.g:286:2: ( (otherlv_0= 'DatasheetProperty' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' ) )
+            // InternalComponentDatasheet.g:287:2: (otherlv_0= 'DatasheetProperty' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' )
+            {
+            // InternalComponentDatasheet.g:287:2: (otherlv_0= 'DatasheetProperty' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' )
+            // InternalComponentDatasheet.g:288:3: otherlv_0= 'DatasheetProperty' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) ) ) )+ {...}?) ) ) otherlv_12= '}'
+            {
+            otherlv_0=(Token)match(input,15,FOLLOW_3); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getDatasheetPropertyAccess().getDatasheetPropertyKeyword_0());
+            		
+            // InternalComponentDatasheet.g:292:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalComponentDatasheet.g:293:4: (lv_name_1_0= RULE_ID )
+            {
+            // InternalComponentDatasheet.g:293:4: (lv_name_1_0= RULE_ID )
+            // InternalComponentDatasheet.g:294:5: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_4); 
+
+            					newLeafNode(lv_name_1_0, grammarAccess.getDatasheetPropertyAccess().getNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getDatasheetPropertyRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,12,FOLLOW_9); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getDatasheetPropertyAccess().getLeftCurlyBracketKeyword_2());
+            		
+            // InternalComponentDatasheet.g:314:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) ) ) )+ {...}?) ) )
+            // InternalComponentDatasheet.g:315:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) ) ) )+ {...}?) )
+            {
+            // InternalComponentDatasheet.g:315:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) ) ) )+ {...}?) )
+            // InternalComponentDatasheet.g:316:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) ) ) )+ {...}?)
+            {
+             
+            				  getUnorderedGroupHelper().enter(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3());
+            				
+            // InternalComponentDatasheet.g:319:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) ) ) )+ {...}?)
+            // InternalComponentDatasheet.g:320:6: ( ({...}? => ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) ) ) )+ {...}?
+            {
+            // InternalComponentDatasheet.g:320:6: ( ({...}? => ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) ) ) )+
+            int cnt5=0;
+            loop5:
+            do {
+                int alt5=4;
+                int LA5_0 = input.LA(1);
+
+                if ( LA5_0 == 16 && getUnorderedGroupHelper().canSelect(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3(), 0) ) {
+                    alt5=1;
+                }
+                else if ( LA5_0 == 18 && getUnorderedGroupHelper().canSelect(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3(), 1) ) {
+                    alt5=2;
+                }
+                else if ( LA5_0 == 19 && getUnorderedGroupHelper().canSelect(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3(), 2) ) {
+                    alt5=3;
+                }
+
+
+                switch (alt5) {
+            	case 1 :
+            	    // InternalComponentDatasheet.g:321:4: ({...}? => ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) ) )
+            	    {
+            	    // InternalComponentDatasheet.g:321:4: ({...}? => ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) ) )
+            	    // InternalComponentDatasheet.g:322:5: {...}? => ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3(), 0) ) {
+            	        throw new FailedPredicateException(input, "ruleDatasheetProperty", "getUnorderedGroupHelper().canSelect(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3(), 0)");
+            	    }
+            	    // InternalComponentDatasheet.g:322:114: ( ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) ) )
+            	    // InternalComponentDatasheet.g:323:6: ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3(), 0);
+            	    					
+            	    // InternalComponentDatasheet.g:326:9: ({...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? ) )
+            	    // InternalComponentDatasheet.g:326:10: {...}? => (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleDatasheetProperty", "true");
+            	    }
+            	    // InternalComponentDatasheet.g:326:19: (otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )? )
+            	    // InternalComponentDatasheet.g:326:20: otherlv_4= 'value' ( (lv_value_5_0= RULE_STRING ) ) (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )?
+            	    {
+            	    otherlv_4=(Token)match(input,16,FOLLOW_10); 
+
+            	    									newLeafNode(otherlv_4, grammarAccess.getDatasheetPropertyAccess().getValueKeyword_3_0_0());
+            	    								
+            	    // InternalComponentDatasheet.g:330:9: ( (lv_value_5_0= RULE_STRING ) )
+            	    // InternalComponentDatasheet.g:331:10: (lv_value_5_0= RULE_STRING )
+            	    {
+            	    // InternalComponentDatasheet.g:331:10: (lv_value_5_0= RULE_STRING )
+            	    // InternalComponentDatasheet.g:332:11: lv_value_5_0= RULE_STRING
+            	    {
+            	    lv_value_5_0=(Token)match(input,RULE_STRING,FOLLOW_11); 
+
+            	    											newLeafNode(lv_value_5_0, grammarAccess.getDatasheetPropertyAccess().getValueSTRINGTerminalRuleCall_3_0_1_0());
+            	    										
+
+            	    											if (current==null) {
+            	    												current = createModelElement(grammarAccess.getDatasheetPropertyRule());
+            	    											}
+            	    											setWithLastConsumed(
+            	    												current,
+            	    												"value",
+            	    												lv_value_5_0,
+            	    												"org.eclipse.xtext.common.Terminals.STRING");
+            	    										
+
+            	    }
+
+
+            	    }
+
+            	    // InternalComponentDatasheet.g:348:9: (otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) ) )?
+            	    int alt4=2;
+            	    int LA4_0 = input.LA(1);
+
+            	    if ( (LA4_0==17) ) {
+            	        alt4=1;
+            	    }
+            	    switch (alt4) {
+            	        case 1 :
+            	            // InternalComponentDatasheet.g:349:10: otherlv_6= 'unit' ( (lv_unit_7_0= RULE_STRING ) )
+            	            {
+            	            otherlv_6=(Token)match(input,17,FOLLOW_10); 
+
+            	            										newLeafNode(otherlv_6, grammarAccess.getDatasheetPropertyAccess().getUnitKeyword_3_0_2_0());
+            	            									
+            	            // InternalComponentDatasheet.g:353:10: ( (lv_unit_7_0= RULE_STRING ) )
+            	            // InternalComponentDatasheet.g:354:11: (lv_unit_7_0= RULE_STRING )
+            	            {
+            	            // InternalComponentDatasheet.g:354:11: (lv_unit_7_0= RULE_STRING )
+            	            // InternalComponentDatasheet.g:355:12: lv_unit_7_0= RULE_STRING
+            	            {
+            	            lv_unit_7_0=(Token)match(input,RULE_STRING,FOLLOW_12); 
+
+            	            												newLeafNode(lv_unit_7_0, grammarAccess.getDatasheetPropertyAccess().getUnitSTRINGTerminalRuleCall_3_0_2_1_0());
+            	            											
+
+            	            												if (current==null) {
+            	            													current = createModelElement(grammarAccess.getDatasheetPropertyRule());
+            	            												}
+            	            												setWithLastConsumed(
+            	            													current,
+            	            													"unit",
+            	            													lv_unit_7_0,
+            	            													"org.eclipse.xtext.common.Terminals.STRING");
+            	            											
+
+            	            }
+
+
+            	            }
+
+
+            	            }
+            	            break;
 
             	    }
 
@@ -650,8 +851,8 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
             	    }
 
             	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
-            	    				
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3());
+            	    					
 
             	    }
 
@@ -662,79 +863,53 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
             	    }
             	    break;
             	case 2 :
-            	    // InternalComponentDatasheet.g:310:3: ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) )
+            	    // InternalComponentDatasheet.g:378:4: ({...}? => ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) ) )
             	    {
-            	    // InternalComponentDatasheet.g:310:3: ({...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) ) )
-            	    // InternalComponentDatasheet.g:311:4: {...}? => ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) )
+            	    // InternalComponentDatasheet.g:378:4: ({...}? => ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalComponentDatasheet.g:379:5: {...}? => ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 1) ) {
-            	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 1)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3(), 1) ) {
+            	        throw new FailedPredicateException(input, "ruleDatasheetProperty", "getUnorderedGroupHelper().canSelect(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3(), 1)");
             	    }
-            	    // InternalComponentDatasheet.g:311:110: ( ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) ) )
-            	    // InternalComponentDatasheet.g:312:5: ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) )
+            	    // InternalComponentDatasheet.g:379:114: ( ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) ) )
+            	    // InternalComponentDatasheet.g:380:6: ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) )
             	    {
 
-            	    					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 1);
-            	    				
-            	    // InternalComponentDatasheet.g:315:8: ({...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) ) )
-            	    // InternalComponentDatasheet.g:315:9: {...}? => (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) )
+            	    						getUnorderedGroupHelper().select(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3(), 1);
+            	    					
+            	    // InternalComponentDatasheet.g:383:9: ({...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) ) )
+            	    // InternalComponentDatasheet.g:383:10: {...}? => (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) )
             	    {
             	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "true");
+            	        throw new FailedPredicateException(input, "ruleDatasheetProperty", "true");
             	    }
-            	    // InternalComponentDatasheet.g:315:18: (otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) ) )
-            	    // InternalComponentDatasheet.g:315:19: otherlv_4= 'shortDescription' (otherlv_5= ':' )? ( (lv_shortDescription_6_0= ruleEString ) )
+            	    // InternalComponentDatasheet.g:383:19: (otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) ) )
+            	    // InternalComponentDatasheet.g:383:20: otherlv_8= 'shortDescription' ( (lv_shortDescription_9_0= RULE_STRING ) )
             	    {
-            	    otherlv_4=(Token)match(input,19,FOLLOW_7); 
+            	    otherlv_8=(Token)match(input,18,FOLLOW_10); 
 
-            	    								newLeafNode(otherlv_4, grammarAccess.getGenericDatasheetAccess().getShortDescriptionKeyword_1_0());
-            	    							
-            	    // InternalComponentDatasheet.g:319:8: (otherlv_5= ':' )?
-            	    int alt5=2;
-            	    int LA5_0 = input.LA(1);
-
-            	    if ( (LA5_0==15) ) {
-            	        alt5=1;
-            	    }
-            	    switch (alt5) {
-            	        case 1 :
-            	            // InternalComponentDatasheet.g:320:9: otherlv_5= ':'
-            	            {
-            	            otherlv_5=(Token)match(input,15,FOLLOW_7); 
-
-            	            									newLeafNode(otherlv_5, grammarAccess.getGenericDatasheetAccess().getColonKeyword_1_1());
-            	            								
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // InternalComponentDatasheet.g:325:8: ( (lv_shortDescription_6_0= ruleEString ) )
-            	    // InternalComponentDatasheet.g:326:9: (lv_shortDescription_6_0= ruleEString )
+            	    									newLeafNode(otherlv_8, grammarAccess.getDatasheetPropertyAccess().getShortDescriptionKeyword_3_1_0());
+            	    								
+            	    // InternalComponentDatasheet.g:387:9: ( (lv_shortDescription_9_0= RULE_STRING ) )
+            	    // InternalComponentDatasheet.g:388:10: (lv_shortDescription_9_0= RULE_STRING )
             	    {
-            	    // InternalComponentDatasheet.g:326:9: (lv_shortDescription_6_0= ruleEString )
-            	    // InternalComponentDatasheet.g:327:10: lv_shortDescription_6_0= ruleEString
+            	    // InternalComponentDatasheet.g:388:10: (lv_shortDescription_9_0= RULE_STRING )
+            	    // InternalComponentDatasheet.g:389:11: lv_shortDescription_9_0= RULE_STRING
             	    {
+            	    lv_shortDescription_9_0=(Token)match(input,RULE_STRING,FOLLOW_12); 
 
-            	    										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getShortDescriptionEStringParserRuleCall_1_2_0());
-            	    									
-            	    pushFollow(FOLLOW_8);
-            	    lv_shortDescription_6_0=ruleEString();
+            	    											newLeafNode(lv_shortDescription_9_0, grammarAccess.getDatasheetPropertyAccess().getShortDescriptionSTRINGTerminalRuleCall_3_1_1_0());
+            	    										
 
-            	    state._fsp--;
-
-
-            	    										if (current==null) {
-            	    											current = createModelElementForParent(grammarAccess.getGenericDatasheetRule());
-            	    										}
-            	    										set(
-            	    											current,
-            	    											"shortDescription",
-            	    											lv_shortDescription_6_0,
-            	    											"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
-            	    										afterParserOrEnumRuleCall();
-            	    									
+            	    											if (current==null) {
+            	    												current = createModelElement(grammarAccess.getDatasheetPropertyRule());
+            	    											}
+            	    											setWithLastConsumed(
+            	    												current,
+            	    												"shortDescription",
+            	    												lv_shortDescription_9_0,
+            	    												"org.eclipse.xtext.common.Terminals.STRING");
+            	    										
 
             	    }
 
@@ -748,8 +923,8 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
             	    }
 
             	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
-            	    				
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3());
+            	    					
 
             	    }
 
@@ -760,74 +935,53 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
             	    }
             	    break;
             	case 3 :
-            	    // InternalComponentDatasheet.g:350:3: ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) )
+            	    // InternalComponentDatasheet.g:411:4: ({...}? => ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) ) )
             	    {
-            	    // InternalComponentDatasheet.g:350:3: ({...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) ) )
-            	    // InternalComponentDatasheet.g:351:4: {...}? => ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) )
+            	    // InternalComponentDatasheet.g:411:4: ({...}? => ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalComponentDatasheet.g:412:5: {...}? => ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 2) ) {
-            	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 2)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3(), 2) ) {
+            	        throw new FailedPredicateException(input, "ruleDatasheetProperty", "getUnorderedGroupHelper().canSelect(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3(), 2)");
             	    }
-            	    // InternalComponentDatasheet.g:351:110: ( ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) ) )
-            	    // InternalComponentDatasheet.g:352:5: ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) )
+            	    // InternalComponentDatasheet.g:412:114: ( ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) ) )
+            	    // InternalComponentDatasheet.g:413:6: ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) )
             	    {
 
-            	    					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 2);
-            	    				
-            	    // InternalComponentDatasheet.g:355:8: ({...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) ) )
-            	    // InternalComponentDatasheet.g:355:9: {...}? => (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) )
+            	    						getUnorderedGroupHelper().select(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3(), 2);
+            	    					
+            	    // InternalComponentDatasheet.g:416:9: ({...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) ) )
+            	    // InternalComponentDatasheet.g:416:10: {...}? => (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) )
             	    {
             	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "true");
+            	        throw new FailedPredicateException(input, "ruleDatasheetProperty", "true");
             	    }
-            	    // InternalComponentDatasheet.g:355:18: (otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) ) )
-            	    // InternalComponentDatasheet.g:355:19: otherlv_7= 'longDescription' (otherlv_8= ':' )? ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) )
+            	    // InternalComponentDatasheet.g:416:19: (otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) ) )
+            	    // InternalComponentDatasheet.g:416:20: otherlv_10= 'semanticID' ( (lv_semanticID_11_0= RULE_STRING ) )
             	    {
-            	    otherlv_7=(Token)match(input,20,FOLLOW_9); 
+            	    otherlv_10=(Token)match(input,19,FOLLOW_10); 
 
-            	    								newLeafNode(otherlv_7, grammarAccess.getGenericDatasheetAccess().getLongDescriptionKeyword_2_0());
-            	    							
-            	    // InternalComponentDatasheet.g:359:8: (otherlv_8= ':' )?
-            	    int alt6=2;
-            	    int LA6_0 = input.LA(1);
-
-            	    if ( (LA6_0==15) ) {
-            	        alt6=1;
-            	    }
-            	    switch (alt6) {
-            	        case 1 :
-            	            // InternalComponentDatasheet.g:360:9: otherlv_8= ':'
-            	            {
-            	            otherlv_8=(Token)match(input,15,FOLLOW_10); 
-
-            	            									newLeafNode(otherlv_8, grammarAccess.getGenericDatasheetAccess().getColonKeyword_2_1());
-            	            								
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // InternalComponentDatasheet.g:365:8: ( (lv_longDescription_9_0= RULE_TEXT_BLOCK ) )
-            	    // InternalComponentDatasheet.g:366:9: (lv_longDescription_9_0= RULE_TEXT_BLOCK )
+            	    									newLeafNode(otherlv_10, grammarAccess.getDatasheetPropertyAccess().getSemanticIDKeyword_3_2_0());
+            	    								
+            	    // InternalComponentDatasheet.g:420:9: ( (lv_semanticID_11_0= RULE_STRING ) )
+            	    // InternalComponentDatasheet.g:421:10: (lv_semanticID_11_0= RULE_STRING )
             	    {
-            	    // InternalComponentDatasheet.g:366:9: (lv_longDescription_9_0= RULE_TEXT_BLOCK )
-            	    // InternalComponentDatasheet.g:367:10: lv_longDescription_9_0= RULE_TEXT_BLOCK
+            	    // InternalComponentDatasheet.g:421:10: (lv_semanticID_11_0= RULE_STRING )
+            	    // InternalComponentDatasheet.g:422:11: lv_semanticID_11_0= RULE_STRING
             	    {
-            	    lv_longDescription_9_0=(Token)match(input,RULE_TEXT_BLOCK,FOLLOW_8); 
+            	    lv_semanticID_11_0=(Token)match(input,RULE_STRING,FOLLOW_12); 
 
-            	    										newLeafNode(lv_longDescription_9_0, grammarAccess.getGenericDatasheetAccess().getLongDescriptionTEXT_BLOCKTerminalRuleCall_2_2_0());
-            	    									
+            	    											newLeafNode(lv_semanticID_11_0, grammarAccess.getDatasheetPropertyAccess().getSemanticIDSTRINGTerminalRuleCall_3_2_1_0());
+            	    										
 
-            	    										if (current==null) {
-            	    											current = createModelElement(grammarAccess.getGenericDatasheetRule());
-            	    										}
-            	    										setWithLastConsumed(
-            	    											current,
-            	    											"longDescription",
-            	    											lv_longDescription_9_0,
-            	    											"org.xtext.base.genericDatasheet.GenericDatasheet.TEXT_BLOCK");
-            	    									
+            	    											if (current==null) {
+            	    												current = createModelElement(grammarAccess.getDatasheetPropertyRule());
+            	    											}
+            	    											setWithLastConsumed(
+            	    												current,
+            	    												"semanticID",
+            	    												lv_semanticID_11_0,
+            	    												"org.eclipse.xtext.common.Terminals.STRING");
+            	    										
 
             	    }
 
@@ -841,400 +995,8 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
             	    }
 
             	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
-            	    				
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 4 :
-            	    // InternalComponentDatasheet.g:389:3: ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) )
-            	    {
-            	    // InternalComponentDatasheet.g:389:3: ({...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) ) )
-            	    // InternalComponentDatasheet.g:390:4: {...}? => ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 3) ) {
-            	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 3)");
-            	    }
-            	    // InternalComponentDatasheet.g:390:110: ( ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) ) )
-            	    // InternalComponentDatasheet.g:391:5: ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) )
-            	    {
-
-            	    					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 3);
-            	    				
-            	    // InternalComponentDatasheet.g:394:8: ({...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) ) )
-            	    // InternalComponentDatasheet.g:394:9: {...}? => (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "true");
-            	    }
-            	    // InternalComponentDatasheet.g:394:18: (otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) ) )
-            	    // InternalComponentDatasheet.g:394:19: otherlv_10= 'supplierDescription' (otherlv_11= ':' )? ( (lv_supplierDescription_12_0= ruleEString ) )
-            	    {
-            	    otherlv_10=(Token)match(input,21,FOLLOW_7); 
-
-            	    								newLeafNode(otherlv_10, grammarAccess.getGenericDatasheetAccess().getSupplierDescriptionKeyword_3_0());
-            	    							
-            	    // InternalComponentDatasheet.g:398:8: (otherlv_11= ':' )?
-            	    int alt7=2;
-            	    int LA7_0 = input.LA(1);
-
-            	    if ( (LA7_0==15) ) {
-            	        alt7=1;
-            	    }
-            	    switch (alt7) {
-            	        case 1 :
-            	            // InternalComponentDatasheet.g:399:9: otherlv_11= ':'
-            	            {
-            	            otherlv_11=(Token)match(input,15,FOLLOW_7); 
-
-            	            									newLeafNode(otherlv_11, grammarAccess.getGenericDatasheetAccess().getColonKeyword_3_1());
-            	            								
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // InternalComponentDatasheet.g:404:8: ( (lv_supplierDescription_12_0= ruleEString ) )
-            	    // InternalComponentDatasheet.g:405:9: (lv_supplierDescription_12_0= ruleEString )
-            	    {
-            	    // InternalComponentDatasheet.g:405:9: (lv_supplierDescription_12_0= ruleEString )
-            	    // InternalComponentDatasheet.g:406:10: lv_supplierDescription_12_0= ruleEString
-            	    {
-
-            	    										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getSupplierDescriptionEStringParserRuleCall_3_2_0());
-            	    									
-            	    pushFollow(FOLLOW_8);
-            	    lv_supplierDescription_12_0=ruleEString();
-
-            	    state._fsp--;
-
-
-            	    										if (current==null) {
-            	    											current = createModelElementForParent(grammarAccess.getGenericDatasheetRule());
-            	    										}
-            	    										set(
-            	    											current,
-            	    											"supplierDescription",
-            	    											lv_supplierDescription_12_0,
-            	    											"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
-            	    										afterParserOrEnumRuleCall();
-            	    									
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
-            	    				
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 5 :
-            	    // InternalComponentDatasheet.g:429:3: ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) )
-            	    {
-            	    // InternalComponentDatasheet.g:429:3: ({...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) ) )
-            	    // InternalComponentDatasheet.g:430:4: {...}? => ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 4) ) {
-            	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 4)");
-            	    }
-            	    // InternalComponentDatasheet.g:430:110: ( ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) ) )
-            	    // InternalComponentDatasheet.g:431:5: ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) )
-            	    {
-
-            	    					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 4);
-            	    				
-            	    // InternalComponentDatasheet.g:434:8: ({...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) ) )
-            	    // InternalComponentDatasheet.g:434:9: {...}? => (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "true");
-            	    }
-            	    // InternalComponentDatasheet.g:434:18: (otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) ) )
-            	    // InternalComponentDatasheet.g:434:19: otherlv_13= 'homepage' (otherlv_14= ':' )? ( (lv_homepage_15_0= ruleEString ) )
-            	    {
-            	    otherlv_13=(Token)match(input,22,FOLLOW_7); 
-
-            	    								newLeafNode(otherlv_13, grammarAccess.getGenericDatasheetAccess().getHomepageKeyword_4_0());
-            	    							
-            	    // InternalComponentDatasheet.g:438:8: (otherlv_14= ':' )?
-            	    int alt8=2;
-            	    int LA8_0 = input.LA(1);
-
-            	    if ( (LA8_0==15) ) {
-            	        alt8=1;
-            	    }
-            	    switch (alt8) {
-            	        case 1 :
-            	            // InternalComponentDatasheet.g:439:9: otherlv_14= ':'
-            	            {
-            	            otherlv_14=(Token)match(input,15,FOLLOW_7); 
-
-            	            									newLeafNode(otherlv_14, grammarAccess.getGenericDatasheetAccess().getColonKeyword_4_1());
-            	            								
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // InternalComponentDatasheet.g:444:8: ( (lv_homepage_15_0= ruleEString ) )
-            	    // InternalComponentDatasheet.g:445:9: (lv_homepage_15_0= ruleEString )
-            	    {
-            	    // InternalComponentDatasheet.g:445:9: (lv_homepage_15_0= ruleEString )
-            	    // InternalComponentDatasheet.g:446:10: lv_homepage_15_0= ruleEString
-            	    {
-
-            	    										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getHomepageEStringParserRuleCall_4_2_0());
-            	    									
-            	    pushFollow(FOLLOW_8);
-            	    lv_homepage_15_0=ruleEString();
-
-            	    state._fsp--;
-
-
-            	    										if (current==null) {
-            	    											current = createModelElementForParent(grammarAccess.getGenericDatasheetRule());
-            	    										}
-            	    										set(
-            	    											current,
-            	    											"homepage",
-            	    											lv_homepage_15_0,
-            	    											"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
-            	    										afterParserOrEnumRuleCall();
-            	    									
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
-            	    				
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 6 :
-            	    // InternalComponentDatasheet.g:469:3: ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) )
-            	    {
-            	    // InternalComponentDatasheet.g:469:3: ({...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) ) )
-            	    // InternalComponentDatasheet.g:470:4: {...}? => ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 5) ) {
-            	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 5)");
-            	    }
-            	    // InternalComponentDatasheet.g:470:110: ( ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) ) )
-            	    // InternalComponentDatasheet.g:471:5: ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) )
-            	    {
-
-            	    					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 5);
-            	    				
-            	    // InternalComponentDatasheet.g:474:8: ({...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) ) )
-            	    // InternalComponentDatasheet.g:474:9: {...}? => (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "true");
-            	    }
-            	    // InternalComponentDatasheet.g:474:18: (otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) ) )
-            	    // InternalComponentDatasheet.g:474:19: otherlv_16= 'trl' (otherlv_17= ':' )? ( (lv_trl_18_0= ruleTRL ) )
-            	    {
-            	    otherlv_16=(Token)match(input,23,FOLLOW_11); 
-
-            	    								newLeafNode(otherlv_16, grammarAccess.getGenericDatasheetAccess().getTrlKeyword_5_0());
-            	    							
-            	    // InternalComponentDatasheet.g:478:8: (otherlv_17= ':' )?
-            	    int alt9=2;
-            	    int LA9_0 = input.LA(1);
-
-            	    if ( (LA9_0==15) ) {
-            	        alt9=1;
-            	    }
-            	    switch (alt9) {
-            	        case 1 :
-            	            // InternalComponentDatasheet.g:479:9: otherlv_17= ':'
-            	            {
-            	            otherlv_17=(Token)match(input,15,FOLLOW_11); 
-
-            	            									newLeafNode(otherlv_17, grammarAccess.getGenericDatasheetAccess().getColonKeyword_5_1());
-            	            								
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // InternalComponentDatasheet.g:484:8: ( (lv_trl_18_0= ruleTRL ) )
-            	    // InternalComponentDatasheet.g:485:9: (lv_trl_18_0= ruleTRL )
-            	    {
-            	    // InternalComponentDatasheet.g:485:9: (lv_trl_18_0= ruleTRL )
-            	    // InternalComponentDatasheet.g:486:10: lv_trl_18_0= ruleTRL
-            	    {
-
-            	    										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getTrlTRLEnumRuleCall_5_2_0());
-            	    									
-            	    pushFollow(FOLLOW_8);
-            	    lv_trl_18_0=ruleTRL();
-
-            	    state._fsp--;
-
-
-            	    										if (current==null) {
-            	    											current = createModelElementForParent(grammarAccess.getGenericDatasheetRule());
-            	    										}
-            	    										set(
-            	    											current,
-            	    											"trl",
-            	    											lv_trl_18_0,
-            	    											"org.xtext.base.genericDatasheet.GenericDatasheet.TRL");
-            	    										afterParserOrEnumRuleCall();
-            	    									
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
-            	    				
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 7 :
-            	    // InternalComponentDatasheet.g:509:3: ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) )
-            	    {
-            	    // InternalComponentDatasheet.g:509:3: ({...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) ) )
-            	    // InternalComponentDatasheet.g:510:4: {...}? => ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 6) ) {
-            	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "getUnorderedGroupHelper().canSelect(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 6)");
-            	    }
-            	    // InternalComponentDatasheet.g:510:110: ( ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) ) )
-            	    // InternalComponentDatasheet.g:511:5: ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) )
-            	    {
-
-            	    					getUnorderedGroupHelper().select(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup(), 6);
-            	    				
-            	    // InternalComponentDatasheet.g:514:8: ({...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) ) )
-            	    // InternalComponentDatasheet.g:514:9: {...}? => (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleGenericDatasheet", "true");
-            	    }
-            	    // InternalComponentDatasheet.g:514:18: (otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) ) )
-            	    // InternalComponentDatasheet.g:514:19: otherlv_19= 'license' (otherlv_20= ':' )? ( (lv_license_21_0= ruleAbstractLicense ) )
-            	    {
-            	    otherlv_19=(Token)match(input,24,FOLLOW_12); 
-
-            	    								newLeafNode(otherlv_19, grammarAccess.getGenericDatasheetAccess().getLicenseKeyword_6_0());
-            	    							
-            	    // InternalComponentDatasheet.g:518:8: (otherlv_20= ':' )?
-            	    int alt10=2;
-            	    int LA10_0 = input.LA(1);
-
-            	    if ( (LA10_0==15) ) {
-            	        alt10=1;
-            	    }
-            	    switch (alt10) {
-            	        case 1 :
-            	            // InternalComponentDatasheet.g:519:9: otherlv_20= ':'
-            	            {
-            	            otherlv_20=(Token)match(input,15,FOLLOW_12); 
-
-            	            									newLeafNode(otherlv_20, grammarAccess.getGenericDatasheetAccess().getColonKeyword_6_1());
-            	            								
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // InternalComponentDatasheet.g:524:8: ( (lv_license_21_0= ruleAbstractLicense ) )
-            	    // InternalComponentDatasheet.g:525:9: (lv_license_21_0= ruleAbstractLicense )
-            	    {
-            	    // InternalComponentDatasheet.g:525:9: (lv_license_21_0= ruleAbstractLicense )
-            	    // InternalComponentDatasheet.g:526:10: lv_license_21_0= ruleAbstractLicense
-            	    {
-
-            	    										newCompositeNode(grammarAccess.getGenericDatasheetAccess().getLicenseAbstractLicenseParserRuleCall_6_2_0());
-            	    									
-            	    pushFollow(FOLLOW_8);
-            	    lv_license_21_0=ruleAbstractLicense();
-
-            	    state._fsp--;
-
-
-            	    										if (current==null) {
-            	    											current = createModelElementForParent(grammarAccess.getGenericDatasheetRule());
-            	    										}
-            	    										set(
-            	    											current,
-            	    											"license",
-            	    											lv_license_21_0,
-            	    											"org.xtext.base.genericDatasheet.GenericDatasheet.AbstractLicense");
-            	    										afterParserOrEnumRuleCall();
-            	    									
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
-            	    				
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3());
+            	    					
 
             	    }
 
@@ -1246,16 +1008,16 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
             	    break;
 
             	default :
-            	    if ( cnt11 >= 1 ) break loop11;
+            	    if ( cnt5 >= 1 ) break loop5;
                         EarlyExitException eee =
-                            new EarlyExitException(11, input);
+                            new EarlyExitException(5, input);
                         throw eee;
                 }
-                cnt11++;
+                cnt5++;
             } while (true);
 
-            if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup()) ) {
-                throw new FailedPredicateException(input, "ruleGenericDatasheet", "getUnorderedGroupHelper().canLeave(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup())");
+            if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3()) ) {
+                throw new FailedPredicateException(input, "ruleDatasheetProperty", "getUnorderedGroupHelper().canLeave(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3())");
             }
 
             }
@@ -1264,322 +1026,115 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
             }
 
              
-            			  getUnorderedGroupHelper().leave(grammarAccess.getGenericDatasheetAccess().getUnorderedGroup());
-            			
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleGenericDatasheet"
-
-
-    // $ANTLR start "entryRuleAbstractLicense"
-    // InternalComponentDatasheet.g:560:1: entryRuleAbstractLicense returns [EObject current=null] : iv_ruleAbstractLicense= ruleAbstractLicense EOF ;
-    public final EObject entryRuleAbstractLicense() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleAbstractLicense = null;
-
-
-        try {
-            // InternalComponentDatasheet.g:560:56: (iv_ruleAbstractLicense= ruleAbstractLicense EOF )
-            // InternalComponentDatasheet.g:561:2: iv_ruleAbstractLicense= ruleAbstractLicense EOF
-            {
-             newCompositeNode(grammarAccess.getAbstractLicenseRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleAbstractLicense=ruleAbstractLicense();
-
-            state._fsp--;
-
-             current =iv_ruleAbstractLicense; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleAbstractLicense"
-
-
-    // $ANTLR start "ruleAbstractLicense"
-    // InternalComponentDatasheet.g:567:1: ruleAbstractLicense returns [EObject current=null] : (this_SpdxLicense_0= ruleSpdxLicense | this_ProprietaryLicense_1= ruleProprietaryLicense ) ;
-    public final EObject ruleAbstractLicense() throws RecognitionException {
-        EObject current = null;
-
-        EObject this_SpdxLicense_0 = null;
-
-        EObject this_ProprietaryLicense_1 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalComponentDatasheet.g:573:2: ( (this_SpdxLicense_0= ruleSpdxLicense | this_ProprietaryLicense_1= ruleProprietaryLicense ) )
-            // InternalComponentDatasheet.g:574:2: (this_SpdxLicense_0= ruleSpdxLicense | this_ProprietaryLicense_1= ruleProprietaryLicense )
-            {
-            // InternalComponentDatasheet.g:574:2: (this_SpdxLicense_0= ruleSpdxLicense | this_ProprietaryLicense_1= ruleProprietaryLicense )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
-
-            if ( (LA12_0==25) ) {
-                alt12=1;
-            }
-            else if ( (LA12_0==28) ) {
-                alt12=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
-
-                throw nvae;
-            }
-            switch (alt12) {
-                case 1 :
-                    // InternalComponentDatasheet.g:575:3: this_SpdxLicense_0= ruleSpdxLicense
-                    {
-
-                    			newCompositeNode(grammarAccess.getAbstractLicenseAccess().getSpdxLicenseParserRuleCall_0());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_SpdxLicense_0=ruleSpdxLicense();
-
-                    state._fsp--;
-
-
-                    			current = this_SpdxLicense_0;
-                    			afterParserOrEnumRuleCall();
-                    		
-
-                    }
-                    break;
-                case 2 :
-                    // InternalComponentDatasheet.g:584:3: this_ProprietaryLicense_1= ruleProprietaryLicense
-                    {
-
-                    			newCompositeNode(grammarAccess.getAbstractLicenseAccess().getProprietaryLicenseParserRuleCall_1());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_ProprietaryLicense_1=ruleProprietaryLicense();
-
-                    state._fsp--;
-
-
-                    			current = this_ProprietaryLicense_1;
-                    			afterParserOrEnumRuleCall();
-                    		
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleAbstractLicense"
-
-
-    // $ANTLR start "entryRuleEString"
-    // InternalComponentDatasheet.g:596:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
-    public final String entryRuleEString() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleEString = null;
-
-
-        try {
-            // InternalComponentDatasheet.g:596:47: (iv_ruleEString= ruleEString EOF )
-            // InternalComponentDatasheet.g:597:2: iv_ruleEString= ruleEString EOF
-            {
-             newCompositeNode(grammarAccess.getEStringRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleEString=ruleEString();
-
-            state._fsp--;
-
-             current =iv_ruleEString.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleEString"
-
-
-    // $ANTLR start "ruleEString"
-    // InternalComponentDatasheet.g:603:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
-    public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token this_STRING_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalComponentDatasheet.g:609:2: (this_STRING_0= RULE_STRING )
-            // InternalComponentDatasheet.g:610:2: this_STRING_0= RULE_STRING
-            {
-            this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
-
-            		current.merge(this_STRING_0);
-            	
-
-            		newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall());
-            	
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleEString"
-
-
-    // $ANTLR start "entryRuleSpdxLicense"
-    // InternalComponentDatasheet.g:620:1: entryRuleSpdxLicense returns [EObject current=null] : iv_ruleSpdxLicense= ruleSpdxLicense EOF ;
-    public final EObject entryRuleSpdxLicense() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleSpdxLicense = null;
-
-
-        try {
-            // InternalComponentDatasheet.g:620:52: (iv_ruleSpdxLicense= ruleSpdxLicense EOF )
-            // InternalComponentDatasheet.g:621:2: iv_ruleSpdxLicense= ruleSpdxLicense EOF
-            {
-             newCompositeNode(grammarAccess.getSpdxLicenseRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleSpdxLicense=ruleSpdxLicense();
-
-            state._fsp--;
-
-             current =iv_ruleSpdxLicense; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleSpdxLicense"
-
-
-    // $ANTLR start "ruleSpdxLicense"
-    // InternalComponentDatasheet.g:627:1: ruleSpdxLicense returns [EObject current=null] : (otherlv_0= 'spdx' otherlv_1= '(' ( (lv_licenseID_2_0= ruleEString ) ) otherlv_3= ')' ) ;
-    public final EObject ruleSpdxLicense() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_3=null;
-        AntlrDatatypeRuleToken lv_licenseID_2_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalComponentDatasheet.g:633:2: ( (otherlv_0= 'spdx' otherlv_1= '(' ( (lv_licenseID_2_0= ruleEString ) ) otherlv_3= ')' ) )
-            // InternalComponentDatasheet.g:634:2: (otherlv_0= 'spdx' otherlv_1= '(' ( (lv_licenseID_2_0= ruleEString ) ) otherlv_3= ')' )
-            {
-            // InternalComponentDatasheet.g:634:2: (otherlv_0= 'spdx' otherlv_1= '(' ( (lv_licenseID_2_0= ruleEString ) ) otherlv_3= ')' )
-            // InternalComponentDatasheet.g:635:3: otherlv_0= 'spdx' otherlv_1= '(' ( (lv_licenseID_2_0= ruleEString ) ) otherlv_3= ')'
-            {
-            otherlv_0=(Token)match(input,25,FOLLOW_13); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getSpdxLicenseAccess().getSpdxKeyword_0());
-            		
-            otherlv_1=(Token)match(input,26,FOLLOW_7); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getSpdxLicenseAccess().getLeftParenthesisKeyword_1());
-            		
-            // InternalComponentDatasheet.g:643:3: ( (lv_licenseID_2_0= ruleEString ) )
-            // InternalComponentDatasheet.g:644:4: (lv_licenseID_2_0= ruleEString )
-            {
-            // InternalComponentDatasheet.g:644:4: (lv_licenseID_2_0= ruleEString )
-            // InternalComponentDatasheet.g:645:5: lv_licenseID_2_0= ruleEString
-            {
-
-            					newCompositeNode(grammarAccess.getSpdxLicenseAccess().getLicenseIDEStringParserRuleCall_2_0());
+            				  getUnorderedGroupHelper().leave(grammarAccess.getDatasheetPropertyAccess().getUnorderedGroup_3());
             				
-            pushFollow(FOLLOW_14);
-            lv_licenseID_2_0=ruleEString();
+
+            }
+
+            otherlv_12=(Token)match(input,13,FOLLOW_2); 
+
+            			newLeafNode(otherlv_12, grammarAccess.getDatasheetPropertyAccess().getRightCurlyBracketKeyword_4());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleDatasheetProperty"
+
+
+    // $ANTLR start "entryRuleMandatoryDatasheetElement"
+    // InternalComponentDatasheet.g:460:1: entryRuleMandatoryDatasheetElement returns [EObject current=null] : iv_ruleMandatoryDatasheetElement= ruleMandatoryDatasheetElement EOF ;
+    public final EObject entryRuleMandatoryDatasheetElement() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMandatoryDatasheetElement = null;
+
+
+        try {
+            // InternalComponentDatasheet.g:460:66: (iv_ruleMandatoryDatasheetElement= ruleMandatoryDatasheetElement EOF )
+            // InternalComponentDatasheet.g:461:2: iv_ruleMandatoryDatasheetElement= ruleMandatoryDatasheetElement EOF
+            {
+             newCompositeNode(grammarAccess.getMandatoryDatasheetElementRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMandatoryDatasheetElement=ruleMandatoryDatasheetElement();
+
+            state._fsp--;
+
+             current =iv_ruleMandatoryDatasheetElement; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMandatoryDatasheetElement"
+
+
+    // $ANTLR start "ruleMandatoryDatasheetElement"
+    // InternalComponentDatasheet.g:467:1: ruleMandatoryDatasheetElement returns [EObject current=null] : ( ( (lv_name_0_0= ruleMandatoryDatasheetElementNames ) ) ( (lv_value_1_0= RULE_STRING ) ) ) ;
+    public final EObject ruleMandatoryDatasheetElement() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_value_1_0=null;
+        Enumerator lv_name_0_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalComponentDatasheet.g:473:2: ( ( ( (lv_name_0_0= ruleMandatoryDatasheetElementNames ) ) ( (lv_value_1_0= RULE_STRING ) ) ) )
+            // InternalComponentDatasheet.g:474:2: ( ( (lv_name_0_0= ruleMandatoryDatasheetElementNames ) ) ( (lv_value_1_0= RULE_STRING ) ) )
+            {
+            // InternalComponentDatasheet.g:474:2: ( ( (lv_name_0_0= ruleMandatoryDatasheetElementNames ) ) ( (lv_value_1_0= RULE_STRING ) ) )
+            // InternalComponentDatasheet.g:475:3: ( (lv_name_0_0= ruleMandatoryDatasheetElementNames ) ) ( (lv_value_1_0= RULE_STRING ) )
+            {
+            // InternalComponentDatasheet.g:475:3: ( (lv_name_0_0= ruleMandatoryDatasheetElementNames ) )
+            // InternalComponentDatasheet.g:476:4: (lv_name_0_0= ruleMandatoryDatasheetElementNames )
+            {
+            // InternalComponentDatasheet.g:476:4: (lv_name_0_0= ruleMandatoryDatasheetElementNames )
+            // InternalComponentDatasheet.g:477:5: lv_name_0_0= ruleMandatoryDatasheetElementNames
+            {
+
+            					newCompositeNode(grammarAccess.getMandatoryDatasheetElementAccess().getNameMandatoryDatasheetElementNamesEnumRuleCall_0_0());
+            				
+            pushFollow(FOLLOW_10);
+            lv_name_0_0=ruleMandatoryDatasheetElementNames();
 
             state._fsp--;
 
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getSpdxLicenseRule());
+            						current = createModelElementForParent(grammarAccess.getMandatoryDatasheetElementRule());
             					}
             					set(
             						current,
-            						"licenseID",
-            						lv_licenseID_2_0,
-            						"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
+            						"name",
+            						lv_name_0_0,
+            						"org.xtext.base.genericDatasheet.GenericDatasheet.MandatoryDatasheetElementNames");
             					afterParserOrEnumRuleCall();
             				
 
@@ -1588,10 +1143,32 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_3=(Token)match(input,27,FOLLOW_2); 
+            // InternalComponentDatasheet.g:494:3: ( (lv_value_1_0= RULE_STRING ) )
+            // InternalComponentDatasheet.g:495:4: (lv_value_1_0= RULE_STRING )
+            {
+            // InternalComponentDatasheet.g:495:4: (lv_value_1_0= RULE_STRING )
+            // InternalComponentDatasheet.g:496:5: lv_value_1_0= RULE_STRING
+            {
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getSpdxLicenseAccess().getRightParenthesisKeyword_3());
-            		
+            					newLeafNode(lv_value_1_0, grammarAccess.getMandatoryDatasheetElementAccess().getValueSTRINGTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getMandatoryDatasheetElementRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"value",
+            						lv_value_1_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
 
             }
 
@@ -1611,565 +1188,51 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
         }
         return current;
     }
-    // $ANTLR end "ruleSpdxLicense"
+    // $ANTLR end "ruleMandatoryDatasheetElement"
 
 
-    // $ANTLR start "entryRuleProprietaryLicense"
-    // InternalComponentDatasheet.g:670:1: entryRuleProprietaryLicense returns [EObject current=null] : iv_ruleProprietaryLicense= ruleProprietaryLicense EOF ;
-    public final EObject entryRuleProprietaryLicense() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleProprietaryLicense = null;
-
-
-        try {
-            // InternalComponentDatasheet.g:670:59: (iv_ruleProprietaryLicense= ruleProprietaryLicense EOF )
-            // InternalComponentDatasheet.g:671:2: iv_ruleProprietaryLicense= ruleProprietaryLicense EOF
-            {
-             newCompositeNode(grammarAccess.getProprietaryLicenseRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleProprietaryLicense=ruleProprietaryLicense();
-
-            state._fsp--;
-
-             current =iv_ruleProprietaryLicense; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleProprietaryLicense"
-
-
-    // $ANTLR start "ruleProprietaryLicense"
-    // InternalComponentDatasheet.g:677:1: ruleProprietaryLicense returns [EObject current=null] : ( () otherlv_1= 'proprietary' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) ) ) )+ {...}?) ) ) otherlv_13= '}' ) ;
-    public final EObject ruleProprietaryLicense() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token otherlv_8=null;
-        Token otherlv_10=null;
-        Token otherlv_11=null;
-        Token otherlv_13=null;
-        AntlrDatatypeRuleToken lv_name_6_0 = null;
-
-        AntlrDatatypeRuleToken lv_fullText_9_0 = null;
-
-        AntlrDatatypeRuleToken lv_url_12_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalComponentDatasheet.g:683:2: ( ( () otherlv_1= 'proprietary' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) ) ) )+ {...}?) ) ) otherlv_13= '}' ) )
-            // InternalComponentDatasheet.g:684:2: ( () otherlv_1= 'proprietary' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) ) ) )+ {...}?) ) ) otherlv_13= '}' )
-            {
-            // InternalComponentDatasheet.g:684:2: ( () otherlv_1= 'proprietary' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) ) ) )+ {...}?) ) ) otherlv_13= '}' )
-            // InternalComponentDatasheet.g:685:3: () otherlv_1= 'proprietary' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) ) ) )+ {...}?) ) ) otherlv_13= '}'
-            {
-            // InternalComponentDatasheet.g:685:3: ()
-            // InternalComponentDatasheet.g:686:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getProprietaryLicenseAccess().getProprietaryLicenseAction_0(),
-            					current);
-            			
-
-            }
-
-            otherlv_1=(Token)match(input,28,FOLLOW_4); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getProprietaryLicenseAccess().getProprietaryKeyword_1());
-            		
-            otherlv_2=(Token)match(input,13,FOLLOW_15); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getProprietaryLicenseAccess().getLeftCurlyBracketKeyword_2());
-            		
-            // InternalComponentDatasheet.g:700:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) ) ) )+ {...}?) ) )
-            // InternalComponentDatasheet.g:701:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) ) ) )+ {...}?) )
-            {
-            // InternalComponentDatasheet.g:701:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) ) ) )+ {...}?) )
-            // InternalComponentDatasheet.g:702:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) ) ) )+ {...}?)
-            {
-             
-            				  getUnorderedGroupHelper().enter(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3());
-            				
-            // InternalComponentDatasheet.g:705:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) ) ) )+ {...}?)
-            // InternalComponentDatasheet.g:706:6: ( ({...}? => ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) ) ) )+ {...}?
-            {
-            // InternalComponentDatasheet.g:706:6: ( ({...}? => ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) ) ) )+
-            int cnt16=0;
-            loop16:
-            do {
-                int alt16=4;
-                int LA16_0 = input.LA(1);
-
-                if ( LA16_0 == 29 && getUnorderedGroupHelper().canSelect(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3(), 0) ) {
-                    alt16=1;
-                }
-                else if ( LA16_0 == 30 && getUnorderedGroupHelper().canSelect(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3(), 1) ) {
-                    alt16=2;
-                }
-                else if ( LA16_0 == 31 && getUnorderedGroupHelper().canSelect(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3(), 2) ) {
-                    alt16=3;
-                }
-
-
-                switch (alt16) {
-            	case 1 :
-            	    // InternalComponentDatasheet.g:707:4: ({...}? => ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) ) )
-            	    {
-            	    // InternalComponentDatasheet.g:707:4: ({...}? => ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) ) )
-            	    // InternalComponentDatasheet.g:708:5: {...}? => ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3(), 0) ) {
-            	        throw new FailedPredicateException(input, "ruleProprietaryLicense", "getUnorderedGroupHelper().canSelect(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3(), 0)");
-            	    }
-            	    // InternalComponentDatasheet.g:708:115: ( ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) ) )
-            	    // InternalComponentDatasheet.g:709:6: ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) )
-            	    {
-
-            	    						getUnorderedGroupHelper().select(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3(), 0);
-            	    					
-            	    // InternalComponentDatasheet.g:712:9: ({...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) ) )
-            	    // InternalComponentDatasheet.g:712:10: {...}? => (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleProprietaryLicense", "true");
-            	    }
-            	    // InternalComponentDatasheet.g:712:19: (otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) ) )
-            	    // InternalComponentDatasheet.g:712:20: otherlv_4= 'name' (otherlv_5= ':' )? ( (lv_name_6_0= ruleEString ) )
-            	    {
-            	    otherlv_4=(Token)match(input,29,FOLLOW_7); 
-
-            	    									newLeafNode(otherlv_4, grammarAccess.getProprietaryLicenseAccess().getNameKeyword_3_0_0());
-            	    								
-            	    // InternalComponentDatasheet.g:716:9: (otherlv_5= ':' )?
-            	    int alt13=2;
-            	    int LA13_0 = input.LA(1);
-
-            	    if ( (LA13_0==15) ) {
-            	        alt13=1;
-            	    }
-            	    switch (alt13) {
-            	        case 1 :
-            	            // InternalComponentDatasheet.g:717:10: otherlv_5= ':'
-            	            {
-            	            otherlv_5=(Token)match(input,15,FOLLOW_7); 
-
-            	            										newLeafNode(otherlv_5, grammarAccess.getProprietaryLicenseAccess().getColonKeyword_3_0_1());
-            	            									
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // InternalComponentDatasheet.g:722:9: ( (lv_name_6_0= ruleEString ) )
-            	    // InternalComponentDatasheet.g:723:10: (lv_name_6_0= ruleEString )
-            	    {
-            	    // InternalComponentDatasheet.g:723:10: (lv_name_6_0= ruleEString )
-            	    // InternalComponentDatasheet.g:724:11: lv_name_6_0= ruleEString
-            	    {
-
-            	    											newCompositeNode(grammarAccess.getProprietaryLicenseAccess().getNameEStringParserRuleCall_3_0_2_0());
-            	    										
-            	    pushFollow(FOLLOW_16);
-            	    lv_name_6_0=ruleEString();
-
-            	    state._fsp--;
-
-
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getProprietaryLicenseRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"name",
-            	    												lv_name_6_0,
-            	    												"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3());
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 2 :
-            	    // InternalComponentDatasheet.g:747:4: ({...}? => ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) ) )
-            	    {
-            	    // InternalComponentDatasheet.g:747:4: ({...}? => ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) ) )
-            	    // InternalComponentDatasheet.g:748:5: {...}? => ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3(), 1) ) {
-            	        throw new FailedPredicateException(input, "ruleProprietaryLicense", "getUnorderedGroupHelper().canSelect(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3(), 1)");
-            	    }
-            	    // InternalComponentDatasheet.g:748:115: ( ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) ) )
-            	    // InternalComponentDatasheet.g:749:6: ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) )
-            	    {
-
-            	    						getUnorderedGroupHelper().select(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3(), 1);
-            	    					
-            	    // InternalComponentDatasheet.g:752:9: ({...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) ) )
-            	    // InternalComponentDatasheet.g:752:10: {...}? => (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleProprietaryLicense", "true");
-            	    }
-            	    // InternalComponentDatasheet.g:752:19: (otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) ) )
-            	    // InternalComponentDatasheet.g:752:20: otherlv_7= 'fullText' (otherlv_8= ':' )? ( (lv_fullText_9_0= ruleEString ) )
-            	    {
-            	    otherlv_7=(Token)match(input,30,FOLLOW_7); 
-
-            	    									newLeafNode(otherlv_7, grammarAccess.getProprietaryLicenseAccess().getFullTextKeyword_3_1_0());
-            	    								
-            	    // InternalComponentDatasheet.g:756:9: (otherlv_8= ':' )?
-            	    int alt14=2;
-            	    int LA14_0 = input.LA(1);
-
-            	    if ( (LA14_0==15) ) {
-            	        alt14=1;
-            	    }
-            	    switch (alt14) {
-            	        case 1 :
-            	            // InternalComponentDatasheet.g:757:10: otherlv_8= ':'
-            	            {
-            	            otherlv_8=(Token)match(input,15,FOLLOW_7); 
-
-            	            										newLeafNode(otherlv_8, grammarAccess.getProprietaryLicenseAccess().getColonKeyword_3_1_1());
-            	            									
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // InternalComponentDatasheet.g:762:9: ( (lv_fullText_9_0= ruleEString ) )
-            	    // InternalComponentDatasheet.g:763:10: (lv_fullText_9_0= ruleEString )
-            	    {
-            	    // InternalComponentDatasheet.g:763:10: (lv_fullText_9_0= ruleEString )
-            	    // InternalComponentDatasheet.g:764:11: lv_fullText_9_0= ruleEString
-            	    {
-
-            	    											newCompositeNode(grammarAccess.getProprietaryLicenseAccess().getFullTextEStringParserRuleCall_3_1_2_0());
-            	    										
-            	    pushFollow(FOLLOW_16);
-            	    lv_fullText_9_0=ruleEString();
-
-            	    state._fsp--;
-
-
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getProprietaryLicenseRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"fullText",
-            	    												lv_fullText_9_0,
-            	    												"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3());
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 3 :
-            	    // InternalComponentDatasheet.g:787:4: ({...}? => ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) ) )
-            	    {
-            	    // InternalComponentDatasheet.g:787:4: ({...}? => ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) ) )
-            	    // InternalComponentDatasheet.g:788:5: {...}? => ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3(), 2) ) {
-            	        throw new FailedPredicateException(input, "ruleProprietaryLicense", "getUnorderedGroupHelper().canSelect(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3(), 2)");
-            	    }
-            	    // InternalComponentDatasheet.g:788:115: ( ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) ) )
-            	    // InternalComponentDatasheet.g:789:6: ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) )
-            	    {
-
-            	    						getUnorderedGroupHelper().select(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3(), 2);
-            	    					
-            	    // InternalComponentDatasheet.g:792:9: ({...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) ) )
-            	    // InternalComponentDatasheet.g:792:10: {...}? => (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleProprietaryLicense", "true");
-            	    }
-            	    // InternalComponentDatasheet.g:792:19: (otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) ) )
-            	    // InternalComponentDatasheet.g:792:20: otherlv_10= 'URL' (otherlv_11= ':' )? ( (lv_url_12_0= ruleEString ) )
-            	    {
-            	    otherlv_10=(Token)match(input,31,FOLLOW_7); 
-
-            	    									newLeafNode(otherlv_10, grammarAccess.getProprietaryLicenseAccess().getURLKeyword_3_2_0());
-            	    								
-            	    // InternalComponentDatasheet.g:796:9: (otherlv_11= ':' )?
-            	    int alt15=2;
-            	    int LA15_0 = input.LA(1);
-
-            	    if ( (LA15_0==15) ) {
-            	        alt15=1;
-            	    }
-            	    switch (alt15) {
-            	        case 1 :
-            	            // InternalComponentDatasheet.g:797:10: otherlv_11= ':'
-            	            {
-            	            otherlv_11=(Token)match(input,15,FOLLOW_7); 
-
-            	            										newLeafNode(otherlv_11, grammarAccess.getProprietaryLicenseAccess().getColonKeyword_3_2_1());
-            	            									
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // InternalComponentDatasheet.g:802:9: ( (lv_url_12_0= ruleEString ) )
-            	    // InternalComponentDatasheet.g:803:10: (lv_url_12_0= ruleEString )
-            	    {
-            	    // InternalComponentDatasheet.g:803:10: (lv_url_12_0= ruleEString )
-            	    // InternalComponentDatasheet.g:804:11: lv_url_12_0= ruleEString
-            	    {
-
-            	    											newCompositeNode(grammarAccess.getProprietaryLicenseAccess().getUrlEStringParserRuleCall_3_2_2_0());
-            	    										
-            	    pushFollow(FOLLOW_16);
-            	    lv_url_12_0=ruleEString();
-
-            	    state._fsp--;
-
-
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getProprietaryLicenseRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"url",
-            	    												lv_url_12_0,
-            	    												"org.xtext.base.genericDatasheet.GenericDatasheet.EString");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3());
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt16 >= 1 ) break loop16;
-                        EarlyExitException eee =
-                            new EarlyExitException(16, input);
-                        throw eee;
-                }
-                cnt16++;
-            } while (true);
-
-            if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3()) ) {
-                throw new FailedPredicateException(input, "ruleProprietaryLicense", "getUnorderedGroupHelper().canLeave(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3())");
-            }
-
-            }
-
-
-            }
-
-             
-            				  getUnorderedGroupHelper().leave(grammarAccess.getProprietaryLicenseAccess().getUnorderedGroup_3());
-            				
-
-            }
-
-            otherlv_13=(Token)match(input,17,FOLLOW_2); 
-
-            			newLeafNode(otherlv_13, grammarAccess.getProprietaryLicenseAccess().getRightCurlyBracketKeyword_4());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleProprietaryLicense"
-
-
-    // $ANTLR start "ruleTRL"
-    // InternalComponentDatasheet.g:843:1: ruleTRL returns [Enumerator current=null] : ( (enumLiteral_0= 'Level1' ) | (enumLiteral_1= 'Level2' ) | (enumLiteral_2= 'Level3' ) | (enumLiteral_3= 'Level4' ) | (enumLiteral_4= 'Level5' ) | (enumLiteral_5= 'Level6' ) | (enumLiteral_6= 'Level7' ) | (enumLiteral_7= 'Level8' ) | (enumLiteral_8= 'Level9' ) | (enumLiteral_9= 'Undefined' ) ) ;
-    public final Enumerator ruleTRL() throws RecognitionException {
+    // $ANTLR start "ruleMandatoryDatasheetElementNames"
+    // InternalComponentDatasheet.g:516:1: ruleMandatoryDatasheetElementNames returns [Enumerator current=null] : ( (enumLiteral_0= 'BaseURI' ) | (enumLiteral_1= 'ShortDescription' ) ) ;
+    public final Enumerator ruleMandatoryDatasheetElementNames() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
-        Token enumLiteral_2=null;
-        Token enumLiteral_3=null;
-        Token enumLiteral_4=null;
-        Token enumLiteral_5=null;
-        Token enumLiteral_6=null;
-        Token enumLiteral_7=null;
-        Token enumLiteral_8=null;
-        Token enumLiteral_9=null;
 
 
         	enterRule();
 
         try {
-            // InternalComponentDatasheet.g:849:2: ( ( (enumLiteral_0= 'Level1' ) | (enumLiteral_1= 'Level2' ) | (enumLiteral_2= 'Level3' ) | (enumLiteral_3= 'Level4' ) | (enumLiteral_4= 'Level5' ) | (enumLiteral_5= 'Level6' ) | (enumLiteral_6= 'Level7' ) | (enumLiteral_7= 'Level8' ) | (enumLiteral_8= 'Level9' ) | (enumLiteral_9= 'Undefined' ) ) )
-            // InternalComponentDatasheet.g:850:2: ( (enumLiteral_0= 'Level1' ) | (enumLiteral_1= 'Level2' ) | (enumLiteral_2= 'Level3' ) | (enumLiteral_3= 'Level4' ) | (enumLiteral_4= 'Level5' ) | (enumLiteral_5= 'Level6' ) | (enumLiteral_6= 'Level7' ) | (enumLiteral_7= 'Level8' ) | (enumLiteral_8= 'Level9' ) | (enumLiteral_9= 'Undefined' ) )
+            // InternalComponentDatasheet.g:522:2: ( ( (enumLiteral_0= 'BaseURI' ) | (enumLiteral_1= 'ShortDescription' ) ) )
+            // InternalComponentDatasheet.g:523:2: ( (enumLiteral_0= 'BaseURI' ) | (enumLiteral_1= 'ShortDescription' ) )
             {
-            // InternalComponentDatasheet.g:850:2: ( (enumLiteral_0= 'Level1' ) | (enumLiteral_1= 'Level2' ) | (enumLiteral_2= 'Level3' ) | (enumLiteral_3= 'Level4' ) | (enumLiteral_4= 'Level5' ) | (enumLiteral_5= 'Level6' ) | (enumLiteral_6= 'Level7' ) | (enumLiteral_7= 'Level8' ) | (enumLiteral_8= 'Level9' ) | (enumLiteral_9= 'Undefined' ) )
-            int alt17=10;
-            switch ( input.LA(1) ) {
-            case 32:
-                {
-                alt17=1;
-                }
-                break;
-            case 33:
-                {
-                alt17=2;
-                }
-                break;
-            case 34:
-                {
-                alt17=3;
-                }
-                break;
-            case 35:
-                {
-                alt17=4;
-                }
-                break;
-            case 36:
-                {
-                alt17=5;
-                }
-                break;
-            case 37:
-                {
-                alt17=6;
-                }
-                break;
-            case 38:
-                {
-                alt17=7;
-                }
-                break;
-            case 39:
-                {
-                alt17=8;
-                }
-                break;
-            case 40:
-                {
-                alt17=9;
-                }
-                break;
-            case 41:
-                {
-                alt17=10;
-                }
-                break;
-            default:
+            // InternalComponentDatasheet.g:523:2: ( (enumLiteral_0= 'BaseURI' ) | (enumLiteral_1= 'ShortDescription' ) )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==20) ) {
+                alt6=1;
+            }
+            else if ( (LA6_0==21) ) {
+                alt6=2;
+            }
+            else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 17, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
-
-            switch (alt17) {
+            switch (alt6) {
                 case 1 :
-                    // InternalComponentDatasheet.g:851:3: (enumLiteral_0= 'Level1' )
+                    // InternalComponentDatasheet.g:524:3: (enumLiteral_0= 'BaseURI' )
                     {
-                    // InternalComponentDatasheet.g:851:3: (enumLiteral_0= 'Level1' )
-                    // InternalComponentDatasheet.g:852:4: enumLiteral_0= 'Level1'
+                    // InternalComponentDatasheet.g:524:3: (enumLiteral_0= 'BaseURI' )
+                    // InternalComponentDatasheet.g:525:4: enumLiteral_0= 'BaseURI'
                     {
-                    enumLiteral_0=(Token)match(input,32,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,20,FOLLOW_2); 
 
-                    				current = grammarAccess.getTRLAccess().getLEVEL1EnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_0, grammarAccess.getTRLAccess().getLEVEL1EnumLiteralDeclaration_0());
+                    				current = grammarAccess.getMandatoryDatasheetElementNamesAccess().getBaseURIEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getMandatoryDatasheetElementNamesAccess().getBaseURIEnumLiteralDeclaration_0());
                     			
 
                     }
@@ -2178,151 +1241,15 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // InternalComponentDatasheet.g:859:3: (enumLiteral_1= 'Level2' )
+                    // InternalComponentDatasheet.g:532:3: (enumLiteral_1= 'ShortDescription' )
                     {
-                    // InternalComponentDatasheet.g:859:3: (enumLiteral_1= 'Level2' )
-                    // InternalComponentDatasheet.g:860:4: enumLiteral_1= 'Level2'
+                    // InternalComponentDatasheet.g:532:3: (enumLiteral_1= 'ShortDescription' )
+                    // InternalComponentDatasheet.g:533:4: enumLiteral_1= 'ShortDescription'
                     {
-                    enumLiteral_1=(Token)match(input,33,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,21,FOLLOW_2); 
 
-                    				current = grammarAccess.getTRLAccess().getLEVEL2EnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_1, grammarAccess.getTRLAccess().getLEVEL2EnumLiteralDeclaration_1());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalComponentDatasheet.g:867:3: (enumLiteral_2= 'Level3' )
-                    {
-                    // InternalComponentDatasheet.g:867:3: (enumLiteral_2= 'Level3' )
-                    // InternalComponentDatasheet.g:868:4: enumLiteral_2= 'Level3'
-                    {
-                    enumLiteral_2=(Token)match(input,34,FOLLOW_2); 
-
-                    				current = grammarAccess.getTRLAccess().getLEVEL3EnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_2, grammarAccess.getTRLAccess().getLEVEL3EnumLiteralDeclaration_2());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // InternalComponentDatasheet.g:875:3: (enumLiteral_3= 'Level4' )
-                    {
-                    // InternalComponentDatasheet.g:875:3: (enumLiteral_3= 'Level4' )
-                    // InternalComponentDatasheet.g:876:4: enumLiteral_3= 'Level4'
-                    {
-                    enumLiteral_3=(Token)match(input,35,FOLLOW_2); 
-
-                    				current = grammarAccess.getTRLAccess().getLEVEL4EnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_3, grammarAccess.getTRLAccess().getLEVEL4EnumLiteralDeclaration_3());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 5 :
-                    // InternalComponentDatasheet.g:883:3: (enumLiteral_4= 'Level5' )
-                    {
-                    // InternalComponentDatasheet.g:883:3: (enumLiteral_4= 'Level5' )
-                    // InternalComponentDatasheet.g:884:4: enumLiteral_4= 'Level5'
-                    {
-                    enumLiteral_4=(Token)match(input,36,FOLLOW_2); 
-
-                    				current = grammarAccess.getTRLAccess().getLEVEL5EnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_4, grammarAccess.getTRLAccess().getLEVEL5EnumLiteralDeclaration_4());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 6 :
-                    // InternalComponentDatasheet.g:891:3: (enumLiteral_5= 'Level6' )
-                    {
-                    // InternalComponentDatasheet.g:891:3: (enumLiteral_5= 'Level6' )
-                    // InternalComponentDatasheet.g:892:4: enumLiteral_5= 'Level6'
-                    {
-                    enumLiteral_5=(Token)match(input,37,FOLLOW_2); 
-
-                    				current = grammarAccess.getTRLAccess().getLEVEL6EnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_5, grammarAccess.getTRLAccess().getLEVEL6EnumLiteralDeclaration_5());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 7 :
-                    // InternalComponentDatasheet.g:899:3: (enumLiteral_6= 'Level7' )
-                    {
-                    // InternalComponentDatasheet.g:899:3: (enumLiteral_6= 'Level7' )
-                    // InternalComponentDatasheet.g:900:4: enumLiteral_6= 'Level7'
-                    {
-                    enumLiteral_6=(Token)match(input,38,FOLLOW_2); 
-
-                    				current = grammarAccess.getTRLAccess().getLEVEL7EnumLiteralDeclaration_6().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_6, grammarAccess.getTRLAccess().getLEVEL7EnumLiteralDeclaration_6());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 8 :
-                    // InternalComponentDatasheet.g:907:3: (enumLiteral_7= 'Level8' )
-                    {
-                    // InternalComponentDatasheet.g:907:3: (enumLiteral_7= 'Level8' )
-                    // InternalComponentDatasheet.g:908:4: enumLiteral_7= 'Level8'
-                    {
-                    enumLiteral_7=(Token)match(input,39,FOLLOW_2); 
-
-                    				current = grammarAccess.getTRLAccess().getLEVEL8EnumLiteralDeclaration_7().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_7, grammarAccess.getTRLAccess().getLEVEL8EnumLiteralDeclaration_7());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 9 :
-                    // InternalComponentDatasheet.g:915:3: (enumLiteral_8= 'Level9' )
-                    {
-                    // InternalComponentDatasheet.g:915:3: (enumLiteral_8= 'Level9' )
-                    // InternalComponentDatasheet.g:916:4: enumLiteral_8= 'Level9'
-                    {
-                    enumLiteral_8=(Token)match(input,40,FOLLOW_2); 
-
-                    				current = grammarAccess.getTRLAccess().getLEVEL9EnumLiteralDeclaration_8().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_8, grammarAccess.getTRLAccess().getLEVEL9EnumLiteralDeclaration_8());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 10 :
-                    // InternalComponentDatasheet.g:923:3: (enumLiteral_9= 'Undefined' )
-                    {
-                    // InternalComponentDatasheet.g:923:3: (enumLiteral_9= 'Undefined' )
-                    // InternalComponentDatasheet.g:924:4: enumLiteral_9= 'Undefined'
-                    {
-                    enumLiteral_9=(Token)match(input,41,FOLLOW_2); 
-
-                    				current = grammarAccess.getTRLAccess().getUNDEFINEDEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_9, grammarAccess.getTRLAccess().getUNDEFINEDEnumLiteralDeclaration_9());
+                    				current = grammarAccess.getMandatoryDatasheetElementNamesAccess().getShortDescriptionEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getMandatoryDatasheetElementNamesAccess().getShortDescriptionEnumLiteralDeclaration_1());
                     			
 
                     }
@@ -2349,7 +1276,7 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
         }
         return current;
     }
-    // $ANTLR end "ruleTRL"
+    // $ANTLR end "ruleMandatoryDatasheetElementNames"
 
     // Delegated rules
 
@@ -2359,18 +1286,14 @@ public class InternalComponentDatasheetParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000001FC0000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000034000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008040L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000001FC0002L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x000000000030E000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000000000A000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x000000000030C002L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000000D0000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000003FF00008000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000012008000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x00000000E0000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x00000000E0020000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x00000000000F2000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x00000000000D2000L});
 
 }

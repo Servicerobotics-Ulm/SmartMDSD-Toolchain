@@ -82,6 +82,7 @@ public class ParamDefModelImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterSetRepository getRepository() {
 		return repository;
 	}
@@ -110,6 +111,7 @@ public class ParamDefModelImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRepository(ParameterSetRepository newRepository) {
 		if (newRepository != repository) {
 			NotificationChain msgs = null;
@@ -132,6 +134,7 @@ public class ParamDefModelImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ParamDefRepoImport> getImports() {
 		if (imports == null) {
 			imports = new EObjectContainmentEList<ParamDefRepoImport>(ParamDefRepoImport.class, this,

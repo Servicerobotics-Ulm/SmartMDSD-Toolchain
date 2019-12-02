@@ -111,7 +111,7 @@
         </edgeMappings>
         <containerMappings name="ComponentContainer" labelDirectEdit="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Names']" semanticCandidatesExpression="feature:component" domainClass="componentDefinition::ComponentDefinition">
           <borderedNodeMappings name="InputPortNode" deletionDescription="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='InputPortRemoval']" semanticCandidatesExpression="feature:elements" domainClass="componentDefinition::InputPort">
-            <style xsi:type="style:CustomStyleDescription" showIcon="false" tooltipExpression="InputPort" resizeKind="NSEW" id="input">
+            <style xsi:type="style:CustomStyleDescription" showIcon="false" tooltipExpression="service:self.getDocumentationString()" resizeKind="NSEW" id="input">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -235,7 +235,7 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" tooltipExpression="ComponentDefinition">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" tooltipExpression="service:self.getDocumentationString()">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -844,22 +844,8 @@
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </borderedNodeMappings>
-          <borderedNodeMappings xsi:type="description_1:NodeMappingImport" name="InputPortNodeImport" semanticCandidatesExpression="feature:elements" importedMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='InputPortNode']">
-            <borderedNodeMappings name="InputMiddlweareExtension" preconditionExpression="[thisEObject.middleware.oclIsTypeOf(roboticMiddleware::OpcUa_SeRoNet)/]" semanticCandidatesExpression="feature:extensions" domainClass="seronetExtension::SupportedMiddleware">
-              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="[thisEObject.middleware.eClass().name/]" tooltipExpression="SeRoNet Port" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.sirius.component.design/icons/SeRoNetIcon.png">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              </style>
-            </borderedNodeMappings>
-          </borderedNodeMappings>
-          <borderedNodeMappings xsi:type="description_1:NodeMappingImport" name="OutputPortNodeImport" semanticCandidatesExpression="feature:elements" importedMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='OutputPortNode']">
-            <borderedNodeMappings name="OutputMiddlweareExtension" preconditionExpression="[thisEObject.middleware.oclIsTypeOf(roboticMiddleware::OpcUa_SeRoNet)/]" semanticCandidatesExpression="feature:extensions" domainClass="seronetExtension::SupportedMiddleware">
-              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="[thisEObject.middleware.eClass().name/]" tooltipExpression="SeRoNet Port" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.sirius.component.design/icons/SeRoNetIcon.png">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              </style>
-            </borderedNodeMappings>
-          </borderedNodeMappings>
+          <borderedNodeMappings xsi:type="description_1:NodeMappingImport" name="InputPortNodeImport" semanticCandidatesExpression="feature:elements" importedMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='InputPortNode']"/>
+          <borderedNodeMappings xsi:type="description_1:NodeMappingImport" name="OutputPortNodeImport" semanticCandidatesExpression="feature:elements" importedMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='OutputPortNode']"/>
           <borderedNodeMappings name="RosMixedPortNode" semanticCandidatesExpression="feature:elements" domainClass="seronetExtension::MixedPortROS">
             <style xsi:type="style:WorkspaceImageDescription" showIcon="false" tooltipExpression="MixedPortROS" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.sirius.component.design/icons/RosPort.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -912,19 +898,6 @@
                         </subModelOperations>
                       </subModelOperations>
                     </subModelOperations>
-                  </subModelOperations>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="AddOpcUaSupport" label="Convert to SeRoNet-Port" precondition="service:self.hasNoOpcUa()" nodeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentContainerImport']/@borderedNodeMappings[name='InputPortNodeImport']/@borderedNodeMappings[name='InputMiddlweareExtension'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentContainerImport']/@borderedNodeMappings[name='OutputPortNodeImport']/@borderedNodeMappings[name='OutputMiddlweareExtension']" iconPath="/org.sirius.component.design/icons/SeRoNetIcon.png">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool:CreateInstance" typeName="seronetExtension::SupportedMiddleware" referenceName="extensions">
-                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:instance">
-                    <subModelOperations xsi:type="tool:CreateInstance" typeName="roboticMiddleware::OpcUa_SeRoNet" referenceName="middleware"/>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
@@ -1019,13 +992,32 @@
   <extensions xsi:type="properties:ViewExtensionDescription" name="ComponentProperties">
     <metamodels href="../../org.ecore.component.seronetExtension/model/seronetExtension.ecore#/"/>
     <categories name="Default">
-      <pages name="General" labelExpression="General" groups="//@extensions.0/@categories.0/@groups.0">
-        <extends href="platform:/plugin/org.eclipse.sirius.properties.defaultrules/model/properties.odesign#//@extensions.0/@categories.0/@pages.0"/>
+      <pages name="General" labelExpression="General">
+        <groups href="platform:/plugin/org.eclipse.sirius.properties.defaultrules/model/properties.odesign#//@extensions.0/@categories.0/@groups.0"/>
+        <groups href="#//@extensions.0/@categories.0/@groups.0"/>
+        <groups href="#//@extensions.0/@categories.0/@groups.1"/>
       </pages>
       <groups name="OpcUaDeviceClient" labelExpression="Extended Properties" domainClass="seronetExtension::OpcUaDeviceClient" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:ButtonDescription" name="OpenXmlFile" labelExpression="Open XML File:" helpExpression="Open an XML file containing the device's information model" buttonLabelExpression="Open XML File">
           <initialOperation>
             <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:self.openXmlFileDialog()"/>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="SupportedMiddlewares" labelExpression="Supported Middlewares" domainClass="componentDefinition::ComponentPort" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:CheckboxDescription" name="SeRoNetOpcUa" label="SeRoNet OPC UA Backend" labelExpression="SeRoNet OPC UA Backend " helpExpression="Activate SeRoNet OPC UA Backend Support" valueExpression="service:self.hasOpcUaMW()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:self.updateOpcUaMW(newValue)"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:CheckboxDescription" name="DDS_SmartSoft" labelExpression="DDS/SmartSoft Backend" helpExpression="Activate DDS/SmartSoft Support" valueExpression="service:self.hasDDSMW()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:self.updateDDSMW(newValue)"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:CheckboxDescription" name="ACE_SmartSoft" labelExpression="ACE/SmartSoft Backend" helpExpression="Activate ACE/SmartSoft Support" valueExpression="service:self.hasACEMW()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:self.updateACEMW(newValue)"/>
           </initialOperation>
         </controls>
       </groups>

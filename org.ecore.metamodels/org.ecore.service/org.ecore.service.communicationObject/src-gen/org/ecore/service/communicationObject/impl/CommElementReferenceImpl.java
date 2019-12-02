@@ -63,6 +63,7 @@ public class CommElementReferenceImpl extends AbstractAttributeTypeImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AbstractCommElement getTypeName() {
 		if (typeName != null && typeName.eIsProxy()) {
 			InternalEObject oldTypeName = (InternalEObject) typeName;
@@ -90,6 +91,7 @@ public class CommElementReferenceImpl extends AbstractAttributeTypeImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTypeName(AbstractCommElement newTypeName) {
 		AbstractCommElement oldTypeName = typeName;
 		typeName = newTypeName;

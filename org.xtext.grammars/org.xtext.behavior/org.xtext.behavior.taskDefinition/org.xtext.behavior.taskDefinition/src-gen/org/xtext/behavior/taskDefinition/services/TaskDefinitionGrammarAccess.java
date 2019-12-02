@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -14,34 +13,9 @@
 //        89075 Ulm
 //        Germany
 //
-//  This file is part of the SmartMDSD Toolchain V3. 
+//  This file is part of the SmartMDSD Toolchain V3.
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.behavior.taskDefinition.services;
 
 import com.google.inject.Inject;
@@ -64,6 +38,7 @@ import org.eclipse.xtext.service.AbstractElementFinder.AbstractEnumRuleElementFi
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
 import org.xtext.base.basicAttributes.services.BasicAttributesGrammarAccess;
+import org.xtext.base.docuterminals.services.DocuTerminalsGrammarAccess;
 
 @Singleton
 public class TaskDefinitionGrammarAccess extends AbstractGrammarElementFinder {
@@ -314,14 +289,18 @@ public class TaskDefinitionGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final BasicAttributesGrammarAccess gaBasicAttributes;
 	
+	private final DocuTerminalsGrammarAccess gaDocuTerminals;
+	
 	private final TerminalsGrammarAccess gaTerminals;
 
 	@Inject
 	public TaskDefinitionGrammarAccess(GrammarProvider grammarProvider,
 			BasicAttributesGrammarAccess gaBasicAttributes,
+			DocuTerminalsGrammarAccess gaDocuTerminals,
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaBasicAttributes = gaBasicAttributes;
+		this.gaDocuTerminals = gaDocuTerminals;
 		this.gaTerminals = gaTerminals;
 		this.pTaskDefinitionModel = new TaskDefinitionModelElements();
 		this.pTaskDefinitionRepository = new TaskDefinitionRepositoryElements();
@@ -354,6 +333,10 @@ public class TaskDefinitionGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public BasicAttributesGrammarAccess getBasicAttributesGrammarAccess() {
 		return gaBasicAttributes;
+	}
+	
+	public DocuTerminalsGrammarAccess getDocuTerminalsGrammarAccess() {
+		return gaDocuTerminals;
 	}
 	
 	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
@@ -418,6 +401,7 @@ public class TaskDefinitionGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AttributeDefinition attr::AttributeDefinition:
+	//	documentation=DOCU_COMMENT?
 	//	name=ID ':' type=AbstractAttributeType ('=' defaultvalue=AbstractValue)? ';'?;
 	public BasicAttributesGrammarAccess.AttributeDefinitionElements getAttributeDefinitionAccess() {
 		return gaBasicAttributes.getAttributeDefinitionAccess();
@@ -428,6 +412,7 @@ public class TaskDefinitionGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AttributeRefinement attr::AttributeRefinement:
+	//	documentation=DOCU_COMMENT?
 	//	attribute=[attr::AttributeDefinition|FQN] '=' value=AbstractValue ';'?;
 	public BasicAttributesGrammarAccess.AttributeRefinementElements getAttributeRefinementAccess() {
 		return gaBasicAttributes.getAttributeRefinementAccess();
@@ -592,6 +577,48 @@ public class TaskDefinitionGrammarAccess extends AbstractGrammarElementFinder {
 		return getSingleValueAccess().getRule();
 	}
 	
+	//AbstractDocumentedElement:
+	//	{AbstractDocumentedElement} documentation=DOCU_COMMENT?;
+	public DocuTerminalsGrammarAccess.AbstractDocumentedElementElements getAbstractDocumentedElementAccess() {
+		return gaDocuTerminals.getAbstractDocumentedElementAccess();
+	}
+	
+	public ParserRule getAbstractDocumentedElementRule() {
+		return getAbstractDocumentedElementAccess().getRule();
+	}
+	
+	//@Override
+	//terminal ML_COMMENT:
+	//	'/*' !'*'->'*/';
+	public TerminalRule getML_COMMENTRule() {
+		return gaDocuTerminals.getML_COMMENTRule();
+	}
+	
+	//terminal fragment ML_DOCUMENTATION:
+	//	'/**'->'*/';
+	public TerminalRule getML_DOCUMENTATIONRule() {
+		return gaDocuTerminals.getML_DOCUMENTATIONRule();
+	}
+	
+	//@Override
+	//terminal SL_COMMENT:
+	//	'//' !'/' !('\n' | '\r')* ('\r'? '\n')?;
+	public TerminalRule getSL_COMMENTRule() {
+		return gaDocuTerminals.getSL_COMMENTRule();
+	}
+	
+	//terminal fragment SL_DOCUMENTATION:
+	//	'///' !('\n' | '\r')* ('\r'? '\n')?;
+	public TerminalRule getSL_DOCUMENTATIONRule() {
+		return gaDocuTerminals.getSL_DOCUMENTATIONRule();
+	}
+	
+	//terminal DOCU_COMMENT:
+	//	ML_DOCUMENTATION | SL_DOCUMENTATION;
+	public TerminalRule getDOCU_COMMENTRule() {
+		return gaDocuTerminals.getDOCU_COMMENTRule();
+	}
+	
 	//terminal ID:
 	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
@@ -609,18 +636,6 @@ public class TaskDefinitionGrammarAccess extends AbstractGrammarElementFinder {
 	//	"'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
-	}
-	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
-	public TerminalRule getML_COMMENTRule() {
-		return gaTerminals.getML_COMMENTRule();
-	}
-	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
-	public TerminalRule getSL_COMMENTRule() {
-		return gaTerminals.getSL_COMMENTRule();
 	}
 	
 	//terminal WS:

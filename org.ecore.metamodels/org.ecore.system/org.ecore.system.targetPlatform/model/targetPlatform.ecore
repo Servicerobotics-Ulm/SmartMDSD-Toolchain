@@ -15,7 +15,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractTPElement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractTPElement" abstract="true" eSuperTypes="../../org.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractTPSubNode" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="NetworkConnection" eSuperTypes="#//AbstractTPElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="endpoint1" lowerBound="1"

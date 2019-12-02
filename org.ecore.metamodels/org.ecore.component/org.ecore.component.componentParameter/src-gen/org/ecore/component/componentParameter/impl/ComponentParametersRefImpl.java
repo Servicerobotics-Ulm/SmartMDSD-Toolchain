@@ -96,6 +96,7 @@ public class ComponentParametersRefImpl extends DerivedComponentElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentParameter getParameter() {
 		if (parameter != null && parameter.eIsProxy()) {
 			InternalEObject oldParameter = (InternalEObject) parameter;
@@ -123,6 +124,7 @@ public class ComponentParametersRefImpl extends DerivedComponentElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParameter(ComponentParameter newParameter) {
 		ComponentParameter oldParameter = parameter;
 		parameter = newParameter;
@@ -136,6 +138,7 @@ public class ComponentParametersRefImpl extends DerivedComponentElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CoordinationSlavePort getSlave() {
 		if (slave != null && slave.eIsProxy()) {
 			InternalEObject oldSlave = (InternalEObject) slave;
@@ -163,6 +166,7 @@ public class ComponentParametersRefImpl extends DerivedComponentElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSlave(CoordinationSlavePort newSlave) {
 		CoordinationSlavePort oldSlave = slave;
 		slave = newSlave;

@@ -73,6 +73,7 @@ public abstract class ServiceInstanceImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentPort getPort() {
 		if (port != null && port.eIsProxy()) {
 			InternalEObject oldPort = (InternalEObject) port;
@@ -100,6 +101,7 @@ public abstract class ServiceInstanceImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPort(ComponentPort newPort) {
 		ComponentPort oldPort = port;
 		port = newPort;

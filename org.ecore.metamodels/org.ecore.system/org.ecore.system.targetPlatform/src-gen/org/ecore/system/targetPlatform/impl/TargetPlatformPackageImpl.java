@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.service.roboticMiddleware.RoboticMiddlewarePackage;
 
 import org.ecore.system.targetPlatform.AbstractTPElement;
@@ -152,7 +153,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link TargetPlatformPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -167,13 +168,15 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 			return (TargetPlatformPackage) EPackage.Registry.INSTANCE.getEPackage(TargetPlatformPackage.eNS_URI);
 
 		// Obtain or create and register package
-		TargetPlatformPackageImpl theTargetPlatformPackage = (TargetPlatformPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof TargetPlatformPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new TargetPlatformPackageImpl());
+		Object registeredTargetPlatformPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		TargetPlatformPackageImpl theTargetPlatformPackage = registeredTargetPlatformPackage instanceof TargetPlatformPackageImpl
+				? (TargetPlatformPackageImpl) registeredTargetPlatformPackage
+				: new TargetPlatformPackageImpl();
 
 		isInited = true;
 
 		// Initialize simple dependencies
+		DocumentationPackage.eINSTANCE.eClass();
 		RoboticMiddlewarePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -195,6 +198,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTargetPlatformModel() {
 		return targetPlatformModelEClass;
 	}
@@ -204,6 +208,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTargetPlatformModel_Name() {
 		return (EAttribute) targetPlatformModelEClass.getEStructuralFeatures().get(0);
 	}
@@ -213,6 +218,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTargetPlatformModel_Elements() {
 		return (EReference) targetPlatformModelEClass.getEStructuralFeatures().get(1);
 	}
@@ -222,6 +228,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTargetPlatformDefinition() {
 		return targetPlatformDefinitionEClass;
 	}
@@ -231,6 +238,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTargetPlatformDefinition_Elements() {
 		return (EReference) targetPlatformDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -240,6 +248,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTargetPlatformDefinition_Os() {
 		return (EReference) targetPlatformDefinitionEClass.getEStructuralFeatures().get(1);
 	}
@@ -249,6 +258,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTargetPlatformDefinition_Name() {
 		return (EAttribute) targetPlatformDefinitionEClass.getEStructuralFeatures().get(2);
 	}
@@ -258,6 +268,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractTPElement() {
 		return abstractTPElementEClass;
 	}
@@ -267,6 +278,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractTPSubNode() {
 		return abstractTPSubNodeEClass;
 	}
@@ -276,6 +288,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNetworkConnection() {
 		return networkConnectionEClass;
 	}
@@ -285,6 +298,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getNetworkConnection_Endpoint1() {
 		return (EReference) networkConnectionEClass.getEStructuralFeatures().get(0);
 	}
@@ -294,6 +308,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getNetworkConnection_Endpoint2() {
 		return (EReference) networkConnectionEClass.getEStructuralFeatures().get(1);
 	}
@@ -303,6 +318,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNetworkConnection_Kind() {
 		return (EAttribute) networkConnectionEClass.getEStructuralFeatures().get(2);
 	}
@@ -312,6 +328,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNetworkInterface() {
 		return networkInterfaceEClass;
 	}
@@ -321,6 +338,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNetworkInterface_Kind() {
 		return (EAttribute) networkInterfaceEClass.getEStructuralFeatures().get(0);
 	}
@@ -330,6 +348,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNetworkInterface_HostAddress() {
 		return (EAttribute) networkInterfaceEClass.getEStructuralFeatures().get(1);
 	}
@@ -339,6 +358,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNetworkInterface_PortNr() {
 		return (EAttribute) networkInterfaceEClass.getEStructuralFeatures().get(2);
 	}
@@ -348,6 +368,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNetworkInterface_Name() {
 		return (EAttribute) networkInterfaceEClass.getEStructuralFeatures().get(3);
 	}
@@ -357,6 +378,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCPU() {
 		return cpuEClass;
 	}
@@ -366,6 +388,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCPU_Kind() {
 		return (EAttribute) cpuEClass.getEStructuralFeatures().get(0);
 	}
@@ -375,6 +398,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCPU_Name() {
 		return (EAttribute) cpuEClass.getEStructuralFeatures().get(1);
 	}
@@ -384,6 +408,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCPU_CoresTally() {
 		return (EAttribute) cpuEClass.getEStructuralFeatures().get(2);
 	}
@@ -393,6 +418,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLoginAccount() {
 		return loginAccountEClass;
 	}
@@ -402,6 +428,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLoginAccount_Fullname() {
 		return (EAttribute) loginAccountEClass.getEStructuralFeatures().get(0);
 	}
@@ -411,6 +438,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLoginAccount_Email() {
 		return (EAttribute) loginAccountEClass.getEStructuralFeatures().get(1);
 	}
@@ -420,6 +448,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLoginAccount_Name() {
 		return (EAttribute) loginAccountEClass.getEStructuralFeatures().get(2);
 	}
@@ -429,6 +458,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getWindows() {
 		return windowsEClass;
 	}
@@ -438,6 +468,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOperatingSystem() {
 		return operatingSystemEClass;
 	}
@@ -447,6 +478,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getOperatingSystem_Kind() {
 		return (EAttribute) operatingSystemEClass.getEStructuralFeatures().get(0);
 	}
@@ -456,6 +488,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLinux() {
 		return linuxEClass;
 	}
@@ -465,6 +498,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMacOS() {
 		return macOSEClass;
 	}
@@ -474,6 +508,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTargetMiddleware() {
 		return targetMiddlewareEClass;
 	}
@@ -483,6 +518,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTargetMiddleware_Middleware() {
 		return (EReference) targetMiddlewareEClass.getEStructuralFeatures().get(0);
 	}
@@ -492,6 +528,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TargetPlatformFactory getTargetPlatformFactory() {
 		return (TargetPlatformFactory) getEFactoryInstance();
 	}
@@ -588,6 +625,8 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		DocumentationPackage theDocumentationPackage = (DocumentationPackage) EPackage.Registry.INSTANCE
+				.getEPackage(DocumentationPackage.eNS_URI);
 		RoboticMiddlewarePackage theRoboticMiddlewarePackage = (RoboticMiddlewarePackage) EPackage.Registry.INSTANCE
 				.getEPackage(RoboticMiddlewarePackage.eNS_URI);
 
@@ -597,6 +636,7 @@ public class TargetPlatformPackageImpl extends EPackageImpl implements TargetPla
 
 		// Add supertypes to classes
 		targetPlatformDefinitionEClass.getESuperTypes().add(this.getAbstractTPElement());
+		abstractTPElementEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
 		networkConnectionEClass.getESuperTypes().add(this.getAbstractTPElement());
 		networkInterfaceEClass.getESuperTypes().add(this.getAbstractTPSubNode());
 		cpuEClass.getESuperTypes().add(this.getAbstractTPSubNode());

@@ -99,6 +99,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ProvidedService getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject) to;
@@ -126,6 +127,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTo(ProvidedService newTo) {
 		ProvidedService oldTo = to;
 		to = newTo;
@@ -139,6 +141,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RequiredService getFrom() {
 		if (from != null && from.eIsProxy()) {
 			InternalEObject oldFrom = (InternalEObject) from;
@@ -166,6 +169,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFrom(RequiredService newFrom) {
 		RequiredService oldFrom = from;
 		from = newFrom;
@@ -179,6 +183,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RoboticMiddleware getMiddlewareSelection() {
 		return middlewareSelection;
 	}
@@ -209,6 +214,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMiddlewareSelection(RoboticMiddleware newMiddlewareSelection) {
 		if (newMiddlewareSelection != middlewareSelection) {
 			NotificationChain msgs = null;

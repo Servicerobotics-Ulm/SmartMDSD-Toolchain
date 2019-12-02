@@ -26,3 +26,4 @@ Export-Package: org.xtext.service.domainModelsDatasheet.validation,
  org.xtext.service.domainModelsDatasheet.parser.antlr,
  org.xtext.service.domainModelsDatasheet.formatting2
 Import-Package: org.apache.log4j
+Automatic-Module-Name: org.xtext.service.domainModelsDatasheet

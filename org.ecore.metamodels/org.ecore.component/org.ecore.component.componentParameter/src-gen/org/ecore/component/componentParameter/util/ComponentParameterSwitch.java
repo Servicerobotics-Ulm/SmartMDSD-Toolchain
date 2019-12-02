@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.ecore.base.documentation.AbstractDocumentedElement;
 import org.ecore.component.componentDefinition.AbstractComponentElement;
 import org.ecore.component.componentDefinition.DerivedComponentElement;
 import org.ecore.component.componentParameter.*;
@@ -79,6 +80,8 @@ public class ComponentParameterSwitch<T> extends Switch<T> {
 			AbstractComponentParameter abstractComponentParameter = (AbstractComponentParameter) theEObject;
 			T result = caseAbstractComponentParameter(abstractComponentParameter);
 			if (result == null)
+				result = caseAbstractDocumentedElement(abstractComponentParameter);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -97,6 +100,8 @@ public class ComponentParameterSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseComponentParameterBase(internalParameter);
 			if (result == null)
+				result = caseAbstractDocumentedElement(internalParameter);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -110,6 +115,8 @@ public class ComponentParameterSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseComponentRunTimeParameterBase(extendedParameter);
 			if (result == null)
+				result = caseAbstractDocumentedElement(extendedParameter);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -121,6 +128,8 @@ public class ComponentParameterSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseComponentRunTimeParameterBase(extendedTrigger);
 			if (result == null)
+				result = caseAbstractDocumentedElement(extendedTrigger);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -130,12 +139,16 @@ public class ComponentParameterSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractComponentParameter(parameterSetInstance);
 			if (result == null)
+				result = caseAbstractDocumentedElement(parameterSetInstance);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case ComponentParameterPackage.ABSTRACT_PARAMETER_INSTANCE: {
 			AbstractParameterInstance abstractParameterInstance = (AbstractParameterInstance) theEObject;
 			T result = caseAbstractParameterInstance(abstractParameterInstance);
+			if (result == null)
+				result = caseAbstractDocumentedElement(abstractParameterInstance);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -147,6 +160,8 @@ public class ComponentParameterSwitch<T> extends Switch<T> {
 				result = caseAbstractParameterInstance(triggerInstance);
 			if (result == null)
 				result = caseComponentRunTimeParameterBase(triggerInstance);
+			if (result == null)
+				result = caseAbstractDocumentedElement(triggerInstance);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -160,6 +175,8 @@ public class ComponentParameterSwitch<T> extends Switch<T> {
 				result = caseComponentRunTimeParameterBase(parameterInstance);
 			if (result == null)
 				result = caseComponentParameterBase(parameterInstance);
+			if (result == null)
+				result = caseAbstractDocumentedElement(parameterInstance);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -386,6 +403,21 @@ public class ComponentParameterSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComponentRunTimeParameterBase(ComponentRunTimeParameterBase object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Documented Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Documented Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractDocumentedElement(AbstractDocumentedElement object) {
 		return null;
 	}
 

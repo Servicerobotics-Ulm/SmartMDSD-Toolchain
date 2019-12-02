@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,32 +15,7 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.service.communicationObject.serializer;
 
 import com.google.inject.Inject;
@@ -67,6 +41,8 @@ import org.ecore.base.basicAttributes.InlineEnumerationType;
 import org.ecore.base.basicAttributes.IntValue;
 import org.ecore.base.basicAttributes.PrimitiveType;
 import org.ecore.base.basicAttributes.StringValue;
+import org.ecore.base.documentation.AbstractDocumentedElement;
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.service.communicationObject.CommElementReference;
 import org.ecore.service.communicationObject.CommElementValue;
 import org.ecore.service.communicationObject.CommObjectModel;
@@ -157,6 +133,12 @@ public class CommunicationObjectSemanticSequencer extends BasicAttributesSemanti
 				sequence_Version(context, (Version) semanticObject); 
 				return; 
 			}
+		else if (epackage == DocumentationPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT:
+				sequence_AbstractDocumentedElement(context, (AbstractDocumentedElement) semanticObject); 
+				return; 
+			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
@@ -191,7 +173,7 @@ public class CommunicationObjectSemanticSequencer extends BasicAttributesSemanti
 	 *     CommObjectsRepository returns CommObjectsRepository
 	 *
 	 * Constraint:
-	 *     (name=ID version=Version? dependency=EString? elements+=AbstractCommElement*)
+	 *     (documentation=DOCU_COMMENT? name=ID version=Version? dependency=EString? elements+=AbstractCommElement*)
 	 */
 	protected void sequence_CommObjectsRepository(ISerializationContext context, CommObjectsRepository semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -222,7 +204,7 @@ public class CommunicationObjectSemanticSequencer extends BasicAttributesSemanti
 	 *     CommunicationObject returns CommunicationObject
 	 *
 	 * Constraint:
-	 *     (name=ID attributes+=AttributeDefinition*)
+	 *     (documentation=DOCU_COMMENT? name=ID attributes+=AttributeDefinition*)
 	 */
 	protected void sequence_CommunicationObject(ISerializationContext context, CommunicationObject semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -235,7 +217,7 @@ public class CommunicationObjectSemanticSequencer extends BasicAttributesSemanti
 	 *     Enumeration returns Enumeration
 	 *
 	 * Constraint:
-	 *     (name=ID enums+=EnumerationElement*)
+	 *     (documentation=DOCU_COMMENT? name=ID enums+=EnumerationElement*)
 	 */
 	protected void sequence_Enumeration(ISerializationContext context, Enumeration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -82,6 +82,7 @@ public class ComponentDefModelImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentDefinition getComponent() {
 		return component;
 	}
@@ -110,6 +111,7 @@ public class ComponentDefModelImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponent(ComponentDefinition newComponent) {
 		if (newComponent != component) {
 			NotificationChain msgs = null;
@@ -132,6 +134,7 @@ public class ComponentDefModelImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ServiceRepoImport> getImports() {
 		if (imports == null) {
 			imports = new EObjectContainmentEList<ServiceRepoImport>(ServiceRepoImport.class, this,

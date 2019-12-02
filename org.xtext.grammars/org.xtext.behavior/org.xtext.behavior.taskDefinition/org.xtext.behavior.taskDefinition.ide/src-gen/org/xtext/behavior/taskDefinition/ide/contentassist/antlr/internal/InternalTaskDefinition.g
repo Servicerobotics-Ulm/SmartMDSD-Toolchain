@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -14,34 +13,9 @@
 //        89075 Ulm
 //        Germany
 //
-//  This file is part of the SmartMDSD Toolchain V3. 
+//  This file is part of the SmartMDSD Toolchain V3.
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 grammar InternalTaskDefinition;
 
 options {
@@ -1678,9 +1652,9 @@ rule__AttributeDefinition__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAttributeDefinitionAccess().getNameAssignment_0()); }
-	(rule__AttributeDefinition__NameAssignment_0)
-	{ after(grammarAccess.getAttributeDefinitionAccess().getNameAssignment_0()); }
+	{ before(grammarAccess.getAttributeDefinitionAccess().getDocumentationAssignment_0()); }
+	(rule__AttributeDefinition__DocumentationAssignment_0)?
+	{ after(grammarAccess.getAttributeDefinitionAccess().getDocumentationAssignment_0()); }
 )
 ;
 finally {
@@ -1705,9 +1679,9 @@ rule__AttributeDefinition__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAttributeDefinitionAccess().getColonKeyword_1()); }
-	':'
-	{ after(grammarAccess.getAttributeDefinitionAccess().getColonKeyword_1()); }
+	{ before(grammarAccess.getAttributeDefinitionAccess().getNameAssignment_1()); }
+	(rule__AttributeDefinition__NameAssignment_1)
+	{ after(grammarAccess.getAttributeDefinitionAccess().getNameAssignment_1()); }
 )
 ;
 finally {
@@ -1732,9 +1706,9 @@ rule__AttributeDefinition__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAttributeDefinitionAccess().getTypeAssignment_2()); }
-	(rule__AttributeDefinition__TypeAssignment_2)
-	{ after(grammarAccess.getAttributeDefinitionAccess().getTypeAssignment_2()); }
+	{ before(grammarAccess.getAttributeDefinitionAccess().getColonKeyword_2()); }
+	':'
+	{ after(grammarAccess.getAttributeDefinitionAccess().getColonKeyword_2()); }
 )
 ;
 finally {
@@ -1759,9 +1733,9 @@ rule__AttributeDefinition__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAttributeDefinitionAccess().getGroup_3()); }
-	(rule__AttributeDefinition__Group_3__0)?
-	{ after(grammarAccess.getAttributeDefinitionAccess().getGroup_3()); }
+	{ before(grammarAccess.getAttributeDefinitionAccess().getTypeAssignment_3()); }
+	(rule__AttributeDefinition__TypeAssignment_3)
+	{ after(grammarAccess.getAttributeDefinitionAccess().getTypeAssignment_3()); }
 )
 ;
 finally {
@@ -1774,6 +1748,7 @@ rule__AttributeDefinition__Group__4
 	}
 :
 	rule__AttributeDefinition__Group__4__Impl
+	rule__AttributeDefinition__Group__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1785,9 +1760,35 @@ rule__AttributeDefinition__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAttributeDefinitionAccess().getSemicolonKeyword_4()); }
+	{ before(grammarAccess.getAttributeDefinitionAccess().getGroup_4()); }
+	(rule__AttributeDefinition__Group_4__0)?
+	{ after(grammarAccess.getAttributeDefinitionAccess().getGroup_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AttributeDefinition__Group__5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__AttributeDefinition__Group__5__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AttributeDefinition__Group__5__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAttributeDefinitionAccess().getSemicolonKeyword_5()); }
 	(';')?
-	{ after(grammarAccess.getAttributeDefinitionAccess().getSemicolonKeyword_4()); }
+	{ after(grammarAccess.getAttributeDefinitionAccess().getSemicolonKeyword_5()); }
 )
 ;
 finally {
@@ -1795,53 +1796,53 @@ finally {
 }
 
 
-rule__AttributeDefinition__Group_3__0
+rule__AttributeDefinition__Group_4__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__AttributeDefinition__Group_3__0__Impl
-	rule__AttributeDefinition__Group_3__1
+	rule__AttributeDefinition__Group_4__0__Impl
+	rule__AttributeDefinition__Group_4__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AttributeDefinition__Group_3__0__Impl
+rule__AttributeDefinition__Group_4__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getAttributeDefinitionAccess().getEqualsSignKeyword_3_0()); }
+	{ before(grammarAccess.getAttributeDefinitionAccess().getEqualsSignKeyword_4_0()); }
 	'='
-	{ after(grammarAccess.getAttributeDefinitionAccess().getEqualsSignKeyword_3_0()); }
+	{ after(grammarAccess.getAttributeDefinitionAccess().getEqualsSignKeyword_4_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AttributeDefinition__Group_3__1
+rule__AttributeDefinition__Group_4__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__AttributeDefinition__Group_3__1__Impl
+	rule__AttributeDefinition__Group_4__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AttributeDefinition__Group_3__1__Impl
+rule__AttributeDefinition__Group_4__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getAttributeDefinitionAccess().getDefaultvalueAssignment_3_1()); }
-	(rule__AttributeDefinition__DefaultvalueAssignment_3_1)
-	{ after(grammarAccess.getAttributeDefinitionAccess().getDefaultvalueAssignment_3_1()); }
+	{ before(grammarAccess.getAttributeDefinitionAccess().getDefaultvalueAssignment_4_1()); }
+	(rule__AttributeDefinition__DefaultvalueAssignment_4_1)
+	{ after(grammarAccess.getAttributeDefinitionAccess().getDefaultvalueAssignment_4_1()); }
 )
 ;
 finally {
@@ -3233,45 +3234,60 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AttributeDefinition__NameAssignment_0
+rule__AttributeDefinition__DocumentationAssignment_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAttributeDefinitionAccess().getNameIDTerminalRuleCall_0_0()); }
+		{ before(grammarAccess.getAttributeDefinitionAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0()); }
+		RULE_DOCU_COMMENT
+		{ after(grammarAccess.getAttributeDefinitionAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AttributeDefinition__NameAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getAttributeDefinitionAccess().getNameIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getAttributeDefinitionAccess().getNameIDTerminalRuleCall_0_0()); }
+		{ after(grammarAccess.getAttributeDefinitionAccess().getNameIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AttributeDefinition__TypeAssignment_2
+rule__AttributeDefinition__TypeAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAttributeDefinitionAccess().getTypeAbstractAttributeTypeParserRuleCall_2_0()); }
+		{ before(grammarAccess.getAttributeDefinitionAccess().getTypeAbstractAttributeTypeParserRuleCall_3_0()); }
 		ruleAbstractAttributeType
-		{ after(grammarAccess.getAttributeDefinitionAccess().getTypeAbstractAttributeTypeParserRuleCall_2_0()); }
+		{ after(grammarAccess.getAttributeDefinitionAccess().getTypeAbstractAttributeTypeParserRuleCall_3_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AttributeDefinition__DefaultvalueAssignment_3_1
+rule__AttributeDefinition__DefaultvalueAssignment_4_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAttributeDefinitionAccess().getDefaultvalueAbstractValueParserRuleCall_3_1_0()); }
+		{ before(grammarAccess.getAttributeDefinitionAccess().getDefaultvalueAbstractValueParserRuleCall_4_1_0()); }
 		ruleAbstractValue
-		{ after(grammarAccess.getAttributeDefinitionAccess().getDefaultvalueAbstractValueParserRuleCall_3_1_0()); }
+		{ after(grammarAccess.getAttributeDefinitionAccess().getDefaultvalueAbstractValueParserRuleCall_4_1_0()); }
 	)
 ;
 finally {
@@ -3492,15 +3508,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+RULE_ML_COMMENT : '/*' ~('*') ( options {greedy=false;} : . )*'*/';
+
+fragment RULE_ML_DOCUMENTATION : '/**' ( options {greedy=false;} : . )*'*/';
+
+RULE_SL_COMMENT : '//' ~('/') ~(('\n'|'\r'))* ('\r'? '\n')?;
+
+fragment RULE_SL_DOCUMENTATION : '///' ~(('\n'|'\r'))* ('\r'? '\n')?;
+
+RULE_DOCU_COMMENT : (RULE_ML_DOCUMENTATION|RULE_SL_DOCUMENTATION);
+
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
-
-RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
-
-RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
 
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 

@@ -80,6 +80,7 @@ public class ComponentArchitectureFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SystemComponentArchitecture createSystemComponentArchitecture() {
 		SystemComponentArchitectureImpl systemComponentArchitecture = new SystemComponentArchitectureImpl();
 		return systemComponentArchitecture;
@@ -90,6 +91,7 @@ public class ComponentArchitectureFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentInstance createComponentInstance() {
 		ComponentInstanceImpl componentInstance = new ComponentInstanceImpl();
 		return componentInstance;
@@ -100,6 +102,7 @@ public class ComponentArchitectureFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RequiredService createRequiredService() {
 		RequiredServiceImpl requiredService = new RequiredServiceImpl();
 		return requiredService;
@@ -110,6 +113,7 @@ public class ComponentArchitectureFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ProvidedService createProvidedService() {
 		ProvidedServiceImpl providedService = new ProvidedServiceImpl();
 		return providedService;
@@ -120,6 +124,7 @@ public class ComponentArchitectureFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Connection createConnection() {
 		ConnectionImpl connection = new ConnectionImpl();
 		return connection;
@@ -130,6 +135,7 @@ public class ComponentArchitectureFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActivityConfigurationMapping createActivityConfigurationMapping() {
 		ActivityConfigurationMappingImpl activityConfigurationMapping = new ActivityConfigurationMappingImpl();
 		return activityConfigurationMapping;
@@ -140,6 +146,7 @@ public class ComponentArchitectureFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InputHandlerConfigurationMapping createInputHandlerConfigurationMapping() {
 		InputHandlerConfigurationMappingImpl inputHandlerConfigurationMapping = new InputHandlerConfigurationMappingImpl();
 		return inputHandlerConfigurationMapping;
@@ -150,6 +157,7 @@ public class ComponentArchitectureFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentArchitecturePackage getComponentArchitecturePackage() {
 		return (ComponentArchitecturePackage) getEPackage();
 	}

@@ -1,12 +1,12 @@
-//--------------------------------------------------------------------------
+//===============================================================
 //
-//  Copyright (C) 2013 Alex Lotz, Matthias Lutz, Dennis Stampfer
+//  Copyright (C) 2016 Alex Lotz, Matthias Lutz, Dennis Stampfer
 //
 //        lotz@hs-ulm.de
 //        lutz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //
-//        ZAFH Servicerobotic Ulm
+//        Servicerobotics Ulm
 //        Christian Schlegel
 //        University of Applied Sciences
 //        Prittwitzstr. 10
@@ -15,22 +15,7 @@
 //
 //  This file is part of the SmartSoft MDSD Toolchain. 
 //
-//  This library is free software; you can redistribute it and/or
-//  modify it under the terms of the GNU Lesser General Public
-//  License as published by the Free Software Foundation; either
-//  version 2.1 of the License, or (at your option) any later version.
-//
-//  This library is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-//  Lesser General Public License for more details.
-//
-//  You should have received a copy of the GNU Lesser General Public
-//  License along with this library; if not, write to the Free Software
-//  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-//
-//--------------------------------------------------------------------------
-
+//===============================================================
 package org.xtend.smartsoft.generator.commObj
 
 import com.google.inject.Inject
@@ -121,7 +106,11 @@ class CommObjectMarshalling {
 					result = result + '''
 					// serialize list-element «el.name»
 					good_bit = good_bit && cdr << ACE_Utils::truncate_cast<ACE_CDR::ULong>(data.«el.name».size());
+					«IF el.type.stringType»
+					std::vector<std::string>::const_iterator data_«el.name»It;
+					«ELSE»
 					std::vector<«el.type.fullyQualifiedIdlType»>::const_iterator data_«el.name»It;
+					«ENDIF»
 					for(data_«el.name»It=data.«el.name».begin(); data_«el.name»It!=data.«el.name».end(); data_«el.name»It++) {
 						«IF el.type.composedType»
 							good_bit = good_bit && cdr << *data_«el.name»It;
@@ -249,7 +238,11 @@ class CommObjectMarshalling {
 						«ELSE»
 							good_bit = good_bit && cdr >> data_«el.name»Item;
 						«ENDIF»
+						«IF el.type.stringType»
+						data.«el.name».push_back(data_«el.name»Item.c_str());
+						«ELSE»
 						data.«el.name».push_back(data_«el.name»Item);
+						«ENDIF»
 					}
 					'''
 				} else { // all other PrimitiveTypes and the EnumType

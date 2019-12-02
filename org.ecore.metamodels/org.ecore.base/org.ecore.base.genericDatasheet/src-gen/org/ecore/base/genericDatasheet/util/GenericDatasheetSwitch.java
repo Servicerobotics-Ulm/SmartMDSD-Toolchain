@@ -66,34 +66,34 @@ public class GenericDatasheetSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case GenericDatasheetPackage.GENERIC_DATASHEET: {
-			GenericDatasheet genericDatasheet = (GenericDatasheet) theEObject;
-			T result = caseGenericDatasheet(genericDatasheet);
+		case GenericDatasheetPackage.DATASHEET_PROPERTY: {
+			DatasheetProperty datasheetProperty = (DatasheetProperty) theEObject;
+			T result = caseDatasheetProperty(datasheetProperty);
+			if (result == null)
+				result = caseAbstractDatasheetElement(datasheetProperty);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case GenericDatasheetPackage.ABSTRACT_LICENSE: {
-			AbstractLicense abstractLicense = (AbstractLicense) theEObject;
-			T result = caseAbstractLicense(abstractLicense);
+		case GenericDatasheetPackage.GENERIC_DATASHEET_MODEL: {
+			GenericDatasheetModel genericDatasheetModel = (GenericDatasheetModel) theEObject;
+			T result = caseGenericDatasheetModel(genericDatasheetModel);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case GenericDatasheetPackage.SPDX_LICENSE: {
-			SpdxLicense spdxLicense = (SpdxLicense) theEObject;
-			T result = caseSpdxLicense(spdxLicense);
-			if (result == null)
-				result = caseAbstractLicense(spdxLicense);
+		case GenericDatasheetPackage.ABSTRACT_DATASHEET_ELEMENT: {
+			AbstractDatasheetElement abstractDatasheetElement = (AbstractDatasheetElement) theEObject;
+			T result = caseAbstractDatasheetElement(abstractDatasheetElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case GenericDatasheetPackage.PROPRIETARY_LICENSE: {
-			ProprietaryLicense proprietaryLicense = (ProprietaryLicense) theEObject;
-			T result = caseProprietaryLicense(proprietaryLicense);
+		case GenericDatasheetPackage.MANDATORY_DATASHEET_ELEMENT: {
+			MandatoryDatasheetElement mandatoryDatasheetElement = (MandatoryDatasheetElement) theEObject;
+			T result = caseMandatoryDatasheetElement(mandatoryDatasheetElement);
 			if (result == null)
-				result = caseAbstractLicense(proprietaryLicense);
+				result = caseAbstractDatasheetElement(mandatoryDatasheetElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -104,62 +104,62 @@ public class GenericDatasheetSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Generic Datasheet</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Datasheet Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Generic Datasheet</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Datasheet Property</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGenericDatasheet(GenericDatasheet object) {
+	public T caseDatasheetProperty(DatasheetProperty object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Abstract License</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Abstract License</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Model</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAbstractLicense(AbstractLicense object) {
+	public T caseGenericDatasheetModel(GenericDatasheetModel object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Spdx License</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Datasheet Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Spdx License</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Datasheet Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSpdxLicense(SpdxLicense object) {
+	public T caseAbstractDatasheetElement(AbstractDatasheetElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Proprietary License</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Mandatory Datasheet Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Proprietary License</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Mandatory Datasheet Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProprietaryLicense(ProprietaryLicense object) {
+	public T caseMandatoryDatasheetElement(MandatoryDatasheetElement object) {
 		return null;
 	}
 

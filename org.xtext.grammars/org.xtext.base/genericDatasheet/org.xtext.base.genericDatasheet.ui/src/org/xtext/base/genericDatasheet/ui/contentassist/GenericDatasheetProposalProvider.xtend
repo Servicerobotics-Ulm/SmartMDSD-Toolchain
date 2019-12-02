@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2019 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,42 +15,20 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.base.genericDatasheet.ui.contentassist
 
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.Assignment
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
-import java.net.URL
-import java.io.IOException
-import java.io.BufferedReader
-import java.io.InputStreamReader
+import org.ecore.base.genericDatasheet.DatasheetProperty
+import org.smartmdsd.datasheet.indexer.WorkspaceDatasheetIndexer
+import org.ecore.base.genericDatasheet.TechnologyReadinessLevel
+import org.xtext.base.genericDatasheet.GenericDatasheetUtils
+import org.ecore.base.genericDatasheet.DefaultDatasheetProperties
+import org.ecore.base.genericDatasheet.MandatoryDatasheetElement
+import org.ecore.base.genericDatasheet.MandatoryDatasheetElementNames
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#content-assist
@@ -59,24 +36,83 @@ import java.io.InputStreamReader
  */
 class GenericDatasheetProposalProvider extends AbstractGenericDatasheetProposalProvider {
 	
-	override completeSpdxLicense_LicenseID(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		var URL url;
-		try {
-		    url = new URL("platform:/plugin/org.xtext.base.genericDatasheet/spdx-licenses.txt");
-		    val inputStream = url.openConnection().getInputStream();
-		    val in = new BufferedReader(new InputStreamReader(inputStream));
-		    var String inputLine;
-		 
-		    while ((inputLine = in.readLine()) !== null) {
-		    	val text = '"' + inputLine + '"'
-		        acceptor.accept(createCompletionProposal(text, context))
-		    }
-		 
-		    in.close();
-		 
-		} catch (IOException e) {
-		    e.printStackTrace();
+	override completeMandatoryDatasheetElement_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//		super.completeMandatoryDatasheetElement_Value(model, assignment, context, acceptor)
+		if(model instanceof MandatoryDatasheetElement) {
+			if(model.name.equals(MandatoryDatasheetElementNames.BASE_URI)) {
+				val text = '"http://www.servicerobotik-ulm.de"'
+				acceptor.accept(createCompletionProposal(text, context))
+			} else if(model.name.equals(MandatoryDatasheetElementNames.SHORT_DESCRIPTION)) {
+				val text = '"TODO: add short description for '+model.eResource.URI.segment(1)+'"'
+				val proposal = "default short description"
+				acceptor.accept(createCompletionProposal(text, proposal, null, context))
+			}
 		}
-		super.completeSpdxLicense_LicenseID(model, assignment, context, acceptor)
 	}
+	
+	override completeDatasheetProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//		super.completeDatasheetProperty_Name(model, assignment, context, acceptor)
+		val custom_properties = WorkspaceDatasheetIndexer.instance.allIndexedPropertyNames
+		for(value: DefaultDatasheetProperties.VALUES) {
+			val proposal = value.literal
+			custom_properties.remove(proposal)
+			val text = proposal + " - default property"
+			acceptor.accept(createCompletionProposal(proposal, text, null, context));
+		}
+		for(property: custom_properties) {
+			val text = property + " - custom property"
+			acceptor.accept(createCompletionProposal(property, text, null, context));
+		}
+	}
+	
+	override completeDatasheetProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//		super.completeDatasheetProperty_Value(model, assignment, context, acceptor)
+		if(model instanceof DatasheetProperty) {
+			if(model.name.equals(DefaultDatasheetProperties.SPDX_LICENSE.literal)) {
+				for(license: GenericDatasheetUtils.spdxLicenseNames) {
+					val text = '"' + license
+					acceptor.accept(createCompletionProposal(text, context))
+				}
+			} else if(model.name.equals(DefaultDatasheetProperties.TECHNOLOGY_READINESS_LEVEL.literal)) {
+				for(trl: TechnologyReadinessLevel.VALUES) {
+					val text = '"' + trl.literal + '"'
+					acceptor.accept(createCompletionProposal(text, context))
+				}
+			} else {
+				val all_values = WorkspaceDatasheetIndexer.instance.getAllMatchingPropertyValues(model.name)
+				for(value: all_values) {
+					val text = '"' + value + '"'
+					acceptor.accept(createCompletionProposal(text, context))
+				}
+			}
+		}
+	}
+	
+	override completeDatasheetProperty_Unit(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeDatasheetProperty_Unit(model, assignment, context, acceptor)
+		if(model instanceof DatasheetProperty) {
+			val all_units = WorkspaceDatasheetIndexer.instance.getAllMatchingPropertyUnits(model.name)
+			for(unit: all_units) {
+				val text = '"' + unit + '"'
+				acceptor.accept(createCompletionProposal(text, context))
+			}
+		}
+	}
+	
+	override completeDatasheetProperty_SemanticID(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeDatasheetProperty_SemanticID(model, assignment, context, acceptor)
+		if(model instanceof DatasheetProperty) {
+			if(model.name.equals(DefaultDatasheetProperties.SPDX_LICENSE.literal)) {
+				val uri = '"https://spdx.org/licenses/' + model.value + '.html"'
+				acceptor.accept(createCompletionProposal(uri, context))
+			} else {
+				val all_uris = WorkspaceDatasheetIndexer.instance.getAllMatchingPropertySemanticURIs(model.name)
+				for(uri: all_uris) {
+					val text = '"' + uri + '"'
+					acceptor.accept(createCompletionProposal(text, context))
+				}
+			}
+		}
+	}
+	
 }

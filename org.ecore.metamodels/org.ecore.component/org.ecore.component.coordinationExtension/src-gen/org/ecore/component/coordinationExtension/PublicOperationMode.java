@@ -4,6 +4,7 @@ package org.ecore.component.coordinationExtension;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.ecore.base.documentation.AbstractDocumentedElement;
 import org.ecore.service.componentMode.ComponentModeDefinition;
 
 /**
@@ -25,7 +26,7 @@ import org.ecore.service.componentMode.ComponentModeDefinition;
  * @model
  * @generated
  */
-public interface PublicOperationMode extends AbstractCoordinationElement {
+public interface PublicOperationMode extends AbstractCoordinationElement, AbstractDocumentedElement {
 	/**
 	 * Returns the value of the '<em><b>Activates</b></em>' reference list.
 	 * The list contents are of type {@link org.ecore.component.coordinationExtension.PrivateOperationMode}.

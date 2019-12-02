@@ -6,7 +6,7 @@
     editorDirectory="/org.ecore.service.communicationObject.editor/src-gen" modelPluginID="org.ecore.service.communicationObject"
     modelName="CommunicationObject" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
-    copyrightFields="false" usedGenPackages="../../org.ecore.base.basicAttributes/model/basicAttributes.genmodel#//basicAttributes"
+    copyrightFields="false" usedGenPackages="../../org.ecore.base.basicAttributes/model/basicAttributes.genmodel#//basicAttributes ../../org.ecore.base.documentation/model/documentation.genmodel#//documentation"
     importOrganizing="true">
   <foreignModel>communicationObject.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>

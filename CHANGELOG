@@ -1,3 +1,12 @@
+SmartMDSD Toolchain v3.11
+	* Updated Welcome Pages (see Help->Welcome)
+	* Updated C++ code geenrators to support updated background infrastructure (SmartSoft API v1.1 and ACE/SmartSoft Kernel v3.2)
+	* Improved build performance for Toolchain Project builds (each recursive dependency is only built once now)
+	* Added support for building ROS Mixedport components as part of the regular Toolchain build process (see also the RleaseNotes)
+	* New experimental Modeling language for specifying non-technical Datasheet properties has been added (this language is yet likely to change and evolve in future releases)
+	* Several internal bugfixes (not directly visible in the UI)
+-- Fr, 30 Nov. 2019
+
 SmartMDSD Toolchain v3.10
 	* Add a Universal Intro specification for the Eclipse Welcome Page (see Help->Welcome)
 	* Add new step-by-step cheatsheets for creating DomainModels, Component, and System projects

@@ -1,7 +1,26 @@
+//================================================================
+//
+//  Copyright (C) 2016 Alex Lotz, Dennis Stampfer, Matthias Lutz
+//
+//        lotz@hs-ulm.de
+//        stampfer@hs-ulm.de
+//        lutz@hs-ulm.de
+//
+//        Servicerobotik Ulm
+//        Christian Schlegel
+//        Ulm University of Applied Sciences
+//        Prittwitzstr. 10
+//        89075 Ulm
+//        Germany
+//
+//  This file is part of the SmartMDSD Toolchain V3. 
+//
+//================================================================
 package org.sirius.component.design;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
@@ -26,20 +45,26 @@ import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.resource.IResourceDescription;
 import org.eclipse.xtext.resource.IResourceDescriptions;
 import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider;
+import org.ecore.base.documentation.AbstractDocumentedElement;
 import org.ecore.base.mixedport.MixedportPackage;
 import org.ecore.component.componentDefinition.AbstractComponentElement;
 import org.ecore.component.componentDefinition.Activity;
 import org.ecore.component.componentDefinition.AnswerPort;
+import org.ecore.component.componentDefinition.ComponentDefModel;
 import org.ecore.component.componentDefinition.ComponentDefinition;
+import org.ecore.component.componentDefinition.ComponentPort;
 import org.ecore.component.componentDefinition.ComponentPortExtension;
 import org.ecore.component.componentDefinition.InputPort;
-import org.ecore.component.componentDefinition.OutputPort;
 import org.ecore.component.componentParameter.ComponentParameterPackage;
 import org.ecore.component.coordinationExtension.CoordinationSlavePort;
 import org.ecore.component.seronetExtension.OpcUaDeviceClient;
+import org.ecore.component.seronetExtension.SeronetExtensionFactory;
 import org.ecore.component.seronetExtension.SupportedMiddleware;
 import org.ecore.service.componentMode.ComponentModeCollection;
+import org.ecore.service.roboticMiddleware.ACE_SmartSoft;
+import org.ecore.service.roboticMiddleware.DDS_SmartSoft;
 import org.ecore.service.roboticMiddleware.OpcUa_SeRoNet;
+import org.ecore.service.roboticMiddleware.RoboticMiddlewareFactory;
 import org.ecore.service.serviceDefinition.ServiceDefRepository;
 import org.ecore.service.serviceDefinition.ServiceDefinitionPackage;
 import org.sirius.tools.DiagramHelperServices;
@@ -77,6 +102,25 @@ public class Services {
 			}
 		}
 		return false;
+	}
+	
+	public String getDocumentationString(EObject context) {
+		String text = context.eClass().getName();
+		Object name_atribute = context.eGet(context.eClass().getEStructuralFeature("name"));
+		if(name_atribute instanceof String) {
+			String name = (String)name_atribute;
+			text = text + ": " + name + "\n";
+		} else {
+			text = text + "\n";
+		}
+		if(context instanceof AbstractDocumentedElement) {
+			AbstractDocumentedElement docu = (AbstractDocumentedElement)context;
+			String short_description = docu.getFirstDocumentationLine();
+			if(!short_description.isEmpty()) {
+				text = text + short_description;
+			}
+		}
+		return text;
 	}
 	
     public String getProjectName(EObject obj) {
@@ -154,19 +198,9 @@ public class Services {
     }
     
     public Boolean hasOpcUaMW(EObject context) {
-    	if(context instanceof InputPort) {
-    		InputPort in = (InputPort)context;
-    		for(ComponentPortExtension ex: in.getExtensions()) {
-    			if(ex instanceof SupportedMiddleware) {
-    				SupportedMiddleware sm = (SupportedMiddleware)ex;
-    				if(sm.getMiddleware() instanceof OpcUa_SeRoNet) {
-    					return true;
-    				}
-    			}
-    		}
-    	} else if(context instanceof OutputPort) {
-    		OutputPort out = (OutputPort)context;
-    		for(ComponentPortExtension ex: out.getExtensions()) {
+    	if(context instanceof ComponentPort) {
+    		ComponentPort port = (ComponentPort)context;
+    		for(ComponentPortExtension ex: port.getExtensions()) {
     			if(ex instanceof SupportedMiddleware) {
     				SupportedMiddleware sm = (SupportedMiddleware)ex;
     				if(sm.getMiddleware() instanceof OpcUa_SeRoNet) {
@@ -176,6 +210,117 @@ public class Services {
     		}
     	}
     	return false;
+    }
+
+    public EObject updateOpcUaMW(EObject context, Boolean newValue) {
+    	if(context instanceof ComponentPort) {
+    		if(newValue == true) {
+    			if(hasOpcUaMW(context) == false) {
+    				// add new OpcUa_SeRoNet mw
+    				ComponentPort port = (ComponentPort)context;
+    				SupportedMiddleware mw = SeronetExtensionFactory.eINSTANCE.createSupportedMiddleware();
+    				mw.setMiddleware(RoboticMiddlewareFactory.eINSTANCE.createOpcUa_SeRoNet());
+    				port.getExtensions().add(mw);
+    			}
+    		} else {
+    			// remove all matching OpcUa_SeRoNet mw
+    			ComponentPort port = (ComponentPort)context;
+    			Iterator<ComponentPortExtension> it = port.getExtensions().iterator();
+    			while(it.hasNext()) {
+    				if(it.next() instanceof SupportedMiddleware) {
+    					SupportedMiddleware sm = (SupportedMiddleware)it.next();
+    					if(sm.getMiddleware() instanceof OpcUa_SeRoNet) {
+    						it.remove();
+    					}
+    				}
+    			}
+    		}
+    	}
+    	return context;
+    }
+    
+    public Boolean hasDDSMW(EObject context) {
+    	if(context instanceof ComponentPort) {
+    		ComponentPort port = (ComponentPort)context;
+    		for(ComponentPortExtension ex: port.getExtensions()) {
+    			if(ex instanceof SupportedMiddleware) {
+    				SupportedMiddleware sm = (SupportedMiddleware)ex;
+    				if(sm.getMiddleware() instanceof DDS_SmartSoft) {
+    					return true;
+    				}
+    			}
+    		}
+    	}
+    	return false;
+    }
+
+    public EObject updateDDSMW(EObject context, Boolean newValue) {
+    	if(context instanceof ComponentPort) {
+    		if(newValue == true) {
+    			if(hasDDSMW(context) == false) {
+    				// add new DDS_SmartSoft mw
+    				ComponentPort port = (ComponentPort)context;
+    				SupportedMiddleware mw = SeronetExtensionFactory.eINSTANCE.createSupportedMiddleware();
+    				mw.setMiddleware(RoboticMiddlewareFactory.eINSTANCE.createDDS_SmartSoft());
+    				port.getExtensions().add(mw);
+    			}
+    		} else {
+    			// remove all matching DDS_SmartSoft mw
+    			ComponentPort port = (ComponentPort)context;
+    			Iterator<ComponentPortExtension> it = port.getExtensions().iterator();
+    			while(it.hasNext()) {
+    				if(it.next() instanceof SupportedMiddleware) {
+    					SupportedMiddleware sm = (SupportedMiddleware)it.next();
+    					if(sm.getMiddleware() instanceof DDS_SmartSoft) {
+    						it.remove();
+    					}
+    				}
+    			}
+    		}
+    	}
+    	return context;
+    }
+    
+    public Boolean hasACEMW(EObject context) {
+    	if(context instanceof ComponentPort) {
+    		ComponentPort port = (ComponentPort)context;
+    		for(ComponentPortExtension ex: port.getExtensions()) {
+    			if(ex instanceof SupportedMiddleware) {
+    				SupportedMiddleware sm = (SupportedMiddleware)ex;
+    				if(sm.getMiddleware() instanceof ACE_SmartSoft) {
+    					return true;
+    				}
+    			}
+    		}
+    	}
+    	return false;
+    }
+
+    public EObject updateACEMW(EObject context, Boolean newValue) {
+    	if(context instanceof ComponentPort) {
+    		if(newValue == true) {
+    			if(hasACEMW(context) == false) {
+    				// add new ACE_SmartSoft mw
+    				ComponentPort port = (ComponentPort)context;
+    				SupportedMiddleware mw = SeronetExtensionFactory.eINSTANCE.createSupportedMiddleware();
+    				mw.setMiddleware(RoboticMiddlewareFactory.eINSTANCE.createACE_SmartSoft());
+    				port.getExtensions().add(mw);
+    			}
+    		} else {
+    			// remove all matching ACE_SmartSoft mw
+    			ComponentPort port = (ComponentPort)context;
+    			Iterator<ComponentPortExtension> it = port.getExtensions().iterator();
+    			while(it.hasNext()) {
+    				if(it.next() instanceof SupportedMiddleware) {
+    					SupportedMiddleware sm = (SupportedMiddleware)it.next();
+    					if(sm.getMiddleware() instanceof ACE_SmartSoft) {
+    						it.remove();
+    					}
+    				}
+    			}
+    		}
+    	}
+    	return context;
     }
     
 //    public Collection<EObject> getSubStates(EObject context) {
@@ -211,6 +356,22 @@ public class Services {
     		for(AbstractComponentElement element: component.getElements()) {
     			if(element instanceof Activity) {
     				objects.add(element);
+    			}
+    		}
+    	}
+    	return objects;
+    }
+    
+    public Collection<EObject> getAllComponentPorts(EObject context) {
+    	Collection<EObject> objects = new ArrayList<EObject>();
+    	if(context instanceof ComponentDefModel) {
+    		ComponentDefModel model = (ComponentDefModel)context;
+    		ComponentDefinition component = model.getComponent();
+    		if(component != null) {
+    			for(AbstractComponentElement element: component.getElements()) {
+    				if(element instanceof ComponentPort) {
+    					objects.add(element);
+    				}
     			}
     		}
     	}

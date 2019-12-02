@@ -22,23 +22,22 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalServiceDefinitionParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'.*'", "'-'", "'ServiceDefRepository'", "'{'", "'}'", "'version'", "'#import'", "';'", "'ForkingServiceDefinition'", "'purposeDescription'", "'JoiningServiceDefinition'", "'RequestAnswerServiceDefinition'", "'CoordinationServiceDefinition'", "'CommunicationServiceUsage'", "'uses'", "'StatePattern'", "'<'", "'lifecycle'", "'>'", "'with'", "'ParameterPattern'", "'DynamicWiringPattern'", "'MonitoringPattern'", "'PushPattern'", "'DataType'", "'='", "'EventPattern'", "'EventType'", "'ActivationType'", "'EventStateType'", "'QueryPattern'", "'RequestType'", "'AnswerType'", "'SendPattern'", "'ServiceProperty'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_DOCU_COMMENT", "RULE_ML_COMMENT", "RULE_ML_DOCUMENTATION", "RULE_SL_COMMENT", "RULE_SL_DOCUMENTATION", "RULE_STRING", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'.*'", "'-'", "'ServiceDefRepository'", "'{'", "'}'", "'version'", "'#import'", "';'", "'ForkingServiceDefinition'", "'JoiningServiceDefinition'", "'RequestAnswerServiceDefinition'", "'CoordinationServiceDefinition'", "'CommunicationServiceUsage'", "'uses'", "'StatePattern'", "'<'", "'lifecycle'", "'>'", "'with'", "'ParameterPattern'", "'DynamicWiringPattern'", "'MonitoringPattern'", "'PushPattern'", "'DataType'", "'='", "'EventPattern'", "'EventType'", "'ActivationType'", "'EventStateType'", "'QueryPattern'", "'RequestType'", "'AnswerType'", "'SendPattern'", "'ServiceProperty'"
     };
+    public static final int RULE_ML_DOCUMENTATION=8;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
-    public static final int T__11=11;
-    public static final int T__12=12;
-    public static final int T__13=13;
     public static final int T__14=14;
-    public static final int RULE_ID=5;
+    public static final int RULE_ID=4;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=6;
+    public static final int RULE_INT=5;
     public static final int T__29=29;
+    public static final int RULE_DOCU_COMMENT=6;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
@@ -46,9 +45,10 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
     public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
-    public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=8;
+    public static final int RULE_STRING=11;
+    public static final int RULE_SL_COMMENT=9;
     public static final int T__37=37;
+    public static final int RULE_SL_DOCUMENTATION=10;
     public static final int T__38=38;
     public static final int T__39=39;
     public static final int T__33=33;
@@ -59,11 +59,13 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_WS=12;
+    public static final int RULE_ANY_OTHER=13;
+    public static final int T__48=48;
     public static final int T__44=44;
     public static final int T__45=45;
     public static final int T__46=46;
+    public static final int T__47=47;
     public static final int T__40=40;
     public static final int T__41=41;
     public static final int T__42=42;
@@ -105,11 +107,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleServiceDefModel"
-    // InternalServiceDefinition.g:94:1: entryRuleServiceDefModel : ruleServiceDefModel EOF ;
+    // InternalServiceDefinition.g:68:1: entryRuleServiceDefModel : ruleServiceDefModel EOF ;
     public final void entryRuleServiceDefModel() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:95:1: ( ruleServiceDefModel EOF )
-            // InternalServiceDefinition.g:96:1: ruleServiceDefModel EOF
+            // InternalServiceDefinition.g:69:1: ( ruleServiceDefModel EOF )
+            // InternalServiceDefinition.g:70:1: ruleServiceDefModel EOF
             {
              before(grammarAccess.getServiceDefModelRule()); 
             pushFollow(FOLLOW_1);
@@ -135,21 +137,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleServiceDefModel"
-    // InternalServiceDefinition.g:103:1: ruleServiceDefModel : ( ( rule__ServiceDefModel__Group__0 ) ) ;
+    // InternalServiceDefinition.g:77:1: ruleServiceDefModel : ( ( rule__ServiceDefModel__Group__0 ) ) ;
     public final void ruleServiceDefModel() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:107:2: ( ( ( rule__ServiceDefModel__Group__0 ) ) )
-            // InternalServiceDefinition.g:108:2: ( ( rule__ServiceDefModel__Group__0 ) )
+            // InternalServiceDefinition.g:81:2: ( ( ( rule__ServiceDefModel__Group__0 ) ) )
+            // InternalServiceDefinition.g:82:2: ( ( rule__ServiceDefModel__Group__0 ) )
             {
-            // InternalServiceDefinition.g:108:2: ( ( rule__ServiceDefModel__Group__0 ) )
-            // InternalServiceDefinition.g:109:3: ( rule__ServiceDefModel__Group__0 )
+            // InternalServiceDefinition.g:82:2: ( ( rule__ServiceDefModel__Group__0 ) )
+            // InternalServiceDefinition.g:83:3: ( rule__ServiceDefModel__Group__0 )
             {
              before(grammarAccess.getServiceDefModelAccess().getGroup()); 
-            // InternalServiceDefinition.g:110:3: ( rule__ServiceDefModel__Group__0 )
-            // InternalServiceDefinition.g:110:4: rule__ServiceDefModel__Group__0
+            // InternalServiceDefinition.g:84:3: ( rule__ServiceDefModel__Group__0 )
+            // InternalServiceDefinition.g:84:4: rule__ServiceDefModel__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ServiceDefModel__Group__0();
@@ -182,11 +184,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleFQN"
-    // InternalServiceDefinition.g:119:1: entryRuleFQN : ruleFQN EOF ;
+    // InternalServiceDefinition.g:93:1: entryRuleFQN : ruleFQN EOF ;
     public final void entryRuleFQN() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:120:1: ( ruleFQN EOF )
-            // InternalServiceDefinition.g:121:1: ruleFQN EOF
+            // InternalServiceDefinition.g:94:1: ( ruleFQN EOF )
+            // InternalServiceDefinition.g:95:1: ruleFQN EOF
             {
              before(grammarAccess.getFQNRule()); 
             pushFollow(FOLLOW_1);
@@ -212,21 +214,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleFQN"
-    // InternalServiceDefinition.g:128:1: ruleFQN : ( ( rule__FQN__Group__0 ) ) ;
+    // InternalServiceDefinition.g:102:1: ruleFQN : ( ( rule__FQN__Group__0 ) ) ;
     public final void ruleFQN() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:132:2: ( ( ( rule__FQN__Group__0 ) ) )
-            // InternalServiceDefinition.g:133:2: ( ( rule__FQN__Group__0 ) )
+            // InternalServiceDefinition.g:106:2: ( ( ( rule__FQN__Group__0 ) ) )
+            // InternalServiceDefinition.g:107:2: ( ( rule__FQN__Group__0 ) )
             {
-            // InternalServiceDefinition.g:133:2: ( ( rule__FQN__Group__0 ) )
-            // InternalServiceDefinition.g:134:3: ( rule__FQN__Group__0 )
+            // InternalServiceDefinition.g:107:2: ( ( rule__FQN__Group__0 ) )
+            // InternalServiceDefinition.g:108:3: ( rule__FQN__Group__0 )
             {
              before(grammarAccess.getFQNAccess().getGroup()); 
-            // InternalServiceDefinition.g:135:3: ( rule__FQN__Group__0 )
-            // InternalServiceDefinition.g:135:4: rule__FQN__Group__0
+            // InternalServiceDefinition.g:109:3: ( rule__FQN__Group__0 )
+            // InternalServiceDefinition.g:109:4: rule__FQN__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__FQN__Group__0();
@@ -259,11 +261,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleFQNW"
-    // InternalServiceDefinition.g:144:1: entryRuleFQNW : ruleFQNW EOF ;
+    // InternalServiceDefinition.g:118:1: entryRuleFQNW : ruleFQNW EOF ;
     public final void entryRuleFQNW() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:145:1: ( ruleFQNW EOF )
-            // InternalServiceDefinition.g:146:1: ruleFQNW EOF
+            // InternalServiceDefinition.g:119:1: ( ruleFQNW EOF )
+            // InternalServiceDefinition.g:120:1: ruleFQNW EOF
             {
              before(grammarAccess.getFQNWRule()); 
             pushFollow(FOLLOW_1);
@@ -289,21 +291,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleFQNW"
-    // InternalServiceDefinition.g:153:1: ruleFQNW : ( ( rule__FQNW__Group__0 ) ) ;
+    // InternalServiceDefinition.g:127:1: ruleFQNW : ( ( rule__FQNW__Group__0 ) ) ;
     public final void ruleFQNW() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:157:2: ( ( ( rule__FQNW__Group__0 ) ) )
-            // InternalServiceDefinition.g:158:2: ( ( rule__FQNW__Group__0 ) )
+            // InternalServiceDefinition.g:131:2: ( ( ( rule__FQNW__Group__0 ) ) )
+            // InternalServiceDefinition.g:132:2: ( ( rule__FQNW__Group__0 ) )
             {
-            // InternalServiceDefinition.g:158:2: ( ( rule__FQNW__Group__0 ) )
-            // InternalServiceDefinition.g:159:3: ( rule__FQNW__Group__0 )
+            // InternalServiceDefinition.g:132:2: ( ( rule__FQNW__Group__0 ) )
+            // InternalServiceDefinition.g:133:3: ( rule__FQNW__Group__0 )
             {
              before(grammarAccess.getFQNWAccess().getGroup()); 
-            // InternalServiceDefinition.g:160:3: ( rule__FQNW__Group__0 )
-            // InternalServiceDefinition.g:160:4: rule__FQNW__Group__0
+            // InternalServiceDefinition.g:134:3: ( rule__FQNW__Group__0 )
+            // InternalServiceDefinition.g:134:4: rule__FQNW__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__FQNW__Group__0();
@@ -336,11 +338,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleEInt"
-    // InternalServiceDefinition.g:169:1: entryRuleEInt : ruleEInt EOF ;
+    // InternalServiceDefinition.g:143:1: entryRuleEInt : ruleEInt EOF ;
     public final void entryRuleEInt() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:170:1: ( ruleEInt EOF )
-            // InternalServiceDefinition.g:171:1: ruleEInt EOF
+            // InternalServiceDefinition.g:144:1: ( ruleEInt EOF )
+            // InternalServiceDefinition.g:145:1: ruleEInt EOF
             {
              before(grammarAccess.getEIntRule()); 
             pushFollow(FOLLOW_1);
@@ -366,21 +368,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleEInt"
-    // InternalServiceDefinition.g:178:1: ruleEInt : ( ( rule__EInt__Group__0 ) ) ;
+    // InternalServiceDefinition.g:152:1: ruleEInt : ( ( rule__EInt__Group__0 ) ) ;
     public final void ruleEInt() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:182:2: ( ( ( rule__EInt__Group__0 ) ) )
-            // InternalServiceDefinition.g:183:2: ( ( rule__EInt__Group__0 ) )
+            // InternalServiceDefinition.g:156:2: ( ( ( rule__EInt__Group__0 ) ) )
+            // InternalServiceDefinition.g:157:2: ( ( rule__EInt__Group__0 ) )
             {
-            // InternalServiceDefinition.g:183:2: ( ( rule__EInt__Group__0 ) )
-            // InternalServiceDefinition.g:184:3: ( rule__EInt__Group__0 )
+            // InternalServiceDefinition.g:157:2: ( ( rule__EInt__Group__0 ) )
+            // InternalServiceDefinition.g:158:3: ( rule__EInt__Group__0 )
             {
              before(grammarAccess.getEIntAccess().getGroup()); 
-            // InternalServiceDefinition.g:185:3: ( rule__EInt__Group__0 )
-            // InternalServiceDefinition.g:185:4: rule__EInt__Group__0
+            // InternalServiceDefinition.g:159:3: ( rule__EInt__Group__0 )
+            // InternalServiceDefinition.g:159:4: rule__EInt__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__EInt__Group__0();
@@ -412,79 +414,12 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
     // $ANTLR end "ruleEInt"
 
 
-    // $ANTLR start "entryRuleEString"
-    // InternalServiceDefinition.g:194:1: entryRuleEString : ruleEString EOF ;
-    public final void entryRuleEString() throws RecognitionException {
-        try {
-            // InternalServiceDefinition.g:195:1: ( ruleEString EOF )
-            // InternalServiceDefinition.g:196:1: ruleEString EOF
-            {
-             before(grammarAccess.getEStringRule()); 
-            pushFollow(FOLLOW_1);
-            ruleEString();
-
-            state._fsp--;
-
-             after(grammarAccess.getEStringRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleEString"
-
-
-    // $ANTLR start "ruleEString"
-    // InternalServiceDefinition.g:203:1: ruleEString : ( RULE_STRING ) ;
-    public final void ruleEString() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:207:2: ( ( RULE_STRING ) )
-            // InternalServiceDefinition.g:208:2: ( RULE_STRING )
-            {
-            // InternalServiceDefinition.g:208:2: ( RULE_STRING )
-            // InternalServiceDefinition.g:209:3: RULE_STRING
-            {
-             before(grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleEString"
-
-
     // $ANTLR start "entryRuleServiceDefRepository"
-    // InternalServiceDefinition.g:219:1: entryRuleServiceDefRepository : ruleServiceDefRepository EOF ;
+    // InternalServiceDefinition.g:168:1: entryRuleServiceDefRepository : ruleServiceDefRepository EOF ;
     public final void entryRuleServiceDefRepository() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:220:1: ( ruleServiceDefRepository EOF )
-            // InternalServiceDefinition.g:221:1: ruleServiceDefRepository EOF
+            // InternalServiceDefinition.g:169:1: ( ruleServiceDefRepository EOF )
+            // InternalServiceDefinition.g:170:1: ruleServiceDefRepository EOF
             {
              before(grammarAccess.getServiceDefRepositoryRule()); 
             pushFollow(FOLLOW_1);
@@ -510,21 +445,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleServiceDefRepository"
-    // InternalServiceDefinition.g:228:1: ruleServiceDefRepository : ( ( rule__ServiceDefRepository__Group__0 ) ) ;
+    // InternalServiceDefinition.g:177:1: ruleServiceDefRepository : ( ( rule__ServiceDefRepository__Group__0 ) ) ;
     public final void ruleServiceDefRepository() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:232:2: ( ( ( rule__ServiceDefRepository__Group__0 ) ) )
-            // InternalServiceDefinition.g:233:2: ( ( rule__ServiceDefRepository__Group__0 ) )
+            // InternalServiceDefinition.g:181:2: ( ( ( rule__ServiceDefRepository__Group__0 ) ) )
+            // InternalServiceDefinition.g:182:2: ( ( rule__ServiceDefRepository__Group__0 ) )
             {
-            // InternalServiceDefinition.g:233:2: ( ( rule__ServiceDefRepository__Group__0 ) )
-            // InternalServiceDefinition.g:234:3: ( rule__ServiceDefRepository__Group__0 )
+            // InternalServiceDefinition.g:182:2: ( ( rule__ServiceDefRepository__Group__0 ) )
+            // InternalServiceDefinition.g:183:3: ( rule__ServiceDefRepository__Group__0 )
             {
              before(grammarAccess.getServiceDefRepositoryAccess().getGroup()); 
-            // InternalServiceDefinition.g:235:3: ( rule__ServiceDefRepository__Group__0 )
-            // InternalServiceDefinition.g:235:4: rule__ServiceDefRepository__Group__0
+            // InternalServiceDefinition.g:184:3: ( rule__ServiceDefRepository__Group__0 )
+            // InternalServiceDefinition.g:184:4: rule__ServiceDefRepository__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ServiceDefRepository__Group__0();
@@ -557,11 +492,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleServiceRepoVersion"
-    // InternalServiceDefinition.g:244:1: entryRuleServiceRepoVersion : ruleServiceRepoVersion EOF ;
+    // InternalServiceDefinition.g:193:1: entryRuleServiceRepoVersion : ruleServiceRepoVersion EOF ;
     public final void entryRuleServiceRepoVersion() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:245:1: ( ruleServiceRepoVersion EOF )
-            // InternalServiceDefinition.g:246:1: ruleServiceRepoVersion EOF
+            // InternalServiceDefinition.g:194:1: ( ruleServiceRepoVersion EOF )
+            // InternalServiceDefinition.g:195:1: ruleServiceRepoVersion EOF
             {
              before(grammarAccess.getServiceRepoVersionRule()); 
             pushFollow(FOLLOW_1);
@@ -587,21 +522,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleServiceRepoVersion"
-    // InternalServiceDefinition.g:253:1: ruleServiceRepoVersion : ( ( rule__ServiceRepoVersion__Group__0 ) ) ;
+    // InternalServiceDefinition.g:202:1: ruleServiceRepoVersion : ( ( rule__ServiceRepoVersion__Group__0 ) ) ;
     public final void ruleServiceRepoVersion() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:257:2: ( ( ( rule__ServiceRepoVersion__Group__0 ) ) )
-            // InternalServiceDefinition.g:258:2: ( ( rule__ServiceRepoVersion__Group__0 ) )
+            // InternalServiceDefinition.g:206:2: ( ( ( rule__ServiceRepoVersion__Group__0 ) ) )
+            // InternalServiceDefinition.g:207:2: ( ( rule__ServiceRepoVersion__Group__0 ) )
             {
-            // InternalServiceDefinition.g:258:2: ( ( rule__ServiceRepoVersion__Group__0 ) )
-            // InternalServiceDefinition.g:259:3: ( rule__ServiceRepoVersion__Group__0 )
+            // InternalServiceDefinition.g:207:2: ( ( rule__ServiceRepoVersion__Group__0 ) )
+            // InternalServiceDefinition.g:208:3: ( rule__ServiceRepoVersion__Group__0 )
             {
              before(grammarAccess.getServiceRepoVersionAccess().getGroup()); 
-            // InternalServiceDefinition.g:260:3: ( rule__ServiceRepoVersion__Group__0 )
-            // InternalServiceDefinition.g:260:4: rule__ServiceRepoVersion__Group__0
+            // InternalServiceDefinition.g:209:3: ( rule__ServiceRepoVersion__Group__0 )
+            // InternalServiceDefinition.g:209:4: rule__ServiceRepoVersion__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ServiceRepoVersion__Group__0();
@@ -634,11 +569,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleCommRepoImport"
-    // InternalServiceDefinition.g:269:1: entryRuleCommRepoImport : ruleCommRepoImport EOF ;
+    // InternalServiceDefinition.g:218:1: entryRuleCommRepoImport : ruleCommRepoImport EOF ;
     public final void entryRuleCommRepoImport() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:270:1: ( ruleCommRepoImport EOF )
-            // InternalServiceDefinition.g:271:1: ruleCommRepoImport EOF
+            // InternalServiceDefinition.g:219:1: ( ruleCommRepoImport EOF )
+            // InternalServiceDefinition.g:220:1: ruleCommRepoImport EOF
             {
              before(grammarAccess.getCommRepoImportRule()); 
             pushFollow(FOLLOW_1);
@@ -664,21 +599,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleCommRepoImport"
-    // InternalServiceDefinition.g:278:1: ruleCommRepoImport : ( ( rule__CommRepoImport__Group__0 ) ) ;
+    // InternalServiceDefinition.g:227:1: ruleCommRepoImport : ( ( rule__CommRepoImport__Group__0 ) ) ;
     public final void ruleCommRepoImport() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:282:2: ( ( ( rule__CommRepoImport__Group__0 ) ) )
-            // InternalServiceDefinition.g:283:2: ( ( rule__CommRepoImport__Group__0 ) )
+            // InternalServiceDefinition.g:231:2: ( ( ( rule__CommRepoImport__Group__0 ) ) )
+            // InternalServiceDefinition.g:232:2: ( ( rule__CommRepoImport__Group__0 ) )
             {
-            // InternalServiceDefinition.g:283:2: ( ( rule__CommRepoImport__Group__0 ) )
-            // InternalServiceDefinition.g:284:3: ( rule__CommRepoImport__Group__0 )
+            // InternalServiceDefinition.g:232:2: ( ( rule__CommRepoImport__Group__0 ) )
+            // InternalServiceDefinition.g:233:3: ( rule__CommRepoImport__Group__0 )
             {
              before(grammarAccess.getCommRepoImportAccess().getGroup()); 
-            // InternalServiceDefinition.g:285:3: ( rule__CommRepoImport__Group__0 )
-            // InternalServiceDefinition.g:285:4: rule__CommRepoImport__Group__0
+            // InternalServiceDefinition.g:234:3: ( rule__CommRepoImport__Group__0 )
+            // InternalServiceDefinition.g:234:4: rule__CommRepoImport__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__CommRepoImport__Group__0();
@@ -711,11 +646,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleAbstractServiceDefinition"
-    // InternalServiceDefinition.g:294:1: entryRuleAbstractServiceDefinition : ruleAbstractServiceDefinition EOF ;
+    // InternalServiceDefinition.g:243:1: entryRuleAbstractServiceDefinition : ruleAbstractServiceDefinition EOF ;
     public final void entryRuleAbstractServiceDefinition() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:295:1: ( ruleAbstractServiceDefinition EOF )
-            // InternalServiceDefinition.g:296:1: ruleAbstractServiceDefinition EOF
+            // InternalServiceDefinition.g:244:1: ( ruleAbstractServiceDefinition EOF )
+            // InternalServiceDefinition.g:245:1: ruleAbstractServiceDefinition EOF
             {
              before(grammarAccess.getAbstractServiceDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -741,21 +676,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleAbstractServiceDefinition"
-    // InternalServiceDefinition.g:303:1: ruleAbstractServiceDefinition : ( ( rule__AbstractServiceDefinition__Alternatives ) ) ;
+    // InternalServiceDefinition.g:252:1: ruleAbstractServiceDefinition : ( ( rule__AbstractServiceDefinition__Alternatives ) ) ;
     public final void ruleAbstractServiceDefinition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:307:2: ( ( ( rule__AbstractServiceDefinition__Alternatives ) ) )
-            // InternalServiceDefinition.g:308:2: ( ( rule__AbstractServiceDefinition__Alternatives ) )
+            // InternalServiceDefinition.g:256:2: ( ( ( rule__AbstractServiceDefinition__Alternatives ) ) )
+            // InternalServiceDefinition.g:257:2: ( ( rule__AbstractServiceDefinition__Alternatives ) )
             {
-            // InternalServiceDefinition.g:308:2: ( ( rule__AbstractServiceDefinition__Alternatives ) )
-            // InternalServiceDefinition.g:309:3: ( rule__AbstractServiceDefinition__Alternatives )
+            // InternalServiceDefinition.g:257:2: ( ( rule__AbstractServiceDefinition__Alternatives ) )
+            // InternalServiceDefinition.g:258:3: ( rule__AbstractServiceDefinition__Alternatives )
             {
              before(grammarAccess.getAbstractServiceDefinitionAccess().getAlternatives()); 
-            // InternalServiceDefinition.g:310:3: ( rule__AbstractServiceDefinition__Alternatives )
-            // InternalServiceDefinition.g:310:4: rule__AbstractServiceDefinition__Alternatives
+            // InternalServiceDefinition.g:259:3: ( rule__AbstractServiceDefinition__Alternatives )
+            // InternalServiceDefinition.g:259:4: rule__AbstractServiceDefinition__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__AbstractServiceDefinition__Alternatives();
@@ -788,11 +723,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleCommunicationServiceDefinition"
-    // InternalServiceDefinition.g:319:1: entryRuleCommunicationServiceDefinition : ruleCommunicationServiceDefinition EOF ;
+    // InternalServiceDefinition.g:268:1: entryRuleCommunicationServiceDefinition : ruleCommunicationServiceDefinition EOF ;
     public final void entryRuleCommunicationServiceDefinition() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:320:1: ( ruleCommunicationServiceDefinition EOF )
-            // InternalServiceDefinition.g:321:1: ruleCommunicationServiceDefinition EOF
+            // InternalServiceDefinition.g:269:1: ( ruleCommunicationServiceDefinition EOF )
+            // InternalServiceDefinition.g:270:1: ruleCommunicationServiceDefinition EOF
             {
              before(grammarAccess.getCommunicationServiceDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -818,21 +753,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleCommunicationServiceDefinition"
-    // InternalServiceDefinition.g:328:1: ruleCommunicationServiceDefinition : ( ( rule__CommunicationServiceDefinition__Alternatives ) ) ;
+    // InternalServiceDefinition.g:277:1: ruleCommunicationServiceDefinition : ( ( rule__CommunicationServiceDefinition__Alternatives ) ) ;
     public final void ruleCommunicationServiceDefinition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:332:2: ( ( ( rule__CommunicationServiceDefinition__Alternatives ) ) )
-            // InternalServiceDefinition.g:333:2: ( ( rule__CommunicationServiceDefinition__Alternatives ) )
+            // InternalServiceDefinition.g:281:2: ( ( ( rule__CommunicationServiceDefinition__Alternatives ) ) )
+            // InternalServiceDefinition.g:282:2: ( ( rule__CommunicationServiceDefinition__Alternatives ) )
             {
-            // InternalServiceDefinition.g:333:2: ( ( rule__CommunicationServiceDefinition__Alternatives ) )
-            // InternalServiceDefinition.g:334:3: ( rule__CommunicationServiceDefinition__Alternatives )
+            // InternalServiceDefinition.g:282:2: ( ( rule__CommunicationServiceDefinition__Alternatives ) )
+            // InternalServiceDefinition.g:283:3: ( rule__CommunicationServiceDefinition__Alternatives )
             {
              before(grammarAccess.getCommunicationServiceDefinitionAccess().getAlternatives()); 
-            // InternalServiceDefinition.g:335:3: ( rule__CommunicationServiceDefinition__Alternatives )
-            // InternalServiceDefinition.g:335:4: rule__CommunicationServiceDefinition__Alternatives
+            // InternalServiceDefinition.g:284:3: ( rule__CommunicationServiceDefinition__Alternatives )
+            // InternalServiceDefinition.g:284:4: rule__CommunicationServiceDefinition__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__CommunicationServiceDefinition__Alternatives();
@@ -865,11 +800,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleForkingServiceDefinition"
-    // InternalServiceDefinition.g:344:1: entryRuleForkingServiceDefinition : ruleForkingServiceDefinition EOF ;
+    // InternalServiceDefinition.g:293:1: entryRuleForkingServiceDefinition : ruleForkingServiceDefinition EOF ;
     public final void entryRuleForkingServiceDefinition() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:345:1: ( ruleForkingServiceDefinition EOF )
-            // InternalServiceDefinition.g:346:1: ruleForkingServiceDefinition EOF
+            // InternalServiceDefinition.g:294:1: ( ruleForkingServiceDefinition EOF )
+            // InternalServiceDefinition.g:295:1: ruleForkingServiceDefinition EOF
             {
              before(grammarAccess.getForkingServiceDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -895,21 +830,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleForkingServiceDefinition"
-    // InternalServiceDefinition.g:353:1: ruleForkingServiceDefinition : ( ( rule__ForkingServiceDefinition__Group__0 ) ) ;
+    // InternalServiceDefinition.g:302:1: ruleForkingServiceDefinition : ( ( rule__ForkingServiceDefinition__Group__0 ) ) ;
     public final void ruleForkingServiceDefinition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:357:2: ( ( ( rule__ForkingServiceDefinition__Group__0 ) ) )
-            // InternalServiceDefinition.g:358:2: ( ( rule__ForkingServiceDefinition__Group__0 ) )
+            // InternalServiceDefinition.g:306:2: ( ( ( rule__ForkingServiceDefinition__Group__0 ) ) )
+            // InternalServiceDefinition.g:307:2: ( ( rule__ForkingServiceDefinition__Group__0 ) )
             {
-            // InternalServiceDefinition.g:358:2: ( ( rule__ForkingServiceDefinition__Group__0 ) )
-            // InternalServiceDefinition.g:359:3: ( rule__ForkingServiceDefinition__Group__0 )
+            // InternalServiceDefinition.g:307:2: ( ( rule__ForkingServiceDefinition__Group__0 ) )
+            // InternalServiceDefinition.g:308:3: ( rule__ForkingServiceDefinition__Group__0 )
             {
              before(grammarAccess.getForkingServiceDefinitionAccess().getGroup()); 
-            // InternalServiceDefinition.g:360:3: ( rule__ForkingServiceDefinition__Group__0 )
-            // InternalServiceDefinition.g:360:4: rule__ForkingServiceDefinition__Group__0
+            // InternalServiceDefinition.g:309:3: ( rule__ForkingServiceDefinition__Group__0 )
+            // InternalServiceDefinition.g:309:4: rule__ForkingServiceDefinition__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ForkingServiceDefinition__Group__0();
@@ -942,11 +877,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleJoyningServiceDefinition"
-    // InternalServiceDefinition.g:369:1: entryRuleJoyningServiceDefinition : ruleJoyningServiceDefinition EOF ;
+    // InternalServiceDefinition.g:318:1: entryRuleJoyningServiceDefinition : ruleJoyningServiceDefinition EOF ;
     public final void entryRuleJoyningServiceDefinition() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:370:1: ( ruleJoyningServiceDefinition EOF )
-            // InternalServiceDefinition.g:371:1: ruleJoyningServiceDefinition EOF
+            // InternalServiceDefinition.g:319:1: ( ruleJoyningServiceDefinition EOF )
+            // InternalServiceDefinition.g:320:1: ruleJoyningServiceDefinition EOF
             {
              before(grammarAccess.getJoyningServiceDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -972,21 +907,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleJoyningServiceDefinition"
-    // InternalServiceDefinition.g:378:1: ruleJoyningServiceDefinition : ( ( rule__JoyningServiceDefinition__Group__0 ) ) ;
+    // InternalServiceDefinition.g:327:1: ruleJoyningServiceDefinition : ( ( rule__JoyningServiceDefinition__Group__0 ) ) ;
     public final void ruleJoyningServiceDefinition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:382:2: ( ( ( rule__JoyningServiceDefinition__Group__0 ) ) )
-            // InternalServiceDefinition.g:383:2: ( ( rule__JoyningServiceDefinition__Group__0 ) )
+            // InternalServiceDefinition.g:331:2: ( ( ( rule__JoyningServiceDefinition__Group__0 ) ) )
+            // InternalServiceDefinition.g:332:2: ( ( rule__JoyningServiceDefinition__Group__0 ) )
             {
-            // InternalServiceDefinition.g:383:2: ( ( rule__JoyningServiceDefinition__Group__0 ) )
-            // InternalServiceDefinition.g:384:3: ( rule__JoyningServiceDefinition__Group__0 )
+            // InternalServiceDefinition.g:332:2: ( ( rule__JoyningServiceDefinition__Group__0 ) )
+            // InternalServiceDefinition.g:333:3: ( rule__JoyningServiceDefinition__Group__0 )
             {
              before(grammarAccess.getJoyningServiceDefinitionAccess().getGroup()); 
-            // InternalServiceDefinition.g:385:3: ( rule__JoyningServiceDefinition__Group__0 )
-            // InternalServiceDefinition.g:385:4: rule__JoyningServiceDefinition__Group__0
+            // InternalServiceDefinition.g:334:3: ( rule__JoyningServiceDefinition__Group__0 )
+            // InternalServiceDefinition.g:334:4: rule__JoyningServiceDefinition__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__JoyningServiceDefinition__Group__0();
@@ -1019,11 +954,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleRequestAnswerServiceDefinition"
-    // InternalServiceDefinition.g:394:1: entryRuleRequestAnswerServiceDefinition : ruleRequestAnswerServiceDefinition EOF ;
+    // InternalServiceDefinition.g:343:1: entryRuleRequestAnswerServiceDefinition : ruleRequestAnswerServiceDefinition EOF ;
     public final void entryRuleRequestAnswerServiceDefinition() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:395:1: ( ruleRequestAnswerServiceDefinition EOF )
-            // InternalServiceDefinition.g:396:1: ruleRequestAnswerServiceDefinition EOF
+            // InternalServiceDefinition.g:344:1: ( ruleRequestAnswerServiceDefinition EOF )
+            // InternalServiceDefinition.g:345:1: ruleRequestAnswerServiceDefinition EOF
             {
              before(grammarAccess.getRequestAnswerServiceDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -1049,21 +984,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleRequestAnswerServiceDefinition"
-    // InternalServiceDefinition.g:403:1: ruleRequestAnswerServiceDefinition : ( ( rule__RequestAnswerServiceDefinition__Group__0 ) ) ;
+    // InternalServiceDefinition.g:352:1: ruleRequestAnswerServiceDefinition : ( ( rule__RequestAnswerServiceDefinition__Group__0 ) ) ;
     public final void ruleRequestAnswerServiceDefinition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:407:2: ( ( ( rule__RequestAnswerServiceDefinition__Group__0 ) ) )
-            // InternalServiceDefinition.g:408:2: ( ( rule__RequestAnswerServiceDefinition__Group__0 ) )
+            // InternalServiceDefinition.g:356:2: ( ( ( rule__RequestAnswerServiceDefinition__Group__0 ) ) )
+            // InternalServiceDefinition.g:357:2: ( ( rule__RequestAnswerServiceDefinition__Group__0 ) )
             {
-            // InternalServiceDefinition.g:408:2: ( ( rule__RequestAnswerServiceDefinition__Group__0 ) )
-            // InternalServiceDefinition.g:409:3: ( rule__RequestAnswerServiceDefinition__Group__0 )
+            // InternalServiceDefinition.g:357:2: ( ( rule__RequestAnswerServiceDefinition__Group__0 ) )
+            // InternalServiceDefinition.g:358:3: ( rule__RequestAnswerServiceDefinition__Group__0 )
             {
              before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getGroup()); 
-            // InternalServiceDefinition.g:410:3: ( rule__RequestAnswerServiceDefinition__Group__0 )
-            // InternalServiceDefinition.g:410:4: rule__RequestAnswerServiceDefinition__Group__0
+            // InternalServiceDefinition.g:359:3: ( rule__RequestAnswerServiceDefinition__Group__0 )
+            // InternalServiceDefinition.g:359:4: rule__RequestAnswerServiceDefinition__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__RequestAnswerServiceDefinition__Group__0();
@@ -1096,11 +1031,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleCoordinationServiceDefinition"
-    // InternalServiceDefinition.g:419:1: entryRuleCoordinationServiceDefinition : ruleCoordinationServiceDefinition EOF ;
+    // InternalServiceDefinition.g:368:1: entryRuleCoordinationServiceDefinition : ruleCoordinationServiceDefinition EOF ;
     public final void entryRuleCoordinationServiceDefinition() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:420:1: ( ruleCoordinationServiceDefinition EOF )
-            // InternalServiceDefinition.g:421:1: ruleCoordinationServiceDefinition EOF
+            // InternalServiceDefinition.g:369:1: ( ruleCoordinationServiceDefinition EOF )
+            // InternalServiceDefinition.g:370:1: ruleCoordinationServiceDefinition EOF
             {
              before(grammarAccess.getCoordinationServiceDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -1126,21 +1061,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleCoordinationServiceDefinition"
-    // InternalServiceDefinition.g:428:1: ruleCoordinationServiceDefinition : ( ( rule__CoordinationServiceDefinition__Group__0 ) ) ;
+    // InternalServiceDefinition.g:377:1: ruleCoordinationServiceDefinition : ( ( rule__CoordinationServiceDefinition__Group__0 ) ) ;
     public final void ruleCoordinationServiceDefinition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:432:2: ( ( ( rule__CoordinationServiceDefinition__Group__0 ) ) )
-            // InternalServiceDefinition.g:433:2: ( ( rule__CoordinationServiceDefinition__Group__0 ) )
+            // InternalServiceDefinition.g:381:2: ( ( ( rule__CoordinationServiceDefinition__Group__0 ) ) )
+            // InternalServiceDefinition.g:382:2: ( ( rule__CoordinationServiceDefinition__Group__0 ) )
             {
-            // InternalServiceDefinition.g:433:2: ( ( rule__CoordinationServiceDefinition__Group__0 ) )
-            // InternalServiceDefinition.g:434:3: ( rule__CoordinationServiceDefinition__Group__0 )
+            // InternalServiceDefinition.g:382:2: ( ( rule__CoordinationServiceDefinition__Group__0 ) )
+            // InternalServiceDefinition.g:383:3: ( rule__CoordinationServiceDefinition__Group__0 )
             {
              before(grammarAccess.getCoordinationServiceDefinitionAccess().getGroup()); 
-            // InternalServiceDefinition.g:435:3: ( rule__CoordinationServiceDefinition__Group__0 )
-            // InternalServiceDefinition.g:435:4: rule__CoordinationServiceDefinition__Group__0
+            // InternalServiceDefinition.g:384:3: ( rule__CoordinationServiceDefinition__Group__0 )
+            // InternalServiceDefinition.g:384:4: rule__CoordinationServiceDefinition__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__CoordinationServiceDefinition__Group__0();
@@ -1173,11 +1108,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleCommunicationServiceUsage"
-    // InternalServiceDefinition.g:444:1: entryRuleCommunicationServiceUsage : ruleCommunicationServiceUsage EOF ;
+    // InternalServiceDefinition.g:393:1: entryRuleCommunicationServiceUsage : ruleCommunicationServiceUsage EOF ;
     public final void entryRuleCommunicationServiceUsage() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:445:1: ( ruleCommunicationServiceUsage EOF )
-            // InternalServiceDefinition.g:446:1: ruleCommunicationServiceUsage EOF
+            // InternalServiceDefinition.g:394:1: ( ruleCommunicationServiceUsage EOF )
+            // InternalServiceDefinition.g:395:1: ruleCommunicationServiceUsage EOF
             {
              before(grammarAccess.getCommunicationServiceUsageRule()); 
             pushFollow(FOLLOW_1);
@@ -1203,21 +1138,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleCommunicationServiceUsage"
-    // InternalServiceDefinition.g:453:1: ruleCommunicationServiceUsage : ( ( rule__CommunicationServiceUsage__Group__0 ) ) ;
+    // InternalServiceDefinition.g:402:1: ruleCommunicationServiceUsage : ( ( rule__CommunicationServiceUsage__Group__0 ) ) ;
     public final void ruleCommunicationServiceUsage() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:457:2: ( ( ( rule__CommunicationServiceUsage__Group__0 ) ) )
-            // InternalServiceDefinition.g:458:2: ( ( rule__CommunicationServiceUsage__Group__0 ) )
+            // InternalServiceDefinition.g:406:2: ( ( ( rule__CommunicationServiceUsage__Group__0 ) ) )
+            // InternalServiceDefinition.g:407:2: ( ( rule__CommunicationServiceUsage__Group__0 ) )
             {
-            // InternalServiceDefinition.g:458:2: ( ( rule__CommunicationServiceUsage__Group__0 ) )
-            // InternalServiceDefinition.g:459:3: ( rule__CommunicationServiceUsage__Group__0 )
+            // InternalServiceDefinition.g:407:2: ( ( rule__CommunicationServiceUsage__Group__0 ) )
+            // InternalServiceDefinition.g:408:3: ( rule__CommunicationServiceUsage__Group__0 )
             {
              before(grammarAccess.getCommunicationServiceUsageAccess().getGroup()); 
-            // InternalServiceDefinition.g:460:3: ( rule__CommunicationServiceUsage__Group__0 )
-            // InternalServiceDefinition.g:460:4: rule__CommunicationServiceUsage__Group__0
+            // InternalServiceDefinition.g:409:3: ( rule__CommunicationServiceUsage__Group__0 )
+            // InternalServiceDefinition.g:409:4: rule__CommunicationServiceUsage__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__CommunicationServiceUsage__Group__0();
@@ -1250,11 +1185,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleStatePattern"
-    // InternalServiceDefinition.g:469:1: entryRuleStatePattern : ruleStatePattern EOF ;
+    // InternalServiceDefinition.g:418:1: entryRuleStatePattern : ruleStatePattern EOF ;
     public final void entryRuleStatePattern() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:470:1: ( ruleStatePattern EOF )
-            // InternalServiceDefinition.g:471:1: ruleStatePattern EOF
+            // InternalServiceDefinition.g:419:1: ( ruleStatePattern EOF )
+            // InternalServiceDefinition.g:420:1: ruleStatePattern EOF
             {
              before(grammarAccess.getStatePatternRule()); 
             pushFollow(FOLLOW_1);
@@ -1280,21 +1215,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleStatePattern"
-    // InternalServiceDefinition.g:478:1: ruleStatePattern : ( ( rule__StatePattern__Group__0 ) ) ;
+    // InternalServiceDefinition.g:427:1: ruleStatePattern : ( ( rule__StatePattern__Group__0 ) ) ;
     public final void ruleStatePattern() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:482:2: ( ( ( rule__StatePattern__Group__0 ) ) )
-            // InternalServiceDefinition.g:483:2: ( ( rule__StatePattern__Group__0 ) )
+            // InternalServiceDefinition.g:431:2: ( ( ( rule__StatePattern__Group__0 ) ) )
+            // InternalServiceDefinition.g:432:2: ( ( rule__StatePattern__Group__0 ) )
             {
-            // InternalServiceDefinition.g:483:2: ( ( rule__StatePattern__Group__0 ) )
-            // InternalServiceDefinition.g:484:3: ( rule__StatePattern__Group__0 )
+            // InternalServiceDefinition.g:432:2: ( ( rule__StatePattern__Group__0 ) )
+            // InternalServiceDefinition.g:433:3: ( rule__StatePattern__Group__0 )
             {
              before(grammarAccess.getStatePatternAccess().getGroup()); 
-            // InternalServiceDefinition.g:485:3: ( rule__StatePattern__Group__0 )
-            // InternalServiceDefinition.g:485:4: rule__StatePattern__Group__0
+            // InternalServiceDefinition.g:434:3: ( rule__StatePattern__Group__0 )
+            // InternalServiceDefinition.g:434:4: rule__StatePattern__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__StatePattern__Group__0();
@@ -1327,11 +1262,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleParameterPattern"
-    // InternalServiceDefinition.g:494:1: entryRuleParameterPattern : ruleParameterPattern EOF ;
+    // InternalServiceDefinition.g:443:1: entryRuleParameterPattern : ruleParameterPattern EOF ;
     public final void entryRuleParameterPattern() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:495:1: ( ruleParameterPattern EOF )
-            // InternalServiceDefinition.g:496:1: ruleParameterPattern EOF
+            // InternalServiceDefinition.g:444:1: ( ruleParameterPattern EOF )
+            // InternalServiceDefinition.g:445:1: ruleParameterPattern EOF
             {
              before(grammarAccess.getParameterPatternRule()); 
             pushFollow(FOLLOW_1);
@@ -1357,21 +1292,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleParameterPattern"
-    // InternalServiceDefinition.g:503:1: ruleParameterPattern : ( ( rule__ParameterPattern__Group__0 ) ) ;
+    // InternalServiceDefinition.g:452:1: ruleParameterPattern : ( ( rule__ParameterPattern__Group__0 ) ) ;
     public final void ruleParameterPattern() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:507:2: ( ( ( rule__ParameterPattern__Group__0 ) ) )
-            // InternalServiceDefinition.g:508:2: ( ( rule__ParameterPattern__Group__0 ) )
+            // InternalServiceDefinition.g:456:2: ( ( ( rule__ParameterPattern__Group__0 ) ) )
+            // InternalServiceDefinition.g:457:2: ( ( rule__ParameterPattern__Group__0 ) )
             {
-            // InternalServiceDefinition.g:508:2: ( ( rule__ParameterPattern__Group__0 ) )
-            // InternalServiceDefinition.g:509:3: ( rule__ParameterPattern__Group__0 )
+            // InternalServiceDefinition.g:457:2: ( ( rule__ParameterPattern__Group__0 ) )
+            // InternalServiceDefinition.g:458:3: ( rule__ParameterPattern__Group__0 )
             {
              before(grammarAccess.getParameterPatternAccess().getGroup()); 
-            // InternalServiceDefinition.g:510:3: ( rule__ParameterPattern__Group__0 )
-            // InternalServiceDefinition.g:510:4: rule__ParameterPattern__Group__0
+            // InternalServiceDefinition.g:459:3: ( rule__ParameterPattern__Group__0 )
+            // InternalServiceDefinition.g:459:4: rule__ParameterPattern__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ParameterPattern__Group__0();
@@ -1404,11 +1339,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleDynamicWiringPattern"
-    // InternalServiceDefinition.g:519:1: entryRuleDynamicWiringPattern : ruleDynamicWiringPattern EOF ;
+    // InternalServiceDefinition.g:468:1: entryRuleDynamicWiringPattern : ruleDynamicWiringPattern EOF ;
     public final void entryRuleDynamicWiringPattern() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:520:1: ( ruleDynamicWiringPattern EOF )
-            // InternalServiceDefinition.g:521:1: ruleDynamicWiringPattern EOF
+            // InternalServiceDefinition.g:469:1: ( ruleDynamicWiringPattern EOF )
+            // InternalServiceDefinition.g:470:1: ruleDynamicWiringPattern EOF
             {
              before(grammarAccess.getDynamicWiringPatternRule()); 
             pushFollow(FOLLOW_1);
@@ -1434,21 +1369,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleDynamicWiringPattern"
-    // InternalServiceDefinition.g:528:1: ruleDynamicWiringPattern : ( ( rule__DynamicWiringPattern__Group__0 ) ) ;
+    // InternalServiceDefinition.g:477:1: ruleDynamicWiringPattern : ( ( rule__DynamicWiringPattern__Group__0 ) ) ;
     public final void ruleDynamicWiringPattern() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:532:2: ( ( ( rule__DynamicWiringPattern__Group__0 ) ) )
-            // InternalServiceDefinition.g:533:2: ( ( rule__DynamicWiringPattern__Group__0 ) )
+            // InternalServiceDefinition.g:481:2: ( ( ( rule__DynamicWiringPattern__Group__0 ) ) )
+            // InternalServiceDefinition.g:482:2: ( ( rule__DynamicWiringPattern__Group__0 ) )
             {
-            // InternalServiceDefinition.g:533:2: ( ( rule__DynamicWiringPattern__Group__0 ) )
-            // InternalServiceDefinition.g:534:3: ( rule__DynamicWiringPattern__Group__0 )
+            // InternalServiceDefinition.g:482:2: ( ( rule__DynamicWiringPattern__Group__0 ) )
+            // InternalServiceDefinition.g:483:3: ( rule__DynamicWiringPattern__Group__0 )
             {
              before(grammarAccess.getDynamicWiringPatternAccess().getGroup()); 
-            // InternalServiceDefinition.g:535:3: ( rule__DynamicWiringPattern__Group__0 )
-            // InternalServiceDefinition.g:535:4: rule__DynamicWiringPattern__Group__0
+            // InternalServiceDefinition.g:484:3: ( rule__DynamicWiringPattern__Group__0 )
+            // InternalServiceDefinition.g:484:4: rule__DynamicWiringPattern__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__DynamicWiringPattern__Group__0();
@@ -1481,11 +1416,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleMonitoringPattern"
-    // InternalServiceDefinition.g:544:1: entryRuleMonitoringPattern : ruleMonitoringPattern EOF ;
+    // InternalServiceDefinition.g:493:1: entryRuleMonitoringPattern : ruleMonitoringPattern EOF ;
     public final void entryRuleMonitoringPattern() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:545:1: ( ruleMonitoringPattern EOF )
-            // InternalServiceDefinition.g:546:1: ruleMonitoringPattern EOF
+            // InternalServiceDefinition.g:494:1: ( ruleMonitoringPattern EOF )
+            // InternalServiceDefinition.g:495:1: ruleMonitoringPattern EOF
             {
              before(grammarAccess.getMonitoringPatternRule()); 
             pushFollow(FOLLOW_1);
@@ -1511,21 +1446,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleMonitoringPattern"
-    // InternalServiceDefinition.g:553:1: ruleMonitoringPattern : ( ( rule__MonitoringPattern__Group__0 ) ) ;
+    // InternalServiceDefinition.g:502:1: ruleMonitoringPattern : ( ( rule__MonitoringPattern__Group__0 ) ) ;
     public final void ruleMonitoringPattern() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:557:2: ( ( ( rule__MonitoringPattern__Group__0 ) ) )
-            // InternalServiceDefinition.g:558:2: ( ( rule__MonitoringPattern__Group__0 ) )
+            // InternalServiceDefinition.g:506:2: ( ( ( rule__MonitoringPattern__Group__0 ) ) )
+            // InternalServiceDefinition.g:507:2: ( ( rule__MonitoringPattern__Group__0 ) )
             {
-            // InternalServiceDefinition.g:558:2: ( ( rule__MonitoringPattern__Group__0 ) )
-            // InternalServiceDefinition.g:559:3: ( rule__MonitoringPattern__Group__0 )
+            // InternalServiceDefinition.g:507:2: ( ( rule__MonitoringPattern__Group__0 ) )
+            // InternalServiceDefinition.g:508:3: ( rule__MonitoringPattern__Group__0 )
             {
              before(grammarAccess.getMonitoringPatternAccess().getGroup()); 
-            // InternalServiceDefinition.g:560:3: ( rule__MonitoringPattern__Group__0 )
-            // InternalServiceDefinition.g:560:4: rule__MonitoringPattern__Group__0
+            // InternalServiceDefinition.g:509:3: ( rule__MonitoringPattern__Group__0 )
+            // InternalServiceDefinition.g:509:4: rule__MonitoringPattern__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__MonitoringPattern__Group__0();
@@ -1558,11 +1493,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleForkingPatternInstance"
-    // InternalServiceDefinition.g:569:1: entryRuleForkingPatternInstance : ruleForkingPatternInstance EOF ;
+    // InternalServiceDefinition.g:518:1: entryRuleForkingPatternInstance : ruleForkingPatternInstance EOF ;
     public final void entryRuleForkingPatternInstance() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:570:1: ( ruleForkingPatternInstance EOF )
-            // InternalServiceDefinition.g:571:1: ruleForkingPatternInstance EOF
+            // InternalServiceDefinition.g:519:1: ( ruleForkingPatternInstance EOF )
+            // InternalServiceDefinition.g:520:1: ruleForkingPatternInstance EOF
             {
              before(grammarAccess.getForkingPatternInstanceRule()); 
             pushFollow(FOLLOW_1);
@@ -1588,21 +1523,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleForkingPatternInstance"
-    // InternalServiceDefinition.g:578:1: ruleForkingPatternInstance : ( ( rule__ForkingPatternInstance__Alternatives ) ) ;
+    // InternalServiceDefinition.g:527:1: ruleForkingPatternInstance : ( ( rule__ForkingPatternInstance__Alternatives ) ) ;
     public final void ruleForkingPatternInstance() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:582:2: ( ( ( rule__ForkingPatternInstance__Alternatives ) ) )
-            // InternalServiceDefinition.g:583:2: ( ( rule__ForkingPatternInstance__Alternatives ) )
+            // InternalServiceDefinition.g:531:2: ( ( ( rule__ForkingPatternInstance__Alternatives ) ) )
+            // InternalServiceDefinition.g:532:2: ( ( rule__ForkingPatternInstance__Alternatives ) )
             {
-            // InternalServiceDefinition.g:583:2: ( ( rule__ForkingPatternInstance__Alternatives ) )
-            // InternalServiceDefinition.g:584:3: ( rule__ForkingPatternInstance__Alternatives )
+            // InternalServiceDefinition.g:532:2: ( ( rule__ForkingPatternInstance__Alternatives ) )
+            // InternalServiceDefinition.g:533:3: ( rule__ForkingPatternInstance__Alternatives )
             {
              before(grammarAccess.getForkingPatternInstanceAccess().getAlternatives()); 
-            // InternalServiceDefinition.g:585:3: ( rule__ForkingPatternInstance__Alternatives )
-            // InternalServiceDefinition.g:585:4: rule__ForkingPatternInstance__Alternatives
+            // InternalServiceDefinition.g:534:3: ( rule__ForkingPatternInstance__Alternatives )
+            // InternalServiceDefinition.g:534:4: rule__ForkingPatternInstance__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__ForkingPatternInstance__Alternatives();
@@ -1635,11 +1570,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleJoiningPatternInstance"
-    // InternalServiceDefinition.g:594:1: entryRuleJoiningPatternInstance : ruleJoiningPatternInstance EOF ;
+    // InternalServiceDefinition.g:543:1: entryRuleJoiningPatternInstance : ruleJoiningPatternInstance EOF ;
     public final void entryRuleJoiningPatternInstance() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:595:1: ( ruleJoiningPatternInstance EOF )
-            // InternalServiceDefinition.g:596:1: ruleJoiningPatternInstance EOF
+            // InternalServiceDefinition.g:544:1: ( ruleJoiningPatternInstance EOF )
+            // InternalServiceDefinition.g:545:1: ruleJoiningPatternInstance EOF
             {
              before(grammarAccess.getJoiningPatternInstanceRule()); 
             pushFollow(FOLLOW_1);
@@ -1665,17 +1600,17 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleJoiningPatternInstance"
-    // InternalServiceDefinition.g:603:1: ruleJoiningPatternInstance : ( ruleSendPattern ) ;
+    // InternalServiceDefinition.g:552:1: ruleJoiningPatternInstance : ( ruleSendPattern ) ;
     public final void ruleJoiningPatternInstance() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:607:2: ( ( ruleSendPattern ) )
-            // InternalServiceDefinition.g:608:2: ( ruleSendPattern )
+            // InternalServiceDefinition.g:556:2: ( ( ruleSendPattern ) )
+            // InternalServiceDefinition.g:557:2: ( ruleSendPattern )
             {
-            // InternalServiceDefinition.g:608:2: ( ruleSendPattern )
-            // InternalServiceDefinition.g:609:3: ruleSendPattern
+            // InternalServiceDefinition.g:557:2: ( ruleSendPattern )
+            // InternalServiceDefinition.g:558:3: ruleSendPattern
             {
              before(grammarAccess.getJoiningPatternInstanceAccess().getSendPatternParserRuleCall()); 
             pushFollow(FOLLOW_2);
@@ -1706,11 +1641,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleRequestAnswerPattern"
-    // InternalServiceDefinition.g:619:1: entryRuleRequestAnswerPattern : ruleRequestAnswerPattern EOF ;
+    // InternalServiceDefinition.g:568:1: entryRuleRequestAnswerPattern : ruleRequestAnswerPattern EOF ;
     public final void entryRuleRequestAnswerPattern() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:620:1: ( ruleRequestAnswerPattern EOF )
-            // InternalServiceDefinition.g:621:1: ruleRequestAnswerPattern EOF
+            // InternalServiceDefinition.g:569:1: ( ruleRequestAnswerPattern EOF )
+            // InternalServiceDefinition.g:570:1: ruleRequestAnswerPattern EOF
             {
              before(grammarAccess.getRequestAnswerPatternRule()); 
             pushFollow(FOLLOW_1);
@@ -1736,17 +1671,17 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleRequestAnswerPattern"
-    // InternalServiceDefinition.g:628:1: ruleRequestAnswerPattern : ( ruleQueryPattern ) ;
+    // InternalServiceDefinition.g:577:1: ruleRequestAnswerPattern : ( ruleQueryPattern ) ;
     public final void ruleRequestAnswerPattern() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:632:2: ( ( ruleQueryPattern ) )
-            // InternalServiceDefinition.g:633:2: ( ruleQueryPattern )
+            // InternalServiceDefinition.g:581:2: ( ( ruleQueryPattern ) )
+            // InternalServiceDefinition.g:582:2: ( ruleQueryPattern )
             {
-            // InternalServiceDefinition.g:633:2: ( ruleQueryPattern )
-            // InternalServiceDefinition.g:634:3: ruleQueryPattern
+            // InternalServiceDefinition.g:582:2: ( ruleQueryPattern )
+            // InternalServiceDefinition.g:583:3: ruleQueryPattern
             {
              before(grammarAccess.getRequestAnswerPatternAccess().getQueryPatternParserRuleCall()); 
             pushFollow(FOLLOW_2);
@@ -1777,11 +1712,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRulePushPattern"
-    // InternalServiceDefinition.g:644:1: entryRulePushPattern : rulePushPattern EOF ;
+    // InternalServiceDefinition.g:593:1: entryRulePushPattern : rulePushPattern EOF ;
     public final void entryRulePushPattern() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:645:1: ( rulePushPattern EOF )
-            // InternalServiceDefinition.g:646:1: rulePushPattern EOF
+            // InternalServiceDefinition.g:594:1: ( rulePushPattern EOF )
+            // InternalServiceDefinition.g:595:1: rulePushPattern EOF
             {
              before(grammarAccess.getPushPatternRule()); 
             pushFollow(FOLLOW_1);
@@ -1807,21 +1742,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rulePushPattern"
-    // InternalServiceDefinition.g:653:1: rulePushPattern : ( ( rule__PushPattern__Group__0 ) ) ;
+    // InternalServiceDefinition.g:602:1: rulePushPattern : ( ( rule__PushPattern__Group__0 ) ) ;
     public final void rulePushPattern() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:657:2: ( ( ( rule__PushPattern__Group__0 ) ) )
-            // InternalServiceDefinition.g:658:2: ( ( rule__PushPattern__Group__0 ) )
+            // InternalServiceDefinition.g:606:2: ( ( ( rule__PushPattern__Group__0 ) ) )
+            // InternalServiceDefinition.g:607:2: ( ( rule__PushPattern__Group__0 ) )
             {
-            // InternalServiceDefinition.g:658:2: ( ( rule__PushPattern__Group__0 ) )
-            // InternalServiceDefinition.g:659:3: ( rule__PushPattern__Group__0 )
+            // InternalServiceDefinition.g:607:2: ( ( rule__PushPattern__Group__0 ) )
+            // InternalServiceDefinition.g:608:3: ( rule__PushPattern__Group__0 )
             {
              before(grammarAccess.getPushPatternAccess().getGroup()); 
-            // InternalServiceDefinition.g:660:3: ( rule__PushPattern__Group__0 )
-            // InternalServiceDefinition.g:660:4: rule__PushPattern__Group__0
+            // InternalServiceDefinition.g:609:3: ( rule__PushPattern__Group__0 )
+            // InternalServiceDefinition.g:609:4: rule__PushPattern__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__PushPattern__Group__0();
@@ -1854,11 +1789,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleEventPattern"
-    // InternalServiceDefinition.g:669:1: entryRuleEventPattern : ruleEventPattern EOF ;
+    // InternalServiceDefinition.g:618:1: entryRuleEventPattern : ruleEventPattern EOF ;
     public final void entryRuleEventPattern() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:670:1: ( ruleEventPattern EOF )
-            // InternalServiceDefinition.g:671:1: ruleEventPattern EOF
+            // InternalServiceDefinition.g:619:1: ( ruleEventPattern EOF )
+            // InternalServiceDefinition.g:620:1: ruleEventPattern EOF
             {
              before(grammarAccess.getEventPatternRule()); 
             pushFollow(FOLLOW_1);
@@ -1884,21 +1819,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleEventPattern"
-    // InternalServiceDefinition.g:678:1: ruleEventPattern : ( ( rule__EventPattern__Group__0 ) ) ;
+    // InternalServiceDefinition.g:627:1: ruleEventPattern : ( ( rule__EventPattern__Group__0 ) ) ;
     public final void ruleEventPattern() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:682:2: ( ( ( rule__EventPattern__Group__0 ) ) )
-            // InternalServiceDefinition.g:683:2: ( ( rule__EventPattern__Group__0 ) )
+            // InternalServiceDefinition.g:631:2: ( ( ( rule__EventPattern__Group__0 ) ) )
+            // InternalServiceDefinition.g:632:2: ( ( rule__EventPattern__Group__0 ) )
             {
-            // InternalServiceDefinition.g:683:2: ( ( rule__EventPattern__Group__0 ) )
-            // InternalServiceDefinition.g:684:3: ( rule__EventPattern__Group__0 )
+            // InternalServiceDefinition.g:632:2: ( ( rule__EventPattern__Group__0 ) )
+            // InternalServiceDefinition.g:633:3: ( rule__EventPattern__Group__0 )
             {
              before(grammarAccess.getEventPatternAccess().getGroup()); 
-            // InternalServiceDefinition.g:685:3: ( rule__EventPattern__Group__0 )
-            // InternalServiceDefinition.g:685:4: rule__EventPattern__Group__0
+            // InternalServiceDefinition.g:634:3: ( rule__EventPattern__Group__0 )
+            // InternalServiceDefinition.g:634:4: rule__EventPattern__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__EventPattern__Group__0();
@@ -1931,11 +1866,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleQueryPattern"
-    // InternalServiceDefinition.g:694:1: entryRuleQueryPattern : ruleQueryPattern EOF ;
+    // InternalServiceDefinition.g:643:1: entryRuleQueryPattern : ruleQueryPattern EOF ;
     public final void entryRuleQueryPattern() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:695:1: ( ruleQueryPattern EOF )
-            // InternalServiceDefinition.g:696:1: ruleQueryPattern EOF
+            // InternalServiceDefinition.g:644:1: ( ruleQueryPattern EOF )
+            // InternalServiceDefinition.g:645:1: ruleQueryPattern EOF
             {
              before(grammarAccess.getQueryPatternRule()); 
             pushFollow(FOLLOW_1);
@@ -1961,21 +1896,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleQueryPattern"
-    // InternalServiceDefinition.g:703:1: ruleQueryPattern : ( ( rule__QueryPattern__Group__0 ) ) ;
+    // InternalServiceDefinition.g:652:1: ruleQueryPattern : ( ( rule__QueryPattern__Group__0 ) ) ;
     public final void ruleQueryPattern() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:707:2: ( ( ( rule__QueryPattern__Group__0 ) ) )
-            // InternalServiceDefinition.g:708:2: ( ( rule__QueryPattern__Group__0 ) )
+            // InternalServiceDefinition.g:656:2: ( ( ( rule__QueryPattern__Group__0 ) ) )
+            // InternalServiceDefinition.g:657:2: ( ( rule__QueryPattern__Group__0 ) )
             {
-            // InternalServiceDefinition.g:708:2: ( ( rule__QueryPattern__Group__0 ) )
-            // InternalServiceDefinition.g:709:3: ( rule__QueryPattern__Group__0 )
+            // InternalServiceDefinition.g:657:2: ( ( rule__QueryPattern__Group__0 ) )
+            // InternalServiceDefinition.g:658:3: ( rule__QueryPattern__Group__0 )
             {
              before(grammarAccess.getQueryPatternAccess().getGroup()); 
-            // InternalServiceDefinition.g:710:3: ( rule__QueryPattern__Group__0 )
-            // InternalServiceDefinition.g:710:4: rule__QueryPattern__Group__0
+            // InternalServiceDefinition.g:659:3: ( rule__QueryPattern__Group__0 )
+            // InternalServiceDefinition.g:659:4: rule__QueryPattern__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__QueryPattern__Group__0();
@@ -2008,11 +1943,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleSendPattern"
-    // InternalServiceDefinition.g:719:1: entryRuleSendPattern : ruleSendPattern EOF ;
+    // InternalServiceDefinition.g:668:1: entryRuleSendPattern : ruleSendPattern EOF ;
     public final void entryRuleSendPattern() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:720:1: ( ruleSendPattern EOF )
-            // InternalServiceDefinition.g:721:1: ruleSendPattern EOF
+            // InternalServiceDefinition.g:669:1: ( ruleSendPattern EOF )
+            // InternalServiceDefinition.g:670:1: ruleSendPattern EOF
             {
              before(grammarAccess.getSendPatternRule()); 
             pushFollow(FOLLOW_1);
@@ -2038,21 +1973,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleSendPattern"
-    // InternalServiceDefinition.g:728:1: ruleSendPattern : ( ( rule__SendPattern__Group__0 ) ) ;
+    // InternalServiceDefinition.g:677:1: ruleSendPattern : ( ( rule__SendPattern__Group__0 ) ) ;
     public final void ruleSendPattern() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:732:2: ( ( ( rule__SendPattern__Group__0 ) ) )
-            // InternalServiceDefinition.g:733:2: ( ( rule__SendPattern__Group__0 ) )
+            // InternalServiceDefinition.g:681:2: ( ( ( rule__SendPattern__Group__0 ) ) )
+            // InternalServiceDefinition.g:682:2: ( ( rule__SendPattern__Group__0 ) )
             {
-            // InternalServiceDefinition.g:733:2: ( ( rule__SendPattern__Group__0 ) )
-            // InternalServiceDefinition.g:734:3: ( rule__SendPattern__Group__0 )
+            // InternalServiceDefinition.g:682:2: ( ( rule__SendPattern__Group__0 ) )
+            // InternalServiceDefinition.g:683:3: ( rule__SendPattern__Group__0 )
             {
              before(grammarAccess.getSendPatternAccess().getGroup()); 
-            // InternalServiceDefinition.g:735:3: ( rule__SendPattern__Group__0 )
-            // InternalServiceDefinition.g:735:4: rule__SendPattern__Group__0
+            // InternalServiceDefinition.g:684:3: ( rule__SendPattern__Group__0 )
+            // InternalServiceDefinition.g:684:4: rule__SendPattern__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__SendPattern__Group__0();
@@ -2085,11 +2020,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "entryRuleServiceProperty"
-    // InternalServiceDefinition.g:744:1: entryRuleServiceProperty : ruleServiceProperty EOF ;
+    // InternalServiceDefinition.g:693:1: entryRuleServiceProperty : ruleServiceProperty EOF ;
     public final void entryRuleServiceProperty() throws RecognitionException {
         try {
-            // InternalServiceDefinition.g:745:1: ( ruleServiceProperty EOF )
-            // InternalServiceDefinition.g:746:1: ruleServiceProperty EOF
+            // InternalServiceDefinition.g:694:1: ( ruleServiceProperty EOF )
+            // InternalServiceDefinition.g:695:1: ruleServiceProperty EOF
             {
              before(grammarAccess.getServicePropertyRule()); 
             pushFollow(FOLLOW_1);
@@ -2115,21 +2050,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "ruleServiceProperty"
-    // InternalServiceDefinition.g:753:1: ruleServiceProperty : ( ( rule__ServiceProperty__Group__0 ) ) ;
+    // InternalServiceDefinition.g:702:1: ruleServiceProperty : ( ( rule__ServiceProperty__Group__0 ) ) ;
     public final void ruleServiceProperty() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:757:2: ( ( ( rule__ServiceProperty__Group__0 ) ) )
-            // InternalServiceDefinition.g:758:2: ( ( rule__ServiceProperty__Group__0 ) )
+            // InternalServiceDefinition.g:706:2: ( ( ( rule__ServiceProperty__Group__0 ) ) )
+            // InternalServiceDefinition.g:707:2: ( ( rule__ServiceProperty__Group__0 ) )
             {
-            // InternalServiceDefinition.g:758:2: ( ( rule__ServiceProperty__Group__0 ) )
-            // InternalServiceDefinition.g:759:3: ( rule__ServiceProperty__Group__0 )
+            // InternalServiceDefinition.g:707:2: ( ( rule__ServiceProperty__Group__0 ) )
+            // InternalServiceDefinition.g:708:3: ( rule__ServiceProperty__Group__0 )
             {
              before(grammarAccess.getServicePropertyAccess().getGroup()); 
-            // InternalServiceDefinition.g:760:3: ( rule__ServiceProperty__Group__0 )
-            // InternalServiceDefinition.g:760:4: rule__ServiceProperty__Group__0
+            // InternalServiceDefinition.g:709:3: ( rule__ServiceProperty__Group__0 )
+            // InternalServiceDefinition.g:709:4: rule__ServiceProperty__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ServiceProperty__Group__0();
@@ -2162,34 +2097,58 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__AbstractServiceDefinition__Alternatives"
-    // InternalServiceDefinition.g:768:1: rule__AbstractServiceDefinition__Alternatives : ( ( ruleCommunicationServiceDefinition ) | ( ruleCoordinationServiceDefinition ) );
+    // InternalServiceDefinition.g:717:1: rule__AbstractServiceDefinition__Alternatives : ( ( ruleCommunicationServiceDefinition ) | ( ruleCoordinationServiceDefinition ) );
     public final void rule__AbstractServiceDefinition__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:772:1: ( ( ruleCommunicationServiceDefinition ) | ( ruleCoordinationServiceDefinition ) )
+            // InternalServiceDefinition.g:721:1: ( ( ruleCommunicationServiceDefinition ) | ( ruleCoordinationServiceDefinition ) )
             int alt1=2;
-            int LA1_0 = input.LA(1);
+            switch ( input.LA(1) ) {
+            case RULE_DOCU_COMMENT:
+                {
+                int LA1_1 = input.LA(2);
 
-            if ( (LA1_0==20||(LA1_0>=22 && LA1_0<=23)) ) {
+                if ( ((LA1_1>=23 && LA1_1<=25)) ) {
+                    alt1=1;
+                }
+                else if ( (LA1_1==26) ) {
+                    alt1=2;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 1, 1, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            case 23:
+            case 24:
+            case 25:
+                {
                 alt1=1;
-            }
-            else if ( (LA1_0==24) ) {
+                }
+                break;
+            case 26:
+                {
                 alt1=2;
-            }
-            else {
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 1, 0, input);
 
                 throw nvae;
             }
+
             switch (alt1) {
                 case 1 :
-                    // InternalServiceDefinition.g:773:2: ( ruleCommunicationServiceDefinition )
+                    // InternalServiceDefinition.g:722:2: ( ruleCommunicationServiceDefinition )
                     {
-                    // InternalServiceDefinition.g:773:2: ( ruleCommunicationServiceDefinition )
-                    // InternalServiceDefinition.g:774:3: ruleCommunicationServiceDefinition
+                    // InternalServiceDefinition.g:722:2: ( ruleCommunicationServiceDefinition )
+                    // InternalServiceDefinition.g:723:3: ruleCommunicationServiceDefinition
                     {
                      before(grammarAccess.getAbstractServiceDefinitionAccess().getCommunicationServiceDefinitionParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -2205,10 +2164,10 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
                     }
                     break;
                 case 2 :
-                    // InternalServiceDefinition.g:779:2: ( ruleCoordinationServiceDefinition )
+                    // InternalServiceDefinition.g:728:2: ( ruleCoordinationServiceDefinition )
                     {
-                    // InternalServiceDefinition.g:779:2: ( ruleCoordinationServiceDefinition )
-                    // InternalServiceDefinition.g:780:3: ruleCoordinationServiceDefinition
+                    // InternalServiceDefinition.g:728:2: ( ruleCoordinationServiceDefinition )
+                    // InternalServiceDefinition.g:729:3: ruleCoordinationServiceDefinition
                     {
                      before(grammarAccess.getAbstractServiceDefinitionAccess().getCoordinationServiceDefinitionParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -2241,26 +2200,53 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommunicationServiceDefinition__Alternatives"
-    // InternalServiceDefinition.g:789:1: rule__CommunicationServiceDefinition__Alternatives : ( ( ruleForkingServiceDefinition ) | ( ruleJoyningServiceDefinition ) | ( ruleRequestAnswerServiceDefinition ) );
+    // InternalServiceDefinition.g:738:1: rule__CommunicationServiceDefinition__Alternatives : ( ( ruleForkingServiceDefinition ) | ( ruleJoyningServiceDefinition ) | ( ruleRequestAnswerServiceDefinition ) );
     public final void rule__CommunicationServiceDefinition__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:793:1: ( ( ruleForkingServiceDefinition ) | ( ruleJoyningServiceDefinition ) | ( ruleRequestAnswerServiceDefinition ) )
+            // InternalServiceDefinition.g:742:1: ( ( ruleForkingServiceDefinition ) | ( ruleJoyningServiceDefinition ) | ( ruleRequestAnswerServiceDefinition ) )
             int alt2=3;
             switch ( input.LA(1) ) {
-            case 20:
+            case RULE_DOCU_COMMENT:
+                {
+                switch ( input.LA(2) ) {
+                case 23:
+                    {
+                    alt2=1;
+                    }
+                    break;
+                case 24:
+                    {
+                    alt2=2;
+                    }
+                    break;
+                case 25:
+                    {
+                    alt2=3;
+                    }
+                    break;
+                default:
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 2, 1, input);
+
+                    throw nvae;
+                }
+
+                }
+                break;
+            case 23:
                 {
                 alt2=1;
                 }
                 break;
-            case 22:
+            case 24:
                 {
                 alt2=2;
                 }
                 break;
-            case 23:
+            case 25:
                 {
                 alt2=3;
                 }
@@ -2274,10 +2260,10 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
             switch (alt2) {
                 case 1 :
-                    // InternalServiceDefinition.g:794:2: ( ruleForkingServiceDefinition )
+                    // InternalServiceDefinition.g:743:2: ( ruleForkingServiceDefinition )
                     {
-                    // InternalServiceDefinition.g:794:2: ( ruleForkingServiceDefinition )
-                    // InternalServiceDefinition.g:795:3: ruleForkingServiceDefinition
+                    // InternalServiceDefinition.g:743:2: ( ruleForkingServiceDefinition )
+                    // InternalServiceDefinition.g:744:3: ruleForkingServiceDefinition
                     {
                      before(grammarAccess.getCommunicationServiceDefinitionAccess().getForkingServiceDefinitionParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -2293,10 +2279,10 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
                     }
                     break;
                 case 2 :
-                    // InternalServiceDefinition.g:800:2: ( ruleJoyningServiceDefinition )
+                    // InternalServiceDefinition.g:749:2: ( ruleJoyningServiceDefinition )
                     {
-                    // InternalServiceDefinition.g:800:2: ( ruleJoyningServiceDefinition )
-                    // InternalServiceDefinition.g:801:3: ruleJoyningServiceDefinition
+                    // InternalServiceDefinition.g:749:2: ( ruleJoyningServiceDefinition )
+                    // InternalServiceDefinition.g:750:3: ruleJoyningServiceDefinition
                     {
                      before(grammarAccess.getCommunicationServiceDefinitionAccess().getJoyningServiceDefinitionParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -2312,10 +2298,10 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
                     }
                     break;
                 case 3 :
-                    // InternalServiceDefinition.g:806:2: ( ruleRequestAnswerServiceDefinition )
+                    // InternalServiceDefinition.g:755:2: ( ruleRequestAnswerServiceDefinition )
                     {
-                    // InternalServiceDefinition.g:806:2: ( ruleRequestAnswerServiceDefinition )
-                    // InternalServiceDefinition.g:807:3: ruleRequestAnswerServiceDefinition
+                    // InternalServiceDefinition.g:755:2: ( ruleRequestAnswerServiceDefinition )
+                    // InternalServiceDefinition.g:756:3: ruleRequestAnswerServiceDefinition
                     {
                      before(grammarAccess.getCommunicationServiceDefinitionAccess().getRequestAnswerServiceDefinitionParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -2348,20 +2334,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ForkingPatternInstance__Alternatives"
-    // InternalServiceDefinition.g:816:1: rule__ForkingPatternInstance__Alternatives : ( ( rulePushPattern ) | ( ruleEventPattern ) );
+    // InternalServiceDefinition.g:765:1: rule__ForkingPatternInstance__Alternatives : ( ( rulePushPattern ) | ( ruleEventPattern ) );
     public final void rule__ForkingPatternInstance__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:820:1: ( ( rulePushPattern ) | ( ruleEventPattern ) )
+            // InternalServiceDefinition.g:769:1: ( ( rulePushPattern ) | ( ruleEventPattern ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==35) ) {
+            if ( (LA3_0==37) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==38) ) {
+            else if ( (LA3_0==40) ) {
                 alt3=2;
             }
             else {
@@ -2372,10 +2358,10 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
             }
             switch (alt3) {
                 case 1 :
-                    // InternalServiceDefinition.g:821:2: ( rulePushPattern )
+                    // InternalServiceDefinition.g:770:2: ( rulePushPattern )
                     {
-                    // InternalServiceDefinition.g:821:2: ( rulePushPattern )
-                    // InternalServiceDefinition.g:822:3: rulePushPattern
+                    // InternalServiceDefinition.g:770:2: ( rulePushPattern )
+                    // InternalServiceDefinition.g:771:3: rulePushPattern
                     {
                      before(grammarAccess.getForkingPatternInstanceAccess().getPushPatternParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -2391,10 +2377,10 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
                     }
                     break;
                 case 2 :
-                    // InternalServiceDefinition.g:827:2: ( ruleEventPattern )
+                    // InternalServiceDefinition.g:776:2: ( ruleEventPattern )
                     {
-                    // InternalServiceDefinition.g:827:2: ( ruleEventPattern )
-                    // InternalServiceDefinition.g:828:3: ruleEventPattern
+                    // InternalServiceDefinition.g:776:2: ( ruleEventPattern )
+                    // InternalServiceDefinition.g:777:3: ruleEventPattern
                     {
                      before(grammarAccess.getForkingPatternInstanceAccess().getEventPatternParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -2427,14 +2413,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefModel__Group__0"
-    // InternalServiceDefinition.g:837:1: rule__ServiceDefModel__Group__0 : rule__ServiceDefModel__Group__0__Impl rule__ServiceDefModel__Group__1 ;
+    // InternalServiceDefinition.g:786:1: rule__ServiceDefModel__Group__0 : rule__ServiceDefModel__Group__0__Impl rule__ServiceDefModel__Group__1 ;
     public final void rule__ServiceDefModel__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:841:1: ( rule__ServiceDefModel__Group__0__Impl rule__ServiceDefModel__Group__1 )
-            // InternalServiceDefinition.g:842:2: rule__ServiceDefModel__Group__0__Impl rule__ServiceDefModel__Group__1
+            // InternalServiceDefinition.g:790:1: ( rule__ServiceDefModel__Group__0__Impl rule__ServiceDefModel__Group__1 )
+            // InternalServiceDefinition.g:791:2: rule__ServiceDefModel__Group__0__Impl rule__ServiceDefModel__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__ServiceDefModel__Group__0__Impl();
@@ -2465,21 +2451,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefModel__Group__0__Impl"
-    // InternalServiceDefinition.g:849:1: rule__ServiceDefModel__Group__0__Impl : ( () ) ;
+    // InternalServiceDefinition.g:798:1: rule__ServiceDefModel__Group__0__Impl : ( () ) ;
     public final void rule__ServiceDefModel__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:853:1: ( ( () ) )
-            // InternalServiceDefinition.g:854:1: ( () )
+            // InternalServiceDefinition.g:802:1: ( ( () ) )
+            // InternalServiceDefinition.g:803:1: ( () )
             {
-            // InternalServiceDefinition.g:854:1: ( () )
-            // InternalServiceDefinition.g:855:2: ()
+            // InternalServiceDefinition.g:803:1: ( () )
+            // InternalServiceDefinition.g:804:2: ()
             {
              before(grammarAccess.getServiceDefModelAccess().getServiceDefModelAction_0()); 
-            // InternalServiceDefinition.g:856:2: ()
-            // InternalServiceDefinition.g:856:3: 
+            // InternalServiceDefinition.g:805:2: ()
+            // InternalServiceDefinition.g:805:3: 
             {
             }
 
@@ -2502,14 +2488,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefModel__Group__1"
-    // InternalServiceDefinition.g:864:1: rule__ServiceDefModel__Group__1 : rule__ServiceDefModel__Group__1__Impl rule__ServiceDefModel__Group__2 ;
+    // InternalServiceDefinition.g:813:1: rule__ServiceDefModel__Group__1 : rule__ServiceDefModel__Group__1__Impl rule__ServiceDefModel__Group__2 ;
     public final void rule__ServiceDefModel__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:868:1: ( rule__ServiceDefModel__Group__1__Impl rule__ServiceDefModel__Group__2 )
-            // InternalServiceDefinition.g:869:2: rule__ServiceDefModel__Group__1__Impl rule__ServiceDefModel__Group__2
+            // InternalServiceDefinition.g:817:1: ( rule__ServiceDefModel__Group__1__Impl rule__ServiceDefModel__Group__2 )
+            // InternalServiceDefinition.g:818:2: rule__ServiceDefModel__Group__1__Impl rule__ServiceDefModel__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__ServiceDefModel__Group__1__Impl();
@@ -2540,33 +2526,33 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefModel__Group__1__Impl"
-    // InternalServiceDefinition.g:876:1: rule__ServiceDefModel__Group__1__Impl : ( ( rule__ServiceDefModel__ImportsAssignment_1 )* ) ;
+    // InternalServiceDefinition.g:825:1: rule__ServiceDefModel__Group__1__Impl : ( ( rule__ServiceDefModel__ImportsAssignment_1 )* ) ;
     public final void rule__ServiceDefModel__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:880:1: ( ( ( rule__ServiceDefModel__ImportsAssignment_1 )* ) )
-            // InternalServiceDefinition.g:881:1: ( ( rule__ServiceDefModel__ImportsAssignment_1 )* )
+            // InternalServiceDefinition.g:829:1: ( ( ( rule__ServiceDefModel__ImportsAssignment_1 )* ) )
+            // InternalServiceDefinition.g:830:1: ( ( rule__ServiceDefModel__ImportsAssignment_1 )* )
             {
-            // InternalServiceDefinition.g:881:1: ( ( rule__ServiceDefModel__ImportsAssignment_1 )* )
-            // InternalServiceDefinition.g:882:2: ( rule__ServiceDefModel__ImportsAssignment_1 )*
+            // InternalServiceDefinition.g:830:1: ( ( rule__ServiceDefModel__ImportsAssignment_1 )* )
+            // InternalServiceDefinition.g:831:2: ( rule__ServiceDefModel__ImportsAssignment_1 )*
             {
              before(grammarAccess.getServiceDefModelAccess().getImportsAssignment_1()); 
-            // InternalServiceDefinition.g:883:2: ( rule__ServiceDefModel__ImportsAssignment_1 )*
+            // InternalServiceDefinition.g:832:2: ( rule__ServiceDefModel__ImportsAssignment_1 )*
             loop4:
             do {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==18) ) {
+                if ( (LA4_0==21) ) {
                     alt4=1;
                 }
 
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalServiceDefinition.g:883:3: rule__ServiceDefModel__ImportsAssignment_1
+            	    // InternalServiceDefinition.g:832:3: rule__ServiceDefModel__ImportsAssignment_1
             	    {
             	    pushFollow(FOLLOW_4);
             	    rule__ServiceDefModel__ImportsAssignment_1();
@@ -2605,14 +2591,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefModel__Group__2"
-    // InternalServiceDefinition.g:891:1: rule__ServiceDefModel__Group__2 : rule__ServiceDefModel__Group__2__Impl ;
+    // InternalServiceDefinition.g:840:1: rule__ServiceDefModel__Group__2 : rule__ServiceDefModel__Group__2__Impl ;
     public final void rule__ServiceDefModel__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:895:1: ( rule__ServiceDefModel__Group__2__Impl )
-            // InternalServiceDefinition.g:896:2: rule__ServiceDefModel__Group__2__Impl
+            // InternalServiceDefinition.g:844:1: ( rule__ServiceDefModel__Group__2__Impl )
+            // InternalServiceDefinition.g:845:2: rule__ServiceDefModel__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ServiceDefModel__Group__2__Impl();
@@ -2638,29 +2624,29 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefModel__Group__2__Impl"
-    // InternalServiceDefinition.g:902:1: rule__ServiceDefModel__Group__2__Impl : ( ( rule__ServiceDefModel__RepositoryAssignment_2 )? ) ;
+    // InternalServiceDefinition.g:851:1: rule__ServiceDefModel__Group__2__Impl : ( ( rule__ServiceDefModel__RepositoryAssignment_2 )? ) ;
     public final void rule__ServiceDefModel__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:906:1: ( ( ( rule__ServiceDefModel__RepositoryAssignment_2 )? ) )
-            // InternalServiceDefinition.g:907:1: ( ( rule__ServiceDefModel__RepositoryAssignment_2 )? )
+            // InternalServiceDefinition.g:855:1: ( ( ( rule__ServiceDefModel__RepositoryAssignment_2 )? ) )
+            // InternalServiceDefinition.g:856:1: ( ( rule__ServiceDefModel__RepositoryAssignment_2 )? )
             {
-            // InternalServiceDefinition.g:907:1: ( ( rule__ServiceDefModel__RepositoryAssignment_2 )? )
-            // InternalServiceDefinition.g:908:2: ( rule__ServiceDefModel__RepositoryAssignment_2 )?
+            // InternalServiceDefinition.g:856:1: ( ( rule__ServiceDefModel__RepositoryAssignment_2 )? )
+            // InternalServiceDefinition.g:857:2: ( rule__ServiceDefModel__RepositoryAssignment_2 )?
             {
              before(grammarAccess.getServiceDefModelAccess().getRepositoryAssignment_2()); 
-            // InternalServiceDefinition.g:909:2: ( rule__ServiceDefModel__RepositoryAssignment_2 )?
+            // InternalServiceDefinition.g:858:2: ( rule__ServiceDefModel__RepositoryAssignment_2 )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==14) ) {
+            if ( (LA5_0==RULE_DOCU_COMMENT||LA5_0==17) ) {
                 alt5=1;
             }
             switch (alt5) {
                 case 1 :
-                    // InternalServiceDefinition.g:909:3: rule__ServiceDefModel__RepositoryAssignment_2
+                    // InternalServiceDefinition.g:858:3: rule__ServiceDefModel__RepositoryAssignment_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__ServiceDefModel__RepositoryAssignment_2();
@@ -2696,14 +2682,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__FQN__Group__0"
-    // InternalServiceDefinition.g:918:1: rule__FQN__Group__0 : rule__FQN__Group__0__Impl rule__FQN__Group__1 ;
+    // InternalServiceDefinition.g:867:1: rule__FQN__Group__0 : rule__FQN__Group__0__Impl rule__FQN__Group__1 ;
     public final void rule__FQN__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:922:1: ( rule__FQN__Group__0__Impl rule__FQN__Group__1 )
-            // InternalServiceDefinition.g:923:2: rule__FQN__Group__0__Impl rule__FQN__Group__1
+            // InternalServiceDefinition.g:871:1: ( rule__FQN__Group__0__Impl rule__FQN__Group__1 )
+            // InternalServiceDefinition.g:872:2: rule__FQN__Group__0__Impl rule__FQN__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__FQN__Group__0__Impl();
@@ -2734,17 +2720,17 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__FQN__Group__0__Impl"
-    // InternalServiceDefinition.g:930:1: rule__FQN__Group__0__Impl : ( RULE_ID ) ;
+    // InternalServiceDefinition.g:879:1: rule__FQN__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__FQN__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:934:1: ( ( RULE_ID ) )
-            // InternalServiceDefinition.g:935:1: ( RULE_ID )
+            // InternalServiceDefinition.g:883:1: ( ( RULE_ID ) )
+            // InternalServiceDefinition.g:884:1: ( RULE_ID )
             {
-            // InternalServiceDefinition.g:935:1: ( RULE_ID )
-            // InternalServiceDefinition.g:936:2: RULE_ID
+            // InternalServiceDefinition.g:884:1: ( RULE_ID )
+            // InternalServiceDefinition.g:885:2: RULE_ID
             {
              before(grammarAccess.getFQNAccess().getIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -2771,14 +2757,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__FQN__Group__1"
-    // InternalServiceDefinition.g:945:1: rule__FQN__Group__1 : rule__FQN__Group__1__Impl ;
+    // InternalServiceDefinition.g:894:1: rule__FQN__Group__1 : rule__FQN__Group__1__Impl ;
     public final void rule__FQN__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:949:1: ( rule__FQN__Group__1__Impl )
-            // InternalServiceDefinition.g:950:2: rule__FQN__Group__1__Impl
+            // InternalServiceDefinition.g:898:1: ( rule__FQN__Group__1__Impl )
+            // InternalServiceDefinition.g:899:2: rule__FQN__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FQN__Group__1__Impl();
@@ -2804,33 +2790,33 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__FQN__Group__1__Impl"
-    // InternalServiceDefinition.g:956:1: rule__FQN__Group__1__Impl : ( ( rule__FQN__Group_1__0 )* ) ;
+    // InternalServiceDefinition.g:905:1: rule__FQN__Group__1__Impl : ( ( rule__FQN__Group_1__0 )* ) ;
     public final void rule__FQN__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:960:1: ( ( ( rule__FQN__Group_1__0 )* ) )
-            // InternalServiceDefinition.g:961:1: ( ( rule__FQN__Group_1__0 )* )
+            // InternalServiceDefinition.g:909:1: ( ( ( rule__FQN__Group_1__0 )* ) )
+            // InternalServiceDefinition.g:910:1: ( ( rule__FQN__Group_1__0 )* )
             {
-            // InternalServiceDefinition.g:961:1: ( ( rule__FQN__Group_1__0 )* )
-            // InternalServiceDefinition.g:962:2: ( rule__FQN__Group_1__0 )*
+            // InternalServiceDefinition.g:910:1: ( ( rule__FQN__Group_1__0 )* )
+            // InternalServiceDefinition.g:911:2: ( rule__FQN__Group_1__0 )*
             {
              before(grammarAccess.getFQNAccess().getGroup_1()); 
-            // InternalServiceDefinition.g:963:2: ( rule__FQN__Group_1__0 )*
+            // InternalServiceDefinition.g:912:2: ( rule__FQN__Group_1__0 )*
             loop6:
             do {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( (LA6_0==11) ) {
+                if ( (LA6_0==14) ) {
                     alt6=1;
                 }
 
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalServiceDefinition.g:963:3: rule__FQN__Group_1__0
+            	    // InternalServiceDefinition.g:912:3: rule__FQN__Group_1__0
             	    {
             	    pushFollow(FOLLOW_6);
             	    rule__FQN__Group_1__0();
@@ -2869,14 +2855,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__FQN__Group_1__0"
-    // InternalServiceDefinition.g:972:1: rule__FQN__Group_1__0 : rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 ;
+    // InternalServiceDefinition.g:921:1: rule__FQN__Group_1__0 : rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 ;
     public final void rule__FQN__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:976:1: ( rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 )
-            // InternalServiceDefinition.g:977:2: rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1
+            // InternalServiceDefinition.g:925:1: ( rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 )
+            // InternalServiceDefinition.g:926:2: rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1
             {
             pushFollow(FOLLOW_7);
             rule__FQN__Group_1__0__Impl();
@@ -2907,20 +2893,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__FQN__Group_1__0__Impl"
-    // InternalServiceDefinition.g:984:1: rule__FQN__Group_1__0__Impl : ( '.' ) ;
+    // InternalServiceDefinition.g:933:1: rule__FQN__Group_1__0__Impl : ( '.' ) ;
     public final void rule__FQN__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:988:1: ( ( '.' ) )
-            // InternalServiceDefinition.g:989:1: ( '.' )
+            // InternalServiceDefinition.g:937:1: ( ( '.' ) )
+            // InternalServiceDefinition.g:938:1: ( '.' )
             {
-            // InternalServiceDefinition.g:989:1: ( '.' )
-            // InternalServiceDefinition.g:990:2: '.'
+            // InternalServiceDefinition.g:938:1: ( '.' )
+            // InternalServiceDefinition.g:939:2: '.'
             {
              before(grammarAccess.getFQNAccess().getFullStopKeyword_1_0()); 
-            match(input,11,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getFQNAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -2944,14 +2930,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__FQN__Group_1__1"
-    // InternalServiceDefinition.g:999:1: rule__FQN__Group_1__1 : rule__FQN__Group_1__1__Impl ;
+    // InternalServiceDefinition.g:948:1: rule__FQN__Group_1__1 : rule__FQN__Group_1__1__Impl ;
     public final void rule__FQN__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1003:1: ( rule__FQN__Group_1__1__Impl )
-            // InternalServiceDefinition.g:1004:2: rule__FQN__Group_1__1__Impl
+            // InternalServiceDefinition.g:952:1: ( rule__FQN__Group_1__1__Impl )
+            // InternalServiceDefinition.g:953:2: rule__FQN__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FQN__Group_1__1__Impl();
@@ -2977,17 +2963,17 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__FQN__Group_1__1__Impl"
-    // InternalServiceDefinition.g:1010:1: rule__FQN__Group_1__1__Impl : ( RULE_ID ) ;
+    // InternalServiceDefinition.g:959:1: rule__FQN__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__FQN__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1014:1: ( ( RULE_ID ) )
-            // InternalServiceDefinition.g:1015:1: ( RULE_ID )
+            // InternalServiceDefinition.g:963:1: ( ( RULE_ID ) )
+            // InternalServiceDefinition.g:964:1: ( RULE_ID )
             {
-            // InternalServiceDefinition.g:1015:1: ( RULE_ID )
-            // InternalServiceDefinition.g:1016:2: RULE_ID
+            // InternalServiceDefinition.g:964:1: ( RULE_ID )
+            // InternalServiceDefinition.g:965:2: RULE_ID
             {
              before(grammarAccess.getFQNAccess().getIDTerminalRuleCall_1_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3014,14 +3000,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__FQNW__Group__0"
-    // InternalServiceDefinition.g:1026:1: rule__FQNW__Group__0 : rule__FQNW__Group__0__Impl rule__FQNW__Group__1 ;
+    // InternalServiceDefinition.g:975:1: rule__FQNW__Group__0 : rule__FQNW__Group__0__Impl rule__FQNW__Group__1 ;
     public final void rule__FQNW__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1030:1: ( rule__FQNW__Group__0__Impl rule__FQNW__Group__1 )
-            // InternalServiceDefinition.g:1031:2: rule__FQNW__Group__0__Impl rule__FQNW__Group__1
+            // InternalServiceDefinition.g:979:1: ( rule__FQNW__Group__0__Impl rule__FQNW__Group__1 )
+            // InternalServiceDefinition.g:980:2: rule__FQNW__Group__0__Impl rule__FQNW__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__FQNW__Group__0__Impl();
@@ -3052,17 +3038,17 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__FQNW__Group__0__Impl"
-    // InternalServiceDefinition.g:1038:1: rule__FQNW__Group__0__Impl : ( ruleFQN ) ;
+    // InternalServiceDefinition.g:987:1: rule__FQNW__Group__0__Impl : ( ruleFQN ) ;
     public final void rule__FQNW__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1042:1: ( ( ruleFQN ) )
-            // InternalServiceDefinition.g:1043:1: ( ruleFQN )
+            // InternalServiceDefinition.g:991:1: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:992:1: ( ruleFQN )
             {
-            // InternalServiceDefinition.g:1043:1: ( ruleFQN )
-            // InternalServiceDefinition.g:1044:2: ruleFQN
+            // InternalServiceDefinition.g:992:1: ( ruleFQN )
+            // InternalServiceDefinition.g:993:2: ruleFQN
             {
              before(grammarAccess.getFQNWAccess().getFQNParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -3093,14 +3079,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__FQNW__Group__1"
-    // InternalServiceDefinition.g:1053:1: rule__FQNW__Group__1 : rule__FQNW__Group__1__Impl ;
+    // InternalServiceDefinition.g:1002:1: rule__FQNW__Group__1 : rule__FQNW__Group__1__Impl ;
     public final void rule__FQNW__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1057:1: ( rule__FQNW__Group__1__Impl )
-            // InternalServiceDefinition.g:1058:2: rule__FQNW__Group__1__Impl
+            // InternalServiceDefinition.g:1006:1: ( rule__FQNW__Group__1__Impl )
+            // InternalServiceDefinition.g:1007:2: rule__FQNW__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FQNW__Group__1__Impl();
@@ -3126,31 +3112,31 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__FQNW__Group__1__Impl"
-    // InternalServiceDefinition.g:1064:1: rule__FQNW__Group__1__Impl : ( ( '.*' )? ) ;
+    // InternalServiceDefinition.g:1013:1: rule__FQNW__Group__1__Impl : ( ( '.*' )? ) ;
     public final void rule__FQNW__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1068:1: ( ( ( '.*' )? ) )
-            // InternalServiceDefinition.g:1069:1: ( ( '.*' )? )
+            // InternalServiceDefinition.g:1017:1: ( ( ( '.*' )? ) )
+            // InternalServiceDefinition.g:1018:1: ( ( '.*' )? )
             {
-            // InternalServiceDefinition.g:1069:1: ( ( '.*' )? )
-            // InternalServiceDefinition.g:1070:2: ( '.*' )?
+            // InternalServiceDefinition.g:1018:1: ( ( '.*' )? )
+            // InternalServiceDefinition.g:1019:2: ( '.*' )?
             {
              before(grammarAccess.getFQNWAccess().getFullStopAsteriskKeyword_1()); 
-            // InternalServiceDefinition.g:1071:2: ( '.*' )?
+            // InternalServiceDefinition.g:1020:2: ( '.*' )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==12) ) {
+            if ( (LA7_0==15) ) {
                 alt7=1;
             }
             switch (alt7) {
                 case 1 :
-                    // InternalServiceDefinition.g:1071:3: '.*'
+                    // InternalServiceDefinition.g:1020:3: '.*'
                     {
-                    match(input,12,FOLLOW_2); 
+                    match(input,15,FOLLOW_2); 
 
                     }
                     break;
@@ -3180,14 +3166,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EInt__Group__0"
-    // InternalServiceDefinition.g:1080:1: rule__EInt__Group__0 : rule__EInt__Group__0__Impl rule__EInt__Group__1 ;
+    // InternalServiceDefinition.g:1029:1: rule__EInt__Group__0 : rule__EInt__Group__0__Impl rule__EInt__Group__1 ;
     public final void rule__EInt__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1084:1: ( rule__EInt__Group__0__Impl rule__EInt__Group__1 )
-            // InternalServiceDefinition.g:1085:2: rule__EInt__Group__0__Impl rule__EInt__Group__1
+            // InternalServiceDefinition.g:1033:1: ( rule__EInt__Group__0__Impl rule__EInt__Group__1 )
+            // InternalServiceDefinition.g:1034:2: rule__EInt__Group__0__Impl rule__EInt__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__EInt__Group__0__Impl();
@@ -3218,31 +3204,31 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EInt__Group__0__Impl"
-    // InternalServiceDefinition.g:1092:1: rule__EInt__Group__0__Impl : ( ( '-' )? ) ;
+    // InternalServiceDefinition.g:1041:1: rule__EInt__Group__0__Impl : ( ( '-' )? ) ;
     public final void rule__EInt__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1096:1: ( ( ( '-' )? ) )
-            // InternalServiceDefinition.g:1097:1: ( ( '-' )? )
+            // InternalServiceDefinition.g:1045:1: ( ( ( '-' )? ) )
+            // InternalServiceDefinition.g:1046:1: ( ( '-' )? )
             {
-            // InternalServiceDefinition.g:1097:1: ( ( '-' )? )
-            // InternalServiceDefinition.g:1098:2: ( '-' )?
+            // InternalServiceDefinition.g:1046:1: ( ( '-' )? )
+            // InternalServiceDefinition.g:1047:2: ( '-' )?
             {
              before(grammarAccess.getEIntAccess().getHyphenMinusKeyword_0()); 
-            // InternalServiceDefinition.g:1099:2: ( '-' )?
+            // InternalServiceDefinition.g:1048:2: ( '-' )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==13) ) {
+            if ( (LA8_0==16) ) {
                 alt8=1;
             }
             switch (alt8) {
                 case 1 :
-                    // InternalServiceDefinition.g:1099:3: '-'
+                    // InternalServiceDefinition.g:1048:3: '-'
                     {
-                    match(input,13,FOLLOW_2); 
+                    match(input,16,FOLLOW_2); 
 
                     }
                     break;
@@ -3272,14 +3258,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EInt__Group__1"
-    // InternalServiceDefinition.g:1107:1: rule__EInt__Group__1 : rule__EInt__Group__1__Impl ;
+    // InternalServiceDefinition.g:1056:1: rule__EInt__Group__1 : rule__EInt__Group__1__Impl ;
     public final void rule__EInt__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1111:1: ( rule__EInt__Group__1__Impl )
-            // InternalServiceDefinition.g:1112:2: rule__EInt__Group__1__Impl
+            // InternalServiceDefinition.g:1060:1: ( rule__EInt__Group__1__Impl )
+            // InternalServiceDefinition.g:1061:2: rule__EInt__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EInt__Group__1__Impl();
@@ -3305,17 +3291,17 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EInt__Group__1__Impl"
-    // InternalServiceDefinition.g:1118:1: rule__EInt__Group__1__Impl : ( RULE_INT ) ;
+    // InternalServiceDefinition.g:1067:1: rule__EInt__Group__1__Impl : ( RULE_INT ) ;
     public final void rule__EInt__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1122:1: ( ( RULE_INT ) )
-            // InternalServiceDefinition.g:1123:1: ( RULE_INT )
+            // InternalServiceDefinition.g:1071:1: ( ( RULE_INT ) )
+            // InternalServiceDefinition.g:1072:1: ( RULE_INT )
             {
-            // InternalServiceDefinition.g:1123:1: ( RULE_INT )
-            // InternalServiceDefinition.g:1124:2: RULE_INT
+            // InternalServiceDefinition.g:1072:1: ( RULE_INT )
+            // InternalServiceDefinition.g:1073:2: RULE_INT
             {
              before(grammarAccess.getEIntAccess().getINTTerminalRuleCall_1()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -3342,16 +3328,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefRepository__Group__0"
-    // InternalServiceDefinition.g:1134:1: rule__ServiceDefRepository__Group__0 : rule__ServiceDefRepository__Group__0__Impl rule__ServiceDefRepository__Group__1 ;
+    // InternalServiceDefinition.g:1083:1: rule__ServiceDefRepository__Group__0 : rule__ServiceDefRepository__Group__0__Impl rule__ServiceDefRepository__Group__1 ;
     public final void rule__ServiceDefRepository__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1138:1: ( rule__ServiceDefRepository__Group__0__Impl rule__ServiceDefRepository__Group__1 )
-            // InternalServiceDefinition.g:1139:2: rule__ServiceDefRepository__Group__0__Impl rule__ServiceDefRepository__Group__1
+            // InternalServiceDefinition.g:1087:1: ( rule__ServiceDefRepository__Group__0__Impl rule__ServiceDefRepository__Group__1 )
+            // InternalServiceDefinition.g:1088:2: rule__ServiceDefRepository__Group__0__Impl rule__ServiceDefRepository__Group__1
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_10);
             rule__ServiceDefRepository__Group__0__Impl();
 
             state._fsp--;
@@ -3380,21 +3366,42 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefRepository__Group__0__Impl"
-    // InternalServiceDefinition.g:1146:1: rule__ServiceDefRepository__Group__0__Impl : ( 'ServiceDefRepository' ) ;
+    // InternalServiceDefinition.g:1095:1: rule__ServiceDefRepository__Group__0__Impl : ( ( rule__ServiceDefRepository__DocumentationAssignment_0 )? ) ;
     public final void rule__ServiceDefRepository__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1150:1: ( ( 'ServiceDefRepository' ) )
-            // InternalServiceDefinition.g:1151:1: ( 'ServiceDefRepository' )
+            // InternalServiceDefinition.g:1099:1: ( ( ( rule__ServiceDefRepository__DocumentationAssignment_0 )? ) )
+            // InternalServiceDefinition.g:1100:1: ( ( rule__ServiceDefRepository__DocumentationAssignment_0 )? )
             {
-            // InternalServiceDefinition.g:1151:1: ( 'ServiceDefRepository' )
-            // InternalServiceDefinition.g:1152:2: 'ServiceDefRepository'
+            // InternalServiceDefinition.g:1100:1: ( ( rule__ServiceDefRepository__DocumentationAssignment_0 )? )
+            // InternalServiceDefinition.g:1101:2: ( rule__ServiceDefRepository__DocumentationAssignment_0 )?
             {
-             before(grammarAccess.getServiceDefRepositoryAccess().getServiceDefRepositoryKeyword_0()); 
-            match(input,14,FOLLOW_2); 
-             after(grammarAccess.getServiceDefRepositoryAccess().getServiceDefRepositoryKeyword_0()); 
+             before(grammarAccess.getServiceDefRepositoryAccess().getDocumentationAssignment_0()); 
+            // InternalServiceDefinition.g:1102:2: ( rule__ServiceDefRepository__DocumentationAssignment_0 )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
+
+            if ( (LA9_0==RULE_DOCU_COMMENT) ) {
+                alt9=1;
+            }
+            switch (alt9) {
+                case 1 :
+                    // InternalServiceDefinition.g:1102:3: rule__ServiceDefRepository__DocumentationAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ServiceDefRepository__DocumentationAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getServiceDefRepositoryAccess().getDocumentationAssignment_0()); 
 
             }
 
@@ -3417,16 +3424,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefRepository__Group__1"
-    // InternalServiceDefinition.g:1161:1: rule__ServiceDefRepository__Group__1 : rule__ServiceDefRepository__Group__1__Impl rule__ServiceDefRepository__Group__2 ;
+    // InternalServiceDefinition.g:1110:1: rule__ServiceDefRepository__Group__1 : rule__ServiceDefRepository__Group__1__Impl rule__ServiceDefRepository__Group__2 ;
     public final void rule__ServiceDefRepository__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1165:1: ( rule__ServiceDefRepository__Group__1__Impl rule__ServiceDefRepository__Group__2 )
-            // InternalServiceDefinition.g:1166:2: rule__ServiceDefRepository__Group__1__Impl rule__ServiceDefRepository__Group__2
+            // InternalServiceDefinition.g:1114:1: ( rule__ServiceDefRepository__Group__1__Impl rule__ServiceDefRepository__Group__2 )
+            // InternalServiceDefinition.g:1115:2: rule__ServiceDefRepository__Group__1__Impl rule__ServiceDefRepository__Group__2
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_7);
             rule__ServiceDefRepository__Group__1__Impl();
 
             state._fsp--;
@@ -3455,31 +3462,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefRepository__Group__1__Impl"
-    // InternalServiceDefinition.g:1173:1: rule__ServiceDefRepository__Group__1__Impl : ( ( rule__ServiceDefRepository__NameAssignment_1 ) ) ;
+    // InternalServiceDefinition.g:1122:1: rule__ServiceDefRepository__Group__1__Impl : ( 'ServiceDefRepository' ) ;
     public final void rule__ServiceDefRepository__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1177:1: ( ( ( rule__ServiceDefRepository__NameAssignment_1 ) ) )
-            // InternalServiceDefinition.g:1178:1: ( ( rule__ServiceDefRepository__NameAssignment_1 ) )
+            // InternalServiceDefinition.g:1126:1: ( ( 'ServiceDefRepository' ) )
+            // InternalServiceDefinition.g:1127:1: ( 'ServiceDefRepository' )
             {
-            // InternalServiceDefinition.g:1178:1: ( ( rule__ServiceDefRepository__NameAssignment_1 ) )
-            // InternalServiceDefinition.g:1179:2: ( rule__ServiceDefRepository__NameAssignment_1 )
+            // InternalServiceDefinition.g:1127:1: ( 'ServiceDefRepository' )
+            // InternalServiceDefinition.g:1128:2: 'ServiceDefRepository'
             {
-             before(grammarAccess.getServiceDefRepositoryAccess().getNameAssignment_1()); 
-            // InternalServiceDefinition.g:1180:2: ( rule__ServiceDefRepository__NameAssignment_1 )
-            // InternalServiceDefinition.g:1180:3: rule__ServiceDefRepository__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__ServiceDefRepository__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getServiceDefRepositoryAccess().getNameAssignment_1()); 
+             before(grammarAccess.getServiceDefRepositoryAccess().getServiceDefRepositoryKeyword_1()); 
+            match(input,17,FOLLOW_2); 
+             after(grammarAccess.getServiceDefRepositoryAccess().getServiceDefRepositoryKeyword_1()); 
 
             }
 
@@ -3502,16 +3499,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefRepository__Group__2"
-    // InternalServiceDefinition.g:1188:1: rule__ServiceDefRepository__Group__2 : rule__ServiceDefRepository__Group__2__Impl rule__ServiceDefRepository__Group__3 ;
+    // InternalServiceDefinition.g:1137:1: rule__ServiceDefRepository__Group__2 : rule__ServiceDefRepository__Group__2__Impl rule__ServiceDefRepository__Group__3 ;
     public final void rule__ServiceDefRepository__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1192:1: ( rule__ServiceDefRepository__Group__2__Impl rule__ServiceDefRepository__Group__3 )
-            // InternalServiceDefinition.g:1193:2: rule__ServiceDefRepository__Group__2__Impl rule__ServiceDefRepository__Group__3
+            // InternalServiceDefinition.g:1141:1: ( rule__ServiceDefRepository__Group__2__Impl rule__ServiceDefRepository__Group__3 )
+            // InternalServiceDefinition.g:1142:2: rule__ServiceDefRepository__Group__2__Impl rule__ServiceDefRepository__Group__3
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             rule__ServiceDefRepository__Group__2__Impl();
 
             state._fsp--;
@@ -3540,42 +3537,31 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefRepository__Group__2__Impl"
-    // InternalServiceDefinition.g:1200:1: rule__ServiceDefRepository__Group__2__Impl : ( ( rule__ServiceDefRepository__Group_2__0 )? ) ;
+    // InternalServiceDefinition.g:1149:1: rule__ServiceDefRepository__Group__2__Impl : ( ( rule__ServiceDefRepository__NameAssignment_2 ) ) ;
     public final void rule__ServiceDefRepository__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1204:1: ( ( ( rule__ServiceDefRepository__Group_2__0 )? ) )
-            // InternalServiceDefinition.g:1205:1: ( ( rule__ServiceDefRepository__Group_2__0 )? )
+            // InternalServiceDefinition.g:1153:1: ( ( ( rule__ServiceDefRepository__NameAssignment_2 ) ) )
+            // InternalServiceDefinition.g:1154:1: ( ( rule__ServiceDefRepository__NameAssignment_2 ) )
             {
-            // InternalServiceDefinition.g:1205:1: ( ( rule__ServiceDefRepository__Group_2__0 )? )
-            // InternalServiceDefinition.g:1206:2: ( rule__ServiceDefRepository__Group_2__0 )?
+            // InternalServiceDefinition.g:1154:1: ( ( rule__ServiceDefRepository__NameAssignment_2 ) )
+            // InternalServiceDefinition.g:1155:2: ( rule__ServiceDefRepository__NameAssignment_2 )
             {
-             before(grammarAccess.getServiceDefRepositoryAccess().getGroup_2()); 
-            // InternalServiceDefinition.g:1207:2: ( rule__ServiceDefRepository__Group_2__0 )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+             before(grammarAccess.getServiceDefRepositoryAccess().getNameAssignment_2()); 
+            // InternalServiceDefinition.g:1156:2: ( rule__ServiceDefRepository__NameAssignment_2 )
+            // InternalServiceDefinition.g:1156:3: rule__ServiceDefRepository__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__ServiceDefRepository__NameAssignment_2();
 
-            if ( (LA9_0==17) ) {
-                alt9=1;
-            }
-            switch (alt9) {
-                case 1 :
-                    // InternalServiceDefinition.g:1207:3: rule__ServiceDefRepository__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ServiceDefRepository__Group_2__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getServiceDefRepositoryAccess().getGroup_2()); 
+             after(grammarAccess.getServiceDefRepositoryAccess().getNameAssignment_2()); 
 
             }
 
@@ -3598,14 +3584,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefRepository__Group__3"
-    // InternalServiceDefinition.g:1215:1: rule__ServiceDefRepository__Group__3 : rule__ServiceDefRepository__Group__3__Impl rule__ServiceDefRepository__Group__4 ;
+    // InternalServiceDefinition.g:1164:1: rule__ServiceDefRepository__Group__3 : rule__ServiceDefRepository__Group__3__Impl rule__ServiceDefRepository__Group__4 ;
     public final void rule__ServiceDefRepository__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1219:1: ( rule__ServiceDefRepository__Group__3__Impl rule__ServiceDefRepository__Group__4 )
-            // InternalServiceDefinition.g:1220:2: rule__ServiceDefRepository__Group__3__Impl rule__ServiceDefRepository__Group__4
+            // InternalServiceDefinition.g:1168:1: ( rule__ServiceDefRepository__Group__3__Impl rule__ServiceDefRepository__Group__4 )
+            // InternalServiceDefinition.g:1169:2: rule__ServiceDefRepository__Group__3__Impl rule__ServiceDefRepository__Group__4
             {
             pushFollow(FOLLOW_11);
             rule__ServiceDefRepository__Group__3__Impl();
@@ -3636,21 +3622,42 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefRepository__Group__3__Impl"
-    // InternalServiceDefinition.g:1227:1: rule__ServiceDefRepository__Group__3__Impl : ( '{' ) ;
+    // InternalServiceDefinition.g:1176:1: rule__ServiceDefRepository__Group__3__Impl : ( ( rule__ServiceDefRepository__Group_3__0 )? ) ;
     public final void rule__ServiceDefRepository__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1231:1: ( ( '{' ) )
-            // InternalServiceDefinition.g:1232:1: ( '{' )
+            // InternalServiceDefinition.g:1180:1: ( ( ( rule__ServiceDefRepository__Group_3__0 )? ) )
+            // InternalServiceDefinition.g:1181:1: ( ( rule__ServiceDefRepository__Group_3__0 )? )
             {
-            // InternalServiceDefinition.g:1232:1: ( '{' )
-            // InternalServiceDefinition.g:1233:2: '{'
+            // InternalServiceDefinition.g:1181:1: ( ( rule__ServiceDefRepository__Group_3__0 )? )
+            // InternalServiceDefinition.g:1182:2: ( rule__ServiceDefRepository__Group_3__0 )?
             {
-             before(grammarAccess.getServiceDefRepositoryAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getServiceDefRepositoryAccess().getLeftCurlyBracketKeyword_3()); 
+             before(grammarAccess.getServiceDefRepositoryAccess().getGroup_3()); 
+            // InternalServiceDefinition.g:1183:2: ( rule__ServiceDefRepository__Group_3__0 )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
+
+            if ( (LA10_0==20) ) {
+                alt10=1;
+            }
+            switch (alt10) {
+                case 1 :
+                    // InternalServiceDefinition.g:1183:3: rule__ServiceDefRepository__Group_3__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ServiceDefRepository__Group_3__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getServiceDefRepositoryAccess().getGroup_3()); 
 
             }
 
@@ -3673,16 +3680,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefRepository__Group__4"
-    // InternalServiceDefinition.g:1242:1: rule__ServiceDefRepository__Group__4 : rule__ServiceDefRepository__Group__4__Impl rule__ServiceDefRepository__Group__5 ;
+    // InternalServiceDefinition.g:1191:1: rule__ServiceDefRepository__Group__4 : rule__ServiceDefRepository__Group__4__Impl rule__ServiceDefRepository__Group__5 ;
     public final void rule__ServiceDefRepository__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1246:1: ( rule__ServiceDefRepository__Group__4__Impl rule__ServiceDefRepository__Group__5 )
-            // InternalServiceDefinition.g:1247:2: rule__ServiceDefRepository__Group__4__Impl rule__ServiceDefRepository__Group__5
+            // InternalServiceDefinition.g:1195:1: ( rule__ServiceDefRepository__Group__4__Impl rule__ServiceDefRepository__Group__5 )
+            // InternalServiceDefinition.g:1196:2: rule__ServiceDefRepository__Group__4__Impl rule__ServiceDefRepository__Group__5
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             rule__ServiceDefRepository__Group__4__Impl();
 
             state._fsp--;
@@ -3711,49 +3718,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefRepository__Group__4__Impl"
-    // InternalServiceDefinition.g:1254:1: rule__ServiceDefRepository__Group__4__Impl : ( ( rule__ServiceDefRepository__ServicesAssignment_4 )* ) ;
+    // InternalServiceDefinition.g:1203:1: rule__ServiceDefRepository__Group__4__Impl : ( '{' ) ;
     public final void rule__ServiceDefRepository__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1258:1: ( ( ( rule__ServiceDefRepository__ServicesAssignment_4 )* ) )
-            // InternalServiceDefinition.g:1259:1: ( ( rule__ServiceDefRepository__ServicesAssignment_4 )* )
+            // InternalServiceDefinition.g:1207:1: ( ( '{' ) )
+            // InternalServiceDefinition.g:1208:1: ( '{' )
             {
-            // InternalServiceDefinition.g:1259:1: ( ( rule__ServiceDefRepository__ServicesAssignment_4 )* )
-            // InternalServiceDefinition.g:1260:2: ( rule__ServiceDefRepository__ServicesAssignment_4 )*
+            // InternalServiceDefinition.g:1208:1: ( '{' )
+            // InternalServiceDefinition.g:1209:2: '{'
             {
-             before(grammarAccess.getServiceDefRepositoryAccess().getServicesAssignment_4()); 
-            // InternalServiceDefinition.g:1261:2: ( rule__ServiceDefRepository__ServicesAssignment_4 )*
-            loop10:
-            do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
-
-                if ( (LA10_0==20||(LA10_0>=22 && LA10_0<=24)) ) {
-                    alt10=1;
-                }
-
-
-                switch (alt10) {
-            	case 1 :
-            	    // InternalServiceDefinition.g:1261:3: rule__ServiceDefRepository__ServicesAssignment_4
-            	    {
-            	    pushFollow(FOLLOW_12);
-            	    rule__ServiceDefRepository__ServicesAssignment_4();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop10;
-                }
-            } while (true);
-
-             after(grammarAccess.getServiceDefRepositoryAccess().getServicesAssignment_4()); 
+             before(grammarAccess.getServiceDefRepositoryAccess().getLeftCurlyBracketKeyword_4()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getServiceDefRepositoryAccess().getLeftCurlyBracketKeyword_4()); 
 
             }
 
@@ -3776,17 +3755,22 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefRepository__Group__5"
-    // InternalServiceDefinition.g:1269:1: rule__ServiceDefRepository__Group__5 : rule__ServiceDefRepository__Group__5__Impl ;
+    // InternalServiceDefinition.g:1218:1: rule__ServiceDefRepository__Group__5 : rule__ServiceDefRepository__Group__5__Impl rule__ServiceDefRepository__Group__6 ;
     public final void rule__ServiceDefRepository__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1273:1: ( rule__ServiceDefRepository__Group__5__Impl )
-            // InternalServiceDefinition.g:1274:2: rule__ServiceDefRepository__Group__5__Impl
+            // InternalServiceDefinition.g:1222:1: ( rule__ServiceDefRepository__Group__5__Impl rule__ServiceDefRepository__Group__6 )
+            // InternalServiceDefinition.g:1223:2: rule__ServiceDefRepository__Group__5__Impl rule__ServiceDefRepository__Group__6
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_12);
             rule__ServiceDefRepository__Group__5__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ServiceDefRepository__Group__6();
 
             state._fsp--;
 
@@ -3809,21 +3793,49 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefRepository__Group__5__Impl"
-    // InternalServiceDefinition.g:1280:1: rule__ServiceDefRepository__Group__5__Impl : ( '}' ) ;
+    // InternalServiceDefinition.g:1230:1: rule__ServiceDefRepository__Group__5__Impl : ( ( rule__ServiceDefRepository__ServicesAssignment_5 )* ) ;
     public final void rule__ServiceDefRepository__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1284:1: ( ( '}' ) )
-            // InternalServiceDefinition.g:1285:1: ( '}' )
+            // InternalServiceDefinition.g:1234:1: ( ( ( rule__ServiceDefRepository__ServicesAssignment_5 )* ) )
+            // InternalServiceDefinition.g:1235:1: ( ( rule__ServiceDefRepository__ServicesAssignment_5 )* )
             {
-            // InternalServiceDefinition.g:1285:1: ( '}' )
-            // InternalServiceDefinition.g:1286:2: '}'
+            // InternalServiceDefinition.g:1235:1: ( ( rule__ServiceDefRepository__ServicesAssignment_5 )* )
+            // InternalServiceDefinition.g:1236:2: ( rule__ServiceDefRepository__ServicesAssignment_5 )*
             {
-             before(grammarAccess.getServiceDefRepositoryAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,16,FOLLOW_2); 
-             after(grammarAccess.getServiceDefRepositoryAccess().getRightCurlyBracketKeyword_5()); 
+             before(grammarAccess.getServiceDefRepositoryAccess().getServicesAssignment_5()); 
+            // InternalServiceDefinition.g:1237:2: ( rule__ServiceDefRepository__ServicesAssignment_5 )*
+            loop11:
+            do {
+                int alt11=2;
+                int LA11_0 = input.LA(1);
+
+                if ( (LA11_0==RULE_DOCU_COMMENT||(LA11_0>=23 && LA11_0<=26)) ) {
+                    alt11=1;
+                }
+
+
+                switch (alt11) {
+            	case 1 :
+            	    // InternalServiceDefinition.g:1237:3: rule__ServiceDefRepository__ServicesAssignment_5
+            	    {
+            	    pushFollow(FOLLOW_13);
+            	    rule__ServiceDefRepository__ServicesAssignment_5();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop11;
+                }
+            } while (true);
+
+             after(grammarAccess.getServiceDefRepositoryAccess().getServicesAssignment_5()); 
 
             }
 
@@ -3845,23 +3857,93 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__ServiceDefRepository__Group__5__Impl"
 
 
-    // $ANTLR start "rule__ServiceDefRepository__Group_2__0"
-    // InternalServiceDefinition.g:1296:1: rule__ServiceDefRepository__Group_2__0 : rule__ServiceDefRepository__Group_2__0__Impl rule__ServiceDefRepository__Group_2__1 ;
-    public final void rule__ServiceDefRepository__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__ServiceDefRepository__Group__6"
+    // InternalServiceDefinition.g:1245:1: rule__ServiceDefRepository__Group__6 : rule__ServiceDefRepository__Group__6__Impl ;
+    public final void rule__ServiceDefRepository__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1300:1: ( rule__ServiceDefRepository__Group_2__0__Impl rule__ServiceDefRepository__Group_2__1 )
-            // InternalServiceDefinition.g:1301:2: rule__ServiceDefRepository__Group_2__0__Impl rule__ServiceDefRepository__Group_2__1
+            // InternalServiceDefinition.g:1249:1: ( rule__ServiceDefRepository__Group__6__Impl )
+            // InternalServiceDefinition.g:1250:2: rule__ServiceDefRepository__Group__6__Impl
             {
-            pushFollow(FOLLOW_13);
-            rule__ServiceDefRepository__Group_2__0__Impl();
+            pushFollow(FOLLOW_2);
+            rule__ServiceDefRepository__Group__6__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ServiceDefRepository__Group__6"
+
+
+    // $ANTLR start "rule__ServiceDefRepository__Group__6__Impl"
+    // InternalServiceDefinition.g:1256:1: rule__ServiceDefRepository__Group__6__Impl : ( '}' ) ;
+    public final void rule__ServiceDefRepository__Group__6__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalServiceDefinition.g:1260:1: ( ( '}' ) )
+            // InternalServiceDefinition.g:1261:1: ( '}' )
+            {
+            // InternalServiceDefinition.g:1261:1: ( '}' )
+            // InternalServiceDefinition.g:1262:2: '}'
+            {
+             before(grammarAccess.getServiceDefRepositoryAccess().getRightCurlyBracketKeyword_6()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getServiceDefRepositoryAccess().getRightCurlyBracketKeyword_6()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ServiceDefRepository__Group__6__Impl"
+
+
+    // $ANTLR start "rule__ServiceDefRepository__Group_3__0"
+    // InternalServiceDefinition.g:1272:1: rule__ServiceDefRepository__Group_3__0 : rule__ServiceDefRepository__Group_3__0__Impl rule__ServiceDefRepository__Group_3__1 ;
+    public final void rule__ServiceDefRepository__Group_3__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalServiceDefinition.g:1276:1: ( rule__ServiceDefRepository__Group_3__0__Impl rule__ServiceDefRepository__Group_3__1 )
+            // InternalServiceDefinition.g:1277:2: rule__ServiceDefRepository__Group_3__0__Impl rule__ServiceDefRepository__Group_3__1
+            {
+            pushFollow(FOLLOW_14);
+            rule__ServiceDefRepository__Group_3__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__ServiceDefRepository__Group_2__1();
+            rule__ServiceDefRepository__Group_3__1();
 
             state._fsp--;
 
@@ -3880,25 +3962,25 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceDefRepository__Group_2__0"
+    // $ANTLR end "rule__ServiceDefRepository__Group_3__0"
 
 
-    // $ANTLR start "rule__ServiceDefRepository__Group_2__0__Impl"
-    // InternalServiceDefinition.g:1308:1: rule__ServiceDefRepository__Group_2__0__Impl : ( 'version' ) ;
-    public final void rule__ServiceDefRepository__Group_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ServiceDefRepository__Group_3__0__Impl"
+    // InternalServiceDefinition.g:1284:1: rule__ServiceDefRepository__Group_3__0__Impl : ( 'version' ) ;
+    public final void rule__ServiceDefRepository__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1312:1: ( ( 'version' ) )
-            // InternalServiceDefinition.g:1313:1: ( 'version' )
+            // InternalServiceDefinition.g:1288:1: ( ( 'version' ) )
+            // InternalServiceDefinition.g:1289:1: ( 'version' )
             {
-            // InternalServiceDefinition.g:1313:1: ( 'version' )
-            // InternalServiceDefinition.g:1314:2: 'version'
+            // InternalServiceDefinition.g:1289:1: ( 'version' )
+            // InternalServiceDefinition.g:1290:2: 'version'
             {
-             before(grammarAccess.getServiceDefRepositoryAccess().getVersionKeyword_2_0()); 
-            match(input,17,FOLLOW_2); 
-             after(grammarAccess.getServiceDefRepositoryAccess().getVersionKeyword_2_0()); 
+             before(grammarAccess.getServiceDefRepositoryAccess().getVersionKeyword_3_0()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getServiceDefRepositoryAccess().getVersionKeyword_3_0()); 
 
             }
 
@@ -3917,21 +3999,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceDefRepository__Group_2__0__Impl"
+    // $ANTLR end "rule__ServiceDefRepository__Group_3__0__Impl"
 
 
-    // $ANTLR start "rule__ServiceDefRepository__Group_2__1"
-    // InternalServiceDefinition.g:1323:1: rule__ServiceDefRepository__Group_2__1 : rule__ServiceDefRepository__Group_2__1__Impl ;
-    public final void rule__ServiceDefRepository__Group_2__1() throws RecognitionException {
+    // $ANTLR start "rule__ServiceDefRepository__Group_3__1"
+    // InternalServiceDefinition.g:1299:1: rule__ServiceDefRepository__Group_3__1 : rule__ServiceDefRepository__Group_3__1__Impl ;
+    public final void rule__ServiceDefRepository__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1327:1: ( rule__ServiceDefRepository__Group_2__1__Impl )
-            // InternalServiceDefinition.g:1328:2: rule__ServiceDefRepository__Group_2__1__Impl
+            // InternalServiceDefinition.g:1303:1: ( rule__ServiceDefRepository__Group_3__1__Impl )
+            // InternalServiceDefinition.g:1304:2: rule__ServiceDefRepository__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ServiceDefRepository__Group_2__1__Impl();
+            rule__ServiceDefRepository__Group_3__1__Impl();
 
             state._fsp--;
 
@@ -3950,35 +4032,35 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceDefRepository__Group_2__1"
+    // $ANTLR end "rule__ServiceDefRepository__Group_3__1"
 
 
-    // $ANTLR start "rule__ServiceDefRepository__Group_2__1__Impl"
-    // InternalServiceDefinition.g:1334:1: rule__ServiceDefRepository__Group_2__1__Impl : ( ( rule__ServiceDefRepository__VersionAssignment_2_1 ) ) ;
-    public final void rule__ServiceDefRepository__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ServiceDefRepository__Group_3__1__Impl"
+    // InternalServiceDefinition.g:1310:1: rule__ServiceDefRepository__Group_3__1__Impl : ( ( rule__ServiceDefRepository__VersionAssignment_3_1 ) ) ;
+    public final void rule__ServiceDefRepository__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1338:1: ( ( ( rule__ServiceDefRepository__VersionAssignment_2_1 ) ) )
-            // InternalServiceDefinition.g:1339:1: ( ( rule__ServiceDefRepository__VersionAssignment_2_1 ) )
+            // InternalServiceDefinition.g:1314:1: ( ( ( rule__ServiceDefRepository__VersionAssignment_3_1 ) ) )
+            // InternalServiceDefinition.g:1315:1: ( ( rule__ServiceDefRepository__VersionAssignment_3_1 ) )
             {
-            // InternalServiceDefinition.g:1339:1: ( ( rule__ServiceDefRepository__VersionAssignment_2_1 ) )
-            // InternalServiceDefinition.g:1340:2: ( rule__ServiceDefRepository__VersionAssignment_2_1 )
+            // InternalServiceDefinition.g:1315:1: ( ( rule__ServiceDefRepository__VersionAssignment_3_1 ) )
+            // InternalServiceDefinition.g:1316:2: ( rule__ServiceDefRepository__VersionAssignment_3_1 )
             {
-             before(grammarAccess.getServiceDefRepositoryAccess().getVersionAssignment_2_1()); 
-            // InternalServiceDefinition.g:1341:2: ( rule__ServiceDefRepository__VersionAssignment_2_1 )
-            // InternalServiceDefinition.g:1341:3: rule__ServiceDefRepository__VersionAssignment_2_1
+             before(grammarAccess.getServiceDefRepositoryAccess().getVersionAssignment_3_1()); 
+            // InternalServiceDefinition.g:1317:2: ( rule__ServiceDefRepository__VersionAssignment_3_1 )
+            // InternalServiceDefinition.g:1317:3: rule__ServiceDefRepository__VersionAssignment_3_1
             {
             pushFollow(FOLLOW_2);
-            rule__ServiceDefRepository__VersionAssignment_2_1();
+            rule__ServiceDefRepository__VersionAssignment_3_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getServiceDefRepositoryAccess().getVersionAssignment_2_1()); 
+             after(grammarAccess.getServiceDefRepositoryAccess().getVersionAssignment_3_1()); 
 
             }
 
@@ -3997,18 +4079,18 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceDefRepository__Group_2__1__Impl"
+    // $ANTLR end "rule__ServiceDefRepository__Group_3__1__Impl"
 
 
     // $ANTLR start "rule__ServiceRepoVersion__Group__0"
-    // InternalServiceDefinition.g:1350:1: rule__ServiceRepoVersion__Group__0 : rule__ServiceRepoVersion__Group__0__Impl rule__ServiceRepoVersion__Group__1 ;
+    // InternalServiceDefinition.g:1326:1: rule__ServiceRepoVersion__Group__0 : rule__ServiceRepoVersion__Group__0__Impl rule__ServiceRepoVersion__Group__1 ;
     public final void rule__ServiceRepoVersion__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1354:1: ( rule__ServiceRepoVersion__Group__0__Impl rule__ServiceRepoVersion__Group__1 )
-            // InternalServiceDefinition.g:1355:2: rule__ServiceRepoVersion__Group__0__Impl rule__ServiceRepoVersion__Group__1
+            // InternalServiceDefinition.g:1330:1: ( rule__ServiceRepoVersion__Group__0__Impl rule__ServiceRepoVersion__Group__1 )
+            // InternalServiceDefinition.g:1331:2: rule__ServiceRepoVersion__Group__0__Impl rule__ServiceRepoVersion__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__ServiceRepoVersion__Group__0__Impl();
@@ -4039,21 +4121,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceRepoVersion__Group__0__Impl"
-    // InternalServiceDefinition.g:1362:1: rule__ServiceRepoVersion__Group__0__Impl : ( ( rule__ServiceRepoVersion__MajorAssignment_0 ) ) ;
+    // InternalServiceDefinition.g:1338:1: rule__ServiceRepoVersion__Group__0__Impl : ( ( rule__ServiceRepoVersion__MajorAssignment_0 ) ) ;
     public final void rule__ServiceRepoVersion__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1366:1: ( ( ( rule__ServiceRepoVersion__MajorAssignment_0 ) ) )
-            // InternalServiceDefinition.g:1367:1: ( ( rule__ServiceRepoVersion__MajorAssignment_0 ) )
+            // InternalServiceDefinition.g:1342:1: ( ( ( rule__ServiceRepoVersion__MajorAssignment_0 ) ) )
+            // InternalServiceDefinition.g:1343:1: ( ( rule__ServiceRepoVersion__MajorAssignment_0 ) )
             {
-            // InternalServiceDefinition.g:1367:1: ( ( rule__ServiceRepoVersion__MajorAssignment_0 ) )
-            // InternalServiceDefinition.g:1368:2: ( rule__ServiceRepoVersion__MajorAssignment_0 )
+            // InternalServiceDefinition.g:1343:1: ( ( rule__ServiceRepoVersion__MajorAssignment_0 ) )
+            // InternalServiceDefinition.g:1344:2: ( rule__ServiceRepoVersion__MajorAssignment_0 )
             {
              before(grammarAccess.getServiceRepoVersionAccess().getMajorAssignment_0()); 
-            // InternalServiceDefinition.g:1369:2: ( rule__ServiceRepoVersion__MajorAssignment_0 )
-            // InternalServiceDefinition.g:1369:3: rule__ServiceRepoVersion__MajorAssignment_0
+            // InternalServiceDefinition.g:1345:2: ( rule__ServiceRepoVersion__MajorAssignment_0 )
+            // InternalServiceDefinition.g:1345:3: rule__ServiceRepoVersion__MajorAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__ServiceRepoVersion__MajorAssignment_0();
@@ -4086,16 +4168,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceRepoVersion__Group__1"
-    // InternalServiceDefinition.g:1377:1: rule__ServiceRepoVersion__Group__1 : rule__ServiceRepoVersion__Group__1__Impl rule__ServiceRepoVersion__Group__2 ;
+    // InternalServiceDefinition.g:1353:1: rule__ServiceRepoVersion__Group__1 : rule__ServiceRepoVersion__Group__1__Impl rule__ServiceRepoVersion__Group__2 ;
     public final void rule__ServiceRepoVersion__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1381:1: ( rule__ServiceRepoVersion__Group__1__Impl rule__ServiceRepoVersion__Group__2 )
-            // InternalServiceDefinition.g:1382:2: rule__ServiceRepoVersion__Group__1__Impl rule__ServiceRepoVersion__Group__2
+            // InternalServiceDefinition.g:1357:1: ( rule__ServiceRepoVersion__Group__1__Impl rule__ServiceRepoVersion__Group__2 )
+            // InternalServiceDefinition.g:1358:2: rule__ServiceRepoVersion__Group__1__Impl rule__ServiceRepoVersion__Group__2
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             rule__ServiceRepoVersion__Group__1__Impl();
 
             state._fsp--;
@@ -4124,20 +4206,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceRepoVersion__Group__1__Impl"
-    // InternalServiceDefinition.g:1389:1: rule__ServiceRepoVersion__Group__1__Impl : ( '.' ) ;
+    // InternalServiceDefinition.g:1365:1: rule__ServiceRepoVersion__Group__1__Impl : ( '.' ) ;
     public final void rule__ServiceRepoVersion__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1393:1: ( ( '.' ) )
-            // InternalServiceDefinition.g:1394:1: ( '.' )
+            // InternalServiceDefinition.g:1369:1: ( ( '.' ) )
+            // InternalServiceDefinition.g:1370:1: ( '.' )
             {
-            // InternalServiceDefinition.g:1394:1: ( '.' )
-            // InternalServiceDefinition.g:1395:2: '.'
+            // InternalServiceDefinition.g:1370:1: ( '.' )
+            // InternalServiceDefinition.g:1371:2: '.'
             {
              before(grammarAccess.getServiceRepoVersionAccess().getFullStopKeyword_1()); 
-            match(input,11,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getServiceRepoVersionAccess().getFullStopKeyword_1()); 
 
             }
@@ -4161,14 +4243,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceRepoVersion__Group__2"
-    // InternalServiceDefinition.g:1404:1: rule__ServiceRepoVersion__Group__2 : rule__ServiceRepoVersion__Group__2__Impl rule__ServiceRepoVersion__Group__3 ;
+    // InternalServiceDefinition.g:1380:1: rule__ServiceRepoVersion__Group__2 : rule__ServiceRepoVersion__Group__2__Impl rule__ServiceRepoVersion__Group__3 ;
     public final void rule__ServiceRepoVersion__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1408:1: ( rule__ServiceRepoVersion__Group__2__Impl rule__ServiceRepoVersion__Group__3 )
-            // InternalServiceDefinition.g:1409:2: rule__ServiceRepoVersion__Group__2__Impl rule__ServiceRepoVersion__Group__3
+            // InternalServiceDefinition.g:1384:1: ( rule__ServiceRepoVersion__Group__2__Impl rule__ServiceRepoVersion__Group__3 )
+            // InternalServiceDefinition.g:1385:2: rule__ServiceRepoVersion__Group__2__Impl rule__ServiceRepoVersion__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__ServiceRepoVersion__Group__2__Impl();
@@ -4199,21 +4281,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceRepoVersion__Group__2__Impl"
-    // InternalServiceDefinition.g:1416:1: rule__ServiceRepoVersion__Group__2__Impl : ( ( rule__ServiceRepoVersion__MinorAssignment_2 ) ) ;
+    // InternalServiceDefinition.g:1392:1: rule__ServiceRepoVersion__Group__2__Impl : ( ( rule__ServiceRepoVersion__MinorAssignment_2 ) ) ;
     public final void rule__ServiceRepoVersion__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1420:1: ( ( ( rule__ServiceRepoVersion__MinorAssignment_2 ) ) )
-            // InternalServiceDefinition.g:1421:1: ( ( rule__ServiceRepoVersion__MinorAssignment_2 ) )
+            // InternalServiceDefinition.g:1396:1: ( ( ( rule__ServiceRepoVersion__MinorAssignment_2 ) ) )
+            // InternalServiceDefinition.g:1397:1: ( ( rule__ServiceRepoVersion__MinorAssignment_2 ) )
             {
-            // InternalServiceDefinition.g:1421:1: ( ( rule__ServiceRepoVersion__MinorAssignment_2 ) )
-            // InternalServiceDefinition.g:1422:2: ( rule__ServiceRepoVersion__MinorAssignment_2 )
+            // InternalServiceDefinition.g:1397:1: ( ( rule__ServiceRepoVersion__MinorAssignment_2 ) )
+            // InternalServiceDefinition.g:1398:2: ( rule__ServiceRepoVersion__MinorAssignment_2 )
             {
              before(grammarAccess.getServiceRepoVersionAccess().getMinorAssignment_2()); 
-            // InternalServiceDefinition.g:1423:2: ( rule__ServiceRepoVersion__MinorAssignment_2 )
-            // InternalServiceDefinition.g:1423:3: rule__ServiceRepoVersion__MinorAssignment_2
+            // InternalServiceDefinition.g:1399:2: ( rule__ServiceRepoVersion__MinorAssignment_2 )
+            // InternalServiceDefinition.g:1399:3: rule__ServiceRepoVersion__MinorAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ServiceRepoVersion__MinorAssignment_2();
@@ -4246,14 +4328,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceRepoVersion__Group__3"
-    // InternalServiceDefinition.g:1431:1: rule__ServiceRepoVersion__Group__3 : rule__ServiceRepoVersion__Group__3__Impl ;
+    // InternalServiceDefinition.g:1407:1: rule__ServiceRepoVersion__Group__3 : rule__ServiceRepoVersion__Group__3__Impl ;
     public final void rule__ServiceRepoVersion__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1435:1: ( rule__ServiceRepoVersion__Group__3__Impl )
-            // InternalServiceDefinition.g:1436:2: rule__ServiceRepoVersion__Group__3__Impl
+            // InternalServiceDefinition.g:1411:1: ( rule__ServiceRepoVersion__Group__3__Impl )
+            // InternalServiceDefinition.g:1412:2: rule__ServiceRepoVersion__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ServiceRepoVersion__Group__3__Impl();
@@ -4279,29 +4361,29 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceRepoVersion__Group__3__Impl"
-    // InternalServiceDefinition.g:1442:1: rule__ServiceRepoVersion__Group__3__Impl : ( ( rule__ServiceRepoVersion__Group_3__0 )? ) ;
+    // InternalServiceDefinition.g:1418:1: rule__ServiceRepoVersion__Group__3__Impl : ( ( rule__ServiceRepoVersion__Group_3__0 )? ) ;
     public final void rule__ServiceRepoVersion__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1446:1: ( ( ( rule__ServiceRepoVersion__Group_3__0 )? ) )
-            // InternalServiceDefinition.g:1447:1: ( ( rule__ServiceRepoVersion__Group_3__0 )? )
+            // InternalServiceDefinition.g:1422:1: ( ( ( rule__ServiceRepoVersion__Group_3__0 )? ) )
+            // InternalServiceDefinition.g:1423:1: ( ( rule__ServiceRepoVersion__Group_3__0 )? )
             {
-            // InternalServiceDefinition.g:1447:1: ( ( rule__ServiceRepoVersion__Group_3__0 )? )
-            // InternalServiceDefinition.g:1448:2: ( rule__ServiceRepoVersion__Group_3__0 )?
+            // InternalServiceDefinition.g:1423:1: ( ( rule__ServiceRepoVersion__Group_3__0 )? )
+            // InternalServiceDefinition.g:1424:2: ( rule__ServiceRepoVersion__Group_3__0 )?
             {
              before(grammarAccess.getServiceRepoVersionAccess().getGroup_3()); 
-            // InternalServiceDefinition.g:1449:2: ( rule__ServiceRepoVersion__Group_3__0 )?
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // InternalServiceDefinition.g:1425:2: ( rule__ServiceRepoVersion__Group_3__0 )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA11_0==11) ) {
-                alt11=1;
+            if ( (LA12_0==14) ) {
+                alt12=1;
             }
-            switch (alt11) {
+            switch (alt12) {
                 case 1 :
-                    // InternalServiceDefinition.g:1449:3: rule__ServiceRepoVersion__Group_3__0
+                    // InternalServiceDefinition.g:1425:3: rule__ServiceRepoVersion__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ServiceRepoVersion__Group_3__0();
@@ -4337,16 +4419,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceRepoVersion__Group_3__0"
-    // InternalServiceDefinition.g:1458:1: rule__ServiceRepoVersion__Group_3__0 : rule__ServiceRepoVersion__Group_3__0__Impl rule__ServiceRepoVersion__Group_3__1 ;
+    // InternalServiceDefinition.g:1434:1: rule__ServiceRepoVersion__Group_3__0 : rule__ServiceRepoVersion__Group_3__0__Impl rule__ServiceRepoVersion__Group_3__1 ;
     public final void rule__ServiceRepoVersion__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1462:1: ( rule__ServiceRepoVersion__Group_3__0__Impl rule__ServiceRepoVersion__Group_3__1 )
-            // InternalServiceDefinition.g:1463:2: rule__ServiceRepoVersion__Group_3__0__Impl rule__ServiceRepoVersion__Group_3__1
+            // InternalServiceDefinition.g:1438:1: ( rule__ServiceRepoVersion__Group_3__0__Impl rule__ServiceRepoVersion__Group_3__1 )
+            // InternalServiceDefinition.g:1439:2: rule__ServiceRepoVersion__Group_3__0__Impl rule__ServiceRepoVersion__Group_3__1
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             rule__ServiceRepoVersion__Group_3__0__Impl();
 
             state._fsp--;
@@ -4375,20 +4457,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceRepoVersion__Group_3__0__Impl"
-    // InternalServiceDefinition.g:1470:1: rule__ServiceRepoVersion__Group_3__0__Impl : ( '.' ) ;
+    // InternalServiceDefinition.g:1446:1: rule__ServiceRepoVersion__Group_3__0__Impl : ( '.' ) ;
     public final void rule__ServiceRepoVersion__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1474:1: ( ( '.' ) )
-            // InternalServiceDefinition.g:1475:1: ( '.' )
+            // InternalServiceDefinition.g:1450:1: ( ( '.' ) )
+            // InternalServiceDefinition.g:1451:1: ( '.' )
             {
-            // InternalServiceDefinition.g:1475:1: ( '.' )
-            // InternalServiceDefinition.g:1476:2: '.'
+            // InternalServiceDefinition.g:1451:1: ( '.' )
+            // InternalServiceDefinition.g:1452:2: '.'
             {
              before(grammarAccess.getServiceRepoVersionAccess().getFullStopKeyword_3_0()); 
-            match(input,11,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getServiceRepoVersionAccess().getFullStopKeyword_3_0()); 
 
             }
@@ -4412,14 +4494,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceRepoVersion__Group_3__1"
-    // InternalServiceDefinition.g:1485:1: rule__ServiceRepoVersion__Group_3__1 : rule__ServiceRepoVersion__Group_3__1__Impl ;
+    // InternalServiceDefinition.g:1461:1: rule__ServiceRepoVersion__Group_3__1 : rule__ServiceRepoVersion__Group_3__1__Impl ;
     public final void rule__ServiceRepoVersion__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1489:1: ( rule__ServiceRepoVersion__Group_3__1__Impl )
-            // InternalServiceDefinition.g:1490:2: rule__ServiceRepoVersion__Group_3__1__Impl
+            // InternalServiceDefinition.g:1465:1: ( rule__ServiceRepoVersion__Group_3__1__Impl )
+            // InternalServiceDefinition.g:1466:2: rule__ServiceRepoVersion__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ServiceRepoVersion__Group_3__1__Impl();
@@ -4445,21 +4527,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceRepoVersion__Group_3__1__Impl"
-    // InternalServiceDefinition.g:1496:1: rule__ServiceRepoVersion__Group_3__1__Impl : ( ( rule__ServiceRepoVersion__PatchAssignment_3_1 ) ) ;
+    // InternalServiceDefinition.g:1472:1: rule__ServiceRepoVersion__Group_3__1__Impl : ( ( rule__ServiceRepoVersion__PatchAssignment_3_1 ) ) ;
     public final void rule__ServiceRepoVersion__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1500:1: ( ( ( rule__ServiceRepoVersion__PatchAssignment_3_1 ) ) )
-            // InternalServiceDefinition.g:1501:1: ( ( rule__ServiceRepoVersion__PatchAssignment_3_1 ) )
+            // InternalServiceDefinition.g:1476:1: ( ( ( rule__ServiceRepoVersion__PatchAssignment_3_1 ) ) )
+            // InternalServiceDefinition.g:1477:1: ( ( rule__ServiceRepoVersion__PatchAssignment_3_1 ) )
             {
-            // InternalServiceDefinition.g:1501:1: ( ( rule__ServiceRepoVersion__PatchAssignment_3_1 ) )
-            // InternalServiceDefinition.g:1502:2: ( rule__ServiceRepoVersion__PatchAssignment_3_1 )
+            // InternalServiceDefinition.g:1477:1: ( ( rule__ServiceRepoVersion__PatchAssignment_3_1 ) )
+            // InternalServiceDefinition.g:1478:2: ( rule__ServiceRepoVersion__PatchAssignment_3_1 )
             {
              before(grammarAccess.getServiceRepoVersionAccess().getPatchAssignment_3_1()); 
-            // InternalServiceDefinition.g:1503:2: ( rule__ServiceRepoVersion__PatchAssignment_3_1 )
-            // InternalServiceDefinition.g:1503:3: rule__ServiceRepoVersion__PatchAssignment_3_1
+            // InternalServiceDefinition.g:1479:2: ( rule__ServiceRepoVersion__PatchAssignment_3_1 )
+            // InternalServiceDefinition.g:1479:3: rule__ServiceRepoVersion__PatchAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__ServiceRepoVersion__PatchAssignment_3_1();
@@ -4492,14 +4574,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommRepoImport__Group__0"
-    // InternalServiceDefinition.g:1512:1: rule__CommRepoImport__Group__0 : rule__CommRepoImport__Group__0__Impl rule__CommRepoImport__Group__1 ;
+    // InternalServiceDefinition.g:1488:1: rule__CommRepoImport__Group__0 : rule__CommRepoImport__Group__0__Impl rule__CommRepoImport__Group__1 ;
     public final void rule__CommRepoImport__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1516:1: ( rule__CommRepoImport__Group__0__Impl rule__CommRepoImport__Group__1 )
-            // InternalServiceDefinition.g:1517:2: rule__CommRepoImport__Group__0__Impl rule__CommRepoImport__Group__1
+            // InternalServiceDefinition.g:1492:1: ( rule__CommRepoImport__Group__0__Impl rule__CommRepoImport__Group__1 )
+            // InternalServiceDefinition.g:1493:2: rule__CommRepoImport__Group__0__Impl rule__CommRepoImport__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__CommRepoImport__Group__0__Impl();
@@ -4530,20 +4612,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommRepoImport__Group__0__Impl"
-    // InternalServiceDefinition.g:1524:1: rule__CommRepoImport__Group__0__Impl : ( '#import' ) ;
+    // InternalServiceDefinition.g:1500:1: rule__CommRepoImport__Group__0__Impl : ( '#import' ) ;
     public final void rule__CommRepoImport__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1528:1: ( ( '#import' ) )
-            // InternalServiceDefinition.g:1529:1: ( '#import' )
+            // InternalServiceDefinition.g:1504:1: ( ( '#import' ) )
+            // InternalServiceDefinition.g:1505:1: ( '#import' )
             {
-            // InternalServiceDefinition.g:1529:1: ( '#import' )
-            // InternalServiceDefinition.g:1530:2: '#import'
+            // InternalServiceDefinition.g:1505:1: ( '#import' )
+            // InternalServiceDefinition.g:1506:2: '#import'
             {
              before(grammarAccess.getCommRepoImportAccess().getImportKeyword_0()); 
-            match(input,18,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getCommRepoImportAccess().getImportKeyword_0()); 
 
             }
@@ -4567,16 +4649,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommRepoImport__Group__1"
-    // InternalServiceDefinition.g:1539:1: rule__CommRepoImport__Group__1 : rule__CommRepoImport__Group__1__Impl rule__CommRepoImport__Group__2 ;
+    // InternalServiceDefinition.g:1515:1: rule__CommRepoImport__Group__1 : rule__CommRepoImport__Group__1__Impl rule__CommRepoImport__Group__2 ;
     public final void rule__CommRepoImport__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1543:1: ( rule__CommRepoImport__Group__1__Impl rule__CommRepoImport__Group__2 )
-            // InternalServiceDefinition.g:1544:2: rule__CommRepoImport__Group__1__Impl rule__CommRepoImport__Group__2
+            // InternalServiceDefinition.g:1519:1: ( rule__CommRepoImport__Group__1__Impl rule__CommRepoImport__Group__2 )
+            // InternalServiceDefinition.g:1520:2: rule__CommRepoImport__Group__1__Impl rule__CommRepoImport__Group__2
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_15);
             rule__CommRepoImport__Group__1__Impl();
 
             state._fsp--;
@@ -4605,21 +4687,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommRepoImport__Group__1__Impl"
-    // InternalServiceDefinition.g:1551:1: rule__CommRepoImport__Group__1__Impl : ( ( rule__CommRepoImport__ImportedNamespaceAssignment_1 ) ) ;
+    // InternalServiceDefinition.g:1527:1: rule__CommRepoImport__Group__1__Impl : ( ( rule__CommRepoImport__ImportedNamespaceAssignment_1 ) ) ;
     public final void rule__CommRepoImport__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1555:1: ( ( ( rule__CommRepoImport__ImportedNamespaceAssignment_1 ) ) )
-            // InternalServiceDefinition.g:1556:1: ( ( rule__CommRepoImport__ImportedNamespaceAssignment_1 ) )
+            // InternalServiceDefinition.g:1531:1: ( ( ( rule__CommRepoImport__ImportedNamespaceAssignment_1 ) ) )
+            // InternalServiceDefinition.g:1532:1: ( ( rule__CommRepoImport__ImportedNamespaceAssignment_1 ) )
             {
-            // InternalServiceDefinition.g:1556:1: ( ( rule__CommRepoImport__ImportedNamespaceAssignment_1 ) )
-            // InternalServiceDefinition.g:1557:2: ( rule__CommRepoImport__ImportedNamespaceAssignment_1 )
+            // InternalServiceDefinition.g:1532:1: ( ( rule__CommRepoImport__ImportedNamespaceAssignment_1 ) )
+            // InternalServiceDefinition.g:1533:2: ( rule__CommRepoImport__ImportedNamespaceAssignment_1 )
             {
              before(grammarAccess.getCommRepoImportAccess().getImportedNamespaceAssignment_1()); 
-            // InternalServiceDefinition.g:1558:2: ( rule__CommRepoImport__ImportedNamespaceAssignment_1 )
-            // InternalServiceDefinition.g:1558:3: rule__CommRepoImport__ImportedNamespaceAssignment_1
+            // InternalServiceDefinition.g:1534:2: ( rule__CommRepoImport__ImportedNamespaceAssignment_1 )
+            // InternalServiceDefinition.g:1534:3: rule__CommRepoImport__ImportedNamespaceAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__CommRepoImport__ImportedNamespaceAssignment_1();
@@ -4652,14 +4734,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommRepoImport__Group__2"
-    // InternalServiceDefinition.g:1566:1: rule__CommRepoImport__Group__2 : rule__CommRepoImport__Group__2__Impl ;
+    // InternalServiceDefinition.g:1542:1: rule__CommRepoImport__Group__2 : rule__CommRepoImport__Group__2__Impl ;
     public final void rule__CommRepoImport__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1570:1: ( rule__CommRepoImport__Group__2__Impl )
-            // InternalServiceDefinition.g:1571:2: rule__CommRepoImport__Group__2__Impl
+            // InternalServiceDefinition.g:1546:1: ( rule__CommRepoImport__Group__2__Impl )
+            // InternalServiceDefinition.g:1547:2: rule__CommRepoImport__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CommRepoImport__Group__2__Impl();
@@ -4685,31 +4767,31 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommRepoImport__Group__2__Impl"
-    // InternalServiceDefinition.g:1577:1: rule__CommRepoImport__Group__2__Impl : ( ( ';' )? ) ;
+    // InternalServiceDefinition.g:1553:1: rule__CommRepoImport__Group__2__Impl : ( ( ';' )? ) ;
     public final void rule__CommRepoImport__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1581:1: ( ( ( ';' )? ) )
-            // InternalServiceDefinition.g:1582:1: ( ( ';' )? )
+            // InternalServiceDefinition.g:1557:1: ( ( ( ';' )? ) )
+            // InternalServiceDefinition.g:1558:1: ( ( ';' )? )
             {
-            // InternalServiceDefinition.g:1582:1: ( ( ';' )? )
-            // InternalServiceDefinition.g:1583:2: ( ';' )?
+            // InternalServiceDefinition.g:1558:1: ( ( ';' )? )
+            // InternalServiceDefinition.g:1559:2: ( ';' )?
             {
              before(grammarAccess.getCommRepoImportAccess().getSemicolonKeyword_2()); 
-            // InternalServiceDefinition.g:1584:2: ( ';' )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // InternalServiceDefinition.g:1560:2: ( ';' )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA12_0==19) ) {
-                alt12=1;
+            if ( (LA13_0==22) ) {
+                alt13=1;
             }
-            switch (alt12) {
+            switch (alt13) {
                 case 1 :
-                    // InternalServiceDefinition.g:1584:3: ';'
+                    // InternalServiceDefinition.g:1560:3: ';'
                     {
-                    match(input,19,FOLLOW_2); 
+                    match(input,22,FOLLOW_2); 
 
                     }
                     break;
@@ -4739,16 +4821,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ForkingServiceDefinition__Group__0"
-    // InternalServiceDefinition.g:1593:1: rule__ForkingServiceDefinition__Group__0 : rule__ForkingServiceDefinition__Group__0__Impl rule__ForkingServiceDefinition__Group__1 ;
+    // InternalServiceDefinition.g:1569:1: rule__ForkingServiceDefinition__Group__0 : rule__ForkingServiceDefinition__Group__0__Impl rule__ForkingServiceDefinition__Group__1 ;
     public final void rule__ForkingServiceDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1597:1: ( rule__ForkingServiceDefinition__Group__0__Impl rule__ForkingServiceDefinition__Group__1 )
-            // InternalServiceDefinition.g:1598:2: rule__ForkingServiceDefinition__Group__0__Impl rule__ForkingServiceDefinition__Group__1
+            // InternalServiceDefinition.g:1573:1: ( rule__ForkingServiceDefinition__Group__0__Impl rule__ForkingServiceDefinition__Group__1 )
+            // InternalServiceDefinition.g:1574:2: rule__ForkingServiceDefinition__Group__0__Impl rule__ForkingServiceDefinition__Group__1
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_16);
             rule__ForkingServiceDefinition__Group__0__Impl();
 
             state._fsp--;
@@ -4777,21 +4859,42 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ForkingServiceDefinition__Group__0__Impl"
-    // InternalServiceDefinition.g:1605:1: rule__ForkingServiceDefinition__Group__0__Impl : ( 'ForkingServiceDefinition' ) ;
+    // InternalServiceDefinition.g:1581:1: rule__ForkingServiceDefinition__Group__0__Impl : ( ( rule__ForkingServiceDefinition__DocumentationAssignment_0 )? ) ;
     public final void rule__ForkingServiceDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1609:1: ( ( 'ForkingServiceDefinition' ) )
-            // InternalServiceDefinition.g:1610:1: ( 'ForkingServiceDefinition' )
+            // InternalServiceDefinition.g:1585:1: ( ( ( rule__ForkingServiceDefinition__DocumentationAssignment_0 )? ) )
+            // InternalServiceDefinition.g:1586:1: ( ( rule__ForkingServiceDefinition__DocumentationAssignment_0 )? )
             {
-            // InternalServiceDefinition.g:1610:1: ( 'ForkingServiceDefinition' )
-            // InternalServiceDefinition.g:1611:2: 'ForkingServiceDefinition'
+            // InternalServiceDefinition.g:1586:1: ( ( rule__ForkingServiceDefinition__DocumentationAssignment_0 )? )
+            // InternalServiceDefinition.g:1587:2: ( rule__ForkingServiceDefinition__DocumentationAssignment_0 )?
             {
-             before(grammarAccess.getForkingServiceDefinitionAccess().getForkingServiceDefinitionKeyword_0()); 
-            match(input,20,FOLLOW_2); 
-             after(grammarAccess.getForkingServiceDefinitionAccess().getForkingServiceDefinitionKeyword_0()); 
+             before(grammarAccess.getForkingServiceDefinitionAccess().getDocumentationAssignment_0()); 
+            // InternalServiceDefinition.g:1588:2: ( rule__ForkingServiceDefinition__DocumentationAssignment_0 )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
+
+            if ( (LA14_0==RULE_DOCU_COMMENT) ) {
+                alt14=1;
+            }
+            switch (alt14) {
+                case 1 :
+                    // InternalServiceDefinition.g:1588:3: rule__ForkingServiceDefinition__DocumentationAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ForkingServiceDefinition__DocumentationAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getForkingServiceDefinitionAccess().getDocumentationAssignment_0()); 
 
             }
 
@@ -4814,16 +4917,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ForkingServiceDefinition__Group__1"
-    // InternalServiceDefinition.g:1620:1: rule__ForkingServiceDefinition__Group__1 : rule__ForkingServiceDefinition__Group__1__Impl rule__ForkingServiceDefinition__Group__2 ;
+    // InternalServiceDefinition.g:1596:1: rule__ForkingServiceDefinition__Group__1 : rule__ForkingServiceDefinition__Group__1__Impl rule__ForkingServiceDefinition__Group__2 ;
     public final void rule__ForkingServiceDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1624:1: ( rule__ForkingServiceDefinition__Group__1__Impl rule__ForkingServiceDefinition__Group__2 )
-            // InternalServiceDefinition.g:1625:2: rule__ForkingServiceDefinition__Group__1__Impl rule__ForkingServiceDefinition__Group__2
+            // InternalServiceDefinition.g:1600:1: ( rule__ForkingServiceDefinition__Group__1__Impl rule__ForkingServiceDefinition__Group__2 )
+            // InternalServiceDefinition.g:1601:2: rule__ForkingServiceDefinition__Group__1__Impl rule__ForkingServiceDefinition__Group__2
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_7);
             rule__ForkingServiceDefinition__Group__1__Impl();
 
             state._fsp--;
@@ -4852,31 +4955,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ForkingServiceDefinition__Group__1__Impl"
-    // InternalServiceDefinition.g:1632:1: rule__ForkingServiceDefinition__Group__1__Impl : ( ( rule__ForkingServiceDefinition__NameAssignment_1 ) ) ;
+    // InternalServiceDefinition.g:1608:1: rule__ForkingServiceDefinition__Group__1__Impl : ( 'ForkingServiceDefinition' ) ;
     public final void rule__ForkingServiceDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1636:1: ( ( ( rule__ForkingServiceDefinition__NameAssignment_1 ) ) )
-            // InternalServiceDefinition.g:1637:1: ( ( rule__ForkingServiceDefinition__NameAssignment_1 ) )
+            // InternalServiceDefinition.g:1612:1: ( ( 'ForkingServiceDefinition' ) )
+            // InternalServiceDefinition.g:1613:1: ( 'ForkingServiceDefinition' )
             {
-            // InternalServiceDefinition.g:1637:1: ( ( rule__ForkingServiceDefinition__NameAssignment_1 ) )
-            // InternalServiceDefinition.g:1638:2: ( rule__ForkingServiceDefinition__NameAssignment_1 )
+            // InternalServiceDefinition.g:1613:1: ( 'ForkingServiceDefinition' )
+            // InternalServiceDefinition.g:1614:2: 'ForkingServiceDefinition'
             {
-             before(grammarAccess.getForkingServiceDefinitionAccess().getNameAssignment_1()); 
-            // InternalServiceDefinition.g:1639:2: ( rule__ForkingServiceDefinition__NameAssignment_1 )
-            // InternalServiceDefinition.g:1639:3: rule__ForkingServiceDefinition__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__ForkingServiceDefinition__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getForkingServiceDefinitionAccess().getNameAssignment_1()); 
+             before(grammarAccess.getForkingServiceDefinitionAccess().getForkingServiceDefinitionKeyword_1()); 
+            match(input,23,FOLLOW_2); 
+             after(grammarAccess.getForkingServiceDefinitionAccess().getForkingServiceDefinitionKeyword_1()); 
 
             }
 
@@ -4899,16 +4992,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ForkingServiceDefinition__Group__2"
-    // InternalServiceDefinition.g:1647:1: rule__ForkingServiceDefinition__Group__2 : rule__ForkingServiceDefinition__Group__2__Impl rule__ForkingServiceDefinition__Group__3 ;
+    // InternalServiceDefinition.g:1623:1: rule__ForkingServiceDefinition__Group__2 : rule__ForkingServiceDefinition__Group__2__Impl rule__ForkingServiceDefinition__Group__3 ;
     public final void rule__ForkingServiceDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1651:1: ( rule__ForkingServiceDefinition__Group__2__Impl rule__ForkingServiceDefinition__Group__3 )
-            // InternalServiceDefinition.g:1652:2: rule__ForkingServiceDefinition__Group__2__Impl rule__ForkingServiceDefinition__Group__3
+            // InternalServiceDefinition.g:1627:1: ( rule__ForkingServiceDefinition__Group__2__Impl rule__ForkingServiceDefinition__Group__3 )
+            // InternalServiceDefinition.g:1628:2: rule__ForkingServiceDefinition__Group__2__Impl rule__ForkingServiceDefinition__Group__3
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_17);
             rule__ForkingServiceDefinition__Group__2__Impl();
 
             state._fsp--;
@@ -4937,21 +5030,31 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ForkingServiceDefinition__Group__2__Impl"
-    // InternalServiceDefinition.g:1659:1: rule__ForkingServiceDefinition__Group__2__Impl : ( '{' ) ;
+    // InternalServiceDefinition.g:1635:1: rule__ForkingServiceDefinition__Group__2__Impl : ( ( rule__ForkingServiceDefinition__NameAssignment_2 ) ) ;
     public final void rule__ForkingServiceDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1663:1: ( ( '{' ) )
-            // InternalServiceDefinition.g:1664:1: ( '{' )
+            // InternalServiceDefinition.g:1639:1: ( ( ( rule__ForkingServiceDefinition__NameAssignment_2 ) ) )
+            // InternalServiceDefinition.g:1640:1: ( ( rule__ForkingServiceDefinition__NameAssignment_2 ) )
             {
-            // InternalServiceDefinition.g:1664:1: ( '{' )
-            // InternalServiceDefinition.g:1665:2: '{'
+            // InternalServiceDefinition.g:1640:1: ( ( rule__ForkingServiceDefinition__NameAssignment_2 ) )
+            // InternalServiceDefinition.g:1641:2: ( rule__ForkingServiceDefinition__NameAssignment_2 )
             {
-             before(grammarAccess.getForkingServiceDefinitionAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getForkingServiceDefinitionAccess().getLeftCurlyBracketKeyword_2()); 
+             before(grammarAccess.getForkingServiceDefinitionAccess().getNameAssignment_2()); 
+            // InternalServiceDefinition.g:1642:2: ( rule__ForkingServiceDefinition__NameAssignment_2 )
+            // InternalServiceDefinition.g:1642:3: rule__ForkingServiceDefinition__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__ForkingServiceDefinition__NameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getForkingServiceDefinitionAccess().getNameAssignment_2()); 
 
             }
 
@@ -4974,16 +5077,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ForkingServiceDefinition__Group__3"
-    // InternalServiceDefinition.g:1674:1: rule__ForkingServiceDefinition__Group__3 : rule__ForkingServiceDefinition__Group__3__Impl rule__ForkingServiceDefinition__Group__4 ;
+    // InternalServiceDefinition.g:1650:1: rule__ForkingServiceDefinition__Group__3 : rule__ForkingServiceDefinition__Group__3__Impl rule__ForkingServiceDefinition__Group__4 ;
     public final void rule__ForkingServiceDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1678:1: ( rule__ForkingServiceDefinition__Group__3__Impl rule__ForkingServiceDefinition__Group__4 )
-            // InternalServiceDefinition.g:1679:2: rule__ForkingServiceDefinition__Group__3__Impl rule__ForkingServiceDefinition__Group__4
+            // InternalServiceDefinition.g:1654:1: ( rule__ForkingServiceDefinition__Group__3__Impl rule__ForkingServiceDefinition__Group__4 )
+            // InternalServiceDefinition.g:1655:2: rule__ForkingServiceDefinition__Group__3__Impl rule__ForkingServiceDefinition__Group__4
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_18);
             rule__ForkingServiceDefinition__Group__3__Impl();
 
             state._fsp--;
@@ -5012,31 +5115,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ForkingServiceDefinition__Group__3__Impl"
-    // InternalServiceDefinition.g:1686:1: rule__ForkingServiceDefinition__Group__3__Impl : ( ( rule__ForkingServiceDefinition__PatternAssignment_3 ) ) ;
+    // InternalServiceDefinition.g:1662:1: rule__ForkingServiceDefinition__Group__3__Impl : ( '{' ) ;
     public final void rule__ForkingServiceDefinition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1690:1: ( ( ( rule__ForkingServiceDefinition__PatternAssignment_3 ) ) )
-            // InternalServiceDefinition.g:1691:1: ( ( rule__ForkingServiceDefinition__PatternAssignment_3 ) )
+            // InternalServiceDefinition.g:1666:1: ( ( '{' ) )
+            // InternalServiceDefinition.g:1667:1: ( '{' )
             {
-            // InternalServiceDefinition.g:1691:1: ( ( rule__ForkingServiceDefinition__PatternAssignment_3 ) )
-            // InternalServiceDefinition.g:1692:2: ( rule__ForkingServiceDefinition__PatternAssignment_3 )
+            // InternalServiceDefinition.g:1667:1: ( '{' )
+            // InternalServiceDefinition.g:1668:2: '{'
             {
-             before(grammarAccess.getForkingServiceDefinitionAccess().getPatternAssignment_3()); 
-            // InternalServiceDefinition.g:1693:2: ( rule__ForkingServiceDefinition__PatternAssignment_3 )
-            // InternalServiceDefinition.g:1693:3: rule__ForkingServiceDefinition__PatternAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__ForkingServiceDefinition__PatternAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getForkingServiceDefinitionAccess().getPatternAssignment_3()); 
+             before(grammarAccess.getForkingServiceDefinitionAccess().getLeftCurlyBracketKeyword_3()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getForkingServiceDefinitionAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
 
@@ -5059,16 +5152,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ForkingServiceDefinition__Group__4"
-    // InternalServiceDefinition.g:1701:1: rule__ForkingServiceDefinition__Group__4 : rule__ForkingServiceDefinition__Group__4__Impl rule__ForkingServiceDefinition__Group__5 ;
+    // InternalServiceDefinition.g:1677:1: rule__ForkingServiceDefinition__Group__4 : rule__ForkingServiceDefinition__Group__4__Impl rule__ForkingServiceDefinition__Group__5 ;
     public final void rule__ForkingServiceDefinition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1705:1: ( rule__ForkingServiceDefinition__Group__4__Impl rule__ForkingServiceDefinition__Group__5 )
-            // InternalServiceDefinition.g:1706:2: rule__ForkingServiceDefinition__Group__4__Impl rule__ForkingServiceDefinition__Group__5
+            // InternalServiceDefinition.g:1681:1: ( rule__ForkingServiceDefinition__Group__4__Impl rule__ForkingServiceDefinition__Group__5 )
+            // InternalServiceDefinition.g:1682:2: rule__ForkingServiceDefinition__Group__4__Impl rule__ForkingServiceDefinition__Group__5
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_19);
             rule__ForkingServiceDefinition__Group__4__Impl();
 
             state._fsp--;
@@ -5097,42 +5190,31 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ForkingServiceDefinition__Group__4__Impl"
-    // InternalServiceDefinition.g:1713:1: rule__ForkingServiceDefinition__Group__4__Impl : ( ( rule__ForkingServiceDefinition__Group_4__0 )? ) ;
+    // InternalServiceDefinition.g:1689:1: rule__ForkingServiceDefinition__Group__4__Impl : ( ( rule__ForkingServiceDefinition__PatternAssignment_4 ) ) ;
     public final void rule__ForkingServiceDefinition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1717:1: ( ( ( rule__ForkingServiceDefinition__Group_4__0 )? ) )
-            // InternalServiceDefinition.g:1718:1: ( ( rule__ForkingServiceDefinition__Group_4__0 )? )
+            // InternalServiceDefinition.g:1693:1: ( ( ( rule__ForkingServiceDefinition__PatternAssignment_4 ) ) )
+            // InternalServiceDefinition.g:1694:1: ( ( rule__ForkingServiceDefinition__PatternAssignment_4 ) )
             {
-            // InternalServiceDefinition.g:1718:1: ( ( rule__ForkingServiceDefinition__Group_4__0 )? )
-            // InternalServiceDefinition.g:1719:2: ( rule__ForkingServiceDefinition__Group_4__0 )?
+            // InternalServiceDefinition.g:1694:1: ( ( rule__ForkingServiceDefinition__PatternAssignment_4 ) )
+            // InternalServiceDefinition.g:1695:2: ( rule__ForkingServiceDefinition__PatternAssignment_4 )
             {
-             before(grammarAccess.getForkingServiceDefinitionAccess().getGroup_4()); 
-            // InternalServiceDefinition.g:1720:2: ( rule__ForkingServiceDefinition__Group_4__0 )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+             before(grammarAccess.getForkingServiceDefinitionAccess().getPatternAssignment_4()); 
+            // InternalServiceDefinition.g:1696:2: ( rule__ForkingServiceDefinition__PatternAssignment_4 )
+            // InternalServiceDefinition.g:1696:3: rule__ForkingServiceDefinition__PatternAssignment_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__ForkingServiceDefinition__PatternAssignment_4();
 
-            if ( (LA13_0==21) ) {
-                alt13=1;
-            }
-            switch (alt13) {
-                case 1 :
-                    // InternalServiceDefinition.g:1720:3: rule__ForkingServiceDefinition__Group_4__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ForkingServiceDefinition__Group_4__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getForkingServiceDefinitionAccess().getGroup_4()); 
+             after(grammarAccess.getForkingServiceDefinitionAccess().getPatternAssignment_4()); 
 
             }
 
@@ -5155,16 +5237,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ForkingServiceDefinition__Group__5"
-    // InternalServiceDefinition.g:1728:1: rule__ForkingServiceDefinition__Group__5 : rule__ForkingServiceDefinition__Group__5__Impl rule__ForkingServiceDefinition__Group__6 ;
+    // InternalServiceDefinition.g:1704:1: rule__ForkingServiceDefinition__Group__5 : rule__ForkingServiceDefinition__Group__5__Impl rule__ForkingServiceDefinition__Group__6 ;
     public final void rule__ForkingServiceDefinition__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1732:1: ( rule__ForkingServiceDefinition__Group__5__Impl rule__ForkingServiceDefinition__Group__6 )
-            // InternalServiceDefinition.g:1733:2: rule__ForkingServiceDefinition__Group__5__Impl rule__ForkingServiceDefinition__Group__6
+            // InternalServiceDefinition.g:1708:1: ( rule__ForkingServiceDefinition__Group__5__Impl rule__ForkingServiceDefinition__Group__6 )
+            // InternalServiceDefinition.g:1709:2: rule__ForkingServiceDefinition__Group__5__Impl rule__ForkingServiceDefinition__Group__6
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_19);
             rule__ForkingServiceDefinition__Group__5__Impl();
 
             state._fsp--;
@@ -5193,35 +5275,35 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ForkingServiceDefinition__Group__5__Impl"
-    // InternalServiceDefinition.g:1740:1: rule__ForkingServiceDefinition__Group__5__Impl : ( ( rule__ForkingServiceDefinition__PropertiesAssignment_5 )* ) ;
+    // InternalServiceDefinition.g:1716:1: rule__ForkingServiceDefinition__Group__5__Impl : ( ( rule__ForkingServiceDefinition__PropertiesAssignment_5 )* ) ;
     public final void rule__ForkingServiceDefinition__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1744:1: ( ( ( rule__ForkingServiceDefinition__PropertiesAssignment_5 )* ) )
-            // InternalServiceDefinition.g:1745:1: ( ( rule__ForkingServiceDefinition__PropertiesAssignment_5 )* )
+            // InternalServiceDefinition.g:1720:1: ( ( ( rule__ForkingServiceDefinition__PropertiesAssignment_5 )* ) )
+            // InternalServiceDefinition.g:1721:1: ( ( rule__ForkingServiceDefinition__PropertiesAssignment_5 )* )
             {
-            // InternalServiceDefinition.g:1745:1: ( ( rule__ForkingServiceDefinition__PropertiesAssignment_5 )* )
-            // InternalServiceDefinition.g:1746:2: ( rule__ForkingServiceDefinition__PropertiesAssignment_5 )*
+            // InternalServiceDefinition.g:1721:1: ( ( rule__ForkingServiceDefinition__PropertiesAssignment_5 )* )
+            // InternalServiceDefinition.g:1722:2: ( rule__ForkingServiceDefinition__PropertiesAssignment_5 )*
             {
              before(grammarAccess.getForkingServiceDefinitionAccess().getPropertiesAssignment_5()); 
-            // InternalServiceDefinition.g:1747:2: ( rule__ForkingServiceDefinition__PropertiesAssignment_5 )*
-            loop14:
+            // InternalServiceDefinition.g:1723:2: ( rule__ForkingServiceDefinition__PropertiesAssignment_5 )*
+            loop15:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt15=2;
+                int LA15_0 = input.LA(1);
 
-                if ( (LA14_0==46) ) {
-                    alt14=1;
+                if ( (LA15_0==48) ) {
+                    alt15=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt15) {
             	case 1 :
-            	    // InternalServiceDefinition.g:1747:3: rule__ForkingServiceDefinition__PropertiesAssignment_5
+            	    // InternalServiceDefinition.g:1723:3: rule__ForkingServiceDefinition__PropertiesAssignment_5
             	    {
-            	    pushFollow(FOLLOW_18);
+            	    pushFollow(FOLLOW_20);
             	    rule__ForkingServiceDefinition__PropertiesAssignment_5();
 
             	    state._fsp--;
@@ -5231,7 +5313,7 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop15;
                 }
             } while (true);
 
@@ -5258,14 +5340,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ForkingServiceDefinition__Group__6"
-    // InternalServiceDefinition.g:1755:1: rule__ForkingServiceDefinition__Group__6 : rule__ForkingServiceDefinition__Group__6__Impl ;
+    // InternalServiceDefinition.g:1731:1: rule__ForkingServiceDefinition__Group__6 : rule__ForkingServiceDefinition__Group__6__Impl ;
     public final void rule__ForkingServiceDefinition__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1759:1: ( rule__ForkingServiceDefinition__Group__6__Impl )
-            // InternalServiceDefinition.g:1760:2: rule__ForkingServiceDefinition__Group__6__Impl
+            // InternalServiceDefinition.g:1735:1: ( rule__ForkingServiceDefinition__Group__6__Impl )
+            // InternalServiceDefinition.g:1736:2: rule__ForkingServiceDefinition__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ForkingServiceDefinition__Group__6__Impl();
@@ -5291,20 +5373,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ForkingServiceDefinition__Group__6__Impl"
-    // InternalServiceDefinition.g:1766:1: rule__ForkingServiceDefinition__Group__6__Impl : ( '}' ) ;
+    // InternalServiceDefinition.g:1742:1: rule__ForkingServiceDefinition__Group__6__Impl : ( '}' ) ;
     public final void rule__ForkingServiceDefinition__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1770:1: ( ( '}' ) )
-            // InternalServiceDefinition.g:1771:1: ( '}' )
+            // InternalServiceDefinition.g:1746:1: ( ( '}' ) )
+            // InternalServiceDefinition.g:1747:1: ( '}' )
             {
-            // InternalServiceDefinition.g:1771:1: ( '}' )
-            // InternalServiceDefinition.g:1772:2: '}'
+            // InternalServiceDefinition.g:1747:1: ( '}' )
+            // InternalServiceDefinition.g:1748:2: '}'
             {
              before(grammarAccess.getForkingServiceDefinitionAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,16,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getForkingServiceDefinitionAccess().getRightCurlyBracketKeyword_6()); 
 
             }
@@ -5327,172 +5409,17 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__ForkingServiceDefinition__Group__6__Impl"
 
 
-    // $ANTLR start "rule__ForkingServiceDefinition__Group_4__0"
-    // InternalServiceDefinition.g:1782:1: rule__ForkingServiceDefinition__Group_4__0 : rule__ForkingServiceDefinition__Group_4__0__Impl rule__ForkingServiceDefinition__Group_4__1 ;
-    public final void rule__ForkingServiceDefinition__Group_4__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:1786:1: ( rule__ForkingServiceDefinition__Group_4__0__Impl rule__ForkingServiceDefinition__Group_4__1 )
-            // InternalServiceDefinition.g:1787:2: rule__ForkingServiceDefinition__Group_4__0__Impl rule__ForkingServiceDefinition__Group_4__1
-            {
-            pushFollow(FOLLOW_19);
-            rule__ForkingServiceDefinition__Group_4__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ForkingServiceDefinition__Group_4__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ForkingServiceDefinition__Group_4__0"
-
-
-    // $ANTLR start "rule__ForkingServiceDefinition__Group_4__0__Impl"
-    // InternalServiceDefinition.g:1794:1: rule__ForkingServiceDefinition__Group_4__0__Impl : ( 'purposeDescription' ) ;
-    public final void rule__ForkingServiceDefinition__Group_4__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:1798:1: ( ( 'purposeDescription' ) )
-            // InternalServiceDefinition.g:1799:1: ( 'purposeDescription' )
-            {
-            // InternalServiceDefinition.g:1799:1: ( 'purposeDescription' )
-            // InternalServiceDefinition.g:1800:2: 'purposeDescription'
-            {
-             before(grammarAccess.getForkingServiceDefinitionAccess().getPurposeDescriptionKeyword_4_0()); 
-            match(input,21,FOLLOW_2); 
-             after(grammarAccess.getForkingServiceDefinitionAccess().getPurposeDescriptionKeyword_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ForkingServiceDefinition__Group_4__0__Impl"
-
-
-    // $ANTLR start "rule__ForkingServiceDefinition__Group_4__1"
-    // InternalServiceDefinition.g:1809:1: rule__ForkingServiceDefinition__Group_4__1 : rule__ForkingServiceDefinition__Group_4__1__Impl ;
-    public final void rule__ForkingServiceDefinition__Group_4__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:1813:1: ( rule__ForkingServiceDefinition__Group_4__1__Impl )
-            // InternalServiceDefinition.g:1814:2: rule__ForkingServiceDefinition__Group_4__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__ForkingServiceDefinition__Group_4__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ForkingServiceDefinition__Group_4__1"
-
-
-    // $ANTLR start "rule__ForkingServiceDefinition__Group_4__1__Impl"
-    // InternalServiceDefinition.g:1820:1: rule__ForkingServiceDefinition__Group_4__1__Impl : ( ( rule__ForkingServiceDefinition__PurposeDescriptionAssignment_4_1 ) ) ;
-    public final void rule__ForkingServiceDefinition__Group_4__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:1824:1: ( ( ( rule__ForkingServiceDefinition__PurposeDescriptionAssignment_4_1 ) ) )
-            // InternalServiceDefinition.g:1825:1: ( ( rule__ForkingServiceDefinition__PurposeDescriptionAssignment_4_1 ) )
-            {
-            // InternalServiceDefinition.g:1825:1: ( ( rule__ForkingServiceDefinition__PurposeDescriptionAssignment_4_1 ) )
-            // InternalServiceDefinition.g:1826:2: ( rule__ForkingServiceDefinition__PurposeDescriptionAssignment_4_1 )
-            {
-             before(grammarAccess.getForkingServiceDefinitionAccess().getPurposeDescriptionAssignment_4_1()); 
-            // InternalServiceDefinition.g:1827:2: ( rule__ForkingServiceDefinition__PurposeDescriptionAssignment_4_1 )
-            // InternalServiceDefinition.g:1827:3: rule__ForkingServiceDefinition__PurposeDescriptionAssignment_4_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__ForkingServiceDefinition__PurposeDescriptionAssignment_4_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getForkingServiceDefinitionAccess().getPurposeDescriptionAssignment_4_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ForkingServiceDefinition__Group_4__1__Impl"
-
-
     // $ANTLR start "rule__JoyningServiceDefinition__Group__0"
-    // InternalServiceDefinition.g:1836:1: rule__JoyningServiceDefinition__Group__0 : rule__JoyningServiceDefinition__Group__0__Impl rule__JoyningServiceDefinition__Group__1 ;
+    // InternalServiceDefinition.g:1758:1: rule__JoyningServiceDefinition__Group__0 : rule__JoyningServiceDefinition__Group__0__Impl rule__JoyningServiceDefinition__Group__1 ;
     public final void rule__JoyningServiceDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1840:1: ( rule__JoyningServiceDefinition__Group__0__Impl rule__JoyningServiceDefinition__Group__1 )
-            // InternalServiceDefinition.g:1841:2: rule__JoyningServiceDefinition__Group__0__Impl rule__JoyningServiceDefinition__Group__1
+            // InternalServiceDefinition.g:1762:1: ( rule__JoyningServiceDefinition__Group__0__Impl rule__JoyningServiceDefinition__Group__1 )
+            // InternalServiceDefinition.g:1763:2: rule__JoyningServiceDefinition__Group__0__Impl rule__JoyningServiceDefinition__Group__1
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_21);
             rule__JoyningServiceDefinition__Group__0__Impl();
 
             state._fsp--;
@@ -5521,21 +5448,42 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__JoyningServiceDefinition__Group__0__Impl"
-    // InternalServiceDefinition.g:1848:1: rule__JoyningServiceDefinition__Group__0__Impl : ( 'JoiningServiceDefinition' ) ;
+    // InternalServiceDefinition.g:1770:1: rule__JoyningServiceDefinition__Group__0__Impl : ( ( rule__JoyningServiceDefinition__DocumentationAssignment_0 )? ) ;
     public final void rule__JoyningServiceDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1852:1: ( ( 'JoiningServiceDefinition' ) )
-            // InternalServiceDefinition.g:1853:1: ( 'JoiningServiceDefinition' )
+            // InternalServiceDefinition.g:1774:1: ( ( ( rule__JoyningServiceDefinition__DocumentationAssignment_0 )? ) )
+            // InternalServiceDefinition.g:1775:1: ( ( rule__JoyningServiceDefinition__DocumentationAssignment_0 )? )
             {
-            // InternalServiceDefinition.g:1853:1: ( 'JoiningServiceDefinition' )
-            // InternalServiceDefinition.g:1854:2: 'JoiningServiceDefinition'
+            // InternalServiceDefinition.g:1775:1: ( ( rule__JoyningServiceDefinition__DocumentationAssignment_0 )? )
+            // InternalServiceDefinition.g:1776:2: ( rule__JoyningServiceDefinition__DocumentationAssignment_0 )?
             {
-             before(grammarAccess.getJoyningServiceDefinitionAccess().getJoiningServiceDefinitionKeyword_0()); 
-            match(input,22,FOLLOW_2); 
-             after(grammarAccess.getJoyningServiceDefinitionAccess().getJoiningServiceDefinitionKeyword_0()); 
+             before(grammarAccess.getJoyningServiceDefinitionAccess().getDocumentationAssignment_0()); 
+            // InternalServiceDefinition.g:1777:2: ( rule__JoyningServiceDefinition__DocumentationAssignment_0 )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
+
+            if ( (LA16_0==RULE_DOCU_COMMENT) ) {
+                alt16=1;
+            }
+            switch (alt16) {
+                case 1 :
+                    // InternalServiceDefinition.g:1777:3: rule__JoyningServiceDefinition__DocumentationAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__JoyningServiceDefinition__DocumentationAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getJoyningServiceDefinitionAccess().getDocumentationAssignment_0()); 
 
             }
 
@@ -5558,16 +5506,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__JoyningServiceDefinition__Group__1"
-    // InternalServiceDefinition.g:1863:1: rule__JoyningServiceDefinition__Group__1 : rule__JoyningServiceDefinition__Group__1__Impl rule__JoyningServiceDefinition__Group__2 ;
+    // InternalServiceDefinition.g:1785:1: rule__JoyningServiceDefinition__Group__1 : rule__JoyningServiceDefinition__Group__1__Impl rule__JoyningServiceDefinition__Group__2 ;
     public final void rule__JoyningServiceDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1867:1: ( rule__JoyningServiceDefinition__Group__1__Impl rule__JoyningServiceDefinition__Group__2 )
-            // InternalServiceDefinition.g:1868:2: rule__JoyningServiceDefinition__Group__1__Impl rule__JoyningServiceDefinition__Group__2
+            // InternalServiceDefinition.g:1789:1: ( rule__JoyningServiceDefinition__Group__1__Impl rule__JoyningServiceDefinition__Group__2 )
+            // InternalServiceDefinition.g:1790:2: rule__JoyningServiceDefinition__Group__1__Impl rule__JoyningServiceDefinition__Group__2
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_7);
             rule__JoyningServiceDefinition__Group__1__Impl();
 
             state._fsp--;
@@ -5596,31 +5544,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__JoyningServiceDefinition__Group__1__Impl"
-    // InternalServiceDefinition.g:1875:1: rule__JoyningServiceDefinition__Group__1__Impl : ( ( rule__JoyningServiceDefinition__NameAssignment_1 ) ) ;
+    // InternalServiceDefinition.g:1797:1: rule__JoyningServiceDefinition__Group__1__Impl : ( 'JoiningServiceDefinition' ) ;
     public final void rule__JoyningServiceDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1879:1: ( ( ( rule__JoyningServiceDefinition__NameAssignment_1 ) ) )
-            // InternalServiceDefinition.g:1880:1: ( ( rule__JoyningServiceDefinition__NameAssignment_1 ) )
+            // InternalServiceDefinition.g:1801:1: ( ( 'JoiningServiceDefinition' ) )
+            // InternalServiceDefinition.g:1802:1: ( 'JoiningServiceDefinition' )
             {
-            // InternalServiceDefinition.g:1880:1: ( ( rule__JoyningServiceDefinition__NameAssignment_1 ) )
-            // InternalServiceDefinition.g:1881:2: ( rule__JoyningServiceDefinition__NameAssignment_1 )
+            // InternalServiceDefinition.g:1802:1: ( 'JoiningServiceDefinition' )
+            // InternalServiceDefinition.g:1803:2: 'JoiningServiceDefinition'
             {
-             before(grammarAccess.getJoyningServiceDefinitionAccess().getNameAssignment_1()); 
-            // InternalServiceDefinition.g:1882:2: ( rule__JoyningServiceDefinition__NameAssignment_1 )
-            // InternalServiceDefinition.g:1882:3: rule__JoyningServiceDefinition__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__JoyningServiceDefinition__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getJoyningServiceDefinitionAccess().getNameAssignment_1()); 
+             before(grammarAccess.getJoyningServiceDefinitionAccess().getJoiningServiceDefinitionKeyword_1()); 
+            match(input,24,FOLLOW_2); 
+             after(grammarAccess.getJoyningServiceDefinitionAccess().getJoiningServiceDefinitionKeyword_1()); 
 
             }
 
@@ -5643,16 +5581,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__JoyningServiceDefinition__Group__2"
-    // InternalServiceDefinition.g:1890:1: rule__JoyningServiceDefinition__Group__2 : rule__JoyningServiceDefinition__Group__2__Impl rule__JoyningServiceDefinition__Group__3 ;
+    // InternalServiceDefinition.g:1812:1: rule__JoyningServiceDefinition__Group__2 : rule__JoyningServiceDefinition__Group__2__Impl rule__JoyningServiceDefinition__Group__3 ;
     public final void rule__JoyningServiceDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1894:1: ( rule__JoyningServiceDefinition__Group__2__Impl rule__JoyningServiceDefinition__Group__3 )
-            // InternalServiceDefinition.g:1895:2: rule__JoyningServiceDefinition__Group__2__Impl rule__JoyningServiceDefinition__Group__3
+            // InternalServiceDefinition.g:1816:1: ( rule__JoyningServiceDefinition__Group__2__Impl rule__JoyningServiceDefinition__Group__3 )
+            // InternalServiceDefinition.g:1817:2: rule__JoyningServiceDefinition__Group__2__Impl rule__JoyningServiceDefinition__Group__3
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_17);
             rule__JoyningServiceDefinition__Group__2__Impl();
 
             state._fsp--;
@@ -5681,21 +5619,31 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__JoyningServiceDefinition__Group__2__Impl"
-    // InternalServiceDefinition.g:1902:1: rule__JoyningServiceDefinition__Group__2__Impl : ( '{' ) ;
+    // InternalServiceDefinition.g:1824:1: rule__JoyningServiceDefinition__Group__2__Impl : ( ( rule__JoyningServiceDefinition__NameAssignment_2 ) ) ;
     public final void rule__JoyningServiceDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1906:1: ( ( '{' ) )
-            // InternalServiceDefinition.g:1907:1: ( '{' )
+            // InternalServiceDefinition.g:1828:1: ( ( ( rule__JoyningServiceDefinition__NameAssignment_2 ) ) )
+            // InternalServiceDefinition.g:1829:1: ( ( rule__JoyningServiceDefinition__NameAssignment_2 ) )
             {
-            // InternalServiceDefinition.g:1907:1: ( '{' )
-            // InternalServiceDefinition.g:1908:2: '{'
+            // InternalServiceDefinition.g:1829:1: ( ( rule__JoyningServiceDefinition__NameAssignment_2 ) )
+            // InternalServiceDefinition.g:1830:2: ( rule__JoyningServiceDefinition__NameAssignment_2 )
             {
-             before(grammarAccess.getJoyningServiceDefinitionAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getJoyningServiceDefinitionAccess().getLeftCurlyBracketKeyword_2()); 
+             before(grammarAccess.getJoyningServiceDefinitionAccess().getNameAssignment_2()); 
+            // InternalServiceDefinition.g:1831:2: ( rule__JoyningServiceDefinition__NameAssignment_2 )
+            // InternalServiceDefinition.g:1831:3: rule__JoyningServiceDefinition__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__JoyningServiceDefinition__NameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getJoyningServiceDefinitionAccess().getNameAssignment_2()); 
 
             }
 
@@ -5718,16 +5666,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__JoyningServiceDefinition__Group__3"
-    // InternalServiceDefinition.g:1917:1: rule__JoyningServiceDefinition__Group__3 : rule__JoyningServiceDefinition__Group__3__Impl rule__JoyningServiceDefinition__Group__4 ;
+    // InternalServiceDefinition.g:1839:1: rule__JoyningServiceDefinition__Group__3 : rule__JoyningServiceDefinition__Group__3__Impl rule__JoyningServiceDefinition__Group__4 ;
     public final void rule__JoyningServiceDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1921:1: ( rule__JoyningServiceDefinition__Group__3__Impl rule__JoyningServiceDefinition__Group__4 )
-            // InternalServiceDefinition.g:1922:2: rule__JoyningServiceDefinition__Group__3__Impl rule__JoyningServiceDefinition__Group__4
+            // InternalServiceDefinition.g:1843:1: ( rule__JoyningServiceDefinition__Group__3__Impl rule__JoyningServiceDefinition__Group__4 )
+            // InternalServiceDefinition.g:1844:2: rule__JoyningServiceDefinition__Group__3__Impl rule__JoyningServiceDefinition__Group__4
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_22);
             rule__JoyningServiceDefinition__Group__3__Impl();
 
             state._fsp--;
@@ -5756,31 +5704,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__JoyningServiceDefinition__Group__3__Impl"
-    // InternalServiceDefinition.g:1929:1: rule__JoyningServiceDefinition__Group__3__Impl : ( ( rule__JoyningServiceDefinition__PatternAssignment_3 ) ) ;
+    // InternalServiceDefinition.g:1851:1: rule__JoyningServiceDefinition__Group__3__Impl : ( '{' ) ;
     public final void rule__JoyningServiceDefinition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1933:1: ( ( ( rule__JoyningServiceDefinition__PatternAssignment_3 ) ) )
-            // InternalServiceDefinition.g:1934:1: ( ( rule__JoyningServiceDefinition__PatternAssignment_3 ) )
+            // InternalServiceDefinition.g:1855:1: ( ( '{' ) )
+            // InternalServiceDefinition.g:1856:1: ( '{' )
             {
-            // InternalServiceDefinition.g:1934:1: ( ( rule__JoyningServiceDefinition__PatternAssignment_3 ) )
-            // InternalServiceDefinition.g:1935:2: ( rule__JoyningServiceDefinition__PatternAssignment_3 )
+            // InternalServiceDefinition.g:1856:1: ( '{' )
+            // InternalServiceDefinition.g:1857:2: '{'
             {
-             before(grammarAccess.getJoyningServiceDefinitionAccess().getPatternAssignment_3()); 
-            // InternalServiceDefinition.g:1936:2: ( rule__JoyningServiceDefinition__PatternAssignment_3 )
-            // InternalServiceDefinition.g:1936:3: rule__JoyningServiceDefinition__PatternAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__JoyningServiceDefinition__PatternAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getJoyningServiceDefinitionAccess().getPatternAssignment_3()); 
+             before(grammarAccess.getJoyningServiceDefinitionAccess().getLeftCurlyBracketKeyword_3()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getJoyningServiceDefinitionAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
 
@@ -5803,16 +5741,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__JoyningServiceDefinition__Group__4"
-    // InternalServiceDefinition.g:1944:1: rule__JoyningServiceDefinition__Group__4 : rule__JoyningServiceDefinition__Group__4__Impl rule__JoyningServiceDefinition__Group__5 ;
+    // InternalServiceDefinition.g:1866:1: rule__JoyningServiceDefinition__Group__4 : rule__JoyningServiceDefinition__Group__4__Impl rule__JoyningServiceDefinition__Group__5 ;
     public final void rule__JoyningServiceDefinition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1948:1: ( rule__JoyningServiceDefinition__Group__4__Impl rule__JoyningServiceDefinition__Group__5 )
-            // InternalServiceDefinition.g:1949:2: rule__JoyningServiceDefinition__Group__4__Impl rule__JoyningServiceDefinition__Group__5
+            // InternalServiceDefinition.g:1870:1: ( rule__JoyningServiceDefinition__Group__4__Impl rule__JoyningServiceDefinition__Group__5 )
+            // InternalServiceDefinition.g:1871:2: rule__JoyningServiceDefinition__Group__4__Impl rule__JoyningServiceDefinition__Group__5
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_19);
             rule__JoyningServiceDefinition__Group__4__Impl();
 
             state._fsp--;
@@ -5841,42 +5779,31 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__JoyningServiceDefinition__Group__4__Impl"
-    // InternalServiceDefinition.g:1956:1: rule__JoyningServiceDefinition__Group__4__Impl : ( ( rule__JoyningServiceDefinition__Group_4__0 )? ) ;
+    // InternalServiceDefinition.g:1878:1: rule__JoyningServiceDefinition__Group__4__Impl : ( ( rule__JoyningServiceDefinition__PatternAssignment_4 ) ) ;
     public final void rule__JoyningServiceDefinition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1960:1: ( ( ( rule__JoyningServiceDefinition__Group_4__0 )? ) )
-            // InternalServiceDefinition.g:1961:1: ( ( rule__JoyningServiceDefinition__Group_4__0 )? )
+            // InternalServiceDefinition.g:1882:1: ( ( ( rule__JoyningServiceDefinition__PatternAssignment_4 ) ) )
+            // InternalServiceDefinition.g:1883:1: ( ( rule__JoyningServiceDefinition__PatternAssignment_4 ) )
             {
-            // InternalServiceDefinition.g:1961:1: ( ( rule__JoyningServiceDefinition__Group_4__0 )? )
-            // InternalServiceDefinition.g:1962:2: ( rule__JoyningServiceDefinition__Group_4__0 )?
+            // InternalServiceDefinition.g:1883:1: ( ( rule__JoyningServiceDefinition__PatternAssignment_4 ) )
+            // InternalServiceDefinition.g:1884:2: ( rule__JoyningServiceDefinition__PatternAssignment_4 )
             {
-             before(grammarAccess.getJoyningServiceDefinitionAccess().getGroup_4()); 
-            // InternalServiceDefinition.g:1963:2: ( rule__JoyningServiceDefinition__Group_4__0 )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+             before(grammarAccess.getJoyningServiceDefinitionAccess().getPatternAssignment_4()); 
+            // InternalServiceDefinition.g:1885:2: ( rule__JoyningServiceDefinition__PatternAssignment_4 )
+            // InternalServiceDefinition.g:1885:3: rule__JoyningServiceDefinition__PatternAssignment_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__JoyningServiceDefinition__PatternAssignment_4();
 
-            if ( (LA15_0==21) ) {
-                alt15=1;
-            }
-            switch (alt15) {
-                case 1 :
-                    // InternalServiceDefinition.g:1963:3: rule__JoyningServiceDefinition__Group_4__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__JoyningServiceDefinition__Group_4__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getJoyningServiceDefinitionAccess().getGroup_4()); 
+             after(grammarAccess.getJoyningServiceDefinitionAccess().getPatternAssignment_4()); 
 
             }
 
@@ -5899,16 +5826,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__JoyningServiceDefinition__Group__5"
-    // InternalServiceDefinition.g:1971:1: rule__JoyningServiceDefinition__Group__5 : rule__JoyningServiceDefinition__Group__5__Impl rule__JoyningServiceDefinition__Group__6 ;
+    // InternalServiceDefinition.g:1893:1: rule__JoyningServiceDefinition__Group__5 : rule__JoyningServiceDefinition__Group__5__Impl rule__JoyningServiceDefinition__Group__6 ;
     public final void rule__JoyningServiceDefinition__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1975:1: ( rule__JoyningServiceDefinition__Group__5__Impl rule__JoyningServiceDefinition__Group__6 )
-            // InternalServiceDefinition.g:1976:2: rule__JoyningServiceDefinition__Group__5__Impl rule__JoyningServiceDefinition__Group__6
+            // InternalServiceDefinition.g:1897:1: ( rule__JoyningServiceDefinition__Group__5__Impl rule__JoyningServiceDefinition__Group__6 )
+            // InternalServiceDefinition.g:1898:2: rule__JoyningServiceDefinition__Group__5__Impl rule__JoyningServiceDefinition__Group__6
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_19);
             rule__JoyningServiceDefinition__Group__5__Impl();
 
             state._fsp--;
@@ -5937,35 +5864,35 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__JoyningServiceDefinition__Group__5__Impl"
-    // InternalServiceDefinition.g:1983:1: rule__JoyningServiceDefinition__Group__5__Impl : ( ( rule__JoyningServiceDefinition__PropertiesAssignment_5 )* ) ;
+    // InternalServiceDefinition.g:1905:1: rule__JoyningServiceDefinition__Group__5__Impl : ( ( rule__JoyningServiceDefinition__PropertiesAssignment_5 )* ) ;
     public final void rule__JoyningServiceDefinition__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:1987:1: ( ( ( rule__JoyningServiceDefinition__PropertiesAssignment_5 )* ) )
-            // InternalServiceDefinition.g:1988:1: ( ( rule__JoyningServiceDefinition__PropertiesAssignment_5 )* )
+            // InternalServiceDefinition.g:1909:1: ( ( ( rule__JoyningServiceDefinition__PropertiesAssignment_5 )* ) )
+            // InternalServiceDefinition.g:1910:1: ( ( rule__JoyningServiceDefinition__PropertiesAssignment_5 )* )
             {
-            // InternalServiceDefinition.g:1988:1: ( ( rule__JoyningServiceDefinition__PropertiesAssignment_5 )* )
-            // InternalServiceDefinition.g:1989:2: ( rule__JoyningServiceDefinition__PropertiesAssignment_5 )*
+            // InternalServiceDefinition.g:1910:1: ( ( rule__JoyningServiceDefinition__PropertiesAssignment_5 )* )
+            // InternalServiceDefinition.g:1911:2: ( rule__JoyningServiceDefinition__PropertiesAssignment_5 )*
             {
              before(grammarAccess.getJoyningServiceDefinitionAccess().getPropertiesAssignment_5()); 
-            // InternalServiceDefinition.g:1990:2: ( rule__JoyningServiceDefinition__PropertiesAssignment_5 )*
-            loop16:
+            // InternalServiceDefinition.g:1912:2: ( rule__JoyningServiceDefinition__PropertiesAssignment_5 )*
+            loop17:
             do {
-                int alt16=2;
-                int LA16_0 = input.LA(1);
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-                if ( (LA16_0==46) ) {
-                    alt16=1;
+                if ( (LA17_0==48) ) {
+                    alt17=1;
                 }
 
 
-                switch (alt16) {
+                switch (alt17) {
             	case 1 :
-            	    // InternalServiceDefinition.g:1990:3: rule__JoyningServiceDefinition__PropertiesAssignment_5
+            	    // InternalServiceDefinition.g:1912:3: rule__JoyningServiceDefinition__PropertiesAssignment_5
             	    {
-            	    pushFollow(FOLLOW_18);
+            	    pushFollow(FOLLOW_20);
             	    rule__JoyningServiceDefinition__PropertiesAssignment_5();
 
             	    state._fsp--;
@@ -5975,7 +5902,7 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
             	    break;
 
             	default :
-            	    break loop16;
+            	    break loop17;
                 }
             } while (true);
 
@@ -6002,14 +5929,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__JoyningServiceDefinition__Group__6"
-    // InternalServiceDefinition.g:1998:1: rule__JoyningServiceDefinition__Group__6 : rule__JoyningServiceDefinition__Group__6__Impl ;
+    // InternalServiceDefinition.g:1920:1: rule__JoyningServiceDefinition__Group__6 : rule__JoyningServiceDefinition__Group__6__Impl ;
     public final void rule__JoyningServiceDefinition__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2002:1: ( rule__JoyningServiceDefinition__Group__6__Impl )
-            // InternalServiceDefinition.g:2003:2: rule__JoyningServiceDefinition__Group__6__Impl
+            // InternalServiceDefinition.g:1924:1: ( rule__JoyningServiceDefinition__Group__6__Impl )
+            // InternalServiceDefinition.g:1925:2: rule__JoyningServiceDefinition__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__JoyningServiceDefinition__Group__6__Impl();
@@ -6035,20 +5962,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__JoyningServiceDefinition__Group__6__Impl"
-    // InternalServiceDefinition.g:2009:1: rule__JoyningServiceDefinition__Group__6__Impl : ( '}' ) ;
+    // InternalServiceDefinition.g:1931:1: rule__JoyningServiceDefinition__Group__6__Impl : ( '}' ) ;
     public final void rule__JoyningServiceDefinition__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2013:1: ( ( '}' ) )
-            // InternalServiceDefinition.g:2014:1: ( '}' )
+            // InternalServiceDefinition.g:1935:1: ( ( '}' ) )
+            // InternalServiceDefinition.g:1936:1: ( '}' )
             {
-            // InternalServiceDefinition.g:2014:1: ( '}' )
-            // InternalServiceDefinition.g:2015:2: '}'
+            // InternalServiceDefinition.g:1936:1: ( '}' )
+            // InternalServiceDefinition.g:1937:2: '}'
             {
              before(grammarAccess.getJoyningServiceDefinitionAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,16,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getJoyningServiceDefinitionAccess().getRightCurlyBracketKeyword_6()); 
 
             }
@@ -6071,172 +5998,17 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__JoyningServiceDefinition__Group__6__Impl"
 
 
-    // $ANTLR start "rule__JoyningServiceDefinition__Group_4__0"
-    // InternalServiceDefinition.g:2025:1: rule__JoyningServiceDefinition__Group_4__0 : rule__JoyningServiceDefinition__Group_4__0__Impl rule__JoyningServiceDefinition__Group_4__1 ;
-    public final void rule__JoyningServiceDefinition__Group_4__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:2029:1: ( rule__JoyningServiceDefinition__Group_4__0__Impl rule__JoyningServiceDefinition__Group_4__1 )
-            // InternalServiceDefinition.g:2030:2: rule__JoyningServiceDefinition__Group_4__0__Impl rule__JoyningServiceDefinition__Group_4__1
-            {
-            pushFollow(FOLLOW_19);
-            rule__JoyningServiceDefinition__Group_4__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__JoyningServiceDefinition__Group_4__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__JoyningServiceDefinition__Group_4__0"
-
-
-    // $ANTLR start "rule__JoyningServiceDefinition__Group_4__0__Impl"
-    // InternalServiceDefinition.g:2037:1: rule__JoyningServiceDefinition__Group_4__0__Impl : ( 'purposeDescription' ) ;
-    public final void rule__JoyningServiceDefinition__Group_4__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:2041:1: ( ( 'purposeDescription' ) )
-            // InternalServiceDefinition.g:2042:1: ( 'purposeDescription' )
-            {
-            // InternalServiceDefinition.g:2042:1: ( 'purposeDescription' )
-            // InternalServiceDefinition.g:2043:2: 'purposeDescription'
-            {
-             before(grammarAccess.getJoyningServiceDefinitionAccess().getPurposeDescriptionKeyword_4_0()); 
-            match(input,21,FOLLOW_2); 
-             after(grammarAccess.getJoyningServiceDefinitionAccess().getPurposeDescriptionKeyword_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__JoyningServiceDefinition__Group_4__0__Impl"
-
-
-    // $ANTLR start "rule__JoyningServiceDefinition__Group_4__1"
-    // InternalServiceDefinition.g:2052:1: rule__JoyningServiceDefinition__Group_4__1 : rule__JoyningServiceDefinition__Group_4__1__Impl ;
-    public final void rule__JoyningServiceDefinition__Group_4__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:2056:1: ( rule__JoyningServiceDefinition__Group_4__1__Impl )
-            // InternalServiceDefinition.g:2057:2: rule__JoyningServiceDefinition__Group_4__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__JoyningServiceDefinition__Group_4__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__JoyningServiceDefinition__Group_4__1"
-
-
-    // $ANTLR start "rule__JoyningServiceDefinition__Group_4__1__Impl"
-    // InternalServiceDefinition.g:2063:1: rule__JoyningServiceDefinition__Group_4__1__Impl : ( ( rule__JoyningServiceDefinition__PurposeDescriptionAssignment_4_1 ) ) ;
-    public final void rule__JoyningServiceDefinition__Group_4__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:2067:1: ( ( ( rule__JoyningServiceDefinition__PurposeDescriptionAssignment_4_1 ) ) )
-            // InternalServiceDefinition.g:2068:1: ( ( rule__JoyningServiceDefinition__PurposeDescriptionAssignment_4_1 ) )
-            {
-            // InternalServiceDefinition.g:2068:1: ( ( rule__JoyningServiceDefinition__PurposeDescriptionAssignment_4_1 ) )
-            // InternalServiceDefinition.g:2069:2: ( rule__JoyningServiceDefinition__PurposeDescriptionAssignment_4_1 )
-            {
-             before(grammarAccess.getJoyningServiceDefinitionAccess().getPurposeDescriptionAssignment_4_1()); 
-            // InternalServiceDefinition.g:2070:2: ( rule__JoyningServiceDefinition__PurposeDescriptionAssignment_4_1 )
-            // InternalServiceDefinition.g:2070:3: rule__JoyningServiceDefinition__PurposeDescriptionAssignment_4_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__JoyningServiceDefinition__PurposeDescriptionAssignment_4_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getJoyningServiceDefinitionAccess().getPurposeDescriptionAssignment_4_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__JoyningServiceDefinition__Group_4__1__Impl"
-
-
     // $ANTLR start "rule__RequestAnswerServiceDefinition__Group__0"
-    // InternalServiceDefinition.g:2079:1: rule__RequestAnswerServiceDefinition__Group__0 : rule__RequestAnswerServiceDefinition__Group__0__Impl rule__RequestAnswerServiceDefinition__Group__1 ;
+    // InternalServiceDefinition.g:1947:1: rule__RequestAnswerServiceDefinition__Group__0 : rule__RequestAnswerServiceDefinition__Group__0__Impl rule__RequestAnswerServiceDefinition__Group__1 ;
     public final void rule__RequestAnswerServiceDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2083:1: ( rule__RequestAnswerServiceDefinition__Group__0__Impl rule__RequestAnswerServiceDefinition__Group__1 )
-            // InternalServiceDefinition.g:2084:2: rule__RequestAnswerServiceDefinition__Group__0__Impl rule__RequestAnswerServiceDefinition__Group__1
+            // InternalServiceDefinition.g:1951:1: ( rule__RequestAnswerServiceDefinition__Group__0__Impl rule__RequestAnswerServiceDefinition__Group__1 )
+            // InternalServiceDefinition.g:1952:2: rule__RequestAnswerServiceDefinition__Group__0__Impl rule__RequestAnswerServiceDefinition__Group__1
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_23);
             rule__RequestAnswerServiceDefinition__Group__0__Impl();
 
             state._fsp--;
@@ -6265,21 +6037,42 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__RequestAnswerServiceDefinition__Group__0__Impl"
-    // InternalServiceDefinition.g:2091:1: rule__RequestAnswerServiceDefinition__Group__0__Impl : ( 'RequestAnswerServiceDefinition' ) ;
+    // InternalServiceDefinition.g:1959:1: rule__RequestAnswerServiceDefinition__Group__0__Impl : ( ( rule__RequestAnswerServiceDefinition__DocumentationAssignment_0 )? ) ;
     public final void rule__RequestAnswerServiceDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2095:1: ( ( 'RequestAnswerServiceDefinition' ) )
-            // InternalServiceDefinition.g:2096:1: ( 'RequestAnswerServiceDefinition' )
+            // InternalServiceDefinition.g:1963:1: ( ( ( rule__RequestAnswerServiceDefinition__DocumentationAssignment_0 )? ) )
+            // InternalServiceDefinition.g:1964:1: ( ( rule__RequestAnswerServiceDefinition__DocumentationAssignment_0 )? )
             {
-            // InternalServiceDefinition.g:2096:1: ( 'RequestAnswerServiceDefinition' )
-            // InternalServiceDefinition.g:2097:2: 'RequestAnswerServiceDefinition'
+            // InternalServiceDefinition.g:1964:1: ( ( rule__RequestAnswerServiceDefinition__DocumentationAssignment_0 )? )
+            // InternalServiceDefinition.g:1965:2: ( rule__RequestAnswerServiceDefinition__DocumentationAssignment_0 )?
             {
-             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getRequestAnswerServiceDefinitionKeyword_0()); 
-            match(input,23,FOLLOW_2); 
-             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getRequestAnswerServiceDefinitionKeyword_0()); 
+             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getDocumentationAssignment_0()); 
+            // InternalServiceDefinition.g:1966:2: ( rule__RequestAnswerServiceDefinition__DocumentationAssignment_0 )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
+
+            if ( (LA18_0==RULE_DOCU_COMMENT) ) {
+                alt18=1;
+            }
+            switch (alt18) {
+                case 1 :
+                    // InternalServiceDefinition.g:1966:3: rule__RequestAnswerServiceDefinition__DocumentationAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__RequestAnswerServiceDefinition__DocumentationAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getDocumentationAssignment_0()); 
 
             }
 
@@ -6302,16 +6095,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__RequestAnswerServiceDefinition__Group__1"
-    // InternalServiceDefinition.g:2106:1: rule__RequestAnswerServiceDefinition__Group__1 : rule__RequestAnswerServiceDefinition__Group__1__Impl rule__RequestAnswerServiceDefinition__Group__2 ;
+    // InternalServiceDefinition.g:1974:1: rule__RequestAnswerServiceDefinition__Group__1 : rule__RequestAnswerServiceDefinition__Group__1__Impl rule__RequestAnswerServiceDefinition__Group__2 ;
     public final void rule__RequestAnswerServiceDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2110:1: ( rule__RequestAnswerServiceDefinition__Group__1__Impl rule__RequestAnswerServiceDefinition__Group__2 )
-            // InternalServiceDefinition.g:2111:2: rule__RequestAnswerServiceDefinition__Group__1__Impl rule__RequestAnswerServiceDefinition__Group__2
+            // InternalServiceDefinition.g:1978:1: ( rule__RequestAnswerServiceDefinition__Group__1__Impl rule__RequestAnswerServiceDefinition__Group__2 )
+            // InternalServiceDefinition.g:1979:2: rule__RequestAnswerServiceDefinition__Group__1__Impl rule__RequestAnswerServiceDefinition__Group__2
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_7);
             rule__RequestAnswerServiceDefinition__Group__1__Impl();
 
             state._fsp--;
@@ -6340,31 +6133,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__RequestAnswerServiceDefinition__Group__1__Impl"
-    // InternalServiceDefinition.g:2118:1: rule__RequestAnswerServiceDefinition__Group__1__Impl : ( ( rule__RequestAnswerServiceDefinition__NameAssignment_1 ) ) ;
+    // InternalServiceDefinition.g:1986:1: rule__RequestAnswerServiceDefinition__Group__1__Impl : ( 'RequestAnswerServiceDefinition' ) ;
     public final void rule__RequestAnswerServiceDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2122:1: ( ( ( rule__RequestAnswerServiceDefinition__NameAssignment_1 ) ) )
-            // InternalServiceDefinition.g:2123:1: ( ( rule__RequestAnswerServiceDefinition__NameAssignment_1 ) )
+            // InternalServiceDefinition.g:1990:1: ( ( 'RequestAnswerServiceDefinition' ) )
+            // InternalServiceDefinition.g:1991:1: ( 'RequestAnswerServiceDefinition' )
             {
-            // InternalServiceDefinition.g:2123:1: ( ( rule__RequestAnswerServiceDefinition__NameAssignment_1 ) )
-            // InternalServiceDefinition.g:2124:2: ( rule__RequestAnswerServiceDefinition__NameAssignment_1 )
+            // InternalServiceDefinition.g:1991:1: ( 'RequestAnswerServiceDefinition' )
+            // InternalServiceDefinition.g:1992:2: 'RequestAnswerServiceDefinition'
             {
-             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getNameAssignment_1()); 
-            // InternalServiceDefinition.g:2125:2: ( rule__RequestAnswerServiceDefinition__NameAssignment_1 )
-            // InternalServiceDefinition.g:2125:3: rule__RequestAnswerServiceDefinition__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__RequestAnswerServiceDefinition__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getNameAssignment_1()); 
+             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getRequestAnswerServiceDefinitionKeyword_1()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getRequestAnswerServiceDefinitionKeyword_1()); 
 
             }
 
@@ -6387,16 +6170,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__RequestAnswerServiceDefinition__Group__2"
-    // InternalServiceDefinition.g:2133:1: rule__RequestAnswerServiceDefinition__Group__2 : rule__RequestAnswerServiceDefinition__Group__2__Impl rule__RequestAnswerServiceDefinition__Group__3 ;
+    // InternalServiceDefinition.g:2001:1: rule__RequestAnswerServiceDefinition__Group__2 : rule__RequestAnswerServiceDefinition__Group__2__Impl rule__RequestAnswerServiceDefinition__Group__3 ;
     public final void rule__RequestAnswerServiceDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2137:1: ( rule__RequestAnswerServiceDefinition__Group__2__Impl rule__RequestAnswerServiceDefinition__Group__3 )
-            // InternalServiceDefinition.g:2138:2: rule__RequestAnswerServiceDefinition__Group__2__Impl rule__RequestAnswerServiceDefinition__Group__3
+            // InternalServiceDefinition.g:2005:1: ( rule__RequestAnswerServiceDefinition__Group__2__Impl rule__RequestAnswerServiceDefinition__Group__3 )
+            // InternalServiceDefinition.g:2006:2: rule__RequestAnswerServiceDefinition__Group__2__Impl rule__RequestAnswerServiceDefinition__Group__3
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_17);
             rule__RequestAnswerServiceDefinition__Group__2__Impl();
 
             state._fsp--;
@@ -6425,21 +6208,31 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__RequestAnswerServiceDefinition__Group__2__Impl"
-    // InternalServiceDefinition.g:2145:1: rule__RequestAnswerServiceDefinition__Group__2__Impl : ( '{' ) ;
+    // InternalServiceDefinition.g:2013:1: rule__RequestAnswerServiceDefinition__Group__2__Impl : ( ( rule__RequestAnswerServiceDefinition__NameAssignment_2 ) ) ;
     public final void rule__RequestAnswerServiceDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2149:1: ( ( '{' ) )
-            // InternalServiceDefinition.g:2150:1: ( '{' )
+            // InternalServiceDefinition.g:2017:1: ( ( ( rule__RequestAnswerServiceDefinition__NameAssignment_2 ) ) )
+            // InternalServiceDefinition.g:2018:1: ( ( rule__RequestAnswerServiceDefinition__NameAssignment_2 ) )
             {
-            // InternalServiceDefinition.g:2150:1: ( '{' )
-            // InternalServiceDefinition.g:2151:2: '{'
+            // InternalServiceDefinition.g:2018:1: ( ( rule__RequestAnswerServiceDefinition__NameAssignment_2 ) )
+            // InternalServiceDefinition.g:2019:2: ( rule__RequestAnswerServiceDefinition__NameAssignment_2 )
             {
-             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getLeftCurlyBracketKeyword_2()); 
+             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getNameAssignment_2()); 
+            // InternalServiceDefinition.g:2020:2: ( rule__RequestAnswerServiceDefinition__NameAssignment_2 )
+            // InternalServiceDefinition.g:2020:3: rule__RequestAnswerServiceDefinition__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__RequestAnswerServiceDefinition__NameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getNameAssignment_2()); 
 
             }
 
@@ -6462,16 +6255,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__RequestAnswerServiceDefinition__Group__3"
-    // InternalServiceDefinition.g:2160:1: rule__RequestAnswerServiceDefinition__Group__3 : rule__RequestAnswerServiceDefinition__Group__3__Impl rule__RequestAnswerServiceDefinition__Group__4 ;
+    // InternalServiceDefinition.g:2028:1: rule__RequestAnswerServiceDefinition__Group__3 : rule__RequestAnswerServiceDefinition__Group__3__Impl rule__RequestAnswerServiceDefinition__Group__4 ;
     public final void rule__RequestAnswerServiceDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2164:1: ( rule__RequestAnswerServiceDefinition__Group__3__Impl rule__RequestAnswerServiceDefinition__Group__4 )
-            // InternalServiceDefinition.g:2165:2: rule__RequestAnswerServiceDefinition__Group__3__Impl rule__RequestAnswerServiceDefinition__Group__4
+            // InternalServiceDefinition.g:2032:1: ( rule__RequestAnswerServiceDefinition__Group__3__Impl rule__RequestAnswerServiceDefinition__Group__4 )
+            // InternalServiceDefinition.g:2033:2: rule__RequestAnswerServiceDefinition__Group__3__Impl rule__RequestAnswerServiceDefinition__Group__4
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_24);
             rule__RequestAnswerServiceDefinition__Group__3__Impl();
 
             state._fsp--;
@@ -6500,31 +6293,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__RequestAnswerServiceDefinition__Group__3__Impl"
-    // InternalServiceDefinition.g:2172:1: rule__RequestAnswerServiceDefinition__Group__3__Impl : ( ( rule__RequestAnswerServiceDefinition__PatternAssignment_3 ) ) ;
+    // InternalServiceDefinition.g:2040:1: rule__RequestAnswerServiceDefinition__Group__3__Impl : ( '{' ) ;
     public final void rule__RequestAnswerServiceDefinition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2176:1: ( ( ( rule__RequestAnswerServiceDefinition__PatternAssignment_3 ) ) )
-            // InternalServiceDefinition.g:2177:1: ( ( rule__RequestAnswerServiceDefinition__PatternAssignment_3 ) )
+            // InternalServiceDefinition.g:2044:1: ( ( '{' ) )
+            // InternalServiceDefinition.g:2045:1: ( '{' )
             {
-            // InternalServiceDefinition.g:2177:1: ( ( rule__RequestAnswerServiceDefinition__PatternAssignment_3 ) )
-            // InternalServiceDefinition.g:2178:2: ( rule__RequestAnswerServiceDefinition__PatternAssignment_3 )
+            // InternalServiceDefinition.g:2045:1: ( '{' )
+            // InternalServiceDefinition.g:2046:2: '{'
             {
-             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPatternAssignment_3()); 
-            // InternalServiceDefinition.g:2179:2: ( rule__RequestAnswerServiceDefinition__PatternAssignment_3 )
-            // InternalServiceDefinition.g:2179:3: rule__RequestAnswerServiceDefinition__PatternAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__RequestAnswerServiceDefinition__PatternAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPatternAssignment_3()); 
+             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getLeftCurlyBracketKeyword_3()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
 
@@ -6547,16 +6330,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__RequestAnswerServiceDefinition__Group__4"
-    // InternalServiceDefinition.g:2187:1: rule__RequestAnswerServiceDefinition__Group__4 : rule__RequestAnswerServiceDefinition__Group__4__Impl rule__RequestAnswerServiceDefinition__Group__5 ;
+    // InternalServiceDefinition.g:2055:1: rule__RequestAnswerServiceDefinition__Group__4 : rule__RequestAnswerServiceDefinition__Group__4__Impl rule__RequestAnswerServiceDefinition__Group__5 ;
     public final void rule__RequestAnswerServiceDefinition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2191:1: ( rule__RequestAnswerServiceDefinition__Group__4__Impl rule__RequestAnswerServiceDefinition__Group__5 )
-            // InternalServiceDefinition.g:2192:2: rule__RequestAnswerServiceDefinition__Group__4__Impl rule__RequestAnswerServiceDefinition__Group__5
+            // InternalServiceDefinition.g:2059:1: ( rule__RequestAnswerServiceDefinition__Group__4__Impl rule__RequestAnswerServiceDefinition__Group__5 )
+            // InternalServiceDefinition.g:2060:2: rule__RequestAnswerServiceDefinition__Group__4__Impl rule__RequestAnswerServiceDefinition__Group__5
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_19);
             rule__RequestAnswerServiceDefinition__Group__4__Impl();
 
             state._fsp--;
@@ -6585,42 +6368,31 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__RequestAnswerServiceDefinition__Group__4__Impl"
-    // InternalServiceDefinition.g:2199:1: rule__RequestAnswerServiceDefinition__Group__4__Impl : ( ( rule__RequestAnswerServiceDefinition__Group_4__0 )? ) ;
+    // InternalServiceDefinition.g:2067:1: rule__RequestAnswerServiceDefinition__Group__4__Impl : ( ( rule__RequestAnswerServiceDefinition__PatternAssignment_4 ) ) ;
     public final void rule__RequestAnswerServiceDefinition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2203:1: ( ( ( rule__RequestAnswerServiceDefinition__Group_4__0 )? ) )
-            // InternalServiceDefinition.g:2204:1: ( ( rule__RequestAnswerServiceDefinition__Group_4__0 )? )
+            // InternalServiceDefinition.g:2071:1: ( ( ( rule__RequestAnswerServiceDefinition__PatternAssignment_4 ) ) )
+            // InternalServiceDefinition.g:2072:1: ( ( rule__RequestAnswerServiceDefinition__PatternAssignment_4 ) )
             {
-            // InternalServiceDefinition.g:2204:1: ( ( rule__RequestAnswerServiceDefinition__Group_4__0 )? )
-            // InternalServiceDefinition.g:2205:2: ( rule__RequestAnswerServiceDefinition__Group_4__0 )?
+            // InternalServiceDefinition.g:2072:1: ( ( rule__RequestAnswerServiceDefinition__PatternAssignment_4 ) )
+            // InternalServiceDefinition.g:2073:2: ( rule__RequestAnswerServiceDefinition__PatternAssignment_4 )
             {
-             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getGroup_4()); 
-            // InternalServiceDefinition.g:2206:2: ( rule__RequestAnswerServiceDefinition__Group_4__0 )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPatternAssignment_4()); 
+            // InternalServiceDefinition.g:2074:2: ( rule__RequestAnswerServiceDefinition__PatternAssignment_4 )
+            // InternalServiceDefinition.g:2074:3: rule__RequestAnswerServiceDefinition__PatternAssignment_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__RequestAnswerServiceDefinition__PatternAssignment_4();
 
-            if ( (LA17_0==21) ) {
-                alt17=1;
-            }
-            switch (alt17) {
-                case 1 :
-                    // InternalServiceDefinition.g:2206:3: rule__RequestAnswerServiceDefinition__Group_4__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__RequestAnswerServiceDefinition__Group_4__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getGroup_4()); 
+             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPatternAssignment_4()); 
 
             }
 
@@ -6643,16 +6415,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__RequestAnswerServiceDefinition__Group__5"
-    // InternalServiceDefinition.g:2214:1: rule__RequestAnswerServiceDefinition__Group__5 : rule__RequestAnswerServiceDefinition__Group__5__Impl rule__RequestAnswerServiceDefinition__Group__6 ;
+    // InternalServiceDefinition.g:2082:1: rule__RequestAnswerServiceDefinition__Group__5 : rule__RequestAnswerServiceDefinition__Group__5__Impl rule__RequestAnswerServiceDefinition__Group__6 ;
     public final void rule__RequestAnswerServiceDefinition__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2218:1: ( rule__RequestAnswerServiceDefinition__Group__5__Impl rule__RequestAnswerServiceDefinition__Group__6 )
-            // InternalServiceDefinition.g:2219:2: rule__RequestAnswerServiceDefinition__Group__5__Impl rule__RequestAnswerServiceDefinition__Group__6
+            // InternalServiceDefinition.g:2086:1: ( rule__RequestAnswerServiceDefinition__Group__5__Impl rule__RequestAnswerServiceDefinition__Group__6 )
+            // InternalServiceDefinition.g:2087:2: rule__RequestAnswerServiceDefinition__Group__5__Impl rule__RequestAnswerServiceDefinition__Group__6
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_19);
             rule__RequestAnswerServiceDefinition__Group__5__Impl();
 
             state._fsp--;
@@ -6681,35 +6453,35 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__RequestAnswerServiceDefinition__Group__5__Impl"
-    // InternalServiceDefinition.g:2226:1: rule__RequestAnswerServiceDefinition__Group__5__Impl : ( ( rule__RequestAnswerServiceDefinition__PropertiesAssignment_5 )* ) ;
+    // InternalServiceDefinition.g:2094:1: rule__RequestAnswerServiceDefinition__Group__5__Impl : ( ( rule__RequestAnswerServiceDefinition__PropertiesAssignment_5 )* ) ;
     public final void rule__RequestAnswerServiceDefinition__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2230:1: ( ( ( rule__RequestAnswerServiceDefinition__PropertiesAssignment_5 )* ) )
-            // InternalServiceDefinition.g:2231:1: ( ( rule__RequestAnswerServiceDefinition__PropertiesAssignment_5 )* )
+            // InternalServiceDefinition.g:2098:1: ( ( ( rule__RequestAnswerServiceDefinition__PropertiesAssignment_5 )* ) )
+            // InternalServiceDefinition.g:2099:1: ( ( rule__RequestAnswerServiceDefinition__PropertiesAssignment_5 )* )
             {
-            // InternalServiceDefinition.g:2231:1: ( ( rule__RequestAnswerServiceDefinition__PropertiesAssignment_5 )* )
-            // InternalServiceDefinition.g:2232:2: ( rule__RequestAnswerServiceDefinition__PropertiesAssignment_5 )*
+            // InternalServiceDefinition.g:2099:1: ( ( rule__RequestAnswerServiceDefinition__PropertiesAssignment_5 )* )
+            // InternalServiceDefinition.g:2100:2: ( rule__RequestAnswerServiceDefinition__PropertiesAssignment_5 )*
             {
              before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPropertiesAssignment_5()); 
-            // InternalServiceDefinition.g:2233:2: ( rule__RequestAnswerServiceDefinition__PropertiesAssignment_5 )*
-            loop18:
+            // InternalServiceDefinition.g:2101:2: ( rule__RequestAnswerServiceDefinition__PropertiesAssignment_5 )*
+            loop19:
             do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-                if ( (LA18_0==46) ) {
-                    alt18=1;
+                if ( (LA19_0==48) ) {
+                    alt19=1;
                 }
 
 
-                switch (alt18) {
+                switch (alt19) {
             	case 1 :
-            	    // InternalServiceDefinition.g:2233:3: rule__RequestAnswerServiceDefinition__PropertiesAssignment_5
+            	    // InternalServiceDefinition.g:2101:3: rule__RequestAnswerServiceDefinition__PropertiesAssignment_5
             	    {
-            	    pushFollow(FOLLOW_18);
+            	    pushFollow(FOLLOW_20);
             	    rule__RequestAnswerServiceDefinition__PropertiesAssignment_5();
 
             	    state._fsp--;
@@ -6719,7 +6491,7 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
             	    break;
 
             	default :
-            	    break loop18;
+            	    break loop19;
                 }
             } while (true);
 
@@ -6746,14 +6518,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__RequestAnswerServiceDefinition__Group__6"
-    // InternalServiceDefinition.g:2241:1: rule__RequestAnswerServiceDefinition__Group__6 : rule__RequestAnswerServiceDefinition__Group__6__Impl ;
+    // InternalServiceDefinition.g:2109:1: rule__RequestAnswerServiceDefinition__Group__6 : rule__RequestAnswerServiceDefinition__Group__6__Impl ;
     public final void rule__RequestAnswerServiceDefinition__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2245:1: ( rule__RequestAnswerServiceDefinition__Group__6__Impl )
-            // InternalServiceDefinition.g:2246:2: rule__RequestAnswerServiceDefinition__Group__6__Impl
+            // InternalServiceDefinition.g:2113:1: ( rule__RequestAnswerServiceDefinition__Group__6__Impl )
+            // InternalServiceDefinition.g:2114:2: rule__RequestAnswerServiceDefinition__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__RequestAnswerServiceDefinition__Group__6__Impl();
@@ -6779,20 +6551,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__RequestAnswerServiceDefinition__Group__6__Impl"
-    // InternalServiceDefinition.g:2252:1: rule__RequestAnswerServiceDefinition__Group__6__Impl : ( '}' ) ;
+    // InternalServiceDefinition.g:2120:1: rule__RequestAnswerServiceDefinition__Group__6__Impl : ( '}' ) ;
     public final void rule__RequestAnswerServiceDefinition__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2256:1: ( ( '}' ) )
-            // InternalServiceDefinition.g:2257:1: ( '}' )
+            // InternalServiceDefinition.g:2124:1: ( ( '}' ) )
+            // InternalServiceDefinition.g:2125:1: ( '}' )
             {
-            // InternalServiceDefinition.g:2257:1: ( '}' )
-            // InternalServiceDefinition.g:2258:2: '}'
+            // InternalServiceDefinition.g:2125:1: ( '}' )
+            // InternalServiceDefinition.g:2126:2: '}'
             {
              before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,16,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getRightCurlyBracketKeyword_6()); 
 
             }
@@ -6815,172 +6587,17 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__RequestAnswerServiceDefinition__Group__6__Impl"
 
 
-    // $ANTLR start "rule__RequestAnswerServiceDefinition__Group_4__0"
-    // InternalServiceDefinition.g:2268:1: rule__RequestAnswerServiceDefinition__Group_4__0 : rule__RequestAnswerServiceDefinition__Group_4__0__Impl rule__RequestAnswerServiceDefinition__Group_4__1 ;
-    public final void rule__RequestAnswerServiceDefinition__Group_4__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:2272:1: ( rule__RequestAnswerServiceDefinition__Group_4__0__Impl rule__RequestAnswerServiceDefinition__Group_4__1 )
-            // InternalServiceDefinition.g:2273:2: rule__RequestAnswerServiceDefinition__Group_4__0__Impl rule__RequestAnswerServiceDefinition__Group_4__1
-            {
-            pushFollow(FOLLOW_19);
-            rule__RequestAnswerServiceDefinition__Group_4__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__RequestAnswerServiceDefinition__Group_4__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RequestAnswerServiceDefinition__Group_4__0"
-
-
-    // $ANTLR start "rule__RequestAnswerServiceDefinition__Group_4__0__Impl"
-    // InternalServiceDefinition.g:2280:1: rule__RequestAnswerServiceDefinition__Group_4__0__Impl : ( 'purposeDescription' ) ;
-    public final void rule__RequestAnswerServiceDefinition__Group_4__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:2284:1: ( ( 'purposeDescription' ) )
-            // InternalServiceDefinition.g:2285:1: ( 'purposeDescription' )
-            {
-            // InternalServiceDefinition.g:2285:1: ( 'purposeDescription' )
-            // InternalServiceDefinition.g:2286:2: 'purposeDescription'
-            {
-             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPurposeDescriptionKeyword_4_0()); 
-            match(input,21,FOLLOW_2); 
-             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPurposeDescriptionKeyword_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RequestAnswerServiceDefinition__Group_4__0__Impl"
-
-
-    // $ANTLR start "rule__RequestAnswerServiceDefinition__Group_4__1"
-    // InternalServiceDefinition.g:2295:1: rule__RequestAnswerServiceDefinition__Group_4__1 : rule__RequestAnswerServiceDefinition__Group_4__1__Impl ;
-    public final void rule__RequestAnswerServiceDefinition__Group_4__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:2299:1: ( rule__RequestAnswerServiceDefinition__Group_4__1__Impl )
-            // InternalServiceDefinition.g:2300:2: rule__RequestAnswerServiceDefinition__Group_4__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__RequestAnswerServiceDefinition__Group_4__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RequestAnswerServiceDefinition__Group_4__1"
-
-
-    // $ANTLR start "rule__RequestAnswerServiceDefinition__Group_4__1__Impl"
-    // InternalServiceDefinition.g:2306:1: rule__RequestAnswerServiceDefinition__Group_4__1__Impl : ( ( rule__RequestAnswerServiceDefinition__PurposeDescriptionAssignment_4_1 ) ) ;
-    public final void rule__RequestAnswerServiceDefinition__Group_4__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:2310:1: ( ( ( rule__RequestAnswerServiceDefinition__PurposeDescriptionAssignment_4_1 ) ) )
-            // InternalServiceDefinition.g:2311:1: ( ( rule__RequestAnswerServiceDefinition__PurposeDescriptionAssignment_4_1 ) )
-            {
-            // InternalServiceDefinition.g:2311:1: ( ( rule__RequestAnswerServiceDefinition__PurposeDescriptionAssignment_4_1 ) )
-            // InternalServiceDefinition.g:2312:2: ( rule__RequestAnswerServiceDefinition__PurposeDescriptionAssignment_4_1 )
-            {
-             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPurposeDescriptionAssignment_4_1()); 
-            // InternalServiceDefinition.g:2313:2: ( rule__RequestAnswerServiceDefinition__PurposeDescriptionAssignment_4_1 )
-            // InternalServiceDefinition.g:2313:3: rule__RequestAnswerServiceDefinition__PurposeDescriptionAssignment_4_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__RequestAnswerServiceDefinition__PurposeDescriptionAssignment_4_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPurposeDescriptionAssignment_4_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RequestAnswerServiceDefinition__Group_4__1__Impl"
-
-
     // $ANTLR start "rule__CoordinationServiceDefinition__Group__0"
-    // InternalServiceDefinition.g:2322:1: rule__CoordinationServiceDefinition__Group__0 : rule__CoordinationServiceDefinition__Group__0__Impl rule__CoordinationServiceDefinition__Group__1 ;
+    // InternalServiceDefinition.g:2136:1: rule__CoordinationServiceDefinition__Group__0 : rule__CoordinationServiceDefinition__Group__0__Impl rule__CoordinationServiceDefinition__Group__1 ;
     public final void rule__CoordinationServiceDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2326:1: ( rule__CoordinationServiceDefinition__Group__0__Impl rule__CoordinationServiceDefinition__Group__1 )
-            // InternalServiceDefinition.g:2327:2: rule__CoordinationServiceDefinition__Group__0__Impl rule__CoordinationServiceDefinition__Group__1
+            // InternalServiceDefinition.g:2140:1: ( rule__CoordinationServiceDefinition__Group__0__Impl rule__CoordinationServiceDefinition__Group__1 )
+            // InternalServiceDefinition.g:2141:2: rule__CoordinationServiceDefinition__Group__0__Impl rule__CoordinationServiceDefinition__Group__1
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_25);
             rule__CoordinationServiceDefinition__Group__0__Impl();
 
             state._fsp--;
@@ -7009,21 +6626,42 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CoordinationServiceDefinition__Group__0__Impl"
-    // InternalServiceDefinition.g:2334:1: rule__CoordinationServiceDefinition__Group__0__Impl : ( 'CoordinationServiceDefinition' ) ;
+    // InternalServiceDefinition.g:2148:1: rule__CoordinationServiceDefinition__Group__0__Impl : ( ( rule__CoordinationServiceDefinition__DocumentationAssignment_0 )? ) ;
     public final void rule__CoordinationServiceDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2338:1: ( ( 'CoordinationServiceDefinition' ) )
-            // InternalServiceDefinition.g:2339:1: ( 'CoordinationServiceDefinition' )
+            // InternalServiceDefinition.g:2152:1: ( ( ( rule__CoordinationServiceDefinition__DocumentationAssignment_0 )? ) )
+            // InternalServiceDefinition.g:2153:1: ( ( rule__CoordinationServiceDefinition__DocumentationAssignment_0 )? )
             {
-            // InternalServiceDefinition.g:2339:1: ( 'CoordinationServiceDefinition' )
-            // InternalServiceDefinition.g:2340:2: 'CoordinationServiceDefinition'
+            // InternalServiceDefinition.g:2153:1: ( ( rule__CoordinationServiceDefinition__DocumentationAssignment_0 )? )
+            // InternalServiceDefinition.g:2154:2: ( rule__CoordinationServiceDefinition__DocumentationAssignment_0 )?
             {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getCoordinationServiceDefinitionKeyword_0()); 
-            match(input,24,FOLLOW_2); 
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getCoordinationServiceDefinitionKeyword_0()); 
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getDocumentationAssignment_0()); 
+            // InternalServiceDefinition.g:2155:2: ( rule__CoordinationServiceDefinition__DocumentationAssignment_0 )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
+
+            if ( (LA20_0==RULE_DOCU_COMMENT) ) {
+                alt20=1;
+            }
+            switch (alt20) {
+                case 1 :
+                    // InternalServiceDefinition.g:2155:3: rule__CoordinationServiceDefinition__DocumentationAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__CoordinationServiceDefinition__DocumentationAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getDocumentationAssignment_0()); 
 
             }
 
@@ -7046,16 +6684,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CoordinationServiceDefinition__Group__1"
-    // InternalServiceDefinition.g:2349:1: rule__CoordinationServiceDefinition__Group__1 : rule__CoordinationServiceDefinition__Group__1__Impl rule__CoordinationServiceDefinition__Group__2 ;
+    // InternalServiceDefinition.g:2163:1: rule__CoordinationServiceDefinition__Group__1 : rule__CoordinationServiceDefinition__Group__1__Impl rule__CoordinationServiceDefinition__Group__2 ;
     public final void rule__CoordinationServiceDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2353:1: ( rule__CoordinationServiceDefinition__Group__1__Impl rule__CoordinationServiceDefinition__Group__2 )
-            // InternalServiceDefinition.g:2354:2: rule__CoordinationServiceDefinition__Group__1__Impl rule__CoordinationServiceDefinition__Group__2
+            // InternalServiceDefinition.g:2167:1: ( rule__CoordinationServiceDefinition__Group__1__Impl rule__CoordinationServiceDefinition__Group__2 )
+            // InternalServiceDefinition.g:2168:2: rule__CoordinationServiceDefinition__Group__1__Impl rule__CoordinationServiceDefinition__Group__2
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_7);
             rule__CoordinationServiceDefinition__Group__1__Impl();
 
             state._fsp--;
@@ -7084,31 +6722,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CoordinationServiceDefinition__Group__1__Impl"
-    // InternalServiceDefinition.g:2361:1: rule__CoordinationServiceDefinition__Group__1__Impl : ( ( rule__CoordinationServiceDefinition__NameAssignment_1 ) ) ;
+    // InternalServiceDefinition.g:2175:1: rule__CoordinationServiceDefinition__Group__1__Impl : ( 'CoordinationServiceDefinition' ) ;
     public final void rule__CoordinationServiceDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2365:1: ( ( ( rule__CoordinationServiceDefinition__NameAssignment_1 ) ) )
-            // InternalServiceDefinition.g:2366:1: ( ( rule__CoordinationServiceDefinition__NameAssignment_1 ) )
+            // InternalServiceDefinition.g:2179:1: ( ( 'CoordinationServiceDefinition' ) )
+            // InternalServiceDefinition.g:2180:1: ( 'CoordinationServiceDefinition' )
             {
-            // InternalServiceDefinition.g:2366:1: ( ( rule__CoordinationServiceDefinition__NameAssignment_1 ) )
-            // InternalServiceDefinition.g:2367:2: ( rule__CoordinationServiceDefinition__NameAssignment_1 )
+            // InternalServiceDefinition.g:2180:1: ( 'CoordinationServiceDefinition' )
+            // InternalServiceDefinition.g:2181:2: 'CoordinationServiceDefinition'
             {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getNameAssignment_1()); 
-            // InternalServiceDefinition.g:2368:2: ( rule__CoordinationServiceDefinition__NameAssignment_1 )
-            // InternalServiceDefinition.g:2368:3: rule__CoordinationServiceDefinition__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__CoordinationServiceDefinition__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getNameAssignment_1()); 
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getCoordinationServiceDefinitionKeyword_1()); 
+            match(input,26,FOLLOW_2); 
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getCoordinationServiceDefinitionKeyword_1()); 
 
             }
 
@@ -7131,16 +6759,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CoordinationServiceDefinition__Group__2"
-    // InternalServiceDefinition.g:2376:1: rule__CoordinationServiceDefinition__Group__2 : rule__CoordinationServiceDefinition__Group__2__Impl rule__CoordinationServiceDefinition__Group__3 ;
+    // InternalServiceDefinition.g:2190:1: rule__CoordinationServiceDefinition__Group__2 : rule__CoordinationServiceDefinition__Group__2__Impl rule__CoordinationServiceDefinition__Group__3 ;
     public final void rule__CoordinationServiceDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2380:1: ( rule__CoordinationServiceDefinition__Group__2__Impl rule__CoordinationServiceDefinition__Group__3 )
-            // InternalServiceDefinition.g:2381:2: rule__CoordinationServiceDefinition__Group__2__Impl rule__CoordinationServiceDefinition__Group__3
+            // InternalServiceDefinition.g:2194:1: ( rule__CoordinationServiceDefinition__Group__2__Impl rule__CoordinationServiceDefinition__Group__3 )
+            // InternalServiceDefinition.g:2195:2: rule__CoordinationServiceDefinition__Group__2__Impl rule__CoordinationServiceDefinition__Group__3
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_17);
             rule__CoordinationServiceDefinition__Group__2__Impl();
 
             state._fsp--;
@@ -7169,21 +6797,31 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CoordinationServiceDefinition__Group__2__Impl"
-    // InternalServiceDefinition.g:2388:1: rule__CoordinationServiceDefinition__Group__2__Impl : ( '{' ) ;
+    // InternalServiceDefinition.g:2202:1: rule__CoordinationServiceDefinition__Group__2__Impl : ( ( rule__CoordinationServiceDefinition__NameAssignment_2 ) ) ;
     public final void rule__CoordinationServiceDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2392:1: ( ( '{' ) )
-            // InternalServiceDefinition.g:2393:1: ( '{' )
+            // InternalServiceDefinition.g:2206:1: ( ( ( rule__CoordinationServiceDefinition__NameAssignment_2 ) ) )
+            // InternalServiceDefinition.g:2207:1: ( ( rule__CoordinationServiceDefinition__NameAssignment_2 ) )
             {
-            // InternalServiceDefinition.g:2393:1: ( '{' )
-            // InternalServiceDefinition.g:2394:2: '{'
+            // InternalServiceDefinition.g:2207:1: ( ( rule__CoordinationServiceDefinition__NameAssignment_2 ) )
+            // InternalServiceDefinition.g:2208:2: ( rule__CoordinationServiceDefinition__NameAssignment_2 )
             {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getLeftCurlyBracketKeyword_2()); 
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getNameAssignment_2()); 
+            // InternalServiceDefinition.g:2209:2: ( rule__CoordinationServiceDefinition__NameAssignment_2 )
+            // InternalServiceDefinition.g:2209:3: rule__CoordinationServiceDefinition__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__CoordinationServiceDefinition__NameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getNameAssignment_2()); 
 
             }
 
@@ -7206,16 +6844,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CoordinationServiceDefinition__Group__3"
-    // InternalServiceDefinition.g:2403:1: rule__CoordinationServiceDefinition__Group__3 : rule__CoordinationServiceDefinition__Group__3__Impl rule__CoordinationServiceDefinition__Group__4 ;
+    // InternalServiceDefinition.g:2217:1: rule__CoordinationServiceDefinition__Group__3 : rule__CoordinationServiceDefinition__Group__3__Impl rule__CoordinationServiceDefinition__Group__4 ;
     public final void rule__CoordinationServiceDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2407:1: ( rule__CoordinationServiceDefinition__Group__3__Impl rule__CoordinationServiceDefinition__Group__4 )
-            // InternalServiceDefinition.g:2408:2: rule__CoordinationServiceDefinition__Group__3__Impl rule__CoordinationServiceDefinition__Group__4
+            // InternalServiceDefinition.g:2221:1: ( rule__CoordinationServiceDefinition__Group__3__Impl rule__CoordinationServiceDefinition__Group__4 )
+            // InternalServiceDefinition.g:2222:2: rule__CoordinationServiceDefinition__Group__3__Impl rule__CoordinationServiceDefinition__Group__4
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_26);
             rule__CoordinationServiceDefinition__Group__3__Impl();
 
             state._fsp--;
@@ -7244,31 +6882,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CoordinationServiceDefinition__Group__3__Impl"
-    // InternalServiceDefinition.g:2415:1: rule__CoordinationServiceDefinition__Group__3__Impl : ( ( rule__CoordinationServiceDefinition__UnorderedGroup_3 ) ) ;
+    // InternalServiceDefinition.g:2229:1: rule__CoordinationServiceDefinition__Group__3__Impl : ( '{' ) ;
     public final void rule__CoordinationServiceDefinition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2419:1: ( ( ( rule__CoordinationServiceDefinition__UnorderedGroup_3 ) ) )
-            // InternalServiceDefinition.g:2420:1: ( ( rule__CoordinationServiceDefinition__UnorderedGroup_3 ) )
+            // InternalServiceDefinition.g:2233:1: ( ( '{' ) )
+            // InternalServiceDefinition.g:2234:1: ( '{' )
             {
-            // InternalServiceDefinition.g:2420:1: ( ( rule__CoordinationServiceDefinition__UnorderedGroup_3 ) )
-            // InternalServiceDefinition.g:2421:2: ( rule__CoordinationServiceDefinition__UnorderedGroup_3 )
+            // InternalServiceDefinition.g:2234:1: ( '{' )
+            // InternalServiceDefinition.g:2235:2: '{'
             {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3()); 
-            // InternalServiceDefinition.g:2422:2: ( rule__CoordinationServiceDefinition__UnorderedGroup_3 )
-            // InternalServiceDefinition.g:2422:3: rule__CoordinationServiceDefinition__UnorderedGroup_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__CoordinationServiceDefinition__UnorderedGroup_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3()); 
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getLeftCurlyBracketKeyword_3()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
 
@@ -7291,16 +6919,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CoordinationServiceDefinition__Group__4"
-    // InternalServiceDefinition.g:2430:1: rule__CoordinationServiceDefinition__Group__4 : rule__CoordinationServiceDefinition__Group__4__Impl rule__CoordinationServiceDefinition__Group__5 ;
+    // InternalServiceDefinition.g:2244:1: rule__CoordinationServiceDefinition__Group__4 : rule__CoordinationServiceDefinition__Group__4__Impl rule__CoordinationServiceDefinition__Group__5 ;
     public final void rule__CoordinationServiceDefinition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2434:1: ( rule__CoordinationServiceDefinition__Group__4__Impl rule__CoordinationServiceDefinition__Group__5 )
-            // InternalServiceDefinition.g:2435:2: rule__CoordinationServiceDefinition__Group__4__Impl rule__CoordinationServiceDefinition__Group__5
+            // InternalServiceDefinition.g:2248:1: ( rule__CoordinationServiceDefinition__Group__4__Impl rule__CoordinationServiceDefinition__Group__5 )
+            // InternalServiceDefinition.g:2249:2: rule__CoordinationServiceDefinition__Group__4__Impl rule__CoordinationServiceDefinition__Group__5
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_27);
             rule__CoordinationServiceDefinition__Group__4__Impl();
 
             state._fsp--;
@@ -7329,49 +6957,31 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CoordinationServiceDefinition__Group__4__Impl"
-    // InternalServiceDefinition.g:2442:1: rule__CoordinationServiceDefinition__Group__4__Impl : ( ( rule__CoordinationServiceDefinition__ServicesAssignment_4 )* ) ;
+    // InternalServiceDefinition.g:2256:1: rule__CoordinationServiceDefinition__Group__4__Impl : ( ( rule__CoordinationServiceDefinition__UnorderedGroup_4 ) ) ;
     public final void rule__CoordinationServiceDefinition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2446:1: ( ( ( rule__CoordinationServiceDefinition__ServicesAssignment_4 )* ) )
-            // InternalServiceDefinition.g:2447:1: ( ( rule__CoordinationServiceDefinition__ServicesAssignment_4 )* )
+            // InternalServiceDefinition.g:2260:1: ( ( ( rule__CoordinationServiceDefinition__UnorderedGroup_4 ) ) )
+            // InternalServiceDefinition.g:2261:1: ( ( rule__CoordinationServiceDefinition__UnorderedGroup_4 ) )
             {
-            // InternalServiceDefinition.g:2447:1: ( ( rule__CoordinationServiceDefinition__ServicesAssignment_4 )* )
-            // InternalServiceDefinition.g:2448:2: ( rule__CoordinationServiceDefinition__ServicesAssignment_4 )*
+            // InternalServiceDefinition.g:2261:1: ( ( rule__CoordinationServiceDefinition__UnorderedGroup_4 ) )
+            // InternalServiceDefinition.g:2262:2: ( rule__CoordinationServiceDefinition__UnorderedGroup_4 )
             {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getServicesAssignment_4()); 
-            // InternalServiceDefinition.g:2449:2: ( rule__CoordinationServiceDefinition__ServicesAssignment_4 )*
-            loop19:
-            do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4()); 
+            // InternalServiceDefinition.g:2263:2: ( rule__CoordinationServiceDefinition__UnorderedGroup_4 )
+            // InternalServiceDefinition.g:2263:3: rule__CoordinationServiceDefinition__UnorderedGroup_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__CoordinationServiceDefinition__UnorderedGroup_4();
 
-                if ( (LA19_0==25) ) {
-                    alt19=1;
-                }
+            state._fsp--;
 
 
-                switch (alt19) {
-            	case 1 :
-            	    // InternalServiceDefinition.g:2449:3: rule__CoordinationServiceDefinition__ServicesAssignment_4
-            	    {
-            	    pushFollow(FOLLOW_24);
-            	    rule__CoordinationServiceDefinition__ServicesAssignment_4();
+            }
 
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop19;
-                }
-            } while (true);
-
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getServicesAssignment_4()); 
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4()); 
 
             }
 
@@ -7394,16 +7004,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CoordinationServiceDefinition__Group__5"
-    // InternalServiceDefinition.g:2457:1: rule__CoordinationServiceDefinition__Group__5 : rule__CoordinationServiceDefinition__Group__5__Impl rule__CoordinationServiceDefinition__Group__6 ;
+    // InternalServiceDefinition.g:2271:1: rule__CoordinationServiceDefinition__Group__5 : rule__CoordinationServiceDefinition__Group__5__Impl rule__CoordinationServiceDefinition__Group__6 ;
     public final void rule__CoordinationServiceDefinition__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2461:1: ( rule__CoordinationServiceDefinition__Group__5__Impl rule__CoordinationServiceDefinition__Group__6 )
-            // InternalServiceDefinition.g:2462:2: rule__CoordinationServiceDefinition__Group__5__Impl rule__CoordinationServiceDefinition__Group__6
+            // InternalServiceDefinition.g:2275:1: ( rule__CoordinationServiceDefinition__Group__5__Impl rule__CoordinationServiceDefinition__Group__6 )
+            // InternalServiceDefinition.g:2276:2: rule__CoordinationServiceDefinition__Group__5__Impl rule__CoordinationServiceDefinition__Group__6
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_27);
             rule__CoordinationServiceDefinition__Group__5__Impl();
 
             state._fsp--;
@@ -7432,36 +7042,36 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CoordinationServiceDefinition__Group__5__Impl"
-    // InternalServiceDefinition.g:2469:1: rule__CoordinationServiceDefinition__Group__5__Impl : ( ( rule__CoordinationServiceDefinition__PropertiesAssignment_5 )* ) ;
+    // InternalServiceDefinition.g:2283:1: rule__CoordinationServiceDefinition__Group__5__Impl : ( ( rule__CoordinationServiceDefinition__ServicesAssignment_5 )* ) ;
     public final void rule__CoordinationServiceDefinition__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2473:1: ( ( ( rule__CoordinationServiceDefinition__PropertiesAssignment_5 )* ) )
-            // InternalServiceDefinition.g:2474:1: ( ( rule__CoordinationServiceDefinition__PropertiesAssignment_5 )* )
+            // InternalServiceDefinition.g:2287:1: ( ( ( rule__CoordinationServiceDefinition__ServicesAssignment_5 )* ) )
+            // InternalServiceDefinition.g:2288:1: ( ( rule__CoordinationServiceDefinition__ServicesAssignment_5 )* )
             {
-            // InternalServiceDefinition.g:2474:1: ( ( rule__CoordinationServiceDefinition__PropertiesAssignment_5 )* )
-            // InternalServiceDefinition.g:2475:2: ( rule__CoordinationServiceDefinition__PropertiesAssignment_5 )*
+            // InternalServiceDefinition.g:2288:1: ( ( rule__CoordinationServiceDefinition__ServicesAssignment_5 )* )
+            // InternalServiceDefinition.g:2289:2: ( rule__CoordinationServiceDefinition__ServicesAssignment_5 )*
             {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getPropertiesAssignment_5()); 
-            // InternalServiceDefinition.g:2476:2: ( rule__CoordinationServiceDefinition__PropertiesAssignment_5 )*
-            loop20:
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getServicesAssignment_5()); 
+            // InternalServiceDefinition.g:2290:2: ( rule__CoordinationServiceDefinition__ServicesAssignment_5 )*
+            loop21:
             do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
+                int alt21=2;
+                int LA21_0 = input.LA(1);
 
-                if ( (LA20_0==46) ) {
-                    alt20=1;
+                if ( (LA21_0==27) ) {
+                    alt21=1;
                 }
 
 
-                switch (alt20) {
+                switch (alt21) {
             	case 1 :
-            	    // InternalServiceDefinition.g:2476:3: rule__CoordinationServiceDefinition__PropertiesAssignment_5
+            	    // InternalServiceDefinition.g:2290:3: rule__CoordinationServiceDefinition__ServicesAssignment_5
             	    {
-            	    pushFollow(FOLLOW_18);
-            	    rule__CoordinationServiceDefinition__PropertiesAssignment_5();
+            	    pushFollow(FOLLOW_28);
+            	    rule__CoordinationServiceDefinition__ServicesAssignment_5();
 
             	    state._fsp--;
 
@@ -7470,11 +7080,11 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
             	    break;
 
             	default :
-            	    break loop20;
+            	    break loop21;
                 }
             } while (true);
 
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getPropertiesAssignment_5()); 
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getServicesAssignment_5()); 
 
             }
 
@@ -7497,17 +7107,22 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CoordinationServiceDefinition__Group__6"
-    // InternalServiceDefinition.g:2484:1: rule__CoordinationServiceDefinition__Group__6 : rule__CoordinationServiceDefinition__Group__6__Impl ;
+    // InternalServiceDefinition.g:2298:1: rule__CoordinationServiceDefinition__Group__6 : rule__CoordinationServiceDefinition__Group__6__Impl rule__CoordinationServiceDefinition__Group__7 ;
     public final void rule__CoordinationServiceDefinition__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2488:1: ( rule__CoordinationServiceDefinition__Group__6__Impl )
-            // InternalServiceDefinition.g:2489:2: rule__CoordinationServiceDefinition__Group__6__Impl
+            // InternalServiceDefinition.g:2302:1: ( rule__CoordinationServiceDefinition__Group__6__Impl rule__CoordinationServiceDefinition__Group__7 )
+            // InternalServiceDefinition.g:2303:2: rule__CoordinationServiceDefinition__Group__6__Impl rule__CoordinationServiceDefinition__Group__7
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_27);
             rule__CoordinationServiceDefinition__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__CoordinationServiceDefinition__Group__7();
 
             state._fsp--;
 
@@ -7530,21 +7145,49 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CoordinationServiceDefinition__Group__6__Impl"
-    // InternalServiceDefinition.g:2495:1: rule__CoordinationServiceDefinition__Group__6__Impl : ( '}' ) ;
+    // InternalServiceDefinition.g:2310:1: rule__CoordinationServiceDefinition__Group__6__Impl : ( ( rule__CoordinationServiceDefinition__PropertiesAssignment_6 )* ) ;
     public final void rule__CoordinationServiceDefinition__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2499:1: ( ( '}' ) )
-            // InternalServiceDefinition.g:2500:1: ( '}' )
+            // InternalServiceDefinition.g:2314:1: ( ( ( rule__CoordinationServiceDefinition__PropertiesAssignment_6 )* ) )
+            // InternalServiceDefinition.g:2315:1: ( ( rule__CoordinationServiceDefinition__PropertiesAssignment_6 )* )
             {
-            // InternalServiceDefinition.g:2500:1: ( '}' )
-            // InternalServiceDefinition.g:2501:2: '}'
+            // InternalServiceDefinition.g:2315:1: ( ( rule__CoordinationServiceDefinition__PropertiesAssignment_6 )* )
+            // InternalServiceDefinition.g:2316:2: ( rule__CoordinationServiceDefinition__PropertiesAssignment_6 )*
             {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,16,FOLLOW_2); 
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getRightCurlyBracketKeyword_6()); 
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getPropertiesAssignment_6()); 
+            // InternalServiceDefinition.g:2317:2: ( rule__CoordinationServiceDefinition__PropertiesAssignment_6 )*
+            loop22:
+            do {
+                int alt22=2;
+                int LA22_0 = input.LA(1);
+
+                if ( (LA22_0==48) ) {
+                    alt22=1;
+                }
+
+
+                switch (alt22) {
+            	case 1 :
+            	    // InternalServiceDefinition.g:2317:3: rule__CoordinationServiceDefinition__PropertiesAssignment_6
+            	    {
+            	    pushFollow(FOLLOW_20);
+            	    rule__CoordinationServiceDefinition__PropertiesAssignment_6();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop22;
+                }
+            } while (true);
+
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getPropertiesAssignment_6()); 
 
             }
 
@@ -7566,93 +7209,18 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__CoordinationServiceDefinition__Group__6__Impl"
 
 
-    // $ANTLR start "rule__CoordinationServiceDefinition__Group_3_0__0"
-    // InternalServiceDefinition.g:2511:1: rule__CoordinationServiceDefinition__Group_3_0__0 : rule__CoordinationServiceDefinition__Group_3_0__0__Impl rule__CoordinationServiceDefinition__Group_3_0__1 ;
-    public final void rule__CoordinationServiceDefinition__Group_3_0__0() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationServiceDefinition__Group__7"
+    // InternalServiceDefinition.g:2325:1: rule__CoordinationServiceDefinition__Group__7 : rule__CoordinationServiceDefinition__Group__7__Impl ;
+    public final void rule__CoordinationServiceDefinition__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2515:1: ( rule__CoordinationServiceDefinition__Group_3_0__0__Impl rule__CoordinationServiceDefinition__Group_3_0__1 )
-            // InternalServiceDefinition.g:2516:2: rule__CoordinationServiceDefinition__Group_3_0__0__Impl rule__CoordinationServiceDefinition__Group_3_0__1
-            {
-            pushFollow(FOLLOW_19);
-            rule__CoordinationServiceDefinition__Group_3_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__CoordinationServiceDefinition__Group_3_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CoordinationServiceDefinition__Group_3_0__0"
-
-
-    // $ANTLR start "rule__CoordinationServiceDefinition__Group_3_0__0__Impl"
-    // InternalServiceDefinition.g:2523:1: rule__CoordinationServiceDefinition__Group_3_0__0__Impl : ( 'purposeDescription' ) ;
-    public final void rule__CoordinationServiceDefinition__Group_3_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:2527:1: ( ( 'purposeDescription' ) )
-            // InternalServiceDefinition.g:2528:1: ( 'purposeDescription' )
-            {
-            // InternalServiceDefinition.g:2528:1: ( 'purposeDescription' )
-            // InternalServiceDefinition.g:2529:2: 'purposeDescription'
-            {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getPurposeDescriptionKeyword_3_0_0()); 
-            match(input,21,FOLLOW_2); 
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getPurposeDescriptionKeyword_3_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CoordinationServiceDefinition__Group_3_0__0__Impl"
-
-
-    // $ANTLR start "rule__CoordinationServiceDefinition__Group_3_0__1"
-    // InternalServiceDefinition.g:2538:1: rule__CoordinationServiceDefinition__Group_3_0__1 : rule__CoordinationServiceDefinition__Group_3_0__1__Impl ;
-    public final void rule__CoordinationServiceDefinition__Group_3_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:2542:1: ( rule__CoordinationServiceDefinition__Group_3_0__1__Impl )
-            // InternalServiceDefinition.g:2543:2: rule__CoordinationServiceDefinition__Group_3_0__1__Impl
+            // InternalServiceDefinition.g:2329:1: ( rule__CoordinationServiceDefinition__Group__7__Impl )
+            // InternalServiceDefinition.g:2330:2: rule__CoordinationServiceDefinition__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__CoordinationServiceDefinition__Group_3_0__1__Impl();
+            rule__CoordinationServiceDefinition__Group__7__Impl();
 
             state._fsp--;
 
@@ -7671,35 +7239,25 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__CoordinationServiceDefinition__Group_3_0__1"
+    // $ANTLR end "rule__CoordinationServiceDefinition__Group__7"
 
 
-    // $ANTLR start "rule__CoordinationServiceDefinition__Group_3_0__1__Impl"
-    // InternalServiceDefinition.g:2549:1: rule__CoordinationServiceDefinition__Group_3_0__1__Impl : ( ( rule__CoordinationServiceDefinition__PurposeDescriptionAssignment_3_0_1 ) ) ;
-    public final void rule__CoordinationServiceDefinition__Group_3_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationServiceDefinition__Group__7__Impl"
+    // InternalServiceDefinition.g:2336:1: rule__CoordinationServiceDefinition__Group__7__Impl : ( '}' ) ;
+    public final void rule__CoordinationServiceDefinition__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2553:1: ( ( ( rule__CoordinationServiceDefinition__PurposeDescriptionAssignment_3_0_1 ) ) )
-            // InternalServiceDefinition.g:2554:1: ( ( rule__CoordinationServiceDefinition__PurposeDescriptionAssignment_3_0_1 ) )
+            // InternalServiceDefinition.g:2340:1: ( ( '}' ) )
+            // InternalServiceDefinition.g:2341:1: ( '}' )
             {
-            // InternalServiceDefinition.g:2554:1: ( ( rule__CoordinationServiceDefinition__PurposeDescriptionAssignment_3_0_1 ) )
-            // InternalServiceDefinition.g:2555:2: ( rule__CoordinationServiceDefinition__PurposeDescriptionAssignment_3_0_1 )
+            // InternalServiceDefinition.g:2341:1: ( '}' )
+            // InternalServiceDefinition.g:2342:2: '}'
             {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getPurposeDescriptionAssignment_3_0_1()); 
-            // InternalServiceDefinition.g:2556:2: ( rule__CoordinationServiceDefinition__PurposeDescriptionAssignment_3_0_1 )
-            // InternalServiceDefinition.g:2556:3: rule__CoordinationServiceDefinition__PurposeDescriptionAssignment_3_0_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__CoordinationServiceDefinition__PurposeDescriptionAssignment_3_0_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getPurposeDescriptionAssignment_3_0_1()); 
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getRightCurlyBracketKeyword_7()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getRightCurlyBracketKeyword_7()); 
 
             }
 
@@ -7718,18 +7276,18 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__CoordinationServiceDefinition__Group_3_0__1__Impl"
+    // $ANTLR end "rule__CoordinationServiceDefinition__Group__7__Impl"
 
 
     // $ANTLR start "rule__CommunicationServiceUsage__Group__0"
-    // InternalServiceDefinition.g:2565:1: rule__CommunicationServiceUsage__Group__0 : rule__CommunicationServiceUsage__Group__0__Impl rule__CommunicationServiceUsage__Group__1 ;
+    // InternalServiceDefinition.g:2352:1: rule__CommunicationServiceUsage__Group__0 : rule__CommunicationServiceUsage__Group__0__Impl rule__CommunicationServiceUsage__Group__1 ;
     public final void rule__CommunicationServiceUsage__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2569:1: ( rule__CommunicationServiceUsage__Group__0__Impl rule__CommunicationServiceUsage__Group__1 )
-            // InternalServiceDefinition.g:2570:2: rule__CommunicationServiceUsage__Group__0__Impl rule__CommunicationServiceUsage__Group__1
+            // InternalServiceDefinition.g:2356:1: ( rule__CommunicationServiceUsage__Group__0__Impl rule__CommunicationServiceUsage__Group__1 )
+            // InternalServiceDefinition.g:2357:2: rule__CommunicationServiceUsage__Group__0__Impl rule__CommunicationServiceUsage__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__CommunicationServiceUsage__Group__0__Impl();
@@ -7760,20 +7318,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommunicationServiceUsage__Group__0__Impl"
-    // InternalServiceDefinition.g:2577:1: rule__CommunicationServiceUsage__Group__0__Impl : ( 'CommunicationServiceUsage' ) ;
+    // InternalServiceDefinition.g:2364:1: rule__CommunicationServiceUsage__Group__0__Impl : ( 'CommunicationServiceUsage' ) ;
     public final void rule__CommunicationServiceUsage__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2581:1: ( ( 'CommunicationServiceUsage' ) )
-            // InternalServiceDefinition.g:2582:1: ( 'CommunicationServiceUsage' )
+            // InternalServiceDefinition.g:2368:1: ( ( 'CommunicationServiceUsage' ) )
+            // InternalServiceDefinition.g:2369:1: ( 'CommunicationServiceUsage' )
             {
-            // InternalServiceDefinition.g:2582:1: ( 'CommunicationServiceUsage' )
-            // InternalServiceDefinition.g:2583:2: 'CommunicationServiceUsage'
+            // InternalServiceDefinition.g:2369:1: ( 'CommunicationServiceUsage' )
+            // InternalServiceDefinition.g:2370:2: 'CommunicationServiceUsage'
             {
              before(grammarAccess.getCommunicationServiceUsageAccess().getCommunicationServiceUsageKeyword_0()); 
-            match(input,25,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getCommunicationServiceUsageAccess().getCommunicationServiceUsageKeyword_0()); 
 
             }
@@ -7797,16 +7355,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommunicationServiceUsage__Group__1"
-    // InternalServiceDefinition.g:2592:1: rule__CommunicationServiceUsage__Group__1 : rule__CommunicationServiceUsage__Group__1__Impl rule__CommunicationServiceUsage__Group__2 ;
+    // InternalServiceDefinition.g:2379:1: rule__CommunicationServiceUsage__Group__1 : rule__CommunicationServiceUsage__Group__1__Impl rule__CommunicationServiceUsage__Group__2 ;
     public final void rule__CommunicationServiceUsage__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2596:1: ( rule__CommunicationServiceUsage__Group__1__Impl rule__CommunicationServiceUsage__Group__2 )
-            // InternalServiceDefinition.g:2597:2: rule__CommunicationServiceUsage__Group__1__Impl rule__CommunicationServiceUsage__Group__2
+            // InternalServiceDefinition.g:2383:1: ( rule__CommunicationServiceUsage__Group__1__Impl rule__CommunicationServiceUsage__Group__2 )
+            // InternalServiceDefinition.g:2384:2: rule__CommunicationServiceUsage__Group__1__Impl rule__CommunicationServiceUsage__Group__2
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_29);
             rule__CommunicationServiceUsage__Group__1__Impl();
 
             state._fsp--;
@@ -7835,21 +7393,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommunicationServiceUsage__Group__1__Impl"
-    // InternalServiceDefinition.g:2604:1: rule__CommunicationServiceUsage__Group__1__Impl : ( ( rule__CommunicationServiceUsage__NameAssignment_1 ) ) ;
+    // InternalServiceDefinition.g:2391:1: rule__CommunicationServiceUsage__Group__1__Impl : ( ( rule__CommunicationServiceUsage__NameAssignment_1 ) ) ;
     public final void rule__CommunicationServiceUsage__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2608:1: ( ( ( rule__CommunicationServiceUsage__NameAssignment_1 ) ) )
-            // InternalServiceDefinition.g:2609:1: ( ( rule__CommunicationServiceUsage__NameAssignment_1 ) )
+            // InternalServiceDefinition.g:2395:1: ( ( ( rule__CommunicationServiceUsage__NameAssignment_1 ) ) )
+            // InternalServiceDefinition.g:2396:1: ( ( rule__CommunicationServiceUsage__NameAssignment_1 ) )
             {
-            // InternalServiceDefinition.g:2609:1: ( ( rule__CommunicationServiceUsage__NameAssignment_1 ) )
-            // InternalServiceDefinition.g:2610:2: ( rule__CommunicationServiceUsage__NameAssignment_1 )
+            // InternalServiceDefinition.g:2396:1: ( ( rule__CommunicationServiceUsage__NameAssignment_1 ) )
+            // InternalServiceDefinition.g:2397:2: ( rule__CommunicationServiceUsage__NameAssignment_1 )
             {
              before(grammarAccess.getCommunicationServiceUsageAccess().getNameAssignment_1()); 
-            // InternalServiceDefinition.g:2611:2: ( rule__CommunicationServiceUsage__NameAssignment_1 )
-            // InternalServiceDefinition.g:2611:3: rule__CommunicationServiceUsage__NameAssignment_1
+            // InternalServiceDefinition.g:2398:2: ( rule__CommunicationServiceUsage__NameAssignment_1 )
+            // InternalServiceDefinition.g:2398:3: rule__CommunicationServiceUsage__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__CommunicationServiceUsage__NameAssignment_1();
@@ -7882,14 +7440,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommunicationServiceUsage__Group__2"
-    // InternalServiceDefinition.g:2619:1: rule__CommunicationServiceUsage__Group__2 : rule__CommunicationServiceUsage__Group__2__Impl rule__CommunicationServiceUsage__Group__3 ;
+    // InternalServiceDefinition.g:2406:1: rule__CommunicationServiceUsage__Group__2 : rule__CommunicationServiceUsage__Group__2__Impl rule__CommunicationServiceUsage__Group__3 ;
     public final void rule__CommunicationServiceUsage__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2623:1: ( rule__CommunicationServiceUsage__Group__2__Impl rule__CommunicationServiceUsage__Group__3 )
-            // InternalServiceDefinition.g:2624:2: rule__CommunicationServiceUsage__Group__2__Impl rule__CommunicationServiceUsage__Group__3
+            // InternalServiceDefinition.g:2410:1: ( rule__CommunicationServiceUsage__Group__2__Impl rule__CommunicationServiceUsage__Group__3 )
+            // InternalServiceDefinition.g:2411:2: rule__CommunicationServiceUsage__Group__2__Impl rule__CommunicationServiceUsage__Group__3
             {
             pushFollow(FOLLOW_7);
             rule__CommunicationServiceUsage__Group__2__Impl();
@@ -7920,20 +7478,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommunicationServiceUsage__Group__2__Impl"
-    // InternalServiceDefinition.g:2631:1: rule__CommunicationServiceUsage__Group__2__Impl : ( 'uses' ) ;
+    // InternalServiceDefinition.g:2418:1: rule__CommunicationServiceUsage__Group__2__Impl : ( 'uses' ) ;
     public final void rule__CommunicationServiceUsage__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2635:1: ( ( 'uses' ) )
-            // InternalServiceDefinition.g:2636:1: ( 'uses' )
+            // InternalServiceDefinition.g:2422:1: ( ( 'uses' ) )
+            // InternalServiceDefinition.g:2423:1: ( 'uses' )
             {
-            // InternalServiceDefinition.g:2636:1: ( 'uses' )
-            // InternalServiceDefinition.g:2637:2: 'uses'
+            // InternalServiceDefinition.g:2423:1: ( 'uses' )
+            // InternalServiceDefinition.g:2424:2: 'uses'
             {
              before(grammarAccess.getCommunicationServiceUsageAccess().getUsesKeyword_2()); 
-            match(input,26,FOLLOW_2); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getCommunicationServiceUsageAccess().getUsesKeyword_2()); 
 
             }
@@ -7957,14 +7515,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommunicationServiceUsage__Group__3"
-    // InternalServiceDefinition.g:2646:1: rule__CommunicationServiceUsage__Group__3 : rule__CommunicationServiceUsage__Group__3__Impl ;
+    // InternalServiceDefinition.g:2433:1: rule__CommunicationServiceUsage__Group__3 : rule__CommunicationServiceUsage__Group__3__Impl ;
     public final void rule__CommunicationServiceUsage__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2650:1: ( rule__CommunicationServiceUsage__Group__3__Impl )
-            // InternalServiceDefinition.g:2651:2: rule__CommunicationServiceUsage__Group__3__Impl
+            // InternalServiceDefinition.g:2437:1: ( rule__CommunicationServiceUsage__Group__3__Impl )
+            // InternalServiceDefinition.g:2438:2: rule__CommunicationServiceUsage__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CommunicationServiceUsage__Group__3__Impl();
@@ -7990,21 +7548,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommunicationServiceUsage__Group__3__Impl"
-    // InternalServiceDefinition.g:2657:1: rule__CommunicationServiceUsage__Group__3__Impl : ( ( rule__CommunicationServiceUsage__UsesAssignment_3 ) ) ;
+    // InternalServiceDefinition.g:2444:1: rule__CommunicationServiceUsage__Group__3__Impl : ( ( rule__CommunicationServiceUsage__UsesAssignment_3 ) ) ;
     public final void rule__CommunicationServiceUsage__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2661:1: ( ( ( rule__CommunicationServiceUsage__UsesAssignment_3 ) ) )
-            // InternalServiceDefinition.g:2662:1: ( ( rule__CommunicationServiceUsage__UsesAssignment_3 ) )
+            // InternalServiceDefinition.g:2448:1: ( ( ( rule__CommunicationServiceUsage__UsesAssignment_3 ) ) )
+            // InternalServiceDefinition.g:2449:1: ( ( rule__CommunicationServiceUsage__UsesAssignment_3 ) )
             {
-            // InternalServiceDefinition.g:2662:1: ( ( rule__CommunicationServiceUsage__UsesAssignment_3 ) )
-            // InternalServiceDefinition.g:2663:2: ( rule__CommunicationServiceUsage__UsesAssignment_3 )
+            // InternalServiceDefinition.g:2449:1: ( ( rule__CommunicationServiceUsage__UsesAssignment_3 ) )
+            // InternalServiceDefinition.g:2450:2: ( rule__CommunicationServiceUsage__UsesAssignment_3 )
             {
              before(grammarAccess.getCommunicationServiceUsageAccess().getUsesAssignment_3()); 
-            // InternalServiceDefinition.g:2664:2: ( rule__CommunicationServiceUsage__UsesAssignment_3 )
-            // InternalServiceDefinition.g:2664:3: rule__CommunicationServiceUsage__UsesAssignment_3
+            // InternalServiceDefinition.g:2451:2: ( rule__CommunicationServiceUsage__UsesAssignment_3 )
+            // InternalServiceDefinition.g:2451:3: rule__CommunicationServiceUsage__UsesAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__CommunicationServiceUsage__UsesAssignment_3();
@@ -8037,16 +7595,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group__0"
-    // InternalServiceDefinition.g:2673:1: rule__StatePattern__Group__0 : rule__StatePattern__Group__0__Impl rule__StatePattern__Group__1 ;
+    // InternalServiceDefinition.g:2460:1: rule__StatePattern__Group__0 : rule__StatePattern__Group__0__Impl rule__StatePattern__Group__1 ;
     public final void rule__StatePattern__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2677:1: ( rule__StatePattern__Group__0__Impl rule__StatePattern__Group__1 )
-            // InternalServiceDefinition.g:2678:2: rule__StatePattern__Group__0__Impl rule__StatePattern__Group__1
+            // InternalServiceDefinition.g:2464:1: ( rule__StatePattern__Group__0__Impl rule__StatePattern__Group__1 )
+            // InternalServiceDefinition.g:2465:2: rule__StatePattern__Group__0__Impl rule__StatePattern__Group__1
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_30);
             rule__StatePattern__Group__0__Impl();
 
             state._fsp--;
@@ -8075,21 +7633,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group__0__Impl"
-    // InternalServiceDefinition.g:2685:1: rule__StatePattern__Group__0__Impl : ( () ) ;
+    // InternalServiceDefinition.g:2472:1: rule__StatePattern__Group__0__Impl : ( () ) ;
     public final void rule__StatePattern__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2689:1: ( ( () ) )
-            // InternalServiceDefinition.g:2690:1: ( () )
+            // InternalServiceDefinition.g:2476:1: ( ( () ) )
+            // InternalServiceDefinition.g:2477:1: ( () )
             {
-            // InternalServiceDefinition.g:2690:1: ( () )
-            // InternalServiceDefinition.g:2691:2: ()
+            // InternalServiceDefinition.g:2477:1: ( () )
+            // InternalServiceDefinition.g:2478:2: ()
             {
              before(grammarAccess.getStatePatternAccess().getStatePatternAction_0()); 
-            // InternalServiceDefinition.g:2692:2: ()
-            // InternalServiceDefinition.g:2692:3: 
+            // InternalServiceDefinition.g:2479:2: ()
+            // InternalServiceDefinition.g:2479:3: 
             {
             }
 
@@ -8112,16 +7670,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group__1"
-    // InternalServiceDefinition.g:2700:1: rule__StatePattern__Group__1 : rule__StatePattern__Group__1__Impl rule__StatePattern__Group__2 ;
+    // InternalServiceDefinition.g:2487:1: rule__StatePattern__Group__1 : rule__StatePattern__Group__1__Impl rule__StatePattern__Group__2 ;
     public final void rule__StatePattern__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2704:1: ( rule__StatePattern__Group__1__Impl rule__StatePattern__Group__2 )
-            // InternalServiceDefinition.g:2705:2: rule__StatePattern__Group__1__Impl rule__StatePattern__Group__2
+            // InternalServiceDefinition.g:2491:1: ( rule__StatePattern__Group__1__Impl rule__StatePattern__Group__2 )
+            // InternalServiceDefinition.g:2492:2: rule__StatePattern__Group__1__Impl rule__StatePattern__Group__2
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_31);
             rule__StatePattern__Group__1__Impl();
 
             state._fsp--;
@@ -8150,20 +7708,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group__1__Impl"
-    // InternalServiceDefinition.g:2712:1: rule__StatePattern__Group__1__Impl : ( 'StatePattern' ) ;
+    // InternalServiceDefinition.g:2499:1: rule__StatePattern__Group__1__Impl : ( 'StatePattern' ) ;
     public final void rule__StatePattern__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2716:1: ( ( 'StatePattern' ) )
-            // InternalServiceDefinition.g:2717:1: ( 'StatePattern' )
+            // InternalServiceDefinition.g:2503:1: ( ( 'StatePattern' ) )
+            // InternalServiceDefinition.g:2504:1: ( 'StatePattern' )
             {
-            // InternalServiceDefinition.g:2717:1: ( 'StatePattern' )
-            // InternalServiceDefinition.g:2718:2: 'StatePattern'
+            // InternalServiceDefinition.g:2504:1: ( 'StatePattern' )
+            // InternalServiceDefinition.g:2505:2: 'StatePattern'
             {
              before(grammarAccess.getStatePatternAccess().getStatePatternKeyword_1()); 
-            match(input,27,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getStatePatternAccess().getStatePatternKeyword_1()); 
 
             }
@@ -8187,16 +7745,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group__2"
-    // InternalServiceDefinition.g:2727:1: rule__StatePattern__Group__2 : rule__StatePattern__Group__2__Impl rule__StatePattern__Group__3 ;
+    // InternalServiceDefinition.g:2514:1: rule__StatePattern__Group__2 : rule__StatePattern__Group__2__Impl rule__StatePattern__Group__3 ;
     public final void rule__StatePattern__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2731:1: ( rule__StatePattern__Group__2__Impl rule__StatePattern__Group__3 )
-            // InternalServiceDefinition.g:2732:2: rule__StatePattern__Group__2__Impl rule__StatePattern__Group__3
+            // InternalServiceDefinition.g:2518:1: ( rule__StatePattern__Group__2__Impl rule__StatePattern__Group__3 )
+            // InternalServiceDefinition.g:2519:2: rule__StatePattern__Group__2__Impl rule__StatePattern__Group__3
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_32);
             rule__StatePattern__Group__2__Impl();
 
             state._fsp--;
@@ -8225,20 +7783,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group__2__Impl"
-    // InternalServiceDefinition.g:2739:1: rule__StatePattern__Group__2__Impl : ( '<' ) ;
+    // InternalServiceDefinition.g:2526:1: rule__StatePattern__Group__2__Impl : ( '<' ) ;
     public final void rule__StatePattern__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2743:1: ( ( '<' ) )
-            // InternalServiceDefinition.g:2744:1: ( '<' )
+            // InternalServiceDefinition.g:2530:1: ( ( '<' ) )
+            // InternalServiceDefinition.g:2531:1: ( '<' )
             {
-            // InternalServiceDefinition.g:2744:1: ( '<' )
-            // InternalServiceDefinition.g:2745:2: '<'
+            // InternalServiceDefinition.g:2531:1: ( '<' )
+            // InternalServiceDefinition.g:2532:2: '<'
             {
              before(grammarAccess.getStatePatternAccess().getLessThanSignKeyword_2()); 
-            match(input,28,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getStatePatternAccess().getLessThanSignKeyword_2()); 
 
             }
@@ -8262,14 +7820,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group__3"
-    // InternalServiceDefinition.g:2754:1: rule__StatePattern__Group__3 : rule__StatePattern__Group__3__Impl rule__StatePattern__Group__4 ;
+    // InternalServiceDefinition.g:2541:1: rule__StatePattern__Group__3 : rule__StatePattern__Group__3__Impl rule__StatePattern__Group__4 ;
     public final void rule__StatePattern__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2758:1: ( rule__StatePattern__Group__3__Impl rule__StatePattern__Group__4 )
-            // InternalServiceDefinition.g:2759:2: rule__StatePattern__Group__3__Impl rule__StatePattern__Group__4
+            // InternalServiceDefinition.g:2545:1: ( rule__StatePattern__Group__3__Impl rule__StatePattern__Group__4 )
+            // InternalServiceDefinition.g:2546:2: rule__StatePattern__Group__3__Impl rule__StatePattern__Group__4
             {
             pushFollow(FOLLOW_7);
             rule__StatePattern__Group__3__Impl();
@@ -8300,20 +7858,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group__3__Impl"
-    // InternalServiceDefinition.g:2766:1: rule__StatePattern__Group__3__Impl : ( 'lifecycle' ) ;
+    // InternalServiceDefinition.g:2553:1: rule__StatePattern__Group__3__Impl : ( 'lifecycle' ) ;
     public final void rule__StatePattern__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2770:1: ( ( 'lifecycle' ) )
-            // InternalServiceDefinition.g:2771:1: ( 'lifecycle' )
+            // InternalServiceDefinition.g:2557:1: ( ( 'lifecycle' ) )
+            // InternalServiceDefinition.g:2558:1: ( 'lifecycle' )
             {
-            // InternalServiceDefinition.g:2771:1: ( 'lifecycle' )
-            // InternalServiceDefinition.g:2772:2: 'lifecycle'
+            // InternalServiceDefinition.g:2558:1: ( 'lifecycle' )
+            // InternalServiceDefinition.g:2559:2: 'lifecycle'
             {
              before(grammarAccess.getStatePatternAccess().getLifecycleKeyword_3()); 
-            match(input,29,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getStatePatternAccess().getLifecycleKeyword_3()); 
 
             }
@@ -8337,16 +7895,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group__4"
-    // InternalServiceDefinition.g:2781:1: rule__StatePattern__Group__4 : rule__StatePattern__Group__4__Impl rule__StatePattern__Group__5 ;
+    // InternalServiceDefinition.g:2568:1: rule__StatePattern__Group__4 : rule__StatePattern__Group__4__Impl rule__StatePattern__Group__5 ;
     public final void rule__StatePattern__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2785:1: ( rule__StatePattern__Group__4__Impl rule__StatePattern__Group__5 )
-            // InternalServiceDefinition.g:2786:2: rule__StatePattern__Group__4__Impl rule__StatePattern__Group__5
+            // InternalServiceDefinition.g:2572:1: ( rule__StatePattern__Group__4__Impl rule__StatePattern__Group__5 )
+            // InternalServiceDefinition.g:2573:2: rule__StatePattern__Group__4__Impl rule__StatePattern__Group__5
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_33);
             rule__StatePattern__Group__4__Impl();
 
             state._fsp--;
@@ -8375,21 +7933,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group__4__Impl"
-    // InternalServiceDefinition.g:2793:1: rule__StatePattern__Group__4__Impl : ( ( rule__StatePattern__LifecycleAssignment_4 ) ) ;
+    // InternalServiceDefinition.g:2580:1: rule__StatePattern__Group__4__Impl : ( ( rule__StatePattern__LifecycleAssignment_4 ) ) ;
     public final void rule__StatePattern__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2797:1: ( ( ( rule__StatePattern__LifecycleAssignment_4 ) ) )
-            // InternalServiceDefinition.g:2798:1: ( ( rule__StatePattern__LifecycleAssignment_4 ) )
+            // InternalServiceDefinition.g:2584:1: ( ( ( rule__StatePattern__LifecycleAssignment_4 ) ) )
+            // InternalServiceDefinition.g:2585:1: ( ( rule__StatePattern__LifecycleAssignment_4 ) )
             {
-            // InternalServiceDefinition.g:2798:1: ( ( rule__StatePattern__LifecycleAssignment_4 ) )
-            // InternalServiceDefinition.g:2799:2: ( rule__StatePattern__LifecycleAssignment_4 )
+            // InternalServiceDefinition.g:2585:1: ( ( rule__StatePattern__LifecycleAssignment_4 ) )
+            // InternalServiceDefinition.g:2586:2: ( rule__StatePattern__LifecycleAssignment_4 )
             {
              before(grammarAccess.getStatePatternAccess().getLifecycleAssignment_4()); 
-            // InternalServiceDefinition.g:2800:2: ( rule__StatePattern__LifecycleAssignment_4 )
-            // InternalServiceDefinition.g:2800:3: rule__StatePattern__LifecycleAssignment_4
+            // InternalServiceDefinition.g:2587:2: ( rule__StatePattern__LifecycleAssignment_4 )
+            // InternalServiceDefinition.g:2587:3: rule__StatePattern__LifecycleAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__StatePattern__LifecycleAssignment_4();
@@ -8422,16 +7980,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group__5"
-    // InternalServiceDefinition.g:2808:1: rule__StatePattern__Group__5 : rule__StatePattern__Group__5__Impl rule__StatePattern__Group__6 ;
+    // InternalServiceDefinition.g:2595:1: rule__StatePattern__Group__5 : rule__StatePattern__Group__5__Impl rule__StatePattern__Group__6 ;
     public final void rule__StatePattern__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2812:1: ( rule__StatePattern__Group__5__Impl rule__StatePattern__Group__6 )
-            // InternalServiceDefinition.g:2813:2: rule__StatePattern__Group__5__Impl rule__StatePattern__Group__6
+            // InternalServiceDefinition.g:2599:1: ( rule__StatePattern__Group__5__Impl rule__StatePattern__Group__6 )
+            // InternalServiceDefinition.g:2600:2: rule__StatePattern__Group__5__Impl rule__StatePattern__Group__6
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_33);
             rule__StatePattern__Group__5__Impl();
 
             state._fsp--;
@@ -8460,29 +8018,29 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group__5__Impl"
-    // InternalServiceDefinition.g:2820:1: rule__StatePattern__Group__5__Impl : ( ( rule__StatePattern__Group_5__0 )? ) ;
+    // InternalServiceDefinition.g:2607:1: rule__StatePattern__Group__5__Impl : ( ( rule__StatePattern__Group_5__0 )? ) ;
     public final void rule__StatePattern__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2824:1: ( ( ( rule__StatePattern__Group_5__0 )? ) )
-            // InternalServiceDefinition.g:2825:1: ( ( rule__StatePattern__Group_5__0 )? )
+            // InternalServiceDefinition.g:2611:1: ( ( ( rule__StatePattern__Group_5__0 )? ) )
+            // InternalServiceDefinition.g:2612:1: ( ( rule__StatePattern__Group_5__0 )? )
             {
-            // InternalServiceDefinition.g:2825:1: ( ( rule__StatePattern__Group_5__0 )? )
-            // InternalServiceDefinition.g:2826:2: ( rule__StatePattern__Group_5__0 )?
+            // InternalServiceDefinition.g:2612:1: ( ( rule__StatePattern__Group_5__0 )? )
+            // InternalServiceDefinition.g:2613:2: ( rule__StatePattern__Group_5__0 )?
             {
              before(grammarAccess.getStatePatternAccess().getGroup_5()); 
-            // InternalServiceDefinition.g:2827:2: ( rule__StatePattern__Group_5__0 )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // InternalServiceDefinition.g:2614:2: ( rule__StatePattern__Group_5__0 )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA21_0==31) ) {
-                alt21=1;
+            if ( (LA23_0==33) ) {
+                alt23=1;
             }
-            switch (alt21) {
+            switch (alt23) {
                 case 1 :
-                    // InternalServiceDefinition.g:2827:3: rule__StatePattern__Group_5__0
+                    // InternalServiceDefinition.g:2614:3: rule__StatePattern__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__StatePattern__Group_5__0();
@@ -8518,14 +8076,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group__6"
-    // InternalServiceDefinition.g:2835:1: rule__StatePattern__Group__6 : rule__StatePattern__Group__6__Impl ;
+    // InternalServiceDefinition.g:2622:1: rule__StatePattern__Group__6 : rule__StatePattern__Group__6__Impl ;
     public final void rule__StatePattern__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2839:1: ( rule__StatePattern__Group__6__Impl )
-            // InternalServiceDefinition.g:2840:2: rule__StatePattern__Group__6__Impl
+            // InternalServiceDefinition.g:2626:1: ( rule__StatePattern__Group__6__Impl )
+            // InternalServiceDefinition.g:2627:2: rule__StatePattern__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__StatePattern__Group__6__Impl();
@@ -8551,20 +8109,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group__6__Impl"
-    // InternalServiceDefinition.g:2846:1: rule__StatePattern__Group__6__Impl : ( '>' ) ;
+    // InternalServiceDefinition.g:2633:1: rule__StatePattern__Group__6__Impl : ( '>' ) ;
     public final void rule__StatePattern__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2850:1: ( ( '>' ) )
-            // InternalServiceDefinition.g:2851:1: ( '>' )
+            // InternalServiceDefinition.g:2637:1: ( ( '>' ) )
+            // InternalServiceDefinition.g:2638:1: ( '>' )
             {
-            // InternalServiceDefinition.g:2851:1: ( '>' )
-            // InternalServiceDefinition.g:2852:2: '>'
+            // InternalServiceDefinition.g:2638:1: ( '>' )
+            // InternalServiceDefinition.g:2639:2: '>'
             {
              before(grammarAccess.getStatePatternAccess().getGreaterThanSignKeyword_6()); 
-            match(input,30,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getStatePatternAccess().getGreaterThanSignKeyword_6()); 
 
             }
@@ -8588,14 +8146,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group_5__0"
-    // InternalServiceDefinition.g:2862:1: rule__StatePattern__Group_5__0 : rule__StatePattern__Group_5__0__Impl rule__StatePattern__Group_5__1 ;
+    // InternalServiceDefinition.g:2649:1: rule__StatePattern__Group_5__0 : rule__StatePattern__Group_5__0__Impl rule__StatePattern__Group_5__1 ;
     public final void rule__StatePattern__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2866:1: ( rule__StatePattern__Group_5__0__Impl rule__StatePattern__Group_5__1 )
-            // InternalServiceDefinition.g:2867:2: rule__StatePattern__Group_5__0__Impl rule__StatePattern__Group_5__1
+            // InternalServiceDefinition.g:2653:1: ( rule__StatePattern__Group_5__0__Impl rule__StatePattern__Group_5__1 )
+            // InternalServiceDefinition.g:2654:2: rule__StatePattern__Group_5__0__Impl rule__StatePattern__Group_5__1
             {
             pushFollow(FOLLOW_7);
             rule__StatePattern__Group_5__0__Impl();
@@ -8626,20 +8184,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group_5__0__Impl"
-    // InternalServiceDefinition.g:2874:1: rule__StatePattern__Group_5__0__Impl : ( 'with' ) ;
+    // InternalServiceDefinition.g:2661:1: rule__StatePattern__Group_5__0__Impl : ( 'with' ) ;
     public final void rule__StatePattern__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2878:1: ( ( 'with' ) )
-            // InternalServiceDefinition.g:2879:1: ( 'with' )
+            // InternalServiceDefinition.g:2665:1: ( ( 'with' ) )
+            // InternalServiceDefinition.g:2666:1: ( 'with' )
             {
-            // InternalServiceDefinition.g:2879:1: ( 'with' )
-            // InternalServiceDefinition.g:2880:2: 'with'
+            // InternalServiceDefinition.g:2666:1: ( 'with' )
+            // InternalServiceDefinition.g:2667:2: 'with'
             {
              before(grammarAccess.getStatePatternAccess().getWithKeyword_5_0()); 
-            match(input,31,FOLLOW_2); 
+            match(input,33,FOLLOW_2); 
              after(grammarAccess.getStatePatternAccess().getWithKeyword_5_0()); 
 
             }
@@ -8663,14 +8221,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group_5__1"
-    // InternalServiceDefinition.g:2889:1: rule__StatePattern__Group_5__1 : rule__StatePattern__Group_5__1__Impl ;
+    // InternalServiceDefinition.g:2676:1: rule__StatePattern__Group_5__1 : rule__StatePattern__Group_5__1__Impl ;
     public final void rule__StatePattern__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2893:1: ( rule__StatePattern__Group_5__1__Impl )
-            // InternalServiceDefinition.g:2894:2: rule__StatePattern__Group_5__1__Impl
+            // InternalServiceDefinition.g:2680:1: ( rule__StatePattern__Group_5__1__Impl )
+            // InternalServiceDefinition.g:2681:2: rule__StatePattern__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__StatePattern__Group_5__1__Impl();
@@ -8696,21 +8254,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__Group_5__1__Impl"
-    // InternalServiceDefinition.g:2900:1: rule__StatePattern__Group_5__1__Impl : ( ( rule__StatePattern__ModesAssignment_5_1 ) ) ;
+    // InternalServiceDefinition.g:2687:1: rule__StatePattern__Group_5__1__Impl : ( ( rule__StatePattern__ModesAssignment_5_1 ) ) ;
     public final void rule__StatePattern__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2904:1: ( ( ( rule__StatePattern__ModesAssignment_5_1 ) ) )
-            // InternalServiceDefinition.g:2905:1: ( ( rule__StatePattern__ModesAssignment_5_1 ) )
+            // InternalServiceDefinition.g:2691:1: ( ( ( rule__StatePattern__ModesAssignment_5_1 ) ) )
+            // InternalServiceDefinition.g:2692:1: ( ( rule__StatePattern__ModesAssignment_5_1 ) )
             {
-            // InternalServiceDefinition.g:2905:1: ( ( rule__StatePattern__ModesAssignment_5_1 ) )
-            // InternalServiceDefinition.g:2906:2: ( rule__StatePattern__ModesAssignment_5_1 )
+            // InternalServiceDefinition.g:2692:1: ( ( rule__StatePattern__ModesAssignment_5_1 ) )
+            // InternalServiceDefinition.g:2693:2: ( rule__StatePattern__ModesAssignment_5_1 )
             {
              before(grammarAccess.getStatePatternAccess().getModesAssignment_5_1()); 
-            // InternalServiceDefinition.g:2907:2: ( rule__StatePattern__ModesAssignment_5_1 )
-            // InternalServiceDefinition.g:2907:3: rule__StatePattern__ModesAssignment_5_1
+            // InternalServiceDefinition.g:2694:2: ( rule__StatePattern__ModesAssignment_5_1 )
+            // InternalServiceDefinition.g:2694:3: rule__StatePattern__ModesAssignment_5_1
             {
             pushFollow(FOLLOW_2);
             rule__StatePattern__ModesAssignment_5_1();
@@ -8743,16 +8301,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ParameterPattern__Group__0"
-    // InternalServiceDefinition.g:2916:1: rule__ParameterPattern__Group__0 : rule__ParameterPattern__Group__0__Impl rule__ParameterPattern__Group__1 ;
+    // InternalServiceDefinition.g:2703:1: rule__ParameterPattern__Group__0 : rule__ParameterPattern__Group__0__Impl rule__ParameterPattern__Group__1 ;
     public final void rule__ParameterPattern__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2920:1: ( rule__ParameterPattern__Group__0__Impl rule__ParameterPattern__Group__1 )
-            // InternalServiceDefinition.g:2921:2: rule__ParameterPattern__Group__0__Impl rule__ParameterPattern__Group__1
+            // InternalServiceDefinition.g:2707:1: ( rule__ParameterPattern__Group__0__Impl rule__ParameterPattern__Group__1 )
+            // InternalServiceDefinition.g:2708:2: rule__ParameterPattern__Group__0__Impl rule__ParameterPattern__Group__1
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_34);
             rule__ParameterPattern__Group__0__Impl();
 
             state._fsp--;
@@ -8781,21 +8339,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ParameterPattern__Group__0__Impl"
-    // InternalServiceDefinition.g:2928:1: rule__ParameterPattern__Group__0__Impl : ( () ) ;
+    // InternalServiceDefinition.g:2715:1: rule__ParameterPattern__Group__0__Impl : ( () ) ;
     public final void rule__ParameterPattern__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2932:1: ( ( () ) )
-            // InternalServiceDefinition.g:2933:1: ( () )
+            // InternalServiceDefinition.g:2719:1: ( ( () ) )
+            // InternalServiceDefinition.g:2720:1: ( () )
             {
-            // InternalServiceDefinition.g:2933:1: ( () )
-            // InternalServiceDefinition.g:2934:2: ()
+            // InternalServiceDefinition.g:2720:1: ( () )
+            // InternalServiceDefinition.g:2721:2: ()
             {
              before(grammarAccess.getParameterPatternAccess().getParameterPatternAction_0()); 
-            // InternalServiceDefinition.g:2935:2: ()
-            // InternalServiceDefinition.g:2935:3: 
+            // InternalServiceDefinition.g:2722:2: ()
+            // InternalServiceDefinition.g:2722:3: 
             {
             }
 
@@ -8818,16 +8376,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ParameterPattern__Group__1"
-    // InternalServiceDefinition.g:2943:1: rule__ParameterPattern__Group__1 : rule__ParameterPattern__Group__1__Impl rule__ParameterPattern__Group__2 ;
+    // InternalServiceDefinition.g:2730:1: rule__ParameterPattern__Group__1 : rule__ParameterPattern__Group__1__Impl rule__ParameterPattern__Group__2 ;
     public final void rule__ParameterPattern__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2947:1: ( rule__ParameterPattern__Group__1__Impl rule__ParameterPattern__Group__2 )
-            // InternalServiceDefinition.g:2948:2: rule__ParameterPattern__Group__1__Impl rule__ParameterPattern__Group__2
+            // InternalServiceDefinition.g:2734:1: ( rule__ParameterPattern__Group__1__Impl rule__ParameterPattern__Group__2 )
+            // InternalServiceDefinition.g:2735:2: rule__ParameterPattern__Group__1__Impl rule__ParameterPattern__Group__2
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_31);
             rule__ParameterPattern__Group__1__Impl();
 
             state._fsp--;
@@ -8856,20 +8414,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ParameterPattern__Group__1__Impl"
-    // InternalServiceDefinition.g:2955:1: rule__ParameterPattern__Group__1__Impl : ( 'ParameterPattern' ) ;
+    // InternalServiceDefinition.g:2742:1: rule__ParameterPattern__Group__1__Impl : ( 'ParameterPattern' ) ;
     public final void rule__ParameterPattern__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2959:1: ( ( 'ParameterPattern' ) )
-            // InternalServiceDefinition.g:2960:1: ( 'ParameterPattern' )
+            // InternalServiceDefinition.g:2746:1: ( ( 'ParameterPattern' ) )
+            // InternalServiceDefinition.g:2747:1: ( 'ParameterPattern' )
             {
-            // InternalServiceDefinition.g:2960:1: ( 'ParameterPattern' )
-            // InternalServiceDefinition.g:2961:2: 'ParameterPattern'
+            // InternalServiceDefinition.g:2747:1: ( 'ParameterPattern' )
+            // InternalServiceDefinition.g:2748:2: 'ParameterPattern'
             {
              before(grammarAccess.getParameterPatternAccess().getParameterPatternKeyword_1()); 
-            match(input,32,FOLLOW_2); 
+            match(input,34,FOLLOW_2); 
              after(grammarAccess.getParameterPatternAccess().getParameterPatternKeyword_1()); 
 
             }
@@ -8893,14 +8451,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ParameterPattern__Group__2"
-    // InternalServiceDefinition.g:2970:1: rule__ParameterPattern__Group__2 : rule__ParameterPattern__Group__2__Impl rule__ParameterPattern__Group__3 ;
+    // InternalServiceDefinition.g:2757:1: rule__ParameterPattern__Group__2 : rule__ParameterPattern__Group__2__Impl rule__ParameterPattern__Group__3 ;
     public final void rule__ParameterPattern__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2974:1: ( rule__ParameterPattern__Group__2__Impl rule__ParameterPattern__Group__3 )
-            // InternalServiceDefinition.g:2975:2: rule__ParameterPattern__Group__2__Impl rule__ParameterPattern__Group__3
+            // InternalServiceDefinition.g:2761:1: ( rule__ParameterPattern__Group__2__Impl rule__ParameterPattern__Group__3 )
+            // InternalServiceDefinition.g:2762:2: rule__ParameterPattern__Group__2__Impl rule__ParameterPattern__Group__3
             {
             pushFollow(FOLLOW_7);
             rule__ParameterPattern__Group__2__Impl();
@@ -8931,20 +8489,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ParameterPattern__Group__2__Impl"
-    // InternalServiceDefinition.g:2982:1: rule__ParameterPattern__Group__2__Impl : ( '<' ) ;
+    // InternalServiceDefinition.g:2769:1: rule__ParameterPattern__Group__2__Impl : ( '<' ) ;
     public final void rule__ParameterPattern__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:2986:1: ( ( '<' ) )
-            // InternalServiceDefinition.g:2987:1: ( '<' )
+            // InternalServiceDefinition.g:2773:1: ( ( '<' ) )
+            // InternalServiceDefinition.g:2774:1: ( '<' )
             {
-            // InternalServiceDefinition.g:2987:1: ( '<' )
-            // InternalServiceDefinition.g:2988:2: '<'
+            // InternalServiceDefinition.g:2774:1: ( '<' )
+            // InternalServiceDefinition.g:2775:2: '<'
             {
              before(grammarAccess.getParameterPatternAccess().getLessThanSignKeyword_2()); 
-            match(input,28,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getParameterPatternAccess().getLessThanSignKeyword_2()); 
 
             }
@@ -8968,16 +8526,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ParameterPattern__Group__3"
-    // InternalServiceDefinition.g:2997:1: rule__ParameterPattern__Group__3 : rule__ParameterPattern__Group__3__Impl rule__ParameterPattern__Group__4 ;
+    // InternalServiceDefinition.g:2784:1: rule__ParameterPattern__Group__3 : rule__ParameterPattern__Group__3__Impl rule__ParameterPattern__Group__4 ;
     public final void rule__ParameterPattern__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3001:1: ( rule__ParameterPattern__Group__3__Impl rule__ParameterPattern__Group__4 )
-            // InternalServiceDefinition.g:3002:2: rule__ParameterPattern__Group__3__Impl rule__ParameterPattern__Group__4
+            // InternalServiceDefinition.g:2788:1: ( rule__ParameterPattern__Group__3__Impl rule__ParameterPattern__Group__4 )
+            // InternalServiceDefinition.g:2789:2: rule__ParameterPattern__Group__3__Impl rule__ParameterPattern__Group__4
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_35);
             rule__ParameterPattern__Group__3__Impl();
 
             state._fsp--;
@@ -9006,21 +8564,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ParameterPattern__Group__3__Impl"
-    // InternalServiceDefinition.g:3009:1: rule__ParameterPattern__Group__3__Impl : ( ( rule__ParameterPattern__ParameterSetAssignment_3 ) ) ;
+    // InternalServiceDefinition.g:2796:1: rule__ParameterPattern__Group__3__Impl : ( ( rule__ParameterPattern__ParameterSetAssignment_3 ) ) ;
     public final void rule__ParameterPattern__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3013:1: ( ( ( rule__ParameterPattern__ParameterSetAssignment_3 ) ) )
-            // InternalServiceDefinition.g:3014:1: ( ( rule__ParameterPattern__ParameterSetAssignment_3 ) )
+            // InternalServiceDefinition.g:2800:1: ( ( ( rule__ParameterPattern__ParameterSetAssignment_3 ) ) )
+            // InternalServiceDefinition.g:2801:1: ( ( rule__ParameterPattern__ParameterSetAssignment_3 ) )
             {
-            // InternalServiceDefinition.g:3014:1: ( ( rule__ParameterPattern__ParameterSetAssignment_3 ) )
-            // InternalServiceDefinition.g:3015:2: ( rule__ParameterPattern__ParameterSetAssignment_3 )
+            // InternalServiceDefinition.g:2801:1: ( ( rule__ParameterPattern__ParameterSetAssignment_3 ) )
+            // InternalServiceDefinition.g:2802:2: ( rule__ParameterPattern__ParameterSetAssignment_3 )
             {
              before(grammarAccess.getParameterPatternAccess().getParameterSetAssignment_3()); 
-            // InternalServiceDefinition.g:3016:2: ( rule__ParameterPattern__ParameterSetAssignment_3 )
-            // InternalServiceDefinition.g:3016:3: rule__ParameterPattern__ParameterSetAssignment_3
+            // InternalServiceDefinition.g:2803:2: ( rule__ParameterPattern__ParameterSetAssignment_3 )
+            // InternalServiceDefinition.g:2803:3: rule__ParameterPattern__ParameterSetAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__ParameterPattern__ParameterSetAssignment_3();
@@ -9053,14 +8611,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ParameterPattern__Group__4"
-    // InternalServiceDefinition.g:3024:1: rule__ParameterPattern__Group__4 : rule__ParameterPattern__Group__4__Impl ;
+    // InternalServiceDefinition.g:2811:1: rule__ParameterPattern__Group__4 : rule__ParameterPattern__Group__4__Impl ;
     public final void rule__ParameterPattern__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3028:1: ( rule__ParameterPattern__Group__4__Impl )
-            // InternalServiceDefinition.g:3029:2: rule__ParameterPattern__Group__4__Impl
+            // InternalServiceDefinition.g:2815:1: ( rule__ParameterPattern__Group__4__Impl )
+            // InternalServiceDefinition.g:2816:2: rule__ParameterPattern__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ParameterPattern__Group__4__Impl();
@@ -9086,20 +8644,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ParameterPattern__Group__4__Impl"
-    // InternalServiceDefinition.g:3035:1: rule__ParameterPattern__Group__4__Impl : ( '>' ) ;
+    // InternalServiceDefinition.g:2822:1: rule__ParameterPattern__Group__4__Impl : ( '>' ) ;
     public final void rule__ParameterPattern__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3039:1: ( ( '>' ) )
-            // InternalServiceDefinition.g:3040:1: ( '>' )
+            // InternalServiceDefinition.g:2826:1: ( ( '>' ) )
+            // InternalServiceDefinition.g:2827:1: ( '>' )
             {
-            // InternalServiceDefinition.g:3040:1: ( '>' )
-            // InternalServiceDefinition.g:3041:2: '>'
+            // InternalServiceDefinition.g:2827:1: ( '>' )
+            // InternalServiceDefinition.g:2828:2: '>'
             {
              before(grammarAccess.getParameterPatternAccess().getGreaterThanSignKeyword_4()); 
-            match(input,30,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getParameterPatternAccess().getGreaterThanSignKeyword_4()); 
 
             }
@@ -9123,16 +8681,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__DynamicWiringPattern__Group__0"
-    // InternalServiceDefinition.g:3051:1: rule__DynamicWiringPattern__Group__0 : rule__DynamicWiringPattern__Group__0__Impl rule__DynamicWiringPattern__Group__1 ;
+    // InternalServiceDefinition.g:2838:1: rule__DynamicWiringPattern__Group__0 : rule__DynamicWiringPattern__Group__0__Impl rule__DynamicWiringPattern__Group__1 ;
     public final void rule__DynamicWiringPattern__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3055:1: ( rule__DynamicWiringPattern__Group__0__Impl rule__DynamicWiringPattern__Group__1 )
-            // InternalServiceDefinition.g:3056:2: rule__DynamicWiringPattern__Group__0__Impl rule__DynamicWiringPattern__Group__1
+            // InternalServiceDefinition.g:2842:1: ( rule__DynamicWiringPattern__Group__0__Impl rule__DynamicWiringPattern__Group__1 )
+            // InternalServiceDefinition.g:2843:2: rule__DynamicWiringPattern__Group__0__Impl rule__DynamicWiringPattern__Group__1
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_26);
             rule__DynamicWiringPattern__Group__0__Impl();
 
             state._fsp--;
@@ -9161,21 +8719,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__DynamicWiringPattern__Group__0__Impl"
-    // InternalServiceDefinition.g:3063:1: rule__DynamicWiringPattern__Group__0__Impl : ( () ) ;
+    // InternalServiceDefinition.g:2850:1: rule__DynamicWiringPattern__Group__0__Impl : ( () ) ;
     public final void rule__DynamicWiringPattern__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3067:1: ( ( () ) )
-            // InternalServiceDefinition.g:3068:1: ( () )
+            // InternalServiceDefinition.g:2854:1: ( ( () ) )
+            // InternalServiceDefinition.g:2855:1: ( () )
             {
-            // InternalServiceDefinition.g:3068:1: ( () )
-            // InternalServiceDefinition.g:3069:2: ()
+            // InternalServiceDefinition.g:2855:1: ( () )
+            // InternalServiceDefinition.g:2856:2: ()
             {
              before(grammarAccess.getDynamicWiringPatternAccess().getDynamicWiringPatternAction_0()); 
-            // InternalServiceDefinition.g:3070:2: ()
-            // InternalServiceDefinition.g:3070:3: 
+            // InternalServiceDefinition.g:2857:2: ()
+            // InternalServiceDefinition.g:2857:3: 
             {
             }
 
@@ -9198,14 +8756,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__DynamicWiringPattern__Group__1"
-    // InternalServiceDefinition.g:3078:1: rule__DynamicWiringPattern__Group__1 : rule__DynamicWiringPattern__Group__1__Impl ;
+    // InternalServiceDefinition.g:2865:1: rule__DynamicWiringPattern__Group__1 : rule__DynamicWiringPattern__Group__1__Impl ;
     public final void rule__DynamicWiringPattern__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3082:1: ( rule__DynamicWiringPattern__Group__1__Impl )
-            // InternalServiceDefinition.g:3083:2: rule__DynamicWiringPattern__Group__1__Impl
+            // InternalServiceDefinition.g:2869:1: ( rule__DynamicWiringPattern__Group__1__Impl )
+            // InternalServiceDefinition.g:2870:2: rule__DynamicWiringPattern__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DynamicWiringPattern__Group__1__Impl();
@@ -9231,20 +8789,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__DynamicWiringPattern__Group__1__Impl"
-    // InternalServiceDefinition.g:3089:1: rule__DynamicWiringPattern__Group__1__Impl : ( 'DynamicWiringPattern' ) ;
+    // InternalServiceDefinition.g:2876:1: rule__DynamicWiringPattern__Group__1__Impl : ( 'DynamicWiringPattern' ) ;
     public final void rule__DynamicWiringPattern__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3093:1: ( ( 'DynamicWiringPattern' ) )
-            // InternalServiceDefinition.g:3094:1: ( 'DynamicWiringPattern' )
+            // InternalServiceDefinition.g:2880:1: ( ( 'DynamicWiringPattern' ) )
+            // InternalServiceDefinition.g:2881:1: ( 'DynamicWiringPattern' )
             {
-            // InternalServiceDefinition.g:3094:1: ( 'DynamicWiringPattern' )
-            // InternalServiceDefinition.g:3095:2: 'DynamicWiringPattern'
+            // InternalServiceDefinition.g:2881:1: ( 'DynamicWiringPattern' )
+            // InternalServiceDefinition.g:2882:2: 'DynamicWiringPattern'
             {
              before(grammarAccess.getDynamicWiringPatternAccess().getDynamicWiringPatternKeyword_1()); 
-            match(input,33,FOLLOW_2); 
+            match(input,35,FOLLOW_2); 
              after(grammarAccess.getDynamicWiringPatternAccess().getDynamicWiringPatternKeyword_1()); 
 
             }
@@ -9268,16 +8826,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__MonitoringPattern__Group__0"
-    // InternalServiceDefinition.g:3105:1: rule__MonitoringPattern__Group__0 : rule__MonitoringPattern__Group__0__Impl rule__MonitoringPattern__Group__1 ;
+    // InternalServiceDefinition.g:2892:1: rule__MonitoringPattern__Group__0 : rule__MonitoringPattern__Group__0__Impl rule__MonitoringPattern__Group__1 ;
     public final void rule__MonitoringPattern__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3109:1: ( rule__MonitoringPattern__Group__0__Impl rule__MonitoringPattern__Group__1 )
-            // InternalServiceDefinition.g:3110:2: rule__MonitoringPattern__Group__0__Impl rule__MonitoringPattern__Group__1
+            // InternalServiceDefinition.g:2896:1: ( rule__MonitoringPattern__Group__0__Impl rule__MonitoringPattern__Group__1 )
+            // InternalServiceDefinition.g:2897:2: rule__MonitoringPattern__Group__0__Impl rule__MonitoringPattern__Group__1
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_36);
             rule__MonitoringPattern__Group__0__Impl();
 
             state._fsp--;
@@ -9306,21 +8864,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__MonitoringPattern__Group__0__Impl"
-    // InternalServiceDefinition.g:3117:1: rule__MonitoringPattern__Group__0__Impl : ( () ) ;
+    // InternalServiceDefinition.g:2904:1: rule__MonitoringPattern__Group__0__Impl : ( () ) ;
     public final void rule__MonitoringPattern__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3121:1: ( ( () ) )
-            // InternalServiceDefinition.g:3122:1: ( () )
+            // InternalServiceDefinition.g:2908:1: ( ( () ) )
+            // InternalServiceDefinition.g:2909:1: ( () )
             {
-            // InternalServiceDefinition.g:3122:1: ( () )
-            // InternalServiceDefinition.g:3123:2: ()
+            // InternalServiceDefinition.g:2909:1: ( () )
+            // InternalServiceDefinition.g:2910:2: ()
             {
              before(grammarAccess.getMonitoringPatternAccess().getMonitoringPatternAction_0()); 
-            // InternalServiceDefinition.g:3124:2: ()
-            // InternalServiceDefinition.g:3124:3: 
+            // InternalServiceDefinition.g:2911:2: ()
+            // InternalServiceDefinition.g:2911:3: 
             {
             }
 
@@ -9343,14 +8901,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__MonitoringPattern__Group__1"
-    // InternalServiceDefinition.g:3132:1: rule__MonitoringPattern__Group__1 : rule__MonitoringPattern__Group__1__Impl ;
+    // InternalServiceDefinition.g:2919:1: rule__MonitoringPattern__Group__1 : rule__MonitoringPattern__Group__1__Impl ;
     public final void rule__MonitoringPattern__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3136:1: ( rule__MonitoringPattern__Group__1__Impl )
-            // InternalServiceDefinition.g:3137:2: rule__MonitoringPattern__Group__1__Impl
+            // InternalServiceDefinition.g:2923:1: ( rule__MonitoringPattern__Group__1__Impl )
+            // InternalServiceDefinition.g:2924:2: rule__MonitoringPattern__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MonitoringPattern__Group__1__Impl();
@@ -9376,20 +8934,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__MonitoringPattern__Group__1__Impl"
-    // InternalServiceDefinition.g:3143:1: rule__MonitoringPattern__Group__1__Impl : ( 'MonitoringPattern' ) ;
+    // InternalServiceDefinition.g:2930:1: rule__MonitoringPattern__Group__1__Impl : ( 'MonitoringPattern' ) ;
     public final void rule__MonitoringPattern__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3147:1: ( ( 'MonitoringPattern' ) )
-            // InternalServiceDefinition.g:3148:1: ( 'MonitoringPattern' )
+            // InternalServiceDefinition.g:2934:1: ( ( 'MonitoringPattern' ) )
+            // InternalServiceDefinition.g:2935:1: ( 'MonitoringPattern' )
             {
-            // InternalServiceDefinition.g:3148:1: ( 'MonitoringPattern' )
-            // InternalServiceDefinition.g:3149:2: 'MonitoringPattern'
+            // InternalServiceDefinition.g:2935:1: ( 'MonitoringPattern' )
+            // InternalServiceDefinition.g:2936:2: 'MonitoringPattern'
             {
              before(grammarAccess.getMonitoringPatternAccess().getMonitoringPatternKeyword_1()); 
-            match(input,34,FOLLOW_2); 
+            match(input,36,FOLLOW_2); 
              after(grammarAccess.getMonitoringPatternAccess().getMonitoringPatternKeyword_1()); 
 
             }
@@ -9413,16 +8971,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__PushPattern__Group__0"
-    // InternalServiceDefinition.g:3159:1: rule__PushPattern__Group__0 : rule__PushPattern__Group__0__Impl rule__PushPattern__Group__1 ;
+    // InternalServiceDefinition.g:2946:1: rule__PushPattern__Group__0 : rule__PushPattern__Group__0__Impl rule__PushPattern__Group__1 ;
     public final void rule__PushPattern__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3163:1: ( rule__PushPattern__Group__0__Impl rule__PushPattern__Group__1 )
-            // InternalServiceDefinition.g:3164:2: rule__PushPattern__Group__0__Impl rule__PushPattern__Group__1
+            // InternalServiceDefinition.g:2950:1: ( rule__PushPattern__Group__0__Impl rule__PushPattern__Group__1 )
+            // InternalServiceDefinition.g:2951:2: rule__PushPattern__Group__0__Impl rule__PushPattern__Group__1
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_37);
             rule__PushPattern__Group__0__Impl();
 
             state._fsp--;
@@ -9451,21 +9009,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__PushPattern__Group__0__Impl"
-    // InternalServiceDefinition.g:3171:1: rule__PushPattern__Group__0__Impl : ( () ) ;
+    // InternalServiceDefinition.g:2958:1: rule__PushPattern__Group__0__Impl : ( () ) ;
     public final void rule__PushPattern__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3175:1: ( ( () ) )
-            // InternalServiceDefinition.g:3176:1: ( () )
+            // InternalServiceDefinition.g:2962:1: ( ( () ) )
+            // InternalServiceDefinition.g:2963:1: ( () )
             {
-            // InternalServiceDefinition.g:3176:1: ( () )
-            // InternalServiceDefinition.g:3177:2: ()
+            // InternalServiceDefinition.g:2963:1: ( () )
+            // InternalServiceDefinition.g:2964:2: ()
             {
              before(grammarAccess.getPushPatternAccess().getPushPatternAction_0()); 
-            // InternalServiceDefinition.g:3178:2: ()
-            // InternalServiceDefinition.g:3178:3: 
+            // InternalServiceDefinition.g:2965:2: ()
+            // InternalServiceDefinition.g:2965:3: 
             {
             }
 
@@ -9488,16 +9046,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__PushPattern__Group__1"
-    // InternalServiceDefinition.g:3186:1: rule__PushPattern__Group__1 : rule__PushPattern__Group__1__Impl rule__PushPattern__Group__2 ;
+    // InternalServiceDefinition.g:2973:1: rule__PushPattern__Group__1 : rule__PushPattern__Group__1__Impl rule__PushPattern__Group__2 ;
     public final void rule__PushPattern__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3190:1: ( rule__PushPattern__Group__1__Impl rule__PushPattern__Group__2 )
-            // InternalServiceDefinition.g:3191:2: rule__PushPattern__Group__1__Impl rule__PushPattern__Group__2
+            // InternalServiceDefinition.g:2977:1: ( rule__PushPattern__Group__1__Impl rule__PushPattern__Group__2 )
+            // InternalServiceDefinition.g:2978:2: rule__PushPattern__Group__1__Impl rule__PushPattern__Group__2
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_31);
             rule__PushPattern__Group__1__Impl();
 
             state._fsp--;
@@ -9526,20 +9084,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__PushPattern__Group__1__Impl"
-    // InternalServiceDefinition.g:3198:1: rule__PushPattern__Group__1__Impl : ( 'PushPattern' ) ;
+    // InternalServiceDefinition.g:2985:1: rule__PushPattern__Group__1__Impl : ( 'PushPattern' ) ;
     public final void rule__PushPattern__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3202:1: ( ( 'PushPattern' ) )
-            // InternalServiceDefinition.g:3203:1: ( 'PushPattern' )
+            // InternalServiceDefinition.g:2989:1: ( ( 'PushPattern' ) )
+            // InternalServiceDefinition.g:2990:1: ( 'PushPattern' )
             {
-            // InternalServiceDefinition.g:3203:1: ( 'PushPattern' )
-            // InternalServiceDefinition.g:3204:2: 'PushPattern'
+            // InternalServiceDefinition.g:2990:1: ( 'PushPattern' )
+            // InternalServiceDefinition.g:2991:2: 'PushPattern'
             {
              before(grammarAccess.getPushPatternAccess().getPushPatternKeyword_1()); 
-            match(input,35,FOLLOW_2); 
+            match(input,37,FOLLOW_2); 
              after(grammarAccess.getPushPatternAccess().getPushPatternKeyword_1()); 
 
             }
@@ -9563,16 +9121,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__PushPattern__Group__2"
-    // InternalServiceDefinition.g:3213:1: rule__PushPattern__Group__2 : rule__PushPattern__Group__2__Impl rule__PushPattern__Group__3 ;
+    // InternalServiceDefinition.g:3000:1: rule__PushPattern__Group__2 : rule__PushPattern__Group__2__Impl rule__PushPattern__Group__3 ;
     public final void rule__PushPattern__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3217:1: ( rule__PushPattern__Group__2__Impl rule__PushPattern__Group__3 )
-            // InternalServiceDefinition.g:3218:2: rule__PushPattern__Group__2__Impl rule__PushPattern__Group__3
+            // InternalServiceDefinition.g:3004:1: ( rule__PushPattern__Group__2__Impl rule__PushPattern__Group__3 )
+            // InternalServiceDefinition.g:3005:2: rule__PushPattern__Group__2__Impl rule__PushPattern__Group__3
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_38);
             rule__PushPattern__Group__2__Impl();
 
             state._fsp--;
@@ -9601,20 +9159,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__PushPattern__Group__2__Impl"
-    // InternalServiceDefinition.g:3225:1: rule__PushPattern__Group__2__Impl : ( '<' ) ;
+    // InternalServiceDefinition.g:3012:1: rule__PushPattern__Group__2__Impl : ( '<' ) ;
     public final void rule__PushPattern__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3229:1: ( ( '<' ) )
-            // InternalServiceDefinition.g:3230:1: ( '<' )
+            // InternalServiceDefinition.g:3016:1: ( ( '<' ) )
+            // InternalServiceDefinition.g:3017:1: ( '<' )
             {
-            // InternalServiceDefinition.g:3230:1: ( '<' )
-            // InternalServiceDefinition.g:3231:2: '<'
+            // InternalServiceDefinition.g:3017:1: ( '<' )
+            // InternalServiceDefinition.g:3018:2: '<'
             {
              before(grammarAccess.getPushPatternAccess().getLessThanSignKeyword_2()); 
-            match(input,28,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getPushPatternAccess().getLessThanSignKeyword_2()); 
 
             }
@@ -9638,16 +9196,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__PushPattern__Group__3"
-    // InternalServiceDefinition.g:3240:1: rule__PushPattern__Group__3 : rule__PushPattern__Group__3__Impl rule__PushPattern__Group__4 ;
+    // InternalServiceDefinition.g:3027:1: rule__PushPattern__Group__3 : rule__PushPattern__Group__3__Impl rule__PushPattern__Group__4 ;
     public final void rule__PushPattern__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3244:1: ( rule__PushPattern__Group__3__Impl rule__PushPattern__Group__4 )
-            // InternalServiceDefinition.g:3245:2: rule__PushPattern__Group__3__Impl rule__PushPattern__Group__4
+            // InternalServiceDefinition.g:3031:1: ( rule__PushPattern__Group__3__Impl rule__PushPattern__Group__4 )
+            // InternalServiceDefinition.g:3032:2: rule__PushPattern__Group__3__Impl rule__PushPattern__Group__4
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_39);
             rule__PushPattern__Group__3__Impl();
 
             state._fsp--;
@@ -9676,20 +9234,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__PushPattern__Group__3__Impl"
-    // InternalServiceDefinition.g:3252:1: rule__PushPattern__Group__3__Impl : ( 'DataType' ) ;
+    // InternalServiceDefinition.g:3039:1: rule__PushPattern__Group__3__Impl : ( 'DataType' ) ;
     public final void rule__PushPattern__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3256:1: ( ( 'DataType' ) )
-            // InternalServiceDefinition.g:3257:1: ( 'DataType' )
+            // InternalServiceDefinition.g:3043:1: ( ( 'DataType' ) )
+            // InternalServiceDefinition.g:3044:1: ( 'DataType' )
             {
-            // InternalServiceDefinition.g:3257:1: ( 'DataType' )
-            // InternalServiceDefinition.g:3258:2: 'DataType'
+            // InternalServiceDefinition.g:3044:1: ( 'DataType' )
+            // InternalServiceDefinition.g:3045:2: 'DataType'
             {
              before(grammarAccess.getPushPatternAccess().getDataTypeKeyword_3()); 
-            match(input,36,FOLLOW_2); 
+            match(input,38,FOLLOW_2); 
              after(grammarAccess.getPushPatternAccess().getDataTypeKeyword_3()); 
 
             }
@@ -9713,14 +9271,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__PushPattern__Group__4"
-    // InternalServiceDefinition.g:3267:1: rule__PushPattern__Group__4 : rule__PushPattern__Group__4__Impl rule__PushPattern__Group__5 ;
+    // InternalServiceDefinition.g:3054:1: rule__PushPattern__Group__4 : rule__PushPattern__Group__4__Impl rule__PushPattern__Group__5 ;
     public final void rule__PushPattern__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3271:1: ( rule__PushPattern__Group__4__Impl rule__PushPattern__Group__5 )
-            // InternalServiceDefinition.g:3272:2: rule__PushPattern__Group__4__Impl rule__PushPattern__Group__5
+            // InternalServiceDefinition.g:3058:1: ( rule__PushPattern__Group__4__Impl rule__PushPattern__Group__5 )
+            // InternalServiceDefinition.g:3059:2: rule__PushPattern__Group__4__Impl rule__PushPattern__Group__5
             {
             pushFollow(FOLLOW_7);
             rule__PushPattern__Group__4__Impl();
@@ -9751,20 +9309,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__PushPattern__Group__4__Impl"
-    // InternalServiceDefinition.g:3279:1: rule__PushPattern__Group__4__Impl : ( '=' ) ;
+    // InternalServiceDefinition.g:3066:1: rule__PushPattern__Group__4__Impl : ( '=' ) ;
     public final void rule__PushPattern__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3283:1: ( ( '=' ) )
-            // InternalServiceDefinition.g:3284:1: ( '=' )
+            // InternalServiceDefinition.g:3070:1: ( ( '=' ) )
+            // InternalServiceDefinition.g:3071:1: ( '=' )
             {
-            // InternalServiceDefinition.g:3284:1: ( '=' )
-            // InternalServiceDefinition.g:3285:2: '='
+            // InternalServiceDefinition.g:3071:1: ( '=' )
+            // InternalServiceDefinition.g:3072:2: '='
             {
              before(grammarAccess.getPushPatternAccess().getEqualsSignKeyword_4()); 
-            match(input,37,FOLLOW_2); 
+            match(input,39,FOLLOW_2); 
              after(grammarAccess.getPushPatternAccess().getEqualsSignKeyword_4()); 
 
             }
@@ -9788,16 +9346,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__PushPattern__Group__5"
-    // InternalServiceDefinition.g:3294:1: rule__PushPattern__Group__5 : rule__PushPattern__Group__5__Impl rule__PushPattern__Group__6 ;
+    // InternalServiceDefinition.g:3081:1: rule__PushPattern__Group__5 : rule__PushPattern__Group__5__Impl rule__PushPattern__Group__6 ;
     public final void rule__PushPattern__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3298:1: ( rule__PushPattern__Group__5__Impl rule__PushPattern__Group__6 )
-            // InternalServiceDefinition.g:3299:2: rule__PushPattern__Group__5__Impl rule__PushPattern__Group__6
+            // InternalServiceDefinition.g:3085:1: ( rule__PushPattern__Group__5__Impl rule__PushPattern__Group__6 )
+            // InternalServiceDefinition.g:3086:2: rule__PushPattern__Group__5__Impl rule__PushPattern__Group__6
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_35);
             rule__PushPattern__Group__5__Impl();
 
             state._fsp--;
@@ -9826,21 +9384,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__PushPattern__Group__5__Impl"
-    // InternalServiceDefinition.g:3306:1: rule__PushPattern__Group__5__Impl : ( ( rule__PushPattern__DataTypeAssignment_5 ) ) ;
+    // InternalServiceDefinition.g:3093:1: rule__PushPattern__Group__5__Impl : ( ( rule__PushPattern__DataTypeAssignment_5 ) ) ;
     public final void rule__PushPattern__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3310:1: ( ( ( rule__PushPattern__DataTypeAssignment_5 ) ) )
-            // InternalServiceDefinition.g:3311:1: ( ( rule__PushPattern__DataTypeAssignment_5 ) )
+            // InternalServiceDefinition.g:3097:1: ( ( ( rule__PushPattern__DataTypeAssignment_5 ) ) )
+            // InternalServiceDefinition.g:3098:1: ( ( rule__PushPattern__DataTypeAssignment_5 ) )
             {
-            // InternalServiceDefinition.g:3311:1: ( ( rule__PushPattern__DataTypeAssignment_5 ) )
-            // InternalServiceDefinition.g:3312:2: ( rule__PushPattern__DataTypeAssignment_5 )
+            // InternalServiceDefinition.g:3098:1: ( ( rule__PushPattern__DataTypeAssignment_5 ) )
+            // InternalServiceDefinition.g:3099:2: ( rule__PushPattern__DataTypeAssignment_5 )
             {
              before(grammarAccess.getPushPatternAccess().getDataTypeAssignment_5()); 
-            // InternalServiceDefinition.g:3313:2: ( rule__PushPattern__DataTypeAssignment_5 )
-            // InternalServiceDefinition.g:3313:3: rule__PushPattern__DataTypeAssignment_5
+            // InternalServiceDefinition.g:3100:2: ( rule__PushPattern__DataTypeAssignment_5 )
+            // InternalServiceDefinition.g:3100:3: rule__PushPattern__DataTypeAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__PushPattern__DataTypeAssignment_5();
@@ -9873,14 +9431,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__PushPattern__Group__6"
-    // InternalServiceDefinition.g:3321:1: rule__PushPattern__Group__6 : rule__PushPattern__Group__6__Impl ;
+    // InternalServiceDefinition.g:3108:1: rule__PushPattern__Group__6 : rule__PushPattern__Group__6__Impl ;
     public final void rule__PushPattern__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3325:1: ( rule__PushPattern__Group__6__Impl )
-            // InternalServiceDefinition.g:3326:2: rule__PushPattern__Group__6__Impl
+            // InternalServiceDefinition.g:3112:1: ( rule__PushPattern__Group__6__Impl )
+            // InternalServiceDefinition.g:3113:2: rule__PushPattern__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PushPattern__Group__6__Impl();
@@ -9906,20 +9464,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__PushPattern__Group__6__Impl"
-    // InternalServiceDefinition.g:3332:1: rule__PushPattern__Group__6__Impl : ( '>' ) ;
+    // InternalServiceDefinition.g:3119:1: rule__PushPattern__Group__6__Impl : ( '>' ) ;
     public final void rule__PushPattern__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3336:1: ( ( '>' ) )
-            // InternalServiceDefinition.g:3337:1: ( '>' )
+            // InternalServiceDefinition.g:3123:1: ( ( '>' ) )
+            // InternalServiceDefinition.g:3124:1: ( '>' )
             {
-            // InternalServiceDefinition.g:3337:1: ( '>' )
-            // InternalServiceDefinition.g:3338:2: '>'
+            // InternalServiceDefinition.g:3124:1: ( '>' )
+            // InternalServiceDefinition.g:3125:2: '>'
             {
              before(grammarAccess.getPushPatternAccess().getGreaterThanSignKeyword_6()); 
-            match(input,30,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getPushPatternAccess().getGreaterThanSignKeyword_6()); 
 
             }
@@ -9943,16 +9501,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group__0"
-    // InternalServiceDefinition.g:3348:1: rule__EventPattern__Group__0 : rule__EventPattern__Group__0__Impl rule__EventPattern__Group__1 ;
+    // InternalServiceDefinition.g:3135:1: rule__EventPattern__Group__0 : rule__EventPattern__Group__0__Impl rule__EventPattern__Group__1 ;
     public final void rule__EventPattern__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3352:1: ( rule__EventPattern__Group__0__Impl rule__EventPattern__Group__1 )
-            // InternalServiceDefinition.g:3353:2: rule__EventPattern__Group__0__Impl rule__EventPattern__Group__1
+            // InternalServiceDefinition.g:3139:1: ( rule__EventPattern__Group__0__Impl rule__EventPattern__Group__1 )
+            // InternalServiceDefinition.g:3140:2: rule__EventPattern__Group__0__Impl rule__EventPattern__Group__1
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_18);
             rule__EventPattern__Group__0__Impl();
 
             state._fsp--;
@@ -9981,21 +9539,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group__0__Impl"
-    // InternalServiceDefinition.g:3360:1: rule__EventPattern__Group__0__Impl : ( () ) ;
+    // InternalServiceDefinition.g:3147:1: rule__EventPattern__Group__0__Impl : ( () ) ;
     public final void rule__EventPattern__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3364:1: ( ( () ) )
-            // InternalServiceDefinition.g:3365:1: ( () )
+            // InternalServiceDefinition.g:3151:1: ( ( () ) )
+            // InternalServiceDefinition.g:3152:1: ( () )
             {
-            // InternalServiceDefinition.g:3365:1: ( () )
-            // InternalServiceDefinition.g:3366:2: ()
+            // InternalServiceDefinition.g:3152:1: ( () )
+            // InternalServiceDefinition.g:3153:2: ()
             {
              before(grammarAccess.getEventPatternAccess().getEventPatternAction_0()); 
-            // InternalServiceDefinition.g:3367:2: ()
-            // InternalServiceDefinition.g:3367:3: 
+            // InternalServiceDefinition.g:3154:2: ()
+            // InternalServiceDefinition.g:3154:3: 
             {
             }
 
@@ -10018,16 +9576,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group__1"
-    // InternalServiceDefinition.g:3375:1: rule__EventPattern__Group__1 : rule__EventPattern__Group__1__Impl rule__EventPattern__Group__2 ;
+    // InternalServiceDefinition.g:3162:1: rule__EventPattern__Group__1 : rule__EventPattern__Group__1__Impl rule__EventPattern__Group__2 ;
     public final void rule__EventPattern__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3379:1: ( rule__EventPattern__Group__1__Impl rule__EventPattern__Group__2 )
-            // InternalServiceDefinition.g:3380:2: rule__EventPattern__Group__1__Impl rule__EventPattern__Group__2
+            // InternalServiceDefinition.g:3166:1: ( rule__EventPattern__Group__1__Impl rule__EventPattern__Group__2 )
+            // InternalServiceDefinition.g:3167:2: rule__EventPattern__Group__1__Impl rule__EventPattern__Group__2
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_31);
             rule__EventPattern__Group__1__Impl();
 
             state._fsp--;
@@ -10056,20 +9614,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group__1__Impl"
-    // InternalServiceDefinition.g:3387:1: rule__EventPattern__Group__1__Impl : ( 'EventPattern' ) ;
+    // InternalServiceDefinition.g:3174:1: rule__EventPattern__Group__1__Impl : ( 'EventPattern' ) ;
     public final void rule__EventPattern__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3391:1: ( ( 'EventPattern' ) )
-            // InternalServiceDefinition.g:3392:1: ( 'EventPattern' )
+            // InternalServiceDefinition.g:3178:1: ( ( 'EventPattern' ) )
+            // InternalServiceDefinition.g:3179:1: ( 'EventPattern' )
             {
-            // InternalServiceDefinition.g:3392:1: ( 'EventPattern' )
-            // InternalServiceDefinition.g:3393:2: 'EventPattern'
+            // InternalServiceDefinition.g:3179:1: ( 'EventPattern' )
+            // InternalServiceDefinition.g:3180:2: 'EventPattern'
             {
              before(grammarAccess.getEventPatternAccess().getEventPatternKeyword_1()); 
-            match(input,38,FOLLOW_2); 
+            match(input,40,FOLLOW_2); 
              after(grammarAccess.getEventPatternAccess().getEventPatternKeyword_1()); 
 
             }
@@ -10093,16 +9651,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group__2"
-    // InternalServiceDefinition.g:3402:1: rule__EventPattern__Group__2 : rule__EventPattern__Group__2__Impl rule__EventPattern__Group__3 ;
+    // InternalServiceDefinition.g:3189:1: rule__EventPattern__Group__2 : rule__EventPattern__Group__2__Impl rule__EventPattern__Group__3 ;
     public final void rule__EventPattern__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3406:1: ( rule__EventPattern__Group__2__Impl rule__EventPattern__Group__3 )
-            // InternalServiceDefinition.g:3407:2: rule__EventPattern__Group__2__Impl rule__EventPattern__Group__3
+            // InternalServiceDefinition.g:3193:1: ( rule__EventPattern__Group__2__Impl rule__EventPattern__Group__3 )
+            // InternalServiceDefinition.g:3194:2: rule__EventPattern__Group__2__Impl rule__EventPattern__Group__3
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_40);
             rule__EventPattern__Group__2__Impl();
 
             state._fsp--;
@@ -10131,20 +9689,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group__2__Impl"
-    // InternalServiceDefinition.g:3414:1: rule__EventPattern__Group__2__Impl : ( '<' ) ;
+    // InternalServiceDefinition.g:3201:1: rule__EventPattern__Group__2__Impl : ( '<' ) ;
     public final void rule__EventPattern__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3418:1: ( ( '<' ) )
-            // InternalServiceDefinition.g:3419:1: ( '<' )
+            // InternalServiceDefinition.g:3205:1: ( ( '<' ) )
+            // InternalServiceDefinition.g:3206:1: ( '<' )
             {
-            // InternalServiceDefinition.g:3419:1: ( '<' )
-            // InternalServiceDefinition.g:3420:2: '<'
+            // InternalServiceDefinition.g:3206:1: ( '<' )
+            // InternalServiceDefinition.g:3207:2: '<'
             {
              before(grammarAccess.getEventPatternAccess().getLessThanSignKeyword_2()); 
-            match(input,28,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getEventPatternAccess().getLessThanSignKeyword_2()); 
 
             }
@@ -10168,16 +9726,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group__3"
-    // InternalServiceDefinition.g:3429:1: rule__EventPattern__Group__3 : rule__EventPattern__Group__3__Impl rule__EventPattern__Group__4 ;
+    // InternalServiceDefinition.g:3216:1: rule__EventPattern__Group__3 : rule__EventPattern__Group__3__Impl rule__EventPattern__Group__4 ;
     public final void rule__EventPattern__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3433:1: ( rule__EventPattern__Group__3__Impl rule__EventPattern__Group__4 )
-            // InternalServiceDefinition.g:3434:2: rule__EventPattern__Group__3__Impl rule__EventPattern__Group__4
+            // InternalServiceDefinition.g:3220:1: ( rule__EventPattern__Group__3__Impl rule__EventPattern__Group__4 )
+            // InternalServiceDefinition.g:3221:2: rule__EventPattern__Group__3__Impl rule__EventPattern__Group__4
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_35);
             rule__EventPattern__Group__3__Impl();
 
             state._fsp--;
@@ -10206,21 +9764,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group__3__Impl"
-    // InternalServiceDefinition.g:3441:1: rule__EventPattern__Group__3__Impl : ( ( rule__EventPattern__UnorderedGroup_3 ) ) ;
+    // InternalServiceDefinition.g:3228:1: rule__EventPattern__Group__3__Impl : ( ( rule__EventPattern__UnorderedGroup_3 ) ) ;
     public final void rule__EventPattern__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3445:1: ( ( ( rule__EventPattern__UnorderedGroup_3 ) ) )
-            // InternalServiceDefinition.g:3446:1: ( ( rule__EventPattern__UnorderedGroup_3 ) )
+            // InternalServiceDefinition.g:3232:1: ( ( ( rule__EventPattern__UnorderedGroup_3 ) ) )
+            // InternalServiceDefinition.g:3233:1: ( ( rule__EventPattern__UnorderedGroup_3 ) )
             {
-            // InternalServiceDefinition.g:3446:1: ( ( rule__EventPattern__UnorderedGroup_3 ) )
-            // InternalServiceDefinition.g:3447:2: ( rule__EventPattern__UnorderedGroup_3 )
+            // InternalServiceDefinition.g:3233:1: ( ( rule__EventPattern__UnorderedGroup_3 ) )
+            // InternalServiceDefinition.g:3234:2: ( rule__EventPattern__UnorderedGroup_3 )
             {
              before(grammarAccess.getEventPatternAccess().getUnorderedGroup_3()); 
-            // InternalServiceDefinition.g:3448:2: ( rule__EventPattern__UnorderedGroup_3 )
-            // InternalServiceDefinition.g:3448:3: rule__EventPattern__UnorderedGroup_3
+            // InternalServiceDefinition.g:3235:2: ( rule__EventPattern__UnorderedGroup_3 )
+            // InternalServiceDefinition.g:3235:3: rule__EventPattern__UnorderedGroup_3
             {
             pushFollow(FOLLOW_2);
             rule__EventPattern__UnorderedGroup_3();
@@ -10253,14 +9811,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group__4"
-    // InternalServiceDefinition.g:3456:1: rule__EventPattern__Group__4 : rule__EventPattern__Group__4__Impl ;
+    // InternalServiceDefinition.g:3243:1: rule__EventPattern__Group__4 : rule__EventPattern__Group__4__Impl ;
     public final void rule__EventPattern__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3460:1: ( rule__EventPattern__Group__4__Impl )
-            // InternalServiceDefinition.g:3461:2: rule__EventPattern__Group__4__Impl
+            // InternalServiceDefinition.g:3247:1: ( rule__EventPattern__Group__4__Impl )
+            // InternalServiceDefinition.g:3248:2: rule__EventPattern__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EventPattern__Group__4__Impl();
@@ -10286,20 +9844,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group__4__Impl"
-    // InternalServiceDefinition.g:3467:1: rule__EventPattern__Group__4__Impl : ( '>' ) ;
+    // InternalServiceDefinition.g:3254:1: rule__EventPattern__Group__4__Impl : ( '>' ) ;
     public final void rule__EventPattern__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3471:1: ( ( '>' ) )
-            // InternalServiceDefinition.g:3472:1: ( '>' )
+            // InternalServiceDefinition.g:3258:1: ( ( '>' ) )
+            // InternalServiceDefinition.g:3259:1: ( '>' )
             {
-            // InternalServiceDefinition.g:3472:1: ( '>' )
-            // InternalServiceDefinition.g:3473:2: '>'
+            // InternalServiceDefinition.g:3259:1: ( '>' )
+            // InternalServiceDefinition.g:3260:2: '>'
             {
              before(grammarAccess.getEventPatternAccess().getGreaterThanSignKeyword_4()); 
-            match(input,30,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getEventPatternAccess().getGreaterThanSignKeyword_4()); 
 
             }
@@ -10323,16 +9881,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_0__0"
-    // InternalServiceDefinition.g:3483:1: rule__EventPattern__Group_3_0__0 : rule__EventPattern__Group_3_0__0__Impl rule__EventPattern__Group_3_0__1 ;
+    // InternalServiceDefinition.g:3270:1: rule__EventPattern__Group_3_0__0 : rule__EventPattern__Group_3_0__0__Impl rule__EventPattern__Group_3_0__1 ;
     public final void rule__EventPattern__Group_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3487:1: ( rule__EventPattern__Group_3_0__0__Impl rule__EventPattern__Group_3_0__1 )
-            // InternalServiceDefinition.g:3488:2: rule__EventPattern__Group_3_0__0__Impl rule__EventPattern__Group_3_0__1
+            // InternalServiceDefinition.g:3274:1: ( rule__EventPattern__Group_3_0__0__Impl rule__EventPattern__Group_3_0__1 )
+            // InternalServiceDefinition.g:3275:2: rule__EventPattern__Group_3_0__0__Impl rule__EventPattern__Group_3_0__1
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_39);
             rule__EventPattern__Group_3_0__0__Impl();
 
             state._fsp--;
@@ -10361,20 +9919,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_0__0__Impl"
-    // InternalServiceDefinition.g:3495:1: rule__EventPattern__Group_3_0__0__Impl : ( 'EventType' ) ;
+    // InternalServiceDefinition.g:3282:1: rule__EventPattern__Group_3_0__0__Impl : ( 'EventType' ) ;
     public final void rule__EventPattern__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3499:1: ( ( 'EventType' ) )
-            // InternalServiceDefinition.g:3500:1: ( 'EventType' )
+            // InternalServiceDefinition.g:3286:1: ( ( 'EventType' ) )
+            // InternalServiceDefinition.g:3287:1: ( 'EventType' )
             {
-            // InternalServiceDefinition.g:3500:1: ( 'EventType' )
-            // InternalServiceDefinition.g:3501:2: 'EventType'
+            // InternalServiceDefinition.g:3287:1: ( 'EventType' )
+            // InternalServiceDefinition.g:3288:2: 'EventType'
             {
              before(grammarAccess.getEventPatternAccess().getEventTypeKeyword_3_0_0()); 
-            match(input,39,FOLLOW_2); 
+            match(input,41,FOLLOW_2); 
              after(grammarAccess.getEventPatternAccess().getEventTypeKeyword_3_0_0()); 
 
             }
@@ -10398,14 +9956,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_0__1"
-    // InternalServiceDefinition.g:3510:1: rule__EventPattern__Group_3_0__1 : rule__EventPattern__Group_3_0__1__Impl rule__EventPattern__Group_3_0__2 ;
+    // InternalServiceDefinition.g:3297:1: rule__EventPattern__Group_3_0__1 : rule__EventPattern__Group_3_0__1__Impl rule__EventPattern__Group_3_0__2 ;
     public final void rule__EventPattern__Group_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3514:1: ( rule__EventPattern__Group_3_0__1__Impl rule__EventPattern__Group_3_0__2 )
-            // InternalServiceDefinition.g:3515:2: rule__EventPattern__Group_3_0__1__Impl rule__EventPattern__Group_3_0__2
+            // InternalServiceDefinition.g:3301:1: ( rule__EventPattern__Group_3_0__1__Impl rule__EventPattern__Group_3_0__2 )
+            // InternalServiceDefinition.g:3302:2: rule__EventPattern__Group_3_0__1__Impl rule__EventPattern__Group_3_0__2
             {
             pushFollow(FOLLOW_7);
             rule__EventPattern__Group_3_0__1__Impl();
@@ -10436,20 +9994,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_0__1__Impl"
-    // InternalServiceDefinition.g:3522:1: rule__EventPattern__Group_3_0__1__Impl : ( '=' ) ;
+    // InternalServiceDefinition.g:3309:1: rule__EventPattern__Group_3_0__1__Impl : ( '=' ) ;
     public final void rule__EventPattern__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3526:1: ( ( '=' ) )
-            // InternalServiceDefinition.g:3527:1: ( '=' )
+            // InternalServiceDefinition.g:3313:1: ( ( '=' ) )
+            // InternalServiceDefinition.g:3314:1: ( '=' )
             {
-            // InternalServiceDefinition.g:3527:1: ( '=' )
-            // InternalServiceDefinition.g:3528:2: '='
+            // InternalServiceDefinition.g:3314:1: ( '=' )
+            // InternalServiceDefinition.g:3315:2: '='
             {
              before(grammarAccess.getEventPatternAccess().getEqualsSignKeyword_3_0_1()); 
-            match(input,37,FOLLOW_2); 
+            match(input,39,FOLLOW_2); 
              after(grammarAccess.getEventPatternAccess().getEqualsSignKeyword_3_0_1()); 
 
             }
@@ -10473,14 +10031,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_0__2"
-    // InternalServiceDefinition.g:3537:1: rule__EventPattern__Group_3_0__2 : rule__EventPattern__Group_3_0__2__Impl ;
+    // InternalServiceDefinition.g:3324:1: rule__EventPattern__Group_3_0__2 : rule__EventPattern__Group_3_0__2__Impl ;
     public final void rule__EventPattern__Group_3_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3541:1: ( rule__EventPattern__Group_3_0__2__Impl )
-            // InternalServiceDefinition.g:3542:2: rule__EventPattern__Group_3_0__2__Impl
+            // InternalServiceDefinition.g:3328:1: ( rule__EventPattern__Group_3_0__2__Impl )
+            // InternalServiceDefinition.g:3329:2: rule__EventPattern__Group_3_0__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EventPattern__Group_3_0__2__Impl();
@@ -10506,21 +10064,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_0__2__Impl"
-    // InternalServiceDefinition.g:3548:1: rule__EventPattern__Group_3_0__2__Impl : ( ( rule__EventPattern__EventTypeAssignment_3_0_2 ) ) ;
+    // InternalServiceDefinition.g:3335:1: rule__EventPattern__Group_3_0__2__Impl : ( ( rule__EventPattern__EventTypeAssignment_3_0_2 ) ) ;
     public final void rule__EventPattern__Group_3_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3552:1: ( ( ( rule__EventPattern__EventTypeAssignment_3_0_2 ) ) )
-            // InternalServiceDefinition.g:3553:1: ( ( rule__EventPattern__EventTypeAssignment_3_0_2 ) )
+            // InternalServiceDefinition.g:3339:1: ( ( ( rule__EventPattern__EventTypeAssignment_3_0_2 ) ) )
+            // InternalServiceDefinition.g:3340:1: ( ( rule__EventPattern__EventTypeAssignment_3_0_2 ) )
             {
-            // InternalServiceDefinition.g:3553:1: ( ( rule__EventPattern__EventTypeAssignment_3_0_2 ) )
-            // InternalServiceDefinition.g:3554:2: ( rule__EventPattern__EventTypeAssignment_3_0_2 )
+            // InternalServiceDefinition.g:3340:1: ( ( rule__EventPattern__EventTypeAssignment_3_0_2 ) )
+            // InternalServiceDefinition.g:3341:2: ( rule__EventPattern__EventTypeAssignment_3_0_2 )
             {
              before(grammarAccess.getEventPatternAccess().getEventTypeAssignment_3_0_2()); 
-            // InternalServiceDefinition.g:3555:2: ( rule__EventPattern__EventTypeAssignment_3_0_2 )
-            // InternalServiceDefinition.g:3555:3: rule__EventPattern__EventTypeAssignment_3_0_2
+            // InternalServiceDefinition.g:3342:2: ( rule__EventPattern__EventTypeAssignment_3_0_2 )
+            // InternalServiceDefinition.g:3342:3: rule__EventPattern__EventTypeAssignment_3_0_2
             {
             pushFollow(FOLLOW_2);
             rule__EventPattern__EventTypeAssignment_3_0_2();
@@ -10553,16 +10111,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_1__0"
-    // InternalServiceDefinition.g:3564:1: rule__EventPattern__Group_3_1__0 : rule__EventPattern__Group_3_1__0__Impl rule__EventPattern__Group_3_1__1 ;
+    // InternalServiceDefinition.g:3351:1: rule__EventPattern__Group_3_1__0 : rule__EventPattern__Group_3_1__0__Impl rule__EventPattern__Group_3_1__1 ;
     public final void rule__EventPattern__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3568:1: ( rule__EventPattern__Group_3_1__0__Impl rule__EventPattern__Group_3_1__1 )
-            // InternalServiceDefinition.g:3569:2: rule__EventPattern__Group_3_1__0__Impl rule__EventPattern__Group_3_1__1
+            // InternalServiceDefinition.g:3355:1: ( rule__EventPattern__Group_3_1__0__Impl rule__EventPattern__Group_3_1__1 )
+            // InternalServiceDefinition.g:3356:2: rule__EventPattern__Group_3_1__0__Impl rule__EventPattern__Group_3_1__1
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_39);
             rule__EventPattern__Group_3_1__0__Impl();
 
             state._fsp--;
@@ -10591,20 +10149,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_1__0__Impl"
-    // InternalServiceDefinition.g:3576:1: rule__EventPattern__Group_3_1__0__Impl : ( 'ActivationType' ) ;
+    // InternalServiceDefinition.g:3363:1: rule__EventPattern__Group_3_1__0__Impl : ( 'ActivationType' ) ;
     public final void rule__EventPattern__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3580:1: ( ( 'ActivationType' ) )
-            // InternalServiceDefinition.g:3581:1: ( 'ActivationType' )
+            // InternalServiceDefinition.g:3367:1: ( ( 'ActivationType' ) )
+            // InternalServiceDefinition.g:3368:1: ( 'ActivationType' )
             {
-            // InternalServiceDefinition.g:3581:1: ( 'ActivationType' )
-            // InternalServiceDefinition.g:3582:2: 'ActivationType'
+            // InternalServiceDefinition.g:3368:1: ( 'ActivationType' )
+            // InternalServiceDefinition.g:3369:2: 'ActivationType'
             {
              before(grammarAccess.getEventPatternAccess().getActivationTypeKeyword_3_1_0()); 
-            match(input,40,FOLLOW_2); 
+            match(input,42,FOLLOW_2); 
              after(grammarAccess.getEventPatternAccess().getActivationTypeKeyword_3_1_0()); 
 
             }
@@ -10628,14 +10186,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_1__1"
-    // InternalServiceDefinition.g:3591:1: rule__EventPattern__Group_3_1__1 : rule__EventPattern__Group_3_1__1__Impl rule__EventPattern__Group_3_1__2 ;
+    // InternalServiceDefinition.g:3378:1: rule__EventPattern__Group_3_1__1 : rule__EventPattern__Group_3_1__1__Impl rule__EventPattern__Group_3_1__2 ;
     public final void rule__EventPattern__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3595:1: ( rule__EventPattern__Group_3_1__1__Impl rule__EventPattern__Group_3_1__2 )
-            // InternalServiceDefinition.g:3596:2: rule__EventPattern__Group_3_1__1__Impl rule__EventPattern__Group_3_1__2
+            // InternalServiceDefinition.g:3382:1: ( rule__EventPattern__Group_3_1__1__Impl rule__EventPattern__Group_3_1__2 )
+            // InternalServiceDefinition.g:3383:2: rule__EventPattern__Group_3_1__1__Impl rule__EventPattern__Group_3_1__2
             {
             pushFollow(FOLLOW_7);
             rule__EventPattern__Group_3_1__1__Impl();
@@ -10666,20 +10224,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_1__1__Impl"
-    // InternalServiceDefinition.g:3603:1: rule__EventPattern__Group_3_1__1__Impl : ( '=' ) ;
+    // InternalServiceDefinition.g:3390:1: rule__EventPattern__Group_3_1__1__Impl : ( '=' ) ;
     public final void rule__EventPattern__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3607:1: ( ( '=' ) )
-            // InternalServiceDefinition.g:3608:1: ( '=' )
+            // InternalServiceDefinition.g:3394:1: ( ( '=' ) )
+            // InternalServiceDefinition.g:3395:1: ( '=' )
             {
-            // InternalServiceDefinition.g:3608:1: ( '=' )
-            // InternalServiceDefinition.g:3609:2: '='
+            // InternalServiceDefinition.g:3395:1: ( '=' )
+            // InternalServiceDefinition.g:3396:2: '='
             {
              before(grammarAccess.getEventPatternAccess().getEqualsSignKeyword_3_1_1()); 
-            match(input,37,FOLLOW_2); 
+            match(input,39,FOLLOW_2); 
              after(grammarAccess.getEventPatternAccess().getEqualsSignKeyword_3_1_1()); 
 
             }
@@ -10703,14 +10261,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_1__2"
-    // InternalServiceDefinition.g:3618:1: rule__EventPattern__Group_3_1__2 : rule__EventPattern__Group_3_1__2__Impl ;
+    // InternalServiceDefinition.g:3405:1: rule__EventPattern__Group_3_1__2 : rule__EventPattern__Group_3_1__2__Impl ;
     public final void rule__EventPattern__Group_3_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3622:1: ( rule__EventPattern__Group_3_1__2__Impl )
-            // InternalServiceDefinition.g:3623:2: rule__EventPattern__Group_3_1__2__Impl
+            // InternalServiceDefinition.g:3409:1: ( rule__EventPattern__Group_3_1__2__Impl )
+            // InternalServiceDefinition.g:3410:2: rule__EventPattern__Group_3_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EventPattern__Group_3_1__2__Impl();
@@ -10736,21 +10294,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_1__2__Impl"
-    // InternalServiceDefinition.g:3629:1: rule__EventPattern__Group_3_1__2__Impl : ( ( rule__EventPattern__ActivationTypeAssignment_3_1_2 ) ) ;
+    // InternalServiceDefinition.g:3416:1: rule__EventPattern__Group_3_1__2__Impl : ( ( rule__EventPattern__ActivationTypeAssignment_3_1_2 ) ) ;
     public final void rule__EventPattern__Group_3_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3633:1: ( ( ( rule__EventPattern__ActivationTypeAssignment_3_1_2 ) ) )
-            // InternalServiceDefinition.g:3634:1: ( ( rule__EventPattern__ActivationTypeAssignment_3_1_2 ) )
+            // InternalServiceDefinition.g:3420:1: ( ( ( rule__EventPattern__ActivationTypeAssignment_3_1_2 ) ) )
+            // InternalServiceDefinition.g:3421:1: ( ( rule__EventPattern__ActivationTypeAssignment_3_1_2 ) )
             {
-            // InternalServiceDefinition.g:3634:1: ( ( rule__EventPattern__ActivationTypeAssignment_3_1_2 ) )
-            // InternalServiceDefinition.g:3635:2: ( rule__EventPattern__ActivationTypeAssignment_3_1_2 )
+            // InternalServiceDefinition.g:3421:1: ( ( rule__EventPattern__ActivationTypeAssignment_3_1_2 ) )
+            // InternalServiceDefinition.g:3422:2: ( rule__EventPattern__ActivationTypeAssignment_3_1_2 )
             {
              before(grammarAccess.getEventPatternAccess().getActivationTypeAssignment_3_1_2()); 
-            // InternalServiceDefinition.g:3636:2: ( rule__EventPattern__ActivationTypeAssignment_3_1_2 )
-            // InternalServiceDefinition.g:3636:3: rule__EventPattern__ActivationTypeAssignment_3_1_2
+            // InternalServiceDefinition.g:3423:2: ( rule__EventPattern__ActivationTypeAssignment_3_1_2 )
+            // InternalServiceDefinition.g:3423:3: rule__EventPattern__ActivationTypeAssignment_3_1_2
             {
             pushFollow(FOLLOW_2);
             rule__EventPattern__ActivationTypeAssignment_3_1_2();
@@ -10783,16 +10341,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_2__0"
-    // InternalServiceDefinition.g:3645:1: rule__EventPattern__Group_3_2__0 : rule__EventPattern__Group_3_2__0__Impl rule__EventPattern__Group_3_2__1 ;
+    // InternalServiceDefinition.g:3432:1: rule__EventPattern__Group_3_2__0 : rule__EventPattern__Group_3_2__0__Impl rule__EventPattern__Group_3_2__1 ;
     public final void rule__EventPattern__Group_3_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3649:1: ( rule__EventPattern__Group_3_2__0__Impl rule__EventPattern__Group_3_2__1 )
-            // InternalServiceDefinition.g:3650:2: rule__EventPattern__Group_3_2__0__Impl rule__EventPattern__Group_3_2__1
+            // InternalServiceDefinition.g:3436:1: ( rule__EventPattern__Group_3_2__0__Impl rule__EventPattern__Group_3_2__1 )
+            // InternalServiceDefinition.g:3437:2: rule__EventPattern__Group_3_2__0__Impl rule__EventPattern__Group_3_2__1
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_39);
             rule__EventPattern__Group_3_2__0__Impl();
 
             state._fsp--;
@@ -10821,20 +10379,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_2__0__Impl"
-    // InternalServiceDefinition.g:3657:1: rule__EventPattern__Group_3_2__0__Impl : ( 'EventStateType' ) ;
+    // InternalServiceDefinition.g:3444:1: rule__EventPattern__Group_3_2__0__Impl : ( 'EventStateType' ) ;
     public final void rule__EventPattern__Group_3_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3661:1: ( ( 'EventStateType' ) )
-            // InternalServiceDefinition.g:3662:1: ( 'EventStateType' )
+            // InternalServiceDefinition.g:3448:1: ( ( 'EventStateType' ) )
+            // InternalServiceDefinition.g:3449:1: ( 'EventStateType' )
             {
-            // InternalServiceDefinition.g:3662:1: ( 'EventStateType' )
-            // InternalServiceDefinition.g:3663:2: 'EventStateType'
+            // InternalServiceDefinition.g:3449:1: ( 'EventStateType' )
+            // InternalServiceDefinition.g:3450:2: 'EventStateType'
             {
              before(grammarAccess.getEventPatternAccess().getEventStateTypeKeyword_3_2_0()); 
-            match(input,41,FOLLOW_2); 
+            match(input,43,FOLLOW_2); 
              after(grammarAccess.getEventPatternAccess().getEventStateTypeKeyword_3_2_0()); 
 
             }
@@ -10858,14 +10416,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_2__1"
-    // InternalServiceDefinition.g:3672:1: rule__EventPattern__Group_3_2__1 : rule__EventPattern__Group_3_2__1__Impl rule__EventPattern__Group_3_2__2 ;
+    // InternalServiceDefinition.g:3459:1: rule__EventPattern__Group_3_2__1 : rule__EventPattern__Group_3_2__1__Impl rule__EventPattern__Group_3_2__2 ;
     public final void rule__EventPattern__Group_3_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3676:1: ( rule__EventPattern__Group_3_2__1__Impl rule__EventPattern__Group_3_2__2 )
-            // InternalServiceDefinition.g:3677:2: rule__EventPattern__Group_3_2__1__Impl rule__EventPattern__Group_3_2__2
+            // InternalServiceDefinition.g:3463:1: ( rule__EventPattern__Group_3_2__1__Impl rule__EventPattern__Group_3_2__2 )
+            // InternalServiceDefinition.g:3464:2: rule__EventPattern__Group_3_2__1__Impl rule__EventPattern__Group_3_2__2
             {
             pushFollow(FOLLOW_7);
             rule__EventPattern__Group_3_2__1__Impl();
@@ -10896,20 +10454,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_2__1__Impl"
-    // InternalServiceDefinition.g:3684:1: rule__EventPattern__Group_3_2__1__Impl : ( '=' ) ;
+    // InternalServiceDefinition.g:3471:1: rule__EventPattern__Group_3_2__1__Impl : ( '=' ) ;
     public final void rule__EventPattern__Group_3_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3688:1: ( ( '=' ) )
-            // InternalServiceDefinition.g:3689:1: ( '=' )
+            // InternalServiceDefinition.g:3475:1: ( ( '=' ) )
+            // InternalServiceDefinition.g:3476:1: ( '=' )
             {
-            // InternalServiceDefinition.g:3689:1: ( '=' )
-            // InternalServiceDefinition.g:3690:2: '='
+            // InternalServiceDefinition.g:3476:1: ( '=' )
+            // InternalServiceDefinition.g:3477:2: '='
             {
              before(grammarAccess.getEventPatternAccess().getEqualsSignKeyword_3_2_1()); 
-            match(input,37,FOLLOW_2); 
+            match(input,39,FOLLOW_2); 
              after(grammarAccess.getEventPatternAccess().getEqualsSignKeyword_3_2_1()); 
 
             }
@@ -10933,14 +10491,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_2__2"
-    // InternalServiceDefinition.g:3699:1: rule__EventPattern__Group_3_2__2 : rule__EventPattern__Group_3_2__2__Impl ;
+    // InternalServiceDefinition.g:3486:1: rule__EventPattern__Group_3_2__2 : rule__EventPattern__Group_3_2__2__Impl ;
     public final void rule__EventPattern__Group_3_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3703:1: ( rule__EventPattern__Group_3_2__2__Impl )
-            // InternalServiceDefinition.g:3704:2: rule__EventPattern__Group_3_2__2__Impl
+            // InternalServiceDefinition.g:3490:1: ( rule__EventPattern__Group_3_2__2__Impl )
+            // InternalServiceDefinition.g:3491:2: rule__EventPattern__Group_3_2__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EventPattern__Group_3_2__2__Impl();
@@ -10966,21 +10524,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__Group_3_2__2__Impl"
-    // InternalServiceDefinition.g:3710:1: rule__EventPattern__Group_3_2__2__Impl : ( ( rule__EventPattern__EventStateTypeAssignment_3_2_2 ) ) ;
+    // InternalServiceDefinition.g:3497:1: rule__EventPattern__Group_3_2__2__Impl : ( ( rule__EventPattern__EventStateTypeAssignment_3_2_2 ) ) ;
     public final void rule__EventPattern__Group_3_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3714:1: ( ( ( rule__EventPattern__EventStateTypeAssignment_3_2_2 ) ) )
-            // InternalServiceDefinition.g:3715:1: ( ( rule__EventPattern__EventStateTypeAssignment_3_2_2 ) )
+            // InternalServiceDefinition.g:3501:1: ( ( ( rule__EventPattern__EventStateTypeAssignment_3_2_2 ) ) )
+            // InternalServiceDefinition.g:3502:1: ( ( rule__EventPattern__EventStateTypeAssignment_3_2_2 ) )
             {
-            // InternalServiceDefinition.g:3715:1: ( ( rule__EventPattern__EventStateTypeAssignment_3_2_2 ) )
-            // InternalServiceDefinition.g:3716:2: ( rule__EventPattern__EventStateTypeAssignment_3_2_2 )
+            // InternalServiceDefinition.g:3502:1: ( ( rule__EventPattern__EventStateTypeAssignment_3_2_2 ) )
+            // InternalServiceDefinition.g:3503:2: ( rule__EventPattern__EventStateTypeAssignment_3_2_2 )
             {
              before(grammarAccess.getEventPatternAccess().getEventStateTypeAssignment_3_2_2()); 
-            // InternalServiceDefinition.g:3717:2: ( rule__EventPattern__EventStateTypeAssignment_3_2_2 )
-            // InternalServiceDefinition.g:3717:3: rule__EventPattern__EventStateTypeAssignment_3_2_2
+            // InternalServiceDefinition.g:3504:2: ( rule__EventPattern__EventStateTypeAssignment_3_2_2 )
+            // InternalServiceDefinition.g:3504:3: rule__EventPattern__EventStateTypeAssignment_3_2_2
             {
             pushFollow(FOLLOW_2);
             rule__EventPattern__EventStateTypeAssignment_3_2_2();
@@ -11013,16 +10571,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group__0"
-    // InternalServiceDefinition.g:3726:1: rule__QueryPattern__Group__0 : rule__QueryPattern__Group__0__Impl rule__QueryPattern__Group__1 ;
+    // InternalServiceDefinition.g:3513:1: rule__QueryPattern__Group__0 : rule__QueryPattern__Group__0__Impl rule__QueryPattern__Group__1 ;
     public final void rule__QueryPattern__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3730:1: ( rule__QueryPattern__Group__0__Impl rule__QueryPattern__Group__1 )
-            // InternalServiceDefinition.g:3731:2: rule__QueryPattern__Group__0__Impl rule__QueryPattern__Group__1
+            // InternalServiceDefinition.g:3517:1: ( rule__QueryPattern__Group__0__Impl rule__QueryPattern__Group__1 )
+            // InternalServiceDefinition.g:3518:2: rule__QueryPattern__Group__0__Impl rule__QueryPattern__Group__1
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_24);
             rule__QueryPattern__Group__0__Impl();
 
             state._fsp--;
@@ -11051,21 +10609,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group__0__Impl"
-    // InternalServiceDefinition.g:3738:1: rule__QueryPattern__Group__0__Impl : ( () ) ;
+    // InternalServiceDefinition.g:3525:1: rule__QueryPattern__Group__0__Impl : ( () ) ;
     public final void rule__QueryPattern__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3742:1: ( ( () ) )
-            // InternalServiceDefinition.g:3743:1: ( () )
+            // InternalServiceDefinition.g:3529:1: ( ( () ) )
+            // InternalServiceDefinition.g:3530:1: ( () )
             {
-            // InternalServiceDefinition.g:3743:1: ( () )
-            // InternalServiceDefinition.g:3744:2: ()
+            // InternalServiceDefinition.g:3530:1: ( () )
+            // InternalServiceDefinition.g:3531:2: ()
             {
              before(grammarAccess.getQueryPatternAccess().getQueryPatternAction_0()); 
-            // InternalServiceDefinition.g:3745:2: ()
-            // InternalServiceDefinition.g:3745:3: 
+            // InternalServiceDefinition.g:3532:2: ()
+            // InternalServiceDefinition.g:3532:3: 
             {
             }
 
@@ -11088,16 +10646,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group__1"
-    // InternalServiceDefinition.g:3753:1: rule__QueryPattern__Group__1 : rule__QueryPattern__Group__1__Impl rule__QueryPattern__Group__2 ;
+    // InternalServiceDefinition.g:3540:1: rule__QueryPattern__Group__1 : rule__QueryPattern__Group__1__Impl rule__QueryPattern__Group__2 ;
     public final void rule__QueryPattern__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3757:1: ( rule__QueryPattern__Group__1__Impl rule__QueryPattern__Group__2 )
-            // InternalServiceDefinition.g:3758:2: rule__QueryPattern__Group__1__Impl rule__QueryPattern__Group__2
+            // InternalServiceDefinition.g:3544:1: ( rule__QueryPattern__Group__1__Impl rule__QueryPattern__Group__2 )
+            // InternalServiceDefinition.g:3545:2: rule__QueryPattern__Group__1__Impl rule__QueryPattern__Group__2
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_31);
             rule__QueryPattern__Group__1__Impl();
 
             state._fsp--;
@@ -11126,20 +10684,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group__1__Impl"
-    // InternalServiceDefinition.g:3765:1: rule__QueryPattern__Group__1__Impl : ( 'QueryPattern' ) ;
+    // InternalServiceDefinition.g:3552:1: rule__QueryPattern__Group__1__Impl : ( 'QueryPattern' ) ;
     public final void rule__QueryPattern__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3769:1: ( ( 'QueryPattern' ) )
-            // InternalServiceDefinition.g:3770:1: ( 'QueryPattern' )
+            // InternalServiceDefinition.g:3556:1: ( ( 'QueryPattern' ) )
+            // InternalServiceDefinition.g:3557:1: ( 'QueryPattern' )
             {
-            // InternalServiceDefinition.g:3770:1: ( 'QueryPattern' )
-            // InternalServiceDefinition.g:3771:2: 'QueryPattern'
+            // InternalServiceDefinition.g:3557:1: ( 'QueryPattern' )
+            // InternalServiceDefinition.g:3558:2: 'QueryPattern'
             {
              before(grammarAccess.getQueryPatternAccess().getQueryPatternKeyword_1()); 
-            match(input,42,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getQueryPatternAccess().getQueryPatternKeyword_1()); 
 
             }
@@ -11163,16 +10721,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group__2"
-    // InternalServiceDefinition.g:3780:1: rule__QueryPattern__Group__2 : rule__QueryPattern__Group__2__Impl rule__QueryPattern__Group__3 ;
+    // InternalServiceDefinition.g:3567:1: rule__QueryPattern__Group__2 : rule__QueryPattern__Group__2__Impl rule__QueryPattern__Group__3 ;
     public final void rule__QueryPattern__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3784:1: ( rule__QueryPattern__Group__2__Impl rule__QueryPattern__Group__3 )
-            // InternalServiceDefinition.g:3785:2: rule__QueryPattern__Group__2__Impl rule__QueryPattern__Group__3
+            // InternalServiceDefinition.g:3571:1: ( rule__QueryPattern__Group__2__Impl rule__QueryPattern__Group__3 )
+            // InternalServiceDefinition.g:3572:2: rule__QueryPattern__Group__2__Impl rule__QueryPattern__Group__3
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_41);
             rule__QueryPattern__Group__2__Impl();
 
             state._fsp--;
@@ -11201,20 +10759,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group__2__Impl"
-    // InternalServiceDefinition.g:3792:1: rule__QueryPattern__Group__2__Impl : ( '<' ) ;
+    // InternalServiceDefinition.g:3579:1: rule__QueryPattern__Group__2__Impl : ( '<' ) ;
     public final void rule__QueryPattern__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3796:1: ( ( '<' ) )
-            // InternalServiceDefinition.g:3797:1: ( '<' )
+            // InternalServiceDefinition.g:3583:1: ( ( '<' ) )
+            // InternalServiceDefinition.g:3584:1: ( '<' )
             {
-            // InternalServiceDefinition.g:3797:1: ( '<' )
-            // InternalServiceDefinition.g:3798:2: '<'
+            // InternalServiceDefinition.g:3584:1: ( '<' )
+            // InternalServiceDefinition.g:3585:2: '<'
             {
              before(grammarAccess.getQueryPatternAccess().getLessThanSignKeyword_2()); 
-            match(input,28,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getQueryPatternAccess().getLessThanSignKeyword_2()); 
 
             }
@@ -11238,16 +10796,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group__3"
-    // InternalServiceDefinition.g:3807:1: rule__QueryPattern__Group__3 : rule__QueryPattern__Group__3__Impl rule__QueryPattern__Group__4 ;
+    // InternalServiceDefinition.g:3594:1: rule__QueryPattern__Group__3 : rule__QueryPattern__Group__3__Impl rule__QueryPattern__Group__4 ;
     public final void rule__QueryPattern__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3811:1: ( rule__QueryPattern__Group__3__Impl rule__QueryPattern__Group__4 )
-            // InternalServiceDefinition.g:3812:2: rule__QueryPattern__Group__3__Impl rule__QueryPattern__Group__4
+            // InternalServiceDefinition.g:3598:1: ( rule__QueryPattern__Group__3__Impl rule__QueryPattern__Group__4 )
+            // InternalServiceDefinition.g:3599:2: rule__QueryPattern__Group__3__Impl rule__QueryPattern__Group__4
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_35);
             rule__QueryPattern__Group__3__Impl();
 
             state._fsp--;
@@ -11276,21 +10834,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group__3__Impl"
-    // InternalServiceDefinition.g:3819:1: rule__QueryPattern__Group__3__Impl : ( ( rule__QueryPattern__UnorderedGroup_3 ) ) ;
+    // InternalServiceDefinition.g:3606:1: rule__QueryPattern__Group__3__Impl : ( ( rule__QueryPattern__UnorderedGroup_3 ) ) ;
     public final void rule__QueryPattern__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3823:1: ( ( ( rule__QueryPattern__UnorderedGroup_3 ) ) )
-            // InternalServiceDefinition.g:3824:1: ( ( rule__QueryPattern__UnorderedGroup_3 ) )
+            // InternalServiceDefinition.g:3610:1: ( ( ( rule__QueryPattern__UnorderedGroup_3 ) ) )
+            // InternalServiceDefinition.g:3611:1: ( ( rule__QueryPattern__UnorderedGroup_3 ) )
             {
-            // InternalServiceDefinition.g:3824:1: ( ( rule__QueryPattern__UnorderedGroup_3 ) )
-            // InternalServiceDefinition.g:3825:2: ( rule__QueryPattern__UnorderedGroup_3 )
+            // InternalServiceDefinition.g:3611:1: ( ( rule__QueryPattern__UnorderedGroup_3 ) )
+            // InternalServiceDefinition.g:3612:2: ( rule__QueryPattern__UnorderedGroup_3 )
             {
              before(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3()); 
-            // InternalServiceDefinition.g:3826:2: ( rule__QueryPattern__UnorderedGroup_3 )
-            // InternalServiceDefinition.g:3826:3: rule__QueryPattern__UnorderedGroup_3
+            // InternalServiceDefinition.g:3613:2: ( rule__QueryPattern__UnorderedGroup_3 )
+            // InternalServiceDefinition.g:3613:3: rule__QueryPattern__UnorderedGroup_3
             {
             pushFollow(FOLLOW_2);
             rule__QueryPattern__UnorderedGroup_3();
@@ -11323,14 +10881,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group__4"
-    // InternalServiceDefinition.g:3834:1: rule__QueryPattern__Group__4 : rule__QueryPattern__Group__4__Impl ;
+    // InternalServiceDefinition.g:3621:1: rule__QueryPattern__Group__4 : rule__QueryPattern__Group__4__Impl ;
     public final void rule__QueryPattern__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3838:1: ( rule__QueryPattern__Group__4__Impl )
-            // InternalServiceDefinition.g:3839:2: rule__QueryPattern__Group__4__Impl
+            // InternalServiceDefinition.g:3625:1: ( rule__QueryPattern__Group__4__Impl )
+            // InternalServiceDefinition.g:3626:2: rule__QueryPattern__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QueryPattern__Group__4__Impl();
@@ -11356,20 +10914,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group__4__Impl"
-    // InternalServiceDefinition.g:3845:1: rule__QueryPattern__Group__4__Impl : ( '>' ) ;
+    // InternalServiceDefinition.g:3632:1: rule__QueryPattern__Group__4__Impl : ( '>' ) ;
     public final void rule__QueryPattern__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3849:1: ( ( '>' ) )
-            // InternalServiceDefinition.g:3850:1: ( '>' )
+            // InternalServiceDefinition.g:3636:1: ( ( '>' ) )
+            // InternalServiceDefinition.g:3637:1: ( '>' )
             {
-            // InternalServiceDefinition.g:3850:1: ( '>' )
-            // InternalServiceDefinition.g:3851:2: '>'
+            // InternalServiceDefinition.g:3637:1: ( '>' )
+            // InternalServiceDefinition.g:3638:2: '>'
             {
              before(grammarAccess.getQueryPatternAccess().getGreaterThanSignKeyword_4()); 
-            match(input,30,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getQueryPatternAccess().getGreaterThanSignKeyword_4()); 
 
             }
@@ -11393,16 +10951,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group_3_0__0"
-    // InternalServiceDefinition.g:3861:1: rule__QueryPattern__Group_3_0__0 : rule__QueryPattern__Group_3_0__0__Impl rule__QueryPattern__Group_3_0__1 ;
+    // InternalServiceDefinition.g:3648:1: rule__QueryPattern__Group_3_0__0 : rule__QueryPattern__Group_3_0__0__Impl rule__QueryPattern__Group_3_0__1 ;
     public final void rule__QueryPattern__Group_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3865:1: ( rule__QueryPattern__Group_3_0__0__Impl rule__QueryPattern__Group_3_0__1 )
-            // InternalServiceDefinition.g:3866:2: rule__QueryPattern__Group_3_0__0__Impl rule__QueryPattern__Group_3_0__1
+            // InternalServiceDefinition.g:3652:1: ( rule__QueryPattern__Group_3_0__0__Impl rule__QueryPattern__Group_3_0__1 )
+            // InternalServiceDefinition.g:3653:2: rule__QueryPattern__Group_3_0__0__Impl rule__QueryPattern__Group_3_0__1
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_39);
             rule__QueryPattern__Group_3_0__0__Impl();
 
             state._fsp--;
@@ -11431,20 +10989,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group_3_0__0__Impl"
-    // InternalServiceDefinition.g:3873:1: rule__QueryPattern__Group_3_0__0__Impl : ( 'RequestType' ) ;
+    // InternalServiceDefinition.g:3660:1: rule__QueryPattern__Group_3_0__0__Impl : ( 'RequestType' ) ;
     public final void rule__QueryPattern__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3877:1: ( ( 'RequestType' ) )
-            // InternalServiceDefinition.g:3878:1: ( 'RequestType' )
+            // InternalServiceDefinition.g:3664:1: ( ( 'RequestType' ) )
+            // InternalServiceDefinition.g:3665:1: ( 'RequestType' )
             {
-            // InternalServiceDefinition.g:3878:1: ( 'RequestType' )
-            // InternalServiceDefinition.g:3879:2: 'RequestType'
+            // InternalServiceDefinition.g:3665:1: ( 'RequestType' )
+            // InternalServiceDefinition.g:3666:2: 'RequestType'
             {
              before(grammarAccess.getQueryPatternAccess().getRequestTypeKeyword_3_0_0()); 
-            match(input,43,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getQueryPatternAccess().getRequestTypeKeyword_3_0_0()); 
 
             }
@@ -11468,14 +11026,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group_3_0__1"
-    // InternalServiceDefinition.g:3888:1: rule__QueryPattern__Group_3_0__1 : rule__QueryPattern__Group_3_0__1__Impl rule__QueryPattern__Group_3_0__2 ;
+    // InternalServiceDefinition.g:3675:1: rule__QueryPattern__Group_3_0__1 : rule__QueryPattern__Group_3_0__1__Impl rule__QueryPattern__Group_3_0__2 ;
     public final void rule__QueryPattern__Group_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3892:1: ( rule__QueryPattern__Group_3_0__1__Impl rule__QueryPattern__Group_3_0__2 )
-            // InternalServiceDefinition.g:3893:2: rule__QueryPattern__Group_3_0__1__Impl rule__QueryPattern__Group_3_0__2
+            // InternalServiceDefinition.g:3679:1: ( rule__QueryPattern__Group_3_0__1__Impl rule__QueryPattern__Group_3_0__2 )
+            // InternalServiceDefinition.g:3680:2: rule__QueryPattern__Group_3_0__1__Impl rule__QueryPattern__Group_3_0__2
             {
             pushFollow(FOLLOW_7);
             rule__QueryPattern__Group_3_0__1__Impl();
@@ -11506,20 +11064,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group_3_0__1__Impl"
-    // InternalServiceDefinition.g:3900:1: rule__QueryPattern__Group_3_0__1__Impl : ( '=' ) ;
+    // InternalServiceDefinition.g:3687:1: rule__QueryPattern__Group_3_0__1__Impl : ( '=' ) ;
     public final void rule__QueryPattern__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3904:1: ( ( '=' ) )
-            // InternalServiceDefinition.g:3905:1: ( '=' )
+            // InternalServiceDefinition.g:3691:1: ( ( '=' ) )
+            // InternalServiceDefinition.g:3692:1: ( '=' )
             {
-            // InternalServiceDefinition.g:3905:1: ( '=' )
-            // InternalServiceDefinition.g:3906:2: '='
+            // InternalServiceDefinition.g:3692:1: ( '=' )
+            // InternalServiceDefinition.g:3693:2: '='
             {
              before(grammarAccess.getQueryPatternAccess().getEqualsSignKeyword_3_0_1()); 
-            match(input,37,FOLLOW_2); 
+            match(input,39,FOLLOW_2); 
              after(grammarAccess.getQueryPatternAccess().getEqualsSignKeyword_3_0_1()); 
 
             }
@@ -11543,14 +11101,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group_3_0__2"
-    // InternalServiceDefinition.g:3915:1: rule__QueryPattern__Group_3_0__2 : rule__QueryPattern__Group_3_0__2__Impl ;
+    // InternalServiceDefinition.g:3702:1: rule__QueryPattern__Group_3_0__2 : rule__QueryPattern__Group_3_0__2__Impl ;
     public final void rule__QueryPattern__Group_3_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3919:1: ( rule__QueryPattern__Group_3_0__2__Impl )
-            // InternalServiceDefinition.g:3920:2: rule__QueryPattern__Group_3_0__2__Impl
+            // InternalServiceDefinition.g:3706:1: ( rule__QueryPattern__Group_3_0__2__Impl )
+            // InternalServiceDefinition.g:3707:2: rule__QueryPattern__Group_3_0__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QueryPattern__Group_3_0__2__Impl();
@@ -11576,21 +11134,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group_3_0__2__Impl"
-    // InternalServiceDefinition.g:3926:1: rule__QueryPattern__Group_3_0__2__Impl : ( ( rule__QueryPattern__RequestTypeAssignment_3_0_2 ) ) ;
+    // InternalServiceDefinition.g:3713:1: rule__QueryPattern__Group_3_0__2__Impl : ( ( rule__QueryPattern__RequestTypeAssignment_3_0_2 ) ) ;
     public final void rule__QueryPattern__Group_3_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3930:1: ( ( ( rule__QueryPattern__RequestTypeAssignment_3_0_2 ) ) )
-            // InternalServiceDefinition.g:3931:1: ( ( rule__QueryPattern__RequestTypeAssignment_3_0_2 ) )
+            // InternalServiceDefinition.g:3717:1: ( ( ( rule__QueryPattern__RequestTypeAssignment_3_0_2 ) ) )
+            // InternalServiceDefinition.g:3718:1: ( ( rule__QueryPattern__RequestTypeAssignment_3_0_2 ) )
             {
-            // InternalServiceDefinition.g:3931:1: ( ( rule__QueryPattern__RequestTypeAssignment_3_0_2 ) )
-            // InternalServiceDefinition.g:3932:2: ( rule__QueryPattern__RequestTypeAssignment_3_0_2 )
+            // InternalServiceDefinition.g:3718:1: ( ( rule__QueryPattern__RequestTypeAssignment_3_0_2 ) )
+            // InternalServiceDefinition.g:3719:2: ( rule__QueryPattern__RequestTypeAssignment_3_0_2 )
             {
              before(grammarAccess.getQueryPatternAccess().getRequestTypeAssignment_3_0_2()); 
-            // InternalServiceDefinition.g:3933:2: ( rule__QueryPattern__RequestTypeAssignment_3_0_2 )
-            // InternalServiceDefinition.g:3933:3: rule__QueryPattern__RequestTypeAssignment_3_0_2
+            // InternalServiceDefinition.g:3720:2: ( rule__QueryPattern__RequestTypeAssignment_3_0_2 )
+            // InternalServiceDefinition.g:3720:3: rule__QueryPattern__RequestTypeAssignment_3_0_2
             {
             pushFollow(FOLLOW_2);
             rule__QueryPattern__RequestTypeAssignment_3_0_2();
@@ -11623,16 +11181,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group_3_1__0"
-    // InternalServiceDefinition.g:3942:1: rule__QueryPattern__Group_3_1__0 : rule__QueryPattern__Group_3_1__0__Impl rule__QueryPattern__Group_3_1__1 ;
+    // InternalServiceDefinition.g:3729:1: rule__QueryPattern__Group_3_1__0 : rule__QueryPattern__Group_3_1__0__Impl rule__QueryPattern__Group_3_1__1 ;
     public final void rule__QueryPattern__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3946:1: ( rule__QueryPattern__Group_3_1__0__Impl rule__QueryPattern__Group_3_1__1 )
-            // InternalServiceDefinition.g:3947:2: rule__QueryPattern__Group_3_1__0__Impl rule__QueryPattern__Group_3_1__1
+            // InternalServiceDefinition.g:3733:1: ( rule__QueryPattern__Group_3_1__0__Impl rule__QueryPattern__Group_3_1__1 )
+            // InternalServiceDefinition.g:3734:2: rule__QueryPattern__Group_3_1__0__Impl rule__QueryPattern__Group_3_1__1
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_39);
             rule__QueryPattern__Group_3_1__0__Impl();
 
             state._fsp--;
@@ -11661,20 +11219,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group_3_1__0__Impl"
-    // InternalServiceDefinition.g:3954:1: rule__QueryPattern__Group_3_1__0__Impl : ( 'AnswerType' ) ;
+    // InternalServiceDefinition.g:3741:1: rule__QueryPattern__Group_3_1__0__Impl : ( 'AnswerType' ) ;
     public final void rule__QueryPattern__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3958:1: ( ( 'AnswerType' ) )
-            // InternalServiceDefinition.g:3959:1: ( 'AnswerType' )
+            // InternalServiceDefinition.g:3745:1: ( ( 'AnswerType' ) )
+            // InternalServiceDefinition.g:3746:1: ( 'AnswerType' )
             {
-            // InternalServiceDefinition.g:3959:1: ( 'AnswerType' )
-            // InternalServiceDefinition.g:3960:2: 'AnswerType'
+            // InternalServiceDefinition.g:3746:1: ( 'AnswerType' )
+            // InternalServiceDefinition.g:3747:2: 'AnswerType'
             {
              before(grammarAccess.getQueryPatternAccess().getAnswerTypeKeyword_3_1_0()); 
-            match(input,44,FOLLOW_2); 
+            match(input,46,FOLLOW_2); 
              after(grammarAccess.getQueryPatternAccess().getAnswerTypeKeyword_3_1_0()); 
 
             }
@@ -11698,14 +11256,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group_3_1__1"
-    // InternalServiceDefinition.g:3969:1: rule__QueryPattern__Group_3_1__1 : rule__QueryPattern__Group_3_1__1__Impl rule__QueryPattern__Group_3_1__2 ;
+    // InternalServiceDefinition.g:3756:1: rule__QueryPattern__Group_3_1__1 : rule__QueryPattern__Group_3_1__1__Impl rule__QueryPattern__Group_3_1__2 ;
     public final void rule__QueryPattern__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3973:1: ( rule__QueryPattern__Group_3_1__1__Impl rule__QueryPattern__Group_3_1__2 )
-            // InternalServiceDefinition.g:3974:2: rule__QueryPattern__Group_3_1__1__Impl rule__QueryPattern__Group_3_1__2
+            // InternalServiceDefinition.g:3760:1: ( rule__QueryPattern__Group_3_1__1__Impl rule__QueryPattern__Group_3_1__2 )
+            // InternalServiceDefinition.g:3761:2: rule__QueryPattern__Group_3_1__1__Impl rule__QueryPattern__Group_3_1__2
             {
             pushFollow(FOLLOW_7);
             rule__QueryPattern__Group_3_1__1__Impl();
@@ -11736,20 +11294,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group_3_1__1__Impl"
-    // InternalServiceDefinition.g:3981:1: rule__QueryPattern__Group_3_1__1__Impl : ( '=' ) ;
+    // InternalServiceDefinition.g:3768:1: rule__QueryPattern__Group_3_1__1__Impl : ( '=' ) ;
     public final void rule__QueryPattern__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:3985:1: ( ( '=' ) )
-            // InternalServiceDefinition.g:3986:1: ( '=' )
+            // InternalServiceDefinition.g:3772:1: ( ( '=' ) )
+            // InternalServiceDefinition.g:3773:1: ( '=' )
             {
-            // InternalServiceDefinition.g:3986:1: ( '=' )
-            // InternalServiceDefinition.g:3987:2: '='
+            // InternalServiceDefinition.g:3773:1: ( '=' )
+            // InternalServiceDefinition.g:3774:2: '='
             {
              before(grammarAccess.getQueryPatternAccess().getEqualsSignKeyword_3_1_1()); 
-            match(input,37,FOLLOW_2); 
+            match(input,39,FOLLOW_2); 
              after(grammarAccess.getQueryPatternAccess().getEqualsSignKeyword_3_1_1()); 
 
             }
@@ -11773,14 +11331,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group_3_1__2"
-    // InternalServiceDefinition.g:3996:1: rule__QueryPattern__Group_3_1__2 : rule__QueryPattern__Group_3_1__2__Impl ;
+    // InternalServiceDefinition.g:3783:1: rule__QueryPattern__Group_3_1__2 : rule__QueryPattern__Group_3_1__2__Impl ;
     public final void rule__QueryPattern__Group_3_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4000:1: ( rule__QueryPattern__Group_3_1__2__Impl )
-            // InternalServiceDefinition.g:4001:2: rule__QueryPattern__Group_3_1__2__Impl
+            // InternalServiceDefinition.g:3787:1: ( rule__QueryPattern__Group_3_1__2__Impl )
+            // InternalServiceDefinition.g:3788:2: rule__QueryPattern__Group_3_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QueryPattern__Group_3_1__2__Impl();
@@ -11806,21 +11364,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__Group_3_1__2__Impl"
-    // InternalServiceDefinition.g:4007:1: rule__QueryPattern__Group_3_1__2__Impl : ( ( rule__QueryPattern__AnswerTypeAssignment_3_1_2 ) ) ;
+    // InternalServiceDefinition.g:3794:1: rule__QueryPattern__Group_3_1__2__Impl : ( ( rule__QueryPattern__AnswerTypeAssignment_3_1_2 ) ) ;
     public final void rule__QueryPattern__Group_3_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4011:1: ( ( ( rule__QueryPattern__AnswerTypeAssignment_3_1_2 ) ) )
-            // InternalServiceDefinition.g:4012:1: ( ( rule__QueryPattern__AnswerTypeAssignment_3_1_2 ) )
+            // InternalServiceDefinition.g:3798:1: ( ( ( rule__QueryPattern__AnswerTypeAssignment_3_1_2 ) ) )
+            // InternalServiceDefinition.g:3799:1: ( ( rule__QueryPattern__AnswerTypeAssignment_3_1_2 ) )
             {
-            // InternalServiceDefinition.g:4012:1: ( ( rule__QueryPattern__AnswerTypeAssignment_3_1_2 ) )
-            // InternalServiceDefinition.g:4013:2: ( rule__QueryPattern__AnswerTypeAssignment_3_1_2 )
+            // InternalServiceDefinition.g:3799:1: ( ( rule__QueryPattern__AnswerTypeAssignment_3_1_2 ) )
+            // InternalServiceDefinition.g:3800:2: ( rule__QueryPattern__AnswerTypeAssignment_3_1_2 )
             {
              before(grammarAccess.getQueryPatternAccess().getAnswerTypeAssignment_3_1_2()); 
-            // InternalServiceDefinition.g:4014:2: ( rule__QueryPattern__AnswerTypeAssignment_3_1_2 )
-            // InternalServiceDefinition.g:4014:3: rule__QueryPattern__AnswerTypeAssignment_3_1_2
+            // InternalServiceDefinition.g:3801:2: ( rule__QueryPattern__AnswerTypeAssignment_3_1_2 )
+            // InternalServiceDefinition.g:3801:3: rule__QueryPattern__AnswerTypeAssignment_3_1_2
             {
             pushFollow(FOLLOW_2);
             rule__QueryPattern__AnswerTypeAssignment_3_1_2();
@@ -11853,16 +11411,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__SendPattern__Group__0"
-    // InternalServiceDefinition.g:4023:1: rule__SendPattern__Group__0 : rule__SendPattern__Group__0__Impl rule__SendPattern__Group__1 ;
+    // InternalServiceDefinition.g:3810:1: rule__SendPattern__Group__0 : rule__SendPattern__Group__0__Impl rule__SendPattern__Group__1 ;
     public final void rule__SendPattern__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4027:1: ( rule__SendPattern__Group__0__Impl rule__SendPattern__Group__1 )
-            // InternalServiceDefinition.g:4028:2: rule__SendPattern__Group__0__Impl rule__SendPattern__Group__1
+            // InternalServiceDefinition.g:3814:1: ( rule__SendPattern__Group__0__Impl rule__SendPattern__Group__1 )
+            // InternalServiceDefinition.g:3815:2: rule__SendPattern__Group__0__Impl rule__SendPattern__Group__1
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_22);
             rule__SendPattern__Group__0__Impl();
 
             state._fsp--;
@@ -11891,21 +11449,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__SendPattern__Group__0__Impl"
-    // InternalServiceDefinition.g:4035:1: rule__SendPattern__Group__0__Impl : ( () ) ;
+    // InternalServiceDefinition.g:3822:1: rule__SendPattern__Group__0__Impl : ( () ) ;
     public final void rule__SendPattern__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4039:1: ( ( () ) )
-            // InternalServiceDefinition.g:4040:1: ( () )
+            // InternalServiceDefinition.g:3826:1: ( ( () ) )
+            // InternalServiceDefinition.g:3827:1: ( () )
             {
-            // InternalServiceDefinition.g:4040:1: ( () )
-            // InternalServiceDefinition.g:4041:2: ()
+            // InternalServiceDefinition.g:3827:1: ( () )
+            // InternalServiceDefinition.g:3828:2: ()
             {
              before(grammarAccess.getSendPatternAccess().getSendPatternAction_0()); 
-            // InternalServiceDefinition.g:4042:2: ()
-            // InternalServiceDefinition.g:4042:3: 
+            // InternalServiceDefinition.g:3829:2: ()
+            // InternalServiceDefinition.g:3829:3: 
             {
             }
 
@@ -11928,16 +11486,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__SendPattern__Group__1"
-    // InternalServiceDefinition.g:4050:1: rule__SendPattern__Group__1 : rule__SendPattern__Group__1__Impl rule__SendPattern__Group__2 ;
+    // InternalServiceDefinition.g:3837:1: rule__SendPattern__Group__1 : rule__SendPattern__Group__1__Impl rule__SendPattern__Group__2 ;
     public final void rule__SendPattern__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4054:1: ( rule__SendPattern__Group__1__Impl rule__SendPattern__Group__2 )
-            // InternalServiceDefinition.g:4055:2: rule__SendPattern__Group__1__Impl rule__SendPattern__Group__2
+            // InternalServiceDefinition.g:3841:1: ( rule__SendPattern__Group__1__Impl rule__SendPattern__Group__2 )
+            // InternalServiceDefinition.g:3842:2: rule__SendPattern__Group__1__Impl rule__SendPattern__Group__2
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_31);
             rule__SendPattern__Group__1__Impl();
 
             state._fsp--;
@@ -11966,20 +11524,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__SendPattern__Group__1__Impl"
-    // InternalServiceDefinition.g:4062:1: rule__SendPattern__Group__1__Impl : ( 'SendPattern' ) ;
+    // InternalServiceDefinition.g:3849:1: rule__SendPattern__Group__1__Impl : ( 'SendPattern' ) ;
     public final void rule__SendPattern__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4066:1: ( ( 'SendPattern' ) )
-            // InternalServiceDefinition.g:4067:1: ( 'SendPattern' )
+            // InternalServiceDefinition.g:3853:1: ( ( 'SendPattern' ) )
+            // InternalServiceDefinition.g:3854:1: ( 'SendPattern' )
             {
-            // InternalServiceDefinition.g:4067:1: ( 'SendPattern' )
-            // InternalServiceDefinition.g:4068:2: 'SendPattern'
+            // InternalServiceDefinition.g:3854:1: ( 'SendPattern' )
+            // InternalServiceDefinition.g:3855:2: 'SendPattern'
             {
              before(grammarAccess.getSendPatternAccess().getSendPatternKeyword_1()); 
-            match(input,45,FOLLOW_2); 
+            match(input,47,FOLLOW_2); 
              after(grammarAccess.getSendPatternAccess().getSendPatternKeyword_1()); 
 
             }
@@ -12003,16 +11561,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__SendPattern__Group__2"
-    // InternalServiceDefinition.g:4077:1: rule__SendPattern__Group__2 : rule__SendPattern__Group__2__Impl rule__SendPattern__Group__3 ;
+    // InternalServiceDefinition.g:3864:1: rule__SendPattern__Group__2 : rule__SendPattern__Group__2__Impl rule__SendPattern__Group__3 ;
     public final void rule__SendPattern__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4081:1: ( rule__SendPattern__Group__2__Impl rule__SendPattern__Group__3 )
-            // InternalServiceDefinition.g:4082:2: rule__SendPattern__Group__2__Impl rule__SendPattern__Group__3
+            // InternalServiceDefinition.g:3868:1: ( rule__SendPattern__Group__2__Impl rule__SendPattern__Group__3 )
+            // InternalServiceDefinition.g:3869:2: rule__SendPattern__Group__2__Impl rule__SendPattern__Group__3
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_38);
             rule__SendPattern__Group__2__Impl();
 
             state._fsp--;
@@ -12041,20 +11599,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__SendPattern__Group__2__Impl"
-    // InternalServiceDefinition.g:4089:1: rule__SendPattern__Group__2__Impl : ( '<' ) ;
+    // InternalServiceDefinition.g:3876:1: rule__SendPattern__Group__2__Impl : ( '<' ) ;
     public final void rule__SendPattern__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4093:1: ( ( '<' ) )
-            // InternalServiceDefinition.g:4094:1: ( '<' )
+            // InternalServiceDefinition.g:3880:1: ( ( '<' ) )
+            // InternalServiceDefinition.g:3881:1: ( '<' )
             {
-            // InternalServiceDefinition.g:4094:1: ( '<' )
-            // InternalServiceDefinition.g:4095:2: '<'
+            // InternalServiceDefinition.g:3881:1: ( '<' )
+            // InternalServiceDefinition.g:3882:2: '<'
             {
              before(grammarAccess.getSendPatternAccess().getLessThanSignKeyword_2()); 
-            match(input,28,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getSendPatternAccess().getLessThanSignKeyword_2()); 
 
             }
@@ -12078,16 +11636,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__SendPattern__Group__3"
-    // InternalServiceDefinition.g:4104:1: rule__SendPattern__Group__3 : rule__SendPattern__Group__3__Impl rule__SendPattern__Group__4 ;
+    // InternalServiceDefinition.g:3891:1: rule__SendPattern__Group__3 : rule__SendPattern__Group__3__Impl rule__SendPattern__Group__4 ;
     public final void rule__SendPattern__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4108:1: ( rule__SendPattern__Group__3__Impl rule__SendPattern__Group__4 )
-            // InternalServiceDefinition.g:4109:2: rule__SendPattern__Group__3__Impl rule__SendPattern__Group__4
+            // InternalServiceDefinition.g:3895:1: ( rule__SendPattern__Group__3__Impl rule__SendPattern__Group__4 )
+            // InternalServiceDefinition.g:3896:2: rule__SendPattern__Group__3__Impl rule__SendPattern__Group__4
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_39);
             rule__SendPattern__Group__3__Impl();
 
             state._fsp--;
@@ -12116,20 +11674,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__SendPattern__Group__3__Impl"
-    // InternalServiceDefinition.g:4116:1: rule__SendPattern__Group__3__Impl : ( 'DataType' ) ;
+    // InternalServiceDefinition.g:3903:1: rule__SendPattern__Group__3__Impl : ( 'DataType' ) ;
     public final void rule__SendPattern__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4120:1: ( ( 'DataType' ) )
-            // InternalServiceDefinition.g:4121:1: ( 'DataType' )
+            // InternalServiceDefinition.g:3907:1: ( ( 'DataType' ) )
+            // InternalServiceDefinition.g:3908:1: ( 'DataType' )
             {
-            // InternalServiceDefinition.g:4121:1: ( 'DataType' )
-            // InternalServiceDefinition.g:4122:2: 'DataType'
+            // InternalServiceDefinition.g:3908:1: ( 'DataType' )
+            // InternalServiceDefinition.g:3909:2: 'DataType'
             {
              before(grammarAccess.getSendPatternAccess().getDataTypeKeyword_3()); 
-            match(input,36,FOLLOW_2); 
+            match(input,38,FOLLOW_2); 
              after(grammarAccess.getSendPatternAccess().getDataTypeKeyword_3()); 
 
             }
@@ -12153,14 +11711,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__SendPattern__Group__4"
-    // InternalServiceDefinition.g:4131:1: rule__SendPattern__Group__4 : rule__SendPattern__Group__4__Impl rule__SendPattern__Group__5 ;
+    // InternalServiceDefinition.g:3918:1: rule__SendPattern__Group__4 : rule__SendPattern__Group__4__Impl rule__SendPattern__Group__5 ;
     public final void rule__SendPattern__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4135:1: ( rule__SendPattern__Group__4__Impl rule__SendPattern__Group__5 )
-            // InternalServiceDefinition.g:4136:2: rule__SendPattern__Group__4__Impl rule__SendPattern__Group__5
+            // InternalServiceDefinition.g:3922:1: ( rule__SendPattern__Group__4__Impl rule__SendPattern__Group__5 )
+            // InternalServiceDefinition.g:3923:2: rule__SendPattern__Group__4__Impl rule__SendPattern__Group__5
             {
             pushFollow(FOLLOW_7);
             rule__SendPattern__Group__4__Impl();
@@ -12191,20 +11749,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__SendPattern__Group__4__Impl"
-    // InternalServiceDefinition.g:4143:1: rule__SendPattern__Group__4__Impl : ( '=' ) ;
+    // InternalServiceDefinition.g:3930:1: rule__SendPattern__Group__4__Impl : ( '=' ) ;
     public final void rule__SendPattern__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4147:1: ( ( '=' ) )
-            // InternalServiceDefinition.g:4148:1: ( '=' )
+            // InternalServiceDefinition.g:3934:1: ( ( '=' ) )
+            // InternalServiceDefinition.g:3935:1: ( '=' )
             {
-            // InternalServiceDefinition.g:4148:1: ( '=' )
-            // InternalServiceDefinition.g:4149:2: '='
+            // InternalServiceDefinition.g:3935:1: ( '=' )
+            // InternalServiceDefinition.g:3936:2: '='
             {
              before(grammarAccess.getSendPatternAccess().getEqualsSignKeyword_4()); 
-            match(input,37,FOLLOW_2); 
+            match(input,39,FOLLOW_2); 
              after(grammarAccess.getSendPatternAccess().getEqualsSignKeyword_4()); 
 
             }
@@ -12228,16 +11786,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__SendPattern__Group__5"
-    // InternalServiceDefinition.g:4158:1: rule__SendPattern__Group__5 : rule__SendPattern__Group__5__Impl rule__SendPattern__Group__6 ;
+    // InternalServiceDefinition.g:3945:1: rule__SendPattern__Group__5 : rule__SendPattern__Group__5__Impl rule__SendPattern__Group__6 ;
     public final void rule__SendPattern__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4162:1: ( rule__SendPattern__Group__5__Impl rule__SendPattern__Group__6 )
-            // InternalServiceDefinition.g:4163:2: rule__SendPattern__Group__5__Impl rule__SendPattern__Group__6
+            // InternalServiceDefinition.g:3949:1: ( rule__SendPattern__Group__5__Impl rule__SendPattern__Group__6 )
+            // InternalServiceDefinition.g:3950:2: rule__SendPattern__Group__5__Impl rule__SendPattern__Group__6
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_35);
             rule__SendPattern__Group__5__Impl();
 
             state._fsp--;
@@ -12266,21 +11824,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__SendPattern__Group__5__Impl"
-    // InternalServiceDefinition.g:4170:1: rule__SendPattern__Group__5__Impl : ( ( rule__SendPattern__DataTypeAssignment_5 ) ) ;
+    // InternalServiceDefinition.g:3957:1: rule__SendPattern__Group__5__Impl : ( ( rule__SendPattern__DataTypeAssignment_5 ) ) ;
     public final void rule__SendPattern__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4174:1: ( ( ( rule__SendPattern__DataTypeAssignment_5 ) ) )
-            // InternalServiceDefinition.g:4175:1: ( ( rule__SendPattern__DataTypeAssignment_5 ) )
+            // InternalServiceDefinition.g:3961:1: ( ( ( rule__SendPattern__DataTypeAssignment_5 ) ) )
+            // InternalServiceDefinition.g:3962:1: ( ( rule__SendPattern__DataTypeAssignment_5 ) )
             {
-            // InternalServiceDefinition.g:4175:1: ( ( rule__SendPattern__DataTypeAssignment_5 ) )
-            // InternalServiceDefinition.g:4176:2: ( rule__SendPattern__DataTypeAssignment_5 )
+            // InternalServiceDefinition.g:3962:1: ( ( rule__SendPattern__DataTypeAssignment_5 ) )
+            // InternalServiceDefinition.g:3963:2: ( rule__SendPattern__DataTypeAssignment_5 )
             {
              before(grammarAccess.getSendPatternAccess().getDataTypeAssignment_5()); 
-            // InternalServiceDefinition.g:4177:2: ( rule__SendPattern__DataTypeAssignment_5 )
-            // InternalServiceDefinition.g:4177:3: rule__SendPattern__DataTypeAssignment_5
+            // InternalServiceDefinition.g:3964:2: ( rule__SendPattern__DataTypeAssignment_5 )
+            // InternalServiceDefinition.g:3964:3: rule__SendPattern__DataTypeAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__SendPattern__DataTypeAssignment_5();
@@ -12313,14 +11871,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__SendPattern__Group__6"
-    // InternalServiceDefinition.g:4185:1: rule__SendPattern__Group__6 : rule__SendPattern__Group__6__Impl ;
+    // InternalServiceDefinition.g:3972:1: rule__SendPattern__Group__6 : rule__SendPattern__Group__6__Impl ;
     public final void rule__SendPattern__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4189:1: ( rule__SendPattern__Group__6__Impl )
-            // InternalServiceDefinition.g:4190:2: rule__SendPattern__Group__6__Impl
+            // InternalServiceDefinition.g:3976:1: ( rule__SendPattern__Group__6__Impl )
+            // InternalServiceDefinition.g:3977:2: rule__SendPattern__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SendPattern__Group__6__Impl();
@@ -12346,20 +11904,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__SendPattern__Group__6__Impl"
-    // InternalServiceDefinition.g:4196:1: rule__SendPattern__Group__6__Impl : ( '>' ) ;
+    // InternalServiceDefinition.g:3983:1: rule__SendPattern__Group__6__Impl : ( '>' ) ;
     public final void rule__SendPattern__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4200:1: ( ( '>' ) )
-            // InternalServiceDefinition.g:4201:1: ( '>' )
+            // InternalServiceDefinition.g:3987:1: ( ( '>' ) )
+            // InternalServiceDefinition.g:3988:1: ( '>' )
             {
-            // InternalServiceDefinition.g:4201:1: ( '>' )
-            // InternalServiceDefinition.g:4202:2: '>'
+            // InternalServiceDefinition.g:3988:1: ( '>' )
+            // InternalServiceDefinition.g:3989:2: '>'
             {
              before(grammarAccess.getSendPatternAccess().getGreaterThanSignKeyword_6()); 
-            match(input,30,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getSendPatternAccess().getGreaterThanSignKeyword_6()); 
 
             }
@@ -12383,14 +11941,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceProperty__Group__0"
-    // InternalServiceDefinition.g:4212:1: rule__ServiceProperty__Group__0 : rule__ServiceProperty__Group__0__Impl rule__ServiceProperty__Group__1 ;
+    // InternalServiceDefinition.g:3999:1: rule__ServiceProperty__Group__0 : rule__ServiceProperty__Group__0__Impl rule__ServiceProperty__Group__1 ;
     public final void rule__ServiceProperty__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4216:1: ( rule__ServiceProperty__Group__0__Impl rule__ServiceProperty__Group__1 )
-            // InternalServiceDefinition.g:4217:2: rule__ServiceProperty__Group__0__Impl rule__ServiceProperty__Group__1
+            // InternalServiceDefinition.g:4003:1: ( rule__ServiceProperty__Group__0__Impl rule__ServiceProperty__Group__1 )
+            // InternalServiceDefinition.g:4004:2: rule__ServiceProperty__Group__0__Impl rule__ServiceProperty__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__ServiceProperty__Group__0__Impl();
@@ -12421,20 +11979,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceProperty__Group__0__Impl"
-    // InternalServiceDefinition.g:4224:1: rule__ServiceProperty__Group__0__Impl : ( 'ServiceProperty' ) ;
+    // InternalServiceDefinition.g:4011:1: rule__ServiceProperty__Group__0__Impl : ( 'ServiceProperty' ) ;
     public final void rule__ServiceProperty__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4228:1: ( ( 'ServiceProperty' ) )
-            // InternalServiceDefinition.g:4229:1: ( 'ServiceProperty' )
+            // InternalServiceDefinition.g:4015:1: ( ( 'ServiceProperty' ) )
+            // InternalServiceDefinition.g:4016:1: ( 'ServiceProperty' )
             {
-            // InternalServiceDefinition.g:4229:1: ( 'ServiceProperty' )
-            // InternalServiceDefinition.g:4230:2: 'ServiceProperty'
+            // InternalServiceDefinition.g:4016:1: ( 'ServiceProperty' )
+            // InternalServiceDefinition.g:4017:2: 'ServiceProperty'
             {
              before(grammarAccess.getServicePropertyAccess().getServicePropertyKeyword_0()); 
-            match(input,46,FOLLOW_2); 
+            match(input,48,FOLLOW_2); 
              after(grammarAccess.getServicePropertyAccess().getServicePropertyKeyword_0()); 
 
             }
@@ -12458,16 +12016,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceProperty__Group__1"
-    // InternalServiceDefinition.g:4239:1: rule__ServiceProperty__Group__1 : rule__ServiceProperty__Group__1__Impl rule__ServiceProperty__Group__2 ;
+    // InternalServiceDefinition.g:4026:1: rule__ServiceProperty__Group__1 : rule__ServiceProperty__Group__1__Impl rule__ServiceProperty__Group__2 ;
     public final void rule__ServiceProperty__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4243:1: ( rule__ServiceProperty__Group__1__Impl rule__ServiceProperty__Group__2 )
-            // InternalServiceDefinition.g:4244:2: rule__ServiceProperty__Group__1__Impl rule__ServiceProperty__Group__2
+            // InternalServiceDefinition.g:4030:1: ( rule__ServiceProperty__Group__1__Impl rule__ServiceProperty__Group__2 )
+            // InternalServiceDefinition.g:4031:2: rule__ServiceProperty__Group__1__Impl rule__ServiceProperty__Group__2
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_17);
             rule__ServiceProperty__Group__1__Impl();
 
             state._fsp--;
@@ -12496,21 +12054,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceProperty__Group__1__Impl"
-    // InternalServiceDefinition.g:4251:1: rule__ServiceProperty__Group__1__Impl : ( ( rule__ServiceProperty__NameAssignment_1 ) ) ;
+    // InternalServiceDefinition.g:4038:1: rule__ServiceProperty__Group__1__Impl : ( ( rule__ServiceProperty__NameAssignment_1 ) ) ;
     public final void rule__ServiceProperty__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4255:1: ( ( ( rule__ServiceProperty__NameAssignment_1 ) ) )
-            // InternalServiceDefinition.g:4256:1: ( ( rule__ServiceProperty__NameAssignment_1 ) )
+            // InternalServiceDefinition.g:4042:1: ( ( ( rule__ServiceProperty__NameAssignment_1 ) ) )
+            // InternalServiceDefinition.g:4043:1: ( ( rule__ServiceProperty__NameAssignment_1 ) )
             {
-            // InternalServiceDefinition.g:4256:1: ( ( rule__ServiceProperty__NameAssignment_1 ) )
-            // InternalServiceDefinition.g:4257:2: ( rule__ServiceProperty__NameAssignment_1 )
+            // InternalServiceDefinition.g:4043:1: ( ( rule__ServiceProperty__NameAssignment_1 ) )
+            // InternalServiceDefinition.g:4044:2: ( rule__ServiceProperty__NameAssignment_1 )
             {
              before(grammarAccess.getServicePropertyAccess().getNameAssignment_1()); 
-            // InternalServiceDefinition.g:4258:2: ( rule__ServiceProperty__NameAssignment_1 )
-            // InternalServiceDefinition.g:4258:3: rule__ServiceProperty__NameAssignment_1
+            // InternalServiceDefinition.g:4045:2: ( rule__ServiceProperty__NameAssignment_1 )
+            // InternalServiceDefinition.g:4045:3: rule__ServiceProperty__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__ServiceProperty__NameAssignment_1();
@@ -12543,16 +12101,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceProperty__Group__2"
-    // InternalServiceDefinition.g:4266:1: rule__ServiceProperty__Group__2 : rule__ServiceProperty__Group__2__Impl rule__ServiceProperty__Group__3 ;
+    // InternalServiceDefinition.g:4053:1: rule__ServiceProperty__Group__2 : rule__ServiceProperty__Group__2__Impl rule__ServiceProperty__Group__3 ;
     public final void rule__ServiceProperty__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4270:1: ( rule__ServiceProperty__Group__2__Impl rule__ServiceProperty__Group__3 )
-            // InternalServiceDefinition.g:4271:2: rule__ServiceProperty__Group__2__Impl rule__ServiceProperty__Group__3
+            // InternalServiceDefinition.g:4057:1: ( rule__ServiceProperty__Group__2__Impl rule__ServiceProperty__Group__3 )
+            // InternalServiceDefinition.g:4058:2: rule__ServiceProperty__Group__2__Impl rule__ServiceProperty__Group__3
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_42);
             rule__ServiceProperty__Group__2__Impl();
 
             state._fsp--;
@@ -12581,20 +12139,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceProperty__Group__2__Impl"
-    // InternalServiceDefinition.g:4278:1: rule__ServiceProperty__Group__2__Impl : ( '{' ) ;
+    // InternalServiceDefinition.g:4065:1: rule__ServiceProperty__Group__2__Impl : ( '{' ) ;
     public final void rule__ServiceProperty__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4282:1: ( ( '{' ) )
-            // InternalServiceDefinition.g:4283:1: ( '{' )
+            // InternalServiceDefinition.g:4069:1: ( ( '{' ) )
+            // InternalServiceDefinition.g:4070:1: ( '{' )
             {
-            // InternalServiceDefinition.g:4283:1: ( '{' )
-            // InternalServiceDefinition.g:4284:2: '{'
+            // InternalServiceDefinition.g:4070:1: ( '{' )
+            // InternalServiceDefinition.g:4071:2: '{'
             {
              before(grammarAccess.getServicePropertyAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,15,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getServicePropertyAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -12618,14 +12176,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceProperty__Group__3"
-    // InternalServiceDefinition.g:4293:1: rule__ServiceProperty__Group__3 : rule__ServiceProperty__Group__3__Impl ;
+    // InternalServiceDefinition.g:4080:1: rule__ServiceProperty__Group__3 : rule__ServiceProperty__Group__3__Impl ;
     public final void rule__ServiceProperty__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4297:1: ( rule__ServiceProperty__Group__3__Impl )
-            // InternalServiceDefinition.g:4298:2: rule__ServiceProperty__Group__3__Impl
+            // InternalServiceDefinition.g:4084:1: ( rule__ServiceProperty__Group__3__Impl )
+            // InternalServiceDefinition.g:4085:2: rule__ServiceProperty__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ServiceProperty__Group__3__Impl();
@@ -12651,20 +12209,20 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceProperty__Group__3__Impl"
-    // InternalServiceDefinition.g:4304:1: rule__ServiceProperty__Group__3__Impl : ( '}' ) ;
+    // InternalServiceDefinition.g:4091:1: rule__ServiceProperty__Group__3__Impl : ( '}' ) ;
     public final void rule__ServiceProperty__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4308:1: ( ( '}' ) )
-            // InternalServiceDefinition.g:4309:1: ( '}' )
+            // InternalServiceDefinition.g:4095:1: ( ( '}' ) )
+            // InternalServiceDefinition.g:4096:1: ( '}' )
             {
-            // InternalServiceDefinition.g:4309:1: ( '}' )
-            // InternalServiceDefinition.g:4310:2: '}'
+            // InternalServiceDefinition.g:4096:1: ( '}' )
+            // InternalServiceDefinition.g:4097:2: '}'
             {
              before(grammarAccess.getServicePropertyAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,16,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getServicePropertyAccess().getRightCurlyBracketKeyword_3()); 
 
             }
@@ -12687,42 +12245,39 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__ServiceProperty__Group__3__Impl"
 
 
-    // $ANTLR start "rule__CoordinationServiceDefinition__UnorderedGroup_3"
-    // InternalServiceDefinition.g:4320:1: rule__CoordinationServiceDefinition__UnorderedGroup_3 : ( rule__CoordinationServiceDefinition__UnorderedGroup_3__0 )? ;
-    public final void rule__CoordinationServiceDefinition__UnorderedGroup_3() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationServiceDefinition__UnorderedGroup_4"
+    // InternalServiceDefinition.g:4107:1: rule__CoordinationServiceDefinition__UnorderedGroup_4 : ( rule__CoordinationServiceDefinition__UnorderedGroup_4__0 )? ;
+    public final void rule__CoordinationServiceDefinition__UnorderedGroup_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
-        		getUnorderedGroupHelper().enter(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3());
+        		getUnorderedGroupHelper().enter(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4());
         	
         try {
-            // InternalServiceDefinition.g:4325:1: ( ( rule__CoordinationServiceDefinition__UnorderedGroup_3__0 )? )
-            // InternalServiceDefinition.g:4326:2: ( rule__CoordinationServiceDefinition__UnorderedGroup_3__0 )?
+            // InternalServiceDefinition.g:4112:1: ( ( rule__CoordinationServiceDefinition__UnorderedGroup_4__0 )? )
+            // InternalServiceDefinition.g:4113:2: ( rule__CoordinationServiceDefinition__UnorderedGroup_4__0 )?
             {
-            // InternalServiceDefinition.g:4326:2: ( rule__CoordinationServiceDefinition__UnorderedGroup_3__0 )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            // InternalServiceDefinition.g:4113:2: ( rule__CoordinationServiceDefinition__UnorderedGroup_4__0 )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( LA22_0 == 21 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 0) ) {
-                alt22=1;
+            if ( LA24_0 == 29 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 0) ) {
+                alt24=1;
             }
-            else if ( LA22_0 == 27 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 1) ) {
-                alt22=1;
+            else if ( LA24_0 == 34 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 1) ) {
+                alt24=1;
             }
-            else if ( LA22_0 == 32 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 2) ) {
-                alt22=1;
+            else if ( LA24_0 == 36 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 2) ) {
+                alt24=1;
             }
-            else if ( LA22_0 == 34 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 3) ) {
-                alt22=1;
+            else if ( LA24_0 == 35 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 3) ) {
+                alt24=1;
             }
-            else if ( LA22_0 == 33 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 4) ) {
-                alt22=1;
-            }
-            switch (alt22) {
+            switch (alt24) {
                 case 1 :
-                    // InternalServiceDefinition.g:4326:2: rule__CoordinationServiceDefinition__UnorderedGroup_3__0
+                    // InternalServiceDefinition.g:4113:2: rule__CoordinationServiceDefinition__UnorderedGroup_4__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__CoordinationServiceDefinition__UnorderedGroup_3__0();
+                    rule__CoordinationServiceDefinition__UnorderedGroup_4__0();
 
                     state._fsp--;
 
@@ -12742,86 +12297,83 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         finally {
 
-            	getUnorderedGroupHelper().leave(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3());
+            	getUnorderedGroupHelper().leave(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4());
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__CoordinationServiceDefinition__UnorderedGroup_3"
+    // $ANTLR end "rule__CoordinationServiceDefinition__UnorderedGroup_4"
 
 
-    // $ANTLR start "rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl"
-    // InternalServiceDefinition.g:4334:1: rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl : ( ({...}? => ( ( ( rule__CoordinationServiceDefinition__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4 ) ) ) ) ) ;
-    public final void rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl"
+    // InternalServiceDefinition.g:4121:1: rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl : ( ({...}? => ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_4_0 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3 ) ) ) ) ) ;
+    public final void rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		boolean selected = false;
         	
         try {
-            // InternalServiceDefinition.g:4339:1: ( ( ({...}? => ( ( ( rule__CoordinationServiceDefinition__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4 ) ) ) ) ) )
-            // InternalServiceDefinition.g:4340:3: ( ({...}? => ( ( ( rule__CoordinationServiceDefinition__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4 ) ) ) ) )
+            // InternalServiceDefinition.g:4126:1: ( ( ({...}? => ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_4_0 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3 ) ) ) ) ) )
+            // InternalServiceDefinition.g:4127:3: ( ({...}? => ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_4_0 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3 ) ) ) ) )
             {
-            // InternalServiceDefinition.g:4340:3: ( ({...}? => ( ( ( rule__CoordinationServiceDefinition__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4 ) ) ) ) )
-            int alt23=5;
-            int LA23_0 = input.LA(1);
+            // InternalServiceDefinition.g:4127:3: ( ({...}? => ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_4_0 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2 ) ) ) ) | ({...}? => ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3 ) ) ) ) )
+            int alt25=4;
+            int LA25_0 = input.LA(1);
 
-            if ( LA23_0 == 21 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 0) ) {
-                alt23=1;
+            if ( LA25_0 == 29 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 0) ) {
+                alt25=1;
             }
-            else if ( LA23_0 == 27 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 1) ) {
-                alt23=2;
+            else if ( LA25_0 == 34 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 1) ) {
+                alt25=2;
             }
-            else if ( LA23_0 == 32 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 2) ) {
-                alt23=3;
+            else if ( LA25_0 == 36 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 2) ) {
+                alt25=3;
             }
-            else if ( LA23_0 == 34 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 3) ) {
-                alt23=4;
-            }
-            else if ( LA23_0 == 33 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 4) ) {
-                alt23=5;
+            else if ( LA25_0 == 35 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 3) ) {
+                alt25=4;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 23, 0, input);
+                    new NoViableAltException("", 25, 0, input);
 
                 throw nvae;
             }
-            switch (alt23) {
+            switch (alt25) {
                 case 1 :
-                    // InternalServiceDefinition.g:4341:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__Group_3_0__0 ) ) ) )
+                    // InternalServiceDefinition.g:4128:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_4_0 ) ) ) )
                     {
-                    // InternalServiceDefinition.g:4341:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__Group_3_0__0 ) ) ) )
-                    // InternalServiceDefinition.g:4342:4: {...}? => ( ( ( rule__CoordinationServiceDefinition__Group_3_0__0 ) ) )
+                    // InternalServiceDefinition.g:4128:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_4_0 ) ) ) )
+                    // InternalServiceDefinition.g:4129:4: {...}? => ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_4_0 ) ) )
                     {
-                    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 0) ) {
-                        throw new FailedPredicateException(input, "rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 0)");
+                    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 0) ) {
+                        throw new FailedPredicateException(input, "rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 0)");
                     }
-                    // InternalServiceDefinition.g:4342:125: ( ( ( rule__CoordinationServiceDefinition__Group_3_0__0 ) ) )
-                    // InternalServiceDefinition.g:4343:5: ( ( rule__CoordinationServiceDefinition__Group_3_0__0 ) )
+                    // InternalServiceDefinition.g:4129:125: ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_4_0 ) ) )
+                    // InternalServiceDefinition.g:4130:5: ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_4_0 ) )
                     {
 
-                    					getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 0);
+                    					getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 0);
                     				
 
                     					selected = true;
                     				
-                    // InternalServiceDefinition.g:4349:5: ( ( rule__CoordinationServiceDefinition__Group_3_0__0 ) )
-                    // InternalServiceDefinition.g:4350:6: ( rule__CoordinationServiceDefinition__Group_3_0__0 )
+                    // InternalServiceDefinition.g:4136:5: ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_4_0 ) )
+                    // InternalServiceDefinition.g:4137:6: ( rule__CoordinationServiceDefinition__StatePatternAssignment_4_0 )
                     {
-                     before(grammarAccess.getCoordinationServiceDefinitionAccess().getGroup_3_0()); 
-                    // InternalServiceDefinition.g:4351:6: ( rule__CoordinationServiceDefinition__Group_3_0__0 )
-                    // InternalServiceDefinition.g:4351:7: rule__CoordinationServiceDefinition__Group_3_0__0
+                     before(grammarAccess.getCoordinationServiceDefinitionAccess().getStatePatternAssignment_4_0()); 
+                    // InternalServiceDefinition.g:4138:6: ( rule__CoordinationServiceDefinition__StatePatternAssignment_4_0 )
+                    // InternalServiceDefinition.g:4138:7: rule__CoordinationServiceDefinition__StatePatternAssignment_4_0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__CoordinationServiceDefinition__Group_3_0__0();
+                    rule__CoordinationServiceDefinition__StatePatternAssignment_4_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getCoordinationServiceDefinitionAccess().getGroup_3_0()); 
+                     after(grammarAccess.getCoordinationServiceDefinitionAccess().getStatePatternAssignment_4_0()); 
 
                     }
 
@@ -12835,39 +12387,39 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
                     }
                     break;
                 case 2 :
-                    // InternalServiceDefinition.g:4356:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_3_1 ) ) ) )
+                    // InternalServiceDefinition.g:4143:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1 ) ) ) )
                     {
-                    // InternalServiceDefinition.g:4356:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_3_1 ) ) ) )
-                    // InternalServiceDefinition.g:4357:4: {...}? => ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_3_1 ) ) )
+                    // InternalServiceDefinition.g:4143:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1 ) ) ) )
+                    // InternalServiceDefinition.g:4144:4: {...}? => ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1 ) ) )
                     {
-                    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 1) ) {
-                        throw new FailedPredicateException(input, "rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 1)");
+                    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 1) ) {
+                        throw new FailedPredicateException(input, "rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 1)");
                     }
-                    // InternalServiceDefinition.g:4357:125: ( ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_3_1 ) ) )
-                    // InternalServiceDefinition.g:4358:5: ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_3_1 ) )
+                    // InternalServiceDefinition.g:4144:125: ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1 ) ) )
+                    // InternalServiceDefinition.g:4145:5: ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1 ) )
                     {
 
-                    					getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 1);
+                    					getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 1);
                     				
 
                     					selected = true;
                     				
-                    // InternalServiceDefinition.g:4364:5: ( ( rule__CoordinationServiceDefinition__StatePatternAssignment_3_1 ) )
-                    // InternalServiceDefinition.g:4365:6: ( rule__CoordinationServiceDefinition__StatePatternAssignment_3_1 )
+                    // InternalServiceDefinition.g:4151:5: ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1 ) )
+                    // InternalServiceDefinition.g:4152:6: ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1 )
                     {
-                     before(grammarAccess.getCoordinationServiceDefinitionAccess().getStatePatternAssignment_3_1()); 
-                    // InternalServiceDefinition.g:4366:6: ( rule__CoordinationServiceDefinition__StatePatternAssignment_3_1 )
-                    // InternalServiceDefinition.g:4366:7: rule__CoordinationServiceDefinition__StatePatternAssignment_3_1
+                     before(grammarAccess.getCoordinationServiceDefinitionAccess().getParameterPatternAssignment_4_1()); 
+                    // InternalServiceDefinition.g:4153:6: ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1 )
+                    // InternalServiceDefinition.g:4153:7: rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1
                     {
                     pushFollow(FOLLOW_2);
-                    rule__CoordinationServiceDefinition__StatePatternAssignment_3_1();
+                    rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getCoordinationServiceDefinitionAccess().getStatePatternAssignment_3_1()); 
+                     after(grammarAccess.getCoordinationServiceDefinitionAccess().getParameterPatternAssignment_4_1()); 
 
                     }
 
@@ -12881,39 +12433,39 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
                     }
                     break;
                 case 3 :
-                    // InternalServiceDefinition.g:4371:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2 ) ) ) )
+                    // InternalServiceDefinition.g:4158:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2 ) ) ) )
                     {
-                    // InternalServiceDefinition.g:4371:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2 ) ) ) )
-                    // InternalServiceDefinition.g:4372:4: {...}? => ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2 ) ) )
+                    // InternalServiceDefinition.g:4158:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2 ) ) ) )
+                    // InternalServiceDefinition.g:4159:4: {...}? => ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2 ) ) )
                     {
-                    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 2) ) {
-                        throw new FailedPredicateException(input, "rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 2)");
+                    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 2) ) {
+                        throw new FailedPredicateException(input, "rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 2)");
                     }
-                    // InternalServiceDefinition.g:4372:125: ( ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2 ) ) )
-                    // InternalServiceDefinition.g:4373:5: ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2 ) )
+                    // InternalServiceDefinition.g:4159:125: ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2 ) ) )
+                    // InternalServiceDefinition.g:4160:5: ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2 ) )
                     {
 
-                    					getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 2);
+                    					getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 2);
                     				
 
                     					selected = true;
                     				
-                    // InternalServiceDefinition.g:4379:5: ( ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2 ) )
-                    // InternalServiceDefinition.g:4380:6: ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2 )
+                    // InternalServiceDefinition.g:4166:5: ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2 ) )
+                    // InternalServiceDefinition.g:4167:6: ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2 )
                     {
-                     before(grammarAccess.getCoordinationServiceDefinitionAccess().getParameterPatternAssignment_3_2()); 
-                    // InternalServiceDefinition.g:4381:6: ( rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2 )
-                    // InternalServiceDefinition.g:4381:7: rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2
+                     before(grammarAccess.getCoordinationServiceDefinitionAccess().getMonitoringPatternAssignment_4_2()); 
+                    // InternalServiceDefinition.g:4168:6: ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2 )
+                    // InternalServiceDefinition.g:4168:7: rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2
                     {
                     pushFollow(FOLLOW_2);
-                    rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2();
+                    rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getCoordinationServiceDefinitionAccess().getParameterPatternAssignment_3_2()); 
+                     after(grammarAccess.getCoordinationServiceDefinitionAccess().getMonitoringPatternAssignment_4_2()); 
 
                     }
 
@@ -12927,85 +12479,39 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
                     }
                     break;
                 case 4 :
-                    // InternalServiceDefinition.g:4386:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3 ) ) ) )
+                    // InternalServiceDefinition.g:4173:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3 ) ) ) )
                     {
-                    // InternalServiceDefinition.g:4386:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3 ) ) ) )
-                    // InternalServiceDefinition.g:4387:4: {...}? => ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3 ) ) )
+                    // InternalServiceDefinition.g:4173:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3 ) ) ) )
+                    // InternalServiceDefinition.g:4174:4: {...}? => ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3 ) ) )
                     {
-                    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 3) ) {
-                        throw new FailedPredicateException(input, "rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 3)");
+                    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 3) ) {
+                        throw new FailedPredicateException(input, "rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 3)");
                     }
-                    // InternalServiceDefinition.g:4387:125: ( ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3 ) ) )
-                    // InternalServiceDefinition.g:4388:5: ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3 ) )
+                    // InternalServiceDefinition.g:4174:125: ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3 ) ) )
+                    // InternalServiceDefinition.g:4175:5: ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3 ) )
                     {
 
-                    					getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 3);
+                    					getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 3);
                     				
 
                     					selected = true;
                     				
-                    // InternalServiceDefinition.g:4394:5: ( ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3 ) )
-                    // InternalServiceDefinition.g:4395:6: ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3 )
+                    // InternalServiceDefinition.g:4181:5: ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3 ) )
+                    // InternalServiceDefinition.g:4182:6: ( rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3 )
                     {
-                     before(grammarAccess.getCoordinationServiceDefinitionAccess().getMonitoringPatternAssignment_3_3()); 
-                    // InternalServiceDefinition.g:4396:6: ( rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3 )
-                    // InternalServiceDefinition.g:4396:7: rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3
+                     before(grammarAccess.getCoordinationServiceDefinitionAccess().getWiringPatternAssignment_4_3()); 
+                    // InternalServiceDefinition.g:4183:6: ( rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3 )
+                    // InternalServiceDefinition.g:4183:7: rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3
                     {
                     pushFollow(FOLLOW_2);
-                    rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3();
+                    rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getCoordinationServiceDefinitionAccess().getMonitoringPatternAssignment_3_3()); 
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 5 :
-                    // InternalServiceDefinition.g:4401:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4 ) ) ) )
-                    {
-                    // InternalServiceDefinition.g:4401:3: ({...}? => ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4 ) ) ) )
-                    // InternalServiceDefinition.g:4402:4: {...}? => ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4 ) ) )
-                    {
-                    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 4) ) {
-                        throw new FailedPredicateException(input, "rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 4)");
-                    }
-                    // InternalServiceDefinition.g:4402:125: ( ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4 ) ) )
-                    // InternalServiceDefinition.g:4403:5: ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4 ) )
-                    {
-
-                    					getUnorderedGroupHelper().select(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 4);
-                    				
-
-                    					selected = true;
-                    				
-                    // InternalServiceDefinition.g:4409:5: ( ( rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4 ) )
-                    // InternalServiceDefinition.g:4410:6: ( rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4 )
-                    {
-                     before(grammarAccess.getCoordinationServiceDefinitionAccess().getWiringPatternAssignment_3_4()); 
-                    // InternalServiceDefinition.g:4411:6: ( rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4 )
-                    // InternalServiceDefinition.g:4411:7: rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getCoordinationServiceDefinitionAccess().getWiringPatternAssignment_3_4()); 
+                     after(grammarAccess.getCoordinationServiceDefinitionAccess().getWiringPatternAssignment_4_3()); 
 
                     }
 
@@ -13032,189 +12538,52 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         finally {
 
             	if (selected)
-            		getUnorderedGroupHelper().returnFromSelection(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3());
+            		getUnorderedGroupHelper().returnFromSelection(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4());
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl"
+    // $ANTLR end "rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl"
 
 
-    // $ANTLR start "rule__CoordinationServiceDefinition__UnorderedGroup_3__0"
-    // InternalServiceDefinition.g:4424:1: rule__CoordinationServiceDefinition__UnorderedGroup_3__0 : rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_3__1 )? ;
-    public final void rule__CoordinationServiceDefinition__UnorderedGroup_3__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:4428:1: ( rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_3__1 )? )
-            // InternalServiceDefinition.g:4429:2: rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_3__1 )?
-            {
-            pushFollow(FOLLOW_39);
-            rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl();
-
-            state._fsp--;
-
-            // InternalServiceDefinition.g:4430:2: ( rule__CoordinationServiceDefinition__UnorderedGroup_3__1 )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
-
-            if ( LA24_0 == 21 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 0) ) {
-                alt24=1;
-            }
-            else if ( LA24_0 == 27 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 1) ) {
-                alt24=1;
-            }
-            else if ( LA24_0 == 32 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 2) ) {
-                alt24=1;
-            }
-            else if ( LA24_0 == 34 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 3) ) {
-                alt24=1;
-            }
-            else if ( LA24_0 == 33 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 4) ) {
-                alt24=1;
-            }
-            switch (alt24) {
-                case 1 :
-                    // InternalServiceDefinition.g:4430:2: rule__CoordinationServiceDefinition__UnorderedGroup_3__1
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__CoordinationServiceDefinition__UnorderedGroup_3__1();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CoordinationServiceDefinition__UnorderedGroup_3__0"
-
-
-    // $ANTLR start "rule__CoordinationServiceDefinition__UnorderedGroup_3__1"
-    // InternalServiceDefinition.g:4436:1: rule__CoordinationServiceDefinition__UnorderedGroup_3__1 : rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_3__2 )? ;
-    public final void rule__CoordinationServiceDefinition__UnorderedGroup_3__1() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationServiceDefinition__UnorderedGroup_4__0"
+    // InternalServiceDefinition.g:4196:1: rule__CoordinationServiceDefinition__UnorderedGroup_4__0 : rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_4__1 )? ;
+    public final void rule__CoordinationServiceDefinition__UnorderedGroup_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4440:1: ( rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_3__2 )? )
-            // InternalServiceDefinition.g:4441:2: rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_3__2 )?
+            // InternalServiceDefinition.g:4200:1: ( rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_4__1 )? )
+            // InternalServiceDefinition.g:4201:2: rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_4__1 )?
             {
-            pushFollow(FOLLOW_39);
-            rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl();
+            pushFollow(FOLLOW_43);
+            rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl();
 
             state._fsp--;
 
-            // InternalServiceDefinition.g:4442:2: ( rule__CoordinationServiceDefinition__UnorderedGroup_3__2 )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
-
-            if ( LA25_0 == 21 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 0) ) {
-                alt25=1;
-            }
-            else if ( LA25_0 == 27 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 1) ) {
-                alt25=1;
-            }
-            else if ( LA25_0 == 32 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 2) ) {
-                alt25=1;
-            }
-            else if ( LA25_0 == 34 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 3) ) {
-                alt25=1;
-            }
-            else if ( LA25_0 == 33 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 4) ) {
-                alt25=1;
-            }
-            switch (alt25) {
-                case 1 :
-                    // InternalServiceDefinition.g:4442:2: rule__CoordinationServiceDefinition__UnorderedGroup_3__2
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__CoordinationServiceDefinition__UnorderedGroup_3__2();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CoordinationServiceDefinition__UnorderedGroup_3__1"
-
-
-    // $ANTLR start "rule__CoordinationServiceDefinition__UnorderedGroup_3__2"
-    // InternalServiceDefinition.g:4448:1: rule__CoordinationServiceDefinition__UnorderedGroup_3__2 : rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_3__3 )? ;
-    public final void rule__CoordinationServiceDefinition__UnorderedGroup_3__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:4452:1: ( rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_3__3 )? )
-            // InternalServiceDefinition.g:4453:2: rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_3__3 )?
-            {
-            pushFollow(FOLLOW_39);
-            rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl();
-
-            state._fsp--;
-
-            // InternalServiceDefinition.g:4454:2: ( rule__CoordinationServiceDefinition__UnorderedGroup_3__3 )?
+            // InternalServiceDefinition.g:4202:2: ( rule__CoordinationServiceDefinition__UnorderedGroup_4__1 )?
             int alt26=2;
             int LA26_0 = input.LA(1);
 
-            if ( LA26_0 == 21 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 0) ) {
+            if ( LA26_0 == 29 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 0) ) {
                 alt26=1;
             }
-            else if ( LA26_0 == 27 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 1) ) {
+            else if ( LA26_0 == 34 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 1) ) {
                 alt26=1;
             }
-            else if ( LA26_0 == 32 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 2) ) {
+            else if ( LA26_0 == 36 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 2) ) {
                 alt26=1;
             }
-            else if ( LA26_0 == 34 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 3) ) {
-                alt26=1;
-            }
-            else if ( LA26_0 == 33 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 4) ) {
+            else if ( LA26_0 == 35 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 3) ) {
                 alt26=1;
             }
             switch (alt26) {
                 case 1 :
-                    // InternalServiceDefinition.g:4454:2: rule__CoordinationServiceDefinition__UnorderedGroup_3__3
+                    // InternalServiceDefinition.g:4202:2: rule__CoordinationServiceDefinition__UnorderedGroup_4__1
                     {
                     pushFollow(FOLLOW_2);
-                    rule__CoordinationServiceDefinition__UnorderedGroup_3__3();
+                    rule__CoordinationServiceDefinition__UnorderedGroup_4__1();
 
                     state._fsp--;
 
@@ -13239,49 +12608,46 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__CoordinationServiceDefinition__UnorderedGroup_3__2"
+    // $ANTLR end "rule__CoordinationServiceDefinition__UnorderedGroup_4__0"
 
 
-    // $ANTLR start "rule__CoordinationServiceDefinition__UnorderedGroup_3__3"
-    // InternalServiceDefinition.g:4460:1: rule__CoordinationServiceDefinition__UnorderedGroup_3__3 : rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_3__4 )? ;
-    public final void rule__CoordinationServiceDefinition__UnorderedGroup_3__3() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationServiceDefinition__UnorderedGroup_4__1"
+    // InternalServiceDefinition.g:4208:1: rule__CoordinationServiceDefinition__UnorderedGroup_4__1 : rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_4__2 )? ;
+    public final void rule__CoordinationServiceDefinition__UnorderedGroup_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4464:1: ( rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_3__4 )? )
-            // InternalServiceDefinition.g:4465:2: rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_3__4 )?
+            // InternalServiceDefinition.g:4212:1: ( rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_4__2 )? )
+            // InternalServiceDefinition.g:4213:2: rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_4__2 )?
             {
-            pushFollow(FOLLOW_39);
-            rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl();
+            pushFollow(FOLLOW_43);
+            rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl();
 
             state._fsp--;
 
-            // InternalServiceDefinition.g:4466:2: ( rule__CoordinationServiceDefinition__UnorderedGroup_3__4 )?
+            // InternalServiceDefinition.g:4214:2: ( rule__CoordinationServiceDefinition__UnorderedGroup_4__2 )?
             int alt27=2;
             int LA27_0 = input.LA(1);
 
-            if ( LA27_0 == 21 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 0) ) {
+            if ( LA27_0 == 29 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 0) ) {
                 alt27=1;
             }
-            else if ( LA27_0 == 27 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 1) ) {
+            else if ( LA27_0 == 34 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 1) ) {
                 alt27=1;
             }
-            else if ( LA27_0 == 32 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 2) ) {
+            else if ( LA27_0 == 36 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 2) ) {
                 alt27=1;
             }
-            else if ( LA27_0 == 34 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 3) ) {
-                alt27=1;
-            }
-            else if ( LA27_0 == 33 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_3(), 4) ) {
+            else if ( LA27_0 == 35 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 3) ) {
                 alt27=1;
             }
             switch (alt27) {
                 case 1 :
-                    // InternalServiceDefinition.g:4466:2: rule__CoordinationServiceDefinition__UnorderedGroup_3__4
+                    // InternalServiceDefinition.g:4214:2: rule__CoordinationServiceDefinition__UnorderedGroup_4__2
                     {
                     pushFollow(FOLLOW_2);
-                    rule__CoordinationServiceDefinition__UnorderedGroup_3__4();
+                    rule__CoordinationServiceDefinition__UnorderedGroup_4__2();
 
                     state._fsp--;
 
@@ -13306,21 +12672,85 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__CoordinationServiceDefinition__UnorderedGroup_3__3"
+    // $ANTLR end "rule__CoordinationServiceDefinition__UnorderedGroup_4__1"
 
 
-    // $ANTLR start "rule__CoordinationServiceDefinition__UnorderedGroup_3__4"
-    // InternalServiceDefinition.g:4472:1: rule__CoordinationServiceDefinition__UnorderedGroup_3__4 : rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl ;
-    public final void rule__CoordinationServiceDefinition__UnorderedGroup_3__4() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationServiceDefinition__UnorderedGroup_4__2"
+    // InternalServiceDefinition.g:4220:1: rule__CoordinationServiceDefinition__UnorderedGroup_4__2 : rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_4__3 )? ;
+    public final void rule__CoordinationServiceDefinition__UnorderedGroup_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4476:1: ( rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl )
-            // InternalServiceDefinition.g:4477:2: rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl
+            // InternalServiceDefinition.g:4224:1: ( rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_4__3 )? )
+            // InternalServiceDefinition.g:4225:2: rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl ( rule__CoordinationServiceDefinition__UnorderedGroup_4__3 )?
+            {
+            pushFollow(FOLLOW_43);
+            rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl();
+
+            state._fsp--;
+
+            // InternalServiceDefinition.g:4226:2: ( rule__CoordinationServiceDefinition__UnorderedGroup_4__3 )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
+
+            if ( LA28_0 == 29 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 0) ) {
+                alt28=1;
+            }
+            else if ( LA28_0 == 34 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 1) ) {
+                alt28=1;
+            }
+            else if ( LA28_0 == 36 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 2) ) {
+                alt28=1;
+            }
+            else if ( LA28_0 == 35 && getUnorderedGroupHelper().canSelect(grammarAccess.getCoordinationServiceDefinitionAccess().getUnorderedGroup_4(), 3) ) {
+                alt28=1;
+            }
+            switch (alt28) {
+                case 1 :
+                    // InternalServiceDefinition.g:4226:2: rule__CoordinationServiceDefinition__UnorderedGroup_4__3
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__CoordinationServiceDefinition__UnorderedGroup_4__3();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__CoordinationServiceDefinition__UnorderedGroup_4__2"
+
+
+    // $ANTLR start "rule__CoordinationServiceDefinition__UnorderedGroup_4__3"
+    // InternalServiceDefinition.g:4232:1: rule__CoordinationServiceDefinition__UnorderedGroup_4__3 : rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl ;
+    public final void rule__CoordinationServiceDefinition__UnorderedGroup_4__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalServiceDefinition.g:4236:1: ( rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl )
+            // InternalServiceDefinition.g:4237:2: rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__CoordinationServiceDefinition__UnorderedGroup_3__Impl();
+            rule__CoordinationServiceDefinition__UnorderedGroup_4__Impl();
 
             state._fsp--;
 
@@ -13339,19 +12769,19 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__CoordinationServiceDefinition__UnorderedGroup_3__4"
+    // $ANTLR end "rule__CoordinationServiceDefinition__UnorderedGroup_4__3"
 
 
     // $ANTLR start "rule__EventPattern__UnorderedGroup_3"
-    // InternalServiceDefinition.g:4484:1: rule__EventPattern__UnorderedGroup_3 : rule__EventPattern__UnorderedGroup_3__0 {...}?;
+    // InternalServiceDefinition.g:4244:1: rule__EventPattern__UnorderedGroup_3 : rule__EventPattern__UnorderedGroup_3__0 {...}?;
     public final void rule__EventPattern__UnorderedGroup_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		getUnorderedGroupHelper().enter(grammarAccess.getEventPatternAccess().getUnorderedGroup_3());
         	
         try {
-            // InternalServiceDefinition.g:4489:1: ( rule__EventPattern__UnorderedGroup_3__0 {...}?)
-            // InternalServiceDefinition.g:4490:2: rule__EventPattern__UnorderedGroup_3__0 {...}?
+            // InternalServiceDefinition.g:4249:1: ( rule__EventPattern__UnorderedGroup_3__0 {...}?)
+            // InternalServiceDefinition.g:4250:2: rule__EventPattern__UnorderedGroup_3__0 {...}?
             {
             pushFollow(FOLLOW_2);
             rule__EventPattern__UnorderedGroup_3__0();
@@ -13381,47 +12811,47 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__UnorderedGroup_3__Impl"
-    // InternalServiceDefinition.g:4498:1: rule__EventPattern__UnorderedGroup_3__Impl : ( ({...}? => ( ( ( rule__EventPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_2__0 ) ) ) ) ) ;
+    // InternalServiceDefinition.g:4258:1: rule__EventPattern__UnorderedGroup_3__Impl : ( ({...}? => ( ( ( rule__EventPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_2__0 ) ) ) ) ) ;
     public final void rule__EventPattern__UnorderedGroup_3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		boolean selected = false;
         	
         try {
-            // InternalServiceDefinition.g:4503:1: ( ( ({...}? => ( ( ( rule__EventPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_2__0 ) ) ) ) ) )
-            // InternalServiceDefinition.g:4504:3: ( ({...}? => ( ( ( rule__EventPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_2__0 ) ) ) ) )
+            // InternalServiceDefinition.g:4263:1: ( ( ({...}? => ( ( ( rule__EventPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_2__0 ) ) ) ) ) )
+            // InternalServiceDefinition.g:4264:3: ( ({...}? => ( ( ( rule__EventPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_2__0 ) ) ) ) )
             {
-            // InternalServiceDefinition.g:4504:3: ( ({...}? => ( ( ( rule__EventPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_2__0 ) ) ) ) )
-            int alt28=3;
-            int LA28_0 = input.LA(1);
+            // InternalServiceDefinition.g:4264:3: ( ({...}? => ( ( ( rule__EventPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__EventPattern__Group_3_2__0 ) ) ) ) )
+            int alt29=3;
+            int LA29_0 = input.LA(1);
 
-            if ( LA28_0 == 39 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 0) ) {
-                alt28=1;
+            if ( LA29_0 == 41 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 0) ) {
+                alt29=1;
             }
-            else if ( LA28_0 == 40 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 1) ) {
-                alt28=2;
+            else if ( LA29_0 == 42 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 1) ) {
+                alt29=2;
             }
-            else if ( LA28_0 == 41 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 2) ) {
-                alt28=3;
+            else if ( LA29_0 == 43 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 2) ) {
+                alt29=3;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 28, 0, input);
+                    new NoViableAltException("", 29, 0, input);
 
                 throw nvae;
             }
-            switch (alt28) {
+            switch (alt29) {
                 case 1 :
-                    // InternalServiceDefinition.g:4505:3: ({...}? => ( ( ( rule__EventPattern__Group_3_0__0 ) ) ) )
+                    // InternalServiceDefinition.g:4265:3: ({...}? => ( ( ( rule__EventPattern__Group_3_0__0 ) ) ) )
                     {
-                    // InternalServiceDefinition.g:4505:3: ({...}? => ( ( ( rule__EventPattern__Group_3_0__0 ) ) ) )
-                    // InternalServiceDefinition.g:4506:4: {...}? => ( ( ( rule__EventPattern__Group_3_0__0 ) ) )
+                    // InternalServiceDefinition.g:4265:3: ({...}? => ( ( ( rule__EventPattern__Group_3_0__0 ) ) ) )
+                    // InternalServiceDefinition.g:4266:4: {...}? => ( ( ( rule__EventPattern__Group_3_0__0 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 0) ) {
                         throw new FailedPredicateException(input, "rule__EventPattern__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 0)");
                     }
-                    // InternalServiceDefinition.g:4506:108: ( ( ( rule__EventPattern__Group_3_0__0 ) ) )
-                    // InternalServiceDefinition.g:4507:5: ( ( rule__EventPattern__Group_3_0__0 ) )
+                    // InternalServiceDefinition.g:4266:108: ( ( ( rule__EventPattern__Group_3_0__0 ) ) )
+                    // InternalServiceDefinition.g:4267:5: ( ( rule__EventPattern__Group_3_0__0 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 0);
@@ -13429,12 +12859,12 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
                     					selected = true;
                     				
-                    // InternalServiceDefinition.g:4513:5: ( ( rule__EventPattern__Group_3_0__0 ) )
-                    // InternalServiceDefinition.g:4514:6: ( rule__EventPattern__Group_3_0__0 )
+                    // InternalServiceDefinition.g:4273:5: ( ( rule__EventPattern__Group_3_0__0 ) )
+                    // InternalServiceDefinition.g:4274:6: ( rule__EventPattern__Group_3_0__0 )
                     {
                      before(grammarAccess.getEventPatternAccess().getGroup_3_0()); 
-                    // InternalServiceDefinition.g:4515:6: ( rule__EventPattern__Group_3_0__0 )
-                    // InternalServiceDefinition.g:4515:7: rule__EventPattern__Group_3_0__0
+                    // InternalServiceDefinition.g:4275:6: ( rule__EventPattern__Group_3_0__0 )
+                    // InternalServiceDefinition.g:4275:7: rule__EventPattern__Group_3_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__EventPattern__Group_3_0__0();
@@ -13458,16 +12888,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
                     }
                     break;
                 case 2 :
-                    // InternalServiceDefinition.g:4520:3: ({...}? => ( ( ( rule__EventPattern__Group_3_1__0 ) ) ) )
+                    // InternalServiceDefinition.g:4280:3: ({...}? => ( ( ( rule__EventPattern__Group_3_1__0 ) ) ) )
                     {
-                    // InternalServiceDefinition.g:4520:3: ({...}? => ( ( ( rule__EventPattern__Group_3_1__0 ) ) ) )
-                    // InternalServiceDefinition.g:4521:4: {...}? => ( ( ( rule__EventPattern__Group_3_1__0 ) ) )
+                    // InternalServiceDefinition.g:4280:3: ({...}? => ( ( ( rule__EventPattern__Group_3_1__0 ) ) ) )
+                    // InternalServiceDefinition.g:4281:4: {...}? => ( ( ( rule__EventPattern__Group_3_1__0 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 1) ) {
                         throw new FailedPredicateException(input, "rule__EventPattern__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 1)");
                     }
-                    // InternalServiceDefinition.g:4521:108: ( ( ( rule__EventPattern__Group_3_1__0 ) ) )
-                    // InternalServiceDefinition.g:4522:5: ( ( rule__EventPattern__Group_3_1__0 ) )
+                    // InternalServiceDefinition.g:4281:108: ( ( ( rule__EventPattern__Group_3_1__0 ) ) )
+                    // InternalServiceDefinition.g:4282:5: ( ( rule__EventPattern__Group_3_1__0 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 1);
@@ -13475,12 +12905,12 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
                     					selected = true;
                     				
-                    // InternalServiceDefinition.g:4528:5: ( ( rule__EventPattern__Group_3_1__0 ) )
-                    // InternalServiceDefinition.g:4529:6: ( rule__EventPattern__Group_3_1__0 )
+                    // InternalServiceDefinition.g:4288:5: ( ( rule__EventPattern__Group_3_1__0 ) )
+                    // InternalServiceDefinition.g:4289:6: ( rule__EventPattern__Group_3_1__0 )
                     {
                      before(grammarAccess.getEventPatternAccess().getGroup_3_1()); 
-                    // InternalServiceDefinition.g:4530:6: ( rule__EventPattern__Group_3_1__0 )
-                    // InternalServiceDefinition.g:4530:7: rule__EventPattern__Group_3_1__0
+                    // InternalServiceDefinition.g:4290:6: ( rule__EventPattern__Group_3_1__0 )
+                    // InternalServiceDefinition.g:4290:7: rule__EventPattern__Group_3_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__EventPattern__Group_3_1__0();
@@ -13504,16 +12934,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
                     }
                     break;
                 case 3 :
-                    // InternalServiceDefinition.g:4535:3: ({...}? => ( ( ( rule__EventPattern__Group_3_2__0 ) ) ) )
+                    // InternalServiceDefinition.g:4295:3: ({...}? => ( ( ( rule__EventPattern__Group_3_2__0 ) ) ) )
                     {
-                    // InternalServiceDefinition.g:4535:3: ({...}? => ( ( ( rule__EventPattern__Group_3_2__0 ) ) ) )
-                    // InternalServiceDefinition.g:4536:4: {...}? => ( ( ( rule__EventPattern__Group_3_2__0 ) ) )
+                    // InternalServiceDefinition.g:4295:3: ({...}? => ( ( ( rule__EventPattern__Group_3_2__0 ) ) ) )
+                    // InternalServiceDefinition.g:4296:4: {...}? => ( ( ( rule__EventPattern__Group_3_2__0 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 2) ) {
                         throw new FailedPredicateException(input, "rule__EventPattern__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 2)");
                     }
-                    // InternalServiceDefinition.g:4536:108: ( ( ( rule__EventPattern__Group_3_2__0 ) ) )
-                    // InternalServiceDefinition.g:4537:5: ( ( rule__EventPattern__Group_3_2__0 ) )
+                    // InternalServiceDefinition.g:4296:108: ( ( ( rule__EventPattern__Group_3_2__0 ) ) )
+                    // InternalServiceDefinition.g:4297:5: ( ( rule__EventPattern__Group_3_2__0 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 2);
@@ -13521,12 +12951,12 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
                     					selected = true;
                     				
-                    // InternalServiceDefinition.g:4543:5: ( ( rule__EventPattern__Group_3_2__0 ) )
-                    // InternalServiceDefinition.g:4544:6: ( rule__EventPattern__Group_3_2__0 )
+                    // InternalServiceDefinition.g:4303:5: ( ( rule__EventPattern__Group_3_2__0 ) )
+                    // InternalServiceDefinition.g:4304:6: ( rule__EventPattern__Group_3_2__0 )
                     {
                      before(grammarAccess.getEventPatternAccess().getGroup_3_2()); 
-                    // InternalServiceDefinition.g:4545:6: ( rule__EventPattern__Group_3_2__0 )
-                    // InternalServiceDefinition.g:4545:7: rule__EventPattern__Group_3_2__0
+                    // InternalServiceDefinition.g:4305:6: ( rule__EventPattern__Group_3_2__0 )
+                    // InternalServiceDefinition.g:4305:7: rule__EventPattern__Group_3_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__EventPattern__Group_3_2__0();
@@ -13573,36 +13003,36 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__UnorderedGroup_3__0"
-    // InternalServiceDefinition.g:4558:1: rule__EventPattern__UnorderedGroup_3__0 : rule__EventPattern__UnorderedGroup_3__Impl ( rule__EventPattern__UnorderedGroup_3__1 )? ;
+    // InternalServiceDefinition.g:4318:1: rule__EventPattern__UnorderedGroup_3__0 : rule__EventPattern__UnorderedGroup_3__Impl ( rule__EventPattern__UnorderedGroup_3__1 )? ;
     public final void rule__EventPattern__UnorderedGroup_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4562:1: ( rule__EventPattern__UnorderedGroup_3__Impl ( rule__EventPattern__UnorderedGroup_3__1 )? )
-            // InternalServiceDefinition.g:4563:2: rule__EventPattern__UnorderedGroup_3__Impl ( rule__EventPattern__UnorderedGroup_3__1 )?
+            // InternalServiceDefinition.g:4322:1: ( rule__EventPattern__UnorderedGroup_3__Impl ( rule__EventPattern__UnorderedGroup_3__1 )? )
+            // InternalServiceDefinition.g:4323:2: rule__EventPattern__UnorderedGroup_3__Impl ( rule__EventPattern__UnorderedGroup_3__1 )?
             {
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_44);
             rule__EventPattern__UnorderedGroup_3__Impl();
 
             state._fsp--;
 
-            // InternalServiceDefinition.g:4564:2: ( rule__EventPattern__UnorderedGroup_3__1 )?
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            // InternalServiceDefinition.g:4324:2: ( rule__EventPattern__UnorderedGroup_3__1 )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( LA29_0 == 39 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 0) ) {
-                alt29=1;
+            if ( LA30_0 == 41 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 0) ) {
+                alt30=1;
             }
-            else if ( LA29_0 == 40 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 1) ) {
-                alt29=1;
+            else if ( LA30_0 == 42 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 1) ) {
+                alt30=1;
             }
-            else if ( LA29_0 == 41 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 2) ) {
-                alt29=1;
+            else if ( LA30_0 == 43 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 2) ) {
+                alt30=1;
             }
-            switch (alt29) {
+            switch (alt30) {
                 case 1 :
-                    // InternalServiceDefinition.g:4564:2: rule__EventPattern__UnorderedGroup_3__1
+                    // InternalServiceDefinition.g:4324:2: rule__EventPattern__UnorderedGroup_3__1
                     {
                     pushFollow(FOLLOW_2);
                     rule__EventPattern__UnorderedGroup_3__1();
@@ -13634,36 +13064,36 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__UnorderedGroup_3__1"
-    // InternalServiceDefinition.g:4570:1: rule__EventPattern__UnorderedGroup_3__1 : rule__EventPattern__UnorderedGroup_3__Impl ( rule__EventPattern__UnorderedGroup_3__2 )? ;
+    // InternalServiceDefinition.g:4330:1: rule__EventPattern__UnorderedGroup_3__1 : rule__EventPattern__UnorderedGroup_3__Impl ( rule__EventPattern__UnorderedGroup_3__2 )? ;
     public final void rule__EventPattern__UnorderedGroup_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4574:1: ( rule__EventPattern__UnorderedGroup_3__Impl ( rule__EventPattern__UnorderedGroup_3__2 )? )
-            // InternalServiceDefinition.g:4575:2: rule__EventPattern__UnorderedGroup_3__Impl ( rule__EventPattern__UnorderedGroup_3__2 )?
+            // InternalServiceDefinition.g:4334:1: ( rule__EventPattern__UnorderedGroup_3__Impl ( rule__EventPattern__UnorderedGroup_3__2 )? )
+            // InternalServiceDefinition.g:4335:2: rule__EventPattern__UnorderedGroup_3__Impl ( rule__EventPattern__UnorderedGroup_3__2 )?
             {
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_44);
             rule__EventPattern__UnorderedGroup_3__Impl();
 
             state._fsp--;
 
-            // InternalServiceDefinition.g:4576:2: ( rule__EventPattern__UnorderedGroup_3__2 )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            // InternalServiceDefinition.g:4336:2: ( rule__EventPattern__UnorderedGroup_3__2 )?
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            if ( LA30_0 == 39 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 0) ) {
-                alt30=1;
+            if ( LA31_0 == 41 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 0) ) {
+                alt31=1;
             }
-            else if ( LA30_0 == 40 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 1) ) {
-                alt30=1;
+            else if ( LA31_0 == 42 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 1) ) {
+                alt31=1;
             }
-            else if ( LA30_0 == 41 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 2) ) {
-                alt30=1;
+            else if ( LA31_0 == 43 && getUnorderedGroupHelper().canSelect(grammarAccess.getEventPatternAccess().getUnorderedGroup_3(), 2) ) {
+                alt31=1;
             }
-            switch (alt30) {
+            switch (alt31) {
                 case 1 :
-                    // InternalServiceDefinition.g:4576:2: rule__EventPattern__UnorderedGroup_3__2
+                    // InternalServiceDefinition.g:4336:2: rule__EventPattern__UnorderedGroup_3__2
                     {
                     pushFollow(FOLLOW_2);
                     rule__EventPattern__UnorderedGroup_3__2();
@@ -13695,14 +13125,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__UnorderedGroup_3__2"
-    // InternalServiceDefinition.g:4582:1: rule__EventPattern__UnorderedGroup_3__2 : rule__EventPattern__UnorderedGroup_3__Impl ;
+    // InternalServiceDefinition.g:4342:1: rule__EventPattern__UnorderedGroup_3__2 : rule__EventPattern__UnorderedGroup_3__Impl ;
     public final void rule__EventPattern__UnorderedGroup_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4586:1: ( rule__EventPattern__UnorderedGroup_3__Impl )
-            // InternalServiceDefinition.g:4587:2: rule__EventPattern__UnorderedGroup_3__Impl
+            // InternalServiceDefinition.g:4346:1: ( rule__EventPattern__UnorderedGroup_3__Impl )
+            // InternalServiceDefinition.g:4347:2: rule__EventPattern__UnorderedGroup_3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EventPattern__UnorderedGroup_3__Impl();
@@ -13728,15 +13158,15 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__UnorderedGroup_3"
-    // InternalServiceDefinition.g:4594:1: rule__QueryPattern__UnorderedGroup_3 : rule__QueryPattern__UnorderedGroup_3__0 {...}?;
+    // InternalServiceDefinition.g:4354:1: rule__QueryPattern__UnorderedGroup_3 : rule__QueryPattern__UnorderedGroup_3__0 {...}?;
     public final void rule__QueryPattern__UnorderedGroup_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		getUnorderedGroupHelper().enter(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3());
         	
         try {
-            // InternalServiceDefinition.g:4599:1: ( rule__QueryPattern__UnorderedGroup_3__0 {...}?)
-            // InternalServiceDefinition.g:4600:2: rule__QueryPattern__UnorderedGroup_3__0 {...}?
+            // InternalServiceDefinition.g:4359:1: ( rule__QueryPattern__UnorderedGroup_3__0 {...}?)
+            // InternalServiceDefinition.g:4360:2: rule__QueryPattern__UnorderedGroup_3__0 {...}?
             {
             pushFollow(FOLLOW_2);
             rule__QueryPattern__UnorderedGroup_3__0();
@@ -13766,44 +13196,44 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__UnorderedGroup_3__Impl"
-    // InternalServiceDefinition.g:4608:1: rule__QueryPattern__UnorderedGroup_3__Impl : ( ({...}? => ( ( ( rule__QueryPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__QueryPattern__Group_3_1__0 ) ) ) ) ) ;
+    // InternalServiceDefinition.g:4368:1: rule__QueryPattern__UnorderedGroup_3__Impl : ( ({...}? => ( ( ( rule__QueryPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__QueryPattern__Group_3_1__0 ) ) ) ) ) ;
     public final void rule__QueryPattern__UnorderedGroup_3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		boolean selected = false;
         	
         try {
-            // InternalServiceDefinition.g:4613:1: ( ( ({...}? => ( ( ( rule__QueryPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__QueryPattern__Group_3_1__0 ) ) ) ) ) )
-            // InternalServiceDefinition.g:4614:3: ( ({...}? => ( ( ( rule__QueryPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__QueryPattern__Group_3_1__0 ) ) ) ) )
+            // InternalServiceDefinition.g:4373:1: ( ( ({...}? => ( ( ( rule__QueryPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__QueryPattern__Group_3_1__0 ) ) ) ) ) )
+            // InternalServiceDefinition.g:4374:3: ( ({...}? => ( ( ( rule__QueryPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__QueryPattern__Group_3_1__0 ) ) ) ) )
             {
-            // InternalServiceDefinition.g:4614:3: ( ({...}? => ( ( ( rule__QueryPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__QueryPattern__Group_3_1__0 ) ) ) ) )
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            // InternalServiceDefinition.g:4374:3: ( ({...}? => ( ( ( rule__QueryPattern__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__QueryPattern__Group_3_1__0 ) ) ) ) )
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( LA31_0 == 43 && getUnorderedGroupHelper().canSelect(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3(), 0) ) {
-                alt31=1;
+            if ( LA32_0 == 45 && getUnorderedGroupHelper().canSelect(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3(), 0) ) {
+                alt32=1;
             }
-            else if ( LA31_0 == 44 && getUnorderedGroupHelper().canSelect(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3(), 1) ) {
-                alt31=2;
+            else if ( LA32_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3(), 1) ) {
+                alt32=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 31, 0, input);
+                    new NoViableAltException("", 32, 0, input);
 
                 throw nvae;
             }
-            switch (alt31) {
+            switch (alt32) {
                 case 1 :
-                    // InternalServiceDefinition.g:4615:3: ({...}? => ( ( ( rule__QueryPattern__Group_3_0__0 ) ) ) )
+                    // InternalServiceDefinition.g:4375:3: ({...}? => ( ( ( rule__QueryPattern__Group_3_0__0 ) ) ) )
                     {
-                    // InternalServiceDefinition.g:4615:3: ({...}? => ( ( ( rule__QueryPattern__Group_3_0__0 ) ) ) )
-                    // InternalServiceDefinition.g:4616:4: {...}? => ( ( ( rule__QueryPattern__Group_3_0__0 ) ) )
+                    // InternalServiceDefinition.g:4375:3: ({...}? => ( ( ( rule__QueryPattern__Group_3_0__0 ) ) ) )
+                    // InternalServiceDefinition.g:4376:4: {...}? => ( ( ( rule__QueryPattern__Group_3_0__0 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3(), 0) ) {
                         throw new FailedPredicateException(input, "rule__QueryPattern__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3(), 0)");
                     }
-                    // InternalServiceDefinition.g:4616:108: ( ( ( rule__QueryPattern__Group_3_0__0 ) ) )
-                    // InternalServiceDefinition.g:4617:5: ( ( rule__QueryPattern__Group_3_0__0 ) )
+                    // InternalServiceDefinition.g:4376:108: ( ( ( rule__QueryPattern__Group_3_0__0 ) ) )
+                    // InternalServiceDefinition.g:4377:5: ( ( rule__QueryPattern__Group_3_0__0 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3(), 0);
@@ -13811,12 +13241,12 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
                     					selected = true;
                     				
-                    // InternalServiceDefinition.g:4623:5: ( ( rule__QueryPattern__Group_3_0__0 ) )
-                    // InternalServiceDefinition.g:4624:6: ( rule__QueryPattern__Group_3_0__0 )
+                    // InternalServiceDefinition.g:4383:5: ( ( rule__QueryPattern__Group_3_0__0 ) )
+                    // InternalServiceDefinition.g:4384:6: ( rule__QueryPattern__Group_3_0__0 )
                     {
                      before(grammarAccess.getQueryPatternAccess().getGroup_3_0()); 
-                    // InternalServiceDefinition.g:4625:6: ( rule__QueryPattern__Group_3_0__0 )
-                    // InternalServiceDefinition.g:4625:7: rule__QueryPattern__Group_3_0__0
+                    // InternalServiceDefinition.g:4385:6: ( rule__QueryPattern__Group_3_0__0 )
+                    // InternalServiceDefinition.g:4385:7: rule__QueryPattern__Group_3_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__QueryPattern__Group_3_0__0();
@@ -13840,16 +13270,16 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
                     }
                     break;
                 case 2 :
-                    // InternalServiceDefinition.g:4630:3: ({...}? => ( ( ( rule__QueryPattern__Group_3_1__0 ) ) ) )
+                    // InternalServiceDefinition.g:4390:3: ({...}? => ( ( ( rule__QueryPattern__Group_3_1__0 ) ) ) )
                     {
-                    // InternalServiceDefinition.g:4630:3: ({...}? => ( ( ( rule__QueryPattern__Group_3_1__0 ) ) ) )
-                    // InternalServiceDefinition.g:4631:4: {...}? => ( ( ( rule__QueryPattern__Group_3_1__0 ) ) )
+                    // InternalServiceDefinition.g:4390:3: ({...}? => ( ( ( rule__QueryPattern__Group_3_1__0 ) ) ) )
+                    // InternalServiceDefinition.g:4391:4: {...}? => ( ( ( rule__QueryPattern__Group_3_1__0 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3(), 1) ) {
                         throw new FailedPredicateException(input, "rule__QueryPattern__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3(), 1)");
                     }
-                    // InternalServiceDefinition.g:4631:108: ( ( ( rule__QueryPattern__Group_3_1__0 ) ) )
-                    // InternalServiceDefinition.g:4632:5: ( ( rule__QueryPattern__Group_3_1__0 ) )
+                    // InternalServiceDefinition.g:4391:108: ( ( ( rule__QueryPattern__Group_3_1__0 ) ) )
+                    // InternalServiceDefinition.g:4392:5: ( ( rule__QueryPattern__Group_3_1__0 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3(), 1);
@@ -13857,12 +13287,12 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
                     					selected = true;
                     				
-                    // InternalServiceDefinition.g:4638:5: ( ( rule__QueryPattern__Group_3_1__0 ) )
-                    // InternalServiceDefinition.g:4639:6: ( rule__QueryPattern__Group_3_1__0 )
+                    // InternalServiceDefinition.g:4398:5: ( ( rule__QueryPattern__Group_3_1__0 ) )
+                    // InternalServiceDefinition.g:4399:6: ( rule__QueryPattern__Group_3_1__0 )
                     {
                      before(grammarAccess.getQueryPatternAccess().getGroup_3_1()); 
-                    // InternalServiceDefinition.g:4640:6: ( rule__QueryPattern__Group_3_1__0 )
-                    // InternalServiceDefinition.g:4640:7: rule__QueryPattern__Group_3_1__0
+                    // InternalServiceDefinition.g:4400:6: ( rule__QueryPattern__Group_3_1__0 )
+                    // InternalServiceDefinition.g:4400:7: rule__QueryPattern__Group_3_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__QueryPattern__Group_3_1__0();
@@ -13909,33 +13339,33 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__UnorderedGroup_3__0"
-    // InternalServiceDefinition.g:4653:1: rule__QueryPattern__UnorderedGroup_3__0 : rule__QueryPattern__UnorderedGroup_3__Impl ( rule__QueryPattern__UnorderedGroup_3__1 )? ;
+    // InternalServiceDefinition.g:4413:1: rule__QueryPattern__UnorderedGroup_3__0 : rule__QueryPattern__UnorderedGroup_3__Impl ( rule__QueryPattern__UnorderedGroup_3__1 )? ;
     public final void rule__QueryPattern__UnorderedGroup_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4657:1: ( rule__QueryPattern__UnorderedGroup_3__Impl ( rule__QueryPattern__UnorderedGroup_3__1 )? )
-            // InternalServiceDefinition.g:4658:2: rule__QueryPattern__UnorderedGroup_3__Impl ( rule__QueryPattern__UnorderedGroup_3__1 )?
+            // InternalServiceDefinition.g:4417:1: ( rule__QueryPattern__UnorderedGroup_3__Impl ( rule__QueryPattern__UnorderedGroup_3__1 )? )
+            // InternalServiceDefinition.g:4418:2: rule__QueryPattern__UnorderedGroup_3__Impl ( rule__QueryPattern__UnorderedGroup_3__1 )?
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_45);
             rule__QueryPattern__UnorderedGroup_3__Impl();
 
             state._fsp--;
 
-            // InternalServiceDefinition.g:4659:2: ( rule__QueryPattern__UnorderedGroup_3__1 )?
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            // InternalServiceDefinition.g:4419:2: ( rule__QueryPattern__UnorderedGroup_3__1 )?
+            int alt33=2;
+            int LA33_0 = input.LA(1);
 
-            if ( LA32_0 == 43 && getUnorderedGroupHelper().canSelect(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3(), 0) ) {
-                alt32=1;
+            if ( LA33_0 == 45 && getUnorderedGroupHelper().canSelect(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3(), 0) ) {
+                alt33=1;
             }
-            else if ( LA32_0 == 44 && getUnorderedGroupHelper().canSelect(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3(), 1) ) {
-                alt32=1;
+            else if ( LA33_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getQueryPatternAccess().getUnorderedGroup_3(), 1) ) {
+                alt33=1;
             }
-            switch (alt32) {
+            switch (alt33) {
                 case 1 :
-                    // InternalServiceDefinition.g:4659:2: rule__QueryPattern__UnorderedGroup_3__1
+                    // InternalServiceDefinition.g:4419:2: rule__QueryPattern__UnorderedGroup_3__1
                     {
                     pushFollow(FOLLOW_2);
                     rule__QueryPattern__UnorderedGroup_3__1();
@@ -13967,14 +13397,14 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__UnorderedGroup_3__1"
-    // InternalServiceDefinition.g:4665:1: rule__QueryPattern__UnorderedGroup_3__1 : rule__QueryPattern__UnorderedGroup_3__Impl ;
+    // InternalServiceDefinition.g:4425:1: rule__QueryPattern__UnorderedGroup_3__1 : rule__QueryPattern__UnorderedGroup_3__Impl ;
     public final void rule__QueryPattern__UnorderedGroup_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4669:1: ( rule__QueryPattern__UnorderedGroup_3__Impl )
-            // InternalServiceDefinition.g:4670:2: rule__QueryPattern__UnorderedGroup_3__Impl
+            // InternalServiceDefinition.g:4429:1: ( rule__QueryPattern__UnorderedGroup_3__Impl )
+            // InternalServiceDefinition.g:4430:2: rule__QueryPattern__UnorderedGroup_3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QueryPattern__UnorderedGroup_3__Impl();
@@ -14000,17 +13430,17 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefModel__ImportsAssignment_1"
-    // InternalServiceDefinition.g:4677:1: rule__ServiceDefModel__ImportsAssignment_1 : ( ruleCommRepoImport ) ;
+    // InternalServiceDefinition.g:4437:1: rule__ServiceDefModel__ImportsAssignment_1 : ( ruleCommRepoImport ) ;
     public final void rule__ServiceDefModel__ImportsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4681:1: ( ( ruleCommRepoImport ) )
-            // InternalServiceDefinition.g:4682:2: ( ruleCommRepoImport )
+            // InternalServiceDefinition.g:4441:1: ( ( ruleCommRepoImport ) )
+            // InternalServiceDefinition.g:4442:2: ( ruleCommRepoImport )
             {
-            // InternalServiceDefinition.g:4682:2: ( ruleCommRepoImport )
-            // InternalServiceDefinition.g:4683:3: ruleCommRepoImport
+            // InternalServiceDefinition.g:4442:2: ( ruleCommRepoImport )
+            // InternalServiceDefinition.g:4443:3: ruleCommRepoImport
             {
              before(grammarAccess.getServiceDefModelAccess().getImportsCommRepoImportParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -14041,17 +13471,17 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceDefModel__RepositoryAssignment_2"
-    // InternalServiceDefinition.g:4692:1: rule__ServiceDefModel__RepositoryAssignment_2 : ( ruleServiceDefRepository ) ;
+    // InternalServiceDefinition.g:4452:1: rule__ServiceDefModel__RepositoryAssignment_2 : ( ruleServiceDefRepository ) ;
     public final void rule__ServiceDefModel__RepositoryAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4696:1: ( ( ruleServiceDefRepository ) )
-            // InternalServiceDefinition.g:4697:2: ( ruleServiceDefRepository )
+            // InternalServiceDefinition.g:4456:1: ( ( ruleServiceDefRepository ) )
+            // InternalServiceDefinition.g:4457:2: ( ruleServiceDefRepository )
             {
-            // InternalServiceDefinition.g:4697:2: ( ruleServiceDefRepository )
-            // InternalServiceDefinition.g:4698:3: ruleServiceDefRepository
+            // InternalServiceDefinition.g:4457:2: ( ruleServiceDefRepository )
+            // InternalServiceDefinition.g:4458:3: ruleServiceDefRepository
             {
              before(grammarAccess.getServiceDefModelAccess().getRepositoryServiceDefRepositoryParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -14081,22 +13511,22 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__ServiceDefModel__RepositoryAssignment_2"
 
 
-    // $ANTLR start "rule__ServiceDefRepository__NameAssignment_1"
-    // InternalServiceDefinition.g:4707:1: rule__ServiceDefRepository__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__ServiceDefRepository__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ServiceDefRepository__DocumentationAssignment_0"
+    // InternalServiceDefinition.g:4467:1: rule__ServiceDefRepository__DocumentationAssignment_0 : ( RULE_DOCU_COMMENT ) ;
+    public final void rule__ServiceDefRepository__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4711:1: ( ( RULE_ID ) )
-            // InternalServiceDefinition.g:4712:2: ( RULE_ID )
+            // InternalServiceDefinition.g:4471:1: ( ( RULE_DOCU_COMMENT ) )
+            // InternalServiceDefinition.g:4472:2: ( RULE_DOCU_COMMENT )
             {
-            // InternalServiceDefinition.g:4712:2: ( RULE_ID )
-            // InternalServiceDefinition.g:4713:3: RULE_ID
+            // InternalServiceDefinition.g:4472:2: ( RULE_DOCU_COMMENT )
+            // InternalServiceDefinition.g:4473:3: RULE_DOCU_COMMENT
             {
-             before(grammarAccess.getServiceDefRepositoryAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getServiceDefRepositoryAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getServiceDefRepositoryAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0()); 
+            match(input,RULE_DOCU_COMMENT,FOLLOW_2); 
+             after(grammarAccess.getServiceDefRepositoryAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0()); 
 
             }
 
@@ -14115,29 +13545,66 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceDefRepository__NameAssignment_1"
+    // $ANTLR end "rule__ServiceDefRepository__DocumentationAssignment_0"
 
 
-    // $ANTLR start "rule__ServiceDefRepository__VersionAssignment_2_1"
-    // InternalServiceDefinition.g:4722:1: rule__ServiceDefRepository__VersionAssignment_2_1 : ( ruleServiceRepoVersion ) ;
-    public final void rule__ServiceDefRepository__VersionAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__ServiceDefRepository__NameAssignment_2"
+    // InternalServiceDefinition.g:4482:1: rule__ServiceDefRepository__NameAssignment_2 : ( RULE_ID ) ;
+    public final void rule__ServiceDefRepository__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4726:1: ( ( ruleServiceRepoVersion ) )
-            // InternalServiceDefinition.g:4727:2: ( ruleServiceRepoVersion )
+            // InternalServiceDefinition.g:4486:1: ( ( RULE_ID ) )
+            // InternalServiceDefinition.g:4487:2: ( RULE_ID )
             {
-            // InternalServiceDefinition.g:4727:2: ( ruleServiceRepoVersion )
-            // InternalServiceDefinition.g:4728:3: ruleServiceRepoVersion
+            // InternalServiceDefinition.g:4487:2: ( RULE_ID )
+            // InternalServiceDefinition.g:4488:3: RULE_ID
             {
-             before(grammarAccess.getServiceDefRepositoryAccess().getVersionServiceRepoVersionParserRuleCall_2_1_0()); 
+             before(grammarAccess.getServiceDefRepositoryAccess().getNameIDTerminalRuleCall_2_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getServiceDefRepositoryAccess().getNameIDTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ServiceDefRepository__NameAssignment_2"
+
+
+    // $ANTLR start "rule__ServiceDefRepository__VersionAssignment_3_1"
+    // InternalServiceDefinition.g:4497:1: rule__ServiceDefRepository__VersionAssignment_3_1 : ( ruleServiceRepoVersion ) ;
+    public final void rule__ServiceDefRepository__VersionAssignment_3_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalServiceDefinition.g:4501:1: ( ( ruleServiceRepoVersion ) )
+            // InternalServiceDefinition.g:4502:2: ( ruleServiceRepoVersion )
+            {
+            // InternalServiceDefinition.g:4502:2: ( ruleServiceRepoVersion )
+            // InternalServiceDefinition.g:4503:3: ruleServiceRepoVersion
+            {
+             before(grammarAccess.getServiceDefRepositoryAccess().getVersionServiceRepoVersionParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
             ruleServiceRepoVersion();
 
             state._fsp--;
 
-             after(grammarAccess.getServiceDefRepositoryAccess().getVersionServiceRepoVersionParserRuleCall_2_1_0()); 
+             after(grammarAccess.getServiceDefRepositoryAccess().getVersionServiceRepoVersionParserRuleCall_3_1_0()); 
 
             }
 
@@ -14156,29 +13623,29 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceDefRepository__VersionAssignment_2_1"
+    // $ANTLR end "rule__ServiceDefRepository__VersionAssignment_3_1"
 
 
-    // $ANTLR start "rule__ServiceDefRepository__ServicesAssignment_4"
-    // InternalServiceDefinition.g:4737:1: rule__ServiceDefRepository__ServicesAssignment_4 : ( ruleAbstractServiceDefinition ) ;
-    public final void rule__ServiceDefRepository__ServicesAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__ServiceDefRepository__ServicesAssignment_5"
+    // InternalServiceDefinition.g:4512:1: rule__ServiceDefRepository__ServicesAssignment_5 : ( ruleAbstractServiceDefinition ) ;
+    public final void rule__ServiceDefRepository__ServicesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4741:1: ( ( ruleAbstractServiceDefinition ) )
-            // InternalServiceDefinition.g:4742:2: ( ruleAbstractServiceDefinition )
+            // InternalServiceDefinition.g:4516:1: ( ( ruleAbstractServiceDefinition ) )
+            // InternalServiceDefinition.g:4517:2: ( ruleAbstractServiceDefinition )
             {
-            // InternalServiceDefinition.g:4742:2: ( ruleAbstractServiceDefinition )
-            // InternalServiceDefinition.g:4743:3: ruleAbstractServiceDefinition
+            // InternalServiceDefinition.g:4517:2: ( ruleAbstractServiceDefinition )
+            // InternalServiceDefinition.g:4518:3: ruleAbstractServiceDefinition
             {
-             before(grammarAccess.getServiceDefRepositoryAccess().getServicesAbstractServiceDefinitionParserRuleCall_4_0()); 
+             before(grammarAccess.getServiceDefRepositoryAccess().getServicesAbstractServiceDefinitionParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
             ruleAbstractServiceDefinition();
 
             state._fsp--;
 
-             after(grammarAccess.getServiceDefRepositoryAccess().getServicesAbstractServiceDefinitionParserRuleCall_4_0()); 
+             after(grammarAccess.getServiceDefRepositoryAccess().getServicesAbstractServiceDefinitionParserRuleCall_5_0()); 
 
             }
 
@@ -14197,21 +13664,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__ServiceDefRepository__ServicesAssignment_4"
+    // $ANTLR end "rule__ServiceDefRepository__ServicesAssignment_5"
 
 
     // $ANTLR start "rule__ServiceRepoVersion__MajorAssignment_0"
-    // InternalServiceDefinition.g:4752:1: rule__ServiceRepoVersion__MajorAssignment_0 : ( ruleEInt ) ;
+    // InternalServiceDefinition.g:4527:1: rule__ServiceRepoVersion__MajorAssignment_0 : ( ruleEInt ) ;
     public final void rule__ServiceRepoVersion__MajorAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4756:1: ( ( ruleEInt ) )
-            // InternalServiceDefinition.g:4757:2: ( ruleEInt )
+            // InternalServiceDefinition.g:4531:1: ( ( ruleEInt ) )
+            // InternalServiceDefinition.g:4532:2: ( ruleEInt )
             {
-            // InternalServiceDefinition.g:4757:2: ( ruleEInt )
-            // InternalServiceDefinition.g:4758:3: ruleEInt
+            // InternalServiceDefinition.g:4532:2: ( ruleEInt )
+            // InternalServiceDefinition.g:4533:3: ruleEInt
             {
              before(grammarAccess.getServiceRepoVersionAccess().getMajorEIntParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -14242,17 +13709,17 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceRepoVersion__MinorAssignment_2"
-    // InternalServiceDefinition.g:4767:1: rule__ServiceRepoVersion__MinorAssignment_2 : ( ruleEInt ) ;
+    // InternalServiceDefinition.g:4542:1: rule__ServiceRepoVersion__MinorAssignment_2 : ( ruleEInt ) ;
     public final void rule__ServiceRepoVersion__MinorAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4771:1: ( ( ruleEInt ) )
-            // InternalServiceDefinition.g:4772:2: ( ruleEInt )
+            // InternalServiceDefinition.g:4546:1: ( ( ruleEInt ) )
+            // InternalServiceDefinition.g:4547:2: ( ruleEInt )
             {
-            // InternalServiceDefinition.g:4772:2: ( ruleEInt )
-            // InternalServiceDefinition.g:4773:3: ruleEInt
+            // InternalServiceDefinition.g:4547:2: ( ruleEInt )
+            // InternalServiceDefinition.g:4548:3: ruleEInt
             {
              before(grammarAccess.getServiceRepoVersionAccess().getMinorEIntParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -14283,17 +13750,17 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceRepoVersion__PatchAssignment_3_1"
-    // InternalServiceDefinition.g:4782:1: rule__ServiceRepoVersion__PatchAssignment_3_1 : ( ruleEInt ) ;
+    // InternalServiceDefinition.g:4557:1: rule__ServiceRepoVersion__PatchAssignment_3_1 : ( ruleEInt ) ;
     public final void rule__ServiceRepoVersion__PatchAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4786:1: ( ( ruleEInt ) )
-            // InternalServiceDefinition.g:4787:2: ( ruleEInt )
+            // InternalServiceDefinition.g:4561:1: ( ( ruleEInt ) )
+            // InternalServiceDefinition.g:4562:2: ( ruleEInt )
             {
-            // InternalServiceDefinition.g:4787:2: ( ruleEInt )
-            // InternalServiceDefinition.g:4788:3: ruleEInt
+            // InternalServiceDefinition.g:4562:2: ( ruleEInt )
+            // InternalServiceDefinition.g:4563:3: ruleEInt
             {
              before(grammarAccess.getServiceRepoVersionAccess().getPatchEIntParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -14324,17 +13791,17 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommRepoImport__ImportedNamespaceAssignment_1"
-    // InternalServiceDefinition.g:4797:1: rule__CommRepoImport__ImportedNamespaceAssignment_1 : ( ruleFQNW ) ;
+    // InternalServiceDefinition.g:4572:1: rule__CommRepoImport__ImportedNamespaceAssignment_1 : ( ruleFQNW ) ;
     public final void rule__CommRepoImport__ImportedNamespaceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4801:1: ( ( ruleFQNW ) )
-            // InternalServiceDefinition.g:4802:2: ( ruleFQNW )
+            // InternalServiceDefinition.g:4576:1: ( ( ruleFQNW ) )
+            // InternalServiceDefinition.g:4577:2: ( ruleFQNW )
             {
-            // InternalServiceDefinition.g:4802:2: ( ruleFQNW )
-            // InternalServiceDefinition.g:4803:3: ruleFQNW
+            // InternalServiceDefinition.g:4577:2: ( ruleFQNW )
+            // InternalServiceDefinition.g:4578:3: ruleFQNW
             {
              before(grammarAccess.getCommRepoImportAccess().getImportedNamespaceFQNWParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -14364,22 +13831,22 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__CommRepoImport__ImportedNamespaceAssignment_1"
 
 
-    // $ANTLR start "rule__ForkingServiceDefinition__NameAssignment_1"
-    // InternalServiceDefinition.g:4812:1: rule__ForkingServiceDefinition__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__ForkingServiceDefinition__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ForkingServiceDefinition__DocumentationAssignment_0"
+    // InternalServiceDefinition.g:4587:1: rule__ForkingServiceDefinition__DocumentationAssignment_0 : ( RULE_DOCU_COMMENT ) ;
+    public final void rule__ForkingServiceDefinition__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4816:1: ( ( RULE_ID ) )
-            // InternalServiceDefinition.g:4817:2: ( RULE_ID )
+            // InternalServiceDefinition.g:4591:1: ( ( RULE_DOCU_COMMENT ) )
+            // InternalServiceDefinition.g:4592:2: ( RULE_DOCU_COMMENT )
             {
-            // InternalServiceDefinition.g:4817:2: ( RULE_ID )
-            // InternalServiceDefinition.g:4818:3: RULE_ID
+            // InternalServiceDefinition.g:4592:2: ( RULE_DOCU_COMMENT )
+            // InternalServiceDefinition.g:4593:3: RULE_DOCU_COMMENT
             {
-             before(grammarAccess.getForkingServiceDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getForkingServiceDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getForkingServiceDefinitionAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0()); 
+            match(input,RULE_DOCU_COMMENT,FOLLOW_2); 
+             after(grammarAccess.getForkingServiceDefinitionAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0()); 
 
             }
 
@@ -14398,29 +13865,66 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__ForkingServiceDefinition__NameAssignment_1"
+    // $ANTLR end "rule__ForkingServiceDefinition__DocumentationAssignment_0"
 
 
-    // $ANTLR start "rule__ForkingServiceDefinition__PatternAssignment_3"
-    // InternalServiceDefinition.g:4827:1: rule__ForkingServiceDefinition__PatternAssignment_3 : ( ruleForkingPatternInstance ) ;
-    public final void rule__ForkingServiceDefinition__PatternAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__ForkingServiceDefinition__NameAssignment_2"
+    // InternalServiceDefinition.g:4602:1: rule__ForkingServiceDefinition__NameAssignment_2 : ( RULE_ID ) ;
+    public final void rule__ForkingServiceDefinition__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4831:1: ( ( ruleForkingPatternInstance ) )
-            // InternalServiceDefinition.g:4832:2: ( ruleForkingPatternInstance )
+            // InternalServiceDefinition.g:4606:1: ( ( RULE_ID ) )
+            // InternalServiceDefinition.g:4607:2: ( RULE_ID )
             {
-            // InternalServiceDefinition.g:4832:2: ( ruleForkingPatternInstance )
-            // InternalServiceDefinition.g:4833:3: ruleForkingPatternInstance
+            // InternalServiceDefinition.g:4607:2: ( RULE_ID )
+            // InternalServiceDefinition.g:4608:3: RULE_ID
             {
-             before(grammarAccess.getForkingServiceDefinitionAccess().getPatternForkingPatternInstanceParserRuleCall_3_0()); 
+             before(grammarAccess.getForkingServiceDefinitionAccess().getNameIDTerminalRuleCall_2_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getForkingServiceDefinitionAccess().getNameIDTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ForkingServiceDefinition__NameAssignment_2"
+
+
+    // $ANTLR start "rule__ForkingServiceDefinition__PatternAssignment_4"
+    // InternalServiceDefinition.g:4617:1: rule__ForkingServiceDefinition__PatternAssignment_4 : ( ruleForkingPatternInstance ) ;
+    public final void rule__ForkingServiceDefinition__PatternAssignment_4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalServiceDefinition.g:4621:1: ( ( ruleForkingPatternInstance ) )
+            // InternalServiceDefinition.g:4622:2: ( ruleForkingPatternInstance )
+            {
+            // InternalServiceDefinition.g:4622:2: ( ruleForkingPatternInstance )
+            // InternalServiceDefinition.g:4623:3: ruleForkingPatternInstance
+            {
+             before(grammarAccess.getForkingServiceDefinitionAccess().getPatternForkingPatternInstanceParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
             ruleForkingPatternInstance();
 
             state._fsp--;
 
-             after(grammarAccess.getForkingServiceDefinitionAccess().getPatternForkingPatternInstanceParserRuleCall_3_0()); 
+             after(grammarAccess.getForkingServiceDefinitionAccess().getPatternForkingPatternInstanceParserRuleCall_4_0()); 
 
             }
 
@@ -14439,62 +13943,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__ForkingServiceDefinition__PatternAssignment_3"
-
-
-    // $ANTLR start "rule__ForkingServiceDefinition__PurposeDescriptionAssignment_4_1"
-    // InternalServiceDefinition.g:4842:1: rule__ForkingServiceDefinition__PurposeDescriptionAssignment_4_1 : ( ruleEString ) ;
-    public final void rule__ForkingServiceDefinition__PurposeDescriptionAssignment_4_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:4846:1: ( ( ruleEString ) )
-            // InternalServiceDefinition.g:4847:2: ( ruleEString )
-            {
-            // InternalServiceDefinition.g:4847:2: ( ruleEString )
-            // InternalServiceDefinition.g:4848:3: ruleEString
-            {
-             before(grammarAccess.getForkingServiceDefinitionAccess().getPurposeDescriptionEStringParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_2);
-            ruleEString();
-
-            state._fsp--;
-
-             after(grammarAccess.getForkingServiceDefinitionAccess().getPurposeDescriptionEStringParserRuleCall_4_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ForkingServiceDefinition__PurposeDescriptionAssignment_4_1"
+    // $ANTLR end "rule__ForkingServiceDefinition__PatternAssignment_4"
 
 
     // $ANTLR start "rule__ForkingServiceDefinition__PropertiesAssignment_5"
-    // InternalServiceDefinition.g:4857:1: rule__ForkingServiceDefinition__PropertiesAssignment_5 : ( ruleServiceProperty ) ;
+    // InternalServiceDefinition.g:4632:1: rule__ForkingServiceDefinition__PropertiesAssignment_5 : ( ruleServiceProperty ) ;
     public final void rule__ForkingServiceDefinition__PropertiesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4861:1: ( ( ruleServiceProperty ) )
-            // InternalServiceDefinition.g:4862:2: ( ruleServiceProperty )
+            // InternalServiceDefinition.g:4636:1: ( ( ruleServiceProperty ) )
+            // InternalServiceDefinition.g:4637:2: ( ruleServiceProperty )
             {
-            // InternalServiceDefinition.g:4862:2: ( ruleServiceProperty )
-            // InternalServiceDefinition.g:4863:3: ruleServiceProperty
+            // InternalServiceDefinition.g:4637:2: ( ruleServiceProperty )
+            // InternalServiceDefinition.g:4638:3: ruleServiceProperty
             {
              before(grammarAccess.getForkingServiceDefinitionAccess().getPropertiesServicePropertyParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -14524,22 +13987,22 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__ForkingServiceDefinition__PropertiesAssignment_5"
 
 
-    // $ANTLR start "rule__JoyningServiceDefinition__NameAssignment_1"
-    // InternalServiceDefinition.g:4872:1: rule__JoyningServiceDefinition__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__JoyningServiceDefinition__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__JoyningServiceDefinition__DocumentationAssignment_0"
+    // InternalServiceDefinition.g:4647:1: rule__JoyningServiceDefinition__DocumentationAssignment_0 : ( RULE_DOCU_COMMENT ) ;
+    public final void rule__JoyningServiceDefinition__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4876:1: ( ( RULE_ID ) )
-            // InternalServiceDefinition.g:4877:2: ( RULE_ID )
+            // InternalServiceDefinition.g:4651:1: ( ( RULE_DOCU_COMMENT ) )
+            // InternalServiceDefinition.g:4652:2: ( RULE_DOCU_COMMENT )
             {
-            // InternalServiceDefinition.g:4877:2: ( RULE_ID )
-            // InternalServiceDefinition.g:4878:3: RULE_ID
+            // InternalServiceDefinition.g:4652:2: ( RULE_DOCU_COMMENT )
+            // InternalServiceDefinition.g:4653:3: RULE_DOCU_COMMENT
             {
-             before(grammarAccess.getJoyningServiceDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getJoyningServiceDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getJoyningServiceDefinitionAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0()); 
+            match(input,RULE_DOCU_COMMENT,FOLLOW_2); 
+             after(grammarAccess.getJoyningServiceDefinitionAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0()); 
 
             }
 
@@ -14558,29 +14021,66 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__JoyningServiceDefinition__NameAssignment_1"
+    // $ANTLR end "rule__JoyningServiceDefinition__DocumentationAssignment_0"
 
 
-    // $ANTLR start "rule__JoyningServiceDefinition__PatternAssignment_3"
-    // InternalServiceDefinition.g:4887:1: rule__JoyningServiceDefinition__PatternAssignment_3 : ( ruleJoiningPatternInstance ) ;
-    public final void rule__JoyningServiceDefinition__PatternAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__JoyningServiceDefinition__NameAssignment_2"
+    // InternalServiceDefinition.g:4662:1: rule__JoyningServiceDefinition__NameAssignment_2 : ( RULE_ID ) ;
+    public final void rule__JoyningServiceDefinition__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4891:1: ( ( ruleJoiningPatternInstance ) )
-            // InternalServiceDefinition.g:4892:2: ( ruleJoiningPatternInstance )
+            // InternalServiceDefinition.g:4666:1: ( ( RULE_ID ) )
+            // InternalServiceDefinition.g:4667:2: ( RULE_ID )
             {
-            // InternalServiceDefinition.g:4892:2: ( ruleJoiningPatternInstance )
-            // InternalServiceDefinition.g:4893:3: ruleJoiningPatternInstance
+            // InternalServiceDefinition.g:4667:2: ( RULE_ID )
+            // InternalServiceDefinition.g:4668:3: RULE_ID
             {
-             before(grammarAccess.getJoyningServiceDefinitionAccess().getPatternJoiningPatternInstanceParserRuleCall_3_0()); 
+             before(grammarAccess.getJoyningServiceDefinitionAccess().getNameIDTerminalRuleCall_2_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getJoyningServiceDefinitionAccess().getNameIDTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__JoyningServiceDefinition__NameAssignment_2"
+
+
+    // $ANTLR start "rule__JoyningServiceDefinition__PatternAssignment_4"
+    // InternalServiceDefinition.g:4677:1: rule__JoyningServiceDefinition__PatternAssignment_4 : ( ruleJoiningPatternInstance ) ;
+    public final void rule__JoyningServiceDefinition__PatternAssignment_4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalServiceDefinition.g:4681:1: ( ( ruleJoiningPatternInstance ) )
+            // InternalServiceDefinition.g:4682:2: ( ruleJoiningPatternInstance )
+            {
+            // InternalServiceDefinition.g:4682:2: ( ruleJoiningPatternInstance )
+            // InternalServiceDefinition.g:4683:3: ruleJoiningPatternInstance
+            {
+             before(grammarAccess.getJoyningServiceDefinitionAccess().getPatternJoiningPatternInstanceParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
             ruleJoiningPatternInstance();
 
             state._fsp--;
 
-             after(grammarAccess.getJoyningServiceDefinitionAccess().getPatternJoiningPatternInstanceParserRuleCall_3_0()); 
+             after(grammarAccess.getJoyningServiceDefinitionAccess().getPatternJoiningPatternInstanceParserRuleCall_4_0()); 
 
             }
 
@@ -14599,62 +14099,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__JoyningServiceDefinition__PatternAssignment_3"
-
-
-    // $ANTLR start "rule__JoyningServiceDefinition__PurposeDescriptionAssignment_4_1"
-    // InternalServiceDefinition.g:4902:1: rule__JoyningServiceDefinition__PurposeDescriptionAssignment_4_1 : ( ruleEString ) ;
-    public final void rule__JoyningServiceDefinition__PurposeDescriptionAssignment_4_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:4906:1: ( ( ruleEString ) )
-            // InternalServiceDefinition.g:4907:2: ( ruleEString )
-            {
-            // InternalServiceDefinition.g:4907:2: ( ruleEString )
-            // InternalServiceDefinition.g:4908:3: ruleEString
-            {
-             before(grammarAccess.getJoyningServiceDefinitionAccess().getPurposeDescriptionEStringParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_2);
-            ruleEString();
-
-            state._fsp--;
-
-             after(grammarAccess.getJoyningServiceDefinitionAccess().getPurposeDescriptionEStringParserRuleCall_4_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__JoyningServiceDefinition__PurposeDescriptionAssignment_4_1"
+    // $ANTLR end "rule__JoyningServiceDefinition__PatternAssignment_4"
 
 
     // $ANTLR start "rule__JoyningServiceDefinition__PropertiesAssignment_5"
-    // InternalServiceDefinition.g:4917:1: rule__JoyningServiceDefinition__PropertiesAssignment_5 : ( ruleServiceProperty ) ;
+    // InternalServiceDefinition.g:4692:1: rule__JoyningServiceDefinition__PropertiesAssignment_5 : ( ruleServiceProperty ) ;
     public final void rule__JoyningServiceDefinition__PropertiesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4921:1: ( ( ruleServiceProperty ) )
-            // InternalServiceDefinition.g:4922:2: ( ruleServiceProperty )
+            // InternalServiceDefinition.g:4696:1: ( ( ruleServiceProperty ) )
+            // InternalServiceDefinition.g:4697:2: ( ruleServiceProperty )
             {
-            // InternalServiceDefinition.g:4922:2: ( ruleServiceProperty )
-            // InternalServiceDefinition.g:4923:3: ruleServiceProperty
+            // InternalServiceDefinition.g:4697:2: ( ruleServiceProperty )
+            // InternalServiceDefinition.g:4698:3: ruleServiceProperty
             {
              before(grammarAccess.getJoyningServiceDefinitionAccess().getPropertiesServicePropertyParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -14684,22 +14143,22 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__JoyningServiceDefinition__PropertiesAssignment_5"
 
 
-    // $ANTLR start "rule__RequestAnswerServiceDefinition__NameAssignment_1"
-    // InternalServiceDefinition.g:4932:1: rule__RequestAnswerServiceDefinition__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__RequestAnswerServiceDefinition__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__RequestAnswerServiceDefinition__DocumentationAssignment_0"
+    // InternalServiceDefinition.g:4707:1: rule__RequestAnswerServiceDefinition__DocumentationAssignment_0 : ( RULE_DOCU_COMMENT ) ;
+    public final void rule__RequestAnswerServiceDefinition__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4936:1: ( ( RULE_ID ) )
-            // InternalServiceDefinition.g:4937:2: ( RULE_ID )
+            // InternalServiceDefinition.g:4711:1: ( ( RULE_DOCU_COMMENT ) )
+            // InternalServiceDefinition.g:4712:2: ( RULE_DOCU_COMMENT )
             {
-            // InternalServiceDefinition.g:4937:2: ( RULE_ID )
-            // InternalServiceDefinition.g:4938:3: RULE_ID
+            // InternalServiceDefinition.g:4712:2: ( RULE_DOCU_COMMENT )
+            // InternalServiceDefinition.g:4713:3: RULE_DOCU_COMMENT
             {
-             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0()); 
+            match(input,RULE_DOCU_COMMENT,FOLLOW_2); 
+             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0()); 
 
             }
 
@@ -14718,29 +14177,66 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__RequestAnswerServiceDefinition__NameAssignment_1"
+    // $ANTLR end "rule__RequestAnswerServiceDefinition__DocumentationAssignment_0"
 
 
-    // $ANTLR start "rule__RequestAnswerServiceDefinition__PatternAssignment_3"
-    // InternalServiceDefinition.g:4947:1: rule__RequestAnswerServiceDefinition__PatternAssignment_3 : ( ruleRequestAnswerPattern ) ;
-    public final void rule__RequestAnswerServiceDefinition__PatternAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__RequestAnswerServiceDefinition__NameAssignment_2"
+    // InternalServiceDefinition.g:4722:1: rule__RequestAnswerServiceDefinition__NameAssignment_2 : ( RULE_ID ) ;
+    public final void rule__RequestAnswerServiceDefinition__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4951:1: ( ( ruleRequestAnswerPattern ) )
-            // InternalServiceDefinition.g:4952:2: ( ruleRequestAnswerPattern )
+            // InternalServiceDefinition.g:4726:1: ( ( RULE_ID ) )
+            // InternalServiceDefinition.g:4727:2: ( RULE_ID )
             {
-            // InternalServiceDefinition.g:4952:2: ( ruleRequestAnswerPattern )
-            // InternalServiceDefinition.g:4953:3: ruleRequestAnswerPattern
+            // InternalServiceDefinition.g:4727:2: ( RULE_ID )
+            // InternalServiceDefinition.g:4728:3: RULE_ID
             {
-             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPatternRequestAnswerPatternParserRuleCall_3_0()); 
+             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getNameIDTerminalRuleCall_2_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getNameIDTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RequestAnswerServiceDefinition__NameAssignment_2"
+
+
+    // $ANTLR start "rule__RequestAnswerServiceDefinition__PatternAssignment_4"
+    // InternalServiceDefinition.g:4737:1: rule__RequestAnswerServiceDefinition__PatternAssignment_4 : ( ruleRequestAnswerPattern ) ;
+    public final void rule__RequestAnswerServiceDefinition__PatternAssignment_4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalServiceDefinition.g:4741:1: ( ( ruleRequestAnswerPattern ) )
+            // InternalServiceDefinition.g:4742:2: ( ruleRequestAnswerPattern )
+            {
+            // InternalServiceDefinition.g:4742:2: ( ruleRequestAnswerPattern )
+            // InternalServiceDefinition.g:4743:3: ruleRequestAnswerPattern
+            {
+             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPatternRequestAnswerPatternParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
             ruleRequestAnswerPattern();
 
             state._fsp--;
 
-             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPatternRequestAnswerPatternParserRuleCall_3_0()); 
+             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPatternRequestAnswerPatternParserRuleCall_4_0()); 
 
             }
 
@@ -14759,62 +14255,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__RequestAnswerServiceDefinition__PatternAssignment_3"
-
-
-    // $ANTLR start "rule__RequestAnswerServiceDefinition__PurposeDescriptionAssignment_4_1"
-    // InternalServiceDefinition.g:4962:1: rule__RequestAnswerServiceDefinition__PurposeDescriptionAssignment_4_1 : ( ruleEString ) ;
-    public final void rule__RequestAnswerServiceDefinition__PurposeDescriptionAssignment_4_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:4966:1: ( ( ruleEString ) )
-            // InternalServiceDefinition.g:4967:2: ( ruleEString )
-            {
-            // InternalServiceDefinition.g:4967:2: ( ruleEString )
-            // InternalServiceDefinition.g:4968:3: ruleEString
-            {
-             before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPurposeDescriptionEStringParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_2);
-            ruleEString();
-
-            state._fsp--;
-
-             after(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPurposeDescriptionEStringParserRuleCall_4_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RequestAnswerServiceDefinition__PurposeDescriptionAssignment_4_1"
+    // $ANTLR end "rule__RequestAnswerServiceDefinition__PatternAssignment_4"
 
 
     // $ANTLR start "rule__RequestAnswerServiceDefinition__PropertiesAssignment_5"
-    // InternalServiceDefinition.g:4977:1: rule__RequestAnswerServiceDefinition__PropertiesAssignment_5 : ( ruleServiceProperty ) ;
+    // InternalServiceDefinition.g:4752:1: rule__RequestAnswerServiceDefinition__PropertiesAssignment_5 : ( ruleServiceProperty ) ;
     public final void rule__RequestAnswerServiceDefinition__PropertiesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4981:1: ( ( ruleServiceProperty ) )
-            // InternalServiceDefinition.g:4982:2: ( ruleServiceProperty )
+            // InternalServiceDefinition.g:4756:1: ( ( ruleServiceProperty ) )
+            // InternalServiceDefinition.g:4757:2: ( ruleServiceProperty )
             {
-            // InternalServiceDefinition.g:4982:2: ( ruleServiceProperty )
-            // InternalServiceDefinition.g:4983:3: ruleServiceProperty
+            // InternalServiceDefinition.g:4757:2: ( ruleServiceProperty )
+            // InternalServiceDefinition.g:4758:3: ruleServiceProperty
             {
              before(grammarAccess.getRequestAnswerServiceDefinitionAccess().getPropertiesServicePropertyParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -14844,22 +14299,59 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__RequestAnswerServiceDefinition__PropertiesAssignment_5"
 
 
-    // $ANTLR start "rule__CoordinationServiceDefinition__NameAssignment_1"
-    // InternalServiceDefinition.g:4992:1: rule__CoordinationServiceDefinition__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__CoordinationServiceDefinition__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationServiceDefinition__DocumentationAssignment_0"
+    // InternalServiceDefinition.g:4767:1: rule__CoordinationServiceDefinition__DocumentationAssignment_0 : ( RULE_DOCU_COMMENT ) ;
+    public final void rule__CoordinationServiceDefinition__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:4996:1: ( ( RULE_ID ) )
-            // InternalServiceDefinition.g:4997:2: ( RULE_ID )
+            // InternalServiceDefinition.g:4771:1: ( ( RULE_DOCU_COMMENT ) )
+            // InternalServiceDefinition.g:4772:2: ( RULE_DOCU_COMMENT )
             {
-            // InternalServiceDefinition.g:4997:2: ( RULE_ID )
-            // InternalServiceDefinition.g:4998:3: RULE_ID
+            // InternalServiceDefinition.g:4772:2: ( RULE_DOCU_COMMENT )
+            // InternalServiceDefinition.g:4773:3: RULE_DOCU_COMMENT
             {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0()); 
+            match(input,RULE_DOCU_COMMENT,FOLLOW_2); 
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getDocumentationDOCU_COMMENTTerminalRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__CoordinationServiceDefinition__DocumentationAssignment_0"
+
+
+    // $ANTLR start "rule__CoordinationServiceDefinition__NameAssignment_2"
+    // InternalServiceDefinition.g:4782:1: rule__CoordinationServiceDefinition__NameAssignment_2 : ( RULE_ID ) ;
+    public final void rule__CoordinationServiceDefinition__NameAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalServiceDefinition.g:4786:1: ( ( RULE_ID ) )
+            // InternalServiceDefinition.g:4787:2: ( RULE_ID )
+            {
+            // InternalServiceDefinition.g:4787:2: ( RULE_ID )
+            // InternalServiceDefinition.g:4788:3: RULE_ID
+            {
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
 
@@ -14878,70 +14370,29 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__CoordinationServiceDefinition__NameAssignment_1"
+    // $ANTLR end "rule__CoordinationServiceDefinition__NameAssignment_2"
 
 
-    // $ANTLR start "rule__CoordinationServiceDefinition__PurposeDescriptionAssignment_3_0_1"
-    // InternalServiceDefinition.g:5007:1: rule__CoordinationServiceDefinition__PurposeDescriptionAssignment_3_0_1 : ( ruleEString ) ;
-    public final void rule__CoordinationServiceDefinition__PurposeDescriptionAssignment_3_0_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalServiceDefinition.g:5011:1: ( ( ruleEString ) )
-            // InternalServiceDefinition.g:5012:2: ( ruleEString )
-            {
-            // InternalServiceDefinition.g:5012:2: ( ruleEString )
-            // InternalServiceDefinition.g:5013:3: ruleEString
-            {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getPurposeDescriptionEStringParserRuleCall_3_0_1_0()); 
-            pushFollow(FOLLOW_2);
-            ruleEString();
-
-            state._fsp--;
-
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getPurposeDescriptionEStringParserRuleCall_3_0_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CoordinationServiceDefinition__PurposeDescriptionAssignment_3_0_1"
-
-
-    // $ANTLR start "rule__CoordinationServiceDefinition__StatePatternAssignment_3_1"
-    // InternalServiceDefinition.g:5022:1: rule__CoordinationServiceDefinition__StatePatternAssignment_3_1 : ( ruleStatePattern ) ;
-    public final void rule__CoordinationServiceDefinition__StatePatternAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationServiceDefinition__StatePatternAssignment_4_0"
+    // InternalServiceDefinition.g:4797:1: rule__CoordinationServiceDefinition__StatePatternAssignment_4_0 : ( ruleStatePattern ) ;
+    public final void rule__CoordinationServiceDefinition__StatePatternAssignment_4_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5026:1: ( ( ruleStatePattern ) )
-            // InternalServiceDefinition.g:5027:2: ( ruleStatePattern )
+            // InternalServiceDefinition.g:4801:1: ( ( ruleStatePattern ) )
+            // InternalServiceDefinition.g:4802:2: ( ruleStatePattern )
             {
-            // InternalServiceDefinition.g:5027:2: ( ruleStatePattern )
-            // InternalServiceDefinition.g:5028:3: ruleStatePattern
+            // InternalServiceDefinition.g:4802:2: ( ruleStatePattern )
+            // InternalServiceDefinition.g:4803:3: ruleStatePattern
             {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getStatePatternStatePatternParserRuleCall_3_1_0()); 
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getStatePatternStatePatternParserRuleCall_4_0_0()); 
             pushFollow(FOLLOW_2);
             ruleStatePattern();
 
             state._fsp--;
 
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getStatePatternStatePatternParserRuleCall_3_1_0()); 
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getStatePatternStatePatternParserRuleCall_4_0_0()); 
 
             }
 
@@ -14960,29 +14411,29 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__CoordinationServiceDefinition__StatePatternAssignment_3_1"
+    // $ANTLR end "rule__CoordinationServiceDefinition__StatePatternAssignment_4_0"
 
 
-    // $ANTLR start "rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2"
-    // InternalServiceDefinition.g:5037:1: rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2 : ( ruleParameterPattern ) ;
-    public final void rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1"
+    // InternalServiceDefinition.g:4812:1: rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1 : ( ruleParameterPattern ) ;
+    public final void rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5041:1: ( ( ruleParameterPattern ) )
-            // InternalServiceDefinition.g:5042:2: ( ruleParameterPattern )
+            // InternalServiceDefinition.g:4816:1: ( ( ruleParameterPattern ) )
+            // InternalServiceDefinition.g:4817:2: ( ruleParameterPattern )
             {
-            // InternalServiceDefinition.g:5042:2: ( ruleParameterPattern )
-            // InternalServiceDefinition.g:5043:3: ruleParameterPattern
+            // InternalServiceDefinition.g:4817:2: ( ruleParameterPattern )
+            // InternalServiceDefinition.g:4818:3: ruleParameterPattern
             {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getParameterPatternParameterPatternParserRuleCall_3_2_0()); 
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getParameterPatternParameterPatternParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
             ruleParameterPattern();
 
             state._fsp--;
 
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getParameterPatternParameterPatternParserRuleCall_3_2_0()); 
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getParameterPatternParameterPatternParserRuleCall_4_1_0()); 
 
             }
 
@@ -15001,29 +14452,29 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__CoordinationServiceDefinition__ParameterPatternAssignment_3_2"
+    // $ANTLR end "rule__CoordinationServiceDefinition__ParameterPatternAssignment_4_1"
 
 
-    // $ANTLR start "rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3"
-    // InternalServiceDefinition.g:5052:1: rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3 : ( ruleMonitoringPattern ) ;
-    public final void rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2"
+    // InternalServiceDefinition.g:4827:1: rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2 : ( ruleMonitoringPattern ) ;
+    public final void rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5056:1: ( ( ruleMonitoringPattern ) )
-            // InternalServiceDefinition.g:5057:2: ( ruleMonitoringPattern )
+            // InternalServiceDefinition.g:4831:1: ( ( ruleMonitoringPattern ) )
+            // InternalServiceDefinition.g:4832:2: ( ruleMonitoringPattern )
             {
-            // InternalServiceDefinition.g:5057:2: ( ruleMonitoringPattern )
-            // InternalServiceDefinition.g:5058:3: ruleMonitoringPattern
+            // InternalServiceDefinition.g:4832:2: ( ruleMonitoringPattern )
+            // InternalServiceDefinition.g:4833:3: ruleMonitoringPattern
             {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getMonitoringPatternMonitoringPatternParserRuleCall_3_3_0()); 
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getMonitoringPatternMonitoringPatternParserRuleCall_4_2_0()); 
             pushFollow(FOLLOW_2);
             ruleMonitoringPattern();
 
             state._fsp--;
 
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getMonitoringPatternMonitoringPatternParserRuleCall_3_3_0()); 
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getMonitoringPatternMonitoringPatternParserRuleCall_4_2_0()); 
 
             }
 
@@ -15042,29 +14493,29 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__CoordinationServiceDefinition__MonitoringPatternAssignment_3_3"
+    // $ANTLR end "rule__CoordinationServiceDefinition__MonitoringPatternAssignment_4_2"
 
 
-    // $ANTLR start "rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4"
-    // InternalServiceDefinition.g:5067:1: rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4 : ( ruleDynamicWiringPattern ) ;
-    public final void rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3"
+    // InternalServiceDefinition.g:4842:1: rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3 : ( ruleDynamicWiringPattern ) ;
+    public final void rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5071:1: ( ( ruleDynamicWiringPattern ) )
-            // InternalServiceDefinition.g:5072:2: ( ruleDynamicWiringPattern )
+            // InternalServiceDefinition.g:4846:1: ( ( ruleDynamicWiringPattern ) )
+            // InternalServiceDefinition.g:4847:2: ( ruleDynamicWiringPattern )
             {
-            // InternalServiceDefinition.g:5072:2: ( ruleDynamicWiringPattern )
-            // InternalServiceDefinition.g:5073:3: ruleDynamicWiringPattern
+            // InternalServiceDefinition.g:4847:2: ( ruleDynamicWiringPattern )
+            // InternalServiceDefinition.g:4848:3: ruleDynamicWiringPattern
             {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getWiringPatternDynamicWiringPatternParserRuleCall_3_4_0()); 
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getWiringPatternDynamicWiringPatternParserRuleCall_4_3_0()); 
             pushFollow(FOLLOW_2);
             ruleDynamicWiringPattern();
 
             state._fsp--;
 
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getWiringPatternDynamicWiringPatternParserRuleCall_3_4_0()); 
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getWiringPatternDynamicWiringPatternParserRuleCall_4_3_0()); 
 
             }
 
@@ -15083,29 +14534,29 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__CoordinationServiceDefinition__WiringPatternAssignment_3_4"
+    // $ANTLR end "rule__CoordinationServiceDefinition__WiringPatternAssignment_4_3"
 
 
-    // $ANTLR start "rule__CoordinationServiceDefinition__ServicesAssignment_4"
-    // InternalServiceDefinition.g:5082:1: rule__CoordinationServiceDefinition__ServicesAssignment_4 : ( ruleCommunicationServiceUsage ) ;
-    public final void rule__CoordinationServiceDefinition__ServicesAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationServiceDefinition__ServicesAssignment_5"
+    // InternalServiceDefinition.g:4857:1: rule__CoordinationServiceDefinition__ServicesAssignment_5 : ( ruleCommunicationServiceUsage ) ;
+    public final void rule__CoordinationServiceDefinition__ServicesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5086:1: ( ( ruleCommunicationServiceUsage ) )
-            // InternalServiceDefinition.g:5087:2: ( ruleCommunicationServiceUsage )
+            // InternalServiceDefinition.g:4861:1: ( ( ruleCommunicationServiceUsage ) )
+            // InternalServiceDefinition.g:4862:2: ( ruleCommunicationServiceUsage )
             {
-            // InternalServiceDefinition.g:5087:2: ( ruleCommunicationServiceUsage )
-            // InternalServiceDefinition.g:5088:3: ruleCommunicationServiceUsage
+            // InternalServiceDefinition.g:4862:2: ( ruleCommunicationServiceUsage )
+            // InternalServiceDefinition.g:4863:3: ruleCommunicationServiceUsage
             {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getServicesCommunicationServiceUsageParserRuleCall_4_0()); 
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getServicesCommunicationServiceUsageParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
             ruleCommunicationServiceUsage();
 
             state._fsp--;
 
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getServicesCommunicationServiceUsageParserRuleCall_4_0()); 
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getServicesCommunicationServiceUsageParserRuleCall_5_0()); 
 
             }
 
@@ -15124,29 +14575,29 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__CoordinationServiceDefinition__ServicesAssignment_4"
+    // $ANTLR end "rule__CoordinationServiceDefinition__ServicesAssignment_5"
 
 
-    // $ANTLR start "rule__CoordinationServiceDefinition__PropertiesAssignment_5"
-    // InternalServiceDefinition.g:5097:1: rule__CoordinationServiceDefinition__PropertiesAssignment_5 : ( ruleServiceProperty ) ;
-    public final void rule__CoordinationServiceDefinition__PropertiesAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__CoordinationServiceDefinition__PropertiesAssignment_6"
+    // InternalServiceDefinition.g:4872:1: rule__CoordinationServiceDefinition__PropertiesAssignment_6 : ( ruleServiceProperty ) ;
+    public final void rule__CoordinationServiceDefinition__PropertiesAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5101:1: ( ( ruleServiceProperty ) )
-            // InternalServiceDefinition.g:5102:2: ( ruleServiceProperty )
+            // InternalServiceDefinition.g:4876:1: ( ( ruleServiceProperty ) )
+            // InternalServiceDefinition.g:4877:2: ( ruleServiceProperty )
             {
-            // InternalServiceDefinition.g:5102:2: ( ruleServiceProperty )
-            // InternalServiceDefinition.g:5103:3: ruleServiceProperty
+            // InternalServiceDefinition.g:4877:2: ( ruleServiceProperty )
+            // InternalServiceDefinition.g:4878:3: ruleServiceProperty
             {
-             before(grammarAccess.getCoordinationServiceDefinitionAccess().getPropertiesServicePropertyParserRuleCall_5_0()); 
+             before(grammarAccess.getCoordinationServiceDefinitionAccess().getPropertiesServicePropertyParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
             ruleServiceProperty();
 
             state._fsp--;
 
-             after(grammarAccess.getCoordinationServiceDefinitionAccess().getPropertiesServicePropertyParserRuleCall_5_0()); 
+             after(grammarAccess.getCoordinationServiceDefinitionAccess().getPropertiesServicePropertyParserRuleCall_6_0()); 
 
             }
 
@@ -15165,21 +14616,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__CoordinationServiceDefinition__PropertiesAssignment_5"
+    // $ANTLR end "rule__CoordinationServiceDefinition__PropertiesAssignment_6"
 
 
     // $ANTLR start "rule__CommunicationServiceUsage__NameAssignment_1"
-    // InternalServiceDefinition.g:5112:1: rule__CommunicationServiceUsage__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalServiceDefinition.g:4887:1: rule__CommunicationServiceUsage__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__CommunicationServiceUsage__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5116:1: ( ( RULE_ID ) )
-            // InternalServiceDefinition.g:5117:2: ( RULE_ID )
+            // InternalServiceDefinition.g:4891:1: ( ( RULE_ID ) )
+            // InternalServiceDefinition.g:4892:2: ( RULE_ID )
             {
-            // InternalServiceDefinition.g:5117:2: ( RULE_ID )
-            // InternalServiceDefinition.g:5118:3: RULE_ID
+            // InternalServiceDefinition.g:4892:2: ( RULE_ID )
+            // InternalServiceDefinition.g:4893:3: RULE_ID
             {
              before(grammarAccess.getCommunicationServiceUsageAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15206,21 +14657,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__CommunicationServiceUsage__UsesAssignment_3"
-    // InternalServiceDefinition.g:5127:1: rule__CommunicationServiceUsage__UsesAssignment_3 : ( ( ruleFQN ) ) ;
+    // InternalServiceDefinition.g:4902:1: rule__CommunicationServiceUsage__UsesAssignment_3 : ( ( ruleFQN ) ) ;
     public final void rule__CommunicationServiceUsage__UsesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5131:1: ( ( ( ruleFQN ) ) )
-            // InternalServiceDefinition.g:5132:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:4906:1: ( ( ( ruleFQN ) ) )
+            // InternalServiceDefinition.g:4907:2: ( ( ruleFQN ) )
             {
-            // InternalServiceDefinition.g:5132:2: ( ( ruleFQN ) )
-            // InternalServiceDefinition.g:5133:3: ( ruleFQN )
+            // InternalServiceDefinition.g:4907:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:4908:3: ( ruleFQN )
             {
              before(grammarAccess.getCommunicationServiceUsageAccess().getUsesCommunicationServiceDefinitionCrossReference_3_0()); 
-            // InternalServiceDefinition.g:5134:3: ( ruleFQN )
-            // InternalServiceDefinition.g:5135:4: ruleFQN
+            // InternalServiceDefinition.g:4909:3: ( ruleFQN )
+            // InternalServiceDefinition.g:4910:4: ruleFQN
             {
              before(grammarAccess.getCommunicationServiceUsageAccess().getUsesCommunicationServiceDefinitionFQNParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
@@ -15255,21 +14706,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__LifecycleAssignment_4"
-    // InternalServiceDefinition.g:5146:1: rule__StatePattern__LifecycleAssignment_4 : ( ( ruleFQN ) ) ;
+    // InternalServiceDefinition.g:4921:1: rule__StatePattern__LifecycleAssignment_4 : ( ( ruleFQN ) ) ;
     public final void rule__StatePattern__LifecycleAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5150:1: ( ( ( ruleFQN ) ) )
-            // InternalServiceDefinition.g:5151:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:4925:1: ( ( ( ruleFQN ) ) )
+            // InternalServiceDefinition.g:4926:2: ( ( ruleFQN ) )
             {
-            // InternalServiceDefinition.g:5151:2: ( ( ruleFQN ) )
-            // InternalServiceDefinition.g:5152:3: ( ruleFQN )
+            // InternalServiceDefinition.g:4926:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:4927:3: ( ruleFQN )
             {
              before(grammarAccess.getStatePatternAccess().getLifecycleStateMachineCrossReference_4_0()); 
-            // InternalServiceDefinition.g:5153:3: ( ruleFQN )
-            // InternalServiceDefinition.g:5154:4: ruleFQN
+            // InternalServiceDefinition.g:4928:3: ( ruleFQN )
+            // InternalServiceDefinition.g:4929:4: ruleFQN
             {
              before(grammarAccess.getStatePatternAccess().getLifecycleStateMachineFQNParserRuleCall_4_0_1()); 
             pushFollow(FOLLOW_2);
@@ -15304,21 +14755,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__StatePattern__ModesAssignment_5_1"
-    // InternalServiceDefinition.g:5165:1: rule__StatePattern__ModesAssignment_5_1 : ( ( ruleFQN ) ) ;
+    // InternalServiceDefinition.g:4940:1: rule__StatePattern__ModesAssignment_5_1 : ( ( ruleFQN ) ) ;
     public final void rule__StatePattern__ModesAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5169:1: ( ( ( ruleFQN ) ) )
-            // InternalServiceDefinition.g:5170:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:4944:1: ( ( ( ruleFQN ) ) )
+            // InternalServiceDefinition.g:4945:2: ( ( ruleFQN ) )
             {
-            // InternalServiceDefinition.g:5170:2: ( ( ruleFQN ) )
-            // InternalServiceDefinition.g:5171:3: ( ruleFQN )
+            // InternalServiceDefinition.g:4945:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:4946:3: ( ruleFQN )
             {
              before(grammarAccess.getStatePatternAccess().getModesComponentModeCollectionCrossReference_5_1_0()); 
-            // InternalServiceDefinition.g:5172:3: ( ruleFQN )
-            // InternalServiceDefinition.g:5173:4: ruleFQN
+            // InternalServiceDefinition.g:4947:3: ( ruleFQN )
+            // InternalServiceDefinition.g:4948:4: ruleFQN
             {
              before(grammarAccess.getStatePatternAccess().getModesComponentModeCollectionFQNParserRuleCall_5_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -15353,21 +14804,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ParameterPattern__ParameterSetAssignment_3"
-    // InternalServiceDefinition.g:5184:1: rule__ParameterPattern__ParameterSetAssignment_3 : ( ( ruleFQN ) ) ;
+    // InternalServiceDefinition.g:4959:1: rule__ParameterPattern__ParameterSetAssignment_3 : ( ( ruleFQN ) ) ;
     public final void rule__ParameterPattern__ParameterSetAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5188:1: ( ( ( ruleFQN ) ) )
-            // InternalServiceDefinition.g:5189:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:4963:1: ( ( ( ruleFQN ) ) )
+            // InternalServiceDefinition.g:4964:2: ( ( ruleFQN ) )
             {
-            // InternalServiceDefinition.g:5189:2: ( ( ruleFQN ) )
-            // InternalServiceDefinition.g:5190:3: ( ruleFQN )
+            // InternalServiceDefinition.g:4964:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:4965:3: ( ruleFQN )
             {
              before(grammarAccess.getParameterPatternAccess().getParameterSetParameterSetDefinitionCrossReference_3_0()); 
-            // InternalServiceDefinition.g:5191:3: ( ruleFQN )
-            // InternalServiceDefinition.g:5192:4: ruleFQN
+            // InternalServiceDefinition.g:4966:3: ( ruleFQN )
+            // InternalServiceDefinition.g:4967:4: ruleFQN
             {
              before(grammarAccess.getParameterPatternAccess().getParameterSetParameterSetDefinitionFQNParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
@@ -15402,21 +14853,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__PushPattern__DataTypeAssignment_5"
-    // InternalServiceDefinition.g:5203:1: rule__PushPattern__DataTypeAssignment_5 : ( ( ruleFQN ) ) ;
+    // InternalServiceDefinition.g:4978:1: rule__PushPattern__DataTypeAssignment_5 : ( ( ruleFQN ) ) ;
     public final void rule__PushPattern__DataTypeAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5207:1: ( ( ( ruleFQN ) ) )
-            // InternalServiceDefinition.g:5208:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:4982:1: ( ( ( ruleFQN ) ) )
+            // InternalServiceDefinition.g:4983:2: ( ( ruleFQN ) )
             {
-            // InternalServiceDefinition.g:5208:2: ( ( ruleFQN ) )
-            // InternalServiceDefinition.g:5209:3: ( ruleFQN )
+            // InternalServiceDefinition.g:4983:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:4984:3: ( ruleFQN )
             {
              before(grammarAccess.getPushPatternAccess().getDataTypeCommunicationObjectCrossReference_5_0()); 
-            // InternalServiceDefinition.g:5210:3: ( ruleFQN )
-            // InternalServiceDefinition.g:5211:4: ruleFQN
+            // InternalServiceDefinition.g:4985:3: ( ruleFQN )
+            // InternalServiceDefinition.g:4986:4: ruleFQN
             {
              before(grammarAccess.getPushPatternAccess().getDataTypeCommunicationObjectFQNParserRuleCall_5_0_1()); 
             pushFollow(FOLLOW_2);
@@ -15451,21 +14902,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__EventTypeAssignment_3_0_2"
-    // InternalServiceDefinition.g:5222:1: rule__EventPattern__EventTypeAssignment_3_0_2 : ( ( ruleFQN ) ) ;
+    // InternalServiceDefinition.g:4997:1: rule__EventPattern__EventTypeAssignment_3_0_2 : ( ( ruleFQN ) ) ;
     public final void rule__EventPattern__EventTypeAssignment_3_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5226:1: ( ( ( ruleFQN ) ) )
-            // InternalServiceDefinition.g:5227:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:5001:1: ( ( ( ruleFQN ) ) )
+            // InternalServiceDefinition.g:5002:2: ( ( ruleFQN ) )
             {
-            // InternalServiceDefinition.g:5227:2: ( ( ruleFQN ) )
-            // InternalServiceDefinition.g:5228:3: ( ruleFQN )
+            // InternalServiceDefinition.g:5002:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:5003:3: ( ruleFQN )
             {
              before(grammarAccess.getEventPatternAccess().getEventTypeCommunicationObjectCrossReference_3_0_2_0()); 
-            // InternalServiceDefinition.g:5229:3: ( ruleFQN )
-            // InternalServiceDefinition.g:5230:4: ruleFQN
+            // InternalServiceDefinition.g:5004:3: ( ruleFQN )
+            // InternalServiceDefinition.g:5005:4: ruleFQN
             {
              before(grammarAccess.getEventPatternAccess().getEventTypeCommunicationObjectFQNParserRuleCall_3_0_2_0_1()); 
             pushFollow(FOLLOW_2);
@@ -15500,21 +14951,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__ActivationTypeAssignment_3_1_2"
-    // InternalServiceDefinition.g:5241:1: rule__EventPattern__ActivationTypeAssignment_3_1_2 : ( ( ruleFQN ) ) ;
+    // InternalServiceDefinition.g:5016:1: rule__EventPattern__ActivationTypeAssignment_3_1_2 : ( ( ruleFQN ) ) ;
     public final void rule__EventPattern__ActivationTypeAssignment_3_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5245:1: ( ( ( ruleFQN ) ) )
-            // InternalServiceDefinition.g:5246:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:5020:1: ( ( ( ruleFQN ) ) )
+            // InternalServiceDefinition.g:5021:2: ( ( ruleFQN ) )
             {
-            // InternalServiceDefinition.g:5246:2: ( ( ruleFQN ) )
-            // InternalServiceDefinition.g:5247:3: ( ruleFQN )
+            // InternalServiceDefinition.g:5021:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:5022:3: ( ruleFQN )
             {
              before(grammarAccess.getEventPatternAccess().getActivationTypeCommunicationObjectCrossReference_3_1_2_0()); 
-            // InternalServiceDefinition.g:5248:3: ( ruleFQN )
-            // InternalServiceDefinition.g:5249:4: ruleFQN
+            // InternalServiceDefinition.g:5023:3: ( ruleFQN )
+            // InternalServiceDefinition.g:5024:4: ruleFQN
             {
              before(grammarAccess.getEventPatternAccess().getActivationTypeCommunicationObjectFQNParserRuleCall_3_1_2_0_1()); 
             pushFollow(FOLLOW_2);
@@ -15549,21 +15000,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__EventPattern__EventStateTypeAssignment_3_2_2"
-    // InternalServiceDefinition.g:5260:1: rule__EventPattern__EventStateTypeAssignment_3_2_2 : ( ( ruleFQN ) ) ;
+    // InternalServiceDefinition.g:5035:1: rule__EventPattern__EventStateTypeAssignment_3_2_2 : ( ( ruleFQN ) ) ;
     public final void rule__EventPattern__EventStateTypeAssignment_3_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5264:1: ( ( ( ruleFQN ) ) )
-            // InternalServiceDefinition.g:5265:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:5039:1: ( ( ( ruleFQN ) ) )
+            // InternalServiceDefinition.g:5040:2: ( ( ruleFQN ) )
             {
-            // InternalServiceDefinition.g:5265:2: ( ( ruleFQN ) )
-            // InternalServiceDefinition.g:5266:3: ( ruleFQN )
+            // InternalServiceDefinition.g:5040:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:5041:3: ( ruleFQN )
             {
              before(grammarAccess.getEventPatternAccess().getEventStateTypeCommunicationObjectCrossReference_3_2_2_0()); 
-            // InternalServiceDefinition.g:5267:3: ( ruleFQN )
-            // InternalServiceDefinition.g:5268:4: ruleFQN
+            // InternalServiceDefinition.g:5042:3: ( ruleFQN )
+            // InternalServiceDefinition.g:5043:4: ruleFQN
             {
              before(grammarAccess.getEventPatternAccess().getEventStateTypeCommunicationObjectFQNParserRuleCall_3_2_2_0_1()); 
             pushFollow(FOLLOW_2);
@@ -15598,21 +15049,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__RequestTypeAssignment_3_0_2"
-    // InternalServiceDefinition.g:5279:1: rule__QueryPattern__RequestTypeAssignment_3_0_2 : ( ( ruleFQN ) ) ;
+    // InternalServiceDefinition.g:5054:1: rule__QueryPattern__RequestTypeAssignment_3_0_2 : ( ( ruleFQN ) ) ;
     public final void rule__QueryPattern__RequestTypeAssignment_3_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5283:1: ( ( ( ruleFQN ) ) )
-            // InternalServiceDefinition.g:5284:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:5058:1: ( ( ( ruleFQN ) ) )
+            // InternalServiceDefinition.g:5059:2: ( ( ruleFQN ) )
             {
-            // InternalServiceDefinition.g:5284:2: ( ( ruleFQN ) )
-            // InternalServiceDefinition.g:5285:3: ( ruleFQN )
+            // InternalServiceDefinition.g:5059:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:5060:3: ( ruleFQN )
             {
              before(grammarAccess.getQueryPatternAccess().getRequestTypeCommunicationObjectCrossReference_3_0_2_0()); 
-            // InternalServiceDefinition.g:5286:3: ( ruleFQN )
-            // InternalServiceDefinition.g:5287:4: ruleFQN
+            // InternalServiceDefinition.g:5061:3: ( ruleFQN )
+            // InternalServiceDefinition.g:5062:4: ruleFQN
             {
              before(grammarAccess.getQueryPatternAccess().getRequestTypeCommunicationObjectFQNParserRuleCall_3_0_2_0_1()); 
             pushFollow(FOLLOW_2);
@@ -15647,21 +15098,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__QueryPattern__AnswerTypeAssignment_3_1_2"
-    // InternalServiceDefinition.g:5298:1: rule__QueryPattern__AnswerTypeAssignment_3_1_2 : ( ( ruleFQN ) ) ;
+    // InternalServiceDefinition.g:5073:1: rule__QueryPattern__AnswerTypeAssignment_3_1_2 : ( ( ruleFQN ) ) ;
     public final void rule__QueryPattern__AnswerTypeAssignment_3_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5302:1: ( ( ( ruleFQN ) ) )
-            // InternalServiceDefinition.g:5303:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:5077:1: ( ( ( ruleFQN ) ) )
+            // InternalServiceDefinition.g:5078:2: ( ( ruleFQN ) )
             {
-            // InternalServiceDefinition.g:5303:2: ( ( ruleFQN ) )
-            // InternalServiceDefinition.g:5304:3: ( ruleFQN )
+            // InternalServiceDefinition.g:5078:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:5079:3: ( ruleFQN )
             {
              before(grammarAccess.getQueryPatternAccess().getAnswerTypeCommunicationObjectCrossReference_3_1_2_0()); 
-            // InternalServiceDefinition.g:5305:3: ( ruleFQN )
-            // InternalServiceDefinition.g:5306:4: ruleFQN
+            // InternalServiceDefinition.g:5080:3: ( ruleFQN )
+            // InternalServiceDefinition.g:5081:4: ruleFQN
             {
              before(grammarAccess.getQueryPatternAccess().getAnswerTypeCommunicationObjectFQNParserRuleCall_3_1_2_0_1()); 
             pushFollow(FOLLOW_2);
@@ -15696,21 +15147,21 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__SendPattern__DataTypeAssignment_5"
-    // InternalServiceDefinition.g:5317:1: rule__SendPattern__DataTypeAssignment_5 : ( ( ruleFQN ) ) ;
+    // InternalServiceDefinition.g:5092:1: rule__SendPattern__DataTypeAssignment_5 : ( ( ruleFQN ) ) ;
     public final void rule__SendPattern__DataTypeAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5321:1: ( ( ( ruleFQN ) ) )
-            // InternalServiceDefinition.g:5322:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:5096:1: ( ( ( ruleFQN ) ) )
+            // InternalServiceDefinition.g:5097:2: ( ( ruleFQN ) )
             {
-            // InternalServiceDefinition.g:5322:2: ( ( ruleFQN ) )
-            // InternalServiceDefinition.g:5323:3: ( ruleFQN )
+            // InternalServiceDefinition.g:5097:2: ( ( ruleFQN ) )
+            // InternalServiceDefinition.g:5098:3: ( ruleFQN )
             {
              before(grammarAccess.getSendPatternAccess().getDataTypeCommunicationObjectCrossReference_5_0()); 
-            // InternalServiceDefinition.g:5324:3: ( ruleFQN )
-            // InternalServiceDefinition.g:5325:4: ruleFQN
+            // InternalServiceDefinition.g:5099:3: ( ruleFQN )
+            // InternalServiceDefinition.g:5100:4: ruleFQN
             {
              before(grammarAccess.getSendPatternAccess().getDataTypeCommunicationObjectFQNParserRuleCall_5_0_1()); 
             pushFollow(FOLLOW_2);
@@ -15745,17 +15196,17 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__ServiceProperty__NameAssignment_1"
-    // InternalServiceDefinition.g:5336:1: rule__ServiceProperty__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalServiceDefinition.g:5111:1: rule__ServiceProperty__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__ServiceProperty__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalServiceDefinition.g:5340:1: ( ( RULE_ID ) )
-            // InternalServiceDefinition.g:5341:2: ( RULE_ID )
+            // InternalServiceDefinition.g:5115:1: ( ( RULE_ID ) )
+            // InternalServiceDefinition.g:5116:2: ( RULE_ID )
             {
-            // InternalServiceDefinition.g:5341:2: ( RULE_ID )
-            // InternalServiceDefinition.g:5342:3: RULE_ID
+            // InternalServiceDefinition.g:5116:2: ( RULE_ID )
+            // InternalServiceDefinition.g:5117:3: RULE_ID
             {
              before(grammarAccess.getServicePropertyAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15787,44 +15238,48 @@ public class InternalServiceDefinitionParser extends AbstractInternalContentAssi
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000044000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000028000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000001D10000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000001D00002L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000002040L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000004800000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000400000210000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000400000000002L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000708200000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000400002010000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000002000002L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x00000000C0000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000220040L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020040L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000140000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000007880040L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000007800042L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000010020L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000800040L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000012000000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0001000000080000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0001000000000002L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000001000040L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000003800040L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000007800040L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000001C20000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0001000008080000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000008000002L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000020000000L});
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000038000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000180000000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000708200002L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000038000000002L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000180000000002L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000300000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x00000E0000000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000600000000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000001C20000002L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x00000E0000000002L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000600000000002L});
 
 }

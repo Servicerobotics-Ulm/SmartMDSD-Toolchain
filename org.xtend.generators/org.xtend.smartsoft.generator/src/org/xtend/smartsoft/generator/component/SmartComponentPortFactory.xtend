@@ -1,8 +1,10 @@
-//--------------------------------------------------------------------------
+//===============================================================
 //
-//  Copyright (C) 2018 Alex Lotz
+//  Copyright (C) 2018 Alex Lotz, Matthias Lutz, Dennis Stampfer
 //
 //        lotz@hs-ulm.de
+//        lutz@hs-ulm.de
+//        stampfer@hs-ulm.de
 //
 //        Servicerobotics Ulm
 //        Christian Schlegel
@@ -13,22 +15,7 @@
 //
 //  This file is part of the SmartSoft MDSD Toolchain. 
 //
-//  This library is free software; you can redistribute it and/or
-//  modify it under the terms of the GNU Lesser General Public
-//  License as published by the Free Software Foundation; either
-//  version 2.1 of the License, or (at your option) any later version.
-//
-//  This library is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-//  Lesser General Public License for more details.
-//
-//  You should have received a copy of the GNU Lesser General Public
-//  License along with this library; if not, write to the Free Software
-//  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-//
-//--------------------------------------------------------------------------
-
+//===============================================================
 package org.xtend.smartsoft.generator.component
 
 import org.ecore.component.componentDefinition.ComponentDefinition
@@ -83,7 +70,7 @@ class SmartComponentPortFactory {
 		«ENDFOR»
 		
 		«FOR port: component.allServerPorts.sortBy[it.name]»
-		virtual «port.portDefinition» * create«port.nameClass»(const std::string &serviceName«IF port.isEventServer», Smart::IEventTestHandler<«port.getCommObjectCppList(true)»> *«port.nameInstance»EventTestHandler«ENDIF») = 0;
+		virtual «port.portDefinition» * create«port.nameClass»(const std::string &serviceName«IF port.isEventServer», std::shared_ptr<Smart::IEventTestHandler<«port.getCommObjectCppList(true)»>> «port.nameInstance»EventTestHandler«ENDIF») = 0;
 		«ENDFOR»
 	
 		virtual int onShutdown(const std::chrono::steady_clock::duration &timeoutTime=std::chrono::seconds(2)) = 0;
@@ -122,7 +109,7 @@ class SmartComponentPortFactory {
 		«ENDFOR»
 		
 		«FOR port: component.allServerPorts.sortBy[it.name]»
-		virtual «port.portDefinition» * create«port.nameClass»(const std::string &serviceName«IF port.isEventServer», Smart::IEventTestHandler<«port.getCommObjectCppList(true)»> *«port.nameInstance»EventTestHandler«ENDIF») override;
+		virtual «port.portDefinition» * create«port.nameClass»(const std::string &serviceName«IF port.isEventServer», std::shared_ptr<Smart::IEventTestHandler<«port.getCommObjectCppList(true)»>> «port.nameInstance»EventTestHandler«ENDIF») override;
 		«ENDFOR»
 		
 		// get a pointer to the internal component implementation
@@ -186,7 +173,7 @@ class SmartComponentPortFactory {
 	«ENDFOR»
 	
 	«FOR port: component.allServerPorts.sortBy[it.name]»
-	«port.portDefinition» * «component.name»AcePortFactory::create«port.nameClass»(const std::string &serviceName«IF port.isEventServer», Smart::IEventTestHandler<«port.getCommObjectCppList(true)»> *«port.nameInstance»EventTestHandler«ENDIF»)
+	«port.portDefinition» * «component.name»AcePortFactory::create«port.nameClass»(const std::string &serviceName«IF port.isEventServer», std::shared_ptr<Smart::IEventTestHandler<«port.getCommObjectCppList(true)»>> «port.nameInstance»EventTestHandler«ENDIF»)
 	{
 		return new «port.portImplementation»(componentImpl, serviceName«IF port.isEventServer», «port.nameInstance»EventTestHandler«ENDIF»);
 	}

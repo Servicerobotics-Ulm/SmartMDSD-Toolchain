@@ -14,7 +14,8 @@ Require-Bundle: org.ecore.behavior.taskDefinition,
  org.eclipse.xtext.util,
  org.eclipse.xtend.lib;bundle-version="2.14.0",
  org.xtext.base.utils,
- org.xtext.base.basicAttributes
+ org.xtext.base.basicAttributes,
+ org.xtext.base.docuterminals
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.behavior.taskDefinition.generator,
  org.xtext.behavior.taskDefinition.validation,

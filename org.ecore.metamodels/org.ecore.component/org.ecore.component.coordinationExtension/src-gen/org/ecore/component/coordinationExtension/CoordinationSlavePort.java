@@ -4,6 +4,7 @@ package org.ecore.component.coordinationExtension;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.ecore.base.documentation.AbstractDocumentedElement;
 import org.ecore.component.componentDefinition.NamedComponentElement;
 
 import org.ecore.service.serviceDefinition.CoordinationServiceDefinition;
@@ -25,7 +26,7 @@ import org.ecore.service.serviceDefinition.CoordinationServiceDefinition;
  * @model
  * @generated
  */
-public interface CoordinationSlavePort extends NamedComponentElement {
+public interface CoordinationSlavePort extends NamedComponentElement, AbstractDocumentedElement {
 	/**
 	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
 	 * The list contents are of type {@link org.ecore.component.coordinationExtension.AbstractCoordinationElement}.

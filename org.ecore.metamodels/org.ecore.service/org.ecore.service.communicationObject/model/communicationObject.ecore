@@ -8,7 +8,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
         eType="#//CommRepositoryImport" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CommObjectsRepository">
+  <eClassifiers xsi:type="ecore:EClass" name="CommObjectsRepository" eSuperTypes="../../org.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//AbstractCommElement" containment="true"/>
@@ -16,7 +16,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependency" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractCommElement" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractCommElement" abstract="true"
+      eSuperTypes="../../org.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CommRepositoryImport">

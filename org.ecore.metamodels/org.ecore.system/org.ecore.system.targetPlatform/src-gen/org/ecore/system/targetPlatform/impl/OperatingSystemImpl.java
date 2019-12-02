@@ -70,6 +70,7 @@ public abstract class OperatingSystemImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getKind() {
 		return kind;
 	}
@@ -79,6 +80,7 @@ public abstract class OperatingSystemImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setKind(String newKind) {
 		String oldKind = kind;
 		kind = newKind;
@@ -155,7 +157,7 @@ public abstract class OperatingSystemImpl extends MinimalEObjectImpl.Container i
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (kind: ");
 		result.append(kind);
 		result.append(')');

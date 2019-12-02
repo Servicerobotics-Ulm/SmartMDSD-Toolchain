@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.ecore.base.basicAttributes.BasicAttributesPackage;
+import org.ecore.base.documentation.DocumentationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,13 +107,22 @@ public interface CommunicationObjectPackage extends EPackage {
 	int COMM_OBJECTS_REPOSITORY = 1;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMM_OBJECTS_REPOSITORY__DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMM_OBJECTS_REPOSITORY__NAME = 0;
+	int COMM_OBJECTS_REPOSITORY__NAME = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -121,7 +131,7 @@ public interface CommunicationObjectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMM_OBJECTS_REPOSITORY__ELEMENTS = 1;
+	int COMM_OBJECTS_REPOSITORY__ELEMENTS = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' containment reference.
@@ -130,7 +140,7 @@ public interface CommunicationObjectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMM_OBJECTS_REPOSITORY__VERSION = 2;
+	int COMM_OBJECTS_REPOSITORY__VERSION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Dependency</b></em>' attribute.
@@ -139,7 +149,7 @@ public interface CommunicationObjectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMM_OBJECTS_REPOSITORY__DEPENDENCY = 3;
+	int COMM_OBJECTS_REPOSITORY__DEPENDENCY = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Comm Objects Repository</em>' class.
@@ -148,7 +158,7 @@ public interface CommunicationObjectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMM_OBJECTS_REPOSITORY_FEATURE_COUNT = 4;
+	int COMM_OBJECTS_REPOSITORY_FEATURE_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.service.communicationObject.impl.AbstractCommElementImpl <em>Abstract Comm Element</em>}' class.
@@ -161,13 +171,22 @@ public interface CommunicationObjectPackage extends EPackage {
 	int ABSTRACT_COMM_ELEMENT = 2;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COMM_ELEMENT__DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMM_ELEMENT__NAME = 0;
+	int ABSTRACT_COMM_ELEMENT__NAME = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Comm Element</em>' class.
@@ -176,7 +195,7 @@ public interface CommunicationObjectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMM_ELEMENT_FEATURE_COUNT = 1;
+	int ABSTRACT_COMM_ELEMENT_FEATURE_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.service.communicationObject.impl.CommRepositoryImportImpl <em>Comm Repository Import</em>}' class.
@@ -263,6 +282,15 @@ public interface CommunicationObjectPackage extends EPackage {
 	int ENUMERATION = 5;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION__DOCUMENTATION = ABSTRACT_COMM_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -298,6 +326,15 @@ public interface CommunicationObjectPackage extends EPackage {
 	 * @generated
 	 */
 	int COMMUNICATION_OBJECT = 6;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_OBJECT__DOCUMENTATION = ABSTRACT_COMM_ELEMENT__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

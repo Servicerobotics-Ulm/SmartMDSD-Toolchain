@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.ecore.base.basicAttributes.BasicAttributesPackage;
 
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.base.stateMachine.StateMachinePackage;
 
 import org.ecore.component.componentDefinition.AbstractComponentElement;
@@ -231,7 +232,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ComponentDefinitionPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -247,9 +248,10 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 					.getEPackage(ComponentDefinitionPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ComponentDefinitionPackageImpl theComponentDefinitionPackage = (ComponentDefinitionPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof ComponentDefinitionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new ComponentDefinitionPackageImpl());
+		Object registeredComponentDefinitionPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ComponentDefinitionPackageImpl theComponentDefinitionPackage = registeredComponentDefinitionPackage instanceof ComponentDefinitionPackageImpl
+				? (ComponentDefinitionPackageImpl) registeredComponentDefinitionPackage
+				: new ComponentDefinitionPackageImpl();
 
 		isInited = true;
 
@@ -262,6 +264,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 		ServiceDefinitionPackage.eINSTANCE.eClass();
 		StateMachinePackage.eINSTANCE.eClass();
 		ComponentModePackage.eINSTANCE.eClass();
+		DocumentationPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theComponentDefinitionPackage.createPackageContents();
@@ -282,6 +285,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentDefModel() {
 		return componentDefModelEClass;
 	}
@@ -291,6 +295,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentDefModel_Component() {
 		return (EReference) componentDefModelEClass.getEStructuralFeatures().get(0);
 	}
@@ -300,6 +305,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentDefModel_Imports() {
 		return (EReference) componentDefModelEClass.getEStructuralFeatures().get(1);
 	}
@@ -309,6 +315,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentDefinition() {
 		return componentDefinitionEClass;
 	}
@@ -318,6 +325,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentDefinition_Name() {
 		return (EAttribute) componentDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -327,6 +335,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentDefinition_Elements() {
 		return (EReference) componentDefinitionEClass.getEStructuralFeatures().get(1);
 	}
@@ -336,6 +345,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentDefinition_Logo() {
 		return (EAttribute) componentDefinitionEClass.getEStructuralFeatures().get(2);
 	}
@@ -345,6 +355,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getActivity() {
 		return activityEClass;
 	}
@@ -354,6 +365,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivity_Extensions() {
 		return (EReference) activityEClass.getEStructuralFeatures().get(0);
 	}
@@ -363,6 +375,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getActivityExtension() {
 		return activityExtensionEClass;
 	}
@@ -372,6 +385,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getInputHandler() {
 		return inputHandlerEClass;
 	}
@@ -381,6 +395,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInputHandler_ActiveQueue() {
 		return (EAttribute) inputHandlerEClass.getEStructuralFeatures().get(0);
 	}
@@ -390,6 +405,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getInputHandler_InputPort() {
 		return (EReference) inputHandlerEClass.getEStructuralFeatures().get(1);
 	}
@@ -399,6 +415,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getServiceRepoImport() {
 		return serviceRepoImportEClass;
 	}
@@ -408,6 +425,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServiceRepoImport_ImportedNamespace() {
 		return (EAttribute) serviceRepoImportEClass.getEStructuralFeatures().get(0);
 	}
@@ -417,6 +435,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOutputPort() {
 		return outputPortEClass;
 	}
@@ -426,6 +445,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getOutputPort_Service() {
 		return (EReference) outputPortEClass.getEStructuralFeatures().get(0);
 	}
@@ -435,6 +455,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getOutputPort_Activity() {
 		return (EReference) outputPortEClass.getEStructuralFeatures().get(1);
 	}
@@ -444,6 +465,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRequestPort() {
 		return requestPortEClass;
 	}
@@ -453,6 +475,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRequestPort_Service() {
 		return (EReference) requestPortEClass.getEStructuralFeatures().get(0);
 	}
@@ -462,6 +485,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getInputPort() {
 		return inputPortEClass;
 	}
@@ -471,6 +495,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getInputPort_Service() {
 		return (EReference) inputPortEClass.getEStructuralFeatures().get(0);
 	}
@@ -480,6 +505,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAnswerPort() {
 		return answerPortEClass;
 	}
@@ -489,6 +515,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAnswerPort_Service() {
 		return (EReference) answerPortEClass.getEStructuralFeatures().get(0);
 	}
@@ -498,6 +525,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentPort() {
 		return componentPortEClass;
 	}
@@ -507,6 +535,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentPort_Extensions() {
 		return (EReference) componentPortEClass.getEStructuralFeatures().get(0);
 	}
@@ -516,6 +545,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentPortExtension() {
 		return componentPortExtensionEClass;
 	}
@@ -525,6 +555,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRequestHandler() {
 		return requestHandlerEClass;
 	}
@@ -534,6 +565,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRequestHandler_ActiveQueue() {
 		return (EAttribute) requestHandlerEClass.getEStructuralFeatures().get(0);
 	}
@@ -543,6 +575,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRequestHandler_AnswerPort() {
 		return (EReference) requestHandlerEClass.getEStructuralFeatures().get(1);
 	}
@@ -552,6 +585,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractComponentElement() {
 		return abstractComponentElementEClass;
 	}
@@ -561,6 +595,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentSubNode() {
 		return componentSubNodeEClass;
 	}
@@ -570,6 +605,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentSubNode_Links() {
 		return (EReference) componentSubNodeEClass.getEStructuralFeatures().get(0);
 	}
@@ -579,6 +615,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentSubNodeObserver() {
 		return componentSubNodeObserverEClass;
 	}
@@ -588,6 +625,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentSubNodeObserver_Subject() {
 		return (EReference) componentSubNodeObserverEClass.getEStructuralFeatures().get(0);
 	}
@@ -597,6 +635,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getInputPortLink() {
 		return inputPortLinkEClass;
 	}
@@ -606,6 +645,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInputPortLink_Optional() {
 		return (EAttribute) inputPortLinkEClass.getEStructuralFeatures().get(0);
 	}
@@ -615,6 +655,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getInputPortLink_InputPort() {
 		return (EReference) inputPortLinkEClass.getEStructuralFeatures().get(1);
 	}
@@ -624,6 +665,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRequestPortLink() {
 		return requestPortLinkEClass;
 	}
@@ -633,6 +675,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRequestPortLink_RequestPort() {
 		return (EReference) requestPortLinkEClass.getEStructuralFeatures().get(0);
 	}
@@ -642,6 +685,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractComponentLink() {
 		return abstractComponentLinkEClass;
 	}
@@ -651,6 +695,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractComponentLink_Name() {
 		return (EAttribute) abstractComponentLinkEClass.getEStructuralFeatures().get(0);
 	}
@@ -660,6 +705,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNamedComponentElement() {
 		return namedComponentElementEClass;
 	}
@@ -669,6 +715,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNamedComponentElement_Name() {
 		return (EAttribute) namedComponentElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -678,6 +725,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDerivedComponentElement() {
 		return derivedComponentElementEClass;
 	}
@@ -687,6 +735,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDerivedComponentElement_Name() {
 		return (EAttribute) derivedComponentElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -696,6 +745,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentDefinitionFactory getComponentDefinitionFactory() {
 		return (ComponentDefinitionFactory) getEFactoryInstance();
 	}
@@ -813,6 +863,8 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		DocumentationPackage theDocumentationPackage = (DocumentationPackage) EPackage.Registry.INSTANCE
+				.getEPackage(DocumentationPackage.eNS_URI);
 		ServiceDefinitionPackage theServiceDefinitionPackage = (ServiceDefinitionPackage) EPackage.Registry.INSTANCE
 				.getEPackage(ServiceDefinitionPackage.eNS_URI);
 
@@ -821,6 +873,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		componentDefinitionEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
 		activityEClass.getESuperTypes().add(this.getComponentSubNode());
 		inputHandlerEClass.getESuperTypes().add(this.getComponentSubNode());
 		outputPortEClass.getESuperTypes().add(this.getComponentPort());
@@ -828,6 +881,7 @@ public class ComponentDefinitionPackageImpl extends EPackageImpl implements Comp
 		inputPortEClass.getESuperTypes().add(this.getComponentPort());
 		answerPortEClass.getESuperTypes().add(this.getComponentPort());
 		componentPortEClass.getESuperTypes().add(this.getNamedComponentElement());
+		componentPortEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
 		requestHandlerEClass.getESuperTypes().add(this.getComponentSubNode());
 		componentSubNodeEClass.getESuperTypes().add(this.getNamedComponentElement());
 		componentSubNodeObserverEClass.getESuperTypes().add(this.getAbstractComponentLink());

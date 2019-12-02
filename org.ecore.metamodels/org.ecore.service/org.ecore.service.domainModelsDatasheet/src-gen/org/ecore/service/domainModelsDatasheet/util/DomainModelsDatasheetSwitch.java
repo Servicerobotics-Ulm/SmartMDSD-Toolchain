@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import org.ecore.base.genericDatasheet.GenericDatasheet;
+import org.ecore.base.genericDatasheet.GenericDatasheetModel;
 
 import org.ecore.service.domainModelsDatasheet.*;
 
@@ -72,7 +72,7 @@ public class DomainModelsDatasheetSwitch<T> extends Switch<T> {
 			DomainModelsDatasheet domainModelsDatasheet = (DomainModelsDatasheet) theEObject;
 			T result = caseDomainModelsDatasheet(domainModelsDatasheet);
 			if (result == null)
-				result = caseGenericDatasheet(domainModelsDatasheet);
+				result = caseGenericDatasheetModel(domainModelsDatasheet);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -98,17 +98,17 @@ public class DomainModelsDatasheetSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Generic Datasheet</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Generic Datasheet</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Model</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGenericDatasheet(GenericDatasheet object) {
+	public T caseGenericDatasheetModel(GenericDatasheetModel object) {
 		return null;
 	}
 

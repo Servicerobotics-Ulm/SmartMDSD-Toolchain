@@ -9,12 +9,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.ecore.base.basicAttributes.AbstractValue;
 import org.ecore.base.basicAttributes.AttributeDefinition;
 import org.ecore.base.basicAttributes.AttributeRefinement;
 import org.ecore.base.basicAttributes.BasicAttributesPackage;
+import org.ecore.base.documentation.impl.AbstractDocumentedElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +29,7 @@ import org.ecore.base.basicAttributes.BasicAttributesPackage;
  *
  * @generated
  */
-public class AttributeRefinementImpl extends MinimalEObjectImpl.Container implements AttributeRefinement {
+public class AttributeRefinementImpl extends AbstractDocumentedElementImpl implements AttributeRefinement {
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -75,6 +74,7 @@ public class AttributeRefinementImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AbstractValue getValue() {
 		return value;
 	}
@@ -103,6 +103,7 @@ public class AttributeRefinementImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(AbstractValue newValue) {
 		if (newValue != value) {
 			NotificationChain msgs = null;
@@ -125,6 +126,7 @@ public class AttributeRefinementImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AttributeDefinition getAttribute() {
 		if (attribute != null && attribute.eIsProxy()) {
 			InternalEObject oldAttribute = (InternalEObject) attribute;
@@ -152,6 +154,7 @@ public class AttributeRefinementImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAttribute(AttributeDefinition newAttribute) {
 		AttributeDefinition oldAttribute = attribute;
 		attribute = newAttribute;

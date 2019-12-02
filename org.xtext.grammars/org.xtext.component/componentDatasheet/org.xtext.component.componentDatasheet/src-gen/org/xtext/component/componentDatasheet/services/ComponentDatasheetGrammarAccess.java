@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,37 +15,13 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.component.componentDatasheet.services;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.EnumRule;
@@ -57,7 +32,6 @@ import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.UnorderedGroup;
 import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
@@ -74,31 +48,17 @@ public class ComponentDatasheetGrammarAccess extends AbstractGrammarElementFinde
 		private final CrossReference cComponentComponentDefinitionCrossReference_1_0 = (CrossReference)cComponentAssignment_1.eContents().get(0);
 		private final RuleCall cComponentComponentDefinitionIDTerminalRuleCall_1_0_1 = (RuleCall)cComponentComponentDefinitionCrossReference_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final RuleCall cGenericDatasheetParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final UnorderedGroup cUnorderedGroup_4 = (UnorderedGroup)cGroup.eContents().get(4);
-		private final Group cGroup_4_0 = (Group)cUnorderedGroup_4.eContents().get(0);
-		private final Keyword cPurposeDescriptionKeyword_4_0_0 = (Keyword)cGroup_4_0.eContents().get(0);
-		private final Keyword cColonKeyword_4_0_1 = (Keyword)cGroup_4_0.eContents().get(1);
-		private final Assignment cPurposeDescriptionAssignment_4_0_2 = (Assignment)cGroup_4_0.eContents().get(2);
-		private final RuleCall cPurposeDescriptionEStringParserRuleCall_4_0_2_0 = (RuleCall)cPurposeDescriptionAssignment_4_0_2.eContents().get(0);
-		private final Group cGroup_4_1 = (Group)cUnorderedGroup_4.eContents().get(1);
-		private final Keyword cHardwareRequirementDescriptionKeyword_4_1_0 = (Keyword)cGroup_4_1.eContents().get(0);
-		private final Keyword cColonKeyword_4_1_1 = (Keyword)cGroup_4_1.eContents().get(1);
-		private final Assignment cHardwareRequirementDescriptionAssignment_4_1_2 = (Assignment)cGroup_4_1.eContents().get(2);
-		private final RuleCall cHardwareRequirementDescriptionEStringParserRuleCall_4_1_2_0 = (RuleCall)cHardwareRequirementDescriptionAssignment_4_1_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final RuleCall cGenericDatasheetModelParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ComponentDatasheet:
 		//	'ComponentDatasheet' component=[componentDefinition::ComponentDefinition]
 		//	'{'
-		//	GenericDatasheet (('purposeDescription' ':'? purposeDescription=EString)? & ('hardwareRequirementDescription' ':'?
-		//	hardwareRequirementDescription=EString)?)
+		//	GenericDatasheetModel
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ComponentDatasheet' component=[componentDefinition::ComponentDefinition] '{' GenericDatasheet (('purposeDescription'
-		//':'? purposeDescription=EString)? & ('hardwareRequirementDescription' ':'? hardwareRequirementDescription=EString)?)
-		//'}'
+		//'ComponentDatasheet' component=[componentDefinition::ComponentDefinition] '{' GenericDatasheetModel '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'ComponentDatasheet'
@@ -116,49 +76,86 @@ public class ComponentDatasheetGrammarAccess extends AbstractGrammarElementFinde
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//GenericDatasheet
-		public RuleCall getGenericDatasheetParserRuleCall_3() { return cGenericDatasheetParserRuleCall_3; }
-		
-		//('purposeDescription' ':'? purposeDescription=EString)? & ('hardwareRequirementDescription' ':'?
-		//hardwareRequirementDescription=EString)?
-		public UnorderedGroup getUnorderedGroup_4() { return cUnorderedGroup_4; }
-		
-		//('purposeDescription' ':'? purposeDescription=EString)?
-		public Group getGroup_4_0() { return cGroup_4_0; }
-		
-		//'purposeDescription'
-		public Keyword getPurposeDescriptionKeyword_4_0_0() { return cPurposeDescriptionKeyword_4_0_0; }
-		
-		//':'?
-		public Keyword getColonKeyword_4_0_1() { return cColonKeyword_4_0_1; }
-		
-		//purposeDescription=EString
-		public Assignment getPurposeDescriptionAssignment_4_0_2() { return cPurposeDescriptionAssignment_4_0_2; }
-		
-		//EString
-		public RuleCall getPurposeDescriptionEStringParserRuleCall_4_0_2_0() { return cPurposeDescriptionEStringParserRuleCall_4_0_2_0; }
-		
-		//('hardwareRequirementDescription' ':'? hardwareRequirementDescription=EString)?
-		public Group getGroup_4_1() { return cGroup_4_1; }
-		
-		//'hardwareRequirementDescription'
-		public Keyword getHardwareRequirementDescriptionKeyword_4_1_0() { return cHardwareRequirementDescriptionKeyword_4_1_0; }
-		
-		//':'?
-		public Keyword getColonKeyword_4_1_1() { return cColonKeyword_4_1_1; }
-		
-		//hardwareRequirementDescription=EString
-		public Assignment getHardwareRequirementDescriptionAssignment_4_1_2() { return cHardwareRequirementDescriptionAssignment_4_1_2; }
-		
-		//EString
-		public RuleCall getHardwareRequirementDescriptionEStringParserRuleCall_4_1_2_0() { return cHardwareRequirementDescriptionEStringParserRuleCall_4_1_2_0; }
+		//GenericDatasheetModel
+		public RuleCall getGenericDatasheetModelParserRuleCall_3() { return cGenericDatasheetModelParserRuleCall_3; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class AbstractDatasheetElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDatasheet.ComponentDatasheet.AbstractDatasheetElement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cDatasheetPropertyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cMandatoryDatasheetElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cComponentPortDatasheetParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//@Override
+		//AbstractDatasheetElement genericDatasheet::AbstractDatasheetElement:
+		//	DatasheetProperty | MandatoryDatasheetElement | ComponentPortDatasheet;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//DatasheetProperty | MandatoryDatasheetElement | ComponentPortDatasheet
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//DatasheetProperty
+		public RuleCall getDatasheetPropertyParserRuleCall_0() { return cDatasheetPropertyParserRuleCall_0; }
+		
+		//MandatoryDatasheetElement
+		public RuleCall getMandatoryDatasheetElementParserRuleCall_1() { return cMandatoryDatasheetElementParserRuleCall_1; }
+		
+		//ComponentPortDatasheet
+		public RuleCall getComponentPortDatasheetParserRuleCall_2() { return cComponentPortDatasheetParserRuleCall_2; }
+	}
+	public class ComponentPortDatasheetElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.component.componentDatasheet.ComponentDatasheet.ComponentPortDatasheet");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cComponentPortDatasheetKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cPortAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cPortComponentPortCrossReference_1_0 = (CrossReference)cPortAssignment_1.eContents().get(0);
+		private final RuleCall cPortComponentPortIDTerminalRuleCall_1_0_1 = (RuleCall)cPortComponentPortCrossReference_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cPropertiesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPropertiesDatasheetPropertyParserRuleCall_3_0 = (RuleCall)cPropertiesAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//ComponentPortDatasheet:
+		//	'ComponentPortDatasheet' port=[componentDefinition::ComponentPort] '{'
+		//	properties+=DatasheetProperty*
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'ComponentPortDatasheet' port=[componentDefinition::ComponentPort] '{' properties+=DatasheetProperty* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'ComponentPortDatasheet'
+		public Keyword getComponentPortDatasheetKeyword_0() { return cComponentPortDatasheetKeyword_0; }
+		
+		//port=[componentDefinition::ComponentPort]
+		public Assignment getPortAssignment_1() { return cPortAssignment_1; }
+		
+		//[componentDefinition::ComponentPort]
+		public CrossReference getPortComponentPortCrossReference_1_0() { return cPortComponentPortCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getPortComponentPortIDTerminalRuleCall_1_0_1() { return cPortComponentPortIDTerminalRuleCall_1_0_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//properties+=DatasheetProperty*
+		public Assignment getPropertiesAssignment_3() { return cPropertiesAssignment_3; }
+		
+		//DatasheetProperty
+		public RuleCall getPropertiesDatasheetPropertyParserRuleCall_3_0() { return cPropertiesDatasheetPropertyParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	
 	
 	private final ComponentDatasheetElements pComponentDatasheet;
+	private final AbstractDatasheetElementElements pAbstractDatasheetElement;
+	private final ComponentPortDatasheetElements pComponentPortDatasheet;
 	
 	private final Grammar grammar;
 	
@@ -174,6 +171,8 @@ public class ComponentDatasheetGrammarAccess extends AbstractGrammarElementFinde
 		this.gaGenericDatasheet = gaGenericDatasheet;
 		this.gaTerminals = gaTerminals;
 		this.pComponentDatasheet = new ComponentDatasheetElements();
+		this.pAbstractDatasheetElement = new AbstractDatasheetElementElements();
+		this.pComponentPortDatasheet = new ComponentPortDatasheetElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -210,8 +209,7 @@ public class ComponentDatasheetGrammarAccess extends AbstractGrammarElementFinde
 	//ComponentDatasheet:
 	//	'ComponentDatasheet' component=[componentDefinition::ComponentDefinition]
 	//	'{'
-	//	GenericDatasheet (('purposeDescription' ':'? purposeDescription=EString)? & ('hardwareRequirementDescription' ':'?
-	//	hardwareRequirementDescription=EString)?)
+	//	GenericDatasheetModel
 	//	'}';
 	public ComponentDatasheetElements getComponentDatasheetAccess() {
 		return pComponentDatasheet;
@@ -221,76 +219,69 @@ public class ComponentDatasheetGrammarAccess extends AbstractGrammarElementFinde
 		return getComponentDatasheetAccess().getRule();
 	}
 	
-	//fragment GenericDatasheet:
-	//	'baseURI' ':'? baseURI=EString & 'shortDescription' ':'? shortDescription=EString & ('longDescription' ':'?
-	//	longDescription=TEXT_BLOCK)? & ('supplierDescription' ':'? supplierDescription=EString)? & ('homepage' ':'?
-	//	homepage=EString)? & ('trl' ':'? trl=TRL)? & ('license' ':'? license=AbstractLicense)?;
-	public GenericDatasheetGrammarAccess.GenericDatasheetElements getGenericDatasheetAccess() {
-		return gaGenericDatasheet.getGenericDatasheetAccess();
+	//@Override
+	//AbstractDatasheetElement genericDatasheet::AbstractDatasheetElement:
+	//	DatasheetProperty | MandatoryDatasheetElement | ComponentPortDatasheet;
+	public AbstractDatasheetElementElements getAbstractDatasheetElementAccess() {
+		return pAbstractDatasheetElement;
 	}
 	
-	public ParserRule getGenericDatasheetRule() {
-		return getGenericDatasheetAccess().getRule();
+	public ParserRule getAbstractDatasheetElementRule() {
+		return getAbstractDatasheetElementAccess().getRule();
 	}
 	
-	//terminal TEXT_BLOCK:
-	//	'$%'->'%$';
-	public TerminalRule getTEXT_BLOCKRule() {
-		return gaGenericDatasheet.getTEXT_BLOCKRule();
-	}
-	
-	//AbstractLicense:
-	//	SpdxLicense | ProprietaryLicense;
-	public GenericDatasheetGrammarAccess.AbstractLicenseElements getAbstractLicenseAccess() {
-		return gaGenericDatasheet.getAbstractLicenseAccess();
-	}
-	
-	public ParserRule getAbstractLicenseRule() {
-		return getAbstractLicenseAccess().getRule();
-	}
-	
-	//EString:
-	//	STRING;
-	public GenericDatasheetGrammarAccess.EStringElements getEStringAccess() {
-		return gaGenericDatasheet.getEStringAccess();
-	}
-	
-	public ParserRule getEStringRule() {
-		return getEStringAccess().getRule();
-	}
-	
-	//enum TRL:
-	//	LEVEL1='Level1' | LEVEL2='Level2' | LEVEL3='Level3' | LEVEL4='Level4' | LEVEL5='Level5' | LEVEL6='Level6' |
-	//	LEVEL7='Level7' | LEVEL8='Level8' | LEVEL9='Level9' | UNDEFINED='Undefined';
-	public GenericDatasheetGrammarAccess.TRLElements getTRLAccess() {
-		return gaGenericDatasheet.getTRLAccess();
-	}
-	
-	public EnumRule getTRLRule() {
-		return getTRLAccess().getRule();
-	}
-	
-	//SpdxLicense:
-	//	'spdx' '(' licenseID=EString ')';
-	public GenericDatasheetGrammarAccess.SpdxLicenseElements getSpdxLicenseAccess() {
-		return gaGenericDatasheet.getSpdxLicenseAccess();
-	}
-	
-	public ParserRule getSpdxLicenseRule() {
-		return getSpdxLicenseAccess().getRule();
-	}
-	
-	//ProprietaryLicense:
-	//	{ProprietaryLicense}
-	//	'proprietary'
-	//	'{' ('name' ':'? name=EString & ('fullText' ':'? fullText=EString)? & ('URL' ':'? url=EString)?)
+	//ComponentPortDatasheet:
+	//	'ComponentPortDatasheet' port=[componentDefinition::ComponentPort] '{'
+	//	properties+=DatasheetProperty*
 	//	'}';
-	public GenericDatasheetGrammarAccess.ProprietaryLicenseElements getProprietaryLicenseAccess() {
-		return gaGenericDatasheet.getProprietaryLicenseAccess();
+	public ComponentPortDatasheetElements getComponentPortDatasheetAccess() {
+		return pComponentPortDatasheet;
 	}
 	
-	public ParserRule getProprietaryLicenseRule() {
-		return getProprietaryLicenseAccess().getRule();
+	public ParserRule getComponentPortDatasheetRule() {
+		return getComponentPortDatasheetAccess().getRule();
+	}
+	
+	//fragment GenericDatasheetModel:
+	//	elements+=super::AbstractDatasheetElement*;
+	public GenericDatasheetGrammarAccess.GenericDatasheetModelElements getGenericDatasheetModelAccess() {
+		return gaGenericDatasheet.getGenericDatasheetModelAccess();
+	}
+	
+	public ParserRule getGenericDatasheetModelRule() {
+		return getGenericDatasheetModelAccess().getRule();
+	}
+	
+	//DatasheetProperty:
+	//	'DatasheetProperty' name=ID '{' ('value' value=STRING ('unit' unit=STRING)? & ('shortDescription'
+	//	shortDescription=STRING)? & ('semanticID' semanticID=STRING)?)
+	//	'}';
+	public GenericDatasheetGrammarAccess.DatasheetPropertyElements getDatasheetPropertyAccess() {
+		return gaGenericDatasheet.getDatasheetPropertyAccess();
+	}
+	
+	public ParserRule getDatasheetPropertyRule() {
+		return getDatasheetPropertyAccess().getRule();
+	}
+	
+	//enum MandatoryDatasheetElementNames:
+	//	BaseURI | ShortDescription;
+	public GenericDatasheetGrammarAccess.MandatoryDatasheetElementNamesElements getMandatoryDatasheetElementNamesAccess() {
+		return gaGenericDatasheet.getMandatoryDatasheetElementNamesAccess();
+	}
+	
+	public EnumRule getMandatoryDatasheetElementNamesRule() {
+		return getMandatoryDatasheetElementNamesAccess().getRule();
+	}
+	
+	//MandatoryDatasheetElement:
+	//	name=MandatoryDatasheetElementNames value=STRING;
+	public GenericDatasheetGrammarAccess.MandatoryDatasheetElementElements getMandatoryDatasheetElementAccess() {
+		return gaGenericDatasheet.getMandatoryDatasheetElementAccess();
+	}
+	
+	public ParserRule getMandatoryDatasheetElementRule() {
+		return getMandatoryDatasheetElementAccess().getRule();
 	}
 	
 	//terminal ID:

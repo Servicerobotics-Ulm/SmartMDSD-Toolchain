@@ -89,7 +89,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDeploymentModel"
-    // InternalDeployment.g:105:1: entryRuleDeploymentModel returns [EObject current=null] : iv_ruleDeploymentModel= ruleDeploymentModel EOF ;
+    // InternalDeployment.g:79:1: entryRuleDeploymentModel returns [EObject current=null] : iv_ruleDeploymentModel= ruleDeploymentModel EOF ;
     public final EObject entryRuleDeploymentModel() throws RecognitionException {
         EObject current = null;
 
@@ -97,8 +97,8 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeployment.g:105:56: (iv_ruleDeploymentModel= ruleDeploymentModel EOF )
-            // InternalDeployment.g:106:2: iv_ruleDeploymentModel= ruleDeploymentModel EOF
+            // InternalDeployment.g:79:56: (iv_ruleDeploymentModel= ruleDeploymentModel EOF )
+            // InternalDeployment.g:80:2: iv_ruleDeploymentModel= ruleDeploymentModel EOF
             {
              newCompositeNode(grammarAccess.getDeploymentModelRule()); 
             pushFollow(FOLLOW_1);
@@ -125,7 +125,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDeploymentModel"
-    // InternalDeployment.g:112:1: ruleDeploymentModel returns [EObject current=null] : (otherlv_0= 'DeploymentModel' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'using' otherlv_3= 'ComponentArchitecture' ( ( ruleFQN ) ) )? otherlv_5= '{' ( (lv_elements_6_0= ruleAbstractDeploymentElement ) )* otherlv_7= '}' ) ;
+    // InternalDeployment.g:86:1: ruleDeploymentModel returns [EObject current=null] : (otherlv_0= 'DeploymentModel' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'using' otherlv_3= 'ComponentArchitecture' ( ( ruleFQN ) ) )? otherlv_5= '{' ( (lv_elements_6_0= ruleAbstractDeploymentElement ) )* otherlv_7= '}' ) ;
     public final EObject ruleDeploymentModel() throws RecognitionException {
         EObject current = null;
 
@@ -142,21 +142,21 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDeployment.g:118:2: ( (otherlv_0= 'DeploymentModel' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'using' otherlv_3= 'ComponentArchitecture' ( ( ruleFQN ) ) )? otherlv_5= '{' ( (lv_elements_6_0= ruleAbstractDeploymentElement ) )* otherlv_7= '}' ) )
-            // InternalDeployment.g:119:2: (otherlv_0= 'DeploymentModel' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'using' otherlv_3= 'ComponentArchitecture' ( ( ruleFQN ) ) )? otherlv_5= '{' ( (lv_elements_6_0= ruleAbstractDeploymentElement ) )* otherlv_7= '}' )
+            // InternalDeployment.g:92:2: ( (otherlv_0= 'DeploymentModel' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'using' otherlv_3= 'ComponentArchitecture' ( ( ruleFQN ) ) )? otherlv_5= '{' ( (lv_elements_6_0= ruleAbstractDeploymentElement ) )* otherlv_7= '}' ) )
+            // InternalDeployment.g:93:2: (otherlv_0= 'DeploymentModel' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'using' otherlv_3= 'ComponentArchitecture' ( ( ruleFQN ) ) )? otherlv_5= '{' ( (lv_elements_6_0= ruleAbstractDeploymentElement ) )* otherlv_7= '}' )
             {
-            // InternalDeployment.g:119:2: (otherlv_0= 'DeploymentModel' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'using' otherlv_3= 'ComponentArchitecture' ( ( ruleFQN ) ) )? otherlv_5= '{' ( (lv_elements_6_0= ruleAbstractDeploymentElement ) )* otherlv_7= '}' )
-            // InternalDeployment.g:120:3: otherlv_0= 'DeploymentModel' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'using' otherlv_3= 'ComponentArchitecture' ( ( ruleFQN ) ) )? otherlv_5= '{' ( (lv_elements_6_0= ruleAbstractDeploymentElement ) )* otherlv_7= '}'
+            // InternalDeployment.g:93:2: (otherlv_0= 'DeploymentModel' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'using' otherlv_3= 'ComponentArchitecture' ( ( ruleFQN ) ) )? otherlv_5= '{' ( (lv_elements_6_0= ruleAbstractDeploymentElement ) )* otherlv_7= '}' )
+            // InternalDeployment.g:94:3: otherlv_0= 'DeploymentModel' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'using' otherlv_3= 'ComponentArchitecture' ( ( ruleFQN ) ) )? otherlv_5= '{' ( (lv_elements_6_0= ruleAbstractDeploymentElement ) )* otherlv_7= '}'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDeploymentModelAccess().getDeploymentModelKeyword_0());
             		
-            // InternalDeployment.g:124:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalDeployment.g:125:4: (lv_name_1_0= RULE_ID )
+            // InternalDeployment.g:98:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalDeployment.g:99:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalDeployment.g:125:4: (lv_name_1_0= RULE_ID )
-            // InternalDeployment.g:126:5: lv_name_1_0= RULE_ID
+            // InternalDeployment.g:99:4: (lv_name_1_0= RULE_ID )
+            // InternalDeployment.g:100:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_4); 
 
@@ -178,7 +178,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeployment.g:142:3: (otherlv_2= 'using' otherlv_3= 'ComponentArchitecture' ( ( ruleFQN ) ) )?
+            // InternalDeployment.g:116:3: (otherlv_2= 'using' otherlv_3= 'ComponentArchitecture' ( ( ruleFQN ) ) )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -187,7 +187,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalDeployment.g:143:4: otherlv_2= 'using' otherlv_3= 'ComponentArchitecture' ( ( ruleFQN ) )
+                    // InternalDeployment.g:117:4: otherlv_2= 'using' otherlv_3= 'ComponentArchitecture' ( ( ruleFQN ) )
                     {
                     otherlv_2=(Token)match(input,12,FOLLOW_5); 
 
@@ -197,11 +197,11 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_3, grammarAccess.getDeploymentModelAccess().getComponentArchitectureKeyword_2_1());
                     			
-                    // InternalDeployment.g:151:4: ( ( ruleFQN ) )
-                    // InternalDeployment.g:152:5: ( ruleFQN )
+                    // InternalDeployment.g:125:4: ( ( ruleFQN ) )
+                    // InternalDeployment.g:126:5: ( ruleFQN )
                     {
-                    // InternalDeployment.g:152:5: ( ruleFQN )
-                    // InternalDeployment.g:153:6: ruleFQN
+                    // InternalDeployment.g:126:5: ( ruleFQN )
+                    // InternalDeployment.g:127:6: ruleFQN
                     {
 
                     						if (current==null) {
@@ -235,7 +235,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getDeploymentModelAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalDeployment.g:172:3: ( (lv_elements_6_0= ruleAbstractDeploymentElement ) )*
+            // InternalDeployment.g:146:3: ( (lv_elements_6_0= ruleAbstractDeploymentElement ) )*
             loop2:
             do {
                 int alt2=2;
@@ -248,10 +248,10 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalDeployment.g:173:4: (lv_elements_6_0= ruleAbstractDeploymentElement )
+            	    // InternalDeployment.g:147:4: (lv_elements_6_0= ruleAbstractDeploymentElement )
             	    {
-            	    // InternalDeployment.g:173:4: (lv_elements_6_0= ruleAbstractDeploymentElement )
-            	    // InternalDeployment.g:174:5: lv_elements_6_0= ruleAbstractDeploymentElement
+            	    // InternalDeployment.g:147:4: (lv_elements_6_0= ruleAbstractDeploymentElement )
+            	    // InternalDeployment.g:148:5: lv_elements_6_0= ruleAbstractDeploymentElement
             	    {
 
             	    					newCompositeNode(grammarAccess.getDeploymentModelAccess().getElementsAbstractDeploymentElementParserRuleCall_4_0());
@@ -311,7 +311,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAbstractDeploymentElement"
-    // InternalDeployment.g:199:1: entryRuleAbstractDeploymentElement returns [EObject current=null] : iv_ruleAbstractDeploymentElement= ruleAbstractDeploymentElement EOF ;
+    // InternalDeployment.g:173:1: entryRuleAbstractDeploymentElement returns [EObject current=null] : iv_ruleAbstractDeploymentElement= ruleAbstractDeploymentElement EOF ;
     public final EObject entryRuleAbstractDeploymentElement() throws RecognitionException {
         EObject current = null;
 
@@ -319,8 +319,8 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeployment.g:199:66: (iv_ruleAbstractDeploymentElement= ruleAbstractDeploymentElement EOF )
-            // InternalDeployment.g:200:2: iv_ruleAbstractDeploymentElement= ruleAbstractDeploymentElement EOF
+            // InternalDeployment.g:173:66: (iv_ruleAbstractDeploymentElement= ruleAbstractDeploymentElement EOF )
+            // InternalDeployment.g:174:2: iv_ruleAbstractDeploymentElement= ruleAbstractDeploymentElement EOF
             {
              newCompositeNode(grammarAccess.getAbstractDeploymentElementRule()); 
             pushFollow(FOLLOW_1);
@@ -347,7 +347,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstractDeploymentElement"
-    // InternalDeployment.g:206:1: ruleAbstractDeploymentElement returns [EObject current=null] : (this_NamingService_0= ruleNamingService | this_TargetPlatformReference_1= ruleTargetPlatformReference | this_ComponentArtefact_2= ruleComponentArtefact | this_TargetModelInclude_3= ruleTargetModelInclude ) ;
+    // InternalDeployment.g:180:1: ruleAbstractDeploymentElement returns [EObject current=null] : (this_NamingService_0= ruleNamingService | this_TargetPlatformReference_1= ruleTargetPlatformReference | this_ComponentArtefact_2= ruleComponentArtefact | this_TargetModelInclude_3= ruleTargetModelInclude ) ;
     public final EObject ruleAbstractDeploymentElement() throws RecognitionException {
         EObject current = null;
 
@@ -364,10 +364,10 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDeployment.g:212:2: ( (this_NamingService_0= ruleNamingService | this_TargetPlatformReference_1= ruleTargetPlatformReference | this_ComponentArtefact_2= ruleComponentArtefact | this_TargetModelInclude_3= ruleTargetModelInclude ) )
-            // InternalDeployment.g:213:2: (this_NamingService_0= ruleNamingService | this_TargetPlatformReference_1= ruleTargetPlatformReference | this_ComponentArtefact_2= ruleComponentArtefact | this_TargetModelInclude_3= ruleTargetModelInclude )
+            // InternalDeployment.g:186:2: ( (this_NamingService_0= ruleNamingService | this_TargetPlatformReference_1= ruleTargetPlatformReference | this_ComponentArtefact_2= ruleComponentArtefact | this_TargetModelInclude_3= ruleTargetModelInclude ) )
+            // InternalDeployment.g:187:2: (this_NamingService_0= ruleNamingService | this_TargetPlatformReference_1= ruleTargetPlatformReference | this_ComponentArtefact_2= ruleComponentArtefact | this_TargetModelInclude_3= ruleTargetModelInclude )
             {
-            // InternalDeployment.g:213:2: (this_NamingService_0= ruleNamingService | this_TargetPlatformReference_1= ruleTargetPlatformReference | this_ComponentArtefact_2= ruleComponentArtefact | this_TargetModelInclude_3= ruleTargetModelInclude )
+            // InternalDeployment.g:187:2: (this_NamingService_0= ruleNamingService | this_TargetPlatformReference_1= ruleTargetPlatformReference | this_ComponentArtefact_2= ruleComponentArtefact | this_TargetModelInclude_3= ruleTargetModelInclude )
             int alt3=4;
             switch ( input.LA(1) ) {
             case 25:
@@ -399,7 +399,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
             switch (alt3) {
                 case 1 :
-                    // InternalDeployment.g:214:3: this_NamingService_0= ruleNamingService
+                    // InternalDeployment.g:188:3: this_NamingService_0= ruleNamingService
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractDeploymentElementAccess().getNamingServiceParserRuleCall_0());
@@ -417,7 +417,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDeployment.g:223:3: this_TargetPlatformReference_1= ruleTargetPlatformReference
+                    // InternalDeployment.g:197:3: this_TargetPlatformReference_1= ruleTargetPlatformReference
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractDeploymentElementAccess().getTargetPlatformReferenceParserRuleCall_1());
@@ -435,7 +435,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalDeployment.g:232:3: this_ComponentArtefact_2= ruleComponentArtefact
+                    // InternalDeployment.g:206:3: this_ComponentArtefact_2= ruleComponentArtefact
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractDeploymentElementAccess().getComponentArtefactParserRuleCall_2());
@@ -453,7 +453,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalDeployment.g:241:3: this_TargetModelInclude_3= ruleTargetModelInclude
+                    // InternalDeployment.g:215:3: this_TargetModelInclude_3= ruleTargetModelInclude
                     {
 
                     			newCompositeNode(grammarAccess.getAbstractDeploymentElementAccess().getTargetModelIncludeParserRuleCall_3());
@@ -493,7 +493,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEInt"
-    // InternalDeployment.g:253:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // InternalDeployment.g:227:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -501,8 +501,8 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeployment.g:253:44: (iv_ruleEInt= ruleEInt EOF )
-            // InternalDeployment.g:254:2: iv_ruleEInt= ruleEInt EOF
+            // InternalDeployment.g:227:44: (iv_ruleEInt= ruleEInt EOF )
+            // InternalDeployment.g:228:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
             pushFollow(FOLLOW_1);
@@ -529,7 +529,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEInt"
-    // InternalDeployment.g:260:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // InternalDeployment.g:234:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -540,13 +540,13 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDeployment.g:266:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // InternalDeployment.g:267:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalDeployment.g:240:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // InternalDeployment.g:241:2: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // InternalDeployment.g:267:2: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // InternalDeployment.g:268:3: (kw= '-' )? this_INT_1= RULE_INT
+            // InternalDeployment.g:241:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalDeployment.g:242:3: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // InternalDeployment.g:268:3: (kw= '-' )?
+            // InternalDeployment.g:242:3: (kw= '-' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -555,7 +555,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalDeployment.g:269:4: kw= '-'
+                    // InternalDeployment.g:243:4: kw= '-'
                     {
                     kw=(Token)match(input,16,FOLLOW_8); 
 
@@ -598,7 +598,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalDeployment.g:286:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalDeployment.g:260:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -606,8 +606,8 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeployment.g:286:47: (iv_ruleEString= ruleEString EOF )
-            // InternalDeployment.g:287:2: iv_ruleEString= ruleEString EOF
+            // InternalDeployment.g:260:47: (iv_ruleEString= ruleEString EOF )
+            // InternalDeployment.g:261:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -634,7 +634,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalDeployment.g:293:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
+    // InternalDeployment.g:267:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -644,8 +644,8 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDeployment.g:299:2: (this_STRING_0= RULE_STRING )
-            // InternalDeployment.g:300:2: this_STRING_0= RULE_STRING
+            // InternalDeployment.g:273:2: (this_STRING_0= RULE_STRING )
+            // InternalDeployment.g:274:2: this_STRING_0= RULE_STRING
             {
             this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -674,7 +674,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFQN"
-    // InternalDeployment.g:310:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
+    // InternalDeployment.g:284:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
     public final String entryRuleFQN() throws RecognitionException {
         String current = null;
 
@@ -682,8 +682,8 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeployment.g:310:43: (iv_ruleFQN= ruleFQN EOF )
-            // InternalDeployment.g:311:2: iv_ruleFQN= ruleFQN EOF
+            // InternalDeployment.g:284:43: (iv_ruleFQN= ruleFQN EOF )
+            // InternalDeployment.g:285:2: iv_ruleFQN= ruleFQN EOF
             {
              newCompositeNode(grammarAccess.getFQNRule()); 
             pushFollow(FOLLOW_1);
@@ -710,7 +710,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFQN"
-    // InternalDeployment.g:317:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // InternalDeployment.g:291:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleFQN() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -722,11 +722,11 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDeployment.g:323:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // InternalDeployment.g:324:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalDeployment.g:297:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // InternalDeployment.g:298:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // InternalDeployment.g:324:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // InternalDeployment.g:325:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // InternalDeployment.g:298:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalDeployment.g:299:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -735,7 +735,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(this_ID_0, grammarAccess.getFQNAccess().getIDTerminalRuleCall_0());
             		
-            // InternalDeployment.g:332:3: (kw= '.' this_ID_2= RULE_ID )*
+            // InternalDeployment.g:306:3: (kw= '.' this_ID_2= RULE_ID )*
             loop5:
             do {
                 int alt5=2;
@@ -748,7 +748,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalDeployment.g:333:4: kw= '.' this_ID_2= RULE_ID
+            	    // InternalDeployment.g:307:4: kw= '.' this_ID_2= RULE_ID
             	    {
             	    kw=(Token)match(input,17,FOLLOW_3); 
 
@@ -794,7 +794,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTargetModelInclude"
-    // InternalDeployment.g:350:1: entryRuleTargetModelInclude returns [EObject current=null] : iv_ruleTargetModelInclude= ruleTargetModelInclude EOF ;
+    // InternalDeployment.g:324:1: entryRuleTargetModelInclude returns [EObject current=null] : iv_ruleTargetModelInclude= ruleTargetModelInclude EOF ;
     public final EObject entryRuleTargetModelInclude() throws RecognitionException {
         EObject current = null;
 
@@ -802,8 +802,8 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeployment.g:350:59: (iv_ruleTargetModelInclude= ruleTargetModelInclude EOF )
-            // InternalDeployment.g:351:2: iv_ruleTargetModelInclude= ruleTargetModelInclude EOF
+            // InternalDeployment.g:324:59: (iv_ruleTargetModelInclude= ruleTargetModelInclude EOF )
+            // InternalDeployment.g:325:2: iv_ruleTargetModelInclude= ruleTargetModelInclude EOF
             {
              newCompositeNode(grammarAccess.getTargetModelIncludeRule()); 
             pushFollow(FOLLOW_1);
@@ -830,7 +830,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTargetModelInclude"
-    // InternalDeployment.g:357:1: ruleTargetModelInclude returns [EObject current=null] : (otherlv_0= '#import' ( (lv_importedNamespace_1_0= ruleEString ) ) (otherlv_2= ';' )? ) ;
+    // InternalDeployment.g:331:1: ruleTargetModelInclude returns [EObject current=null] : (otherlv_0= '#import' ( (lv_importedNamespace_1_0= ruleEString ) ) (otherlv_2= ';' )? ) ;
     public final EObject ruleTargetModelInclude() throws RecognitionException {
         EObject current = null;
 
@@ -843,21 +843,21 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDeployment.g:363:2: ( (otherlv_0= '#import' ( (lv_importedNamespace_1_0= ruleEString ) ) (otherlv_2= ';' )? ) )
-            // InternalDeployment.g:364:2: (otherlv_0= '#import' ( (lv_importedNamespace_1_0= ruleEString ) ) (otherlv_2= ';' )? )
+            // InternalDeployment.g:337:2: ( (otherlv_0= '#import' ( (lv_importedNamespace_1_0= ruleEString ) ) (otherlv_2= ';' )? ) )
+            // InternalDeployment.g:338:2: (otherlv_0= '#import' ( (lv_importedNamespace_1_0= ruleEString ) ) (otherlv_2= ';' )? )
             {
-            // InternalDeployment.g:364:2: (otherlv_0= '#import' ( (lv_importedNamespace_1_0= ruleEString ) ) (otherlv_2= ';' )? )
-            // InternalDeployment.g:365:3: otherlv_0= '#import' ( (lv_importedNamespace_1_0= ruleEString ) ) (otherlv_2= ';' )?
+            // InternalDeployment.g:338:2: (otherlv_0= '#import' ( (lv_importedNamespace_1_0= ruleEString ) ) (otherlv_2= ';' )? )
+            // InternalDeployment.g:339:3: otherlv_0= '#import' ( (lv_importedNamespace_1_0= ruleEString ) ) (otherlv_2= ';' )?
             {
             otherlv_0=(Token)match(input,18,FOLLOW_10); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTargetModelIncludeAccess().getImportKeyword_0());
             		
-            // InternalDeployment.g:369:3: ( (lv_importedNamespace_1_0= ruleEString ) )
-            // InternalDeployment.g:370:4: (lv_importedNamespace_1_0= ruleEString )
+            // InternalDeployment.g:343:3: ( (lv_importedNamespace_1_0= ruleEString ) )
+            // InternalDeployment.g:344:4: (lv_importedNamespace_1_0= ruleEString )
             {
-            // InternalDeployment.g:370:4: (lv_importedNamespace_1_0= ruleEString )
-            // InternalDeployment.g:371:5: lv_importedNamespace_1_0= ruleEString
+            // InternalDeployment.g:344:4: (lv_importedNamespace_1_0= ruleEString )
+            // InternalDeployment.g:345:5: lv_importedNamespace_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getTargetModelIncludeAccess().getImportedNamespaceEStringParserRuleCall_1_0());
@@ -884,7 +884,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeployment.g:388:3: (otherlv_2= ';' )?
+            // InternalDeployment.g:362:3: (otherlv_2= ';' )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -893,7 +893,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalDeployment.g:389:4: otherlv_2= ';'
+                    // InternalDeployment.g:363:4: otherlv_2= ';'
                     {
                     otherlv_2=(Token)match(input,19,FOLLOW_2); 
 
@@ -928,7 +928,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTargetPlatformReference"
-    // InternalDeployment.g:398:1: entryRuleTargetPlatformReference returns [EObject current=null] : iv_ruleTargetPlatformReference= ruleTargetPlatformReference EOF ;
+    // InternalDeployment.g:372:1: entryRuleTargetPlatformReference returns [EObject current=null] : iv_ruleTargetPlatformReference= ruleTargetPlatformReference EOF ;
     public final EObject entryRuleTargetPlatformReference() throws RecognitionException {
         EObject current = null;
 
@@ -936,8 +936,8 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeployment.g:398:64: (iv_ruleTargetPlatformReference= ruleTargetPlatformReference EOF )
-            // InternalDeployment.g:399:2: iv_ruleTargetPlatformReference= ruleTargetPlatformReference EOF
+            // InternalDeployment.g:372:64: (iv_ruleTargetPlatformReference= ruleTargetPlatformReference EOF )
+            // InternalDeployment.g:373:2: iv_ruleTargetPlatformReference= ruleTargetPlatformReference EOF
             {
              newCompositeNode(grammarAccess.getTargetPlatformReferenceRule()); 
             pushFollow(FOLLOW_1);
@@ -964,7 +964,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTargetPlatformReference"
-    // InternalDeployment.g:405:1: ruleTargetPlatformReference returns [EObject current=null] : (otherlv_0= 'TargetPlatformReference' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'using' ( ( ruleFQN ) ) otherlv_4= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) ) ) otherlv_9= '}' ) ;
+    // InternalDeployment.g:379:1: ruleTargetPlatformReference returns [EObject current=null] : (otherlv_0= 'TargetPlatformReference' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'using' ( ( ruleFQN ) ) otherlv_4= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) ) ) otherlv_9= '}' ) ;
     public final EObject ruleTargetPlatformReference() throws RecognitionException {
         EObject current = null;
 
@@ -984,21 +984,21 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDeployment.g:411:2: ( (otherlv_0= 'TargetPlatformReference' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'using' ( ( ruleFQN ) ) otherlv_4= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) ) ) otherlv_9= '}' ) )
-            // InternalDeployment.g:412:2: (otherlv_0= 'TargetPlatformReference' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'using' ( ( ruleFQN ) ) otherlv_4= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) ) ) otherlv_9= '}' )
+            // InternalDeployment.g:385:2: ( (otherlv_0= 'TargetPlatformReference' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'using' ( ( ruleFQN ) ) otherlv_4= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) ) ) otherlv_9= '}' ) )
+            // InternalDeployment.g:386:2: (otherlv_0= 'TargetPlatformReference' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'using' ( ( ruleFQN ) ) otherlv_4= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) ) ) otherlv_9= '}' )
             {
-            // InternalDeployment.g:412:2: (otherlv_0= 'TargetPlatformReference' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'using' ( ( ruleFQN ) ) otherlv_4= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) ) ) otherlv_9= '}' )
-            // InternalDeployment.g:413:3: otherlv_0= 'TargetPlatformReference' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'using' ( ( ruleFQN ) ) otherlv_4= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) ) ) otherlv_9= '}'
+            // InternalDeployment.g:386:2: (otherlv_0= 'TargetPlatformReference' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'using' ( ( ruleFQN ) ) otherlv_4= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) ) ) otherlv_9= '}' )
+            // InternalDeployment.g:387:3: otherlv_0= 'TargetPlatformReference' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'using' ( ( ruleFQN ) ) otherlv_4= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) ) ) otherlv_9= '}'
             {
             otherlv_0=(Token)match(input,20,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTargetPlatformReferenceAccess().getTargetPlatformReferenceKeyword_0());
             		
-            // InternalDeployment.g:417:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalDeployment.g:418:4: (lv_name_1_0= RULE_ID )
+            // InternalDeployment.g:391:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalDeployment.g:392:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalDeployment.g:418:4: (lv_name_1_0= RULE_ID )
-            // InternalDeployment.g:419:5: lv_name_1_0= RULE_ID
+            // InternalDeployment.g:392:4: (lv_name_1_0= RULE_ID )
+            // InternalDeployment.g:393:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_12); 
 
@@ -1024,11 +1024,11 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getTargetPlatformReferenceAccess().getUsingKeyword_2());
             		
-            // InternalDeployment.g:439:3: ( ( ruleFQN ) )
-            // InternalDeployment.g:440:4: ( ruleFQN )
+            // InternalDeployment.g:413:3: ( ( ruleFQN ) )
+            // InternalDeployment.g:414:4: ( ruleFQN )
             {
-            // InternalDeployment.g:440:4: ( ruleFQN )
-            // InternalDeployment.g:441:5: ruleFQN
+            // InternalDeployment.g:414:4: ( ruleFQN )
+            // InternalDeployment.g:415:5: ruleFQN
             {
 
             					if (current==null) {
@@ -1056,19 +1056,19 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getTargetPlatformReferenceAccess().getLeftCurlyBracketKeyword_4());
             		
-            // InternalDeployment.g:459:3: ( ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) ) )
-            // InternalDeployment.g:460:4: ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) )
+            // InternalDeployment.g:433:3: ( ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) ) )
+            // InternalDeployment.g:434:4: ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) )
             {
-            // InternalDeployment.g:460:4: ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) )
-            // InternalDeployment.g:461:5: ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* )
+            // InternalDeployment.g:434:4: ( ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* ) )
+            // InternalDeployment.g:435:5: ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* )
             {
              
             				  getUnorderedGroupHelper().enter(grammarAccess.getTargetPlatformReferenceAccess().getUnorderedGroup_5());
             				
-            // InternalDeployment.g:464:5: ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* )
-            // InternalDeployment.g:465:6: ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )*
+            // InternalDeployment.g:438:5: ( ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )* )
+            // InternalDeployment.g:439:6: ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )*
             {
-            // InternalDeployment.g:465:6: ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )*
+            // InternalDeployment.g:439:6: ( ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) ) )*
             loop7:
             do {
                 int alt7=4;
@@ -1087,31 +1087,31 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalDeployment.g:466:4: ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) )
+            	    // InternalDeployment.g:440:4: ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) )
             	    {
-            	    // InternalDeployment.g:466:4: ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) )
-            	    // InternalDeployment.g:467:5: {...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) )
+            	    // InternalDeployment.g:440:4: ({...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) ) )
+            	    // InternalDeployment.g:441:5: {...}? => ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getTargetPlatformReferenceAccess().getUnorderedGroup_5(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleTargetPlatformReference", "getUnorderedGroupHelper().canSelect(grammarAccess.getTargetPlatformReferenceAccess().getUnorderedGroup_5(), 0)");
             	    }
-            	    // InternalDeployment.g:467:120: ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) )
-            	    // InternalDeployment.g:468:6: ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) )
+            	    // InternalDeployment.g:441:120: ( ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) ) )
+            	    // InternalDeployment.g:442:6: ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getTargetPlatformReferenceAccess().getUnorderedGroup_5(), 0);
             	    					
-            	    // InternalDeployment.g:471:9: ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) )
-            	    // InternalDeployment.g:471:10: {...}? => ( (lv_directory_6_0= ruleUploadDirectory ) )
+            	    // InternalDeployment.g:445:9: ({...}? => ( (lv_directory_6_0= ruleUploadDirectory ) ) )
+            	    // InternalDeployment.g:445:10: {...}? => ( (lv_directory_6_0= ruleUploadDirectory ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleTargetPlatformReference", "true");
             	    }
-            	    // InternalDeployment.g:471:19: ( (lv_directory_6_0= ruleUploadDirectory ) )
-            	    // InternalDeployment.g:471:20: (lv_directory_6_0= ruleUploadDirectory )
+            	    // InternalDeployment.g:445:19: ( (lv_directory_6_0= ruleUploadDirectory ) )
+            	    // InternalDeployment.g:445:20: (lv_directory_6_0= ruleUploadDirectory )
             	    {
-            	    // InternalDeployment.g:471:20: (lv_directory_6_0= ruleUploadDirectory )
-            	    // InternalDeployment.g:472:10: lv_directory_6_0= ruleUploadDirectory
+            	    // InternalDeployment.g:445:20: (lv_directory_6_0= ruleUploadDirectory )
+            	    // InternalDeployment.g:446:10: lv_directory_6_0= ruleUploadDirectory
             	    {
 
             	    										newCompositeNode(grammarAccess.getTargetPlatformReferenceAccess().getDirectoryUploadDirectoryParserRuleCall_5_0_0());
@@ -1154,31 +1154,31 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalDeployment.g:494:4: ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) )
+            	    // InternalDeployment.g:468:4: ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) )
             	    {
-            	    // InternalDeployment.g:494:4: ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) )
-            	    // InternalDeployment.g:495:5: {...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) )
+            	    // InternalDeployment.g:468:4: ({...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) ) )
+            	    // InternalDeployment.g:469:5: {...}? => ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getTargetPlatformReferenceAccess().getUnorderedGroup_5(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleTargetPlatformReference", "getUnorderedGroupHelper().canSelect(grammarAccess.getTargetPlatformReferenceAccess().getUnorderedGroup_5(), 1)");
             	    }
-            	    // InternalDeployment.g:495:120: ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) )
-            	    // InternalDeployment.g:496:6: ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) )
+            	    // InternalDeployment.g:469:120: ( ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) ) )
+            	    // InternalDeployment.g:470:6: ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getTargetPlatformReferenceAccess().getUnorderedGroup_5(), 1);
             	    					
-            	    // InternalDeployment.g:499:9: ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) )
-            	    // InternalDeployment.g:499:10: {...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) )
+            	    // InternalDeployment.g:473:9: ({...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) ) )
+            	    // InternalDeployment.g:473:10: {...}? => ( (lv_login_7_0= ruleLoginAccountSelection ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleTargetPlatformReference", "true");
             	    }
-            	    // InternalDeployment.g:499:19: ( (lv_login_7_0= ruleLoginAccountSelection ) )
-            	    // InternalDeployment.g:499:20: (lv_login_7_0= ruleLoginAccountSelection )
+            	    // InternalDeployment.g:473:19: ( (lv_login_7_0= ruleLoginAccountSelection ) )
+            	    // InternalDeployment.g:473:20: (lv_login_7_0= ruleLoginAccountSelection )
             	    {
-            	    // InternalDeployment.g:499:20: (lv_login_7_0= ruleLoginAccountSelection )
-            	    // InternalDeployment.g:500:10: lv_login_7_0= ruleLoginAccountSelection
+            	    // InternalDeployment.g:473:20: (lv_login_7_0= ruleLoginAccountSelection )
+            	    // InternalDeployment.g:474:10: lv_login_7_0= ruleLoginAccountSelection
             	    {
 
             	    										newCompositeNode(grammarAccess.getTargetPlatformReferenceAccess().getLoginLoginAccountSelectionParserRuleCall_5_1_0());
@@ -1221,31 +1221,31 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalDeployment.g:522:4: ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) )
+            	    // InternalDeployment.g:496:4: ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) )
             	    {
-            	    // InternalDeployment.g:522:4: ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) )
-            	    // InternalDeployment.g:523:5: {...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) )
+            	    // InternalDeployment.g:496:4: ({...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) ) )
+            	    // InternalDeployment.g:497:5: {...}? => ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getTargetPlatformReferenceAccess().getUnorderedGroup_5(), 2) ) {
             	        throw new FailedPredicateException(input, "ruleTargetPlatformReference", "getUnorderedGroupHelper().canSelect(grammarAccess.getTargetPlatformReferenceAccess().getUnorderedGroup_5(), 2)");
             	    }
-            	    // InternalDeployment.g:523:120: ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) )
-            	    // InternalDeployment.g:524:6: ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) )
+            	    // InternalDeployment.g:497:120: ( ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) ) )
+            	    // InternalDeployment.g:498:6: ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getTargetPlatformReferenceAccess().getUnorderedGroup_5(), 2);
             	    					
-            	    // InternalDeployment.g:527:9: ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) )
-            	    // InternalDeployment.g:527:10: {...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) )
+            	    // InternalDeployment.g:501:9: ({...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) ) )
+            	    // InternalDeployment.g:501:10: {...}? => ( (lv_host_8_0= ruleNetworkInterfaceSelection ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleTargetPlatformReference", "true");
             	    }
-            	    // InternalDeployment.g:527:19: ( (lv_host_8_0= ruleNetworkInterfaceSelection ) )
-            	    // InternalDeployment.g:527:20: (lv_host_8_0= ruleNetworkInterfaceSelection )
+            	    // InternalDeployment.g:501:19: ( (lv_host_8_0= ruleNetworkInterfaceSelection ) )
+            	    // InternalDeployment.g:501:20: (lv_host_8_0= ruleNetworkInterfaceSelection )
             	    {
-            	    // InternalDeployment.g:527:20: (lv_host_8_0= ruleNetworkInterfaceSelection )
-            	    // InternalDeployment.g:528:10: lv_host_8_0= ruleNetworkInterfaceSelection
+            	    // InternalDeployment.g:501:20: (lv_host_8_0= ruleNetworkInterfaceSelection )
+            	    // InternalDeployment.g:502:10: lv_host_8_0= ruleNetworkInterfaceSelection
             	    {
 
             	    										newCompositeNode(grammarAccess.getTargetPlatformReferenceAccess().getHostNetworkInterfaceSelectionParserRuleCall_5_2_0());
@@ -1332,7 +1332,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUploadDirectory"
-    // InternalDeployment.g:565:1: entryRuleUploadDirectory returns [EObject current=null] : iv_ruleUploadDirectory= ruleUploadDirectory EOF ;
+    // InternalDeployment.g:539:1: entryRuleUploadDirectory returns [EObject current=null] : iv_ruleUploadDirectory= ruleUploadDirectory EOF ;
     public final EObject entryRuleUploadDirectory() throws RecognitionException {
         EObject current = null;
 
@@ -1340,8 +1340,8 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeployment.g:565:56: (iv_ruleUploadDirectory= ruleUploadDirectory EOF )
-            // InternalDeployment.g:566:2: iv_ruleUploadDirectory= ruleUploadDirectory EOF
+            // InternalDeployment.g:539:56: (iv_ruleUploadDirectory= ruleUploadDirectory EOF )
+            // InternalDeployment.g:540:2: iv_ruleUploadDirectory= ruleUploadDirectory EOF
             {
              newCompositeNode(grammarAccess.getUploadDirectoryRule()); 
             pushFollow(FOLLOW_1);
@@ -1368,7 +1368,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUploadDirectory"
-    // InternalDeployment.g:572:1: ruleUploadDirectory returns [EObject current=null] : (otherlv_0= 'UploadDirectory' ( (lv_path_1_0= RULE_STRING ) ) ) ;
+    // InternalDeployment.g:546:1: ruleUploadDirectory returns [EObject current=null] : (otherlv_0= 'UploadDirectory' ( (lv_path_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleUploadDirectory() throws RecognitionException {
         EObject current = null;
 
@@ -1379,21 +1379,21 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDeployment.g:578:2: ( (otherlv_0= 'UploadDirectory' ( (lv_path_1_0= RULE_STRING ) ) ) )
-            // InternalDeployment.g:579:2: (otherlv_0= 'UploadDirectory' ( (lv_path_1_0= RULE_STRING ) ) )
+            // InternalDeployment.g:552:2: ( (otherlv_0= 'UploadDirectory' ( (lv_path_1_0= RULE_STRING ) ) ) )
+            // InternalDeployment.g:553:2: (otherlv_0= 'UploadDirectory' ( (lv_path_1_0= RULE_STRING ) ) )
             {
-            // InternalDeployment.g:579:2: (otherlv_0= 'UploadDirectory' ( (lv_path_1_0= RULE_STRING ) ) )
-            // InternalDeployment.g:580:3: otherlv_0= 'UploadDirectory' ( (lv_path_1_0= RULE_STRING ) )
+            // InternalDeployment.g:553:2: (otherlv_0= 'UploadDirectory' ( (lv_path_1_0= RULE_STRING ) ) )
+            // InternalDeployment.g:554:3: otherlv_0= 'UploadDirectory' ( (lv_path_1_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,21,FOLLOW_10); 
 
             			newLeafNode(otherlv_0, grammarAccess.getUploadDirectoryAccess().getUploadDirectoryKeyword_0());
             		
-            // InternalDeployment.g:584:3: ( (lv_path_1_0= RULE_STRING ) )
-            // InternalDeployment.g:585:4: (lv_path_1_0= RULE_STRING )
+            // InternalDeployment.g:558:3: ( (lv_path_1_0= RULE_STRING ) )
+            // InternalDeployment.g:559:4: (lv_path_1_0= RULE_STRING )
             {
-            // InternalDeployment.g:585:4: (lv_path_1_0= RULE_STRING )
-            // InternalDeployment.g:586:5: lv_path_1_0= RULE_STRING
+            // InternalDeployment.g:559:4: (lv_path_1_0= RULE_STRING )
+            // InternalDeployment.g:560:5: lv_path_1_0= RULE_STRING
             {
             lv_path_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1438,7 +1438,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLoginAccountSelection"
-    // InternalDeployment.g:606:1: entryRuleLoginAccountSelection returns [EObject current=null] : iv_ruleLoginAccountSelection= ruleLoginAccountSelection EOF ;
+    // InternalDeployment.g:580:1: entryRuleLoginAccountSelection returns [EObject current=null] : iv_ruleLoginAccountSelection= ruleLoginAccountSelection EOF ;
     public final EObject entryRuleLoginAccountSelection() throws RecognitionException {
         EObject current = null;
 
@@ -1446,8 +1446,8 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeployment.g:606:62: (iv_ruleLoginAccountSelection= ruleLoginAccountSelection EOF )
-            // InternalDeployment.g:607:2: iv_ruleLoginAccountSelection= ruleLoginAccountSelection EOF
+            // InternalDeployment.g:580:62: (iv_ruleLoginAccountSelection= ruleLoginAccountSelection EOF )
+            // InternalDeployment.g:581:2: iv_ruleLoginAccountSelection= ruleLoginAccountSelection EOF
             {
              newCompositeNode(grammarAccess.getLoginAccountSelectionRule()); 
             pushFollow(FOLLOW_1);
@@ -1474,7 +1474,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLoginAccountSelection"
-    // InternalDeployment.g:613:1: ruleLoginAccountSelection returns [EObject current=null] : (otherlv_0= 'LoginAccount' ( ( ruleFQN ) ) ) ;
+    // InternalDeployment.g:587:1: ruleLoginAccountSelection returns [EObject current=null] : (otherlv_0= 'LoginAccount' ( ( ruleFQN ) ) ) ;
     public final EObject ruleLoginAccountSelection() throws RecognitionException {
         EObject current = null;
 
@@ -1484,21 +1484,21 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDeployment.g:619:2: ( (otherlv_0= 'LoginAccount' ( ( ruleFQN ) ) ) )
-            // InternalDeployment.g:620:2: (otherlv_0= 'LoginAccount' ( ( ruleFQN ) ) )
+            // InternalDeployment.g:593:2: ( (otherlv_0= 'LoginAccount' ( ( ruleFQN ) ) ) )
+            // InternalDeployment.g:594:2: (otherlv_0= 'LoginAccount' ( ( ruleFQN ) ) )
             {
-            // InternalDeployment.g:620:2: (otherlv_0= 'LoginAccount' ( ( ruleFQN ) ) )
-            // InternalDeployment.g:621:3: otherlv_0= 'LoginAccount' ( ( ruleFQN ) )
+            // InternalDeployment.g:594:2: (otherlv_0= 'LoginAccount' ( ( ruleFQN ) ) )
+            // InternalDeployment.g:595:3: otherlv_0= 'LoginAccount' ( ( ruleFQN ) )
             {
             otherlv_0=(Token)match(input,22,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getLoginAccountSelectionAccess().getLoginAccountKeyword_0());
             		
-            // InternalDeployment.g:625:3: ( ( ruleFQN ) )
-            // InternalDeployment.g:626:4: ( ruleFQN )
+            // InternalDeployment.g:599:3: ( ( ruleFQN ) )
+            // InternalDeployment.g:600:4: ( ruleFQN )
             {
-            // InternalDeployment.g:626:4: ( ruleFQN )
-            // InternalDeployment.g:627:5: ruleFQN
+            // InternalDeployment.g:600:4: ( ruleFQN )
+            // InternalDeployment.g:601:5: ruleFQN
             {
 
             					if (current==null) {
@@ -1545,7 +1545,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNetworkInterfaceSelection"
-    // InternalDeployment.g:645:1: entryRuleNetworkInterfaceSelection returns [EObject current=null] : iv_ruleNetworkInterfaceSelection= ruleNetworkInterfaceSelection EOF ;
+    // InternalDeployment.g:619:1: entryRuleNetworkInterfaceSelection returns [EObject current=null] : iv_ruleNetworkInterfaceSelection= ruleNetworkInterfaceSelection EOF ;
     public final EObject entryRuleNetworkInterfaceSelection() throws RecognitionException {
         EObject current = null;
 
@@ -1553,8 +1553,8 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeployment.g:645:66: (iv_ruleNetworkInterfaceSelection= ruleNetworkInterfaceSelection EOF )
-            // InternalDeployment.g:646:2: iv_ruleNetworkInterfaceSelection= ruleNetworkInterfaceSelection EOF
+            // InternalDeployment.g:619:66: (iv_ruleNetworkInterfaceSelection= ruleNetworkInterfaceSelection EOF )
+            // InternalDeployment.g:620:2: iv_ruleNetworkInterfaceSelection= ruleNetworkInterfaceSelection EOF
             {
              newCompositeNode(grammarAccess.getNetworkInterfaceSelectionRule()); 
             pushFollow(FOLLOW_1);
@@ -1581,7 +1581,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNetworkInterfaceSelection"
-    // InternalDeployment.g:652:1: ruleNetworkInterfaceSelection returns [EObject current=null] : (otherlv_0= 'NetworkInterface' ( ( ruleFQN ) ) ) ;
+    // InternalDeployment.g:626:1: ruleNetworkInterfaceSelection returns [EObject current=null] : (otherlv_0= 'NetworkInterface' ( ( ruleFQN ) ) ) ;
     public final EObject ruleNetworkInterfaceSelection() throws RecognitionException {
         EObject current = null;
 
@@ -1591,21 +1591,21 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDeployment.g:658:2: ( (otherlv_0= 'NetworkInterface' ( ( ruleFQN ) ) ) )
-            // InternalDeployment.g:659:2: (otherlv_0= 'NetworkInterface' ( ( ruleFQN ) ) )
+            // InternalDeployment.g:632:2: ( (otherlv_0= 'NetworkInterface' ( ( ruleFQN ) ) ) )
+            // InternalDeployment.g:633:2: (otherlv_0= 'NetworkInterface' ( ( ruleFQN ) ) )
             {
-            // InternalDeployment.g:659:2: (otherlv_0= 'NetworkInterface' ( ( ruleFQN ) ) )
-            // InternalDeployment.g:660:3: otherlv_0= 'NetworkInterface' ( ( ruleFQN ) )
+            // InternalDeployment.g:633:2: (otherlv_0= 'NetworkInterface' ( ( ruleFQN ) ) )
+            // InternalDeployment.g:634:3: otherlv_0= 'NetworkInterface' ( ( ruleFQN ) )
             {
             otherlv_0=(Token)match(input,23,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getNetworkInterfaceSelectionAccess().getNetworkInterfaceKeyword_0());
             		
-            // InternalDeployment.g:664:3: ( ( ruleFQN ) )
-            // InternalDeployment.g:665:4: ( ruleFQN )
+            // InternalDeployment.g:638:3: ( ( ruleFQN ) )
+            // InternalDeployment.g:639:4: ( ruleFQN )
             {
-            // InternalDeployment.g:665:4: ( ruleFQN )
-            // InternalDeployment.g:666:5: ruleFQN
+            // InternalDeployment.g:639:4: ( ruleFQN )
+            // InternalDeployment.g:640:5: ruleFQN
             {
 
             					if (current==null) {
@@ -1652,7 +1652,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComponentArtefact"
-    // InternalDeployment.g:684:1: entryRuleComponentArtefact returns [EObject current=null] : iv_ruleComponentArtefact= ruleComponentArtefact EOF ;
+    // InternalDeployment.g:658:1: entryRuleComponentArtefact returns [EObject current=null] : iv_ruleComponentArtefact= ruleComponentArtefact EOF ;
     public final EObject entryRuleComponentArtefact() throws RecognitionException {
         EObject current = null;
 
@@ -1660,8 +1660,8 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeployment.g:684:58: (iv_ruleComponentArtefact= ruleComponentArtefact EOF )
-            // InternalDeployment.g:685:2: iv_ruleComponentArtefact= ruleComponentArtefact EOF
+            // InternalDeployment.g:658:58: (iv_ruleComponentArtefact= ruleComponentArtefact EOF )
+            // InternalDeployment.g:659:2: iv_ruleComponentArtefact= ruleComponentArtefact EOF
             {
              newCompositeNode(grammarAccess.getComponentArtefactRule()); 
             pushFollow(FOLLOW_1);
@@ -1688,7 +1688,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComponentArtefact"
-    // InternalDeployment.g:691:1: ruleComponentArtefact returns [EObject current=null] : (otherlv_0= 'ComponentArtefact' ( ( ruleFQN ) ) ( (lv_deploy_2_0= ruleDeployment ) )? (otherlv_3= ';' )? ) ;
+    // InternalDeployment.g:665:1: ruleComponentArtefact returns [EObject current=null] : (otherlv_0= 'ComponentArtefact' ( ( ruleFQN ) ) ( (lv_deploy_2_0= ruleDeployment ) )? (otherlv_3= ';' )? ) ;
     public final EObject ruleComponentArtefact() throws RecognitionException {
         EObject current = null;
 
@@ -1701,21 +1701,21 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDeployment.g:697:2: ( (otherlv_0= 'ComponentArtefact' ( ( ruleFQN ) ) ( (lv_deploy_2_0= ruleDeployment ) )? (otherlv_3= ';' )? ) )
-            // InternalDeployment.g:698:2: (otherlv_0= 'ComponentArtefact' ( ( ruleFQN ) ) ( (lv_deploy_2_0= ruleDeployment ) )? (otherlv_3= ';' )? )
+            // InternalDeployment.g:671:2: ( (otherlv_0= 'ComponentArtefact' ( ( ruleFQN ) ) ( (lv_deploy_2_0= ruleDeployment ) )? (otherlv_3= ';' )? ) )
+            // InternalDeployment.g:672:2: (otherlv_0= 'ComponentArtefact' ( ( ruleFQN ) ) ( (lv_deploy_2_0= ruleDeployment ) )? (otherlv_3= ';' )? )
             {
-            // InternalDeployment.g:698:2: (otherlv_0= 'ComponentArtefact' ( ( ruleFQN ) ) ( (lv_deploy_2_0= ruleDeployment ) )? (otherlv_3= ';' )? )
-            // InternalDeployment.g:699:3: otherlv_0= 'ComponentArtefact' ( ( ruleFQN ) ) ( (lv_deploy_2_0= ruleDeployment ) )? (otherlv_3= ';' )?
+            // InternalDeployment.g:672:2: (otherlv_0= 'ComponentArtefact' ( ( ruleFQN ) ) ( (lv_deploy_2_0= ruleDeployment ) )? (otherlv_3= ';' )? )
+            // InternalDeployment.g:673:3: otherlv_0= 'ComponentArtefact' ( ( ruleFQN ) ) ( (lv_deploy_2_0= ruleDeployment ) )? (otherlv_3= ';' )?
             {
             otherlv_0=(Token)match(input,24,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getComponentArtefactAccess().getComponentArtefactKeyword_0());
             		
-            // InternalDeployment.g:703:3: ( ( ruleFQN ) )
-            // InternalDeployment.g:704:4: ( ruleFQN )
+            // InternalDeployment.g:677:3: ( ( ruleFQN ) )
+            // InternalDeployment.g:678:4: ( ruleFQN )
             {
-            // InternalDeployment.g:704:4: ( ruleFQN )
-            // InternalDeployment.g:705:5: ruleFQN
+            // InternalDeployment.g:678:4: ( ruleFQN )
+            // InternalDeployment.g:679:5: ruleFQN
             {
 
             					if (current==null) {
@@ -1739,7 +1739,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeployment.g:719:3: ( (lv_deploy_2_0= ruleDeployment ) )?
+            // InternalDeployment.g:693:3: ( (lv_deploy_2_0= ruleDeployment ) )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1748,10 +1748,10 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalDeployment.g:720:4: (lv_deploy_2_0= ruleDeployment )
+                    // InternalDeployment.g:694:4: (lv_deploy_2_0= ruleDeployment )
                     {
-                    // InternalDeployment.g:720:4: (lv_deploy_2_0= ruleDeployment )
-                    // InternalDeployment.g:721:5: lv_deploy_2_0= ruleDeployment
+                    // InternalDeployment.g:694:4: (lv_deploy_2_0= ruleDeployment )
+                    // InternalDeployment.g:695:5: lv_deploy_2_0= ruleDeployment
                     {
 
                     					newCompositeNode(grammarAccess.getComponentArtefactAccess().getDeployDeploymentParserRuleCall_2_0());
@@ -1781,7 +1781,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeployment.g:738:3: (otherlv_3= ';' )?
+            // InternalDeployment.g:712:3: (otherlv_3= ';' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1790,7 +1790,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalDeployment.g:739:4: otherlv_3= ';'
+                    // InternalDeployment.g:713:4: otherlv_3= ';'
                     {
                     otherlv_3=(Token)match(input,19,FOLLOW_2); 
 
@@ -1825,7 +1825,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNamingService"
-    // InternalDeployment.g:748:1: entryRuleNamingService returns [EObject current=null] : iv_ruleNamingService= ruleNamingService EOF ;
+    // InternalDeployment.g:722:1: entryRuleNamingService returns [EObject current=null] : iv_ruleNamingService= ruleNamingService EOF ;
     public final EObject entryRuleNamingService() throws RecognitionException {
         EObject current = null;
 
@@ -1833,8 +1833,8 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeployment.g:748:54: (iv_ruleNamingService= ruleNamingService EOF )
-            // InternalDeployment.g:749:2: iv_ruleNamingService= ruleNamingService EOF
+            // InternalDeployment.g:722:54: (iv_ruleNamingService= ruleNamingService EOF )
+            // InternalDeployment.g:723:2: iv_ruleNamingService= ruleNamingService EOF
             {
              newCompositeNode(grammarAccess.getNamingServiceRule()); 
             pushFollow(FOLLOW_1);
@@ -1861,7 +1861,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNamingService"
-    // InternalDeployment.g:755:1: ruleNamingService returns [EObject current=null] : ( () otherlv_1= 'NamingService' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) ) ) otherlv_7= '}' ) ;
+    // InternalDeployment.g:729:1: ruleNamingService returns [EObject current=null] : ( () otherlv_1= 'NamingService' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) ) ) otherlv_7= '}' ) ;
     public final EObject ruleNamingService() throws RecognitionException {
         EObject current = null;
 
@@ -1878,14 +1878,14 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDeployment.g:761:2: ( ( () otherlv_1= 'NamingService' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) ) ) otherlv_7= '}' ) )
-            // InternalDeployment.g:762:2: ( () otherlv_1= 'NamingService' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) ) ) otherlv_7= '}' )
+            // InternalDeployment.g:735:2: ( ( () otherlv_1= 'NamingService' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) ) ) otherlv_7= '}' ) )
+            // InternalDeployment.g:736:2: ( () otherlv_1= 'NamingService' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) ) ) otherlv_7= '}' )
             {
-            // InternalDeployment.g:762:2: ( () otherlv_1= 'NamingService' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) ) ) otherlv_7= '}' )
-            // InternalDeployment.g:763:3: () otherlv_1= 'NamingService' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) ) ) otherlv_7= '}'
+            // InternalDeployment.g:736:2: ( () otherlv_1= 'NamingService' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) ) ) otherlv_7= '}' )
+            // InternalDeployment.g:737:3: () otherlv_1= 'NamingService' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) ) ) otherlv_7= '}'
             {
-            // InternalDeployment.g:763:3: ()
-            // InternalDeployment.g:764:4: 
+            // InternalDeployment.g:737:3: ()
+            // InternalDeployment.g:738:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1903,19 +1903,19 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getNamingServiceAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalDeployment.g:778:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) ) )
-            // InternalDeployment.g:779:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) )
+            // InternalDeployment.g:752:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) ) )
+            // InternalDeployment.g:753:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) )
             {
-            // InternalDeployment.g:779:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) )
-            // InternalDeployment.g:780:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* )
+            // InternalDeployment.g:753:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* ) )
+            // InternalDeployment.g:754:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* )
             {
              
             				  getUnorderedGroupHelper().enter(grammarAccess.getNamingServiceAccess().getUnorderedGroup_3());
             				
-            // InternalDeployment.g:783:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* )
-            // InternalDeployment.g:784:6: ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )*
+            // InternalDeployment.g:757:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )* )
+            // InternalDeployment.g:758:6: ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )*
             {
-            // InternalDeployment.g:784:6: ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )*
+            // InternalDeployment.g:758:6: ( ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) ) )*
             loop10:
             do {
                 int alt10=3;
@@ -1931,38 +1931,38 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalDeployment.g:785:4: ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) )
+            	    // InternalDeployment.g:759:4: ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) )
             	    {
-            	    // InternalDeployment.g:785:4: ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) )
-            	    // InternalDeployment.g:786:5: {...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) )
+            	    // InternalDeployment.g:759:4: ({...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) ) )
+            	    // InternalDeployment.g:760:5: {...}? => ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNamingServiceAccess().getUnorderedGroup_3(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleNamingService", "getUnorderedGroupHelper().canSelect(grammarAccess.getNamingServiceAccess().getUnorderedGroup_3(), 0)");
             	    }
-            	    // InternalDeployment.g:786:110: ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) )
-            	    // InternalDeployment.g:787:6: ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) )
+            	    // InternalDeployment.g:760:110: ( ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) ) )
+            	    // InternalDeployment.g:761:6: ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getNamingServiceAccess().getUnorderedGroup_3(), 0);
             	    					
-            	    // InternalDeployment.g:790:9: ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) )
-            	    // InternalDeployment.g:790:10: {...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) )
+            	    // InternalDeployment.g:764:9: ({...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) ) )
+            	    // InternalDeployment.g:764:10: {...}? => (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleNamingService", "true");
             	    }
-            	    // InternalDeployment.g:790:19: (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) )
-            	    // InternalDeployment.g:790:20: otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) )
+            	    // InternalDeployment.g:764:19: (otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) ) )
+            	    // InternalDeployment.g:764:20: otherlv_4= 'portNr' ( (lv_portNr_5_0= ruleEInt ) )
             	    {
             	    otherlv_4=(Token)match(input,26,FOLLOW_16); 
 
             	    									newLeafNode(otherlv_4, grammarAccess.getNamingServiceAccess().getPortNrKeyword_3_0_0());
             	    								
-            	    // InternalDeployment.g:794:9: ( (lv_portNr_5_0= ruleEInt ) )
-            	    // InternalDeployment.g:795:10: (lv_portNr_5_0= ruleEInt )
+            	    // InternalDeployment.g:768:9: ( (lv_portNr_5_0= ruleEInt ) )
+            	    // InternalDeployment.g:769:10: (lv_portNr_5_0= ruleEInt )
             	    {
-            	    // InternalDeployment.g:795:10: (lv_portNr_5_0= ruleEInt )
-            	    // InternalDeployment.g:796:11: lv_portNr_5_0= ruleEInt
+            	    // InternalDeployment.g:769:10: (lv_portNr_5_0= ruleEInt )
+            	    // InternalDeployment.g:770:11: lv_portNr_5_0= ruleEInt
             	    {
 
             	    											newCompositeNode(grammarAccess.getNamingServiceAccess().getPortNrEIntParserRuleCall_3_0_1_0());
@@ -2008,31 +2008,31 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalDeployment.g:819:4: ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) )
+            	    // InternalDeployment.g:793:4: ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) )
             	    {
-            	    // InternalDeployment.g:819:4: ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) )
-            	    // InternalDeployment.g:820:5: {...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) )
+            	    // InternalDeployment.g:793:4: ({...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) ) )
+            	    // InternalDeployment.g:794:5: {...}? => ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNamingServiceAccess().getUnorderedGroup_3(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleNamingService", "getUnorderedGroupHelper().canSelect(grammarAccess.getNamingServiceAccess().getUnorderedGroup_3(), 1)");
             	    }
-            	    // InternalDeployment.g:820:110: ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) )
-            	    // InternalDeployment.g:821:6: ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) )
+            	    // InternalDeployment.g:794:110: ( ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) ) )
+            	    // InternalDeployment.g:795:6: ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getNamingServiceAccess().getUnorderedGroup_3(), 1);
             	    					
-            	    // InternalDeployment.g:824:9: ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) )
-            	    // InternalDeployment.g:824:10: {...}? => ( (lv_deploy_6_0= ruleDeployment ) )
+            	    // InternalDeployment.g:798:9: ({...}? => ( (lv_deploy_6_0= ruleDeployment ) ) )
+            	    // InternalDeployment.g:798:10: {...}? => ( (lv_deploy_6_0= ruleDeployment ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleNamingService", "true");
             	    }
-            	    // InternalDeployment.g:824:19: ( (lv_deploy_6_0= ruleDeployment ) )
-            	    // InternalDeployment.g:824:20: (lv_deploy_6_0= ruleDeployment )
+            	    // InternalDeployment.g:798:19: ( (lv_deploy_6_0= ruleDeployment ) )
+            	    // InternalDeployment.g:798:20: (lv_deploy_6_0= ruleDeployment )
             	    {
-            	    // InternalDeployment.g:824:20: (lv_deploy_6_0= ruleDeployment )
-            	    // InternalDeployment.g:825:10: lv_deploy_6_0= ruleDeployment
+            	    // InternalDeployment.g:798:20: (lv_deploy_6_0= ruleDeployment )
+            	    // InternalDeployment.g:799:10: lv_deploy_6_0= ruleDeployment
             	    {
 
             	    										newCompositeNode(grammarAccess.getNamingServiceAccess().getDeployDeploymentParserRuleCall_3_1_0());
@@ -2119,7 +2119,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDeployment"
-    // InternalDeployment.g:862:1: entryRuleDeployment returns [EObject current=null] : iv_ruleDeployment= ruleDeployment EOF ;
+    // InternalDeployment.g:836:1: entryRuleDeployment returns [EObject current=null] : iv_ruleDeployment= ruleDeployment EOF ;
     public final EObject entryRuleDeployment() throws RecognitionException {
         EObject current = null;
 
@@ -2127,8 +2127,8 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeployment.g:862:51: (iv_ruleDeployment= ruleDeployment EOF )
-            // InternalDeployment.g:863:2: iv_ruleDeployment= ruleDeployment EOF
+            // InternalDeployment.g:836:51: (iv_ruleDeployment= ruleDeployment EOF )
+            // InternalDeployment.g:837:2: iv_ruleDeployment= ruleDeployment EOF
             {
              newCompositeNode(grammarAccess.getDeploymentRule()); 
             pushFollow(FOLLOW_1);
@@ -2155,7 +2155,7 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDeployment"
-    // InternalDeployment.g:869:1: ruleDeployment returns [EObject current=null] : (otherlv_0= 'deploy-to' ( ( ruleFQN ) ) ) ;
+    // InternalDeployment.g:843:1: ruleDeployment returns [EObject current=null] : (otherlv_0= 'deploy-to' ( ( ruleFQN ) ) ) ;
     public final EObject ruleDeployment() throws RecognitionException {
         EObject current = null;
 
@@ -2165,21 +2165,21 @@ public class InternalDeploymentParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDeployment.g:875:2: ( (otherlv_0= 'deploy-to' ( ( ruleFQN ) ) ) )
-            // InternalDeployment.g:876:2: (otherlv_0= 'deploy-to' ( ( ruleFQN ) ) )
+            // InternalDeployment.g:849:2: ( (otherlv_0= 'deploy-to' ( ( ruleFQN ) ) ) )
+            // InternalDeployment.g:850:2: (otherlv_0= 'deploy-to' ( ( ruleFQN ) ) )
             {
-            // InternalDeployment.g:876:2: (otherlv_0= 'deploy-to' ( ( ruleFQN ) ) )
-            // InternalDeployment.g:877:3: otherlv_0= 'deploy-to' ( ( ruleFQN ) )
+            // InternalDeployment.g:850:2: (otherlv_0= 'deploy-to' ( ( ruleFQN ) ) )
+            // InternalDeployment.g:851:3: otherlv_0= 'deploy-to' ( ( ruleFQN ) )
             {
             otherlv_0=(Token)match(input,27,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDeploymentAccess().getDeployToKeyword_0());
             		
-            // InternalDeployment.g:881:3: ( ( ruleFQN ) )
-            // InternalDeployment.g:882:4: ( ruleFQN )
+            // InternalDeployment.g:855:3: ( ( ruleFQN ) )
+            // InternalDeployment.g:856:4: ( ruleFQN )
             {
-            // InternalDeployment.g:882:4: ( ruleFQN )
-            // InternalDeployment.g:883:5: ruleFQN
+            // InternalDeployment.g:856:4: ( ruleFQN )
+            // InternalDeployment.g:857:5: ruleFQN
             {
 
             					if (current==null) {

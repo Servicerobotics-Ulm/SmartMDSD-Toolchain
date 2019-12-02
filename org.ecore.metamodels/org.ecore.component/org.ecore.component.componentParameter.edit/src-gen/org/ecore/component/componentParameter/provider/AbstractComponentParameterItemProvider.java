@@ -11,13 +11,9 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.ecore.base.documentation.provider.AbstractDocumentedElementItemProvider;
+import org.ecore.component.componentParameter.AbstractComponentParameter;
 
 /**
  * This is the item provider adapter for a {@link org.ecore.component.componentParameter.AbstractComponentParameter} object.
@@ -25,8 +21,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AbstractComponentParameterItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class AbstractComponentParameterItemProvider extends AbstractDocumentedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -81,7 +76,9 @@ public class AbstractComponentParameterItemProvider extends ItemProviderAdapter 
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_AbstractComponentParameter_type");
+		String label = crop(((AbstractComponentParameter) object).getDocumentation());
+		return label == null || label.length() == 0 ? getString("_UI_AbstractComponentParameter_type")
+				: getString("_UI_AbstractComponentParameter_type") + " " + label;
 	}
 
 	/**

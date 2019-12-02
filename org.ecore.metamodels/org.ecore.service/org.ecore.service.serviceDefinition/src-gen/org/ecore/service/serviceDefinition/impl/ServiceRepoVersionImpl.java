@@ -112,6 +112,7 @@ public class ServiceRepoVersionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getMajor() {
 		return major;
 	}
@@ -121,6 +122,7 @@ public class ServiceRepoVersionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMajor(int newMajor) {
 		int oldMajor = major;
 		major = newMajor;
@@ -134,6 +136,7 @@ public class ServiceRepoVersionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getMinor() {
 		return minor;
 	}
@@ -143,6 +146,7 @@ public class ServiceRepoVersionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMinor(int newMinor) {
 		int oldMinor = minor;
 		minor = newMinor;
@@ -156,6 +160,7 @@ public class ServiceRepoVersionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getPatch() {
 		return patch;
 	}
@@ -165,6 +170,7 @@ public class ServiceRepoVersionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPatch(int newPatch) {
 		int oldPatch = patch;
 		patch = newPatch;
@@ -261,7 +267,7 @@ public class ServiceRepoVersionImpl extends MinimalEObjectImpl.Container impleme
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (major: ");
 		result.append(major);
 		result.append(", minor: ");

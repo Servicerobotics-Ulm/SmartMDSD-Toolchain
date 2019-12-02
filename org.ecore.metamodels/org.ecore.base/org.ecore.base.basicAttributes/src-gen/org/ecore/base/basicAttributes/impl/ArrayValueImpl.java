@@ -66,6 +66,7 @@ public class ArrayValueImpl extends AbstractValueImpl implements ArrayValue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SingleValue> getValues() {
 		if (values == null) {
 			values = new EObjectContainmentEList<SingleValue>(SingleValue.class, this,

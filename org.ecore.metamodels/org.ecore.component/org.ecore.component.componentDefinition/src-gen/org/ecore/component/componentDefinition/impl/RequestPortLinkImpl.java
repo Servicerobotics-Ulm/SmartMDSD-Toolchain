@@ -73,6 +73,7 @@ public class RequestPortLinkImpl extends AbstractComponentLinkImpl implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RequestPort getRequestPort() {
 		if (requestPort != null && requestPort.eIsProxy()) {
 			InternalEObject oldRequestPort = (InternalEObject) requestPort;
@@ -100,6 +101,7 @@ public class RequestPortLinkImpl extends AbstractComponentLinkImpl implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRequestPort(RequestPort newRequestPort) {
 		RequestPort oldRequestPort = requestPort;
 		requestPort = newRequestPort;

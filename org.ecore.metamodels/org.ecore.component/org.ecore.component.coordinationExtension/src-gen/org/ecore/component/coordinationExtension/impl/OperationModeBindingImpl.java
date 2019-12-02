@@ -74,6 +74,7 @@ public class OperationModeBindingImpl extends ActivityExtensionImpl implements O
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PrivateOperationMode getMode() {
 		if (mode != null && mode.eIsProxy()) {
 			InternalEObject oldMode = (InternalEObject) mode;
@@ -101,6 +102,7 @@ public class OperationModeBindingImpl extends ActivityExtensionImpl implements O
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMode(PrivateOperationMode newMode) {
 		PrivateOperationMode oldMode = mode;
 		mode = newMode;

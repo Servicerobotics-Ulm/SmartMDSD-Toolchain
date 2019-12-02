@@ -63,6 +63,7 @@ public abstract class AbstractAttributeTypeImpl extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ArrayType getArray() {
 		return array;
 	}
@@ -91,6 +92,7 @@ public abstract class AbstractAttributeTypeImpl extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setArray(ArrayType newArray) {
 		if (newArray != array) {
 			NotificationChain msgs = null;

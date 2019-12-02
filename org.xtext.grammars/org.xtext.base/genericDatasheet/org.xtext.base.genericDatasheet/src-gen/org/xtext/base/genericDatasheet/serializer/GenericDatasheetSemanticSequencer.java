@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2019 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -14,34 +13,9 @@
 //        89075 Ulm
 //        Germany
 //
-//  This file is part of the SmartMDSD Toolchain V3. 
+//  This file is part of the SmartMDSD Toolchain V3.
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.base.genericDatasheet.serializer;
 
 import com.google.inject.Inject;
@@ -55,9 +29,9 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.ecore.base.genericDatasheet.DatasheetProperty;
 import org.ecore.base.genericDatasheet.GenericDatasheetPackage;
-import org.ecore.base.genericDatasheet.ProprietaryLicense;
-import org.ecore.base.genericDatasheet.SpdxLicense;
+import org.ecore.base.genericDatasheet.MandatoryDatasheetElement;
 import org.xtext.base.genericDatasheet.services.GenericDatasheetGrammarAccess;
 
 @SuppressWarnings("all")
@@ -74,11 +48,11 @@ public class GenericDatasheetSemanticSequencer extends AbstractDelegatingSemanti
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == GenericDatasheetPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case GenericDatasheetPackage.PROPRIETARY_LICENSE:
-				sequence_ProprietaryLicense(context, (ProprietaryLicense) semanticObject); 
+			case GenericDatasheetPackage.DATASHEET_PROPERTY:
+				sequence_DatasheetProperty(context, (DatasheetProperty) semanticObject); 
 				return; 
-			case GenericDatasheetPackage.SPDX_LICENSE:
-				sequence_SpdxLicense(context, (SpdxLicense) semanticObject); 
+			case GenericDatasheetPackage.MANDATORY_DATASHEET_ELEMENT:
+				sequence_MandatoryDatasheetElement(context, (MandatoryDatasheetElement) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -87,32 +61,35 @@ public class GenericDatasheetSemanticSequencer extends AbstractDelegatingSemanti
 	
 	/**
 	 * Contexts:
-	 *     AbstractLicense returns ProprietaryLicense
-	 *     ProprietaryLicense returns ProprietaryLicense
+	 *     AbstractDatasheetElement returns DatasheetProperty
+	 *     DatasheetProperty returns DatasheetProperty
 	 *
 	 * Constraint:
-	 *     (name=EString | fullText=EString | url=EString)*
+	 *     (name=ID ((shortDescription=STRING | semanticID=STRING)? (value=STRING unit=STRING?)?)+)
 	 */
-	protected void sequence_ProprietaryLicense(ISerializationContext context, ProprietaryLicense semanticObject) {
+	protected void sequence_DatasheetProperty(ISerializationContext context, DatasheetProperty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     AbstractLicense returns SpdxLicense
-	 *     SpdxLicense returns SpdxLicense
+	 *     AbstractDatasheetElement returns MandatoryDatasheetElement
+	 *     MandatoryDatasheetElement returns MandatoryDatasheetElement
 	 *
 	 * Constraint:
-	 *     licenseID=EString
+	 *     (name=MandatoryDatasheetElementNames value=STRING)
 	 */
-	protected void sequence_SpdxLicense(ISerializationContext context, SpdxLicense semanticObject) {
+	protected void sequence_MandatoryDatasheetElement(ISerializationContext context, MandatoryDatasheetElement semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GenericDatasheetPackage.Literals.SPDX_LICENSE__LICENSE_ID) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GenericDatasheetPackage.Literals.SPDX_LICENSE__LICENSE_ID));
+			if (transientValues.isValueTransient(semanticObject, GenericDatasheetPackage.Literals.MANDATORY_DATASHEET_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GenericDatasheetPackage.Literals.MANDATORY_DATASHEET_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, GenericDatasheetPackage.Literals.MANDATORY_DATASHEET_ELEMENT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GenericDatasheetPackage.Literals.MANDATORY_DATASHEET_ELEMENT__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSpdxLicenseAccess().getLicenseIDEStringParserRuleCall_2_0(), semanticObject.getLicenseID());
+		feeder.accept(grammarAccess.getMandatoryDatasheetElementAccess().getNameMandatoryDatasheetElementNamesEnumRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getMandatoryDatasheetElementAccess().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

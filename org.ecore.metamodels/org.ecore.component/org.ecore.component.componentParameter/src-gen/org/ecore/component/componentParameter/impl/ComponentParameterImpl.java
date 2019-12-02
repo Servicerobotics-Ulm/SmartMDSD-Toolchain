@@ -104,6 +104,7 @@ public class ComponentParameterImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AbstractComponentParameter> getParameters() {
 		if (parameters == null) {
 			parameters = new EObjectContainmentEList<AbstractComponentParameter>(AbstractComponentParameter.class, this,
@@ -117,6 +118,7 @@ public class ComponentParameterImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentDefinition getComponent() {
 		if (component != null && component.eIsProxy()) {
 			InternalEObject oldComponent = (InternalEObject) component;
@@ -144,6 +146,7 @@ public class ComponentParameterImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponent(ComponentDefinition newComponent) {
 		ComponentDefinition oldComponent = component;
 		component = newComponent;
@@ -157,6 +160,7 @@ public class ComponentParameterImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -166,6 +170,7 @@ public class ComponentParameterImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -280,7 +285,7 @@ public class ComponentParameterImpl extends MinimalEObjectImpl.Container impleme
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

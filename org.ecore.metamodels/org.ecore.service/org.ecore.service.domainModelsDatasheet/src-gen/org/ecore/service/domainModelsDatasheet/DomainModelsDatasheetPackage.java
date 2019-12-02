@@ -69,67 +69,13 @@ public interface DomainModelsDatasheetPackage extends EPackage {
 	int DOMAIN_MODELS_DATASHEET = 0;
 
 	/**
-	 * The feature id for the '<em><b>License</b></em>' containment reference.
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_MODELS_DATASHEET__LICENSE = GenericDatasheetPackage.GENERIC_DATASHEET__LICENSE;
-
-	/**
-	 * The feature id for the '<em><b>Short Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOMAIN_MODELS_DATASHEET__SHORT_DESCRIPTION = GenericDatasheetPackage.GENERIC_DATASHEET__SHORT_DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Long Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOMAIN_MODELS_DATASHEET__LONG_DESCRIPTION = GenericDatasheetPackage.GENERIC_DATASHEET__LONG_DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Supplier Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOMAIN_MODELS_DATASHEET__SUPPLIER_DESCRIPTION = GenericDatasheetPackage.GENERIC_DATASHEET__SUPPLIER_DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Homepage</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOMAIN_MODELS_DATASHEET__HOMEPAGE = GenericDatasheetPackage.GENERIC_DATASHEET__HOMEPAGE;
-
-	/**
-	 * The feature id for the '<em><b>Base URI</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOMAIN_MODELS_DATASHEET__BASE_URI = GenericDatasheetPackage.GENERIC_DATASHEET__BASE_URI;
-
-	/**
-	 * The feature id for the '<em><b>Trl</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOMAIN_MODELS_DATASHEET__TRL = GenericDatasheetPackage.GENERIC_DATASHEET__TRL;
+	int DOMAIN_MODELS_DATASHEET__ELEMENTS = GenericDatasheetPackage.GENERIC_DATASHEET_MODEL__ELEMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -138,7 +84,7 @@ public interface DomainModelsDatasheetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_MODELS_DATASHEET__NAME = GenericDatasheetPackage.GENERIC_DATASHEET_FEATURE_COUNT + 0;
+	int DOMAIN_MODELS_DATASHEET__NAME = GenericDatasheetPackage.GENERIC_DATASHEET_MODEL_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Domain Models Datasheet</em>' class.
@@ -147,7 +93,7 @@ public interface DomainModelsDatasheetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_MODELS_DATASHEET_FEATURE_COUNT = GenericDatasheetPackage.GENERIC_DATASHEET_FEATURE_COUNT + 1;
+	int DOMAIN_MODELS_DATASHEET_FEATURE_COUNT = GenericDatasheetPackage.GENERIC_DATASHEET_MODEL_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Domain Models Datasheet</em>' class.
@@ -156,7 +102,7 @@ public interface DomainModelsDatasheetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_MODELS_DATASHEET_OPERATION_COUNT = GenericDatasheetPackage.GENERIC_DATASHEET_OPERATION_COUNT + 0;
+	int DOMAIN_MODELS_DATASHEET_OPERATION_COUNT = GenericDatasheetPackage.GENERIC_DATASHEET_MODEL_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.ecore.service.domainModelsDatasheet.DomainModelsDatasheet <em>Domain Models Datasheet</em>}'.

@@ -79,7 +79,7 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTaskRealizationModel"
-    // InternalTaskRealization.g:105:1: entryRuleTaskRealizationModel returns [EObject current=null] : iv_ruleTaskRealizationModel= ruleTaskRealizationModel EOF ;
+    // InternalTaskRealization.g:79:1: entryRuleTaskRealizationModel returns [EObject current=null] : iv_ruleTaskRealizationModel= ruleTaskRealizationModel EOF ;
     public final EObject entryRuleTaskRealizationModel() throws RecognitionException {
         EObject current = null;
 
@@ -87,8 +87,8 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTaskRealization.g:105:61: (iv_ruleTaskRealizationModel= ruleTaskRealizationModel EOF )
-            // InternalTaskRealization.g:106:2: iv_ruleTaskRealizationModel= ruleTaskRealizationModel EOF
+            // InternalTaskRealization.g:79:61: (iv_ruleTaskRealizationModel= ruleTaskRealizationModel EOF )
+            // InternalTaskRealization.g:80:2: iv_ruleTaskRealizationModel= ruleTaskRealizationModel EOF
             {
              newCompositeNode(grammarAccess.getTaskRealizationModelRule()); 
             pushFollow(FOLLOW_1);
@@ -115,7 +115,7 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTaskRealizationModel"
-    // InternalTaskRealization.g:112:1: ruleTaskRealizationModel returns [EObject current=null] : ( () otherlv_1= 'TaskRealizationModel' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance ) )* ( (lv_tasks_5_0= ruleTaskRealization ) )* otherlv_6= '}' ) ;
+    // InternalTaskRealization.g:86:1: ruleTaskRealizationModel returns [EObject current=null] : ( () otherlv_1= 'TaskRealizationModel' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance ) )* ( (lv_tasks_5_0= ruleTaskRealization ) )* otherlv_6= '}' ) ;
     public final EObject ruleTaskRealizationModel() throws RecognitionException {
         EObject current = null;
 
@@ -132,14 +132,14 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTaskRealization.g:118:2: ( ( () otherlv_1= 'TaskRealizationModel' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance ) )* ( (lv_tasks_5_0= ruleTaskRealization ) )* otherlv_6= '}' ) )
-            // InternalTaskRealization.g:119:2: ( () otherlv_1= 'TaskRealizationModel' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance ) )* ( (lv_tasks_5_0= ruleTaskRealization ) )* otherlv_6= '}' )
+            // InternalTaskRealization.g:92:2: ( ( () otherlv_1= 'TaskRealizationModel' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance ) )* ( (lv_tasks_5_0= ruleTaskRealization ) )* otherlv_6= '}' ) )
+            // InternalTaskRealization.g:93:2: ( () otherlv_1= 'TaskRealizationModel' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance ) )* ( (lv_tasks_5_0= ruleTaskRealization ) )* otherlv_6= '}' )
             {
-            // InternalTaskRealization.g:119:2: ( () otherlv_1= 'TaskRealizationModel' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance ) )* ( (lv_tasks_5_0= ruleTaskRealization ) )* otherlv_6= '}' )
-            // InternalTaskRealization.g:120:3: () otherlv_1= 'TaskRealizationModel' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance ) )* ( (lv_tasks_5_0= ruleTaskRealization ) )* otherlv_6= '}'
+            // InternalTaskRealization.g:93:2: ( () otherlv_1= 'TaskRealizationModel' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance ) )* ( (lv_tasks_5_0= ruleTaskRealization ) )* otherlv_6= '}' )
+            // InternalTaskRealization.g:94:3: () otherlv_1= 'TaskRealizationModel' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance ) )* ( (lv_tasks_5_0= ruleTaskRealization ) )* otherlv_6= '}'
             {
-            // InternalTaskRealization.g:120:3: ()
-            // InternalTaskRealization.g:121:4: 
+            // InternalTaskRealization.g:94:3: ()
+            // InternalTaskRealization.g:95:4: 
             {
 
             				current = forceCreateModelElement(
@@ -153,11 +153,11 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getTaskRealizationModelAccess().getTaskRealizationModelKeyword_1());
             		
-            // InternalTaskRealization.g:131:3: ( (lv_name_2_0= RULE_ID ) )
-            // InternalTaskRealization.g:132:4: (lv_name_2_0= RULE_ID )
+            // InternalTaskRealization.g:105:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalTaskRealization.g:106:4: (lv_name_2_0= RULE_ID )
             {
-            // InternalTaskRealization.g:132:4: (lv_name_2_0= RULE_ID )
-            // InternalTaskRealization.g:133:5: lv_name_2_0= RULE_ID
+            // InternalTaskRealization.g:106:4: (lv_name_2_0= RULE_ID )
+            // InternalTaskRealization.g:107:5: lv_name_2_0= RULE_ID
             {
             lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_4); 
 
@@ -183,7 +183,7 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getTaskRealizationModelAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalTaskRealization.g:153:3: ( (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance ) )*
+            // InternalTaskRealization.g:127:3: ( (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance ) )*
             loop1:
             do {
                 int alt1=2;
@@ -196,10 +196,10 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalTaskRealization.g:154:4: (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance )
+            	    // InternalTaskRealization.g:128:4: (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance )
             	    {
-            	    // InternalTaskRealization.g:154:4: (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance )
-            	    // InternalTaskRealization.g:155:5: lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance
+            	    // InternalTaskRealization.g:128:4: (lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance )
+            	    // InternalTaskRealization.g:129:5: lv_abstCoordInst_4_0= ruleAbstractCoordinationModuleInstance
             	    {
 
             	    					newCompositeNode(grammarAccess.getTaskRealizationModelAccess().getAbstCoordInstAbstractCoordinationModuleInstanceParserRuleCall_4_0());
@@ -232,7 +232,7 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalTaskRealization.g:172:3: ( (lv_tasks_5_0= ruleTaskRealization ) )*
+            // InternalTaskRealization.g:146:3: ( (lv_tasks_5_0= ruleTaskRealization ) )*
             loop2:
             do {
                 int alt2=2;
@@ -245,10 +245,10 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalTaskRealization.g:173:4: (lv_tasks_5_0= ruleTaskRealization )
+            	    // InternalTaskRealization.g:147:4: (lv_tasks_5_0= ruleTaskRealization )
             	    {
-            	    // InternalTaskRealization.g:173:4: (lv_tasks_5_0= ruleTaskRealization )
-            	    // InternalTaskRealization.g:174:5: lv_tasks_5_0= ruleTaskRealization
+            	    // InternalTaskRealization.g:147:4: (lv_tasks_5_0= ruleTaskRealization )
+            	    // InternalTaskRealization.g:148:5: lv_tasks_5_0= ruleTaskRealization
             	    {
 
             	    					newCompositeNode(grammarAccess.getTaskRealizationModelAccess().getTasksTaskRealizationParserRuleCall_5_0());
@@ -308,7 +308,7 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFQN"
-    // InternalTaskRealization.g:199:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
+    // InternalTaskRealization.g:173:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
     public final String entryRuleFQN() throws RecognitionException {
         String current = null;
 
@@ -316,8 +316,8 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTaskRealization.g:199:43: (iv_ruleFQN= ruleFQN EOF )
-            // InternalTaskRealization.g:200:2: iv_ruleFQN= ruleFQN EOF
+            // InternalTaskRealization.g:173:43: (iv_ruleFQN= ruleFQN EOF )
+            // InternalTaskRealization.g:174:2: iv_ruleFQN= ruleFQN EOF
             {
              newCompositeNode(grammarAccess.getFQNRule()); 
             pushFollow(FOLLOW_1);
@@ -344,7 +344,7 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFQN"
-    // InternalTaskRealization.g:206:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // InternalTaskRealization.g:180:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleFQN() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -356,11 +356,11 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTaskRealization.g:212:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // InternalTaskRealization.g:213:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalTaskRealization.g:186:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // InternalTaskRealization.g:187:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // InternalTaskRealization.g:213:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // InternalTaskRealization.g:214:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // InternalTaskRealization.g:187:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalTaskRealization.g:188:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_7); 
 
@@ -369,7 +369,7 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(this_ID_0, grammarAccess.getFQNAccess().getIDTerminalRuleCall_0());
             		
-            // InternalTaskRealization.g:221:3: (kw= '.' this_ID_2= RULE_ID )*
+            // InternalTaskRealization.g:195:3: (kw= '.' this_ID_2= RULE_ID )*
             loop3:
             do {
                 int alt3=2;
@@ -382,7 +382,7 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalTaskRealization.g:222:4: kw= '.' this_ID_2= RULE_ID
+            	    // InternalTaskRealization.g:196:4: kw= '.' this_ID_2= RULE_ID
             	    {
             	    kw=(Token)match(input,14,FOLLOW_3); 
 
@@ -428,7 +428,7 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTaskRealization"
-    // InternalTaskRealization.g:239:1: entryRuleTaskRealization returns [EObject current=null] : iv_ruleTaskRealization= ruleTaskRealization EOF ;
+    // InternalTaskRealization.g:213:1: entryRuleTaskRealization returns [EObject current=null] : iv_ruleTaskRealization= ruleTaskRealization EOF ;
     public final EObject entryRuleTaskRealization() throws RecognitionException {
         EObject current = null;
 
@@ -436,8 +436,8 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTaskRealization.g:239:56: (iv_ruleTaskRealization= ruleTaskRealization EOF )
-            // InternalTaskRealization.g:240:2: iv_ruleTaskRealization= ruleTaskRealization EOF
+            // InternalTaskRealization.g:213:56: (iv_ruleTaskRealization= ruleTaskRealization EOF )
+            // InternalTaskRealization.g:214:2: iv_ruleTaskRealization= ruleTaskRealization EOF
             {
              newCompositeNode(grammarAccess.getTaskRealizationRule()); 
             pushFollow(FOLLOW_1);
@@ -464,7 +464,7 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTaskRealization"
-    // InternalTaskRealization.g:246:1: ruleTaskRealization returns [EObject current=null] : (otherlv_0= 'TaskRealization' ( ( ruleFQN ) ) otherlv_2= '{' otherlv_3= '}' ) ;
+    // InternalTaskRealization.g:220:1: ruleTaskRealization returns [EObject current=null] : (otherlv_0= 'TaskRealization' ( ( ruleFQN ) ) otherlv_2= '{' otherlv_3= '}' ) ;
     public final EObject ruleTaskRealization() throws RecognitionException {
         EObject current = null;
 
@@ -476,21 +476,21 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTaskRealization.g:252:2: ( (otherlv_0= 'TaskRealization' ( ( ruleFQN ) ) otherlv_2= '{' otherlv_3= '}' ) )
-            // InternalTaskRealization.g:253:2: (otherlv_0= 'TaskRealization' ( ( ruleFQN ) ) otherlv_2= '{' otherlv_3= '}' )
+            // InternalTaskRealization.g:226:2: ( (otherlv_0= 'TaskRealization' ( ( ruleFQN ) ) otherlv_2= '{' otherlv_3= '}' ) )
+            // InternalTaskRealization.g:227:2: (otherlv_0= 'TaskRealization' ( ( ruleFQN ) ) otherlv_2= '{' otherlv_3= '}' )
             {
-            // InternalTaskRealization.g:253:2: (otherlv_0= 'TaskRealization' ( ( ruleFQN ) ) otherlv_2= '{' otherlv_3= '}' )
-            // InternalTaskRealization.g:254:3: otherlv_0= 'TaskRealization' ( ( ruleFQN ) ) otherlv_2= '{' otherlv_3= '}'
+            // InternalTaskRealization.g:227:2: (otherlv_0= 'TaskRealization' ( ( ruleFQN ) ) otherlv_2= '{' otherlv_3= '}' )
+            // InternalTaskRealization.g:228:3: otherlv_0= 'TaskRealization' ( ( ruleFQN ) ) otherlv_2= '{' otherlv_3= '}'
             {
             otherlv_0=(Token)match(input,15,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTaskRealizationAccess().getTaskRealizationKeyword_0());
             		
-            // InternalTaskRealization.g:258:3: ( ( ruleFQN ) )
-            // InternalTaskRealization.g:259:4: ( ruleFQN )
+            // InternalTaskRealization.g:232:3: ( ( ruleFQN ) )
+            // InternalTaskRealization.g:233:4: ( ruleFQN )
             {
-            // InternalTaskRealization.g:259:4: ( ruleFQN )
-            // InternalTaskRealization.g:260:5: ruleFQN
+            // InternalTaskRealization.g:233:4: ( ruleFQN )
+            // InternalTaskRealization.g:234:5: ruleFQN
             {
 
             					if (current==null) {
@@ -545,7 +545,7 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAbstractCoordinationModuleInstance"
-    // InternalTaskRealization.g:286:1: entryRuleAbstractCoordinationModuleInstance returns [EObject current=null] : iv_ruleAbstractCoordinationModuleInstance= ruleAbstractCoordinationModuleInstance EOF ;
+    // InternalTaskRealization.g:260:1: entryRuleAbstractCoordinationModuleInstance returns [EObject current=null] : iv_ruleAbstractCoordinationModuleInstance= ruleAbstractCoordinationModuleInstance EOF ;
     public final EObject entryRuleAbstractCoordinationModuleInstance() throws RecognitionException {
         EObject current = null;
 
@@ -553,8 +553,8 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTaskRealization.g:286:75: (iv_ruleAbstractCoordinationModuleInstance= ruleAbstractCoordinationModuleInstance EOF )
-            // InternalTaskRealization.g:287:2: iv_ruleAbstractCoordinationModuleInstance= ruleAbstractCoordinationModuleInstance EOF
+            // InternalTaskRealization.g:260:75: (iv_ruleAbstractCoordinationModuleInstance= ruleAbstractCoordinationModuleInstance EOF )
+            // InternalTaskRealization.g:261:2: iv_ruleAbstractCoordinationModuleInstance= ruleAbstractCoordinationModuleInstance EOF
             {
              newCompositeNode(grammarAccess.getAbstractCoordinationModuleInstanceRule()); 
             pushFollow(FOLLOW_1);
@@ -581,7 +581,7 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstractCoordinationModuleInstance"
-    // InternalTaskRealization.g:293:1: ruleAbstractCoordinationModuleInstance returns [EObject current=null] : (otherlv_0= 'AbstractCoordinationModuleInstance' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'coordModuleDef' ( ( ruleFQN ) ) ) ;
+    // InternalTaskRealization.g:267:1: ruleAbstractCoordinationModuleInstance returns [EObject current=null] : (otherlv_0= 'AbstractCoordinationModuleInstance' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'coordModuleDef' ( ( ruleFQN ) ) ) ;
     public final EObject ruleAbstractCoordinationModuleInstance() throws RecognitionException {
         EObject current = null;
 
@@ -593,21 +593,21 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTaskRealization.g:299:2: ( (otherlv_0= 'AbstractCoordinationModuleInstance' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'coordModuleDef' ( ( ruleFQN ) ) ) )
-            // InternalTaskRealization.g:300:2: (otherlv_0= 'AbstractCoordinationModuleInstance' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'coordModuleDef' ( ( ruleFQN ) ) )
+            // InternalTaskRealization.g:273:2: ( (otherlv_0= 'AbstractCoordinationModuleInstance' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'coordModuleDef' ( ( ruleFQN ) ) ) )
+            // InternalTaskRealization.g:274:2: (otherlv_0= 'AbstractCoordinationModuleInstance' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'coordModuleDef' ( ( ruleFQN ) ) )
             {
-            // InternalTaskRealization.g:300:2: (otherlv_0= 'AbstractCoordinationModuleInstance' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'coordModuleDef' ( ( ruleFQN ) ) )
-            // InternalTaskRealization.g:301:3: otherlv_0= 'AbstractCoordinationModuleInstance' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'coordModuleDef' ( ( ruleFQN ) )
+            // InternalTaskRealization.g:274:2: (otherlv_0= 'AbstractCoordinationModuleInstance' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'coordModuleDef' ( ( ruleFQN ) ) )
+            // InternalTaskRealization.g:275:3: otherlv_0= 'AbstractCoordinationModuleInstance' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'coordModuleDef' ( ( ruleFQN ) )
             {
             otherlv_0=(Token)match(input,16,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAbstractCoordinationModuleInstanceAccess().getAbstractCoordinationModuleInstanceKeyword_0());
             		
-            // InternalTaskRealization.g:305:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalTaskRealization.g:306:4: (lv_name_1_0= RULE_ID )
+            // InternalTaskRealization.g:279:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalTaskRealization.g:280:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalTaskRealization.g:306:4: (lv_name_1_0= RULE_ID )
-            // InternalTaskRealization.g:307:5: lv_name_1_0= RULE_ID
+            // InternalTaskRealization.g:280:4: (lv_name_1_0= RULE_ID )
+            // InternalTaskRealization.g:281:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -633,11 +633,11 @@ public class InternalTaskRealizationParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getAbstractCoordinationModuleInstanceAccess().getCoordModuleDefKeyword_2());
             		
-            // InternalTaskRealization.g:327:3: ( ( ruleFQN ) )
-            // InternalTaskRealization.g:328:4: ( ruleFQN )
+            // InternalTaskRealization.g:301:3: ( ( ruleFQN ) )
+            // InternalTaskRealization.g:302:4: ( ruleFQN )
             {
-            // InternalTaskRealization.g:328:4: ( ruleFQN )
-            // InternalTaskRealization.g:329:5: ruleFQN
+            // InternalTaskRealization.g:302:4: ( ruleFQN )
+            // InternalTaskRealization.g:303:5: ruleFQN
             {
 
             					if (current==null) {

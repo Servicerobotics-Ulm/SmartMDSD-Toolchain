@@ -94,6 +94,7 @@ public class ParameterInstanceImpl extends AbstractParameterInstanceImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterDefinition getParameterDef() {
 		if (parameterDef != null && parameterDef.eIsProxy()) {
 			InternalEObject oldParameterDef = (InternalEObject) parameterDef;
@@ -122,6 +123,7 @@ public class ParameterInstanceImpl extends AbstractParameterInstanceImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParameterDef(ParameterDefinition newParameterDef) {
 		ParameterDefinition oldParameterDef = parameterDef;
 		parameterDef = newParameterDef;
@@ -135,6 +137,7 @@ public class ParameterInstanceImpl extends AbstractParameterInstanceImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AttributeRefinement> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectContainmentEList<AttributeRefinement>(AttributeRefinement.class, this,

@@ -82,6 +82,7 @@ public class RequestHandlerImpl extends ComponentSubNodeImpl implements RequestH
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isActiveQueue() {
 		return activeQueue;
 	}
@@ -91,6 +92,7 @@ public class RequestHandlerImpl extends ComponentSubNodeImpl implements RequestH
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setActiveQueue(boolean newActiveQueue) {
 		boolean oldActiveQueue = activeQueue;
 		activeQueue = newActiveQueue;
@@ -104,6 +106,7 @@ public class RequestHandlerImpl extends ComponentSubNodeImpl implements RequestH
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AnswerPort getAnswerPort() {
 		if (answerPort != null && answerPort.eIsProxy()) {
 			InternalEObject oldAnswerPort = (InternalEObject) answerPort;
@@ -131,6 +134,7 @@ public class RequestHandlerImpl extends ComponentSubNodeImpl implements RequestH
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAnswerPort(AnswerPort newAnswerPort) {
 		AnswerPort oldAnswerPort = answerPort;
 		answerPort = newAnswerPort;
@@ -219,7 +223,7 @@ public class RequestHandlerImpl extends ComponentSubNodeImpl implements RequestH
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (activeQueue: ");
 		result.append(activeQueue);
 		result.append(')');

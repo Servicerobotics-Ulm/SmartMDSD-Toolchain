@@ -93,6 +93,7 @@ public class ParameterSetInstanceImpl extends AbstractComponentParameterImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AbstractParameterInstance> getParameterInstances() {
 		if (parameterInstances == null) {
 			parameterInstances = new EObjectContainmentEList<AbstractParameterInstance>(AbstractParameterInstance.class,
@@ -106,6 +107,7 @@ public class ParameterSetInstanceImpl extends AbstractComponentParameterImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterSetDefinition getParamSet() {
 		if (paramSet != null && paramSet.eIsProxy()) {
 			InternalEObject oldParamSet = (InternalEObject) paramSet;
@@ -133,6 +135,7 @@ public class ParameterSetInstanceImpl extends AbstractComponentParameterImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParamSet(ParameterSetDefinition newParamSet) {
 		ParameterSetDefinition oldParamSet = paramSet;
 		paramSet = newParamSet;

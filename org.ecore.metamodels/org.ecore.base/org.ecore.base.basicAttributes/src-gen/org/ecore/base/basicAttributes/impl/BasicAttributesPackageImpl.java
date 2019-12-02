@@ -27,6 +27,7 @@ import org.ecore.base.basicAttributes.IntValue;
 import org.ecore.base.basicAttributes.PrimitiveType;
 import org.ecore.base.basicAttributes.SingleValue;
 import org.ecore.base.basicAttributes.StringValue;
+import org.ecore.base.documentation.DocumentationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -182,7 +183,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link BasicAttributesPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -197,11 +198,15 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 			return (BasicAttributesPackage) EPackage.Registry.INSTANCE.getEPackage(BasicAttributesPackage.eNS_URI);
 
 		// Obtain or create and register package
-		BasicAttributesPackageImpl theBasicAttributesPackage = (BasicAttributesPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof BasicAttributesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new BasicAttributesPackageImpl());
+		Object registeredBasicAttributesPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		BasicAttributesPackageImpl theBasicAttributesPackage = registeredBasicAttributesPackage instanceof BasicAttributesPackageImpl
+				? (BasicAttributesPackageImpl) registeredBasicAttributesPackage
+				: new BasicAttributesPackageImpl();
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		DocumentationPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theBasicAttributesPackage.createPackageContents();
@@ -222,6 +227,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAttributeDefinition() {
 		return attributeDefinitionEClass;
 	}
@@ -231,6 +237,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAttributeDefinition_Name() {
 		return (EAttribute) attributeDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -240,6 +247,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAttributeDefinition_Type() {
 		return (EReference) attributeDefinitionEClass.getEStructuralFeatures().get(1);
 	}
@@ -249,6 +257,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAttributeDefinition_Defaultvalue() {
 		return (EReference) attributeDefinitionEClass.getEStructuralFeatures().get(2);
 	}
@@ -258,6 +267,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAttributeRefinement() {
 		return attributeRefinementEClass;
 	}
@@ -267,6 +277,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAttributeRefinement_Value() {
 		return (EReference) attributeRefinementEClass.getEStructuralFeatures().get(0);
 	}
@@ -276,6 +287,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAttributeRefinement_Attribute() {
 		return (EReference) attributeRefinementEClass.getEStructuralFeatures().get(1);
 	}
@@ -285,6 +297,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractAttributeType() {
 		return abstractAttributeTypeEClass;
 	}
@@ -294,6 +307,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractAttributeType_Array() {
 		return (EReference) abstractAttributeTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -303,6 +317,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractValue() {
 		return abstractValueEClass;
 	}
@@ -312,6 +327,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPrimitiveType() {
 		return primitiveTypeEClass;
 	}
@@ -321,6 +337,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPrimitiveType_TypeName() {
 		return (EAttribute) primitiveTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -330,6 +347,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSingleValue() {
 		return singleValueEClass;
 	}
@@ -339,6 +357,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getArrayValue() {
 		return arrayValueEClass;
 	}
@@ -348,6 +367,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getArrayValue_Values() {
 		return (EReference) arrayValueEClass.getEStructuralFeatures().get(0);
 	}
@@ -357,6 +377,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getArrayType() {
 		return arrayTypeEClass;
 	}
@@ -366,6 +387,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getArrayType_Length() {
 		return (EAttribute) arrayTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -375,6 +397,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFloatingPointValue() {
 		return floatingPointValueEClass;
 	}
@@ -384,6 +407,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFloatingPointValue_Value() {
 		return (EAttribute) floatingPointValueEClass.getEStructuralFeatures().get(0);
 	}
@@ -393,6 +417,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIntValue() {
 		return intValueEClass;
 	}
@@ -402,6 +427,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getIntValue_Value() {
 		return (EAttribute) intValueEClass.getEStructuralFeatures().get(0);
 	}
@@ -411,6 +437,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStringValue() {
 		return stringValueEClass;
 	}
@@ -420,6 +447,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStringValue_Value() {
 		return (EAttribute) stringValueEClass.getEStructuralFeatures().get(0);
 	}
@@ -429,6 +457,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBoolValue() {
 		return boolValueEClass;
 	}
@@ -438,6 +467,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBoolValue_Value() {
 		return (EAttribute) boolValueEClass.getEStructuralFeatures().get(0);
 	}
@@ -447,6 +477,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getInlineEnumerationType() {
 		return inlineEnumerationTypeEClass;
 	}
@@ -456,6 +487,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getInlineEnumerationType_Enums() {
 		return (EReference) inlineEnumerationTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -465,6 +497,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEnumerationElement() {
 		return enumerationElementEClass;
 	}
@@ -474,6 +507,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEnumerationElement_Name() {
 		return (EAttribute) enumerationElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -483,6 +517,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEnumerationElement_Value() {
 		return (EAttribute) enumerationElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -492,6 +527,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEnumerationValue() {
 		return enumerationValueEClass;
 	}
@@ -501,6 +537,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEnumerationValue_Value() {
 		return (EReference) enumerationValueEClass.getEStructuralFeatures().get(0);
 	}
@@ -510,6 +547,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getPRIMITIVE_TYPE_NAME() {
 		return primitivE_TYPE_NAMEEEnum;
 	}
@@ -519,6 +557,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getCardinality() {
 		return cardinalityEDataType;
 	}
@@ -528,6 +567,7 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BasicAttributesFactory getBasicAttributesFactory() {
 		return (BasicAttributesFactory) getEFactoryInstance();
 	}
@@ -630,11 +670,17 @@ public class BasicAttributesPackageImpl extends EPackageImpl implements BasicAtt
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		DocumentationPackage theDocumentationPackage = (DocumentationPackage) EPackage.Registry.INSTANCE
+				.getEPackage(DocumentationPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		attributeDefinitionEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
+		attributeRefinementEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
 		primitiveTypeEClass.getESuperTypes().add(this.getAbstractAttributeType());
 		singleValueEClass.getESuperTypes().add(this.getAbstractValue());
 		arrayValueEClass.getESuperTypes().add(this.getAbstractValue());

@@ -86,6 +86,7 @@ public class ServiceDefinitionFactoryImpl extends EFactoryImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceDefModel createServiceDefModel() {
 		ServiceDefModelImpl serviceDefModel = new ServiceDefModelImpl();
 		return serviceDefModel;
@@ -96,6 +97,7 @@ public class ServiceDefinitionFactoryImpl extends EFactoryImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceDefRepository createServiceDefRepository() {
 		ServiceDefRepositoryImpl serviceDefRepository = new ServiceDefRepositoryImpl();
 		return serviceDefRepository;
@@ -106,6 +108,7 @@ public class ServiceDefinitionFactoryImpl extends EFactoryImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CommRepoImport createCommRepoImport() {
 		CommRepoImportImpl commRepoImport = new CommRepoImportImpl();
 		return commRepoImport;
@@ -116,6 +119,7 @@ public class ServiceDefinitionFactoryImpl extends EFactoryImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceRepoVersion createServiceRepoVersion() {
 		ServiceRepoVersionImpl serviceRepoVersion = new ServiceRepoVersionImpl();
 		return serviceRepoVersion;
@@ -126,6 +130,7 @@ public class ServiceDefinitionFactoryImpl extends EFactoryImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceProperty createServiceProperty() {
 		ServicePropertyImpl serviceProperty = new ServicePropertyImpl();
 		return serviceProperty;
@@ -136,6 +141,7 @@ public class ServiceDefinitionFactoryImpl extends EFactoryImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CoordinationServiceDefinition createCoordinationServiceDefinition() {
 		CoordinationServiceDefinitionImpl coordinationServiceDefinition = new CoordinationServiceDefinitionImpl();
 		return coordinationServiceDefinition;
@@ -146,6 +152,7 @@ public class ServiceDefinitionFactoryImpl extends EFactoryImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ForkingServiceDefinition createForkingServiceDefinition() {
 		ForkingServiceDefinitionImpl forkingServiceDefinition = new ForkingServiceDefinitionImpl();
 		return forkingServiceDefinition;
@@ -156,6 +163,7 @@ public class ServiceDefinitionFactoryImpl extends EFactoryImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RequestAnswerServiceDefinition createRequestAnswerServiceDefinition() {
 		RequestAnswerServiceDefinitionImpl requestAnswerServiceDefinition = new RequestAnswerServiceDefinitionImpl();
 		return requestAnswerServiceDefinition;
@@ -166,6 +174,7 @@ public class ServiceDefinitionFactoryImpl extends EFactoryImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CommunicationServiceUsage createCommunicationServiceUsage() {
 		CommunicationServiceUsageImpl communicationServiceUsage = new CommunicationServiceUsageImpl();
 		return communicationServiceUsage;
@@ -176,6 +185,7 @@ public class ServiceDefinitionFactoryImpl extends EFactoryImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public JoiningServiceDefinition createJoiningServiceDefinition() {
 		JoiningServiceDefinitionImpl joiningServiceDefinition = new JoiningServiceDefinitionImpl();
 		return joiningServiceDefinition;
@@ -186,6 +196,7 @@ public class ServiceDefinitionFactoryImpl extends EFactoryImpl implements Servic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceDefinitionPackage getServiceDefinitionPackage() {
 		return (ServiceDefinitionPackage) getEPackage();
 	}

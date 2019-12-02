@@ -12,6 +12,8 @@ Export-Package: org.ecore.system.targetPlatform.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.ecore.system.targetPlatform;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
+ org.ecore.base.documentation;visibility:=reexport,
+ org.ecore.base.documentation.edit;visibility:=reexport,
  org.ecore.service.roboticMiddleware;visibility:=reexport,
  org.ecore.service.roboticMiddleware.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

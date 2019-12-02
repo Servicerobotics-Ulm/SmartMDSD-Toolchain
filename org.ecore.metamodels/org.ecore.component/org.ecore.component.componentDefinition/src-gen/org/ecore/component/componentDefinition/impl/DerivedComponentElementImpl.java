@@ -56,6 +56,7 @@ public abstract class DerivedComponentElementImpl extends AbstractComponentEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		// TODO: implement this method to return the 'Name' attribute
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -67,6 +68,7 @@ public abstract class DerivedComponentElementImpl extends AbstractComponentEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isSetName() {
 		// TODO: implement this method to return whether the 'Name' attribute is set
 		// Ensure that you remove @generated or mark it @generated NOT

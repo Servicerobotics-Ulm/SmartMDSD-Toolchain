@@ -94,6 +94,7 @@ public class InputPortLinkImpl extends AbstractComponentLinkImpl implements Inpu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isOptional() {
 		return optional;
 	}
@@ -103,6 +104,7 @@ public class InputPortLinkImpl extends AbstractComponentLinkImpl implements Inpu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOptional(boolean newOptional) {
 		boolean oldOptional = optional;
 		optional = newOptional;
@@ -116,6 +118,7 @@ public class InputPortLinkImpl extends AbstractComponentLinkImpl implements Inpu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InputPort getInputPort() {
 		if (inputPort != null && inputPort.eIsProxy()) {
 			InternalEObject oldInputPort = (InternalEObject) inputPort;
@@ -143,6 +146,7 @@ public class InputPortLinkImpl extends AbstractComponentLinkImpl implements Inpu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInputPort(InputPort newInputPort) {
 		InputPort oldInputPort = inputPort;
 		inputPort = newInputPort;
@@ -231,7 +235,7 @@ public class InputPortLinkImpl extends AbstractComponentLinkImpl implements Inpu
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (optional: ");
 		result.append(optional);
 		result.append(')');

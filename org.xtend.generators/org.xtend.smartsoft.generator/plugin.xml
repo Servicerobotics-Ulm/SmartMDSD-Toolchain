@@ -22,12 +22,6 @@
       </generator>
    </extension>
    <extension
-         point="org.xtext.component.componentDocumentation.ComponentDocumentationGeneratorEP">
-      <generator
-            class="org.xtend.smartsoft.generator.component.docu.ComponentDocuGenerator2">
-      </generator>
-   </extension>
-   <extension
          point="org.xtext.system.deployment.DeploymentGeneratorEP">
       <generator
             class="org.xtend.smartsoft.generator.deployment.DeploymentGenerator2">
@@ -49,6 +43,12 @@
          point="org.xtext.system.targetPlatform.TargetPlatformGeneratorEP">
       <generator
             class="org.xtend.smartsoft.generator.targetPlatform.TargetPlatformGenerator2">
+      </generator>
+   </extension>
+   <extension
+         point="org.xtext.component.componentDatasheet.ComponentDatasheetGeneratorEP">
+      <generator
+            class="org.xtend.smartsoft.generator.component.docu.ComponentDocuGenerator2">
       </generator>
    </extension>
 

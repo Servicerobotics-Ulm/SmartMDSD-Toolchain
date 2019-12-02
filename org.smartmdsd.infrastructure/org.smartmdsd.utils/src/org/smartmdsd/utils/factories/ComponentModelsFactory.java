@@ -1,4 +1,4 @@
-//--------------------------------------------------------------------------
+//===============================================================
 //
 //  Copyright (C) 2019 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
@@ -8,31 +8,14 @@
 //
 //        Servicerobotics Ulm
 //        Christian Schlegel
-//        University of Applied Sciences
+//        Ulm University of Applied Sciences
 //        Prittwitzstr. 10
 //        89075 Ulm
 //        Germany
 //
-//  This file is part of the SmartSoft MDSD Toolchain. 
+//  This file is part of the SmartSoft MDSD Toolchain v3. 
 //
-// Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-//
-// 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-// 
-// 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the 
-//    documentation and/or other materials provided with the distribution.
-// 
-// 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this 
-//    software without specific prior written permission.
-// 
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
-// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS 
-// BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
-// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-// POSSIBILITY OF SUCH DAMAGE.
-//
-//--------------------------------------------------------------------------
+//===============================================================
 package org.smartmdsd.utils.factories;
 
 import java.util.Collections;
@@ -48,6 +31,9 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.ide.IDE;
+import org.ecore.base.genericDatasheet.GenericDatasheetFactory;
+import org.ecore.base.genericDatasheet.MandatoryDatasheetElement;
+import org.ecore.base.genericDatasheet.MandatoryDatasheetElementNames;
 import org.ecore.behavior.skillRealization.SkillRealizationFactory;
 import org.ecore.behavior.skillRealization.SkillRealizationModel;
 import org.ecore.component.componentDatasheet.ComponentDatasheet;
@@ -55,8 +41,6 @@ import org.ecore.component.componentDatasheet.ComponentDatasheetFactory;
 import org.ecore.component.componentDefinition.ComponentDefModel;
 import org.ecore.component.componentDefinition.ComponentDefinition;
 import org.ecore.component.componentDefinition.ComponentDefinitionFactory;
-import org.ecore.component.componentDocumentation.ComponentDocumentation;
-import org.ecore.component.componentDocumentation.ComponentDocumentationFactory;
 import org.ecore.component.componentParameter.ComponentParamModel;
 import org.ecore.component.componentParameter.ComponentParameter;
 import org.ecore.component.componentParameter.ComponentParameterFactory;
@@ -92,9 +76,6 @@ public class ComponentModelsFactory extends AbstractSelectedModelsFactory {
 				break;
 			case ComponentDatasheet : 
 				model = createDefaultComponentDatasheetModel(componentModel.getComponent());
-				break;
-			case ComponentDocumentation : 
-				model = createDefaultComponentDocumentationModel(componentModel.getComponent());
 				break;
 			case SkillRealization : 
 				model = createDefaultSkillRealizationModel();
@@ -150,16 +131,16 @@ public class ComponentModelsFactory extends AbstractSelectedModelsFactory {
 	
 	public ComponentDatasheet createDefaultComponentDatasheetModel(ComponentDefinition component) {
 		ComponentDatasheet datasheet = ComponentDatasheetFactory.eINSTANCE.createComponentDatasheet();
-		datasheet.setShortDescription("Datasheet for "+getProject().getName());
-		datasheet.setBaseURI("http://www.servicerobotik-ulm.de");
 		datasheet.setComponent(component);
+		MandatoryDatasheetElement baseURI = GenericDatasheetFactory.eINSTANCE.createMandatoryDatasheetElement();
+		baseURI.setName(MandatoryDatasheetElementNames.BASE_URI);
+		baseURI.setValue("http://www.servicerobotik-ulm.de");
+		datasheet.getElements().add(baseURI);
+		MandatoryDatasheetElement short_description = GenericDatasheetFactory.eINSTANCE.createMandatoryDatasheetElement();
+		short_description.setName(MandatoryDatasheetElementNames.SHORT_DESCRIPTION);
+		short_description.setValue("TODO: add short description for "+component.getName()+" datasheet");
+		datasheet.getElements().add(short_description);
 		return datasheet;
-	}
-
-	public ComponentDocumentation createDefaultComponentDocumentationModel(ComponentDefinition component) {
-		ComponentDocumentation docu = ComponentDocumentationFactory.eINSTANCE.createComponentDocumentation();
-		docu.setComponent(component);
-		return docu;
 	}
 	
 	public SkillRealizationModel createDefaultSkillRealizationModel() {

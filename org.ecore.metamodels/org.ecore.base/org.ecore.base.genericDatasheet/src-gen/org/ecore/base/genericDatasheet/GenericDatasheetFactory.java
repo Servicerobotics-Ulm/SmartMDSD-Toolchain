@@ -22,31 +22,31 @@ public interface GenericDatasheetFactory extends EFactory {
 	GenericDatasheetFactory eINSTANCE = org.ecore.base.genericDatasheet.impl.GenericDatasheetFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Generic Datasheet</em>'.
+	 * Returns a new object of class '<em>Datasheet Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Generic Datasheet</em>'.
+	 * @return a new object of class '<em>Datasheet Property</em>'.
 	 * @generated
 	 */
-	GenericDatasheet createGenericDatasheet();
+	DatasheetProperty createDatasheetProperty();
 
 	/**
-	 * Returns a new object of class '<em>Spdx License</em>'.
+	 * Returns a new object of class '<em>Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Spdx License</em>'.
+	 * @return a new object of class '<em>Model</em>'.
 	 * @generated
 	 */
-	SpdxLicense createSpdxLicense();
+	GenericDatasheetModel createGenericDatasheetModel();
 
 	/**
-	 * Returns a new object of class '<em>Proprietary License</em>'.
+	 * Returns a new object of class '<em>Mandatory Datasheet Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Proprietary License</em>'.
+	 * @return a new object of class '<em>Mandatory Datasheet Element</em>'.
 	 * @generated
 	 */
-	ProprietaryLicense createProprietaryLicense();
+	MandatoryDatasheetElement createMandatoryDatasheetElement();
 
 	/**
 	 * Returns the package supported by this factory.

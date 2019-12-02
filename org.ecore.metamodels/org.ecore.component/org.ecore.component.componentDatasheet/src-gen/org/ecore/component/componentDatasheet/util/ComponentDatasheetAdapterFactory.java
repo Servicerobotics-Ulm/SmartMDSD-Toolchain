@@ -9,7 +9,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.ecore.base.genericDatasheet.GenericDatasheet;
+import org.ecore.base.genericDatasheet.AbstractDatasheetElement;
+import org.ecore.base.genericDatasheet.GenericDatasheetModel;
 
 import org.ecore.component.componentDatasheet.*;
 
@@ -74,8 +75,18 @@ public class ComponentDatasheetAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseGenericDatasheet(GenericDatasheet object) {
-			return createGenericDatasheetAdapter();
+		public Adapter caseComponentPortDatasheet(ComponentPortDatasheet object) {
+			return createComponentPortDatasheetAdapter();
+		}
+
+		@Override
+		public Adapter caseGenericDatasheetModel(GenericDatasheetModel object) {
+			return createGenericDatasheetModelAdapter();
+		}
+
+		@Override
+		public Adapter caseAbstractDatasheetElement(AbstractDatasheetElement object) {
+			return createAbstractDatasheetElementAdapter();
 		}
 
 		@Override
@@ -112,16 +123,44 @@ public class ComponentDatasheetAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.ecore.base.genericDatasheet.GenericDatasheet <em>Generic Datasheet</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.ecore.component.componentDatasheet.ComponentPortDatasheet <em>Component Port Datasheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.ecore.base.genericDatasheet.GenericDatasheet
+	 * @see org.ecore.component.componentDatasheet.ComponentPortDatasheet
 	 * @generated
 	 */
-	public Adapter createGenericDatasheetAdapter() {
+	public Adapter createComponentPortDatasheetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.base.genericDatasheet.GenericDatasheetModel <em>Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.base.genericDatasheet.GenericDatasheetModel
+	 * @generated
+	 */
+	public Adapter createGenericDatasheetModelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.base.genericDatasheet.AbstractDatasheetElement <em>Abstract Datasheet Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.base.genericDatasheet.AbstractDatasheetElement
+	 * @generated
+	 */
+	public Adapter createAbstractDatasheetElementAdapter() {
 		return null;
 	}
 

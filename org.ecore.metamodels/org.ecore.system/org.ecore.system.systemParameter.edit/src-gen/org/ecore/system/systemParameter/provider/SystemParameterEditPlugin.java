@@ -8,8 +8,10 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.ecore.base.basicAttributes.provider.BasicAttributesEditPlugin;
 
+import org.ecore.base.documentation.provider.DocumentationEditPlugin;
 import org.ecore.base.stateMachine.provider.StateMachineEditPlugin;
 
+import org.ecore.behavior.skillRealization.provider.SkillRealizationEditPlugin;
 import org.ecore.component.componentDefinition.provider.ComponentDefinitionEditPlugin;
 
 import org.ecore.component.componentParameter.provider.ComponentParameterEditPlugin;
@@ -27,6 +29,7 @@ import org.ecore.service.parameterDefinition.provider.ParameterDefinitionEditPlu
 import org.ecore.service.roboticMiddleware.provider.RoboticMiddlewareEditPlugin;
 
 import org.ecore.service.serviceDefinition.provider.ServiceDefinitionEditPlugin;
+import org.ecore.service.skillDefinition.provider.SkillDefinitionEditPlugin;
 import org.ecore.system.activityArchitecture.provider.ActivityArchitectureEditPlugin;
 
 import org.ecore.system.componentArchitecture.provider.ComponentArchitectureEditPlugin;
@@ -67,7 +70,9 @@ public final class SystemParameterEditPlugin extends EMFPlugin {
 				CoordinationPatternEditPlugin.INSTANCE, ParameterDefinitionEditPlugin.INSTANCE,
 				ServiceDefinitionEditPlugin.INSTANCE, StateMachineEditPlugin.INSTANCE,
 				ActivityArchitectureEditPlugin.INSTANCE, RoboticMiddlewareEditPlugin.INSTANCE,
-				CoordinationExtensionEditPlugin.INSTANCE, ComponentModeEditPlugin.INSTANCE, });
+				CoordinationExtensionEditPlugin.INSTANCE, ComponentModeEditPlugin.INSTANCE,
+				DocumentationEditPlugin.INSTANCE, SkillRealizationEditPlugin.INSTANCE,
+				SkillDefinitionEditPlugin.INSTANCE, });
 	}
 
 	/**

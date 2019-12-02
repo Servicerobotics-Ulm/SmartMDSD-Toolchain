@@ -126,7 +126,7 @@ public class NetworkConnectionItemProvider extends AbstractTPElementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((NetworkConnection) object).getKind();
+		String label = crop(((NetworkConnection) object).getDocumentation());
 		return label == null || label.length() == 0 ? getString("_UI_NetworkConnection_type")
 				: getString("_UI_NetworkConnection_type") + " " + label;
 	}

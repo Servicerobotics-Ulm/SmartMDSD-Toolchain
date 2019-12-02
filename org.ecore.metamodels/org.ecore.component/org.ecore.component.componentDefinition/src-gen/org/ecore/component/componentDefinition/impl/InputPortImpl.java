@@ -62,6 +62,7 @@ public class InputPortImpl extends ComponentPortImpl implements InputPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public OneWayCommunicationService getService() {
 		if (service != null && service.eIsProxy()) {
 			InternalEObject oldService = (InternalEObject) service;
@@ -89,6 +90,7 @@ public class InputPortImpl extends ComponentPortImpl implements InputPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setService(OneWayCommunicationService newService) {
 		OneWayCommunicationService oldService = service;
 		service = newService;

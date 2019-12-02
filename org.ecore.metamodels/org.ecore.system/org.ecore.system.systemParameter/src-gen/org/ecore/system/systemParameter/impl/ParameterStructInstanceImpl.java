@@ -74,6 +74,7 @@ public class ParameterStructInstanceImpl extends ComponentInstanceExtensionImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentParameterInstance getParameter() {
 		if (parameter != null && parameter.eIsProxy()) {
 			InternalEObject oldParameter = (InternalEObject) parameter;
@@ -101,6 +102,7 @@ public class ParameterStructInstanceImpl extends ComponentInstanceExtensionImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParameter(ComponentParameterInstance newParameter) {
 		ComponentParameterInstance oldParameter = parameter;
 		parameter = newParameter;

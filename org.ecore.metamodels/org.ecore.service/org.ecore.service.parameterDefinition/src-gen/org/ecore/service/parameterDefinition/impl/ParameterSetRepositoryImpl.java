@@ -13,11 +13,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.ecore.base.documentation.impl.AbstractDocumentedElementImpl;
 import org.ecore.service.parameterDefinition.ParameterDefinitionPackage;
 import org.ecore.service.parameterDefinition.ParameterSetDefinition;
 import org.ecore.service.parameterDefinition.ParameterSetRepository;
@@ -36,7 +35,7 @@ import org.ecore.service.parameterDefinition.ParameterSetRepository;
  *
  * @generated
  */
-public class ParameterSetRepositoryImpl extends MinimalEObjectImpl.Container implements ParameterSetRepository {
+public class ParameterSetRepositoryImpl extends AbstractDocumentedElementImpl implements ParameterSetRepository {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -91,6 +90,7 @@ public class ParameterSetRepositoryImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -100,6 +100,7 @@ public class ParameterSetRepositoryImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -113,6 +114,7 @@ public class ParameterSetRepositoryImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ParameterSetDefinition> getSets() {
 		if (sets == null) {
 			sets = new EObjectContainmentEList<ParameterSetDefinition>(ParameterSetDefinition.class, this,
@@ -215,7 +217,7 @@ public class ParameterSetRepositoryImpl extends MinimalEObjectImpl.Container imp
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

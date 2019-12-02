@@ -14,16 +14,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
+import org.ecore.base.documentation.provider.AbstractDocumentedElementItemProvider;
 import org.ecore.component.componentDefinition.ComponentDefinition;
 import org.ecore.component.componentDefinition.ComponentDefinitionFactory;
 import org.ecore.component.componentDefinition.ComponentDefinitionPackage;
@@ -34,8 +28,7 @@ import org.ecore.component.componentDefinition.ComponentDefinitionPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentDefinitionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ComponentDefinitionItemProvider extends AbstractDocumentedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

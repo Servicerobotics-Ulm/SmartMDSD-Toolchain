@@ -111,6 +111,7 @@ public class CPUImpl extends AbstractTPSubNodeImpl implements CPU {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getKind() {
 		return kind;
 	}
@@ -120,6 +121,7 @@ public class CPUImpl extends AbstractTPSubNodeImpl implements CPU {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setKind(String newKind) {
 		String oldKind = kind;
 		kind = newKind;
@@ -132,6 +134,7 @@ public class CPUImpl extends AbstractTPSubNodeImpl implements CPU {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -141,6 +144,7 @@ public class CPUImpl extends AbstractTPSubNodeImpl implements CPU {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -153,6 +157,7 @@ public class CPUImpl extends AbstractTPSubNodeImpl implements CPU {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getCoresTally() {
 		return coresTally;
 	}
@@ -162,6 +167,7 @@ public class CPUImpl extends AbstractTPSubNodeImpl implements CPU {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCoresTally(int newCoresTally) {
 		int oldCoresTally = coresTally;
 		coresTally = newCoresTally;
@@ -258,7 +264,7 @@ public class CPUImpl extends AbstractTPSubNodeImpl implements CPU {
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (kind: ");
 		result.append(kind);
 		result.append(", name: ");

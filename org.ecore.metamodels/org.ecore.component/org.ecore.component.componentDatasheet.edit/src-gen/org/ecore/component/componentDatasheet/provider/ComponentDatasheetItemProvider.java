@@ -13,9 +13,12 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.ecore.base.genericDatasheet.provider.GenericDatasheetItemProvider;
+import org.ecore.base.genericDatasheet.GenericDatasheetPackage;
+
+import org.ecore.base.genericDatasheet.provider.GenericDatasheetModelItemProvider;
 
 import org.ecore.component.componentDatasheet.ComponentDatasheet;
+import org.ecore.component.componentDatasheet.ComponentDatasheetFactory;
 import org.ecore.component.componentDatasheet.ComponentDatasheetPackage;
 
 /**
@@ -24,7 +27,7 @@ import org.ecore.component.componentDatasheet.ComponentDatasheetPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentDatasheetItemProvider extends GenericDatasheetItemProvider {
+public class ComponentDatasheetItemProvider extends GenericDatasheetModelItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -46,43 +49,10 @@ public class ComponentDatasheetItemProvider extends GenericDatasheetItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPurposeDescriptionPropertyDescriptor(object);
-			addHardwareRequirementDescriptionPropertyDescriptor(object);
 			addComponentPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Purpose Description feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPurposeDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ComponentDatasheet_purposeDescription_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_ComponentDatasheet_purposeDescription_feature", "_UI_ComponentDatasheet_type"),
-						ComponentDatasheetPackage.Literals.COMPONENT_DATASHEET__PURPOSE_DESCRIPTION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Hardware Requirement Description feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHardwareRequirementDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ComponentDatasheet_hardwareRequirementDescription_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ComponentDatasheet_hardwareRequirementDescription_feature", "_UI_ComponentDatasheet_type"),
-				ComponentDatasheetPackage.Literals.COMPONENT_DATASHEET__HARDWARE_REQUIREMENT_DESCRIPTION, true, false,
-				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -99,6 +69,22 @@ public class ComponentDatasheetItemProvider extends GenericDatasheetItemProvider
 								"_UI_ComponentDatasheet_type"),
 						ComponentDatasheetPackage.Literals.COMPONENT_DATASHEET__COMPONENT, true, false, true, null,
 						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ComponentDatasheet_name_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ComponentDatasheet_name_feature",
+						"_UI_ComponentDatasheet_type"),
+				ComponentDatasheetPackage.Literals.COMPONENT_DATASHEET__NAME, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -130,7 +116,7 @@ public class ComponentDatasheetItemProvider extends GenericDatasheetItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentDatasheet) object).getShortDescription();
+		String label = ((ComponentDatasheet) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_ComponentDatasheet_type")
 				: getString("_UI_ComponentDatasheet_type") + " " + label;
 	}
@@ -147,8 +133,7 @@ public class ComponentDatasheetItemProvider extends GenericDatasheetItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentDatasheet.class)) {
-		case ComponentDatasheetPackage.COMPONENT_DATASHEET__PURPOSE_DESCRIPTION:
-		case ComponentDatasheetPackage.COMPONENT_DATASHEET__HARDWARE_REQUIREMENT_DESCRIPTION:
+		case ComponentDatasheetPackage.COMPONENT_DATASHEET__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
@@ -165,6 +150,9 @@ public class ComponentDatasheetItemProvider extends GenericDatasheetItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(GenericDatasheetPackage.Literals.GENERIC_DATASHEET_MODEL__ELEMENTS,
+				ComponentDatasheetFactory.eINSTANCE.createComponentPortDatasheet()));
 	}
 
 }

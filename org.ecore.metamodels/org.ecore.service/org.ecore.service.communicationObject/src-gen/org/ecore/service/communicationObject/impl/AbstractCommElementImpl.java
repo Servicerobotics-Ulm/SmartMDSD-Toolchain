@@ -7,8 +7,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
+import org.ecore.base.documentation.impl.AbstractDocumentedElementImpl;
 import org.ecore.service.communicationObject.AbstractCommElement;
 import org.ecore.service.communicationObject.CommunicationObjectPackage;
 
@@ -25,7 +24,7 @@ import org.ecore.service.communicationObject.CommunicationObjectPackage;
  *
  * @generated
  */
-public abstract class AbstractCommElementImpl extends MinimalEObjectImpl.Container implements AbstractCommElement {
+public abstract class AbstractCommElementImpl extends AbstractDocumentedElementImpl implements AbstractCommElement {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -70,6 +69,7 @@ public abstract class AbstractCommElementImpl extends MinimalEObjectImpl.Contain
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -79,6 +79,7 @@ public abstract class AbstractCommElementImpl extends MinimalEObjectImpl.Contain
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -155,7 +156,7 @@ public abstract class AbstractCommElementImpl extends MinimalEObjectImpl.Contain
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

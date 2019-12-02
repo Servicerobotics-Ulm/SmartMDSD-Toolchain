@@ -13,6 +13,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.ecore.service.parameterDefinition;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.ecore.base.basicAttributes;visibility:=reexport,
- org.ecore.base.basicAttributes.edit;visibility:=reexport
+ org.ecore.base.basicAttributes.edit;visibility:=reexport,
+ org.ecore.base.documentation;visibility:=reexport,
+ org.ecore.base.documentation.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.ecore.service.parameterDefinition.edit

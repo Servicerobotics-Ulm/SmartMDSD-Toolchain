@@ -3,9 +3,7 @@
 package org.ecore.component.componentParameter.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
+import org.ecore.base.documentation.impl.AbstractDocumentedElementImpl;
 import org.ecore.component.componentParameter.AbstractComponentParameter;
 import org.ecore.component.componentParameter.ComponentParameterPackage;
 
@@ -16,7 +14,7 @@ import org.ecore.component.componentParameter.ComponentParameterPackage;
  *
  * @generated
  */
-public abstract class AbstractComponentParameterImpl extends MinimalEObjectImpl.Container
+public abstract class AbstractComponentParameterImpl extends AbstractDocumentedElementImpl
 		implements AbstractComponentParameter {
 	/**
 	 * <!-- begin-user-doc -->

@@ -82,6 +82,7 @@ public class ServiceDefModelImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CommRepoImport> getImports() {
 		if (imports == null) {
 			imports = new EObjectContainmentEList<CommRepoImport>(CommRepoImport.class, this,
@@ -95,6 +96,7 @@ public class ServiceDefModelImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceDefRepository getRepository() {
 		return repository;
 	}
@@ -123,6 +125,7 @@ public class ServiceDefModelImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRepository(ServiceDefRepository newRepository) {
 		if (newRepository != repository) {
 			NotificationChain msgs = null;

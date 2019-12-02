@@ -84,6 +84,7 @@ public class ComponentParameterFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentParameter createComponentParameter() {
 		ComponentParameterImpl componentParameter = new ComponentParameterImpl();
 		return componentParameter;
@@ -94,6 +95,7 @@ public class ComponentParameterFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InternalParameter createInternalParameter() {
 		InternalParameterImpl internalParameter = new InternalParameterImpl();
 		return internalParameter;
@@ -104,6 +106,7 @@ public class ComponentParameterFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ExtendedParameter createExtendedParameter() {
 		ExtendedParameterImpl extendedParameter = new ExtendedParameterImpl();
 		return extendedParameter;
@@ -114,6 +117,7 @@ public class ComponentParameterFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ExtendedTrigger createExtendedTrigger() {
 		ExtendedTriggerImpl extendedTrigger = new ExtendedTriggerImpl();
 		return extendedTrigger;
@@ -124,6 +128,7 @@ public class ComponentParameterFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterSetInstance createParameterSetInstance() {
 		ParameterSetInstanceImpl parameterSetInstance = new ParameterSetInstanceImpl();
 		return parameterSetInstance;
@@ -134,6 +139,7 @@ public class ComponentParameterFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TriggerInstance createTriggerInstance() {
 		TriggerInstanceImpl triggerInstance = new TriggerInstanceImpl();
 		return triggerInstance;
@@ -144,6 +150,7 @@ public class ComponentParameterFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterInstance createParameterInstance() {
 		ParameterInstanceImpl parameterInstance = new ParameterInstanceImpl();
 		return parameterInstance;
@@ -154,6 +161,7 @@ public class ComponentParameterFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentParamModel createComponentParamModel() {
 		ComponentParamModelImpl componentParamModel = new ComponentParamModelImpl();
 		return componentParamModel;
@@ -164,6 +172,7 @@ public class ComponentParameterFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentParametersRef createComponentParametersRef() {
 		ComponentParametersRefImpl componentParametersRef = new ComponentParametersRefImpl();
 		return componentParametersRef;
@@ -174,6 +183,7 @@ public class ComponentParameterFactoryImpl extends EFactoryImpl implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentParameterPackage getComponentParameterPackage() {
 		return (ComponentParameterPackage) getEPackage();
 	}

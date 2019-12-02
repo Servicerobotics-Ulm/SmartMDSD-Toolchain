@@ -6,7 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
-
+import org.ecore.base.documentation.AbstractDocumentedElement;
 import org.ecore.component.componentDefinition.*;
 
 /**
@@ -77,6 +77,8 @@ public class ComponentDefinitionSwitch<T> extends Switch<T> {
 			ComponentDefinition componentDefinition = (ComponentDefinition) theEObject;
 			T result = caseComponentDefinition(componentDefinition);
 			if (result == null)
+				result = caseAbstractDocumentedElement(componentDefinition);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -128,6 +130,8 @@ public class ComponentDefinitionSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseNamedComponentElement(outputPort);
 			if (result == null)
+				result = caseAbstractDocumentedElement(outputPort);
+			if (result == null)
 				result = caseAbstractComponentElement(outputPort);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -140,6 +144,8 @@ public class ComponentDefinitionSwitch<T> extends Switch<T> {
 				result = caseComponentPort(requestPort);
 			if (result == null)
 				result = caseNamedComponentElement(requestPort);
+			if (result == null)
+				result = caseAbstractDocumentedElement(requestPort);
 			if (result == null)
 				result = caseAbstractComponentElement(requestPort);
 			if (result == null)
@@ -154,6 +160,8 @@ public class ComponentDefinitionSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseNamedComponentElement(inputPort);
 			if (result == null)
+				result = caseAbstractDocumentedElement(inputPort);
+			if (result == null)
 				result = caseAbstractComponentElement(inputPort);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -167,6 +175,8 @@ public class ComponentDefinitionSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseNamedComponentElement(answerPort);
 			if (result == null)
+				result = caseAbstractDocumentedElement(answerPort);
+			if (result == null)
 				result = caseAbstractComponentElement(answerPort);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -177,6 +187,8 @@ public class ComponentDefinitionSwitch<T> extends Switch<T> {
 			T result = caseComponentPort(componentPort);
 			if (result == null)
 				result = caseNamedComponentElement(componentPort);
+			if (result == null)
+				result = caseAbstractDocumentedElement(componentPort);
 			if (result == null)
 				result = caseAbstractComponentElement(componentPort);
 			if (result == null)
@@ -590,6 +602,21 @@ public class ComponentDefinitionSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDerivedComponentElement(DerivedComponentElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Documented Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Documented Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractDocumentedElement(AbstractDocumentedElement object) {
 		return null;
 	}
 

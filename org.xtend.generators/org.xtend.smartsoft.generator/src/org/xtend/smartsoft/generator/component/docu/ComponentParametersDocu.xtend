@@ -1,4 +1,4 @@
-//--------------------------------------------------------------------------
+//===============================================================
 //
 //  Copyright (C) 2016 Alex Lotz, Matthias Lutz, Dennis Stampfer
 //
@@ -6,7 +6,7 @@
 //        lutz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //
-//        ZAFH Servicerobotic Ulm
+//        Servicerobotics Ulm
 //        Christian Schlegel
 //        University of Applied Sciences
 //        Prittwitzstr. 10
@@ -15,27 +15,11 @@
 //
 //  This file is part of the SmartSoft MDSD Toolchain. 
 //
-//  This library is free software; you can redistribute it and/or
-//  modify it under the terms of the GNU Lesser General Public
-//  License as published by the Free Software Foundation; either
-//  version 2.1 of the License, or (at your option) any later version.
-//
-//  This library is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-//  Lesser General Public License for more details.
-//
-//  You should have received a copy of the GNU Lesser General Public
-//  License along with this library; if not, write to the Free Software
-//  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-//
-//--------------------------------------------------------------------------
+//===============================================================
 package org.xtend.smartsoft.generator.component.docu
 
 import org.ecore.component.componentParameter.ComponentParameter
 import org.ecore.component.componentParameter.InternalParameter
-import com.google.inject.Inject
-import org.eclipse.xtext.documentation.IEObjectDocumentationProvider
 import org.ecore.base.basicAttributes.AttributeDefinition
 import org.ecore.component.componentParameter.ExtendedParameter
 import org.ecore.component.componentParameter.ExtendedTrigger
@@ -46,86 +30,145 @@ import org.ecore.component.componentParameter.ParameterSetInstance
 import org.ecore.component.componentParameter.ParameterInstance
 import org.ecore.component.componentParameter.TriggerInstance
 import org.ecore.base.basicAttributes.AttributeRefinement
+import com.google.inject.Inject
+import org.ecore.base.basicAttributes.AbstractValue
+import org.ecore.base.basicAttributes.IntValue
+import org.ecore.base.basicAttributes.FloatingPointValue
+import org.ecore.base.basicAttributes.StringValue
+import org.ecore.base.basicAttributes.BoolValue
+import org.ecore.base.basicAttributes.EnumerationValue
+import org.ecore.base.basicAttributes.ArrayValue
 
 class ComponentParametersDocu {
-	@Inject IEObjectDocumentationProvider doc;
+	@Inject extension HtmlTableHelpers
+	
+	def getAttributeTableHeader()
+	'''
+		«tableHeaderBegin»
+		«"Attribute Name".asTableHeaderCell»
+		«"Attribute Type".asTableHeaderCell»
+		«"Attribute Value".asTableHeaderCell»
+		«"Attribute Description".asTableHeaderCell»
+		«tableHeaderEnd»
+	'''
+	
+	def String getTypeName(AbstractAttributeType type) {
+		switch(type) {
+			PrimitiveType: type.typeName.literal
+			InlineEnumerationType: "InlineEnumeration"
+		}
+	}
+	
+	def String getValueString(AbstractValue av) {
+		switch (av) {
+			IntValue: av.value.toString
+			FloatingPointValue: av.value.toString
+			StringValue: '"'+av.value+'"'
+			BoolValue: av.value.toString
+			EnumerationValue: av.value.name
+			ArrayValue: "["+av.values?.map[it.valueString].join(", ")+"]"
+			default: ""
+		}
+	}
+	
+	def dispatch getTableRow(AttributeDefinition attr)
+	'''
+		<tr>
+		«("<b>"+attr.name+"</b>").asTableCell»
+		«attr.type.typeName.asTableCell»
+		«attr.defaultvalue.valueString.asTableCell»
+		«attr.multilineHtmlDocumentation.asTableCell»
+		</tr>
+	'''
+	
+	def dispatch getTableRow(AttributeRefinement ref)
+	'''
+		<tr>
+		«("<b>"+ref.attribute.name+"</b>").asTableCell»
+		«ref.attribute.type.typeName.asTableCell»
+		«ref.value.valueString.asTableCell»
+		«ref.multilineHtmlDocumentation.asTableCell»
+		</tr>
+	'''
 	
 	def compileComponentParameters(ComponentParameter parameter)
 	'''
-	## Component Parameters «parameter.name»
+	## Component Parameters: «parameter.name»
 	
 	«FOR param: parameter.parameters»
 		«IF param instanceof InternalParameter»
-			### InternalParameter «param.name»
+			### Internal Parameter: «param.name»
 			
-			| Attribute Name | Attribute Type | Description |
-			|----------------|----------------|-------------|
+			*Documentation:*
+			«param.multilineHtmlDocumentation»
+			
+			«tableBegin»
+			«getAsTableCaption("Internal Parameter <b>"+param.name+"</b>")»
+			«attributeTableHeader»
 			«FOR attr: param.attributes»
-				«attr.compileAttribute»
+				«attr.tableRow»
 			«ENDFOR»
+			«tableEnd»
 			
 		«ELSEIF param instanceof ExtendedParameter»
-			### ExtendedParameter «(param as ExtendedParameter).name»
+			### Extended Parameter: «(param as ExtendedParameter).name»
 			
-			| Attribute Name | Attribute Type | Description |
-			|----------------|----------------|-------------|
+			*Documentation:*
+			«(param as ExtendedParameter).multilineHtmlDocumentation»
+			
+			«tableBegin»
+			«getAsTableCaption("Extended Parameter <b>"+(param as ExtendedParameter).name+"</b>")»
+			«attributeTableHeader»
 			«FOR attr: (param as ExtendedParameter).attributes»
-				«attr.compileAttribute»
+				«attr.tableRow»
 			«ENDFOR»
+			«tableEnd»
 			
 		«ELSEIF param instanceof ExtendedTrigger»
-			### ExtendedTrigger «(param as ExtendedTrigger).name»
+			### Extended Trigger: «(param as ExtendedTrigger).name»
 			
-			active = «(param as ExtendedTrigger).active»
+			*Property:* active = **«(param as ExtendedTrigger).active»**
 			
-			| Attribute Name | Attribute Type | Description |
-			|----------------|----------------|-------------|
+			*Documentation:*
+			«(param as ExtendedTrigger).multilineHtmlDocumentation»
+			
+			«tableBegin»
+			«getAsTableCaption("Attributes of Extended Trigger <b>"+(param as ExtendedTrigger).name+"</b>")»
+			«attributeTableHeader»
 			«FOR attr: (param as ExtendedTrigger).attributes»
-				«attr.compileAttribute»
+				«attr.tableRow»
 			«ENDFOR»
+			«tableEnd»
 			
 		«ELSEIF param instanceof ParameterSetInstance»
-			### ParameterSetInstance «(param as ParameterSetInstance).name»
+			### ParameterSetInstance: «(param as ParameterSetInstance).name»
 			
 			«FOR instance: (param as ParameterSetInstance).parameterInstances»
 				«IF instance instanceof ParameterInstance»
-					#### ParameterInstance «instance.name»
+					#### Parameter Instance: «instance.name»
 					
-					«doc.getDocumentation(instance)»
+					*Documentation:*
+					«instance.multilineHtmlDocumentation»
 					
-					| Attribute Name | Attribute Type | Description |
-					|----------------|----------------|-------------|
+					«tableBegin»
+					«getAsTableCaption("Parameter-Instance <b>"+instance.name+"</b>")»
+					«attributeTableHeader»
 					«FOR attr: instance.attributes»
-						«attr.compileAttributeRefinement»
+						«attr.tableRow»
 					«ENDFOR»
+					«tableEnd»
 					
 				«ELSEIF instance instanceof TriggerInstance»
-					#### TriggerInstance «(instance as TriggerInstance).triggerDef.name»
+					#### Trigger Instance: «(instance as TriggerInstance).triggerDef.name»
 					
-					active = «(instance as TriggerInstance).active»
+					*Property:* active = **«(instance as TriggerInstance).active»**
 					
-					«doc.getDocumentation(instance)»
+					*Documentation:*
+					«instance.multilineHtmlDocumentation»
 					
 				«ENDIF»
 			«ENDFOR»
 		«ENDIF»
 	«ENDFOR»
 	'''
-	
-	def compileAttribute(AttributeDefinition attr)
-	'''
-	| «attr.name» | «attr.type.typeName» | «doc.getDocumentation(attr)» |
-	'''
-	
-	def compileAttributeRefinement(AttributeRefinement attr)
-	'''
-	| «attr.attribute.name» | «attr.attribute.type.typeName» | «doc.getDocumentation(attr)» |
-	'''
-	
-	def getTypeName(AbstractAttributeType type) {
-		switch(type) {
-			PrimitiveType: type.typeName
-			InlineEnumerationType: "InlineEnumeration"
-		}
-	}
 }

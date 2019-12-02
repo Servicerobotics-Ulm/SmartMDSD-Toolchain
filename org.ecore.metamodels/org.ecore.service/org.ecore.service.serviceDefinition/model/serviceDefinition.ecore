@@ -8,18 +8,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="repository" eType="#//ServiceDefRepository"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ServiceDefRepository">
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceDefRepository" eSuperTypes="../../org.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//ServiceRepoVersion"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
         eType="#//AbstractServiceDefinition" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractServiceDefinition" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractServiceDefinition" abstract="true"
+      eSuperTypes="../../org.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//ServiceProperty" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="purposeDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CommRepoImport">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" lowerBound="1"

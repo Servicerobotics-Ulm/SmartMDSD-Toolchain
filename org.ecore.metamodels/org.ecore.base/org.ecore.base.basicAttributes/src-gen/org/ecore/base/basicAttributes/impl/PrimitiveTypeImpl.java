@@ -70,6 +70,7 @@ public class PrimitiveTypeImpl extends AbstractAttributeTypeImpl implements Prim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PRIMITIVE_TYPE_NAME getTypeName() {
 		return typeName;
 	}
@@ -79,6 +80,7 @@ public class PrimitiveTypeImpl extends AbstractAttributeTypeImpl implements Prim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTypeName(PRIMITIVE_TYPE_NAME newTypeName) {
 		PRIMITIVE_TYPE_NAME oldTypeName = typeName;
 		typeName = newTypeName == null ? TYPE_NAME_EDEFAULT : newTypeName;
@@ -155,7 +157,7 @@ public class PrimitiveTypeImpl extends AbstractAttributeTypeImpl implements Prim
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (typeName: ");
 		result.append(typeName);
 		result.append(')');

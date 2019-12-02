@@ -73,6 +73,7 @@ public class ComponentSubNodeObserverImpl extends AbstractComponentLinkImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentSubNode getSubject() {
 		if (subject != null && subject.eIsProxy()) {
 			InternalEObject oldSubject = (InternalEObject) subject;
@@ -100,6 +101,7 @@ public class ComponentSubNodeObserverImpl extends AbstractComponentLinkImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSubject(ComponentSubNode newSubject) {
 		ComponentSubNode oldSubject = subject;
 		subject = newSubject;

@@ -20,10 +20,12 @@ Require-Bundle: org.xtext.service.parameterDefinition,
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.xtext.base.utils,
  org.xtext.base.basicAttributes,
- org.xtext.base.basicAttributes.ui
+ org.xtext.base.basicAttributes.ui,
+ org.xtext.base.docuterminals.ui
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.service.parameterDefinition.ui.internal,
  org.xtext.service.parameterDefinition.ui.quickfix,
  org.xtext.service.parameterDefinition.ui.contentassist
 Bundle-Activator: org.xtext.service.parameterDefinition.ui.internal.ParameterDefinitionActivator
+Automatic-Module-Name: org.xtext.service.parameterDefinition.ui

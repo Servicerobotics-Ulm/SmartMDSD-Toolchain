@@ -10,7 +10,9 @@ Require-Bundle: org.xtext.system.componentArchitecture,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
- org.xtext.service.roboticMiddleware
+ org.xtext.service.roboticMiddleware,
+ org.xtext.base.docuterminals
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.system.componentArchitecture.ide.contentassist.antlr,
  org.xtext.system.componentArchitecture.ide.contentassist.antlr.internal
+Automatic-Module-Name: org.xtext.system.componentArchitecture.ide

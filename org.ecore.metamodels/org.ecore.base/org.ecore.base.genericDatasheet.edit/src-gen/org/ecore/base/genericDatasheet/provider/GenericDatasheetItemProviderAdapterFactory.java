@@ -91,72 +91,72 @@ public class GenericDatasheetItemProviderAdapterFactory extends GenericDatasheet
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.ecore.base.genericDatasheet.GenericDatasheet} instances.
+	 * This keeps track of the one adapter used for all {@link org.ecore.base.genericDatasheet.DatasheetProperty} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GenericDatasheetItemProvider genericDatasheetItemProvider;
+	protected DatasheetPropertyItemProvider datasheetPropertyItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.ecore.base.genericDatasheet.GenericDatasheet}.
+	 * This creates an adapter for a {@link org.ecore.base.genericDatasheet.DatasheetProperty}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createGenericDatasheetAdapter() {
-		if (genericDatasheetItemProvider == null) {
-			genericDatasheetItemProvider = new GenericDatasheetItemProvider(this);
+	public Adapter createDatasheetPropertyAdapter() {
+		if (datasheetPropertyItemProvider == null) {
+			datasheetPropertyItemProvider = new DatasheetPropertyItemProvider(this);
 		}
 
-		return genericDatasheetItemProvider;
+		return datasheetPropertyItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.ecore.base.genericDatasheet.SpdxLicense} instances.
+	 * This keeps track of the one adapter used for all {@link org.ecore.base.genericDatasheet.GenericDatasheetModel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SpdxLicenseItemProvider spdxLicenseItemProvider;
+	protected GenericDatasheetModelItemProvider genericDatasheetModelItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.ecore.base.genericDatasheet.SpdxLicense}.
+	 * This creates an adapter for a {@link org.ecore.base.genericDatasheet.GenericDatasheetModel}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSpdxLicenseAdapter() {
-		if (spdxLicenseItemProvider == null) {
-			spdxLicenseItemProvider = new SpdxLicenseItemProvider(this);
+	public Adapter createGenericDatasheetModelAdapter() {
+		if (genericDatasheetModelItemProvider == null) {
+			genericDatasheetModelItemProvider = new GenericDatasheetModelItemProvider(this);
 		}
 
-		return spdxLicenseItemProvider;
+		return genericDatasheetModelItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.ecore.base.genericDatasheet.ProprietaryLicense} instances.
+	 * This keeps track of the one adapter used for all {@link org.ecore.base.genericDatasheet.MandatoryDatasheetElement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProprietaryLicenseItemProvider proprietaryLicenseItemProvider;
+	protected MandatoryDatasheetElementItemProvider mandatoryDatasheetElementItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.ecore.base.genericDatasheet.ProprietaryLicense}.
+	 * This creates an adapter for a {@link org.ecore.base.genericDatasheet.MandatoryDatasheetElement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createProprietaryLicenseAdapter() {
-		if (proprietaryLicenseItemProvider == null) {
-			proprietaryLicenseItemProvider = new ProprietaryLicenseItemProvider(this);
+	public Adapter createMandatoryDatasheetElementAdapter() {
+		if (mandatoryDatasheetElementItemProvider == null) {
+			mandatoryDatasheetElementItemProvider = new MandatoryDatasheetElementItemProvider(this);
 		}
 
-		return proprietaryLicenseItemProvider;
+		return mandatoryDatasheetElementItemProvider;
 	}
 
 	/**
@@ -291,12 +291,12 @@ public class GenericDatasheetItemProviderAdapterFactory extends GenericDatasheet
 	 */
 	@Override
 	public void dispose() {
-		if (genericDatasheetItemProvider != null)
-			genericDatasheetItemProvider.dispose();
-		if (spdxLicenseItemProvider != null)
-			spdxLicenseItemProvider.dispose();
-		if (proprietaryLicenseItemProvider != null)
-			proprietaryLicenseItemProvider.dispose();
+		if (datasheetPropertyItemProvider != null)
+			datasheetPropertyItemProvider.dispose();
+		if (genericDatasheetModelItemProvider != null)
+			genericDatasheetModelItemProvider.dispose();
+		if (mandatoryDatasheetElementItemProvider != null)
+			mandatoryDatasheetElementItemProvider.dispose();
 	}
 
 }

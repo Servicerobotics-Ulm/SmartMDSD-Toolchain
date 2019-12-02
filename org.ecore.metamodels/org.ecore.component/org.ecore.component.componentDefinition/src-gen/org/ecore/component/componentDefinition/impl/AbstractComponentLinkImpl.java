@@ -57,6 +57,7 @@ public abstract class AbstractComponentLinkImpl extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		// TODO: implement this method to return the 'Name' attribute
 		// Ensure that you remove @generated or mark it @generated NOT

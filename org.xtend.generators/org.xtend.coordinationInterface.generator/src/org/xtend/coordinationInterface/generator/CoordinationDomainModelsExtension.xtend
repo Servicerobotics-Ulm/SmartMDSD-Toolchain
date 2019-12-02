@@ -1,3 +1,21 @@
+//================================================================
+//
+//  Copyright (C) 2019 Matthias Lutz, Alex Lotz, Dennis Stampfer
+//
+//        lutz@hs-ulm.de
+//        lotz@hs-ulm.de
+//        stampfer@hs-ulm.de
+//
+//        Servicerobotics Ulm
+//        Christian Schlegel
+//        Ulm University of Applied Sciences
+//        Prittwitzstr. 10
+//        89075 Ulm
+//        Germany
+//
+//  This file is part of the SmartSoft MDSD Toolchain. 
+//
+//================================================================
 package org.xtend.coordinationInterface.generator
 
 import org.xtend.smartsoft.generator.commObj.DomainModelsGeneratorExtension

@@ -67,23 +67,23 @@ public class GenericDatasheetAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected GenericDatasheetSwitch<Adapter> modelSwitch = new GenericDatasheetSwitch<Adapter>() {
 		@Override
-		public Adapter caseGenericDatasheet(GenericDatasheet object) {
-			return createGenericDatasheetAdapter();
+		public Adapter caseDatasheetProperty(DatasheetProperty object) {
+			return createDatasheetPropertyAdapter();
 		}
 
 		@Override
-		public Adapter caseAbstractLicense(AbstractLicense object) {
-			return createAbstractLicenseAdapter();
+		public Adapter caseGenericDatasheetModel(GenericDatasheetModel object) {
+			return createGenericDatasheetModelAdapter();
 		}
 
 		@Override
-		public Adapter caseSpdxLicense(SpdxLicense object) {
-			return createSpdxLicenseAdapter();
+		public Adapter caseAbstractDatasheetElement(AbstractDatasheetElement object) {
+			return createAbstractDatasheetElementAdapter();
 		}
 
 		@Override
-		public Adapter caseProprietaryLicense(ProprietaryLicense object) {
-			return createProprietaryLicenseAdapter();
+		public Adapter caseMandatoryDatasheetElement(MandatoryDatasheetElement object) {
+			return createMandatoryDatasheetElementAdapter();
 		}
 
 		@Override
@@ -106,58 +106,58 @@ public class GenericDatasheetAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.ecore.base.genericDatasheet.GenericDatasheet <em>Generic Datasheet</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.ecore.base.genericDatasheet.DatasheetProperty <em>Datasheet Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.ecore.base.genericDatasheet.GenericDatasheet
+	 * @see org.ecore.base.genericDatasheet.DatasheetProperty
 	 * @generated
 	 */
-	public Adapter createGenericDatasheetAdapter() {
+	public Adapter createDatasheetPropertyAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.ecore.base.genericDatasheet.AbstractLicense <em>Abstract License</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.ecore.base.genericDatasheet.GenericDatasheetModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.ecore.base.genericDatasheet.AbstractLicense
+	 * @see org.ecore.base.genericDatasheet.GenericDatasheetModel
 	 * @generated
 	 */
-	public Adapter createAbstractLicenseAdapter() {
+	public Adapter createGenericDatasheetModelAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.ecore.base.genericDatasheet.SpdxLicense <em>Spdx License</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.ecore.base.genericDatasheet.AbstractDatasheetElement <em>Abstract Datasheet Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.ecore.base.genericDatasheet.SpdxLicense
+	 * @see org.ecore.base.genericDatasheet.AbstractDatasheetElement
 	 * @generated
 	 */
-	public Adapter createSpdxLicenseAdapter() {
+	public Adapter createAbstractDatasheetElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.ecore.base.genericDatasheet.ProprietaryLicense <em>Proprietary License</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.ecore.base.genericDatasheet.MandatoryDatasheetElement <em>Mandatory Datasheet Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.ecore.base.genericDatasheet.ProprietaryLicense
+	 * @see org.ecore.base.genericDatasheet.MandatoryDatasheetElement
 	 * @generated
 	 */
-	public Adapter createProprietaryLicenseAdapter() {
+	public Adapter createMandatoryDatasheetElementAdapter() {
 		return null;
 	}
 

@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.ecore.component.componentDatasheet.edit;singleton:=true
+Automatic-Module-Name: org.ecore.component.componentDatasheet.edit
 Bundle-Version: 3.7.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.ecore.component.componentDatasheet.provider.ComponentDatasheetEditPlugin$Implementation
@@ -24,6 +25,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.ecore.service.componentMode.edit;visibility:=reexport,
  org.ecore.service.coordinationPattern;visibility:=reexport,
  org.ecore.service.coordinationPattern.edit;visibility:=reexport,
+ org.ecore.base.documentation;visibility:=reexport,
+ org.ecore.base.documentation.edit;visibility:=reexport,
  org.ecore.base.genericDatasheet;visibility:=reexport,
  org.ecore.base.genericDatasheet.edit;visibility:=reexport,
  org.ecore.service.parameterDefinition;visibility:=reexport,
@@ -33,4 +36,3 @@ Require-Bundle: org.eclipse.core.runtime,
  org.ecore.base.stateMachine;visibility:=reexport,
  org.ecore.base.stateMachine.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Automatic-Module-Name: org.ecore.component.componentDatasheet.edit

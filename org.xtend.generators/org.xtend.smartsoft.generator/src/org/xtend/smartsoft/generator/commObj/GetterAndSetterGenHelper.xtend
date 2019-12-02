@@ -1,12 +1,12 @@
-//--------------------------------------------------------------------------
+//===============================================================
 //
-//  Copyright (C) 2013 Alex Lotz, Matthias Lutz, Dennis Stampfer
+//  Copyright (C) 2016 Alex Lotz, Matthias Lutz, Dennis Stampfer
 //
 //        lotz@hs-ulm.de
 //        lutz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //
-//        ZAFH Servicerobotic Ulm
+//        Servicerobotics Ulm
 //        Christian Schlegel
 //        University of Applied Sciences
 //        Prittwitzstr. 10
@@ -15,22 +15,7 @@
 //
 //  This file is part of the SmartSoft MDSD Toolchain. 
 //
-//  This library is free software; you can redistribute it and/or
-//  modify it under the terms of the GNU Lesser General Public
-//  License as published by the Free Software Foundation; either
-//  version 2.1 of the License, or (at your option) any later version.
-//
-//  This library is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-//  Lesser General Public License for more details.
-//
-//  You should have received a copy of the GNU Lesser General Public
-//  License along with this library; if not, write to the Free Software
-//  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-//
-//--------------------------------------------------------------------------
-
+//===============================================================
 package org.xtend.smartsoft.generator.commObj
 
 import com.google.inject.Inject
@@ -58,13 +43,7 @@ class GetterAndSetterGenHelper {
 				inline std::vector<«pt.compileCppType»>& get«el.name.toFirstUpper»Ref() { return «instanceName».«el.name»; }
 				«ENDIF»
 				inline std::vector<«pt.compileCppType»> get«el.name.toFirstUpper»Copy() const {
-					«IF el.type.stringType»
-					std::vector<«pt.compileCppType»> copy(«instanceName».«el.name».size());
-					std::transform(«instanceName».«el.name».begin(), «instanceName».«el.name».end(), copy.begin(), getStlString);
-					return copy;
-					«ELSE»
 					return std::vector<«pt.compileCppType»>(«instanceName».«el.name».begin(), «instanceName».«el.name».end());
-					«ENDIF»
 				}
 				«IF el.type.stringType»
 				inline «pt.compileCppType» get«el.name.toFirstUpper»ElemAtPos(const size_t &pos) const { return «instanceName».«el.name»[pos].c_str(); }
@@ -122,15 +101,7 @@ class GetterAndSetterGenHelper {
 					/**
 					 * Setter methods for «instanceName».«el.name» of type vector<«pt.compileCppType»>
 					 */
-					«IF el.type.stringType»
-					inline «coBaseName»& set«el.name.toFirstUpper»(const std::vector<«pt.compileCppType»> &«el.name») { 
-						resize«el.name.toFirstUpper»(«el.name».size());
-						std::transform(«el.name».begin(), «el.name».end(), «instanceName».«el.name».begin(), getIdlString);
-						return *this;
-					}
-					«ELSE»					
 					inline «coBaseName»& set«el.name.toFirstUpper»(const std::vector<«pt.compileCppType»> &«el.name») { «instanceName».«el.name» = «el.name»; return *this; }
-					«ENDIF»
 					inline bool set«el.name.toFirstUpper»ElemAtPos(const size_t &pos, const «pt.compileCppType» &elem) {
 						if(pos < «instanceName».«el.name».size()) {
 							«instanceName».«el.name»[pos] = elem«IF el.type.stringType».c_str()«ENDIF»;
@@ -140,13 +111,7 @@ class GetterAndSetterGenHelper {
 					}
 					inline bool insert«el.name.toFirstUpper»VectorAtPos(const size_t &pos, const std::vector<«pt.compileCppType»> &data) {
 						if(pos < «instanceName».«el.name».size()) {
-							«IF el.type.stringType»
-							std::vector<ACE_CString> copy(data.size());
-							std::transform(data.begin(), data.end(), copy.begin(), getIdlString);
-							«instanceName».«el.name».insert(«instanceName».«el.name».begin()+pos, copy.begin(), copy.end());
-							«ELSE»
 							«instanceName».«el.name».insert(«instanceName».«el.name».begin()+pos, data.begin(), data.end());
-							«ENDIF»
 							return true;
 						}
 						return false;

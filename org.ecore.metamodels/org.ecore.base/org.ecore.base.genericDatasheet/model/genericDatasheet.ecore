@@ -2,38 +2,43 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="genericDatasheet" nsURI="http://www.ecore.org/base/genericDatasheet"
     nsPrefix="genericDatasheet">
-  <eClassifiers xsi:type="ecore:EClass" name="GenericDatasheet">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="license" eType="#//AbstractLicense"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shortDescription" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="longDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="supplierDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="homepage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseURI" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trl" eType="#//TRL" defaultValueLiteral="Undefined"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DatasheetProperty" eSuperTypes="#//AbstractDatasheetElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shortDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractLicense" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SpdxLicense" eSuperTypes="#//AbstractLicense">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="licenseID" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="DefaultDatasheetProperties">
+    <eLiterals name="Homepage"/>
+    <eLiterals name="SpdxLicense" value="1"/>
+    <eLiterals name="ProprietaryLicense" value="2"/>
+    <eLiterals name="Purpose" value="3"/>
+    <eLiterals name="TechnologyReadinessLevel" value="5"/>
+    <eLiterals name="Supplier" value="5"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProprietaryLicense" eSuperTypes="#//AbstractLicense">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="TechnologyReadinessLevel">
+    <eLiterals name="TRL1"/>
+    <eLiterals name="TRL2" value="1"/>
+    <eLiterals name="TRL3" value="2"/>
+    <eLiterals name="TRL4" value="3"/>
+    <eLiterals name="TRL5" value="4"/>
+    <eLiterals name="TRL6" value="5"/>
+    <eLiterals name="TRL7" value="6"/>
+    <eLiterals name="TRL8" value="7"/>
+    <eLiterals name="TRL9" value="8"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="TRL">
-    <eLiterals name="LEVEL1" literal="Level1"/>
-    <eLiterals name="LEVEL2" value="1" literal="Level2"/>
-    <eLiterals name="LEVEL3" value="2" literal="Level3"/>
-    <eLiterals name="LEVEL4" value="3" literal="Level4"/>
-    <eLiterals name="LEVEL5" value="4" literal="Level5"/>
-    <eLiterals name="LEVEL6" value="5" literal="Level6"/>
-    <eLiterals name="LEVEL7" value="6" literal="Level7"/>
-    <eLiterals name="LEVEL8" value="7" literal="Level8"/>
-    <eLiterals name="LEVEL9" value="8" literal="Level9"/>
-    <eLiterals name="UNDEFINED" value="9" literal="Undefined"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GenericDatasheetModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//AbstractDatasheetElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractDatasheetElement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="MandatoryDatasheetElementNames">
+    <eLiterals name="BaseURI"/>
+    <eLiterals name="ShortDescription" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MandatoryDatasheetElement" eSuperTypes="#//AbstractDatasheetElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//MandatoryDatasheetElementNames"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

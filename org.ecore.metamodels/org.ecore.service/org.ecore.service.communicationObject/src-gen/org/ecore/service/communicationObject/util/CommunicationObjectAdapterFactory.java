@@ -13,6 +13,7 @@ import org.ecore.base.basicAttributes.AbstractAttributeType;
 import org.ecore.base.basicAttributes.AbstractValue;
 import org.ecore.base.basicAttributes.SingleValue;
 
+import org.ecore.base.documentation.AbstractDocumentedElement;
 import org.ecore.service.communicationObject.*;
 
 /**
@@ -113,6 +114,11 @@ public class CommunicationObjectAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseCommElementReference(CommElementReference object) {
 			return createCommElementReferenceAdapter();
+		}
+
+		@Override
+		public Adapter caseAbstractDocumentedElement(AbstractDocumentedElement object) {
+			return createAbstractDocumentedElementAdapter();
 		}
 
 		@Override
@@ -272,6 +278,20 @@ public class CommunicationObjectAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommElementReferenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.ecore.base.documentation.AbstractDocumentedElement <em>Abstract Documented Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.ecore.base.documentation.AbstractDocumentedElement
+	 * @generated
+	 */
+	public Adapter createAbstractDocumentedElementAdapter() {
 		return null;
 	}
 

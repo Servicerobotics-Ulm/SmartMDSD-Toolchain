@@ -4,6 +4,7 @@ package org.ecore.component.componentDatasheet.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -11,13 +12,17 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.ecore.base.basicAttributes.BasicAttributesPackage;
 
+import org.ecore.base.documentation.DocumentationPackage;
+
 import org.ecore.base.genericDatasheet.GenericDatasheetPackage;
 
 import org.ecore.base.stateMachine.StateMachinePackage;
 
 import org.ecore.component.componentDatasheet.ComponentDatasheet;
+import org.ecore.component.componentDatasheet.ComponentDatasheetDefaultProperties;
 import org.ecore.component.componentDatasheet.ComponentDatasheetFactory;
 import org.ecore.component.componentDatasheet.ComponentDatasheetPackage;
+import org.ecore.component.componentDatasheet.ComponentPortDatasheet;
 
 import org.ecore.component.componentDefinition.ComponentDefinitionPackage;
 
@@ -46,6 +51,20 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 	 * @generated
 	 */
 	private EClass componentDatasheetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass componentPortDatasheetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum componentDatasheetDefaultPropertiesEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -105,6 +124,7 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 		ComponentDefinitionPackage.eINSTANCE.eClass();
 		ComponentModePackage.eINSTANCE.eClass();
 		CoordinationPatternPackage.eINSTANCE.eClass();
+		DocumentationPackage.eINSTANCE.eClass();
 		GenericDatasheetPackage.eINSTANCE.eClass();
 		ParameterDefinitionPackage.eINSTANCE.eClass();
 		ServiceDefinitionPackage.eINSTANCE.eClass();
@@ -140,8 +160,8 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 	 * @generated
 	 */
 	@Override
-	public EAttribute getComponentDatasheet_PurposeDescription() {
-		return (EAttribute) componentDatasheetEClass.getEStructuralFeatures().get(0);
+	public EReference getComponentDatasheet_Component() {
+		return (EReference) componentDatasheetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -150,7 +170,7 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 	 * @generated
 	 */
 	@Override
-	public EAttribute getComponentDatasheet_HardwareRequirementDescription() {
+	public EAttribute getComponentDatasheet_Name() {
 		return (EAttribute) componentDatasheetEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -160,8 +180,48 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 	 * @generated
 	 */
 	@Override
-	public EReference getComponentDatasheet_Component() {
-		return (EReference) componentDatasheetEClass.getEStructuralFeatures().get(2);
+	public EClass getComponentPortDatasheet() {
+		return componentPortDatasheetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComponentPortDatasheet_Port() {
+		return (EReference) componentPortDatasheetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComponentPortDatasheet_Properties() {
+		return (EReference) componentPortDatasheetEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getComponentPortDatasheet_Name() {
+		return (EAttribute) componentPortDatasheetEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getComponentDatasheetDefaultProperties() {
+		return componentDatasheetDefaultPropertiesEEnum;
 	}
 
 	/**
@@ -195,9 +255,16 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 
 		// Create classes and their features
 		componentDatasheetEClass = createEClass(COMPONENT_DATASHEET);
-		createEAttribute(componentDatasheetEClass, COMPONENT_DATASHEET__PURPOSE_DESCRIPTION);
-		createEAttribute(componentDatasheetEClass, COMPONENT_DATASHEET__HARDWARE_REQUIREMENT_DESCRIPTION);
 		createEReference(componentDatasheetEClass, COMPONENT_DATASHEET__COMPONENT);
+		createEAttribute(componentDatasheetEClass, COMPONENT_DATASHEET__NAME);
+
+		componentPortDatasheetEClass = createEClass(COMPONENT_PORT_DATASHEET);
+		createEReference(componentPortDatasheetEClass, COMPONENT_PORT_DATASHEET__PORT);
+		createEReference(componentPortDatasheetEClass, COMPONENT_PORT_DATASHEET__PROPERTIES);
+		createEAttribute(componentPortDatasheetEClass, COMPONENT_PORT_DATASHEET__NAME);
+
+		// Create enums
+		componentDatasheetDefaultPropertiesEEnum = createEEnum(COMPONENT_DATASHEET_DEFAULT_PROPERTIES);
 	}
 
 	/**
@@ -235,20 +302,36 @@ public class ComponentDatasheetPackageImpl extends EPackageImpl implements Compo
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		componentDatasheetEClass.getESuperTypes().add(theGenericDatasheetPackage.getGenericDatasheet());
+		componentDatasheetEClass.getESuperTypes().add(theGenericDatasheetPackage.getGenericDatasheetModel());
+		componentPortDatasheetEClass.getESuperTypes().add(theGenericDatasheetPackage.getAbstractDatasheetElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentDatasheetEClass, ComponentDatasheet.class, "ComponentDatasheet", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponentDatasheet_PurposeDescription(), ecorePackage.getEString(), "purposeDescription",
-				null, 0, 1, ComponentDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentDatasheet_HardwareRequirementDescription(), ecorePackage.getEString(),
-				"hardwareRequirementDescription", null, 0, 1, ComponentDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentDatasheet_Component(), theComponentDefinitionPackage.getComponentDefinition(), null,
 				"component", null, 1, 1, ComponentDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentDatasheet_Name(), ecorePackage.getEString(), "name", null, 1, 1,
+				ComponentDatasheet.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				IS_DERIVED, IS_ORDERED);
+
+		initEClass(componentPortDatasheetEClass, ComponentPortDatasheet.class, "ComponentPortDatasheet", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComponentPortDatasheet_Port(), theComponentDefinitionPackage.getComponentPort(), null, "port",
+				null, 1, 1, ComponentPortDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentPortDatasheet_Properties(), theGenericDatasheetPackage.getDatasheetProperty(), null,
+				"properties", null, 0, -1, ComponentPortDatasheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentPortDatasheet_Name(), ecorePackage.getEString(), "name", null, 1, 1,
+				ComponentPortDatasheet.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(componentDatasheetDefaultPropertiesEEnum, ComponentDatasheetDefaultProperties.class,
+				"ComponentDatasheetDefaultProperties");
+		addEEnumLiteral(componentDatasheetDefaultPropertiesEEnum,
+				ComponentDatasheetDefaultProperties.HARDWARE_REQUIREMENT);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -63,6 +63,7 @@ public class ForkingServiceDefinitionImpl extends OneWayCommunicationServiceImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ForkingPattern getPattern() {
 		return pattern;
 	}
@@ -91,6 +92,7 @@ public class ForkingServiceDefinitionImpl extends OneWayCommunicationServiceImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPattern(ForkingPattern newPattern) {
 		if (newPattern != pattern) {
 			NotificationChain msgs = null;

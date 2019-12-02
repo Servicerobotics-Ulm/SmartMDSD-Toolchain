@@ -2,7 +2,7 @@
  */
 package org.ecore.component.componentParameter;
 
-import org.eclipse.emf.ecore.EObject;
+import org.ecore.base.documentation.AbstractDocumentedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface AbstractParameterInstance extends EObject {
+public interface AbstractParameterInstance extends AbstractDocumentedElement {
 } // AbstractParameterInstance

@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.component.componentDefinition.ComponentDefinitionPackage;
 
 /**
@@ -115,13 +116,22 @@ public interface ComponentParameterPackage extends EPackage {
 	int ABSTRACT_COMPONENT_PARAMETER = 1;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COMPONENT_PARAMETER__DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Component Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMPONENT_PARAMETER_FEATURE_COUNT = 0;
+	int ABSTRACT_COMPONENT_PARAMETER_FEATURE_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.component.componentParameter.impl.ComponentParameterBaseImpl <em>Base</em>}' class.
@@ -151,6 +161,15 @@ public interface ComponentParameterPackage extends EPackage {
 	 * @generated
 	 */
 	int INTERNAL_PARAMETER = 3;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_PARAMETER__DOCUMENTATION = ABSTRACT_COMPONENT_PARAMETER__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -190,6 +209,15 @@ public interface ComponentParameterPackage extends EPackage {
 	int EXTENDED_PARAMETER = 4;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_PARAMETER__DOCUMENTATION = ABSTRACT_COMPONENT_PARAMETER__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -225,6 +253,15 @@ public interface ComponentParameterPackage extends EPackage {
 	 * @generated
 	 */
 	int EXTENDED_TRIGGER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TRIGGER__DOCUMENTATION = ABSTRACT_COMPONENT_PARAMETER__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -273,6 +310,15 @@ public interface ComponentParameterPackage extends EPackage {
 	int PARAMETER_SET_INSTANCE = 6;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_SET_INSTANCE__DOCUMENTATION = ABSTRACT_COMPONENT_PARAMETER__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Parameter Instances</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -319,13 +365,22 @@ public interface ComponentParameterPackage extends EPackage {
 	int ABSTRACT_PARAMETER_INSTANCE = 7;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_PARAMETER_INSTANCE__DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Parameter Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_PARAMETER_INSTANCE_FEATURE_COUNT = 0;
+	int ABSTRACT_PARAMETER_INSTANCE_FEATURE_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.component.componentParameter.impl.TriggerInstanceImpl <em>Trigger Instance</em>}' class.
@@ -336,6 +391,15 @@ public interface ComponentParameterPackage extends EPackage {
 	 * @generated
 	 */
 	int TRIGGER_INSTANCE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_INSTANCE__DOCUMENTATION = ABSTRACT_PARAMETER_INSTANCE__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Trigger Def</b></em>' reference.
@@ -382,6 +446,15 @@ public interface ComponentParameterPackage extends EPackage {
 	 * @generated
 	 */
 	int PARAMETER_INSTANCE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_INSTANCE__DOCUMENTATION = ABSTRACT_PARAMETER_INSTANCE__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Parameter Def</b></em>' reference.

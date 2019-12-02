@@ -13,6 +13,7 @@ Export-Package: org.ecore.base.basicAttributes,
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.runtime,
  org.eclipse.xtext.xbase.lib,
- org.eclipse.jface
+ org.eclipse.jface,
+ org.ecore.base.documentation;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.ecore.base.basicAttributes

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.system.datasheetPropertyChecks.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.system.datasheetPropertyChecks.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.system.datasheetPropertyChecks.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.xtext.system.datasheetPropertyChecks,
+ org.ecore.system.datasheetPropertyChecks,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.system.datasheetPropertyChecks.ide.contentassist.antlr,
+ org.xtext.system.datasheetPropertyChecks.ide.contentassist.antlr.internal

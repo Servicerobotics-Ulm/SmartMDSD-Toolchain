@@ -19,10 +19,12 @@ Require-Bundle: org.xtext.component.componentDatasheet,
  org.eclipse.xtend.lib;bundle-version="2.14.0";resolution:=optional,
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.xtext.base.genericDatasheet,
- org.xtext.base.genericDatasheet.ui
+ org.xtext.base.genericDatasheet.ui,
+ org.smartmdsd.metadata.indexer
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.component.componentDatasheet.ui.quickfix,
  org.xtext.component.componentDatasheet.ui.internal,
  org.xtext.component.componentDatasheet.ui.contentassist
 Bundle-Activator: org.xtext.component.componentDatasheet.ui.internal.ComponentDatasheetActivator
+Automatic-Module-Name: org.xtext.component.componentDatasheet.ui

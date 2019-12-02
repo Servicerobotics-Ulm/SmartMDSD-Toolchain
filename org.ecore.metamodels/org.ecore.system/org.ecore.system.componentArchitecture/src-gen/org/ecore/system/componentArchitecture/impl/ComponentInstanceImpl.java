@@ -116,6 +116,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -125,6 +126,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -138,6 +140,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentDefinition getComponent() {
 		if (component != null && component.eIsProxy()) {
 			InternalEObject oldComponent = (InternalEObject) component;
@@ -165,6 +168,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponent(ComponentDefinition newComponent) {
 		ComponentDefinition oldComponent = component;
 		component = newComponent;
@@ -178,6 +182,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ServiceInstance> getPorts() {
 		if (ports == null) {
 			ports = new EObjectContainmentEList<ServiceInstance>(ServiceInstance.class, this,
@@ -191,6 +196,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ComponentInstanceExtension> getExtensions() {
 		if (extensions == null) {
 			extensions = new EObjectContainmentEList<ComponentInstanceExtension>(ComponentInstanceExtension.class, this,
@@ -318,7 +324,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

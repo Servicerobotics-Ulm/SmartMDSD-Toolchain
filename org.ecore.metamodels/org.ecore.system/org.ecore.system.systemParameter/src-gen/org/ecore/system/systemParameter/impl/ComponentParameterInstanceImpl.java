@@ -107,6 +107,7 @@ public class ComponentParameterInstanceImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentInstance getComponentInstance() {
 		if (componentInstance != null && componentInstance.eIsProxy()) {
 			InternalEObject oldComponentInstance = (InternalEObject) componentInstance;
@@ -135,6 +136,7 @@ public class ComponentParameterInstanceImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentInstance(ComponentInstance newComponentInstance) {
 		ComponentInstance oldComponentInstance = componentInstance;
 		componentInstance = newComponentInstance;
@@ -149,6 +151,7 @@ public class ComponentParameterInstanceImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ParameterRefinement> getParameters() {
 		if (parameters == null) {
 			parameters = new EObjectContainmentEList<ParameterRefinement>(ParameterRefinement.class, this,
@@ -183,6 +186,7 @@ public class ComponentParameterInstanceImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentParameter getComponentParam() {
 		if (componentParam != null && componentParam.eIsProxy()) {
 			InternalEObject oldComponentParam = (InternalEObject) componentParam;
@@ -211,6 +215,7 @@ public class ComponentParameterInstanceImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentParam(ComponentParameter newComponentParam) {
 		ComponentParameter oldComponentParam = componentParam;
 		componentParam = newComponentParam;

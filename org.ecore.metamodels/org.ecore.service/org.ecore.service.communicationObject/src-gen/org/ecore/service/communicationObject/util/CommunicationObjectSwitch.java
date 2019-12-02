@@ -11,6 +11,7 @@ import org.ecore.base.basicAttributes.AbstractAttributeType;
 import org.ecore.base.basicAttributes.AbstractValue;
 import org.ecore.base.basicAttributes.SingleValue;
 
+import org.ecore.base.documentation.AbstractDocumentedElement;
 import org.ecore.service.communicationObject.*;
 
 /**
@@ -81,12 +82,16 @@ public class CommunicationObjectSwitch<T> extends Switch<T> {
 			CommObjectsRepository commObjectsRepository = (CommObjectsRepository) theEObject;
 			T result = caseCommObjectsRepository(commObjectsRepository);
 			if (result == null)
+				result = caseAbstractDocumentedElement(commObjectsRepository);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case CommunicationObjectPackage.ABSTRACT_COMM_ELEMENT: {
 			AbstractCommElement abstractCommElement = (AbstractCommElement) theEObject;
 			T result = caseAbstractCommElement(abstractCommElement);
+			if (result == null)
+				result = caseAbstractDocumentedElement(abstractCommElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -111,6 +116,8 @@ public class CommunicationObjectSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractCommElement(enumeration);
 			if (result == null)
+				result = caseAbstractDocumentedElement(enumeration);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -119,6 +126,8 @@ public class CommunicationObjectSwitch<T> extends Switch<T> {
 			T result = caseCommunicationObject(communicationObject);
 			if (result == null)
 				result = caseAbstractCommElement(communicationObject);
+			if (result == null)
+				result = caseAbstractDocumentedElement(communicationObject);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -280,6 +289,21 @@ public class CommunicationObjectSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommElementReference(CommElementReference object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Documented Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Documented Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractDocumentedElement(AbstractDocumentedElement object) {
 		return null;
 	}
 

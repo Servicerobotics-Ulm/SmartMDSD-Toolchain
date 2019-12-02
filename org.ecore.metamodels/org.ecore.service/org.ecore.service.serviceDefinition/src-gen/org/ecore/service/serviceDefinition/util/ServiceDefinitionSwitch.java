@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.ecore.base.documentation.AbstractDocumentedElement;
 import org.ecore.service.serviceDefinition.*;
 
 /**
@@ -77,12 +78,16 @@ public class ServiceDefinitionSwitch<T> extends Switch<T> {
 			ServiceDefRepository serviceDefRepository = (ServiceDefRepository) theEObject;
 			T result = caseServiceDefRepository(serviceDefRepository);
 			if (result == null)
+				result = caseAbstractDocumentedElement(serviceDefRepository);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case ServiceDefinitionPackage.ABSTRACT_SERVICE_DEFINITION: {
 			AbstractServiceDefinition abstractServiceDefinition = (AbstractServiceDefinition) theEObject;
 			T result = caseAbstractServiceDefinition(abstractServiceDefinition);
+			if (result == null)
+				result = caseAbstractDocumentedElement(abstractServiceDefinition);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -114,6 +119,8 @@ public class ServiceDefinitionSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractServiceDefinition(communicationServiceDefinition);
 			if (result == null)
+				result = caseAbstractDocumentedElement(communicationServiceDefinition);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -122,6 +129,8 @@ public class ServiceDefinitionSwitch<T> extends Switch<T> {
 			T result = caseCoordinationServiceDefinition(coordinationServiceDefinition);
 			if (result == null)
 				result = caseAbstractServiceDefinition(coordinationServiceDefinition);
+			if (result == null)
+				result = caseAbstractDocumentedElement(coordinationServiceDefinition);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -136,6 +145,8 @@ public class ServiceDefinitionSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractServiceDefinition(forkingServiceDefinition);
 			if (result == null)
+				result = caseAbstractDocumentedElement(forkingServiceDefinition);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -149,6 +160,8 @@ public class ServiceDefinitionSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractServiceDefinition(requestAnswerServiceDefinition);
 			if (result == null)
+				result = caseAbstractDocumentedElement(requestAnswerServiceDefinition);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -160,6 +173,8 @@ public class ServiceDefinitionSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractServiceDefinition(oneWayCommunicationService);
 			if (result == null)
+				result = caseAbstractDocumentedElement(oneWayCommunicationService);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -170,6 +185,8 @@ public class ServiceDefinitionSwitch<T> extends Switch<T> {
 				result = caseCommunicationServiceDefinition(twoWayCommunicationService);
 			if (result == null)
 				result = caseAbstractServiceDefinition(twoWayCommunicationService);
+			if (result == null)
+				result = caseAbstractDocumentedElement(twoWayCommunicationService);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -190,6 +207,8 @@ public class ServiceDefinitionSwitch<T> extends Switch<T> {
 				result = caseCommunicationServiceDefinition(joiningServiceDefinition);
 			if (result == null)
 				result = caseAbstractServiceDefinition(joiningServiceDefinition);
+			if (result == null)
+				result = caseAbstractDocumentedElement(joiningServiceDefinition);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -406,6 +425,21 @@ public class ServiceDefinitionSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseJoiningServiceDefinition(JoiningServiceDefinition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Documented Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Documented Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractDocumentedElement(AbstractDocumentedElement object) {
 		return null;
 	}
 

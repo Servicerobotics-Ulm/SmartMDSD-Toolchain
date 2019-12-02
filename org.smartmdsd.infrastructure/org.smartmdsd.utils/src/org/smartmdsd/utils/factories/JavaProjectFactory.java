@@ -1,4 +1,4 @@
-//--------------------------------------------------------------------------
+//===============================================================
 //
 //  Copyright (C) 2019 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
@@ -8,38 +8,24 @@
 //
 //        Servicerobotics Ulm
 //        Christian Schlegel
-//        University of Applied Sciences
+//        Ulm University of Applied Sciences
 //        Prittwitzstr. 10
 //        89075 Ulm
 //        Germany
 //
-//  This file is part of the SmartSoft MDSD Toolchain. 
+//  This file is part of the SmartSoft MDSD Toolchain v3. 
 //
-// Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-//
-// 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-// 
-// 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the 
-//    documentation and/or other materials provided with the distribution.
-// 
-// 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this 
-//    software without specific prior written permission.
-// 
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
-// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS 
-// BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
-// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-// POSSIBILITY OF SUCH DAMAGE.
-//
-//--------------------------------------------------------------------------
+//===============================================================
 package org.smartmdsd.utils.factories;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectNature;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
@@ -94,5 +80,48 @@ public class JavaProjectFactory {
 			IClasspathEntry[] newRawClasspath = newClasspath.toArray(new IClasspathEntry[0]);
 			javaProject.setRawClasspath(newRawClasspath, monitor);
 		}
+	}
+	
+	public static List<IResource> getContainingJavaSources(IResource selectedResource) throws CoreException {
+		List<IResource> sourceFiles = new ArrayList<IResource>();
+		// get the surrounding project of the selected resource
+		// if the selected resource is a project itself then it will return itself
+		IProject project = selectedResource.getProject();
+		IProjectNature nature = project.getNature(JavaCore.NATURE_ID);
+		if(nature instanceof IJavaProject) {
+			IJavaProject javaProject = (IJavaProject)nature;
+			IClasspathEntry[] currClasspath = javaProject.getRawClasspath();
+			for(IClasspathEntry entry: currClasspath) {
+				// use only the java build-path source entries
+				if(entry.getEntryKind() == IClasspathEntry.CPE_SOURCE) {
+					// we have to remove the leading segment from the entry path as it is the project itself
+					IFolder sourceFolder = project.getFolder(entry.getPath().removeFirstSegments(1));
+					if(selectedResource instanceof IProject) {
+						// add all members from all source folders (of the current project) to the result list
+						if(sourceFolder.exists()) {
+							for(IResource source: sourceFolder.members()) {
+								sourceFiles.add(source);
+							}
+						}
+					} else if(selectedResource instanceof IFolder) {
+						// check if the currently selected folder is a valid java source folder,
+						// and if so, add all its members to the result list
+						IFolder selectedFolder = (IFolder)selectedResource;
+						if(selectedFolder.equals(sourceFolder)) {
+							for(IResource source: sourceFolder.members()) {
+								sourceFiles.add(source);
+							}
+						}
+					} else if(selectedResource instanceof IFile) {
+						// check if the currently selected file is within one of the source folders, 
+						// and if so, add the selected file only to the result list
+						if(sourceFolder.equals(selectedResource.getParent())) {
+							sourceFiles.add(selectedResource);
+						}
+					}
+				}
+			}
+		}
+		return sourceFiles;
 	}
 }

@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -14,34 +13,9 @@
 //        89075 Ulm
 //        Germany
 //
-//  This file is part of the SmartMDSD Toolchain V3. 
+//  This file is part of the SmartMDSD Toolchain V3.
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.base.basicAttributes.services;
 
 import com.google.inject.Inject;
@@ -64,6 +38,7 @@ import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractEnumRuleElementFinder;
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
+import org.xtext.base.docuterminals.services.DocuTerminalsGrammarAccess;
 
 @Singleton
 public class BasicAttributesGrammarAccess extends AbstractGrammarElementFinder {
@@ -71,92 +46,110 @@ public class BasicAttributesGrammarAccess extends AbstractGrammarElementFinder {
 	public class AttributeDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.base.basicAttributes.BasicAttributes.AttributeDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeAbstractAttributeTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cEqualsSignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cDefaultvalueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cDefaultvalueAbstractValueParserRuleCall_3_1_0 = (RuleCall)cDefaultvalueAssignment_3_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cDocumentationAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDocumentationDOCU_COMMENTTerminalRuleCall_0_0 = (RuleCall)cDocumentationAssignment_0.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTypeAbstractAttributeTypeParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cEqualsSignKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cDefaultvalueAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cDefaultvalueAbstractValueParserRuleCall_4_1_0 = (RuleCall)cDefaultvalueAssignment_4_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//AttributeDefinition attr::AttributeDefinition:
+		//	documentation=DOCU_COMMENT?
 		//	name=ID ':' type=AbstractAttributeType ('=' defaultvalue=AbstractValue)? ';'?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ':' type=AbstractAttributeType ('=' defaultvalue=AbstractValue)? ';'?
+		//documentation=DOCU_COMMENT? name=ID ':' type=AbstractAttributeType ('=' defaultvalue=AbstractValue)? ';'?
 		public Group getGroup() { return cGroup; }
 		
+		//documentation=DOCU_COMMENT?
+		public Assignment getDocumentationAssignment_0() { return cDocumentationAssignment_0; }
+		
+		//DOCU_COMMENT
+		public RuleCall getDocumentationDOCU_COMMENTTerminalRuleCall_0_0() { return cDocumentationDOCU_COMMENTTerminalRuleCall_0_0; }
+		
 		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//type=AbstractAttributeType
-		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
 		
 		//AbstractAttributeType
-		public RuleCall getTypeAbstractAttributeTypeParserRuleCall_2_0() { return cTypeAbstractAttributeTypeParserRuleCall_2_0; }
+		public RuleCall getTypeAbstractAttributeTypeParserRuleCall_3_0() { return cTypeAbstractAttributeTypeParserRuleCall_3_0; }
 		
 		//('=' defaultvalue=AbstractValue)?
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//'='
-		public Keyword getEqualsSignKeyword_3_0() { return cEqualsSignKeyword_3_0; }
+		public Keyword getEqualsSignKeyword_4_0() { return cEqualsSignKeyword_4_0; }
 		
 		//defaultvalue=AbstractValue
-		public Assignment getDefaultvalueAssignment_3_1() { return cDefaultvalueAssignment_3_1; }
+		public Assignment getDefaultvalueAssignment_4_1() { return cDefaultvalueAssignment_4_1; }
 		
 		//AbstractValue
-		public RuleCall getDefaultvalueAbstractValueParserRuleCall_3_1_0() { return cDefaultvalueAbstractValueParserRuleCall_3_1_0; }
+		public RuleCall getDefaultvalueAbstractValueParserRuleCall_4_1_0() { return cDefaultvalueAbstractValueParserRuleCall_4_1_0; }
 		
 		//';'?
-		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
 	public class AttributeRefinementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.base.basicAttributes.BasicAttributes.AttributeRefinement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cAttributeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cAttributeAttributeDefinitionCrossReference_0_0 = (CrossReference)cAttributeAssignment_0.eContents().get(0);
-		private final RuleCall cAttributeAttributeDefinitionFQNParserRuleCall_0_0_1 = (RuleCall)cAttributeAttributeDefinitionCrossReference_0_0.eContents().get(1);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueAbstractValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
-		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cDocumentationAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDocumentationDOCU_COMMENTTerminalRuleCall_0_0 = (RuleCall)cDocumentationAssignment_0.eContents().get(0);
+		private final Assignment cAttributeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cAttributeAttributeDefinitionCrossReference_1_0 = (CrossReference)cAttributeAssignment_1.eContents().get(0);
+		private final RuleCall cAttributeAttributeDefinitionFQNParserRuleCall_1_0_1 = (RuleCall)cAttributeAttributeDefinitionCrossReference_1_0.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cValueAbstractValueParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//AttributeRefinement attr::AttributeRefinement:
+		//	documentation=DOCU_COMMENT?
 		//	attribute=[attr::AttributeDefinition|FQN] '=' value=AbstractValue ';'?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//attribute=[attr::AttributeDefinition|FQN] '=' value=AbstractValue ';'?
+		//documentation=DOCU_COMMENT? attribute=[attr::AttributeDefinition|FQN] '=' value=AbstractValue ';'?
 		public Group getGroup() { return cGroup; }
 		
+		//documentation=DOCU_COMMENT?
+		public Assignment getDocumentationAssignment_0() { return cDocumentationAssignment_0; }
+		
+		//DOCU_COMMENT
+		public RuleCall getDocumentationDOCU_COMMENTTerminalRuleCall_0_0() { return cDocumentationDOCU_COMMENTTerminalRuleCall_0_0; }
+		
 		//attribute=[attr::AttributeDefinition|FQN]
-		public Assignment getAttributeAssignment_0() { return cAttributeAssignment_0; }
+		public Assignment getAttributeAssignment_1() { return cAttributeAssignment_1; }
 		
 		//[attr::AttributeDefinition|FQN]
-		public CrossReference getAttributeAttributeDefinitionCrossReference_0_0() { return cAttributeAttributeDefinitionCrossReference_0_0; }
+		public CrossReference getAttributeAttributeDefinitionCrossReference_1_0() { return cAttributeAttributeDefinitionCrossReference_1_0; }
 		
 		//FQN
-		public RuleCall getAttributeAttributeDefinitionFQNParserRuleCall_0_0_1() { return cAttributeAttributeDefinitionFQNParserRuleCall_0_0_1; }
+		public RuleCall getAttributeAttributeDefinitionFQNParserRuleCall_1_0_1() { return cAttributeAttributeDefinitionFQNParserRuleCall_1_0_1; }
 		
 		//'='
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
 		
 		//value=AbstractValue
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
 		
 		//AbstractValue
-		public RuleCall getValueAbstractValueParserRuleCall_2_0() { return cValueAbstractValueParserRuleCall_2_0; }
+		public RuleCall getValueAbstractValueParserRuleCall_3_0() { return cValueAbstractValueParserRuleCall_3_0; }
 		
 		//';'?
-		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 	}
 	public class FQNElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.base.basicAttributes.BasicAttributes.FQN");
@@ -751,12 +744,16 @@ public class BasicAttributesGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final Grammar grammar;
 	
+	private final DocuTerminalsGrammarAccess gaDocuTerminals;
+	
 	private final TerminalsGrammarAccess gaTerminals;
 
 	@Inject
 	public BasicAttributesGrammarAccess(GrammarProvider grammarProvider,
+			DocuTerminalsGrammarAccess gaDocuTerminals,
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
+		this.gaDocuTerminals = gaDocuTerminals;
 		this.gaTerminals = gaTerminals;
 		this.pAttributeDefinition = new AttributeDefinitionElements();
 		this.pAttributeRefinement = new AttributeRefinementElements();
@@ -799,12 +796,17 @@ public class BasicAttributesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
+	public DocuTerminalsGrammarAccess getDocuTerminalsGrammarAccess() {
+		return gaDocuTerminals;
+	}
+	
 	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
 		return gaTerminals;
 	}
 
 	
 	//AttributeDefinition attr::AttributeDefinition:
+	//	documentation=DOCU_COMMENT?
 	//	name=ID ':' type=AbstractAttributeType ('=' defaultvalue=AbstractValue)? ';'?;
 	public AttributeDefinitionElements getAttributeDefinitionAccess() {
 		return pAttributeDefinition;
@@ -815,6 +817,7 @@ public class BasicAttributesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AttributeRefinement attr::AttributeRefinement:
+	//	documentation=DOCU_COMMENT?
 	//	attribute=[attr::AttributeDefinition|FQN] '=' value=AbstractValue ';'?;
 	public AttributeRefinementElements getAttributeRefinementAccess() {
 		return pAttributeRefinement;
@@ -979,6 +982,48 @@ public class BasicAttributesGrammarAccess extends AbstractGrammarElementFinder {
 		return getSingleValueAccess().getRule();
 	}
 	
+	//AbstractDocumentedElement:
+	//	{AbstractDocumentedElement} documentation=DOCU_COMMENT?;
+	public DocuTerminalsGrammarAccess.AbstractDocumentedElementElements getAbstractDocumentedElementAccess() {
+		return gaDocuTerminals.getAbstractDocumentedElementAccess();
+	}
+	
+	public ParserRule getAbstractDocumentedElementRule() {
+		return getAbstractDocumentedElementAccess().getRule();
+	}
+	
+	//@Override
+	//terminal ML_COMMENT:
+	//	'/*' !'*'->'*/';
+	public TerminalRule getML_COMMENTRule() {
+		return gaDocuTerminals.getML_COMMENTRule();
+	}
+	
+	//terminal fragment ML_DOCUMENTATION:
+	//	'/**'->'*/';
+	public TerminalRule getML_DOCUMENTATIONRule() {
+		return gaDocuTerminals.getML_DOCUMENTATIONRule();
+	}
+	
+	//@Override
+	//terminal SL_COMMENT:
+	//	'//' !'/' !('\n' | '\r')* ('\r'? '\n')?;
+	public TerminalRule getSL_COMMENTRule() {
+		return gaDocuTerminals.getSL_COMMENTRule();
+	}
+	
+	//terminal fragment SL_DOCUMENTATION:
+	//	'///' !('\n' | '\r')* ('\r'? '\n')?;
+	public TerminalRule getSL_DOCUMENTATIONRule() {
+		return gaDocuTerminals.getSL_DOCUMENTATIONRule();
+	}
+	
+	//terminal DOCU_COMMENT:
+	//	ML_DOCUMENTATION | SL_DOCUMENTATION;
+	public TerminalRule getDOCU_COMMENTRule() {
+		return gaDocuTerminals.getDOCU_COMMENTRule();
+	}
+	
 	//terminal ID:
 	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
@@ -996,18 +1041,6 @@ public class BasicAttributesGrammarAccess extends AbstractGrammarElementFinder {
 	//	"'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
-	}
-	
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
-	public TerminalRule getML_COMMENTRule() {
-		return gaTerminals.getML_COMMENTRule();
-	}
-	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
-	public TerminalRule getSL_COMMENTRule() {
-		return gaTerminals.getSL_COMMENTRule();
 	}
 	
 	//terminal WS:

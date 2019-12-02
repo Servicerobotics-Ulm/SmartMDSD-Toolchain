@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,32 +15,7 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.service.serviceDefinition.serializer;
 
 import com.google.inject.Inject;
@@ -53,8 +27,9 @@ import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.ecore.base.documentation.AbstractDocumentedElement;
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.service.communicationPattern.CommunicationPatternPackage;
 import org.ecore.service.communicationPattern.EventPattern;
 import org.ecore.service.communicationPattern.PushPattern;
@@ -76,10 +51,11 @@ import org.ecore.service.serviceDefinition.ServiceDefRepository;
 import org.ecore.service.serviceDefinition.ServiceDefinitionPackage;
 import org.ecore.service.serviceDefinition.ServiceProperty;
 import org.ecore.service.serviceDefinition.ServiceRepoVersion;
+import org.xtext.base.docuterminals.serializer.DocuTerminalsSemanticSequencer;
 import org.xtext.service.serviceDefinition.services.ServiceDefinitionGrammarAccess;
 
 @SuppressWarnings("all")
-public class ServiceDefinitionSemanticSequencer extends AbstractDelegatingSemanticSequencer {
+public class ServiceDefinitionSemanticSequencer extends DocuTerminalsSemanticSequencer {
 
 	@Inject
 	private ServiceDefinitionGrammarAccess grammarAccess;
@@ -118,6 +94,12 @@ public class ServiceDefinitionSemanticSequencer extends AbstractDelegatingSemant
 				return; 
 			case CoordinationPatternPackage.STATE_PATTERN:
 				sequence_StatePattern(context, (StatePattern) semanticObject); 
+				return; 
+			}
+		else if (epackage == DocumentationPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT:
+				sequence_AbstractDocumentedElement(context, (AbstractDocumentedElement) semanticObject); 
 				return; 
 			}
 		else if (epackage == ServiceDefinitionPackage.eINSTANCE)
@@ -203,14 +185,9 @@ public class ServiceDefinitionSemanticSequencer extends AbstractDelegatingSemant
 	 *
 	 * Constraint:
 	 *     (
+	 *         documentation=DOCU_COMMENT? 
 	 *         name=ID 
-	 *         (
-	 *             purposeDescription=EString | 
-	 *             statePattern=StatePattern | 
-	 *             parameterPattern=ParameterPattern | 
-	 *             monitoringPattern=MonitoringPattern | 
-	 *             wiringPattern=DynamicWiringPattern
-	 *         )* 
+	 *         (statePattern=StatePattern | parameterPattern=ParameterPattern | monitoringPattern=MonitoringPattern | wiringPattern=DynamicWiringPattern)* 
 	 *         services+=CommunicationServiceUsage* 
 	 *         properties+=ServiceProperty*
 	 *     )
@@ -252,7 +229,7 @@ public class ServiceDefinitionSemanticSequencer extends AbstractDelegatingSemant
 	 *     ForkingServiceDefinition returns ForkingServiceDefinition
 	 *
 	 * Constraint:
-	 *     (name=ID pattern=ForkingPatternInstance purposeDescription=EString? properties+=ServiceProperty*)
+	 *     (documentation=DOCU_COMMENT? name=ID pattern=ForkingPatternInstance properties+=ServiceProperty*)
 	 */
 	protected void sequence_ForkingServiceDefinition(ISerializationContext context, ForkingServiceDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -266,7 +243,7 @@ public class ServiceDefinitionSemanticSequencer extends AbstractDelegatingSemant
 	 *     JoyningServiceDefinition returns JoiningServiceDefinition
 	 *
 	 * Constraint:
-	 *     (name=ID pattern=JoiningPatternInstance purposeDescription=EString? properties+=ServiceProperty*)
+	 *     (documentation=DOCU_COMMENT? name=ID pattern=JoiningPatternInstance properties+=ServiceProperty*)
 	 */
 	protected void sequence_JoyningServiceDefinition(ISerializationContext context, JoiningServiceDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -342,7 +319,7 @@ public class ServiceDefinitionSemanticSequencer extends AbstractDelegatingSemant
 	 *     RequestAnswerServiceDefinition returns RequestAnswerServiceDefinition
 	 *
 	 * Constraint:
-	 *     (name=ID pattern=RequestAnswerPattern purposeDescription=EString? properties+=ServiceProperty*)
+	 *     (documentation=DOCU_COMMENT? name=ID pattern=RequestAnswerPattern properties+=ServiceProperty*)
 	 */
 	protected void sequence_RequestAnswerServiceDefinition(ISerializationContext context, RequestAnswerServiceDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -385,7 +362,7 @@ public class ServiceDefinitionSemanticSequencer extends AbstractDelegatingSemant
 	 *     ServiceDefRepository returns ServiceDefRepository
 	 *
 	 * Constraint:
-	 *     (name=ID version=ServiceRepoVersion? services+=AbstractServiceDefinition*)
+	 *     (documentation=DOCU_COMMENT? name=ID version=ServiceRepoVersion? services+=AbstractServiceDefinition*)
 	 */
 	protected void sequence_ServiceDefRepository(ISerializationContext context, ServiceDefRepository semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

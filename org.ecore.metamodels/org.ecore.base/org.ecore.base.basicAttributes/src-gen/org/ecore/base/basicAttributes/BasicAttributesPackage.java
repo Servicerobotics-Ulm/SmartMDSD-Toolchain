@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.ecore.base.documentation.DocumentationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -68,13 +69,22 @@ public interface BasicAttributesPackage extends EPackage {
 	int ATTRIBUTE_DEFINITION = 0;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_DEFINITION__DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_DEFINITION__NAME = 0;
+	int ATTRIBUTE_DEFINITION__NAME = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -83,7 +93,7 @@ public interface BasicAttributesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_DEFINITION__TYPE = 1;
+	int ATTRIBUTE_DEFINITION__TYPE = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Defaultvalue</b></em>' containment reference.
@@ -92,7 +102,7 @@ public interface BasicAttributesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_DEFINITION__DEFAULTVALUE = 2;
+	int ATTRIBUTE_DEFINITION__DEFAULTVALUE = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Attribute Definition</em>' class.
@@ -101,7 +111,7 @@ public interface BasicAttributesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_DEFINITION_FEATURE_COUNT = 3;
+	int ATTRIBUTE_DEFINITION_FEATURE_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.base.basicAttributes.impl.AttributeRefinementImpl <em>Attribute Refinement</em>}' class.
@@ -114,13 +124,22 @@ public interface BasicAttributesPackage extends EPackage {
 	int ATTRIBUTE_REFINEMENT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_REFINEMENT__DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_REFINEMENT__VALUE = 0;
+	int ATTRIBUTE_REFINEMENT__VALUE = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' reference.
@@ -129,7 +148,7 @@ public interface BasicAttributesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_REFINEMENT__ATTRIBUTE = 1;
+	int ATTRIBUTE_REFINEMENT__ATTRIBUTE = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Attribute Refinement</em>' class.
@@ -138,7 +157,7 @@ public interface BasicAttributesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_REFINEMENT_FEATURE_COUNT = 2;
+	int ATTRIBUTE_REFINEMENT_FEATURE_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.base.basicAttributes.impl.AbstractAttributeTypeImpl <em>Abstract Attribute Type</em>}' class.

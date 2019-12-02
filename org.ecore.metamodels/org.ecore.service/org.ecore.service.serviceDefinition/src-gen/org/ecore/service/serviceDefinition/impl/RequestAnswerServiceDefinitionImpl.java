@@ -64,6 +64,7 @@ public class RequestAnswerServiceDefinitionImpl extends TwoWayCommunicationServi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RequestAnswerPattern getPattern() {
 		return pattern;
 	}
@@ -92,6 +93,7 @@ public class RequestAnswerServiceDefinitionImpl extends TwoWayCommunicationServi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPattern(RequestAnswerPattern newPattern) {
 		if (newPattern != pattern) {
 			NotificationChain msgs = null;

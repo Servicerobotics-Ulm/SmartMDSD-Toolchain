@@ -1,4 +1,4 @@
-//--------------------------------------------------------------------------
+//================================================================
 //
 //  Copyright (C) 2019 Matthias Lutz, Alex Lotz, Dennis Stampfer
 //
@@ -8,31 +8,14 @@
 //
 //        Servicerobotics Ulm
 //        Christian Schlegel
-//        University of Applied Sciences
+//        Ulm University of Applied Sciences
 //        Prittwitzstr. 10
 //        89075 Ulm
 //        Germany
 //
 //  This file is part of the SmartSoft MDSD Toolchain. 
 //
-// Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-//
-// 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-// 
-// 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the 
-//    documentation and/or other materials provided with the distribution.
-// 
-// 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this 
-//    software without specific prior written permission.
-// 
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
-// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS 
-// BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
-// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-// POSSIBILITY OF SUCH DAMAGE.
-//
-//--------------------------------------------------------------------------
+//================================================================
 package org.xtend.coordinationInterface.generator
 
 import org.eclipse.xtext.generator.AbstractGenerator
@@ -41,8 +24,6 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.xtend.smartsoft.generator.CopyrightHelpers
 import com.google.inject.Inject
-import org.ecore.component.coordinationExtension.CoordinationSlavePort
-import org.ecore.service.serviceDefinition.ServiceDefinitionModelUtility
 import org.xtend.smartsoft.generator.component.ComponentGenHelpers
 import org.ecore.service.serviceDefinition.CoordinationServiceDefinition
 import org.ecore.component.componentDefinition.ComponentDefinitionModelUtility
@@ -52,8 +33,6 @@ import org.ecore.service.communicationPattern.SendPattern
 import org.xtend.smartsoft.generator.commObj.CommObjectGenHelpers
 import org.ecore.service.serviceDefinition.CommunicationServiceUsage
 import org.ecore.service.communicationPattern.QueryPattern
-import org.ecore.service.coordinationPattern.StatePattern
-import org.ecore.service.coordinationPattern.ParameterPattern
 import org.ecore.service.serviceDefinition.ServiceDefRepository
 
 class CoordinationInterfaceGeneratorImpl extends AbstractGenerator {
@@ -247,13 +226,13 @@ class CoordinationInterfaceGeneratorImpl extends AbstractGenerator {
 				«IF pattern instanceof PushPattern»
 					//PUSH IS NOT USED!
 				«ELSEIF pattern instanceof EventPattern»
-					Smart::IEventClientPattern<«pattern.getCommObjectCppList(false)», SmartACE::EventId> *«coordServiceDef.name.toFirstLower»«service.name.toFirstLower»Client;
+					Smart::IEventClientPattern<«pattern.getCommObjectCppList(false)»> *«coordServiceDef.name.toFirstLower»«service.name.toFirstLower»Client;
 					«coordServiceDef.name.toFirstUpper»«service.name.toFirstUpper»EventHandlerCore *«coordServiceDef.name.toFirstLower»«service.name.toFirstLower»EventHandlerCore;
 				«ELSEIF pattern instanceof SendPattern»
 					SmartACE::SendClient<«pattern.getCommObjectCppList(false)»> *«coordServiceDef.name.toFirstLower»«service.name.toFirstLower»Client;
 					«coordServiceDef.name.toFirstUpper»«service.name.toFirstUpper»SendHandler *«coordServiceDef.name.toFirstLower»«service.name.toFirstLower»SendHandler;
 				«ELSEIF pattern instanceof QueryPattern»
-					Smart::IQueryClientPattern<«pattern.getCommObjectCppList(false)», SmartACE::QueryId> *«coordServiceDef.name.toFirstLower»«service.name.toFirstLower»Client;
+					Smart::IQueryClientPattern<«pattern.getCommObjectCppList(false)»> *«coordServiceDef.name.toFirstLower»«service.name.toFirstLower»Client;
 					«coordServiceDef.name.toFirstUpper»«service.name.toFirstUpper»QueryHandler *«coordServiceDef.name.toFirstLower»«service.name.toFirstLower»QueryHandler;
 				«ENDIF»
 			«ENDFOR»
@@ -344,6 +323,8 @@ class CoordinationInterfaceGeneratorImpl extends AbstractGenerator {
 		#include <string>
 		#include <cstring>
 		#include <cstdlib>
+		
+		#include <smartNumericCorrelationId.h>
 
 		 void «coordServiceDef.name.toFirstUpper»Core::addNewModuleInstance(const std::string& name){
 		 	std::cout<<"addNewModuleInstance name:"<<name<<std::endl;
@@ -544,7 +525,7 @@ class CoordinationInterfaceGeneratorImpl extends AbstractGenerator {
 						if(strcasecmp(service.c_str(), "«service.name»-activate") == 0 )
 						{
 							Smart::StatusCode status;
-							SmartACE::EventId id;
+							Smart::EventIdPtr id = nullptr;
 							char *input  = (char *)NULL;
 							char *pointer = (char *)NULL;
 							char *param1  = (char *)NULL;
@@ -626,7 +607,8 @@ class CoordinationInterfaceGeneratorImpl extends AbstractGenerator {
 							std::string str(param1);
 							// remove " "
 							str = str.substr(1, str.length()-2);
-							int id = atoi( param1 );
+							// TODO: <alex> this seems to be quite a hack, as ID is not always an int and will not work with other middlewares as ACE
+							Smart::EventIdPtr id = std::make_shared<Smart::NumericCorrelationId>(atoi( param1 ));
 								
 							status = iter->second.«coordServiceDef.name.toFirstLower»«service.name.toFirstLower»Client->deactivate(id);
 							outString.str("");
@@ -763,13 +745,13 @@ class CoordinationInterfaceGeneratorImpl extends AbstractGenerator {
 		#include <cstdio>
 		#include <iostream>
 
-		«coordServiceDefName.toFirstUpper»«port.name.toFirstUpper»EventHandlerCore::«coordServiceDefName.toFirstUpper»«port.name.toFirstUpper»EventHandlerCore(Smart::IEventClientPattern<«pattern.activationType.fullyQualifiedNameCpp», «pattern.eventType.fullyQualifiedNameCpp», SmartACE::EventId> *client, std::string ciInstanceName)
-		: Smart::IEventHandler<«pattern.eventType.fullyQualifiedNameCpp»,SmartACE::EventId>(client)
+		«coordServiceDefName.toFirstUpper»«port.name.toFirstUpper»EventHandlerCore::«coordServiceDefName.toFirstUpper»«port.name.toFirstUpper»EventHandlerCore(Smart::IEventClientPattern<«pattern.activationType.fullyQualifiedNameCpp», «pattern.eventType.fullyQualifiedNameCpp»> *client, std::string ciInstanceName)
+		: Smart::IEventHandler<«pattern.eventType.fullyQualifiedNameCpp»>(client)
 		{
 			this->ciInstanceName = ciInstanceName;
 		}
 				
-		void «coordServiceDefName.toFirstUpper»«port.name.toFirstUpper»EventHandlerCore::handleEvent(const SmartACE::EventId &id, const «pattern.eventType.fullyQualifiedNameCpp» &r) {
+		void «coordServiceDefName.toFirstUpper»«port.name.toFirstUpper»EventHandlerCore::handleEvent(const Smart::EventIdPtr &id, const «pattern.eventType.fullyQualifiedNameCpp» &r) {
 			std::cout<<"Event CORE Called!"<<std::endl;
 			std::string resultString;
 			resultString = userHandler.handleEvent(r);
@@ -802,11 +784,11 @@ class CoordinationInterfaceGeneratorImpl extends AbstractGenerator {
 		#include "«pattern.activationType.userClassHeaderFileNameFQN»"
 		#include "«coordServiceDefName.toFirstUpper»«port.name.toFirstUpper + "EventHandler.hh"»"
 		
-		class «coordServiceDefName.toFirstUpper»«port.name.toFirstUpper»EventHandlerCore : public Smart::IEventHandler<«pattern.eventType.fullyQualifiedNameCpp», SmartACE::EventId>
+		class «coordServiceDefName.toFirstUpper»«port.name.toFirstUpper»EventHandlerCore : public Smart::IEventHandler<«pattern.eventType.fullyQualifiedNameCpp»>
 		{
 		public:
-			«coordServiceDefName.toFirstUpper»«port.name.toFirstUpper»EventHandlerCore(Smart::IEventClientPattern<«pattern.activationType.fullyQualifiedNameCpp», «pattern.eventType.fullyQualifiedNameCpp», SmartACE::EventId> *client, std::string moduleInstanceName);
-			virtual void handleEvent(const SmartACE::EventId &id, const «pattern.eventType.fullyQualifiedNameCpp» &r) override;
+			«coordServiceDefName.toFirstUpper»«port.name.toFirstUpper»EventHandlerCore(Smart::IEventClientPattern<«pattern.activationType.fullyQualifiedNameCpp», «pattern.eventType.fullyQualifiedNameCpp»> *client, std::string moduleInstanceName);
+			virtual void handleEvent(const Smart::EventIdPtr &id, const «pattern.eventType.fullyQualifiedNameCpp» &r) override;
 			«pattern.activationType.fullyQualifiedNameCpp» activateEventParam(const std::string& parameterString);
 		private:
 			«coordServiceDefName.toFirstUpper»«port.name.toFirstUpper»EventHandler userHandler;

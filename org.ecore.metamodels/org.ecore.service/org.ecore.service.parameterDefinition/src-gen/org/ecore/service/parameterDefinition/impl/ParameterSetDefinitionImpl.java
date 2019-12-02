@@ -13,12 +13,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.ecore.base.documentation.impl.AbstractDocumentedElementImpl;
 import org.ecore.service.parameterDefinition.AbstractParameter;
 import org.ecore.service.parameterDefinition.ParameterDefinitionPackage;
 import org.ecore.service.parameterDefinition.ParameterSetDefinition;
@@ -38,7 +37,7 @@ import org.ecore.service.parameterDefinition.ParameterSetDefinition;
  *
  * @generated
  */
-public class ParameterSetDefinitionImpl extends MinimalEObjectImpl.Container implements ParameterSetDefinition {
+public class ParameterSetDefinitionImpl extends AbstractDocumentedElementImpl implements ParameterSetDefinition {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -103,6 +102,7 @@ public class ParameterSetDefinitionImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -112,6 +112,7 @@ public class ParameterSetDefinitionImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -125,6 +126,7 @@ public class ParameterSetDefinitionImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AbstractParameter> getParameters() {
 		if (parameters == null) {
 			parameters = new EObjectContainmentEList<AbstractParameter>(AbstractParameter.class, this,
@@ -138,6 +140,7 @@ public class ParameterSetDefinitionImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ParameterSetDefinition> getExtends() {
 		if (extends_ == null) {
 			extends_ = new EObjectResolvingEList<ParameterSetDefinition>(ParameterSetDefinition.class, this,
@@ -251,7 +254,7 @@ public class ParameterSetDefinitionImpl extends MinimalEObjectImpl.Container imp
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

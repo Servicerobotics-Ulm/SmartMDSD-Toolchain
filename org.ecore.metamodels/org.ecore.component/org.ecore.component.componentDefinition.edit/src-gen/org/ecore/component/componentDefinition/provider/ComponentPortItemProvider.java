@@ -9,10 +9,11 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.component.componentDefinition.ComponentDefinitionPackage;
 import org.ecore.component.componentDefinition.ComponentPort;
 
@@ -44,8 +45,25 @@ public class ComponentPortItemProvider extends NamedComponentElementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDocumentationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Documentation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDocumentationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_AbstractDocumentedElement_documentation_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractDocumentedElement_documentation_feature",
+						"_UI_AbstractDocumentedElement_type"),
+				DocumentationPackage.Literals.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION, true, true, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -124,6 +142,9 @@ public class ComponentPortItemProvider extends NamedComponentElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentPort.class)) {
+		case ComponentDefinitionPackage.COMPONENT_PORT__DOCUMENTATION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		case ComponentDefinitionPackage.COMPONENT_PORT__EXTENSIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;

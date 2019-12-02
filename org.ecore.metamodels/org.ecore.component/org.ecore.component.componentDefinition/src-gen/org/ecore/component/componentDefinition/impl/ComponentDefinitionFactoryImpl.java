@@ -92,6 +92,7 @@ public class ComponentDefinitionFactoryImpl extends EFactoryImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentDefModel createComponentDefModel() {
 		ComponentDefModelImpl componentDefModel = new ComponentDefModelImpl();
 		return componentDefModel;
@@ -102,6 +103,7 @@ public class ComponentDefinitionFactoryImpl extends EFactoryImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentDefinition createComponentDefinition() {
 		ComponentDefinitionImpl componentDefinition = new ComponentDefinitionImpl();
 		return componentDefinition;
@@ -112,6 +114,7 @@ public class ComponentDefinitionFactoryImpl extends EFactoryImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Activity createActivity() {
 		ActivityImpl activity = new ActivityImpl();
 		return activity;
@@ -122,6 +125,7 @@ public class ComponentDefinitionFactoryImpl extends EFactoryImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InputHandler createInputHandler() {
 		InputHandlerImpl inputHandler = new InputHandlerImpl();
 		return inputHandler;
@@ -132,6 +136,7 @@ public class ComponentDefinitionFactoryImpl extends EFactoryImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ServiceRepoImport createServiceRepoImport() {
 		ServiceRepoImportImpl serviceRepoImport = new ServiceRepoImportImpl();
 		return serviceRepoImport;
@@ -142,6 +147,7 @@ public class ComponentDefinitionFactoryImpl extends EFactoryImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public OutputPort createOutputPort() {
 		OutputPortImpl outputPort = new OutputPortImpl();
 		return outputPort;
@@ -152,6 +158,7 @@ public class ComponentDefinitionFactoryImpl extends EFactoryImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RequestPort createRequestPort() {
 		RequestPortImpl requestPort = new RequestPortImpl();
 		return requestPort;
@@ -162,6 +169,7 @@ public class ComponentDefinitionFactoryImpl extends EFactoryImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InputPort createInputPort() {
 		InputPortImpl inputPort = new InputPortImpl();
 		return inputPort;
@@ -172,6 +180,7 @@ public class ComponentDefinitionFactoryImpl extends EFactoryImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AnswerPort createAnswerPort() {
 		AnswerPortImpl answerPort = new AnswerPortImpl();
 		return answerPort;
@@ -182,6 +191,7 @@ public class ComponentDefinitionFactoryImpl extends EFactoryImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RequestHandler createRequestHandler() {
 		RequestHandlerImpl requestHandler = new RequestHandlerImpl();
 		return requestHandler;
@@ -192,6 +202,7 @@ public class ComponentDefinitionFactoryImpl extends EFactoryImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentSubNodeObserver createComponentSubNodeObserver() {
 		ComponentSubNodeObserverImpl componentSubNodeObserver = new ComponentSubNodeObserverImpl();
 		return componentSubNodeObserver;
@@ -202,6 +213,7 @@ public class ComponentDefinitionFactoryImpl extends EFactoryImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InputPortLink createInputPortLink() {
 		InputPortLinkImpl inputPortLink = new InputPortLinkImpl();
 		return inputPortLink;
@@ -212,6 +224,7 @@ public class ComponentDefinitionFactoryImpl extends EFactoryImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RequestPortLink createRequestPortLink() {
 		RequestPortLinkImpl requestPortLink = new RequestPortLinkImpl();
 		return requestPortLink;
@@ -222,6 +235,7 @@ public class ComponentDefinitionFactoryImpl extends EFactoryImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentDefinitionPackage getComponentDefinitionPackage() {
 		return (ComponentDefinitionPackage) getEPackage();
 	}

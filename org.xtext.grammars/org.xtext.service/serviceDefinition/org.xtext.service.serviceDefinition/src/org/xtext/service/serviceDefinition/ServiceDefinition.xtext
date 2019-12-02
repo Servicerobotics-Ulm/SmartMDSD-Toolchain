@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,33 +15,8 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
-grammar org.xtext.service.serviceDefinition.ServiceDefinition with org.eclipse.xtext.common.Terminals
+//================================================================
+grammar org.xtext.service.serviceDefinition.ServiceDefinition with org.xtext.base.docuterminals.DocuTerminals
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://www.ecore.org/service/ServiceDefinition" as service
@@ -70,6 +44,7 @@ EString returns ecore::EString:
 
 
 ServiceDefRepository returns service::ServiceDefRepository:
+	(documentation=DOCU_COMMENT)?
 	'ServiceDefRepository' name=ID ('version' version=ServiceRepoVersion)?
 	'{'
 		services+=AbstractServiceDefinition*
@@ -93,30 +68,30 @@ CommunicationServiceDefinition returns service::CommunicationServiceDefinition:
 ;
 
 
-ForkingServiceDefinition returns service::ForkingServiceDefinition: 
+ForkingServiceDefinition returns service::ForkingServiceDefinition:
+	(documentation=DOCU_COMMENT)?
 	'ForkingServiceDefinition' name=ID
 	'{'
 		pattern=ForkingPatternInstance
-		('purposeDescription' purposeDescription=EString)?
 		properties+=ServiceProperty*
 	'}'
 ;
 
 JoyningServiceDefinition returns service::JoiningServiceDefinition: 
+	(documentation=DOCU_COMMENT)?
 	'JoiningServiceDefinition' name=ID
 	'{'
 		pattern=JoiningPatternInstance
-		('purposeDescription' purposeDescription=EString)?
 		properties+=ServiceProperty*
 	'}'
 ;
 
 
 RequestAnswerServiceDefinition returns service::RequestAnswerServiceDefinition: 
+	(documentation=DOCU_COMMENT)?
 	'RequestAnswerServiceDefinition' name=ID
 	'{'
 		pattern=RequestAnswerPattern
-		('purposeDescription' purposeDescription=EString)?
 		properties+=ServiceProperty*
 	'}'
 ;
@@ -124,10 +99,10 @@ RequestAnswerServiceDefinition returns service::RequestAnswerServiceDefinition:
 
 
 CoordinationServiceDefinition returns service::CoordinationServiceDefinition: 
+	(documentation=DOCU_COMMENT)?
 	'CoordinationServiceDefinition' name=ID
 	'{'
 		(
-			('purposeDescription' purposeDescription=EString)? &
 			(statePattern=StatePattern)? &
 			(parameterPattern=ParameterPattern)? &
 			(monitoringPattern=MonitoringPattern)? &

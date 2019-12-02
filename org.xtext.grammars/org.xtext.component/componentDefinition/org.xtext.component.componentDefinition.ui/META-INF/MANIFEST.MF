@@ -22,10 +22,12 @@ Require-Bundle: org.xtext.component.componentDefinition,
  org.ecore.component.performanceExtension,
  org.ecore.component.seronetExtension,
  org.xtext.service.roboticMiddleware.ui,
- org.ecore.component.coordinationExtension
+ org.ecore.component.coordinationExtension,
+ org.xtext.base.docuterminals.ui
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.component.componentDefinition.ui.internal,
  org.xtext.component.componentDefinition.ui.quickfix,
  org.xtext.component.componentDefinition.ui.contentassist
 Bundle-Activator: org.xtext.component.componentDefinition.ui.internal.ComponentDefinitionActivator
+Automatic-Module-Name: org.xtext.component.componentDefinition.ui

@@ -13,11 +13,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
+import org.ecore.base.documentation.impl.AbstractDocumentedElementImpl;
 import org.ecore.component.componentDefinition.AbstractComponentElement;
 import org.ecore.component.componentDefinition.ComponentDefinition;
 import org.ecore.component.componentDefinition.ComponentDefinitionPackage;
@@ -37,7 +35,7 @@ import org.ecore.component.componentDefinition.ComponentDefinitionPackage;
  *
  * @generated
  */
-public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implements ComponentDefinition {
+public class ComponentDefinitionImpl extends AbstractDocumentedElementImpl implements ComponentDefinition {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,6 +110,7 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -121,6 +120,7 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -134,6 +134,7 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AbstractComponentElement> getElements() {
 		if (elements == null) {
 			elements = new EObjectContainmentEList<AbstractComponentElement>(AbstractComponentElement.class, this,
@@ -147,6 +148,7 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLogo() {
 		return logo;
 	}
@@ -156,6 +158,7 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLogo(String newLogo) {
 		String oldLogo = logo;
 		logo = newLogo;
@@ -268,7 +271,7 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", logo: ");

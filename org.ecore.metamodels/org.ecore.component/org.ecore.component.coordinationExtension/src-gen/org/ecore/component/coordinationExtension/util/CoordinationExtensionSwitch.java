@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.ecore.base.documentation.AbstractDocumentedElement;
 import org.ecore.component.componentDefinition.AbstractComponentElement;
 import org.ecore.component.componentDefinition.ActivityExtension;
 import org.ecore.component.componentDefinition.NamedComponentElement;
@@ -76,6 +77,8 @@ public class CoordinationExtensionSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractCoordinationElement(publicOperationMode);
 			if (result == null)
+				result = caseAbstractDocumentedElement(publicOperationMode);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -93,6 +96,8 @@ public class CoordinationExtensionSwitch<T> extends Switch<T> {
 			T result = caseCoordinationSlavePort(coordinationSlavePort);
 			if (result == null)
 				result = caseNamedComponentElement(coordinationSlavePort);
+			if (result == null)
+				result = caseAbstractDocumentedElement(coordinationSlavePort);
 			if (result == null)
 				result = caseAbstractComponentElement(coordinationSlavePort);
 			if (result == null)
@@ -266,6 +271,21 @@ public class CoordinationExtensionSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSkillRealizationsRef(SkillRealizationsRef object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Documented Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Documented Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractDocumentedElement(AbstractDocumentedElement object) {
 		return null;
 	}
 

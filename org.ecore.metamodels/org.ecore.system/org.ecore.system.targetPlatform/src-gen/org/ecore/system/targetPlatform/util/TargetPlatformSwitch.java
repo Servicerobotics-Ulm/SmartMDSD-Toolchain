@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.ecore.base.documentation.AbstractDocumentedElement;
 import org.ecore.system.targetPlatform.*;
 
 /**
@@ -79,12 +80,16 @@ public class TargetPlatformSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractTPElement(targetPlatformDefinition);
 			if (result == null)
+				result = caseAbstractDocumentedElement(targetPlatformDefinition);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case TargetPlatformPackage.ABSTRACT_TP_ELEMENT: {
 			AbstractTPElement abstractTPElement = (AbstractTPElement) theEObject;
 			T result = caseAbstractTPElement(abstractTPElement);
+			if (result == null)
+				result = caseAbstractDocumentedElement(abstractTPElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -101,6 +106,8 @@ public class TargetPlatformSwitch<T> extends Switch<T> {
 			T result = caseNetworkConnection(networkConnection);
 			if (result == null)
 				result = caseAbstractTPElement(networkConnection);
+			if (result == null)
+				result = caseAbstractDocumentedElement(networkConnection);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -372,6 +379,21 @@ public class TargetPlatformSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTargetMiddleware(TargetMiddleware object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Documented Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Documented Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractDocumentedElement(AbstractDocumentedElement object) {
 		return null;
 	}
 

@@ -12,6 +12,10 @@ import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.emf.edit.command.CommandParameter;
+
 import org.eclipse.emf.edit.domain.EditingDomain;
 
 import org.eclipse.emf.edit.provider.ChangeNotifier;
@@ -28,6 +32,12 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.ecore.base.genericDatasheet.GenericDatasheetModel;
+import org.ecore.base.genericDatasheet.GenericDatasheetPackage;
+
+import org.ecore.base.genericDatasheet.util.GenericDatasheetSwitch;
+
+import org.ecore.component.componentDatasheet.ComponentDatasheetFactory;
 import org.ecore.component.componentDatasheet.ComponentDatasheetPackage;
 
 import org.ecore.component.componentDatasheet.util.ComponentDatasheetAdapterFactory;
@@ -111,6 +121,29 @@ public class ComponentDatasheetItemProviderAdapterFactory extends ComponentDatas
 		}
 
 		return componentDatasheetItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.ecore.component.componentDatasheet.ComponentPortDatasheet} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentPortDatasheetItemProvider componentPortDatasheetItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.ecore.component.componentDatasheet.ComponentPortDatasheet}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentPortDatasheetAdapter() {
+		if (componentPortDatasheetItemProvider == null) {
+			componentPortDatasheetItemProvider = new ComponentPortDatasheetItemProvider(this);
+		}
+
+		return componentPortDatasheetItemProvider;
 	}
 
 	/**
@@ -247,6 +280,95 @@ public class ComponentDatasheetItemProviderAdapterFactory extends ComponentDatas
 	public void dispose() {
 		if (componentDatasheetItemProvider != null)
 			componentDatasheetItemProvider.dispose();
+		if (componentPortDatasheetItemProvider != null)
+			componentPortDatasheetItemProvider.dispose();
+	}
+
+	/**
+	 * A child creation extender for the {@link GenericDatasheetPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class GenericDatasheetChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends GenericDatasheetSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseGenericDatasheetModel(GenericDatasheetModel object) {
+				newChildDescriptors
+						.add(createChildParameter(GenericDatasheetPackage.Literals.GENERIC_DATASHEET_MODEL__ELEMENTS,
+								ComponentDatasheetFactory.eINSTANCE.createComponentPortDatasheet()));
+
+				return null;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject) object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return ComponentDatasheetEditPlugin.INSTANCE;
+		}
 	}
 
 }

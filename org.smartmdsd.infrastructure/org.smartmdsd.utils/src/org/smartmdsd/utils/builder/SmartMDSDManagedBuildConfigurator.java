@@ -1,4 +1,4 @@
-//--------------------------------------------------------------------------
+//===============================================================
 //
 //  Copyright (C) 2019 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
@@ -8,31 +8,14 @@
 //
 //        Servicerobotics Ulm
 //        Christian Schlegel
-//        University of Applied Sciences
+//        Ulm University of Applied Sciences
 //        Prittwitzstr. 10
 //        89075 Ulm
 //        Germany
 //
-//  This file is part of the SmartSoft MDSD Toolchain. 
+//  This file is part of the SmartSoft MDSD Toolchain v3. 
 //
-// Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-//
-// 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-// 
-// 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the 
-//    documentation and/or other materials provided with the distribution.
-// 
-// 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this 
-//    software without specific prior written permission.
-// 
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
-// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS 
-// BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
-// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
-// POSSIBILITY OF SUCH DAMAGE.
-//
-//--------------------------------------------------------------------------
+//===============================================================
 package org.smartmdsd.utils.builder;
 
 import org.eclipse.cdt.managedbuilder.core.IManagedBuildInfo;
@@ -66,6 +49,7 @@ public class SmartMDSDManagedBuildConfigurator implements IManagedBuilderMakefil
 	private IPath buildWorkingDir = null;
 	private String generatorFolderName = "";
 	private String buildFolderName = "";
+	private String buildConfigurationName = "";
 	
 	
 	@Override
@@ -94,6 +78,7 @@ public class SmartMDSDManagedBuildConfigurator implements IManagedBuilderMakefil
 		this.generatorFolderName = Activator.getDefault().getPreferenceStore().getString(SmartMDSDPreferencesPage.PROP_GENERATOR_FOLDER);
 		this.buildFolderName = Activator.getDefault().getPreferenceStore().getString(SmartMDSDPreferencesPage.PROP_BUILD_FOLDER);
 		this.buildWorkingDir = new Path(generatorFolderName + "/" + buildFolderName);
+		this.buildConfigurationName = info.getConfigurationName();
 	}
 
 	@Override
@@ -135,6 +120,7 @@ public class SmartMDSDManagedBuildConfigurator implements IManagedBuilderMakefil
 				ILaunchConfigurationWorkingCopy cmakeLauncherConfiguration = cmakeLauncher.newInstance(project, launcherName);
 				// the only mandatory parameter is the current project name
 				cmakeLauncherConfiguration.setAttribute(CMakeLauncher.ATTR_PROJECT_NAME, project.getName());
+				cmakeLauncherConfiguration.setAttribute(CMakeLauncher.ATTR_CMAKE_BUILD_TYPE, buildConfigurationName);
 				
 				// execute launch file
 				cmakeLauncherConfiguration.launch(ILaunchManager.RUN_MODE, monitor);

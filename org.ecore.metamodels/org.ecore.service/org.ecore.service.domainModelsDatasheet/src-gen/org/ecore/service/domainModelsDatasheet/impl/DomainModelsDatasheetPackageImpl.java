@@ -183,7 +183,7 @@ public class DomainModelsDatasheetPackageImpl extends EPackageImpl implements Do
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		domainModelsDatasheetEClass.getESuperTypes().add(theGenericDatasheetPackage.getGenericDatasheet());
+		domainModelsDatasheetEClass.getESuperTypes().add(theGenericDatasheetPackage.getGenericDatasheetModel());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(domainModelsDatasheetEClass, DomainModelsDatasheet.class, "DomainModelsDatasheet", !IS_ABSTRACT,

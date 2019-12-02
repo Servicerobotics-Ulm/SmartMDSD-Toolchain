@@ -9,12 +9,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.ecore.base.basicAttributes.AbstractAttributeType;
 import org.ecore.base.basicAttributes.AbstractValue;
 import org.ecore.base.basicAttributes.AttributeDefinition;
 import org.ecore.base.basicAttributes.BasicAttributesPackage;
+import org.ecore.base.documentation.impl.AbstractDocumentedElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +30,7 @@ import org.ecore.base.basicAttributes.BasicAttributesPackage;
  *
  * @generated
  */
-public class AttributeDefinitionImpl extends MinimalEObjectImpl.Container implements AttributeDefinition {
+public class AttributeDefinitionImpl extends AbstractDocumentedElementImpl implements AttributeDefinition {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -96,6 +95,7 @@ public class AttributeDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -105,6 +105,7 @@ public class AttributeDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -118,6 +119,7 @@ public class AttributeDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AbstractAttributeType getType() {
 		return type;
 	}
@@ -146,6 +148,7 @@ public class AttributeDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(AbstractAttributeType newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
@@ -168,6 +171,7 @@ public class AttributeDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AbstractValue getDefaultvalue() {
 		return defaultvalue;
 	}
@@ -196,6 +200,7 @@ public class AttributeDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefaultvalue(AbstractValue newDefaultvalue) {
 		if (newDefaultvalue != defaultvalue) {
 			NotificationChain msgs = null;
@@ -317,7 +322,7 @@ public class AttributeDefinitionImpl extends MinimalEObjectImpl.Container implem
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

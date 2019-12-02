@@ -78,7 +78,7 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComponentModeModel"
-    // InternalComponentMode.g:105:1: entryRuleComponentModeModel returns [EObject current=null] : iv_ruleComponentModeModel= ruleComponentModeModel EOF ;
+    // InternalComponentMode.g:79:1: entryRuleComponentModeModel returns [EObject current=null] : iv_ruleComponentModeModel= ruleComponentModeModel EOF ;
     public final EObject entryRuleComponentModeModel() throws RecognitionException {
         EObject current = null;
 
@@ -86,8 +86,8 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalComponentMode.g:105:59: (iv_ruleComponentModeModel= ruleComponentModeModel EOF )
-            // InternalComponentMode.g:106:2: iv_ruleComponentModeModel= ruleComponentModeModel EOF
+            // InternalComponentMode.g:79:59: (iv_ruleComponentModeModel= ruleComponentModeModel EOF )
+            // InternalComponentMode.g:80:2: iv_ruleComponentModeModel= ruleComponentModeModel EOF
             {
              newCompositeNode(grammarAccess.getComponentModeModelRule()); 
             pushFollow(FOLLOW_1);
@@ -114,7 +114,7 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComponentModeModel"
-    // InternalComponentMode.g:112:1: ruleComponentModeModel returns [EObject current=null] : ( () ( (lv_repository_1_0= ruleComponentModeRepository ) )? ) ;
+    // InternalComponentMode.g:86:1: ruleComponentModeModel returns [EObject current=null] : ( () ( (lv_repository_1_0= ruleComponentModeRepository ) )? ) ;
     public final EObject ruleComponentModeModel() throws RecognitionException {
         EObject current = null;
 
@@ -125,14 +125,14 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalComponentMode.g:118:2: ( ( () ( (lv_repository_1_0= ruleComponentModeRepository ) )? ) )
-            // InternalComponentMode.g:119:2: ( () ( (lv_repository_1_0= ruleComponentModeRepository ) )? )
+            // InternalComponentMode.g:92:2: ( ( () ( (lv_repository_1_0= ruleComponentModeRepository ) )? ) )
+            // InternalComponentMode.g:93:2: ( () ( (lv_repository_1_0= ruleComponentModeRepository ) )? )
             {
-            // InternalComponentMode.g:119:2: ( () ( (lv_repository_1_0= ruleComponentModeRepository ) )? )
-            // InternalComponentMode.g:120:3: () ( (lv_repository_1_0= ruleComponentModeRepository ) )?
+            // InternalComponentMode.g:93:2: ( () ( (lv_repository_1_0= ruleComponentModeRepository ) )? )
+            // InternalComponentMode.g:94:3: () ( (lv_repository_1_0= ruleComponentModeRepository ) )?
             {
-            // InternalComponentMode.g:120:3: ()
-            // InternalComponentMode.g:121:4: 
+            // InternalComponentMode.g:94:3: ()
+            // InternalComponentMode.g:95:4: 
             {
 
             				current = forceCreateModelElement(
@@ -142,7 +142,7 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalComponentMode.g:127:3: ( (lv_repository_1_0= ruleComponentModeRepository ) )?
+            // InternalComponentMode.g:101:3: ( (lv_repository_1_0= ruleComponentModeRepository ) )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -151,10 +151,10 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalComponentMode.g:128:4: (lv_repository_1_0= ruleComponentModeRepository )
+                    // InternalComponentMode.g:102:4: (lv_repository_1_0= ruleComponentModeRepository )
                     {
-                    // InternalComponentMode.g:128:4: (lv_repository_1_0= ruleComponentModeRepository )
-                    // InternalComponentMode.g:129:5: lv_repository_1_0= ruleComponentModeRepository
+                    // InternalComponentMode.g:102:4: (lv_repository_1_0= ruleComponentModeRepository )
+                    // InternalComponentMode.g:103:5: lv_repository_1_0= ruleComponentModeRepository
                     {
 
                     					newCompositeNode(grammarAccess.getComponentModeModelAccess().getRepositoryComponentModeRepositoryParserRuleCall_1_0());
@@ -207,7 +207,7 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComponentModeRepository"
-    // InternalComponentMode.g:150:1: entryRuleComponentModeRepository returns [EObject current=null] : iv_ruleComponentModeRepository= ruleComponentModeRepository EOF ;
+    // InternalComponentMode.g:124:1: entryRuleComponentModeRepository returns [EObject current=null] : iv_ruleComponentModeRepository= ruleComponentModeRepository EOF ;
     public final EObject entryRuleComponentModeRepository() throws RecognitionException {
         EObject current = null;
 
@@ -215,8 +215,8 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalComponentMode.g:150:64: (iv_ruleComponentModeRepository= ruleComponentModeRepository EOF )
-            // InternalComponentMode.g:151:2: iv_ruleComponentModeRepository= ruleComponentModeRepository EOF
+            // InternalComponentMode.g:124:64: (iv_ruleComponentModeRepository= ruleComponentModeRepository EOF )
+            // InternalComponentMode.g:125:2: iv_ruleComponentModeRepository= ruleComponentModeRepository EOF
             {
              newCompositeNode(grammarAccess.getComponentModeRepositoryRule()); 
             pushFollow(FOLLOW_1);
@@ -243,7 +243,7 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComponentModeRepository"
-    // InternalComponentMode.g:157:1: ruleComponentModeRepository returns [EObject current=null] : ( () otherlv_1= 'ComponentModeRepository' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_collections_4_0= ruleComponentModeCollection ) )* otherlv_5= '}' ) ;
+    // InternalComponentMode.g:131:1: ruleComponentModeRepository returns [EObject current=null] : ( () otherlv_1= 'ComponentModeRepository' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_collections_4_0= ruleComponentModeCollection ) )* otherlv_5= '}' ) ;
     public final EObject ruleComponentModeRepository() throws RecognitionException {
         EObject current = null;
 
@@ -258,14 +258,14 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalComponentMode.g:163:2: ( ( () otherlv_1= 'ComponentModeRepository' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_collections_4_0= ruleComponentModeCollection ) )* otherlv_5= '}' ) )
-            // InternalComponentMode.g:164:2: ( () otherlv_1= 'ComponentModeRepository' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_collections_4_0= ruleComponentModeCollection ) )* otherlv_5= '}' )
+            // InternalComponentMode.g:137:2: ( ( () otherlv_1= 'ComponentModeRepository' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_collections_4_0= ruleComponentModeCollection ) )* otherlv_5= '}' ) )
+            // InternalComponentMode.g:138:2: ( () otherlv_1= 'ComponentModeRepository' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_collections_4_0= ruleComponentModeCollection ) )* otherlv_5= '}' )
             {
-            // InternalComponentMode.g:164:2: ( () otherlv_1= 'ComponentModeRepository' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_collections_4_0= ruleComponentModeCollection ) )* otherlv_5= '}' )
-            // InternalComponentMode.g:165:3: () otherlv_1= 'ComponentModeRepository' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_collections_4_0= ruleComponentModeCollection ) )* otherlv_5= '}'
+            // InternalComponentMode.g:138:2: ( () otherlv_1= 'ComponentModeRepository' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_collections_4_0= ruleComponentModeCollection ) )* otherlv_5= '}' )
+            // InternalComponentMode.g:139:3: () otherlv_1= 'ComponentModeRepository' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_collections_4_0= ruleComponentModeCollection ) )* otherlv_5= '}'
             {
-            // InternalComponentMode.g:165:3: ()
-            // InternalComponentMode.g:166:4: 
+            // InternalComponentMode.g:139:3: ()
+            // InternalComponentMode.g:140:4: 
             {
 
             				current = forceCreateModelElement(
@@ -279,11 +279,11 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getComponentModeRepositoryAccess().getComponentModeRepositoryKeyword_1());
             		
-            // InternalComponentMode.g:176:3: ( (lv_name_2_0= RULE_ID ) )
-            // InternalComponentMode.g:177:4: (lv_name_2_0= RULE_ID )
+            // InternalComponentMode.g:150:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalComponentMode.g:151:4: (lv_name_2_0= RULE_ID )
             {
-            // InternalComponentMode.g:177:4: (lv_name_2_0= RULE_ID )
-            // InternalComponentMode.g:178:5: lv_name_2_0= RULE_ID
+            // InternalComponentMode.g:151:4: (lv_name_2_0= RULE_ID )
+            // InternalComponentMode.g:152:5: lv_name_2_0= RULE_ID
             {
             lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_4); 
 
@@ -309,7 +309,7 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getComponentModeRepositoryAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalComponentMode.g:198:3: ( (lv_collections_4_0= ruleComponentModeCollection ) )*
+            // InternalComponentMode.g:172:3: ( (lv_collections_4_0= ruleComponentModeCollection ) )*
             loop2:
             do {
                 int alt2=2;
@@ -322,10 +322,10 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalComponentMode.g:199:4: (lv_collections_4_0= ruleComponentModeCollection )
+            	    // InternalComponentMode.g:173:4: (lv_collections_4_0= ruleComponentModeCollection )
             	    {
-            	    // InternalComponentMode.g:199:4: (lv_collections_4_0= ruleComponentModeCollection )
-            	    // InternalComponentMode.g:200:5: lv_collections_4_0= ruleComponentModeCollection
+            	    // InternalComponentMode.g:173:4: (lv_collections_4_0= ruleComponentModeCollection )
+            	    // InternalComponentMode.g:174:5: lv_collections_4_0= ruleComponentModeCollection
             	    {
 
             	    					newCompositeNode(grammarAccess.getComponentModeRepositoryAccess().getCollectionsComponentModeCollectionParserRuleCall_4_0());
@@ -385,7 +385,7 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComponentModeCollection"
-    // InternalComponentMode.g:225:1: entryRuleComponentModeCollection returns [EObject current=null] : iv_ruleComponentModeCollection= ruleComponentModeCollection EOF ;
+    // InternalComponentMode.g:199:1: entryRuleComponentModeCollection returns [EObject current=null] : iv_ruleComponentModeCollection= ruleComponentModeCollection EOF ;
     public final EObject entryRuleComponentModeCollection() throws RecognitionException {
         EObject current = null;
 
@@ -393,8 +393,8 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalComponentMode.g:225:64: (iv_ruleComponentModeCollection= ruleComponentModeCollection EOF )
-            // InternalComponentMode.g:226:2: iv_ruleComponentModeCollection= ruleComponentModeCollection EOF
+            // InternalComponentMode.g:199:64: (iv_ruleComponentModeCollection= ruleComponentModeCollection EOF )
+            // InternalComponentMode.g:200:2: iv_ruleComponentModeCollection= ruleComponentModeCollection EOF
             {
              newCompositeNode(grammarAccess.getComponentModeCollectionRule()); 
             pushFollow(FOLLOW_1);
@@ -421,7 +421,7 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComponentModeCollection"
-    // InternalComponentMode.g:232:1: ruleComponentModeCollection returns [EObject current=null] : ( () otherlv_1= 'ComponentModeCollection' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_modes_4_0= ruleComponentModeDefinition ) )* otherlv_5= '}' ) ;
+    // InternalComponentMode.g:206:1: ruleComponentModeCollection returns [EObject current=null] : ( () otherlv_1= 'ComponentModeCollection' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_modes_4_0= ruleComponentModeDefinition ) )* otherlv_5= '}' ) ;
     public final EObject ruleComponentModeCollection() throws RecognitionException {
         EObject current = null;
 
@@ -436,14 +436,14 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalComponentMode.g:238:2: ( ( () otherlv_1= 'ComponentModeCollection' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_modes_4_0= ruleComponentModeDefinition ) )* otherlv_5= '}' ) )
-            // InternalComponentMode.g:239:2: ( () otherlv_1= 'ComponentModeCollection' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_modes_4_0= ruleComponentModeDefinition ) )* otherlv_5= '}' )
+            // InternalComponentMode.g:212:2: ( ( () otherlv_1= 'ComponentModeCollection' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_modes_4_0= ruleComponentModeDefinition ) )* otherlv_5= '}' ) )
+            // InternalComponentMode.g:213:2: ( () otherlv_1= 'ComponentModeCollection' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_modes_4_0= ruleComponentModeDefinition ) )* otherlv_5= '}' )
             {
-            // InternalComponentMode.g:239:2: ( () otherlv_1= 'ComponentModeCollection' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_modes_4_0= ruleComponentModeDefinition ) )* otherlv_5= '}' )
-            // InternalComponentMode.g:240:3: () otherlv_1= 'ComponentModeCollection' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_modes_4_0= ruleComponentModeDefinition ) )* otherlv_5= '}'
+            // InternalComponentMode.g:213:2: ( () otherlv_1= 'ComponentModeCollection' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_modes_4_0= ruleComponentModeDefinition ) )* otherlv_5= '}' )
+            // InternalComponentMode.g:214:3: () otherlv_1= 'ComponentModeCollection' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_modes_4_0= ruleComponentModeDefinition ) )* otherlv_5= '}'
             {
-            // InternalComponentMode.g:240:3: ()
-            // InternalComponentMode.g:241:4: 
+            // InternalComponentMode.g:214:3: ()
+            // InternalComponentMode.g:215:4: 
             {
 
             				current = forceCreateModelElement(
@@ -457,11 +457,11 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getComponentModeCollectionAccess().getComponentModeCollectionKeyword_1());
             		
-            // InternalComponentMode.g:251:3: ( (lv_name_2_0= RULE_ID ) )
-            // InternalComponentMode.g:252:4: (lv_name_2_0= RULE_ID )
+            // InternalComponentMode.g:225:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalComponentMode.g:226:4: (lv_name_2_0= RULE_ID )
             {
-            // InternalComponentMode.g:252:4: (lv_name_2_0= RULE_ID )
-            // InternalComponentMode.g:253:5: lv_name_2_0= RULE_ID
+            // InternalComponentMode.g:226:4: (lv_name_2_0= RULE_ID )
+            // InternalComponentMode.g:227:5: lv_name_2_0= RULE_ID
             {
             lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_4); 
 
@@ -487,7 +487,7 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getComponentModeCollectionAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalComponentMode.g:273:3: ( (lv_modes_4_0= ruleComponentModeDefinition ) )*
+            // InternalComponentMode.g:247:3: ( (lv_modes_4_0= ruleComponentModeDefinition ) )*
             loop3:
             do {
                 int alt3=2;
@@ -500,10 +500,10 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalComponentMode.g:274:4: (lv_modes_4_0= ruleComponentModeDefinition )
+            	    // InternalComponentMode.g:248:4: (lv_modes_4_0= ruleComponentModeDefinition )
             	    {
-            	    // InternalComponentMode.g:274:4: (lv_modes_4_0= ruleComponentModeDefinition )
-            	    // InternalComponentMode.g:275:5: lv_modes_4_0= ruleComponentModeDefinition
+            	    // InternalComponentMode.g:248:4: (lv_modes_4_0= ruleComponentModeDefinition )
+            	    // InternalComponentMode.g:249:5: lv_modes_4_0= ruleComponentModeDefinition
             	    {
 
             	    					newCompositeNode(grammarAccess.getComponentModeCollectionAccess().getModesComponentModeDefinitionParserRuleCall_4_0());
@@ -563,7 +563,7 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComponentModeDefinition"
-    // InternalComponentMode.g:300:1: entryRuleComponentModeDefinition returns [EObject current=null] : iv_ruleComponentModeDefinition= ruleComponentModeDefinition EOF ;
+    // InternalComponentMode.g:274:1: entryRuleComponentModeDefinition returns [EObject current=null] : iv_ruleComponentModeDefinition= ruleComponentModeDefinition EOF ;
     public final EObject entryRuleComponentModeDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -571,8 +571,8 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalComponentMode.g:300:64: (iv_ruleComponentModeDefinition= ruleComponentModeDefinition EOF )
-            // InternalComponentMode.g:301:2: iv_ruleComponentModeDefinition= ruleComponentModeDefinition EOF
+            // InternalComponentMode.g:274:64: (iv_ruleComponentModeDefinition= ruleComponentModeDefinition EOF )
+            // InternalComponentMode.g:275:2: iv_ruleComponentModeDefinition= ruleComponentModeDefinition EOF
             {
              newCompositeNode(grammarAccess.getComponentModeDefinitionRule()); 
             pushFollow(FOLLOW_1);
@@ -599,7 +599,7 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComponentModeDefinition"
-    // InternalComponentMode.g:307:1: ruleComponentModeDefinition returns [EObject current=null] : ( () otherlv_1= 'ComponentModeDefinition' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= ';' )? ) ;
+    // InternalComponentMode.g:281:1: ruleComponentModeDefinition returns [EObject current=null] : ( () otherlv_1= 'ComponentModeDefinition' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= ';' )? ) ;
     public final EObject ruleComponentModeDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -611,14 +611,14 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalComponentMode.g:313:2: ( ( () otherlv_1= 'ComponentModeDefinition' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= ';' )? ) )
-            // InternalComponentMode.g:314:2: ( () otherlv_1= 'ComponentModeDefinition' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= ';' )? )
+            // InternalComponentMode.g:287:2: ( ( () otherlv_1= 'ComponentModeDefinition' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= ';' )? ) )
+            // InternalComponentMode.g:288:2: ( () otherlv_1= 'ComponentModeDefinition' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= ';' )? )
             {
-            // InternalComponentMode.g:314:2: ( () otherlv_1= 'ComponentModeDefinition' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= ';' )? )
-            // InternalComponentMode.g:315:3: () otherlv_1= 'ComponentModeDefinition' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= ';' )?
+            // InternalComponentMode.g:288:2: ( () otherlv_1= 'ComponentModeDefinition' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= ';' )? )
+            // InternalComponentMode.g:289:3: () otherlv_1= 'ComponentModeDefinition' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= ';' )?
             {
-            // InternalComponentMode.g:315:3: ()
-            // InternalComponentMode.g:316:4: 
+            // InternalComponentMode.g:289:3: ()
+            // InternalComponentMode.g:290:4: 
             {
 
             				current = forceCreateModelElement(
@@ -632,11 +632,11 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getComponentModeDefinitionAccess().getComponentModeDefinitionKeyword_1());
             		
-            // InternalComponentMode.g:326:3: ( (lv_name_2_0= RULE_ID ) )
-            // InternalComponentMode.g:327:4: (lv_name_2_0= RULE_ID )
+            // InternalComponentMode.g:300:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalComponentMode.g:301:4: (lv_name_2_0= RULE_ID )
             {
-            // InternalComponentMode.g:327:4: (lv_name_2_0= RULE_ID )
-            // InternalComponentMode.g:328:5: lv_name_2_0= RULE_ID
+            // InternalComponentMode.g:301:4: (lv_name_2_0= RULE_ID )
+            // InternalComponentMode.g:302:5: lv_name_2_0= RULE_ID
             {
             lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_7); 
 
@@ -658,7 +658,7 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalComponentMode.g:344:3: (otherlv_3= ';' )?
+            // InternalComponentMode.g:318:3: (otherlv_3= ';' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -667,7 +667,7 @@ public class InternalComponentModeParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalComponentMode.g:345:4: otherlv_3= ';'
+                    // InternalComponentMode.g:319:4: otherlv_3= ';'
                     {
                     otherlv_3=(Token)match(input,16,FOLLOW_2); 
 

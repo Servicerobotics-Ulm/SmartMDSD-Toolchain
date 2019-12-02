@@ -21,22 +21,25 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'ACE_SmartSoft'", "'description'", "'OpcUa_SeRoNet'", "'CORBA_SmartSoft'", "'DDS_SmartSoft'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_ML_DOCUMENTATION", "RULE_SL_COMMENT", "RULE_SL_DOCUMENTATION", "RULE_DOCU_COMMENT", "RULE_INT", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'ACE_SmartSoft'", "'description'", "'OpcUa_SeRoNet'", "'CORBA_SmartSoft'", "'DDS_SmartSoft'"
     };
-    public static final int RULE_ID=4;
-    public static final int RULE_WS=9;
+    public static final int RULE_ML_DOCUMENTATION=7;
     public static final int RULE_STRING=5;
-    public static final int RULE_ANY_OTHER=10;
     public static final int RULE_SL_COMMENT=8;
+    public static final int T__19=19;
     public static final int T__15=15;
+    public static final int RULE_SL_DOCUMENTATION=9;
     public static final int T__16=16;
-    public static final int RULE_INT=6;
-    public static final int T__11=11;
-    public static final int RULE_ML_COMMENT=7;
-    public static final int T__12=12;
-    public static final int T__13=13;
+    public static final int T__17=17;
+    public static final int T__18=18;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int RULE_ID=4;
+    public static final int RULE_WS=12;
+    public static final int RULE_ANY_OTHER=13;
+    public static final int RULE_INT=11;
+    public static final int RULE_DOCU_COMMENT=10;
+    public static final int RULE_ML_COMMENT=6;
 
     // delegates
     // delegators
@@ -78,7 +81,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "entryRuleRoboticMiddleware"
-    // InternalRoboticMiddleware.g:105:1: entryRuleRoboticMiddleware returns [EObject current=null] : iv_ruleRoboticMiddleware= ruleRoboticMiddleware EOF ;
+    // InternalRoboticMiddleware.g:79:1: entryRuleRoboticMiddleware returns [EObject current=null] : iv_ruleRoboticMiddleware= ruleRoboticMiddleware EOF ;
     public final EObject entryRuleRoboticMiddleware() throws RecognitionException {
         EObject current = null;
 
@@ -86,8 +89,8 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
         try {
-            // InternalRoboticMiddleware.g:105:58: (iv_ruleRoboticMiddleware= ruleRoboticMiddleware EOF )
-            // InternalRoboticMiddleware.g:106:2: iv_ruleRoboticMiddleware= ruleRoboticMiddleware EOF
+            // InternalRoboticMiddleware.g:79:58: (iv_ruleRoboticMiddleware= ruleRoboticMiddleware EOF )
+            // InternalRoboticMiddleware.g:80:2: iv_ruleRoboticMiddleware= ruleRoboticMiddleware EOF
             {
              newCompositeNode(grammarAccess.getRoboticMiddlewareRule()); 
             pushFollow(FOLLOW_1);
@@ -114,7 +117,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "ruleRoboticMiddleware"
-    // InternalRoboticMiddleware.g:112:1: ruleRoboticMiddleware returns [EObject current=null] : (this_ACE_SmartSoft_0= ruleACE_SmartSoft | this_OpcUa_SeRoNet_1= ruleOpcUa_SeRoNet | this_CORBA_SmartSoft_2= ruleCORBA_SmartSoft | this_DDS_SmartSoft_3= ruleDDS_SmartSoft ) ;
+    // InternalRoboticMiddleware.g:86:1: ruleRoboticMiddleware returns [EObject current=null] : (this_ACE_SmartSoft_0= ruleACE_SmartSoft | this_OpcUa_SeRoNet_1= ruleOpcUa_SeRoNet | this_CORBA_SmartSoft_2= ruleCORBA_SmartSoft | this_DDS_SmartSoft_3= ruleDDS_SmartSoft ) ;
     public final EObject ruleRoboticMiddleware() throws RecognitionException {
         EObject current = null;
 
@@ -131,28 +134,28 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
         	enterRule();
 
         try {
-            // InternalRoboticMiddleware.g:118:2: ( (this_ACE_SmartSoft_0= ruleACE_SmartSoft | this_OpcUa_SeRoNet_1= ruleOpcUa_SeRoNet | this_CORBA_SmartSoft_2= ruleCORBA_SmartSoft | this_DDS_SmartSoft_3= ruleDDS_SmartSoft ) )
-            // InternalRoboticMiddleware.g:119:2: (this_ACE_SmartSoft_0= ruleACE_SmartSoft | this_OpcUa_SeRoNet_1= ruleOpcUa_SeRoNet | this_CORBA_SmartSoft_2= ruleCORBA_SmartSoft | this_DDS_SmartSoft_3= ruleDDS_SmartSoft )
+            // InternalRoboticMiddleware.g:92:2: ( (this_ACE_SmartSoft_0= ruleACE_SmartSoft | this_OpcUa_SeRoNet_1= ruleOpcUa_SeRoNet | this_CORBA_SmartSoft_2= ruleCORBA_SmartSoft | this_DDS_SmartSoft_3= ruleDDS_SmartSoft ) )
+            // InternalRoboticMiddleware.g:93:2: (this_ACE_SmartSoft_0= ruleACE_SmartSoft | this_OpcUa_SeRoNet_1= ruleOpcUa_SeRoNet | this_CORBA_SmartSoft_2= ruleCORBA_SmartSoft | this_DDS_SmartSoft_3= ruleDDS_SmartSoft )
             {
-            // InternalRoboticMiddleware.g:119:2: (this_ACE_SmartSoft_0= ruleACE_SmartSoft | this_OpcUa_SeRoNet_1= ruleOpcUa_SeRoNet | this_CORBA_SmartSoft_2= ruleCORBA_SmartSoft | this_DDS_SmartSoft_3= ruleDDS_SmartSoft )
+            // InternalRoboticMiddleware.g:93:2: (this_ACE_SmartSoft_0= ruleACE_SmartSoft | this_OpcUa_SeRoNet_1= ruleOpcUa_SeRoNet | this_CORBA_SmartSoft_2= ruleCORBA_SmartSoft | this_DDS_SmartSoft_3= ruleDDS_SmartSoft )
             int alt1=4;
             switch ( input.LA(1) ) {
-            case 12:
+            case 15:
                 {
                 alt1=1;
                 }
                 break;
-            case 14:
+            case 17:
                 {
                 alt1=2;
                 }
                 break;
-            case 15:
+            case 18:
                 {
                 alt1=3;
                 }
                 break;
-            case 16:
+            case 19:
                 {
                 alt1=4;
                 }
@@ -166,7 +169,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
             switch (alt1) {
                 case 1 :
-                    // InternalRoboticMiddleware.g:120:3: this_ACE_SmartSoft_0= ruleACE_SmartSoft
+                    // InternalRoboticMiddleware.g:94:3: this_ACE_SmartSoft_0= ruleACE_SmartSoft
                     {
 
                     			newCompositeNode(grammarAccess.getRoboticMiddlewareAccess().getACE_SmartSoftParserRuleCall_0());
@@ -184,7 +187,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
                     }
                     break;
                 case 2 :
-                    // InternalRoboticMiddleware.g:129:3: this_OpcUa_SeRoNet_1= ruleOpcUa_SeRoNet
+                    // InternalRoboticMiddleware.g:103:3: this_OpcUa_SeRoNet_1= ruleOpcUa_SeRoNet
                     {
 
                     			newCompositeNode(grammarAccess.getRoboticMiddlewareAccess().getOpcUa_SeRoNetParserRuleCall_1());
@@ -202,7 +205,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
                     }
                     break;
                 case 3 :
-                    // InternalRoboticMiddleware.g:138:3: this_CORBA_SmartSoft_2= ruleCORBA_SmartSoft
+                    // InternalRoboticMiddleware.g:112:3: this_CORBA_SmartSoft_2= ruleCORBA_SmartSoft
                     {
 
                     			newCompositeNode(grammarAccess.getRoboticMiddlewareAccess().getCORBA_SmartSoftParserRuleCall_2());
@@ -220,7 +223,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
                     }
                     break;
                 case 4 :
-                    // InternalRoboticMiddleware.g:147:3: this_DDS_SmartSoft_3= ruleDDS_SmartSoft
+                    // InternalRoboticMiddleware.g:121:3: this_DDS_SmartSoft_3= ruleDDS_SmartSoft
                     {
 
                     			newCompositeNode(grammarAccess.getRoboticMiddlewareAccess().getDDS_SmartSoftParserRuleCall_3());
@@ -260,7 +263,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "entryRuleFQN"
-    // InternalRoboticMiddleware.g:159:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
+    // InternalRoboticMiddleware.g:133:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
     public final String entryRuleFQN() throws RecognitionException {
         String current = null;
 
@@ -268,8 +271,8 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
         try {
-            // InternalRoboticMiddleware.g:159:43: (iv_ruleFQN= ruleFQN EOF )
-            // InternalRoboticMiddleware.g:160:2: iv_ruleFQN= ruleFQN EOF
+            // InternalRoboticMiddleware.g:133:43: (iv_ruleFQN= ruleFQN EOF )
+            // InternalRoboticMiddleware.g:134:2: iv_ruleFQN= ruleFQN EOF
             {
              newCompositeNode(grammarAccess.getFQNRule()); 
             pushFollow(FOLLOW_1);
@@ -296,7 +299,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "ruleFQN"
-    // InternalRoboticMiddleware.g:166:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // InternalRoboticMiddleware.g:140:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleFQN() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -308,11 +311,11 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
         	enterRule();
 
         try {
-            // InternalRoboticMiddleware.g:172:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // InternalRoboticMiddleware.g:173:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalRoboticMiddleware.g:146:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // InternalRoboticMiddleware.g:147:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // InternalRoboticMiddleware.g:173:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // InternalRoboticMiddleware.g:174:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // InternalRoboticMiddleware.g:147:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalRoboticMiddleware.g:148:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_3); 
 
@@ -321,22 +324,22 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
             			newLeafNode(this_ID_0, grammarAccess.getFQNAccess().getIDTerminalRuleCall_0());
             		
-            // InternalRoboticMiddleware.g:181:3: (kw= '.' this_ID_2= RULE_ID )*
+            // InternalRoboticMiddleware.g:155:3: (kw= '.' this_ID_2= RULE_ID )*
             loop2:
             do {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==11) ) {
+                if ( (LA2_0==14) ) {
                     alt2=1;
                 }
 
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalRoboticMiddleware.g:182:4: kw= '.' this_ID_2= RULE_ID
+            	    // InternalRoboticMiddleware.g:156:4: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,11,FOLLOW_4); 
+            	    kw=(Token)match(input,14,FOLLOW_4); 
 
             	    				current.merge(kw);
             	    				newLeafNode(kw, grammarAccess.getFQNAccess().getFullStopKeyword_1_0());
@@ -380,7 +383,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalRoboticMiddleware.g:199:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalRoboticMiddleware.g:173:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -388,8 +391,8 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
         try {
-            // InternalRoboticMiddleware.g:199:47: (iv_ruleEString= ruleEString EOF )
-            // InternalRoboticMiddleware.g:200:2: iv_ruleEString= ruleEString EOF
+            // InternalRoboticMiddleware.g:173:47: (iv_ruleEString= ruleEString EOF )
+            // InternalRoboticMiddleware.g:174:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -416,7 +419,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "ruleEString"
-    // InternalRoboticMiddleware.g:206:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
+    // InternalRoboticMiddleware.g:180:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -426,8 +429,8 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
         	enterRule();
 
         try {
-            // InternalRoboticMiddleware.g:212:2: (this_STRING_0= RULE_STRING )
-            // InternalRoboticMiddleware.g:213:2: this_STRING_0= RULE_STRING
+            // InternalRoboticMiddleware.g:186:2: (this_STRING_0= RULE_STRING )
+            // InternalRoboticMiddleware.g:187:2: this_STRING_0= RULE_STRING
             {
             this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -456,7 +459,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "entryRuleACE_SmartSoft"
-    // InternalRoboticMiddleware.g:223:1: entryRuleACE_SmartSoft returns [EObject current=null] : iv_ruleACE_SmartSoft= ruleACE_SmartSoft EOF ;
+    // InternalRoboticMiddleware.g:197:1: entryRuleACE_SmartSoft returns [EObject current=null] : iv_ruleACE_SmartSoft= ruleACE_SmartSoft EOF ;
     public final EObject entryRuleACE_SmartSoft() throws RecognitionException {
         EObject current = null;
 
@@ -464,8 +467,8 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
         try {
-            // InternalRoboticMiddleware.g:223:54: (iv_ruleACE_SmartSoft= ruleACE_SmartSoft EOF )
-            // InternalRoboticMiddleware.g:224:2: iv_ruleACE_SmartSoft= ruleACE_SmartSoft EOF
+            // InternalRoboticMiddleware.g:197:54: (iv_ruleACE_SmartSoft= ruleACE_SmartSoft EOF )
+            // InternalRoboticMiddleware.g:198:2: iv_ruleACE_SmartSoft= ruleACE_SmartSoft EOF
             {
              newCompositeNode(grammarAccess.getACE_SmartSoftRule()); 
             pushFollow(FOLLOW_1);
@@ -492,7 +495,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "ruleACE_SmartSoft"
-    // InternalRoboticMiddleware.g:230:1: ruleACE_SmartSoft returns [EObject current=null] : ( () otherlv_1= 'ACE_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) ;
+    // InternalRoboticMiddleware.g:204:1: ruleACE_SmartSoft returns [EObject current=null] : ( () otherlv_1= 'ACE_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) ;
     public final EObject ruleACE_SmartSoft() throws RecognitionException {
         EObject current = null;
 
@@ -505,14 +508,14 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
         	enterRule();
 
         try {
-            // InternalRoboticMiddleware.g:236:2: ( ( () otherlv_1= 'ACE_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) )
-            // InternalRoboticMiddleware.g:237:2: ( () otherlv_1= 'ACE_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
+            // InternalRoboticMiddleware.g:210:2: ( ( () otherlv_1= 'ACE_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) )
+            // InternalRoboticMiddleware.g:211:2: ( () otherlv_1= 'ACE_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
             {
-            // InternalRoboticMiddleware.g:237:2: ( () otherlv_1= 'ACE_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
-            // InternalRoboticMiddleware.g:238:3: () otherlv_1= 'ACE_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
+            // InternalRoboticMiddleware.g:211:2: ( () otherlv_1= 'ACE_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
+            // InternalRoboticMiddleware.g:212:3: () otherlv_1= 'ACE_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
             {
-            // InternalRoboticMiddleware.g:238:3: ()
-            // InternalRoboticMiddleware.g:239:4: 
+            // InternalRoboticMiddleware.g:212:3: ()
+            // InternalRoboticMiddleware.g:213:4: 
             {
 
             				current = forceCreateModelElement(
@@ -522,30 +525,30 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
             }
 
-            otherlv_1=(Token)match(input,12,FOLLOW_5); 
+            otherlv_1=(Token)match(input,15,FOLLOW_5); 
 
             			newLeafNode(otherlv_1, grammarAccess.getACE_SmartSoftAccess().getACE_SmartSoftKeyword_1());
             		
-            // InternalRoboticMiddleware.g:249:3: (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
+            // InternalRoboticMiddleware.g:223:3: (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==13) ) {
+            if ( (LA3_0==16) ) {
                 alt3=1;
             }
             switch (alt3) {
                 case 1 :
-                    // InternalRoboticMiddleware.g:250:4: otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) )
+                    // InternalRoboticMiddleware.g:224:4: otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) )
                     {
-                    otherlv_2=(Token)match(input,13,FOLLOW_6); 
+                    otherlv_2=(Token)match(input,16,FOLLOW_6); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getACE_SmartSoftAccess().getDescriptionKeyword_2_0());
                     			
-                    // InternalRoboticMiddleware.g:254:4: ( (lv_description_3_0= ruleEString ) )
-                    // InternalRoboticMiddleware.g:255:5: (lv_description_3_0= ruleEString )
+                    // InternalRoboticMiddleware.g:228:4: ( (lv_description_3_0= ruleEString ) )
+                    // InternalRoboticMiddleware.g:229:5: (lv_description_3_0= ruleEString )
                     {
-                    // InternalRoboticMiddleware.g:255:5: (lv_description_3_0= ruleEString )
-                    // InternalRoboticMiddleware.g:256:6: lv_description_3_0= ruleEString
+                    // InternalRoboticMiddleware.g:229:5: (lv_description_3_0= ruleEString )
+                    // InternalRoboticMiddleware.g:230:6: lv_description_3_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getACE_SmartSoftAccess().getDescriptionEStringParserRuleCall_2_1_0());
@@ -601,7 +604,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "entryRuleOpcUa_SeRoNet"
-    // InternalRoboticMiddleware.g:278:1: entryRuleOpcUa_SeRoNet returns [EObject current=null] : iv_ruleOpcUa_SeRoNet= ruleOpcUa_SeRoNet EOF ;
+    // InternalRoboticMiddleware.g:252:1: entryRuleOpcUa_SeRoNet returns [EObject current=null] : iv_ruleOpcUa_SeRoNet= ruleOpcUa_SeRoNet EOF ;
     public final EObject entryRuleOpcUa_SeRoNet() throws RecognitionException {
         EObject current = null;
 
@@ -609,8 +612,8 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
         try {
-            // InternalRoboticMiddleware.g:278:54: (iv_ruleOpcUa_SeRoNet= ruleOpcUa_SeRoNet EOF )
-            // InternalRoboticMiddleware.g:279:2: iv_ruleOpcUa_SeRoNet= ruleOpcUa_SeRoNet EOF
+            // InternalRoboticMiddleware.g:252:54: (iv_ruleOpcUa_SeRoNet= ruleOpcUa_SeRoNet EOF )
+            // InternalRoboticMiddleware.g:253:2: iv_ruleOpcUa_SeRoNet= ruleOpcUa_SeRoNet EOF
             {
              newCompositeNode(grammarAccess.getOpcUa_SeRoNetRule()); 
             pushFollow(FOLLOW_1);
@@ -637,7 +640,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "ruleOpcUa_SeRoNet"
-    // InternalRoboticMiddleware.g:285:1: ruleOpcUa_SeRoNet returns [EObject current=null] : ( () otherlv_1= 'OpcUa_SeRoNet' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) ;
+    // InternalRoboticMiddleware.g:259:1: ruleOpcUa_SeRoNet returns [EObject current=null] : ( () otherlv_1= 'OpcUa_SeRoNet' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) ;
     public final EObject ruleOpcUa_SeRoNet() throws RecognitionException {
         EObject current = null;
 
@@ -650,14 +653,14 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
         	enterRule();
 
         try {
-            // InternalRoboticMiddleware.g:291:2: ( ( () otherlv_1= 'OpcUa_SeRoNet' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) )
-            // InternalRoboticMiddleware.g:292:2: ( () otherlv_1= 'OpcUa_SeRoNet' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
+            // InternalRoboticMiddleware.g:265:2: ( ( () otherlv_1= 'OpcUa_SeRoNet' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) )
+            // InternalRoboticMiddleware.g:266:2: ( () otherlv_1= 'OpcUa_SeRoNet' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
             {
-            // InternalRoboticMiddleware.g:292:2: ( () otherlv_1= 'OpcUa_SeRoNet' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
-            // InternalRoboticMiddleware.g:293:3: () otherlv_1= 'OpcUa_SeRoNet' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
+            // InternalRoboticMiddleware.g:266:2: ( () otherlv_1= 'OpcUa_SeRoNet' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
+            // InternalRoboticMiddleware.g:267:3: () otherlv_1= 'OpcUa_SeRoNet' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
             {
-            // InternalRoboticMiddleware.g:293:3: ()
-            // InternalRoboticMiddleware.g:294:4: 
+            // InternalRoboticMiddleware.g:267:3: ()
+            // InternalRoboticMiddleware.g:268:4: 
             {
 
             				current = forceCreateModelElement(
@@ -667,30 +670,30 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
             }
 
-            otherlv_1=(Token)match(input,14,FOLLOW_5); 
+            otherlv_1=(Token)match(input,17,FOLLOW_5); 
 
             			newLeafNode(otherlv_1, grammarAccess.getOpcUa_SeRoNetAccess().getOpcUa_SeRoNetKeyword_1());
             		
-            // InternalRoboticMiddleware.g:304:3: (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
+            // InternalRoboticMiddleware.g:278:3: (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==13) ) {
+            if ( (LA4_0==16) ) {
                 alt4=1;
             }
             switch (alt4) {
                 case 1 :
-                    // InternalRoboticMiddleware.g:305:4: otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) )
+                    // InternalRoboticMiddleware.g:279:4: otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) )
                     {
-                    otherlv_2=(Token)match(input,13,FOLLOW_6); 
+                    otherlv_2=(Token)match(input,16,FOLLOW_6); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getOpcUa_SeRoNetAccess().getDescriptionKeyword_2_0());
                     			
-                    // InternalRoboticMiddleware.g:309:4: ( (lv_description_3_0= ruleEString ) )
-                    // InternalRoboticMiddleware.g:310:5: (lv_description_3_0= ruleEString )
+                    // InternalRoboticMiddleware.g:283:4: ( (lv_description_3_0= ruleEString ) )
+                    // InternalRoboticMiddleware.g:284:5: (lv_description_3_0= ruleEString )
                     {
-                    // InternalRoboticMiddleware.g:310:5: (lv_description_3_0= ruleEString )
-                    // InternalRoboticMiddleware.g:311:6: lv_description_3_0= ruleEString
+                    // InternalRoboticMiddleware.g:284:5: (lv_description_3_0= ruleEString )
+                    // InternalRoboticMiddleware.g:285:6: lv_description_3_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getOpcUa_SeRoNetAccess().getDescriptionEStringParserRuleCall_2_1_0());
@@ -746,7 +749,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "entryRuleCORBA_SmartSoft"
-    // InternalRoboticMiddleware.g:333:1: entryRuleCORBA_SmartSoft returns [EObject current=null] : iv_ruleCORBA_SmartSoft= ruleCORBA_SmartSoft EOF ;
+    // InternalRoboticMiddleware.g:307:1: entryRuleCORBA_SmartSoft returns [EObject current=null] : iv_ruleCORBA_SmartSoft= ruleCORBA_SmartSoft EOF ;
     public final EObject entryRuleCORBA_SmartSoft() throws RecognitionException {
         EObject current = null;
 
@@ -754,8 +757,8 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
         try {
-            // InternalRoboticMiddleware.g:333:56: (iv_ruleCORBA_SmartSoft= ruleCORBA_SmartSoft EOF )
-            // InternalRoboticMiddleware.g:334:2: iv_ruleCORBA_SmartSoft= ruleCORBA_SmartSoft EOF
+            // InternalRoboticMiddleware.g:307:56: (iv_ruleCORBA_SmartSoft= ruleCORBA_SmartSoft EOF )
+            // InternalRoboticMiddleware.g:308:2: iv_ruleCORBA_SmartSoft= ruleCORBA_SmartSoft EOF
             {
              newCompositeNode(grammarAccess.getCORBA_SmartSoftRule()); 
             pushFollow(FOLLOW_1);
@@ -782,7 +785,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "ruleCORBA_SmartSoft"
-    // InternalRoboticMiddleware.g:340:1: ruleCORBA_SmartSoft returns [EObject current=null] : ( () otherlv_1= 'CORBA_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) ;
+    // InternalRoboticMiddleware.g:314:1: ruleCORBA_SmartSoft returns [EObject current=null] : ( () otherlv_1= 'CORBA_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) ;
     public final EObject ruleCORBA_SmartSoft() throws RecognitionException {
         EObject current = null;
 
@@ -795,14 +798,14 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
         	enterRule();
 
         try {
-            // InternalRoboticMiddleware.g:346:2: ( ( () otherlv_1= 'CORBA_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) )
-            // InternalRoboticMiddleware.g:347:2: ( () otherlv_1= 'CORBA_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
+            // InternalRoboticMiddleware.g:320:2: ( ( () otherlv_1= 'CORBA_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) )
+            // InternalRoboticMiddleware.g:321:2: ( () otherlv_1= 'CORBA_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
             {
-            // InternalRoboticMiddleware.g:347:2: ( () otherlv_1= 'CORBA_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
-            // InternalRoboticMiddleware.g:348:3: () otherlv_1= 'CORBA_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
+            // InternalRoboticMiddleware.g:321:2: ( () otherlv_1= 'CORBA_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
+            // InternalRoboticMiddleware.g:322:3: () otherlv_1= 'CORBA_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
             {
-            // InternalRoboticMiddleware.g:348:3: ()
-            // InternalRoboticMiddleware.g:349:4: 
+            // InternalRoboticMiddleware.g:322:3: ()
+            // InternalRoboticMiddleware.g:323:4: 
             {
 
             				current = forceCreateModelElement(
@@ -812,30 +815,30 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
             }
 
-            otherlv_1=(Token)match(input,15,FOLLOW_5); 
+            otherlv_1=(Token)match(input,18,FOLLOW_5); 
 
             			newLeafNode(otherlv_1, grammarAccess.getCORBA_SmartSoftAccess().getCORBA_SmartSoftKeyword_1());
             		
-            // InternalRoboticMiddleware.g:359:3: (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
+            // InternalRoboticMiddleware.g:333:3: (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==13) ) {
+            if ( (LA5_0==16) ) {
                 alt5=1;
             }
             switch (alt5) {
                 case 1 :
-                    // InternalRoboticMiddleware.g:360:4: otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) )
+                    // InternalRoboticMiddleware.g:334:4: otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) )
                     {
-                    otherlv_2=(Token)match(input,13,FOLLOW_6); 
+                    otherlv_2=(Token)match(input,16,FOLLOW_6); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getCORBA_SmartSoftAccess().getDescriptionKeyword_2_0());
                     			
-                    // InternalRoboticMiddleware.g:364:4: ( (lv_description_3_0= ruleEString ) )
-                    // InternalRoboticMiddleware.g:365:5: (lv_description_3_0= ruleEString )
+                    // InternalRoboticMiddleware.g:338:4: ( (lv_description_3_0= ruleEString ) )
+                    // InternalRoboticMiddleware.g:339:5: (lv_description_3_0= ruleEString )
                     {
-                    // InternalRoboticMiddleware.g:365:5: (lv_description_3_0= ruleEString )
-                    // InternalRoboticMiddleware.g:366:6: lv_description_3_0= ruleEString
+                    // InternalRoboticMiddleware.g:339:5: (lv_description_3_0= ruleEString )
+                    // InternalRoboticMiddleware.g:340:6: lv_description_3_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getCORBA_SmartSoftAccess().getDescriptionEStringParserRuleCall_2_1_0());
@@ -891,7 +894,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "entryRuleDDS_SmartSoft"
-    // InternalRoboticMiddleware.g:388:1: entryRuleDDS_SmartSoft returns [EObject current=null] : iv_ruleDDS_SmartSoft= ruleDDS_SmartSoft EOF ;
+    // InternalRoboticMiddleware.g:362:1: entryRuleDDS_SmartSoft returns [EObject current=null] : iv_ruleDDS_SmartSoft= ruleDDS_SmartSoft EOF ;
     public final EObject entryRuleDDS_SmartSoft() throws RecognitionException {
         EObject current = null;
 
@@ -899,8 +902,8 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
         try {
-            // InternalRoboticMiddleware.g:388:54: (iv_ruleDDS_SmartSoft= ruleDDS_SmartSoft EOF )
-            // InternalRoboticMiddleware.g:389:2: iv_ruleDDS_SmartSoft= ruleDDS_SmartSoft EOF
+            // InternalRoboticMiddleware.g:362:54: (iv_ruleDDS_SmartSoft= ruleDDS_SmartSoft EOF )
+            // InternalRoboticMiddleware.g:363:2: iv_ruleDDS_SmartSoft= ruleDDS_SmartSoft EOF
             {
              newCompositeNode(grammarAccess.getDDS_SmartSoftRule()); 
             pushFollow(FOLLOW_1);
@@ -927,7 +930,7 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "ruleDDS_SmartSoft"
-    // InternalRoboticMiddleware.g:395:1: ruleDDS_SmartSoft returns [EObject current=null] : ( () otherlv_1= 'DDS_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) ;
+    // InternalRoboticMiddleware.g:369:1: ruleDDS_SmartSoft returns [EObject current=null] : ( () otherlv_1= 'DDS_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) ;
     public final EObject ruleDDS_SmartSoft() throws RecognitionException {
         EObject current = null;
 
@@ -940,14 +943,14 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
         	enterRule();
 
         try {
-            // InternalRoboticMiddleware.g:401:2: ( ( () otherlv_1= 'DDS_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) )
-            // InternalRoboticMiddleware.g:402:2: ( () otherlv_1= 'DDS_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
+            // InternalRoboticMiddleware.g:375:2: ( ( () otherlv_1= 'DDS_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? ) )
+            // InternalRoboticMiddleware.g:376:2: ( () otherlv_1= 'DDS_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
             {
-            // InternalRoboticMiddleware.g:402:2: ( () otherlv_1= 'DDS_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
-            // InternalRoboticMiddleware.g:403:3: () otherlv_1= 'DDS_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
+            // InternalRoboticMiddleware.g:376:2: ( () otherlv_1= 'DDS_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )? )
+            // InternalRoboticMiddleware.g:377:3: () otherlv_1= 'DDS_SmartSoft' (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
             {
-            // InternalRoboticMiddleware.g:403:3: ()
-            // InternalRoboticMiddleware.g:404:4: 
+            // InternalRoboticMiddleware.g:377:3: ()
+            // InternalRoboticMiddleware.g:378:4: 
             {
 
             				current = forceCreateModelElement(
@@ -957,30 +960,30 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
             }
 
-            otherlv_1=(Token)match(input,16,FOLLOW_5); 
+            otherlv_1=(Token)match(input,19,FOLLOW_5); 
 
             			newLeafNode(otherlv_1, grammarAccess.getDDS_SmartSoftAccess().getDDS_SmartSoftKeyword_1());
             		
-            // InternalRoboticMiddleware.g:414:3: (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
+            // InternalRoboticMiddleware.g:388:3: (otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) ) )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==13) ) {
+            if ( (LA6_0==16) ) {
                 alt6=1;
             }
             switch (alt6) {
                 case 1 :
-                    // InternalRoboticMiddleware.g:415:4: otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) )
+                    // InternalRoboticMiddleware.g:389:4: otherlv_2= 'description' ( (lv_description_3_0= ruleEString ) )
                     {
-                    otherlv_2=(Token)match(input,13,FOLLOW_6); 
+                    otherlv_2=(Token)match(input,16,FOLLOW_6); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getDDS_SmartSoftAccess().getDescriptionKeyword_2_0());
                     			
-                    // InternalRoboticMiddleware.g:419:4: ( (lv_description_3_0= ruleEString ) )
-                    // InternalRoboticMiddleware.g:420:5: (lv_description_3_0= ruleEString )
+                    // InternalRoboticMiddleware.g:393:4: ( (lv_description_3_0= ruleEString ) )
+                    // InternalRoboticMiddleware.g:394:5: (lv_description_3_0= ruleEString )
                     {
-                    // InternalRoboticMiddleware.g:420:5: (lv_description_3_0= ruleEString )
-                    // InternalRoboticMiddleware.g:421:6: lv_description_3_0= ruleEString
+                    // InternalRoboticMiddleware.g:394:5: (lv_description_3_0= ruleEString )
+                    // InternalRoboticMiddleware.g:395:6: lv_description_3_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getDDS_SmartSoftAccess().getDescriptionEStringParserRuleCall_2_1_0());
@@ -1041,9 +1044,9 @@ public class InternalRoboticMiddlewareParser extends AbstractInternalAntlrParser
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000802L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000010002L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000020L});
 
 }

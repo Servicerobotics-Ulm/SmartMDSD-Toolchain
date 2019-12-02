@@ -58,179 +58,42 @@ public interface GenericDatasheetPackage extends EPackage {
 	GenericDatasheetPackage eINSTANCE = org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl <em>Generic Datasheet</em>}' class.
+	 * The meta object id for the '{@link org.ecore.base.genericDatasheet.impl.AbstractDatasheetElementImpl <em>Abstract Datasheet Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl
-	 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getGenericDatasheet()
+	 * @see org.ecore.base.genericDatasheet.impl.AbstractDatasheetElementImpl
+	 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getAbstractDatasheetElement()
 	 * @generated
 	 */
-	int GENERIC_DATASHEET = 0;
+	int ABSTRACT_DATASHEET_ELEMENT = 2;
 
 	/**
-	 * The feature id for the '<em><b>License</b></em>' containment reference.
+	 * The number of structural features of the '<em>Abstract Datasheet Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_DATASHEET__LICENSE = 0;
+	int ABSTRACT_DATASHEET_ELEMENT_FEATURE_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Short Description</b></em>' attribute.
+	 * The number of operations of the '<em>Abstract Datasheet Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_DATASHEET__SHORT_DESCRIPTION = 1;
+	int ABSTRACT_DATASHEET_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Long Description</b></em>' attribute.
+	 * The meta object id for the '{@link org.ecore.base.genericDatasheet.impl.DatasheetPropertyImpl <em>Datasheet Property</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_DATASHEET__LONG_DESCRIPTION = 2;
-
-	/**
-	 * The feature id for the '<em><b>Supplier Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_DATASHEET__SUPPLIER_DESCRIPTION = 3;
-
-	/**
-	 * The feature id for the '<em><b>Homepage</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_DATASHEET__HOMEPAGE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Base URI</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_DATASHEET__BASE_URI = 5;
-
-	/**
-	 * The feature id for the '<em><b>Trl</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_DATASHEET__TRL = 6;
-
-	/**
-	 * The number of structural features of the '<em>Generic Datasheet</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_DATASHEET_FEATURE_COUNT = 7;
-
-	/**
-	 * The number of operations of the '<em>Generic Datasheet</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_DATASHEET_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.ecore.base.genericDatasheet.impl.AbstractLicenseImpl <em>Abstract License</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.ecore.base.genericDatasheet.impl.AbstractLicenseImpl
-	 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getAbstractLicense()
+	 * @see org.ecore.base.genericDatasheet.impl.DatasheetPropertyImpl
+	 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getDatasheetProperty()
 	 * @generated
 	 */
-	int ABSTRACT_LICENSE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Abstract License</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_LICENSE_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Abstract License</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_LICENSE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.ecore.base.genericDatasheet.impl.SpdxLicenseImpl <em>Spdx License</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.ecore.base.genericDatasheet.impl.SpdxLicenseImpl
-	 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getSpdxLicense()
-	 * @generated
-	 */
-	int SPDX_LICENSE = 2;
-
-	/**
-	 * The feature id for the '<em><b>License ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPDX_LICENSE__LICENSE_ID = ABSTRACT_LICENSE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Spdx License</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPDX_LICENSE_FEATURE_COUNT = ABSTRACT_LICENSE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Spdx License</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPDX_LICENSE_OPERATION_COUNT = ABSTRACT_LICENSE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.ecore.base.genericDatasheet.impl.ProprietaryLicenseImpl <em>Proprietary License</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.ecore.base.genericDatasheet.impl.ProprietaryLicenseImpl
-	 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getProprietaryLicense()
-	 * @generated
-	 */
-	int PROPRIETARY_LICENSE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Full Text</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPRIETARY_LICENSE__FULL_TEXT = ABSTRACT_LICENSE_FEATURE_COUNT + 0;
+	int DATASHEET_PROPERTY = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -239,215 +102,332 @@ public interface GenericDatasheetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPRIETARY_LICENSE__NAME = ABSTRACT_LICENSE_FEATURE_COUNT + 1;
+	int DATASHEET_PROPERTY__NAME = ABSTRACT_DATASHEET_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPRIETARY_LICENSE__URL = ABSTRACT_LICENSE_FEATURE_COUNT + 2;
+	int DATASHEET_PROPERTY__VALUE = ABSTRACT_DATASHEET_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Proprietary License</em>' class.
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPRIETARY_LICENSE_FEATURE_COUNT = ABSTRACT_LICENSE_FEATURE_COUNT + 3;
+	int DATASHEET_PROPERTY__UNIT = ABSTRACT_DATASHEET_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Proprietary License</em>' class.
+	 * The feature id for the '<em><b>Semantic ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPRIETARY_LICENSE_OPERATION_COUNT = ABSTRACT_LICENSE_OPERATION_COUNT + 0;
+	int DATASHEET_PROPERTY__SEMANTIC_ID = ABSTRACT_DATASHEET_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.ecore.base.genericDatasheet.TRL <em>TRL</em>}' enum.
+	 * The feature id for the '<em><b>Short Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.ecore.base.genericDatasheet.TRL
-	 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getTRL()
 	 * @generated
+	 * @ordered
 	 */
-	int TRL = 4;
+	int DATASHEET_PROPERTY__SHORT_DESCRIPTION = ABSTRACT_DATASHEET_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * Returns the meta object for class '{@link org.ecore.base.genericDatasheet.GenericDatasheet <em>Generic Datasheet</em>}'.
+	 * The number of structural features of the '<em>Datasheet Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Generic Datasheet</em>'.
-	 * @see org.ecore.base.genericDatasheet.GenericDatasheet
 	 * @generated
+	 * @ordered
 	 */
-	EClass getGenericDatasheet();
+	int DATASHEET_PROPERTY_FEATURE_COUNT = ABSTRACT_DATASHEET_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.ecore.base.genericDatasheet.GenericDatasheet#getLicense <em>License</em>}'.
+	 * The number of operations of the '<em>Datasheet Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>License</em>'.
-	 * @see org.ecore.base.genericDatasheet.GenericDatasheet#getLicense()
-	 * @see #getGenericDatasheet()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getGenericDatasheet_License();
+	int DATASHEET_PROPERTY_OPERATION_COUNT = ABSTRACT_DATASHEET_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.GenericDatasheet#getShortDescription <em>Short Description</em>}'.
+	 * The meta object id for the '{@link org.ecore.base.genericDatasheet.impl.GenericDatasheetModelImpl <em>Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Short Description</em>'.
-	 * @see org.ecore.base.genericDatasheet.GenericDatasheet#getShortDescription()
-	 * @see #getGenericDatasheet()
+	 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetModelImpl
+	 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getGenericDatasheetModel()
 	 * @generated
 	 */
-	EAttribute getGenericDatasheet_ShortDescription();
+	int GENERIC_DATASHEET_MODEL = 1;
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.GenericDatasheet#getLongDescription <em>Long Description</em>}'.
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Long Description</em>'.
-	 * @see org.ecore.base.genericDatasheet.GenericDatasheet#getLongDescription()
-	 * @see #getGenericDatasheet()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getGenericDatasheet_LongDescription();
+	int GENERIC_DATASHEET_MODEL__ELEMENTS = 0;
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.GenericDatasheet#getSupplierDescription <em>Supplier Description</em>}'.
+	 * The number of structural features of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Supplier Description</em>'.
-	 * @see org.ecore.base.genericDatasheet.GenericDatasheet#getSupplierDescription()
-	 * @see #getGenericDatasheet()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getGenericDatasheet_SupplierDescription();
+	int GENERIC_DATASHEET_MODEL_FEATURE_COUNT = 1;
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.GenericDatasheet#getHomepage <em>Homepage</em>}'.
+	 * The number of operations of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Homepage</em>'.
-	 * @see org.ecore.base.genericDatasheet.GenericDatasheet#getHomepage()
-	 * @see #getGenericDatasheet()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getGenericDatasheet_Homepage();
+	int GENERIC_DATASHEET_MODEL_OPERATION_COUNT = 0;
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.GenericDatasheet#getBaseURI <em>Base URI</em>}'.
+	 * The meta object id for the '{@link org.ecore.base.genericDatasheet.impl.MandatoryDatasheetElementImpl <em>Mandatory Datasheet Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Base URI</em>'.
-	 * @see org.ecore.base.genericDatasheet.GenericDatasheet#getBaseURI()
-	 * @see #getGenericDatasheet()
+	 * @see org.ecore.base.genericDatasheet.impl.MandatoryDatasheetElementImpl
+	 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getMandatoryDatasheetElement()
 	 * @generated
 	 */
-	EAttribute getGenericDatasheet_BaseURI();
+	int MANDATORY_DATASHEET_ELEMENT = 3;
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.GenericDatasheet#getTrl <em>Trl</em>}'.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Trl</em>'.
-	 * @see org.ecore.base.genericDatasheet.GenericDatasheet#getTrl()
-	 * @see #getGenericDatasheet()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getGenericDatasheet_Trl();
+	int MANDATORY_DATASHEET_ELEMENT__NAME = ABSTRACT_DATASHEET_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * Returns the meta object for class '{@link org.ecore.base.genericDatasheet.AbstractLicense <em>Abstract License</em>}'.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Abstract License</em>'.
-	 * @see org.ecore.base.genericDatasheet.AbstractLicense
 	 * @generated
+	 * @ordered
 	 */
-	EClass getAbstractLicense();
+	int MANDATORY_DATASHEET_ELEMENT__VALUE = ABSTRACT_DATASHEET_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * Returns the meta object for class '{@link org.ecore.base.genericDatasheet.SpdxLicense <em>Spdx License</em>}'.
+	 * The number of structural features of the '<em>Mandatory Datasheet Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Spdx License</em>'.
-	 * @see org.ecore.base.genericDatasheet.SpdxLicense
 	 * @generated
+	 * @ordered
 	 */
-	EClass getSpdxLicense();
+	int MANDATORY_DATASHEET_ELEMENT_FEATURE_COUNT = ABSTRACT_DATASHEET_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.SpdxLicense#getLicenseID <em>License ID</em>}'.
+	 * The number of operations of the '<em>Mandatory Datasheet Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>License ID</em>'.
-	 * @see org.ecore.base.genericDatasheet.SpdxLicense#getLicenseID()
-	 * @see #getSpdxLicense()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getSpdxLicense_LicenseID();
+	int MANDATORY_DATASHEET_ELEMENT_OPERATION_COUNT = ABSTRACT_DATASHEET_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * Returns the meta object for class '{@link org.ecore.base.genericDatasheet.ProprietaryLicense <em>Proprietary License</em>}'.
+	 * The meta object id for the '{@link org.ecore.base.genericDatasheet.DefaultDatasheetProperties <em>Default Datasheet Properties</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Proprietary License</em>'.
-	 * @see org.ecore.base.genericDatasheet.ProprietaryLicense
+	 * @see org.ecore.base.genericDatasheet.DefaultDatasheetProperties
+	 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getDefaultDatasheetProperties()
 	 * @generated
 	 */
-	EClass getProprietaryLicense();
+	int DEFAULT_DATASHEET_PROPERTIES = 4;
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.ProprietaryLicense#getFullText <em>Full Text</em>}'.
+	 * The meta object id for the '{@link org.ecore.base.genericDatasheet.TechnologyReadinessLevel <em>Technology Readiness Level</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Full Text</em>'.
-	 * @see org.ecore.base.genericDatasheet.ProprietaryLicense#getFullText()
-	 * @see #getProprietaryLicense()
+	 * @see org.ecore.base.genericDatasheet.TechnologyReadinessLevel
+	 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getTechnologyReadinessLevel()
 	 * @generated
 	 */
-	EAttribute getProprietaryLicense_FullText();
+	int TECHNOLOGY_READINESS_LEVEL = 5;
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.ProprietaryLicense#getName <em>Name</em>}'.
+	 * The meta object id for the '{@link org.ecore.base.genericDatasheet.MandatoryDatasheetElementNames <em>Mandatory Datasheet Element Names</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.ecore.base.genericDatasheet.MandatoryDatasheetElementNames
+	 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getMandatoryDatasheetElementNames()
+	 * @generated
+	 */
+	int MANDATORY_DATASHEET_ELEMENT_NAMES = 6;
+
+	/**
+	 * Returns the meta object for class '{@link org.ecore.base.genericDatasheet.DatasheetProperty <em>Datasheet Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Datasheet Property</em>'.
+	 * @see org.ecore.base.genericDatasheet.DatasheetProperty
+	 * @generated
+	 */
+	EClass getDatasheetProperty();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.DatasheetProperty#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.ecore.base.genericDatasheet.ProprietaryLicense#getName()
-	 * @see #getProprietaryLicense()
+	 * @see org.ecore.base.genericDatasheet.DatasheetProperty#getName()
+	 * @see #getDatasheetProperty()
 	 * @generated
 	 */
-	EAttribute getProprietaryLicense_Name();
+	EAttribute getDatasheetProperty_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.ProprietaryLicense#getUrl <em>Url</em>}'.
+	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.DatasheetProperty#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Url</em>'.
-	 * @see org.ecore.base.genericDatasheet.ProprietaryLicense#getUrl()
-	 * @see #getProprietaryLicense()
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.ecore.base.genericDatasheet.DatasheetProperty#getValue()
+	 * @see #getDatasheetProperty()
 	 * @generated
 	 */
-	EAttribute getProprietaryLicense_Url();
+	EAttribute getDatasheetProperty_Value();
 
 	/**
-	 * Returns the meta object for enum '{@link org.ecore.base.genericDatasheet.TRL <em>TRL</em>}'.
+	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.DatasheetProperty#getUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>TRL</em>'.
-	 * @see org.ecore.base.genericDatasheet.TRL
+	 * @return the meta object for the attribute '<em>Unit</em>'.
+	 * @see org.ecore.base.genericDatasheet.DatasheetProperty#getUnit()
+	 * @see #getDatasheetProperty()
 	 * @generated
 	 */
-	EEnum getTRL();
+	EAttribute getDatasheetProperty_Unit();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.DatasheetProperty#getSemanticID <em>Semantic ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Semantic ID</em>'.
+	 * @see org.ecore.base.genericDatasheet.DatasheetProperty#getSemanticID()
+	 * @see #getDatasheetProperty()
+	 * @generated
+	 */
+	EAttribute getDatasheetProperty_SemanticID();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.DatasheetProperty#getShortDescription <em>Short Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Short Description</em>'.
+	 * @see org.ecore.base.genericDatasheet.DatasheetProperty#getShortDescription()
+	 * @see #getDatasheetProperty()
+	 * @generated
+	 */
+	EAttribute getDatasheetProperty_ShortDescription();
+
+	/**
+	 * Returns the meta object for class '{@link org.ecore.base.genericDatasheet.GenericDatasheetModel <em>Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Model</em>'.
+	 * @see org.ecore.base.genericDatasheet.GenericDatasheetModel
+	 * @generated
+	 */
+	EClass getGenericDatasheetModel();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.ecore.base.genericDatasheet.GenericDatasheetModel#getElements <em>Elements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Elements</em>'.
+	 * @see org.ecore.base.genericDatasheet.GenericDatasheetModel#getElements()
+	 * @see #getGenericDatasheetModel()
+	 * @generated
+	 */
+	EReference getGenericDatasheetModel_Elements();
+
+	/**
+	 * Returns the meta object for class '{@link org.ecore.base.genericDatasheet.AbstractDatasheetElement <em>Abstract Datasheet Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Datasheet Element</em>'.
+	 * @see org.ecore.base.genericDatasheet.AbstractDatasheetElement
+	 * @generated
+	 */
+	EClass getAbstractDatasheetElement();
+
+	/**
+	 * Returns the meta object for class '{@link org.ecore.base.genericDatasheet.MandatoryDatasheetElement <em>Mandatory Datasheet Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mandatory Datasheet Element</em>'.
+	 * @see org.ecore.base.genericDatasheet.MandatoryDatasheetElement
+	 * @generated
+	 */
+	EClass getMandatoryDatasheetElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.MandatoryDatasheetElement#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.ecore.base.genericDatasheet.MandatoryDatasheetElement#getName()
+	 * @see #getMandatoryDatasheetElement()
+	 * @generated
+	 */
+	EAttribute getMandatoryDatasheetElement_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.ecore.base.genericDatasheet.MandatoryDatasheetElement#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.ecore.base.genericDatasheet.MandatoryDatasheetElement#getValue()
+	 * @see #getMandatoryDatasheetElement()
+	 * @generated
+	 */
+	EAttribute getMandatoryDatasheetElement_Value();
+
+	/**
+	 * Returns the meta object for enum '{@link org.ecore.base.genericDatasheet.DefaultDatasheetProperties <em>Default Datasheet Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Default Datasheet Properties</em>'.
+	 * @see org.ecore.base.genericDatasheet.DefaultDatasheetProperties
+	 * @generated
+	 */
+	EEnum getDefaultDatasheetProperties();
+
+	/**
+	 * Returns the meta object for enum '{@link org.ecore.base.genericDatasheet.TechnologyReadinessLevel <em>Technology Readiness Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Technology Readiness Level</em>'.
+	 * @see org.ecore.base.genericDatasheet.TechnologyReadinessLevel
+	 * @generated
+	 */
+	EEnum getTechnologyReadinessLevel();
+
+	/**
+	 * Returns the meta object for enum '{@link org.ecore.base.genericDatasheet.MandatoryDatasheetElementNames <em>Mandatory Datasheet Element Names</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Mandatory Datasheet Element Names</em>'.
+	 * @see org.ecore.base.genericDatasheet.MandatoryDatasheetElementNames
+	 * @generated
+	 */
+	EEnum getMandatoryDatasheetElementNames();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -473,116 +453,14 @@ public interface GenericDatasheetPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl <em>Generic Datasheet</em>}' class.
+		 * The meta object literal for the '{@link org.ecore.base.genericDatasheet.impl.DatasheetPropertyImpl <em>Datasheet Property</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetImpl
-		 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getGenericDatasheet()
+		 * @see org.ecore.base.genericDatasheet.impl.DatasheetPropertyImpl
+		 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getDatasheetProperty()
 		 * @generated
 		 */
-		EClass GENERIC_DATASHEET = eINSTANCE.getGenericDatasheet();
-
-		/**
-		 * The meta object literal for the '<em><b>License</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GENERIC_DATASHEET__LICENSE = eINSTANCE.getGenericDatasheet_License();
-
-		/**
-		 * The meta object literal for the '<em><b>Short Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GENERIC_DATASHEET__SHORT_DESCRIPTION = eINSTANCE.getGenericDatasheet_ShortDescription();
-
-		/**
-		 * The meta object literal for the '<em><b>Long Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GENERIC_DATASHEET__LONG_DESCRIPTION = eINSTANCE.getGenericDatasheet_LongDescription();
-
-		/**
-		 * The meta object literal for the '<em><b>Supplier Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GENERIC_DATASHEET__SUPPLIER_DESCRIPTION = eINSTANCE.getGenericDatasheet_SupplierDescription();
-
-		/**
-		 * The meta object literal for the '<em><b>Homepage</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GENERIC_DATASHEET__HOMEPAGE = eINSTANCE.getGenericDatasheet_Homepage();
-
-		/**
-		 * The meta object literal for the '<em><b>Base URI</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GENERIC_DATASHEET__BASE_URI = eINSTANCE.getGenericDatasheet_BaseURI();
-
-		/**
-		 * The meta object literal for the '<em><b>Trl</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GENERIC_DATASHEET__TRL = eINSTANCE.getGenericDatasheet_Trl();
-
-		/**
-		 * The meta object literal for the '{@link org.ecore.base.genericDatasheet.impl.AbstractLicenseImpl <em>Abstract License</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.ecore.base.genericDatasheet.impl.AbstractLicenseImpl
-		 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getAbstractLicense()
-		 * @generated
-		 */
-		EClass ABSTRACT_LICENSE = eINSTANCE.getAbstractLicense();
-
-		/**
-		 * The meta object literal for the '{@link org.ecore.base.genericDatasheet.impl.SpdxLicenseImpl <em>Spdx License</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.ecore.base.genericDatasheet.impl.SpdxLicenseImpl
-		 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getSpdxLicense()
-		 * @generated
-		 */
-		EClass SPDX_LICENSE = eINSTANCE.getSpdxLicense();
-
-		/**
-		 * The meta object literal for the '<em><b>License ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SPDX_LICENSE__LICENSE_ID = eINSTANCE.getSpdxLicense_LicenseID();
-
-		/**
-		 * The meta object literal for the '{@link org.ecore.base.genericDatasheet.impl.ProprietaryLicenseImpl <em>Proprietary License</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.ecore.base.genericDatasheet.impl.ProprietaryLicenseImpl
-		 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getProprietaryLicense()
-		 * @generated
-		 */
-		EClass PROPRIETARY_LICENSE = eINSTANCE.getProprietaryLicense();
-
-		/**
-		 * The meta object literal for the '<em><b>Full Text</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PROPRIETARY_LICENSE__FULL_TEXT = eINSTANCE.getProprietaryLicense_FullText();
+		EClass DATASHEET_PROPERTY = eINSTANCE.getDatasheetProperty();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -590,25 +468,123 @@ public interface GenericDatasheetPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROPRIETARY_LICENSE__NAME = eINSTANCE.getProprietaryLicense_Name();
+		EAttribute DATASHEET_PROPERTY__NAME = eINSTANCE.getDatasheetProperty_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROPRIETARY_LICENSE__URL = eINSTANCE.getProprietaryLicense_Url();
+		EAttribute DATASHEET_PROPERTY__VALUE = eINSTANCE.getDatasheetProperty_Value();
 
 		/**
-		 * The meta object literal for the '{@link org.ecore.base.genericDatasheet.TRL <em>TRL</em>}' enum.
+		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.ecore.base.genericDatasheet.TRL
-		 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getTRL()
 		 * @generated
 		 */
-		EEnum TRL = eINSTANCE.getTRL();
+		EAttribute DATASHEET_PROPERTY__UNIT = eINSTANCE.getDatasheetProperty_Unit();
+
+		/**
+		 * The meta object literal for the '<em><b>Semantic ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATASHEET_PROPERTY__SEMANTIC_ID = eINSTANCE.getDatasheetProperty_SemanticID();
+
+		/**
+		 * The meta object literal for the '<em><b>Short Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATASHEET_PROPERTY__SHORT_DESCRIPTION = eINSTANCE.getDatasheetProperty_ShortDescription();
+
+		/**
+		 * The meta object literal for the '{@link org.ecore.base.genericDatasheet.impl.GenericDatasheetModelImpl <em>Model</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetModelImpl
+		 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getGenericDatasheetModel()
+		 * @generated
+		 */
+		EClass GENERIC_DATASHEET_MODEL = eINSTANCE.getGenericDatasheetModel();
+
+		/**
+		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GENERIC_DATASHEET_MODEL__ELEMENTS = eINSTANCE.getGenericDatasheetModel_Elements();
+
+		/**
+		 * The meta object literal for the '{@link org.ecore.base.genericDatasheet.impl.AbstractDatasheetElementImpl <em>Abstract Datasheet Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecore.base.genericDatasheet.impl.AbstractDatasheetElementImpl
+		 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getAbstractDatasheetElement()
+		 * @generated
+		 */
+		EClass ABSTRACT_DATASHEET_ELEMENT = eINSTANCE.getAbstractDatasheetElement();
+
+		/**
+		 * The meta object literal for the '{@link org.ecore.base.genericDatasheet.impl.MandatoryDatasheetElementImpl <em>Mandatory Datasheet Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecore.base.genericDatasheet.impl.MandatoryDatasheetElementImpl
+		 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getMandatoryDatasheetElement()
+		 * @generated
+		 */
+		EClass MANDATORY_DATASHEET_ELEMENT = eINSTANCE.getMandatoryDatasheetElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MANDATORY_DATASHEET_ELEMENT__NAME = eINSTANCE.getMandatoryDatasheetElement_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MANDATORY_DATASHEET_ELEMENT__VALUE = eINSTANCE.getMandatoryDatasheetElement_Value();
+
+		/**
+		 * The meta object literal for the '{@link org.ecore.base.genericDatasheet.DefaultDatasheetProperties <em>Default Datasheet Properties</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecore.base.genericDatasheet.DefaultDatasheetProperties
+		 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getDefaultDatasheetProperties()
+		 * @generated
+		 */
+		EEnum DEFAULT_DATASHEET_PROPERTIES = eINSTANCE.getDefaultDatasheetProperties();
+
+		/**
+		 * The meta object literal for the '{@link org.ecore.base.genericDatasheet.TechnologyReadinessLevel <em>Technology Readiness Level</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecore.base.genericDatasheet.TechnologyReadinessLevel
+		 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getTechnologyReadinessLevel()
+		 * @generated
+		 */
+		EEnum TECHNOLOGY_READINESS_LEVEL = eINSTANCE.getTechnologyReadinessLevel();
+
+		/**
+		 * The meta object literal for the '{@link org.ecore.base.genericDatasheet.MandatoryDatasheetElementNames <em>Mandatory Datasheet Element Names</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.ecore.base.genericDatasheet.MandatoryDatasheetElementNames
+		 * @see org.ecore.base.genericDatasheet.impl.GenericDatasheetPackageImpl#getMandatoryDatasheetElementNames()
+		 * @generated
+		 */
+		EEnum MANDATORY_DATASHEET_ELEMENT_NAMES = eINSTANCE.getMandatoryDatasheetElementNames();
 
 	}
 

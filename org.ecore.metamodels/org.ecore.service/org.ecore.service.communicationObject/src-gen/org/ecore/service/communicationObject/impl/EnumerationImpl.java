@@ -67,6 +67,7 @@ public class EnumerationImpl extends AbstractCommElementImpl implements Enumerat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<EnumerationElement> getEnums() {
 		if (enums == null) {
 			enums = new EObjectContainmentEList<EnumerationElement>(EnumerationElement.class, this,

@@ -78,6 +78,7 @@ public class ParameterDefinitionFactoryImpl extends EFactoryImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParamDefModel createParamDefModel() {
 		ParamDefModelImpl paramDefModel = new ParamDefModelImpl();
 		return paramDefModel;
@@ -88,6 +89,7 @@ public class ParameterDefinitionFactoryImpl extends EFactoryImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterSetRepository createParameterSetRepository() {
 		ParameterSetRepositoryImpl parameterSetRepository = new ParameterSetRepositoryImpl();
 		return parameterSetRepository;
@@ -98,6 +100,7 @@ public class ParameterDefinitionFactoryImpl extends EFactoryImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterSetDefinition createParameterSetDefinition() {
 		ParameterSetDefinitionImpl parameterSetDefinition = new ParameterSetDefinitionImpl();
 		return parameterSetDefinition;
@@ -108,6 +111,7 @@ public class ParameterDefinitionFactoryImpl extends EFactoryImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterDefinition createParameterDefinition() {
 		ParameterDefinitionImpl parameterDefinition = new ParameterDefinitionImpl();
 		return parameterDefinition;
@@ -118,6 +122,7 @@ public class ParameterDefinitionFactoryImpl extends EFactoryImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TriggerDefinition createTriggerDefinition() {
 		TriggerDefinitionImpl triggerDefinition = new TriggerDefinitionImpl();
 		return triggerDefinition;
@@ -128,6 +133,7 @@ public class ParameterDefinitionFactoryImpl extends EFactoryImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParamDefRepoImport createParamDefRepoImport() {
 		ParamDefRepoImportImpl paramDefRepoImport = new ParamDefRepoImportImpl();
 		return paramDefRepoImport;
@@ -138,6 +144,7 @@ public class ParameterDefinitionFactoryImpl extends EFactoryImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterDefinitionPackage getParameterDefinitionPackage() {
 		return (ParameterDefinitionPackage) getEPackage();
 	}

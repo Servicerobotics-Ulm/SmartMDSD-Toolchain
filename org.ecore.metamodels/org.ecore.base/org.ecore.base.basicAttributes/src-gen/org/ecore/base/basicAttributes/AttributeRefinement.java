@@ -2,7 +2,7 @@
  */
 package org.ecore.base.basicAttributes;
 
-import org.eclipse.emf.ecore.EObject;
+import org.ecore.base.documentation.AbstractDocumentedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface AttributeRefinement extends EObject {
+public interface AttributeRefinement extends AbstractDocumentedElement {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

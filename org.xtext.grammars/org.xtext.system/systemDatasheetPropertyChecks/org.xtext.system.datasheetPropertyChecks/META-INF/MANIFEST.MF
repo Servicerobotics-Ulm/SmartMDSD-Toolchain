@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.system.datasheetPropertyChecks
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.system.datasheetPropertyChecks
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.system.datasheetPropertyChecks; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.ecore.system.datasheetPropertyChecks,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.ecore.base.genericDatasheet,
+ org.smartmdsd.metadata.indexer,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.system.datasheetPropertyChecks.parser.antlr.internal,
+ org.xtext.system.datasheetPropertyChecks.scoping,
+ org.xtext.system.datasheetPropertyChecks.formatting2,
+ org.xtext.system.datasheetPropertyChecks,
+ org.xtext.system.datasheetPropertyChecks.validation,
+ org.xtext.system.datasheetPropertyChecks.serializer,
+ org.xtext.system.datasheetPropertyChecks.services,
+ org.xtext.system.datasheetPropertyChecks.generator,
+ org.xtext.system.datasheetPropertyChecks.parser.antlr
+Import-Package: org.apache.log4j

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.ecore.base.basicAttributes.BasicAttributesPackage;
 
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.service.parameterDefinition.AbstractParameter;
 import org.ecore.service.parameterDefinition.ParamDefModel;
 import org.ecore.service.parameterDefinition.ParamDefRepoImport;
@@ -105,7 +106,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ParameterDefinitionPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -121,14 +122,16 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 					.getEPackage(ParameterDefinitionPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ParameterDefinitionPackageImpl theParameterDefinitionPackage = (ParameterDefinitionPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof ParameterDefinitionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new ParameterDefinitionPackageImpl());
+		Object registeredParameterDefinitionPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ParameterDefinitionPackageImpl theParameterDefinitionPackage = registeredParameterDefinitionPackage instanceof ParameterDefinitionPackageImpl
+				? (ParameterDefinitionPackageImpl) registeredParameterDefinitionPackage
+				: new ParameterDefinitionPackageImpl();
 
 		isInited = true;
 
 		// Initialize simple dependencies
 		BasicAttributesPackage.eINSTANCE.eClass();
+		DocumentationPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theParameterDefinitionPackage.createPackageContents();
@@ -149,6 +152,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParamDefModel() {
 		return paramDefModelEClass;
 	}
@@ -158,6 +162,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParamDefModel_Repository() {
 		return (EReference) paramDefModelEClass.getEStructuralFeatures().get(0);
 	}
@@ -167,6 +172,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParamDefModel_Imports() {
 		return (EReference) paramDefModelEClass.getEStructuralFeatures().get(1);
 	}
@@ -176,6 +182,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterSetRepository() {
 		return parameterSetRepositoryEClass;
 	}
@@ -185,6 +192,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameterSetRepository_Name() {
 		return (EAttribute) parameterSetRepositoryEClass.getEStructuralFeatures().get(0);
 	}
@@ -194,6 +202,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterSetRepository_Sets() {
 		return (EReference) parameterSetRepositoryEClass.getEStructuralFeatures().get(1);
 	}
@@ -203,6 +212,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterSetDefinition() {
 		return parameterSetDefinitionEClass;
 	}
@@ -212,6 +222,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameterSetDefinition_Name() {
 		return (EAttribute) parameterSetDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -221,6 +232,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterSetDefinition_Parameters() {
 		return (EReference) parameterSetDefinitionEClass.getEStructuralFeatures().get(1);
 	}
@@ -230,6 +242,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterSetDefinition_Extends() {
 		return (EReference) parameterSetDefinitionEClass.getEStructuralFeatures().get(2);
 	}
@@ -239,6 +252,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractParameter() {
 		return abstractParameterEClass;
 	}
@@ -248,6 +262,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractParameter_Name() {
 		return (EAttribute) abstractParameterEClass.getEStructuralFeatures().get(0);
 	}
@@ -257,6 +272,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractParameter_Attributes() {
 		return (EReference) abstractParameterEClass.getEStructuralFeatures().get(1);
 	}
@@ -266,6 +282,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterDefinition() {
 		return parameterDefinitionEClass;
 	}
@@ -275,6 +292,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTriggerDefinition() {
 		return triggerDefinitionEClass;
 	}
@@ -284,6 +302,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParamDefRepoImport() {
 		return paramDefRepoImportEClass;
 	}
@@ -293,6 +312,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParamDefRepoImport_ImportedNamespace() {
 		return (EAttribute) paramDefRepoImportEClass.getEStructuralFeatures().get(0);
 	}
@@ -302,6 +322,7 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParameterDefinitionFactory getParameterDefinitionFactory() {
 		return (ParameterDefinitionFactory) getEFactoryInstance();
 	}
@@ -376,6 +397,8 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		DocumentationPackage theDocumentationPackage = (DocumentationPackage) EPackage.Registry.INSTANCE
+				.getEPackage(DocumentationPackage.eNS_URI);
 		BasicAttributesPackage theBasicAttributesPackage = (BasicAttributesPackage) EPackage.Registry.INSTANCE
 				.getEPackage(BasicAttributesPackage.eNS_URI);
 
@@ -384,6 +407,9 @@ public class ParameterDefinitionPackageImpl extends EPackageImpl implements Para
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		parameterSetRepositoryEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
+		parameterSetDefinitionEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
+		abstractParameterEClass.getESuperTypes().add(theDocumentationPackage.getAbstractDocumentedElement());
 		parameterDefinitionEClass.getESuperTypes().add(this.getAbstractParameter());
 		triggerDefinitionEClass.getESuperTypes().add(this.getAbstractParameter());
 

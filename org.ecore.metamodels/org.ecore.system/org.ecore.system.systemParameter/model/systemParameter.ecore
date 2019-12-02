@@ -19,7 +19,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentParam" lowerBound="1"
         eType="ecore:EClass ../../org.ecore.component.componentParameter/model/componentParameter.ecore#//ComponentParameter"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterRefinement">
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterRefinement" eSuperTypes="../../org.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
         eType="ecore:EClass ../../org.ecore.component.componentParameter/model/componentParameter.ecore#//ComponentParameterBase"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"

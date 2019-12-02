@@ -132,6 +132,7 @@ public class NetworkInterfaceImpl extends AbstractTPSubNodeImpl implements Netwo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getKind() {
 		return kind;
 	}
@@ -141,6 +142,7 @@ public class NetworkInterfaceImpl extends AbstractTPSubNodeImpl implements Netwo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setKind(String newKind) {
 		String oldKind = kind;
 		kind = newKind;
@@ -154,6 +156,7 @@ public class NetworkInterfaceImpl extends AbstractTPSubNodeImpl implements Netwo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getHostAddress() {
 		return hostAddress;
 	}
@@ -163,6 +166,7 @@ public class NetworkInterfaceImpl extends AbstractTPSubNodeImpl implements Netwo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHostAddress(String newHostAddress) {
 		String oldHostAddress = hostAddress;
 		hostAddress = newHostAddress;
@@ -176,6 +180,7 @@ public class NetworkInterfaceImpl extends AbstractTPSubNodeImpl implements Netwo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getPortNr() {
 		return portNr;
 	}
@@ -185,6 +190,7 @@ public class NetworkInterfaceImpl extends AbstractTPSubNodeImpl implements Netwo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPortNr(int newPortNr) {
 		int oldPortNr = portNr;
 		portNr = newPortNr;
@@ -198,6 +204,7 @@ public class NetworkInterfaceImpl extends AbstractTPSubNodeImpl implements Netwo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -207,6 +214,7 @@ public class NetworkInterfaceImpl extends AbstractTPSubNodeImpl implements Netwo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -313,7 +321,7 @@ public class NetworkInterfaceImpl extends AbstractTPSubNodeImpl implements Netwo
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (kind: ");
 		result.append(kind);
 		result.append(", hostAddress: ");

@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.system.systemDatasheet
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.system.systemDatasheet
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.system.systemDatasheet; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.ecore.system.systemDatasheet,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.xtext.base.genericDatasheet,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.system.systemDatasheet,
+ org.xtext.system.systemDatasheet.generator,
+ org.xtext.system.systemDatasheet.parser.antlr.internal,
+ org.xtext.system.systemDatasheet.formatting2,
+ org.xtext.system.systemDatasheet.parser.antlr,
+ org.xtext.system.systemDatasheet.validation,
+ org.xtext.system.systemDatasheet.serializer,
+ org.xtext.system.systemDatasheet.scoping,
+ org.xtext.system.systemDatasheet.services
+Import-Package: org.apache.log4j

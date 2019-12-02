@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CoordinationInterfaceGenerator
 Bundle-SymbolicName: org.xtend.coordinationInterface.generator;singleton:=true
-Bundle-Version: 3.7.0
+Bundle-Version: 3.7.0.qualifier
 Automatic-Module-Name: org.xtend.coordinationInterface.generator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: Servicerobotics Ulm
@@ -16,6 +16,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.xtext,
  org.eclipse.core.commands,
  org.eclipse.ui.workbench,
- org.smartsoft.utils,
  org.ecore.component.coordinationExtension,
  org.xtext.service.serviceDefinition

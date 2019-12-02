@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.system.componentArchitecture.ComponentArchitecturePackage;
 
 /**
@@ -169,13 +170,22 @@ public interface SystemParameterPackage extends EPackage {
 	int PARAMETER_REFINEMENT = 2;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_REFINEMENT__DOCUMENTATION = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT__DOCUMENTATION;
+
+	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_REFINEMENT__PARAMETER = 0;
+	int PARAMETER_REFINEMENT__PARAMETER = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -184,7 +194,7 @@ public interface SystemParameterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_REFINEMENT__ATTRIBUTES = 1;
+	int PARAMETER_REFINEMENT__ATTRIBUTES = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Refinement</em>' class.
@@ -193,7 +203,7 @@ public interface SystemParameterPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_REFINEMENT_FEATURE_COUNT = 2;
+	int PARAMETER_REFINEMENT_FEATURE_COUNT = DocumentationPackage.ABSTRACT_DOCUMENTED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.ecore.system.systemParameter.impl.ParameterStructInstanceImpl <em>Parameter Struct Instance</em>}' class.

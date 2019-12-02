@@ -8,19 +8,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
         eType="#//ParamDefRepoImport" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterSetRepository">
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterSetRepository" eSuperTypes="../../org.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sets" upperBound="-1" eType="#//ParameterSetDefinition"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterSetDefinition">
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterSetDefinition" eSuperTypes="../../org.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//AbstractParameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="extends" upperBound="-1"
         eType="#//ParameterSetDefinition"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractParameter" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractParameter" abstract="true" eSuperTypes="../../org.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="ecore:EClass ../../org.ecore.base.basicAttributes/model/basicAttributes.ecore#//AttributeDefinition"

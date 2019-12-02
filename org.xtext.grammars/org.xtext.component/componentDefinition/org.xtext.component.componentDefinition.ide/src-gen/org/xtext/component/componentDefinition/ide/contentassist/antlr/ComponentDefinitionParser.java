@@ -1,11 +1,10 @@
-//===================================================================================
+//================================================================
 //
-//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz, Christian Schlegel
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
 //
 //        lotz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //        lutz@hs-ulm.de
-//        schlegel@hs-ulm.de
 //
 //        Servicerobotik Ulm
 //        Christian Schlegel
@@ -16,32 +15,7 @@
 //
 //  This file is part of the SmartMDSD Toolchain V3. 
 //
-//  Redistribution and use in source and binary forms, with or without modification, 
-//  are permitted provided that the following conditions are met:
-//  
-//  1. Redistributions of source code must retain the above copyright notice, 
-//     this list of conditions and the following disclaimer.
-//  
-//  2. Redistributions in binary form must reproduce the above copyright notice, 
-//     this list of conditions and the following disclaimer in the documentation 
-//     and/or other materials provided with the distribution.
-//  
-//  3. Neither the name of the copyright holder nor the names of its contributors 
-//     may be used to endorse or promote products derived from this software 
-//     without specific prior written permission.
-//  
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-//  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-//  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
-//  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
-//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
-//  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-//  OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//===================================================================================
+//================================================================
 package org.xtext.component.componentDefinition.ide.contentassist.antlr;
 
 import com.google.common.collect.ImmutableMap;
@@ -88,7 +62,7 @@ public class ComponentDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComponentDefModelAccess().getGroup(), "rule__ComponentDefModel__Group__0");
 			builder.put(grammarAccess.getServiceRepoImportAccess().getGroup(), "rule__ServiceRepoImport__Group__0");
 			builder.put(grammarAccess.getComponentDefinitionAccess().getGroup(), "rule__ComponentDefinition__Group__0");
-			builder.put(grammarAccess.getComponentDefinitionAccess().getGroup_2(), "rule__ComponentDefinition__Group_2__0");
+			builder.put(grammarAccess.getComponentDefinitionAccess().getGroup_3(), "rule__ComponentDefinition__Group_3__0");
 			builder.put(grammarAccess.getRequestPortAccess().getGroup(), "rule__RequestPort__Group__0");
 			builder.put(grammarAccess.getOutputPortAccess().getGroup(), "rule__OutputPort__Group__0");
 			builder.put(grammarAccess.getAnswerPortAccess().getGroup(), "rule__AnswerPort__Group__0");
@@ -123,8 +97,8 @@ public class ComponentDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSkillRealizationsRefAccess().getGroup(), "rule__SkillRealizationsRef__Group__0");
 			builder.put(grammarAccess.getCommunicationServiceUsageRealizationAccess().getGroup(), "rule__CommunicationServiceUsageRealization__Group__0");
 			builder.put(grammarAccess.getPublicOperationModeAccess().getGroup(), "rule__PublicOperationMode__Group__0");
-			builder.put(grammarAccess.getPublicOperationModeAccess().getGroup_5(), "rule__PublicOperationMode__Group_5__0");
-			builder.put(grammarAccess.getPublicOperationModeAccess().getGroup_5_3(), "rule__PublicOperationMode__Group_5_3__0");
+			builder.put(grammarAccess.getPublicOperationModeAccess().getGroup_6(), "rule__PublicOperationMode__Group_6__0");
+			builder.put(grammarAccess.getPublicOperationModeAccess().getGroup_6_3(), "rule__PublicOperationMode__Group_6_3__0");
 			builder.put(grammarAccess.getPrivateOperationModeAccess().getGroup(), "rule__PrivateOperationMode__Group__0");
 			builder.put(grammarAccess.getCoordinationMasterPortAccess().getGroup(), "rule__CoordinationMasterPort__Group__0");
 			builder.put(grammarAccess.getComponentParametersRefAccess().getGroup(), "rule__ComponentParametersRef__Group__0");
@@ -143,25 +117,31 @@ public class ComponentDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCORBA_SmartSoftAccess().getGroup_2(), "rule__CORBA_SmartSoft__Group_2__0");
 			builder.put(grammarAccess.getDDS_SmartSoftAccess().getGroup(), "rule__DDS_SmartSoft__Group__0");
 			builder.put(grammarAccess.getDDS_SmartSoftAccess().getGroup_2(), "rule__DDS_SmartSoft__Group_2__0");
+			builder.put(grammarAccess.getAbstractDocumentedElementAccess().getGroup(), "rule__AbstractDocumentedElement__Group__0");
 			builder.put(grammarAccess.getComponentDefModelAccess().getImportsAssignment_1(), "rule__ComponentDefModel__ImportsAssignment_1");
 			builder.put(grammarAccess.getComponentDefModelAccess().getComponentAssignment_2(), "rule__ComponentDefModel__ComponentAssignment_2");
 			builder.put(grammarAccess.getServiceRepoImportAccess().getImportedNamespaceAssignment_1(), "rule__ServiceRepoImport__ImportedNamespaceAssignment_1");
-			builder.put(grammarAccess.getComponentDefinitionAccess().getNameAssignment_1(), "rule__ComponentDefinition__NameAssignment_1");
-			builder.put(grammarAccess.getComponentDefinitionAccess().getLogoAssignment_2_1(), "rule__ComponentDefinition__LogoAssignment_2_1");
-			builder.put(grammarAccess.getComponentDefinitionAccess().getElementsAssignment_4(), "rule__ComponentDefinition__ElementsAssignment_4");
-			builder.put(grammarAccess.getRequestPortAccess().getNameAssignment_1(), "rule__RequestPort__NameAssignment_1");
-			builder.put(grammarAccess.getRequestPortAccess().getServiceAssignment_3(), "rule__RequestPort__ServiceAssignment_3");
-			builder.put(grammarAccess.getRequestPortAccess().getExtensionsAssignment_5(), "rule__RequestPort__ExtensionsAssignment_5");
-			builder.put(grammarAccess.getOutputPortAccess().getNameAssignment_1(), "rule__OutputPort__NameAssignment_1");
-			builder.put(grammarAccess.getOutputPortAccess().getServiceAssignment_3(), "rule__OutputPort__ServiceAssignment_3");
-			builder.put(grammarAccess.getOutputPortAccess().getActivityAssignment_5(), "rule__OutputPort__ActivityAssignment_5");
-			builder.put(grammarAccess.getOutputPortAccess().getExtensionsAssignment_7(), "rule__OutputPort__ExtensionsAssignment_7");
-			builder.put(grammarAccess.getAnswerPortAccess().getNameAssignment_1(), "rule__AnswerPort__NameAssignment_1");
-			builder.put(grammarAccess.getAnswerPortAccess().getServiceAssignment_3(), "rule__AnswerPort__ServiceAssignment_3");
-			builder.put(grammarAccess.getAnswerPortAccess().getExtensionsAssignment_5(), "rule__AnswerPort__ExtensionsAssignment_5");
-			builder.put(grammarAccess.getInputPortAccess().getNameAssignment_1(), "rule__InputPort__NameAssignment_1");
-			builder.put(grammarAccess.getInputPortAccess().getServiceAssignment_3(), "rule__InputPort__ServiceAssignment_3");
-			builder.put(grammarAccess.getInputPortAccess().getExtensionsAssignment_5(), "rule__InputPort__ExtensionsAssignment_5");
+			builder.put(grammarAccess.getComponentDefinitionAccess().getDocumentationAssignment_0(), "rule__ComponentDefinition__DocumentationAssignment_0");
+			builder.put(grammarAccess.getComponentDefinitionAccess().getNameAssignment_2(), "rule__ComponentDefinition__NameAssignment_2");
+			builder.put(grammarAccess.getComponentDefinitionAccess().getLogoAssignment_3_1(), "rule__ComponentDefinition__LogoAssignment_3_1");
+			builder.put(grammarAccess.getComponentDefinitionAccess().getElementsAssignment_5(), "rule__ComponentDefinition__ElementsAssignment_5");
+			builder.put(grammarAccess.getRequestPortAccess().getDocumentationAssignment_0(), "rule__RequestPort__DocumentationAssignment_0");
+			builder.put(grammarAccess.getRequestPortAccess().getNameAssignment_2(), "rule__RequestPort__NameAssignment_2");
+			builder.put(grammarAccess.getRequestPortAccess().getServiceAssignment_4(), "rule__RequestPort__ServiceAssignment_4");
+			builder.put(grammarAccess.getRequestPortAccess().getExtensionsAssignment_6(), "rule__RequestPort__ExtensionsAssignment_6");
+			builder.put(grammarAccess.getOutputPortAccess().getDocumentationAssignment_0(), "rule__OutputPort__DocumentationAssignment_0");
+			builder.put(grammarAccess.getOutputPortAccess().getNameAssignment_2(), "rule__OutputPort__NameAssignment_2");
+			builder.put(grammarAccess.getOutputPortAccess().getServiceAssignment_4(), "rule__OutputPort__ServiceAssignment_4");
+			builder.put(grammarAccess.getOutputPortAccess().getActivityAssignment_6(), "rule__OutputPort__ActivityAssignment_6");
+			builder.put(grammarAccess.getOutputPortAccess().getExtensionsAssignment_8(), "rule__OutputPort__ExtensionsAssignment_8");
+			builder.put(grammarAccess.getAnswerPortAccess().getDocumentationAssignment_0(), "rule__AnswerPort__DocumentationAssignment_0");
+			builder.put(grammarAccess.getAnswerPortAccess().getNameAssignment_2(), "rule__AnswerPort__NameAssignment_2");
+			builder.put(grammarAccess.getAnswerPortAccess().getServiceAssignment_4(), "rule__AnswerPort__ServiceAssignment_4");
+			builder.put(grammarAccess.getAnswerPortAccess().getExtensionsAssignment_6(), "rule__AnswerPort__ExtensionsAssignment_6");
+			builder.put(grammarAccess.getInputPortAccess().getDocumentationAssignment_0(), "rule__InputPort__DocumentationAssignment_0");
+			builder.put(grammarAccess.getInputPortAccess().getNameAssignment_2(), "rule__InputPort__NameAssignment_2");
+			builder.put(grammarAccess.getInputPortAccess().getServiceAssignment_4(), "rule__InputPort__ServiceAssignment_4");
+			builder.put(grammarAccess.getInputPortAccess().getExtensionsAssignment_6(), "rule__InputPort__ExtensionsAssignment_6");
 			builder.put(grammarAccess.getSupportedMiddlewareAccess().getDefaultAssignment_1(), "rule__SupportedMiddleware__DefaultAssignment_1");
 			builder.put(grammarAccess.getSupportedMiddlewareAccess().getMiddlewareAssignment_2(), "rule__SupportedMiddleware__MiddlewareAssignment_2");
 			builder.put(grammarAccess.getActivityAccess().getNameAssignment_1(), "rule__Activity__NameAssignment_1");
@@ -201,16 +181,18 @@ public class ComponentDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOpcUaReadServerAccess().getPortNumberAssignment_4_1(), "rule__OpcUaReadServer__PortNumberAssignment_4_1");
 			builder.put(grammarAccess.getMixedPortROSAccess().getPortAssignment_1(), "rule__MixedPortROS__PortAssignment_1");
 			builder.put(grammarAccess.getMixedPortYARPAccess().getPortAssignment_1(), "rule__MixedPortYARP__PortAssignment_1");
-			builder.put(grammarAccess.getCoordinationSlavePortAccess().getNameAssignment_1(), "rule__CoordinationSlavePort__NameAssignment_1");
-			builder.put(grammarAccess.getCoordinationSlavePortAccess().getServiceAssignment_3(), "rule__CoordinationSlavePort__ServiceAssignment_3");
-			builder.put(grammarAccess.getCoordinationSlavePortAccess().getElementsAssignment_5(), "rule__CoordinationSlavePort__ElementsAssignment_5");
+			builder.put(grammarAccess.getCoordinationSlavePortAccess().getDocumentationAssignment_0(), "rule__CoordinationSlavePort__DocumentationAssignment_0");
+			builder.put(grammarAccess.getCoordinationSlavePortAccess().getNameAssignment_2(), "rule__CoordinationSlavePort__NameAssignment_2");
+			builder.put(grammarAccess.getCoordinationSlavePortAccess().getServiceAssignment_4(), "rule__CoordinationSlavePort__ServiceAssignment_4");
+			builder.put(grammarAccess.getCoordinationSlavePortAccess().getElementsAssignment_6(), "rule__CoordinationSlavePort__ElementsAssignment_6");
 			builder.put(grammarAccess.getSkillRealizationsRefAccess().getSkillRealizationCoordModuleRefAssignment_1(), "rule__SkillRealizationsRef__SkillRealizationCoordModuleRefAssignment_1");
 			builder.put(grammarAccess.getCommunicationServiceUsageRealizationAccess().getServiceUsageAssignment_1(), "rule__CommunicationServiceUsageRealization__ServiceUsageAssignment_1");
 			builder.put(grammarAccess.getCommunicationServiceUsageRealizationAccess().getComponentPortAssignment_3(), "rule__CommunicationServiceUsageRealization__ComponentPortAssignment_3");
-			builder.put(grammarAccess.getPublicOperationModeAccess().getIsDefaultInitAssignment_1(), "rule__PublicOperationMode__IsDefaultInitAssignment_1");
-			builder.put(grammarAccess.getPublicOperationModeAccess().getModeAssignment_3(), "rule__PublicOperationMode__ModeAssignment_3");
-			builder.put(grammarAccess.getPublicOperationModeAccess().getActivatesAssignment_5_2(), "rule__PublicOperationMode__ActivatesAssignment_5_2");
-			builder.put(grammarAccess.getPublicOperationModeAccess().getActivatesAssignment_5_3_1(), "rule__PublicOperationMode__ActivatesAssignment_5_3_1");
+			builder.put(grammarAccess.getPublicOperationModeAccess().getDocumentationAssignment_1(), "rule__PublicOperationMode__DocumentationAssignment_1");
+			builder.put(grammarAccess.getPublicOperationModeAccess().getIsDefaultInitAssignment_2(), "rule__PublicOperationMode__IsDefaultInitAssignment_2");
+			builder.put(grammarAccess.getPublicOperationModeAccess().getModeAssignment_4(), "rule__PublicOperationMode__ModeAssignment_4");
+			builder.put(grammarAccess.getPublicOperationModeAccess().getActivatesAssignment_6_2(), "rule__PublicOperationMode__ActivatesAssignment_6_2");
+			builder.put(grammarAccess.getPublicOperationModeAccess().getActivatesAssignment_6_3_1(), "rule__PublicOperationMode__ActivatesAssignment_6_3_1");
 			builder.put(grammarAccess.getPrivateOperationModeAccess().getNameAssignment_1(), "rule__PrivateOperationMode__NameAssignment_1");
 			builder.put(grammarAccess.getCoordinationMasterPortAccess().getNameAssignment_1(), "rule__CoordinationMasterPort__NameAssignment_1");
 			builder.put(grammarAccess.getCoordinationMasterPortAccess().getServiceAssignment_3(), "rule__CoordinationMasterPort__ServiceAssignment_3");
@@ -220,6 +202,7 @@ public class ComponentDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOpcUa_SeRoNetAccess().getDescriptionAssignment_2_1(), "rule__OpcUa_SeRoNet__DescriptionAssignment_2_1");
 			builder.put(grammarAccess.getCORBA_SmartSoftAccess().getDescriptionAssignment_2_1(), "rule__CORBA_SmartSoft__DescriptionAssignment_2_1");
 			builder.put(grammarAccess.getDDS_SmartSoftAccess().getDescriptionAssignment_2_1(), "rule__DDS_SmartSoft__DescriptionAssignment_2_1");
+			builder.put(grammarAccess.getAbstractDocumentedElementAccess().getDocumentationAssignment_1(), "rule__AbstractDocumentedElement__DocumentationAssignment_1");
 			builder.put(grammarAccess.getInputLinkExtensionAccess().getUnorderedGroup_4(), "rule__InputLinkExtension__UnorderedGroup_4");
 			builder.put(grammarAccess.getActivationConstraintsAccess().getUnorderedGroup_7(), "rule__ActivationConstraints__UnorderedGroup_7");
 			builder.put(grammarAccess.getOpcUaDeviceClientAccess().getUnorderedGroup_3(), "rule__OpcUaDeviceClient__UnorderedGroup_3");

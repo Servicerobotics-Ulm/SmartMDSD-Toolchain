@@ -1,4 +1,4 @@
-//--------------------------------------------------------------------------
+//===============================================================
 //
 //  Copyright (C) 2016 Alex Lotz, Matthias Lutz, Dennis Stampfer
 //
@@ -6,7 +6,7 @@
 //        lutz@hs-ulm.de
 //        stampfer@hs-ulm.de
 //
-//        Servicerobotik Ulm
+//        Servicerobotics Ulm
 //        Christian Schlegel
 //        University of Applied Sciences
 //        Prittwitzstr. 10
@@ -15,22 +15,7 @@
 //
 //  This file is part of the SmartSoft MDSD Toolchain. 
 //
-//  This library is free software; you can redistribute it and/or
-//  modify it under the terms of the GNU Lesser General Public
-//  License as published by the Free Software Foundation; either
-//  version 2.1 of the License, or (at your option) any later version.
-//
-//  This library is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-//  Lesser General Public License for more details.
-//
-//  You should have received a copy of the GNU Lesser General Public
-//  License along with this library; if not, write to the Free Software
-//  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-//
-//--------------------------------------------------------------------------
-
+//===============================================================
 package org.xtend.smartsoft.generator.component
 
 import org.ecore.component.componentDefinition.ComponentDefinition
@@ -187,7 +172,7 @@ class ComponentGenHelpers {
 		if(service instanceof InputPort) {
 			val pattern = service.pattern
 			if(pattern instanceof EventPattern) {
-				return "Smart::EventInputType<"+comm.getFullyQualifiedNameCpp(pattern.eventType)+",SmartACE::EventId>"
+				return "Smart::EventInputType<"+comm.getFullyQualifiedNameCpp(pattern.eventType)+">"
 			}
 		}
 		return service.getCommObjectCppList(false)
@@ -202,7 +187,7 @@ class ComponentGenHelpers {
 		val pattern = port.pattern
 		switch(pattern) {
 			PushPattern: '''Smart::IPushServerPattern<«pattern.getCommObjectCppList(true)»>'''
-			EventPattern: '''Smart::IEventServerPattern<«pattern.getCommObjectCppList(true)»,SmartACE::EventId>'''
+			EventPattern: '''Smart::IEventServerPattern<«pattern.getCommObjectCppList(true)»>'''
 			SendPattern: '''Smart::ISendClientPattern<«pattern.getCommObjectCppList(true)»>'''
 			default: ""
 		}
@@ -212,7 +197,7 @@ class ComponentGenHelpers {
 		val pattern = port.pattern
 		switch (pattern) {
 			PushPattern: '''Smart::IPushClientPattern<«pattern.getCommObjectCppList(false)»>'''
-			EventPattern: '''Smart::IEventClientPattern<«pattern.getCommObjectCppList(false)»,SmartACE::EventId>'''
+			EventPattern: '''Smart::IEventClientPattern<«pattern.getCommObjectCppList(false)»>'''
 			SendPattern: '''Smart::ISendServerPattern<«pattern.getCommObjectCppList(false)»>'''
 			default: ""
 		}
@@ -220,12 +205,12 @@ class ComponentGenHelpers {
 	
 	def dispatch String getPortDefinition(RequestPort port) {
 		val pattern = port.pattern
-		'''Smart::IQueryClientPattern<«pattern.getCommObjectCppList(true)»,SmartACE::QueryId>'''
+		'''Smart::IQueryClientPattern<«pattern.getCommObjectCppList(true)»>'''
 	}
 	
 	def dispatch String getPortDefinition(AnswerPort port) {
 		val pattern = port.pattern
-		'''Smart::IQueryServerPattern<«pattern.getCommObjectCppList(false)»,SmartACE::QueryId>'''
+		'''Smart::IQueryServerPattern<«pattern.getCommObjectCppList(false)»>'''
 	}
 	
 	def dispatch String getPortImplementation(OutputPort port) {

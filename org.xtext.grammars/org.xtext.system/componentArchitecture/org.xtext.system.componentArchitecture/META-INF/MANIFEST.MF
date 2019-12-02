@@ -18,7 +18,8 @@ Require-Bundle: org.ecore.system.componentArchitecture,
  org.ecore.system.compArchSeronetExtension,
  org.ecore.system.compArchBehaviorExtension,
  org.eclipse.core.runtime,
- org.ecore.system.systemParameter
+ org.ecore.system.systemParameter,
+ org.xtext.base.docuterminals
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.system.componentArchitecture.validation,
  org.xtext.system.componentArchitecture.parser.antlr,
@@ -30,3 +31,4 @@ Export-Package: org.xtext.system.componentArchitecture.validation,
  org.xtext.system.componentArchitecture.formatting2,
  org.xtext.system.componentArchitecture.scoping
 Import-Package: org.apache.log4j
+Automatic-Module-Name: org.xtext.system.componentArchitecture

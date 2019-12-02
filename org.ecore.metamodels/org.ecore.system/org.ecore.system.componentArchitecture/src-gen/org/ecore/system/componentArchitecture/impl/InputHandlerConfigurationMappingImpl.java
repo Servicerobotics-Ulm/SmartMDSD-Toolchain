@@ -108,6 +108,7 @@ public class InputHandlerConfigurationMappingImpl extends ComponentInstanceConfi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InputHandler getHandler() {
 		if (handler != null && handler.eIsProxy()) {
 			InternalEObject oldHandler = (InternalEObject) handler;
@@ -136,6 +137,7 @@ public class InputHandlerConfigurationMappingImpl extends ComponentInstanceConfi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHandler(InputHandler newHandler) {
 		InputHandler oldHandler = handler;
 		handler = newHandler;
@@ -149,6 +151,7 @@ public class InputHandlerConfigurationMappingImpl extends ComponentInstanceConfi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InputHandlerNode getConfig() {
 		if (config != null && config.eIsProxy()) {
 			InternalEObject oldConfig = (InternalEObject) config;
@@ -177,6 +180,7 @@ public class InputHandlerConfigurationMappingImpl extends ComponentInstanceConfi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConfig(InputHandlerNode newConfig) {
 		InputHandlerNode oldConfig = config;
 		config = newConfig;

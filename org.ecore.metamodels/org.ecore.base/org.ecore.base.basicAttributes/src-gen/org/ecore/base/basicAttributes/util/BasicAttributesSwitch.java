@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.ecore.base.basicAttributes.*;
+import org.ecore.base.documentation.AbstractDocumentedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,12 +71,16 @@ public class BasicAttributesSwitch<T> extends Switch<T> {
 			AttributeDefinition attributeDefinition = (AttributeDefinition) theEObject;
 			T result = caseAttributeDefinition(attributeDefinition);
 			if (result == null)
+				result = caseAbstractDocumentedElement(attributeDefinition);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case BasicAttributesPackage.ATTRIBUTE_REFINEMENT: {
 			AttributeRefinement attributeRefinement = (AttributeRefinement) theEObject;
 			T result = caseAttributeRefinement(attributeRefinement);
+			if (result == null)
+				result = caseAbstractDocumentedElement(attributeRefinement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -426,6 +431,21 @@ public class BasicAttributesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEnumerationValue(EnumerationValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Documented Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Documented Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractDocumentedElement(AbstractDocumentedElement object) {
 		return null;
 	}
 
