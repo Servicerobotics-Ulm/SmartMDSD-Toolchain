@@ -10,7 +10,7 @@ As pre-announced in the previous release, the **old UI now has been deactivated*
 
 The SmartMDSD Preferences page has been revised (see the menu: **Window -> Preferences -> SmartMDSD**). Here you can now also specify the default **build type Debug/Release** which will be used to either include debug symbols into the binaries (default), or exclude it to reduce the overall footprint. Moreover, here you can select the used **ROS distribution for building ROS mixed port components**. The toolchain initially searches the default location **/opt/ros** and selects the first found distribution. In case you have more than one, here you can change the required distro. The Toolchain build process automatically sets related ROS environment variables as described here (see "4. Building projects inside Eclipse"):
 
-http://wiki.ros.org/IDEs
+[ROS Wiki - IDEs](http://wiki.ros.org/IDEs)
 
 Please note, the ROS build feature is rather new/experimental and might not yet work in all situations. In case it does not work, as a backup strategy, you can compile the project from within a bash terminal with the ROS setup initiated from .bashrc.
 
