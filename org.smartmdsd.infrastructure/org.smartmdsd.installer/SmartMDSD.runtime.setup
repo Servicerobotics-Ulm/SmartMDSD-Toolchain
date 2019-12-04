@@ -98,7 +98,7 @@
       <requirement
           name="de.seronet_projekt.opcua.backend.feature.group"/>
       <repository
-          url="https://web2.servicerobotik-ulm.de/files/SmartMDSD_Toolchain/updatesite/opcua-backend/latest/"/>
+          url="https://web2.servicerobotik-ulm.de/files/SeRoNet_Tooling/updatesites/opcua-backend/latest"/>
     </setupTask>
     <stream
         name="OPCUA-Backend"/>

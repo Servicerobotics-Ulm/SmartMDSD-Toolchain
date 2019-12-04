@@ -19,6 +19,11 @@
        			id="smartmdsd-system" style-id="content-link">
        			<text>This cheat-sheet guides through the steps required to create a new System project, which allows the definition of a System Component Architecture, a Target Definition and a Deplyoment Model.</text>
        		</link>
+       		<link label="Further Online Tutorials"
+       			url="https://wiki.servicerobotik-ulm.de/tutorials:"
+       			id="smartmdsd-introLink" style-id="content-link">
+       			<text>Discover the growing list of online tutorials.</text>
+       		</link>
        	</group>
   	</extensionContent>
 </introContent>
