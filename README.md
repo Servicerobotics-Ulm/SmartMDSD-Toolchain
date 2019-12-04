@@ -8,7 +8,7 @@ The SmartMDSD Toolchain is maintained by the Service Robotics Research Center at
 
 For more information about the SmartMDSD Toolchain, documentation, and tutorials, please visit the [**Servicerobotik Ulm Wiki**](https://wiki.servicerobotik-ulm.de/smartmdsd-toolchain:start).
 
-
+Please also read the **[Release Notes](ReleaseNotes.md)** to see what's new in the latest relase.
 
 ## Installation Instructions
 
