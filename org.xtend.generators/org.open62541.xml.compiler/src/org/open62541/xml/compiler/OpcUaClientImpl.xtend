@@ -236,29 +236,33 @@ class OpcUaClientImpl implements OpcUaClient {
 		«ENDFOR»
 		
 		«FOR method: methodList»
-		 OPCUA::StatusCode «objectName»::call«method.name.toFirstUpper»(«method.cppMethodArgumentsDef»)
-		 {
-		 	std::vector<OPCUA::Variant> inputArguments(«method.inputArguments.size»);
-		 	«var count1=-1»
-		 	«FOR arg: method.inputArguments»
-		 	inputArguments[«count1=count1+1»] = «arg.name»;
-		 	«ENDFOR»
-		 	std::vector<OPCUA::Variant> outputArguments;
-		 	OPCUA::StatusCode status = callMethod(std::string("«method.name»"), inputArguments, outputArguments);
-		 	if(status == OPCUA::StatusCode::ALL_OK)
-		 	{
-		 		«var count2=-1»
-		 		«FOR arg: method.outputArguments»
-		 			«IF arg.DataTypeIdentifier == OpcUaXmlParser.SeRoNetARGUMENT.UA_TYPES_STRING»
-		 			«arg.name» = outputArguments[«count2=count2+1»].toString();
-		 			«ELSE»
-		 			«arg.name» = outputArguments[«count2=count2+1»];
-		 			«ENDIF»
+		OPCUA::StatusCode «objectName»::call«method.name.toFirstUpper»(«method.cppMethodArgumentsDef»)
+		{
+			std::vector<OPCUA::Variant> inputArguments(«method.inputArguments.size»);
+			«var count1=-1»
+			«FOR arg: method.inputArguments»
+			inputArguments[«count1=count1+1»] = «arg.name»;
+			«ENDFOR»
+			std::vector<OPCUA::Variant> outputArguments;
+			OPCUA::StatusCode status = callMethod(std::string("«method.name»"), inputArguments, outputArguments);
+			if(status == OPCUA::StatusCode::ALL_OK)
+			{
+				«var count2=-1»
+				«FOR arg: method.outputArguments»
+					«IF arg.ValueRank == 1»
+						«arg.name» = outputArguments[«count2=count2+1»].getArrayValuesAs<«arg.DataTypeString»>();
+					«ELSE»
+						«IF arg.DataTypeIdentifier == OpcUaXmlParser.SeRoNetARGUMENT.UA_TYPES_STRING»
+							«arg.name» = outputArguments[«count2=count2+1»].toString();
+						«ELSE»
+							«arg.name» = outputArguments[«count2=count2+1»];
+						«ENDIF»
+					«ENDIF»
 				«ENDFOR»
-		 	}
-		 	return status;
-		 }
-		 
+			}
+			return status;
+		}
+		
 		«ENDFOR»
 	'''
 	

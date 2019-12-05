@@ -332,7 +332,7 @@ class DeploymentGenerator2Impl extends AbstractGenerator {
 		
 		
 		DEPL_FILES="
-		$SMART_ROOT_ACE/lib/libAceSmartSoftKernel.so
+		$SMART_ROOT_ACE/lib/libAceSmartSoftKernel.so.*
 		$SMART_ROOT_ACE/lib/libSmartProperty.so.*
 		src-gen/deployment/tiler.sh
 		src-gen/deployment/start-«target.name».sh

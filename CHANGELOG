@@ -1,3 +1,10 @@
+SmartMDSD Toolchain v3.12
+	* Fixed bug in Plain OPC UA Code generation that now supports one-dimensional arrays for method calls
+	* Fixed bug in deployment script that now also copies the SmartSoft library
+	* Fixed minor issue in component code generation that now sorts extensions for a uniform generation order
+	* Updated contents in the Welcome page to now show the Release Notes (aka What's New) properly
+-- Thu, 5 Dec. 2019
+
 SmartMDSD Toolchain v3.11
 	* Updated Welcome Pages (see Help->Welcome)
 	* Updated C++ code geenrators to support updated background infrastructure (SmartSoft API v1.1 and ACE/SmartSoft Kernel v3.2)

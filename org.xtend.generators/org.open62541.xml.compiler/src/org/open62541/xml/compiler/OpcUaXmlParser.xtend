@@ -595,7 +595,15 @@ class OpcUaXmlParser {
 	def String getCppMethodArgumentsDef(SeRoNetMETHOD method) {
 		var result = ""
 		for(argIn: method.inputArguments) {
-			result = result + "const "+argIn.DataTypeString()+" &"+argIn.name
+			result = result + "const "
+			if(argIn.ValueRank == 1) {
+				// one dimensional array
+				result = result + "std::vector<"+argIn.DataTypeString()+">"
+			} else {
+				// we assume it is a scalar type
+				result = result + argIn.DataTypeString()
+			}
+			result = result + " &"+argIn.name
 			if(argIn != method.inputArguments.last) {
 				result = result + ", "
 			}
@@ -608,7 +616,14 @@ class OpcUaXmlParser {
 			} else {
 				result = result + ", "
 			}
-			result = result + argOut.DataTypeString()+" &"+argOut.name
+			if(argOut.ValueRank == 1) {
+				// one dimensional array
+				result = result + "std::vector<"+argOut.DataTypeString()+">"
+			} else {
+				// we assume it is a scalar type
+				result = result + argOut.DataTypeString()
+			}
+			result = result + " &"+argOut.name
 		}
 		return result
 	}

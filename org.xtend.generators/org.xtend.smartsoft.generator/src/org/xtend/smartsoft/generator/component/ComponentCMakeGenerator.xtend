@@ -312,7 +312,7 @@ class ComponentCMakeGenerator {
 	
 	def generateCMakeMixedPortIncludes(ComponentDefinition component)
 	'''
-	«FOR ext: componentGeneratorExtensions»
+	«FOR ext: componentGeneratorExtensions.sortBy[it.getExtensionName(component)]»
 	# includes for «ext.getExtensionName(component)»
 	«ext.getCMakeIncludes(component)»
 	
@@ -321,7 +321,7 @@ class ComponentCMakeGenerator {
 	
 	def generateCMakeMixedPortTargetConfigs(ComponentDefinition component)
 	'''
-	«FOR ext: componentGeneratorExtensions»
+	«FOR ext: componentGeneratorExtensions.sortBy[it.getExtensionName(component)]»
 	# target configurations for «ext.getExtensionName(component)»
 	«ext.getCMakeTargetConfiguration(component)»
 	

@@ -296,7 +296,7 @@ class CommObjectCMakeGenerator {
 	'''
 	
 	def CharSequence generateCmakeDomainModelsExtensionsFile(CommObjectsRepository repo)'''
-		«FOR ext: domainModelsGeneratorExtensions»
+		«FOR ext: domainModelsGeneratorExtensions.sortBy[it.getExtensionName(repo)]»
 			# «ext.getExtensionName(repo)»
 			«ext.getCMakeExtension(repo)»
 			

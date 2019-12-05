@@ -84,7 +84,7 @@ class SmartIniParameter {
 			connections.«handler.nameInstance».prescale = 1;
 			«ENDFOR»
 			
-			«FOR ext: componentGeneratorExtensions»
+			«FOR ext: componentGeneratorExtensions.sortBy[it.getExtensionName(component)]»
 			// initialize members of «ext.getExtensionName(component)»
 			«ext.getClassMemberConstruction(component)»
 			
@@ -231,7 +231,7 @@ class SmartIniParameter {
 «««						«ENDIF»
 «««					«ENDFOR»
 					
-					«FOR ext: componentGeneratorExtensions»
+					«FOR ext: componentGeneratorExtensions.sortBy[it.getExtensionName(component)]»
 					// load parameters for «ext.getExtensionName(component)»
 					«ext.getLoadParameters(component)»
 					
@@ -329,7 +329,7 @@ class SmartIniParameter {
 				} «client.nameInstance»;
 			«ENDFOR»
 			
-			«FOR ext: componentGeneratorExtensions»
+			«FOR ext: componentGeneratorExtensions.sortBy[it.getExtensionName(component)]»
 			// -- parameters for «ext.getExtensionName(component)»
 			«ext.getIniStructDefinition(component)»
 			
@@ -424,7 +424,7 @@ class SmartIniParameter {
 	roboticMiddleware «client.defaultMiddlewareString»
 	«ENDFOR»
 	
-	«FOR ext: componentGeneratorExtensions»
+	«FOR ext: componentGeneratorExtensions.sortBy[it.getExtensionName(component)]»
 	##########################
 	## parameters of «ext.getExtensionName(component)»
 	«ext.getIniFileParameters(component)»

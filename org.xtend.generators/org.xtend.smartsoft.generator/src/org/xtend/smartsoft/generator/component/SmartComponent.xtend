@@ -189,7 +189,7 @@ class SmartComponent {
 		class «component.name»PortFactoryInterface;
 		class «component.name»Extension;
 		
-		«FOR ext: componentGeneratorExtensions»
+		«FOR ext: componentGeneratorExtensions.sortBy[it.getExtensionName(component)]»
 		// includes for «ext.getExtensionName(component)»
 		«ext.getHeaderIncludes(component)»
 		
@@ -328,7 +328,7 @@ class SmartComponent {
 				«handler.nameClass» *«handler.nameInstance»;
 			«ENDFOR»
 			
-			«FOR ext: componentGeneratorExtensions»
+			«FOR ext: componentGeneratorExtensions.sortBy[it.getExtensionName(component)]»
 			// definitions of «ext.getExtensionName(component)»
 			«ext.getClassMemberDefinition(component)»
 			
@@ -631,7 +631,7 @@ class SmartComponent {
 				std::cout << " \nComponentDefinition Initial-Parameters:\n" << COMP->getParameters() << std::endl;
 				«ENDIF»
 				
-				«FOR ext: componentGeneratorExtensions»
+				«FOR ext: componentGeneratorExtensions.sortBy[it.getExtensionName(component)]»
 				// initializations of «ext.getExtensionName(component)»
 				«ext.getClassMemberInitialization(component)»
 				
@@ -956,7 +956,7 @@ class SmartComponent {
 				portFactory->second->destroy();
 			}
 			
-			«FOR ext: componentGeneratorExtensions»
+			«FOR ext: componentGeneratorExtensions.sortBy[it.getExtensionName(component)]»
 			// destruction of «ext.getExtensionName(component)»
 			«ext.getClassMemberDestruction(component)»
 			
