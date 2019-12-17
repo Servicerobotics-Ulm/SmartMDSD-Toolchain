@@ -4,11 +4,18 @@ This file contains the release notes for the SmartMDSD Toolchain version 3.x. Fo
 
 ## v3.12
 
-This is a hotfix release where several internal code generation bugs are fixed. We recommend to manually trigger the code generation for your existing projects by selecting the project in the SmartMDSD Project Explorer and using the Eclipse menu: **SmartMDSD** -> **Run Code-Generation**. This will update your src-gen folders so you also might want rebuilding your projects by using the Eclipse menu **SmartMDSD** -> **Build Project** (alternatively, you can use the Eclipse menu: **Project** -> **Build All** to rebuild all your projects in the workspace at once). There are no other changes in the models or user-code required.
+This is a hotfix release where several internal code generation bugs are fixed. We recommend to manually trigger the code generation for your existing projects by selecting the project in the SmartMDSD Project Explorer and using the Eclipse menu: **SmartMDSD** -> **Run Code-Generation**. This will update your src-gen folders so you also might want rebuilding your projects by using the Eclipse menu **SmartMDSD** -> **Build Project** (alternatively, you can use the Eclipse menu: **Project** -> **Build All** to rebuild all your projects in the workspace at once). There are no other changes in the models or user-code required (other than those mentioned in release v3.11).
 
 ## v3.11
 
 This is a maintainance release mostly motivated by the updated background infrastructure. Most notably, the **SmartSoft Component Developer API** has been updated from version 1.0 to **version 1.1**, and the **ACE/SmartSoft Kernel** has been updated from version 3.1 to **version 3.2**. Therefore the Toolchain's internal C++ code generators have been updated and now generate consistently towards the updated background infrastructure. This also means that if you have not yet updated your current background infrastructure, then you should do so **before** using this new Toolchain update.
+
+The majority of changes are hidden within the internal src-gen folders. The only two visible updates within the use code relate to the component code generation, where the **QueryHandlers** and **EventHandler** need to be manually re-generated. In order to do so, follow the following four steps procedure:
+
+1. In your component project's subfolder "smartsoft/src": backup your implementation of the QueryHandlers and EventHandler (if you use any).
+2. Trigger code generation using the Eclipse menu: **SmartMDSD** -> **Run Code-Generation**
+3. merge the new generated handler classes with your backed up implementation (don't override the newly generated class interface)
+4. Rebuild the project using the Eclipse menu: **SmartMDSD** -> **Build Project**
 
 As pre-announced in the previous release, the **old UI now has been deactivated** in this release. This means, that **from now on you have to use the new UI** by opening the new Eclipse perspectives introduced in the release v3.9 (see release notes below).
 
