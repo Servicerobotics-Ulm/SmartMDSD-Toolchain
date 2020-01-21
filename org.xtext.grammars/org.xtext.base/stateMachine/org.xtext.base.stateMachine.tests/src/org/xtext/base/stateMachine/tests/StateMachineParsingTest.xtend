@@ -47,7 +47,7 @@ class StateMachineParsingTest {
 			StateMachine MyStateMachine {
 				State Init;
 				private StateTransition Init -> Alive;
-				state Alive;
+				State Alive;
 				public StateTransition Alive -> Shutdown;
 				State Shutdown;
 			}

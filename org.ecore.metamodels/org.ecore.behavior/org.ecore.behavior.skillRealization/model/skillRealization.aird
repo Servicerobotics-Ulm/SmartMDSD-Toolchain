@@ -28,6 +28,8 @@
     <semanticResources>platform:/resource/org.ecore.service.componentMode/model/componentMode.genmodel</semanticResources>
     <semanticResources>platform:/resource/org.ecore.component.coordinationExtension/model/coordinationExtension.genmodel</semanticResources>
     <semanticResources>platform:/resource/org.ecore.component.componentParameter/model/componentParameter.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.ecore.base.documentation/model/documentation.ecore</semanticResources>
+    <semanticResources>platform:/resource/org.ecore.base.documentation/model/documentation.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_TB5cwO86EeiyR9oQeZX3zw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_TC9MsO86EeiyR9oQeZX3zw" name="skillRealization" repPath="#_TC6JYO86EeiyR9oQeZX3zw">
@@ -896,6 +898,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_eIMqoEWQEemBxK66LeT9BQ" description="_M2XAgP7xEeiFXOt7tgo2wA" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_eIMqokWQEemBxK66LeT9BQ" showIcon="false">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_eIMqoUWQEemBxK66LeT9BQ" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
