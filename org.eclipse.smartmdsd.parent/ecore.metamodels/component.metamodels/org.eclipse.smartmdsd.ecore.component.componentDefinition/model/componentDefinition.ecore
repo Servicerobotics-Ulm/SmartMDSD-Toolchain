@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentDefinition" nsURI="http://www.eclipse.org/smartmdsd/component/componentDefinition"
+    nsPrefix="componentDefinition">
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentDefModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//ComponentDefinition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//ServiceRepoImport" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentDefinition" eSuperTypes="../../org.eclipse.smartmdsd.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentationElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//AbstractComponentElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//ComponentSubNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extensions" upperBound="-1"
+        eType="#//ActivityExtension" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityExtension" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InputHandler" eSuperTypes="#//ComponentSubNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activeQueue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputPort" lowerBound="1"
+        eType="#//InputPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceRepoImport">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputPort" eSuperTypes="#//ComponentPort">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.smartmdsd.ecore.service.serviceDefinition/model/serviceDefinition.ecore#//OneWayCommunicationService"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
+        eType="#//Activity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequestPort" eSuperTypes="#//ComponentPort">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.smartmdsd.ecore.service.serviceDefinition/model/serviceDefinition.ecore#//TwoWayCommunicationService"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputPort" eSuperTypes="#//ComponentPort">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.smartmdsd.ecore.service.serviceDefinition/model/serviceDefinition.ecore#//OneWayCommunicationService"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnswerPort" eSuperTypes="#//ComponentPort">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.smartmdsd.ecore.service.serviceDefinition/model/serviceDefinition.ecore#//TwoWayCommunicationService"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentPort" abstract="true" eSuperTypes="#//NamedComponentElement ../../org.eclipse.smartmdsd.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentationElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extensions" upperBound="-1"
+        eType="#//ComponentPortExtension" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentPortExtension" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RequestHandler" eSuperTypes="#//ComponentSubNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activeQueue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="answerPort" lowerBound="1"
+        eType="#//AnswerPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractComponentElement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentSubNode" abstract="true" eSuperTypes="#//NamedComponentElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
+        eType="#//AbstractComponentLink" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentSubNodeObserver" eSuperTypes="#//AbstractComponentLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subject" lowerBound="1"
+        eType="#//ComponentSubNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputPortLink" eSuperTypes="#//AbstractComponentLink">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputPort" lowerBound="1"
+        eType="#//InputPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequestPortLink" eSuperTypes="#//AbstractComponentLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requestPort" lowerBound="1"
+        eType="#//RequestPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractComponentLink" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedComponentElement" abstract="true"
+      eSuperTypes="#//AbstractComponentElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DerivedComponentElement" abstract="true"
+      eSuperTypes="#//AbstractComponentElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" unsettable="true" derived="true"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.smartmdsd.ecore.service.componentMode;singleton:=true
+Automatic-Module-Name: org.eclipse.smartmdsd.ecore.service.componentMode
+Bundle-Version: 3.6.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.eclipse.smartmdsd.ecore.service.componentMode,
+ org.eclipse.smartmdsd.ecore.service.componentMode.impl,
+ org.eclipse.smartmdsd.ecore.service.componentMode.util
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="targetPlatform" nsURI="http://www.eclipse.org/smartmdsd/system/targetPlatform"
+    nsPrefix="targetPlatform">
+  <eClassifiers xsi:type="ecore:EClass" name="TargetPlatformModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//AbstractTPElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TargetPlatformDefinition" eSuperTypes="#//AbstractTPElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//AbstractTPSubNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="os" eType="#//OperatingSystem"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractTPElement" abstract="true" eSuperTypes="../../org.eclipse.smartmdsd.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentationElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractTPSubNode" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkConnection" eSuperTypes="#//AbstractTPElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endpoint1" lowerBound="1"
+        eType="#//NetworkInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endpoint2" lowerBound="1"
+        eType="#//NetworkInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkInterface" eSuperTypes="#//AbstractTPSubNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostAddress" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="portNr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CPU" eSuperTypes="#//AbstractTPSubNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coresTally" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LoginAccount" eSuperTypes="#//AbstractTPSubNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Windows" eSuperTypes="#//OperatingSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OperatingSystem" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Linux" eSuperTypes="#//OperatingSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MacOS" eSuperTypes="#//OperatingSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TargetMiddleware" eSuperTypes="#//AbstractTPSubNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="middleware" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.smartmdsd.ecore.service.roboticMiddleware/model/roboticMiddleware.ecore#//RoboticMiddleware"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

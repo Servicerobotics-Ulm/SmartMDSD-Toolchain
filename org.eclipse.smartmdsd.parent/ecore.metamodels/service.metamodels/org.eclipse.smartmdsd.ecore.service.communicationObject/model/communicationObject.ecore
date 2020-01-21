@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="communicationObject" nsURI="http://www.eclipse.org/smartmdsd/service/communicationObject"
+    nsPrefix="communicationObject">
+  <eClassifiers xsi:type="ecore:EClass" name="CommObjectModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repository" eType="#//CommObjectsRepository"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//CommRepositoryImport" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommObjectsRepository" eSuperTypes="../../org.eclipse.smartmdsd.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentationElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//AbstractCommElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//Version"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependency" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractCommElement" abstract="true"
+      eSuperTypes="../../org.eclipse.smartmdsd.ecore.base.documentation/model/documentation.ecore#//AbstractDocumentationElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommRepositoryImport">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Version">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="major" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minor" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="patch" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Enumeration" eSuperTypes="#//AbstractCommElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enums" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.smartmdsd.ecore.base.basicAttributes/model/basicAttributes.ecore#//EnumerationElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommunicationObject" eSuperTypes="#//AbstractCommElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.smartmdsd.ecore.base.basicAttributes/model/basicAttributes.ecore#//AttributeDefinition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommElementValue" eSuperTypes="../../org.eclipse.smartmdsd.ecore.base.basicAttributes/model/basicAttributes.ecore#//SingleValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//AbstractCommElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommElementReference" eSuperTypes="../../org.eclipse.smartmdsd.ecore.base.basicAttributes/model/basicAttributes.ecore#//AbstractAttributeType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeName" lowerBound="1"
+        eType="#//AbstractCommElement"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.eclipse.smartmdsd.ecore.system.causeEffectChain/src-gen"
+    creationIcons="false" editDirectory="/org.eclipse.smartmdsd.ecore.system.causeEffectChain.edit/src-gen"
+    editorDirectory="/org.eclipse.smartmdsd.ecore.system.causeEffectChain.editor/src-gen"
+    modelPluginID="org.eclipse.smartmdsd.ecore.system.causeEffectChain" modelName="CauseEffectChain"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.smartmdsd.ecore.system.activityArchitecture/model/activityArchitecture.genmodel#//activityArchitecture"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>causeEffectChain.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="CauseEffectChain" basePackage="org.eclipse.smartmdsd.ecore.system"
+      disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="causeEffectChain.ecore#/">
+    <genClasses ecoreClass="causeEffectChain.ecore#//CuaseEffectChainModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute causeEffectChain.ecore#//CuaseEffectChainModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference causeEffectChain.ecore#//CuaseEffectChainModel/chains"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference causeEffectChain.ecore#//CuaseEffectChainModel/actArch"/>
+    </genClasses>
+    <genClasses ecoreClass="causeEffectChain.ecore#//ActivityChain">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute causeEffectChain.ecore#//ActivityChain/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference causeEffectChain.ecore#//ActivityChain/chainLinks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference causeEffectChain.ecore#//ActivityChain/desiredMinResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference causeEffectChain.ecore#//ActivityChain/desiredMaxResponse"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="causeEffectChain.ecore#//AbstractChainLink"/>
+    <genClasses ecoreClass="causeEffectChain.ecore#//ActivityLink">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute causeEffectChain.ecore#//ActivityLink/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference causeEffectChain.ecore#//ActivityLink/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="causeEffectChain.ecore#//InputHandlerLink">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute causeEffectChain.ecore#//InputHandlerLink/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference causeEffectChain.ecore#//InputHandlerLink/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="causeEffectChain.ecore#//MaxResponseTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute causeEffectChain.ecore#//MaxResponseTime/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute causeEffectChain.ecore#//MaxResponseTime/unit"/>
+    </genClasses>
+    <genClasses ecoreClass="causeEffectChain.ecore#//MinResponseTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute causeEffectChain.ecore#//MinResponseTime/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute causeEffectChain.ecore#//MinResponseTime/unit"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.eclipse.smartmdsd.ecore.system.targetPlatform/src-gen"
+    creationIcons="false" editDirectory="/org.eclipse.smartmdsd.ecore.system.targetPlatform.edit/src-gen"
+    editorDirectory="/org.eclipse.smartmdsd.ecore.system.targetPlatform.editor/src-gen"
+    modelPluginID="org.eclipse.smartmdsd.ecore.system.targetPlatform" modelName="TargetPlatform"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.smartmdsd.ecore.base.documentation/model/documentation.genmodel#//documentation ../../org.eclipse.smartmdsd.ecore.service.roboticMiddleware/model/roboticMiddleware.genmodel#//roboticMiddleware"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>targetPlatform.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="TargetPlatform" basePackage="org.eclipse.smartmdsd.ecore.system"
+      disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="targetPlatform.ecore#/">
+    <genClasses ecoreClass="targetPlatform.ecore#//TargetPlatformModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetPlatform.ecore#//TargetPlatformModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetPlatform.ecore#//TargetPlatformModel/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="targetPlatform.ecore#//TargetPlatformDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetPlatform.ecore#//TargetPlatformDefinition/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetPlatform.ecore#//TargetPlatformDefinition/os"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetPlatform.ecore#//TargetPlatformDefinition/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="targetPlatform.ecore#//AbstractTPElement"/>
+    <genClasses image="false" ecoreClass="targetPlatform.ecore#//AbstractTPSubNode"/>
+    <genClasses ecoreClass="targetPlatform.ecore#//NetworkConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetPlatform.ecore#//NetworkConnection/endpoint1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetPlatform.ecore#//NetworkConnection/endpoint2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetPlatform.ecore#//NetworkConnection/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="targetPlatform.ecore#//NetworkInterface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetPlatform.ecore#//NetworkInterface/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetPlatform.ecore#//NetworkInterface/hostAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetPlatform.ecore#//NetworkInterface/portNr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetPlatform.ecore#//NetworkInterface/name"/>
+    </genClasses>
+    <genClasses ecoreClass="targetPlatform.ecore#//CPU">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetPlatform.ecore#//CPU/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetPlatform.ecore#//CPU/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetPlatform.ecore#//CPU/coresTally"/>
+    </genClasses>
+    <genClasses ecoreClass="targetPlatform.ecore#//LoginAccount">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetPlatform.ecore#//LoginAccount/fullname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetPlatform.ecore#//LoginAccount/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetPlatform.ecore#//LoginAccount/name"/>
+    </genClasses>
+    <genClasses ecoreClass="targetPlatform.ecore#//Windows"/>
+    <genClasses image="false" ecoreClass="targetPlatform.ecore#//OperatingSystem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetPlatform.ecore#//OperatingSystem/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="targetPlatform.ecore#//Linux"/>
+    <genClasses ecoreClass="targetPlatform.ecore#//MacOS"/>
+    <genClasses ecoreClass="targetPlatform.ecore#//TargetMiddleware">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetPlatform.ecore#//TargetMiddleware/middleware"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

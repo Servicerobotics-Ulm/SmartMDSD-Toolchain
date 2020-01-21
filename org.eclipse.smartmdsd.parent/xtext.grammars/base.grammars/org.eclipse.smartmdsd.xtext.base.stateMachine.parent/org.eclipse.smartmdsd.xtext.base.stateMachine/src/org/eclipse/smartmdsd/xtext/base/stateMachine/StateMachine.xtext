@@ -1,0 +1,54 @@
+//================================================================
+//
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
+//
+//        lotz@hs-ulm.de
+//        stampfer@hs-ulm.de
+//        lutz@hs-ulm.de
+//
+//        Servicerobotik Ulm
+//        Christian Schlegel
+//        Ulm University of Applied Sciences
+//        Prittwitzstr. 10
+//        89075 Ulm
+//        Germany
+//
+//  This file is part of the SmartMDSD Toolchain V3. 
+//
+//================================================================
+grammar org.eclipse.smartmdsd.xtext.base.stateMachine.StateMachine with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://www.eclipse.org/smartmdsd/base/stateMachine" as mach
+
+StateMachine returns mach::StateMachine:
+	'StateMachine' name=ID '{'
+		elements+=AbstractMachineElement*
+	'}'
+;
+
+FQN:
+	ID ('.'ID)*
+;
+
+enum VisibilityType returns mach::VisibilityType: 
+	PUBLIC = 'public' | PRIVATE = 'private'
+;
+
+
+AbstractMachineElement returns mach::AbstractMachineElement:
+	AbstractStateElement | StateTransition;
+
+AbstractStateElement returns mach::AbstractStateElement:
+	State
+;
+
+State returns mach::State: 
+	'State' name=ID (';')?
+;
+
+
+StateTransition returns mach::StateTransition:
+	(visibility=VisibilityType)?
+	'StateTransition' from=[mach::AbstractStateElement|FQN] '->' to=[mach::AbstractStateElement|FQN] (';')?
+;

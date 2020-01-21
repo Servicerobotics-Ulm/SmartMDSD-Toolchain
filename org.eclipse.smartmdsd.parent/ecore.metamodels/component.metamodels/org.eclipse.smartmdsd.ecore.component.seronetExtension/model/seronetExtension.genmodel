@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.eclipse.smartmdsd.ecore.component.seronetExtension/src-gen"
+    creationIcons="false" editDirectory="/org.eclipse.smartmdsd.ecore.component.seronetExtension.edit/src-gen"
+    editorDirectory="/org.eclipse.smartmdsd.ecore.component.seronetExtension.editor/src-gen"
+    modelPluginID="org.eclipse.smartmdsd.ecore.component.seronetExtension" modelName="SeronetExtension"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.smartmdsd.ecore.base.basicAttributes/model/basicAttributes.genmodel#//basicAttributes ../../org.eclipse.smartmdsd.ecore.service.communicationObject/model/communicationObject.genmodel#//communicationObject ../../org.eclipse.smartmdsd.ecore.service.communicationPattern/model/communicationPattern.genmodel#//communicationPattern ../../org.eclipse.smartmdsd.ecore.component.componentDefinition/model/componentDefinition.genmodel#//componentDefinition ../../org.eclipse.smartmdsd.ecore.service.componentMode/model/componentMode.genmodel#//componentMode ../../org.eclipse.smartmdsd.ecore.service.coordinationPattern/model/coordinationPattern.genmodel#//coordinationPattern ../../org.eclipse.smartmdsd.ecore.base.documentation/model/documentation.genmodel#//documentation ../../org.eclipse.smartmdsd.ecore.base.mixedport/model/mixedport.genmodel#//mixedport ../../org.eclipse.smartmdsd.ecore.service.parameterDefinition/model/parameterDefinition.genmodel#//parameterDefinition ../../org.eclipse.smartmdsd.ecore.service.roboticMiddleware/model/roboticMiddleware.genmodel#//roboticMiddleware ../../org.eclipse.smartmdsd.ecore.service.serviceDefinition/model/serviceDefinition.genmodel#//serviceDefinition ../../org.eclipse.smartmdsd.ecore.base.stateMachine/model/stateMachine.genmodel#//stateMachine"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>seronetExtension.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="SeronetExtension" basePackage="org.eclipse.smartmdsd.ecore.component"
+      disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="seronetExtension.ecore#/">
+    <genClasses ecoreClass="seronetExtension.ecore#//SupportedMiddleware">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference seronetExtension.ecore#//SupportedMiddleware/middleware"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute seronetExtension.ecore#//SupportedMiddleware/default"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="seronetExtension.ecore#//PlainOpcUaPort"/>
+    <genClasses ecoreClass="seronetExtension.ecore#//OpcUaDeviceClient">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute seronetExtension.ecore#//OpcUaDeviceClient/autoConnect"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute seronetExtension.ecore#//OpcUaDeviceClient/deviceURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute seronetExtension.ecore#//OpcUaDeviceClient/rootObjectPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute seronetExtension.ecore#//OpcUaDeviceClient/opcuaXmlFile"/>
+    </genClasses>
+    <genClasses ecoreClass="seronetExtension.ecore#//OpcUaReadServer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference seronetExtension.ecore#//OpcUaReadServer/outPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute seronetExtension.ecore#//OpcUaReadServer/portNumber"/>
+    </genClasses>
+    <genClasses ecoreClass="seronetExtension.ecore#//OpcUaClientLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference seronetExtension.ecore#//OpcUaClientLink/client"/>
+    </genClasses>
+    <genClasses ecoreClass="seronetExtension.ecore#//MixedPortROS">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference seronetExtension.ecore#//MixedPortROS/port"/>
+    </genClasses>
+    <genClasses ecoreClass="seronetExtension.ecore#//MixedPortYARP">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference seronetExtension.ecore#//MixedPortYARP/port"/>
+    </genClasses>
+    <genClasses ecoreClass="seronetExtension.ecore#//MixedPortROSLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference seronetExtension.ecore#//MixedPortROSLink/mixedportros"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

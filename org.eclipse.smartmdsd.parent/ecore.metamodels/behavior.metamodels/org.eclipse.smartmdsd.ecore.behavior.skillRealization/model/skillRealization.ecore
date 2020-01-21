@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="skillRealization" nsURI="http://www.eclipse.org/smartmdsd/behavior/skillRealization"
+    nsPrefix="skillRealization">
+  <eClassifiers xsi:type="ecore:EClass" name="SkillRealizationModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
+        eType="#//CoordinationModuleRealization" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventhandler" upperBound="-1"
+        eType="#//EventHandler" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CoordinationModuleRealization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="skills" upperBound="-1"
+        eType="#//SkillRealization" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationModuleDef"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.smartmdsd.ecore.service.skillDefinition/model/skillDefinition.ecore#//CoordinationModuleDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordInterfaceInsts" lowerBound="1"
+        upperBound="-1" eType="#//CoordinationInterfaceInstance" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SkillRealization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="skillDef" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.smartmdsd.ecore.service.skillDefinition/model/skillDefinition.ecore#//SkillDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
+        eType="#//CoordinationActionBlock" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractCoordinationAction" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractComponentCoordinationAction"
+      abstract="true" eSuperTypes="#//AbstractCoordinationAction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationService" lowerBound="1"
+        eType="#//CoordinationInterfaceInstance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentCoordinationActionEvent" eSuperTypes="#//AbstractComponentCoordinationAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="handler" lowerBound="1"
+        eType="#//EventHandler"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" lowerBound="1" eType="#//EventMode"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="param" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentCoordinationActionWiring" eSuperTypes="#//AbstractComponentCoordinationAction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentCoordinationActionParameter"
+      eSuperTypes="#//AbstractComponentCoordinationAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.smartmdsd.ecore.service.parameterDefinition/model/parameterDefinition.ecore#//AbstractParameter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentCoordinationActionActivation"
+      eSuperTypes="#//AbstractComponentCoordinationAction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="ecore:EClass ../../org.eclipse.smartmdsd.ecore.service.componentMode/model/componentMode.ecore#//ComponentModeDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CoordinationActionBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+        eType="#//AbstractCoordinationAction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventHandler">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
+        eType="#//CoordinationActionBlock" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EventMode">
+    <eLiterals name="continuous"/>
+    <eLiterals name="single" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CoordinationInterfaceInstance">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationInterfaceDef"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.smartmdsd.ecore.service.serviceDefinition/model/serviceDefinition.ecore#//CoordinationServiceDefinition"/>
+  </eClassifiers>
+</ecore:EPackage>

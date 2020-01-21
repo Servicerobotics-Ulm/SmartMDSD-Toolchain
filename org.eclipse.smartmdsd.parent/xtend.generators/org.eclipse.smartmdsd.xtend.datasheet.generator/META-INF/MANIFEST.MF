@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DatasheetGenerator
+Bundle-SymbolicName: org.eclipse.smartmdsd.xtend.datasheet.generator;singleton:=true
+Bundle-Version: 3.7.0.qualifier
+Bundle-Vendor: Servicerobotics Ulm
+Automatic-Module-Name: org.eclipse.smartmdsd.xtend.datasheet.generator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.commands,
+ org.eclipse.core.resources,
+ com.google.inject,
+ org.eclipse.xtext,
+ org.eclipse.xtext.util,
+ org.eclipse.xtext.generator,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.ui.workbench,
+ org.eclipse.smartmdsd.xtend.smartsoft.generator,
+ org.eclipse.smartmdsd.ecore.service.domainModelsDatasheet,
+ org.eclipse.smartmdsd.xtext.service.domainModelsDatasheet,
+ org.eclipse.smartmdsd.xtext.service.domainModelsDatasheet.ui,
+ org.eclipse.smartmdsd.ecore.service.serviceDefinition,
+ org.eclipse.smartmdsd.xtext.service.serviceDefinition.ui,
+ org.eclipse.smartmdsd.xtext.service.communicationObject.ui,
+ org.eclipse.smartmdsd.ecore.component.componentDatasheet,
+ org.eclipse.smartmdsd.xtext.component.componentDatasheet

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: XtextIndexer
+Bundle-SymbolicName: org.eclipse.smartmdsd.xtext.indexer
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.eclipse.smartmdsd.xtext.indexer
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: Servicerobotics Ulm
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase.lib
+Export-Package: org.eclipse.smartmdsd.xtext.indexer

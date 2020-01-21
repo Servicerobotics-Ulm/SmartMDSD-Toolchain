@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="ComponentGeneratorExtension" name="ComponentGeneratorExtension" schema="schema/ComponentGeneratorExtension.exsd"/>
+   <extension-point id="DomainModelsGeneratorExtension" name="DomainModelsGeneratorExtension" schema="schema/DomainModelsGeneratorExtension.exsd"/>
+   <extension
+         point="org.eclipse.smartmdsd.xtext.service.communicationObject.CommunicationObjectGeneratorEP">
+      <generator
+            class="org.eclipse.smartmdsd.xtend.smartsoft.generator.commObj.CommObjGenerator2">
+      </generator>
+   </extension>
+   <extension
+         point="org.eclipse.smartmdsd.xtext.component.componentDefinition.ComponentDefinitionGeneratorEP">
+      <generator
+            class="org.eclipse.smartmdsd.xtend.smartsoft.generator.component.ComponentGenerator2">
+      </generator>
+   </extension>
+   <extension
+         point="org.eclipse.smartmdsd.xtext.component.componentParameter.ComponentParameterGeneratorEP">
+      <generator
+            class="org.eclipse.smartmdsd.xtend.smartsoft.generator.component.params.ComponentParamsGenerator2">
+      </generator>
+   </extension>
+   <extension
+         point="org.eclipse.smartmdsd.xtext.system.deployment.DeploymentGeneratorEP">
+      <generator
+            class="org.eclipse.smartmdsd.xtend.smartsoft.generator.deployment.DeploymentGenerator2">
+      </generator>
+   </extension>
+   <extension
+         point="org.eclipse.smartmdsd.xtext.system.systemParameter.SystemParameterGeneratorEP">
+      <generator
+            class="org.eclipse.smartmdsd.xtend.smartsoft.generator.system.params.SystemParameterGenerator2">
+      </generator>
+   </extension>
+   <extension
+         point="org.eclipse.smartmdsd.xtext.system.componentArchitecture.ComponentArchitectureGeneratorEP">
+      <generator
+            class="org.eclipse.smartmdsd.xtend.smartsoft.generator.system.SystemGenerator2">
+      </generator>
+   </extension>
+   <extension
+         point="org.eclipse.smartmdsd.xtext.system.targetPlatform.TargetPlatformGeneratorEP">
+      <generator
+            class="org.eclipse.smartmdsd.xtend.smartsoft.generator.targetPlatform.TargetPlatformGenerator2">
+      </generator>
+   </extension>
+   <extension
+         point="org.eclipse.smartmdsd.xtext.component.componentDatasheet.ComponentDatasheetGeneratorEP">
+      <generator
+            class="org.eclipse.smartmdsd.xtend.smartsoft.generator.component.docu.ComponentDocuGenerator2">
+      </generator>
+   </extension>
+</plugin>

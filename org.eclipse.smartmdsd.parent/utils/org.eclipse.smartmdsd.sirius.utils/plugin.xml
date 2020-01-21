@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.sirius.sessionManagerListener">
+      <listener
+            class="org.eclipse.smartmdsd.sirius.utils.DiagramSnapshotManager">
+      </listener>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="org.eclipse.smartmdsd.sirius.utils.CommPortEditPartProvider">
+         <Priority
+               name="Highest">
+         </Priority>
+      </editpartProvider>
+   </extension>
+</plugin>

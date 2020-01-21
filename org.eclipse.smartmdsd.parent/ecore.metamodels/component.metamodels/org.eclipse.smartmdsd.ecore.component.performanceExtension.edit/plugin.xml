@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated performanceExtension -->
+      <factory
+            uri="http://www.eclipse.org/smartmdsd/component/performanceExtension"
+            class="org.eclipse.smartmdsd.ecore.component.performanceExtension.provider.PerformanceExtensionItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated performanceExtension -->
+      <extender
+            uri="http://www.eclipse.org/smartmdsd/component/componentDefinition"
+            class="org.eclipse.smartmdsd.ecore.component.performanceExtension.provider.PerformanceExtensionItemProviderAdapterFactory$ComponentDefinitionChildCreationExtender"/>
+   </extension>
+
+</plugin>

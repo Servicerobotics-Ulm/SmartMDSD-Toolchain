@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="targetPlatform" version="12.0.0.2017041100">
+  <ownedViewpoints name="TargetPlatformViewpoint" modelFileExtension="target" icon="/org.eclipse.smartmdsd.sirius.utils/icons/PC.gif">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="TargetPlatformDiagram" titleExpression="[self.getProjectName()+'TargetPlatform'/]" initialisation="true" domainClass="targetPlatform::TargetPlatformModel" enablePopupBars="true">
+      <metamodel href="../../org.eclipse.smartmdsd.ecore.system.targetPlatform/model/targetPlatform.ecore#/"/>
+      <metamodel href="../../org.eclipse.smartmdsd.ecore.service.roboticMiddleware/model/roboticMiddleware.ecore#/"/>
+      <defaultLayer name="Default" icon="/org.eclipse.smartmdsd.sirius.utils/icons/PC.gif">
+        <edgeMappings name="NetworkConnectionEdge" sourceMapping="//@ownedViewpoints[name='TargetPlatformViewpoint']/@ownedRepresentations[name='TargetPlatformDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformContainer']/@borderedNodeMappings[name='NetworkInterfaceNode']" targetMapping="//@ownedViewpoints[name='TargetPlatformViewpoint']/@ownedRepresentations[name='TargetPlatformDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformContainer']/@borderedNodeMappings[name='NetworkInterfaceNode']" targetFinderExpression="feature:endpoint2" sourceFinderExpression="feature:endpoint1" domainClass="targetPlatform::NetworkConnection" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="TargetPlatformContainer" semanticCandidatesExpression="feature:elements" domainClass="targetPlatform::TargetPlatformDefinition">
+          <borderedNodeMappings name="NetworkInterfaceNode" semanticCandidatesExpression="feature:elements" domainClass="targetPlatform::NetworkInterface">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" tooltipExpression="NetworkInterface" resizeKind="NSEW" workspacePath="/org.eclipse.smartmdsd.sirius.system.targetPlatform.design/icons/EthernetPort.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </borderedNodeMappings>
+          <subContainerMappings name="CPUContainer" semanticCandidatesExpression="feature:elements" domainClass="targetPlatform::CPU">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="CPU">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="OperatingSystemContainer" semanticCandidatesExpression="feature:os" domainClass="targetPlatform::OperatingSystem">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="[self.eClass().name/]" tooltipExpression="OperatingSystem">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="LoginAccountContainer" semanticCandidatesExpression="feature:elements" domainClass="targetPlatform::LoginAccount">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="LoginAccount">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="TargetMiddlewares" semanticCandidatesExpression="var:self" domainClass="targetPlatform::TargetPlatformDefinition" childrenPresentation="List">
+            <subNodeMappings name="MiddlewareNode" semanticCandidatesExpression="feature:elements" domainClass="targetPlatform::TargetMiddleware">
+              <style xsi:type="style:BundledImageDescription" labelExpression="[self.middleware.eClass().name/]" labelAlignment="LEFT" tooltipExpression="TargetMiddleware" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="['TargetMiddlewares'/]" tooltipExpression="TargetMiddlewares">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" tooltipExpression="ComputationPlatform" foregroundColor="//@userColorsPalettes[name='TargetColors']/@entries[name='LightBlue']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Platform Tools" icon="/org.eclipse.smartmdsd.sirius.utils/icons/PC.gif">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="TargetPlatform" containerMappings="//@ownedViewpoints[name='TargetPlatformViewpoint']/@ownedRepresentations[name='TargetPlatformDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="targetPlatform::TargetPlatformDefinition" referenceName="elements">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['PC'+container.elements->size()/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="NetworkInterface" nodeMappings="//@ownedViewpoints[name='TargetPlatformViewpoint']/@ownedRepresentations[name='TargetPlatformDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformContainer']/@borderedNodeMappings[name='NetworkInterfaceNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="targetPlatform::NetworkInterface" referenceName="elements">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['eth'+container.elements->size()/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="hostAddress" valueExpression="['localhost'/]"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="NetworkConnection" precondition="[preSource&lt;>preTarget/]" edgeMappings="//@ownedViewpoints[name='TargetPlatformViewpoint']/@ownedRepresentations[name='TargetPlatformDiagram']/@defaultLayer/@edgeMappings[name='NetworkConnectionEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(targetPlatform::TargetPlatform).eContainer(targetPlatform::TargetPlatformModel)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="targetPlatform::NetworkConnection" referenceName="elements" variableName="connection">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="endpoint1" valueExpression="var:source">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="endpoint2" valueExpression="var:target"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="CPU" containerMappings="//@ownedViewpoints[name='TargetPlatformViewpoint']/@ownedRepresentations[name='TargetPlatformDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformContainer']/@subContainerMappings[name='CPUContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="targetPlatform::CPU" referenceName="elements">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['CPU'+container.elements->size()/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="kind" valueExpression="['Intel DualCore 64bit'/]">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="coresTally" valueExpression="[2/]"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="LoginAccount" containerMappings="//@ownedViewpoints[name='TargetPlatformViewpoint']/@ownedRepresentations[name='TargetPlatformDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformContainer']/@subContainerMappings[name='LoginAccountContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="targetPlatform::LoginAccount" referenceName="elements">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['guest'/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="fullname" valueExpression="['Guest'/]">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="email" valueExpression="['guest@example.com'/]"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="OperatingSystemGroup">
+            <tools xsi:type="tool:ContainerCreationDescription" name="Linux" precondition="[container.os=null/]" containerMappings="//@ownedViewpoints[name='TargetPlatformViewpoint']/@ownedRepresentations[name='TargetPlatformDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformContainer']/@subContainerMappings[name='OperatingSystemContainer']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="targetPlatform::Linux" referenceName="os">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="kind" valueExpression="['Ubuntu Linux 16.04 64bit'/]"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:ContainerCreationDescription" name="Windows" precondition="[container.os=null/]" containerMappings="//@ownedViewpoints[name='TargetPlatformViewpoint']/@ownedRepresentations[name='TargetPlatformDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformContainer']/@subContainerMappings[name='OperatingSystemContainer']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="targetPlatform::Windows" referenceName="os">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="kind" valueExpression="['Windows 7 64bit'/]"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:ContainerCreationDescription" name="MacOS" precondition="[container.os=null/]" containerMappings="//@ownedViewpoints[name='TargetPlatformViewpoint']/@ownedRepresentations[name='TargetPlatformDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformContainer']/@subContainerMappings[name='OperatingSystemContainer']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="targetPlatform::MacOS" referenceName="os">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="kind" valueExpression="['OSX'/]"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="MiddlewareGroup">
+            <tools xsi:type="tool:NodeCreationDescription" name="ACE_SmartSoft" nodeMappings="//@ownedViewpoints[name='TargetPlatformViewpoint']/@ownedRepresentations[name='TargetPlatformDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformContainer']/@subContainerMappings[name='TargetMiddlewares']/@subNodeMappings[name='MiddlewareNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="targetPlatform::TargetMiddleware" referenceName="elements">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="roboticMiddleware::ACE_SmartSoft" referenceName="middleware"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:NodeCreationDescription" name="OpcUa_SeRoNet" nodeMappings="//@ownedViewpoints[name='TargetPlatformViewpoint']/@ownedRepresentations[name='TargetPlatformDiagram']/@defaultLayer/@containerMappings[name='TargetPlatformContainer']/@subContainerMappings[name='TargetMiddlewares']/@subNodeMappings[name='MiddlewareNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="targetPlatform::TargetMiddleware" referenceName="elements">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="roboticMiddleware::OpcUa_SeRoNet" referenceName="middleware"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.eclipse.smartmdsd.sirius.system.targetPlatform.design.Services"/>
+  </ownedViewpoints>
+  <userColorsPalettes name="TargetColors">
+    <entries xsi:type="description:UserFixedColor" red="200" green="230" blue="255" name="LightBlue"/>
+  </userColorsPalettes>
+</description:Group>

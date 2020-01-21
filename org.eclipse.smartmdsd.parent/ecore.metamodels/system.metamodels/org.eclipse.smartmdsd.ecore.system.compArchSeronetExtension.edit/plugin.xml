@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated compArchSeronetExtension -->
+      <factory
+            uri="http://www.eclipse.org/smartmdsd/system/compArchSeronetExtension"
+            class="org.eclipse.smartmdsd.ecore.system.compArchSeronetExtension.provider.CompArchSeronetExtensionItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated compArchSeronetExtension -->
+      <extender
+            uri="http://www.eclipse.org/smartmdsd/system/componentArchitecture"
+            class="org.eclipse.smartmdsd.ecore.system.compArchSeronetExtension.provider.CompArchSeronetExtensionItemProviderAdapterFactory$ComponentArchitectureChildCreationExtender"/>
+   </extension>
+
+</plugin>

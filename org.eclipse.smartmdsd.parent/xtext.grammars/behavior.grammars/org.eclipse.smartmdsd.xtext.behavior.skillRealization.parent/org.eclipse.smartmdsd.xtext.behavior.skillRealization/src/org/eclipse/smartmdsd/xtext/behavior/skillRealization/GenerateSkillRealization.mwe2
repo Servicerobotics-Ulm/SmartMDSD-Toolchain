@@ -1,0 +1,69 @@
+module org.eclipse.smartmdsd.xtext.behavior.skillRealization.GenerateSkillRealization
+
+import org.eclipse.xtext.xtext.generator.*
+import org.eclipse.xtext.xtext.generator.model.project.*
+
+var rootPath = ".."
+var copyrightFileHeader = "//================================================================
+//
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
+//
+//        lotz@hs-ulm.de
+//        stampfer@hs-ulm.de
+//        lutz@hs-ulm.de
+//
+//        Servicerobotik Ulm
+//        Christian Schlegel
+//        Ulm University of Applied Sciences
+//        Prittwitzstr. 10
+//        89075 Ulm
+//        Germany
+//
+//  This file is part of the SmartMDSD Toolchain V3.
+//
+//================================================================"
+
+Workflow {
+	
+	component = XtextGenerator {
+		configuration = {
+			project = StandardProjectConfig {
+				baseName = "org.eclipse.smartmdsd.xtext.behavior.skillRealization"
+				rootPath = rootPath
+				eclipsePlugin = {
+					enabled = true
+				}
+				createEclipseMetaData = true
+			}
+			code = {
+				encoding = "UTF-8"
+				lineDelimiter = "\n"
+				fileHeader = copyrightFileHeader
+				preferXtendStubs = true
+			}
+		}
+		language = StandardLanguage {
+			name = "org.eclipse.smartmdsd.xtext.behavior.skillRealization.SkillRealization"
+			fileExtensions = "skillRealization"
+			referencedResource = "platform:/resource/org.eclipse.smartmdsd.ecore.behavior.skillRealization/model/skillRealization.genmodel"
+			
+			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
+
+			formatter = {
+				generateStub = true
+			}
+
+			serializer = {
+				generateStub = false
+			}
+			validator = {
+				composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+				// Generates checks for @Deprecated grammar annotations, an IssueProvider and a corresponding PropertyPage
+				generateDeprecationValidation = true
+			}
+			junitSupport = {
+				junitVersion = "5"
+			}
+		}
+	}
+}

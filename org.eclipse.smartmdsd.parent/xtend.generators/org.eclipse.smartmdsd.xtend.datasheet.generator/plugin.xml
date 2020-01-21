@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.smartmdsd.xtext.component.componentDatasheet.ComponentDatasheetGeneratorEP">
+      <generator
+            class="org.eclipse.smartmdsd.xtend.datasheet.generator.component.ComponentDatasheetGenerator">
+      </generator>
+   </extension>
+   <extension
+         point="org.eclipse.smartmdsd.xtext.service.domainModelsDatasheet.DomainModelsDatasheetGeneratorEP">
+      <generator
+            class="org.eclipse.smartmdsd.xtend.datasheet.generator.domainModels.DomainModelsDatasheetGenerator">
+      </generator>
+   </extension>
+
+</plugin>

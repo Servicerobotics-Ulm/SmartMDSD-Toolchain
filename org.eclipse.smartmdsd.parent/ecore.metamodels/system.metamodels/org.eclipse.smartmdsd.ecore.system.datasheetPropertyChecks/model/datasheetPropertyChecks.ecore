@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="datasheetPropertyChecks" nsURI="http://www.eclipse.org/smartmdsd/system/datasheetPropertyChecks"
+    nsPrefix="datasheetPropertyChecks">
+  <eClassifiers xsi:type="ecore:EClass" name="SystemDatasheetPropertyChecksModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="checks" upperBound="-1"
+        eType="#//DatasheetPropertyCheck" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="system" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.smartmdsd.ecore.system.componentArchitecture/model/componentArchitecture.ecore#//SystemComponentArchitecture"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EvaluationFunction">
+    <eLiterals name="FOR_ALL"/>
+    <eLiterals name="SUM" value="1"/>
+    <eLiterals name="EXISTS" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EvaluationOperator">
+    <eLiterals name="EQ" literal="=="/>
+    <eLiterals name="NEQ" value="1" literal="!="/>
+    <eLiterals name="LT" value="2" literal="&lt;"/>
+    <eLiterals name="LET" value="3" literal="&lt;="/>
+    <eLiterals name="GET" value="4" literal=">="/>
+    <eLiterals name="GT" value="5" literal=">"/>
+    <eLiterals name="COMPATIBLE_TO" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DatasheetPropertyCheck">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="function" eType="#//EvaluationFunction"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="propertyName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//EvaluationOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="propertyValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="propertyUnit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: BehaviorGenerator
+Bundle-SymbolicName: org.eclipse.smartmdsd.xtend.behavior.generator;singleton:=true
+Bundle-Version: 3.7.0.qualifier
+Automatic-Module-Name: org.eclipse.smartmdsd.xtend.behavior.generator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.commands,
+ org.eclipse.core.resources,
+ com.google.inject,
+ org.eclipse.xtext,
+ org.eclipse.xtext.util,
+ org.eclipse.xtext.generator,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.ui.workbench,
+ org.eclipse.smartmdsd.xtend.smartsoft.generator,
+ org.eclipse.smartmdsd.xtext.service.serviceDefinition,
+ org.eclipse.smartmdsd.ecore.component.coordinationExtension,
+ org.eclipse.smartmdsd.ecore.system.componentArchitecture,
+ org.eclipse.smartmdsd.xtext.system.componentArchitecture
+Bundle-Vendor: Servicerobotics Ulm

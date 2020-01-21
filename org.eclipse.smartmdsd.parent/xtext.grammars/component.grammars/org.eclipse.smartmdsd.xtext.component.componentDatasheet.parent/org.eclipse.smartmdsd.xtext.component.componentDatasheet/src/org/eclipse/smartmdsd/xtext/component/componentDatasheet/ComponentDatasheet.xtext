@@ -1,0 +1,42 @@
+//================================================================
+//
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
+//
+//        lotz@hs-ulm.de
+//        stampfer@hs-ulm.de
+//        lutz@hs-ulm.de
+//
+//        Servicerobotik Ulm
+//        Christian Schlegel
+//        Ulm University of Applied Sciences
+//        Prittwitzstr. 10
+//        89075 Ulm
+//        Germany
+//
+//  This file is part of the SmartMDSD Toolchain V3. 
+//
+//================================================================
+grammar org.eclipse.smartmdsd.xtext.component.componentDatasheet.ComponentDatasheet with org.eclipse.smartmdsd.xtext.base.genericDatasheet.GenericDatasheet
+
+import "http://www.eclipse.org/smartmdsd/component/componentDatasheet" 
+import "http://www.eclipse.org/smartmdsd/base/genericDatasheet" as genericDatasheet
+import "http://www.eclipse.org/smartmdsd/component/componentDefinition" as componentDefinition
+import "http://www.eclipse.org/smartmdsd/component/coordinationExtension" as coordination
+
+
+ComponentDatasheet returns ComponentDatasheet:
+	'ComponentDatasheet' component=[componentDefinition::ComponentDefinition]
+	'{'
+		GenericDatasheetModel
+	'}';
+
+@Override 
+AbstractDatasheetElement returns genericDatasheet::AbstractDatasheetElement:
+	DatasheetProperty | MandatoryDatasheetElement | ComponentPortDatasheet
+;
+
+ComponentPortDatasheet:
+	'ComponentPortDatasheet' port=[componentDefinition::ComponentPort] '{'
+		(properties+=DatasheetProperty)*
+	'}'
+;

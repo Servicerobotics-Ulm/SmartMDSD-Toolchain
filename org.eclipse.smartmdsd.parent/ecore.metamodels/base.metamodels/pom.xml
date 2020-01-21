@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>base.metamodels</artifactId>
+  <packaging>pom</packaging>
+  <parent>
+  	<groupId>org.eclipse.smartmdsd</groupId>
+  	<artifactId>ecore.metamodels</artifactId>
+  	<version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <modules>
+  	<module>
+  		org.eclipse.smartmdsd.ecore.base.documentation
+  	</module>
+  	<module>
+  		org.eclipse.smartmdsd.ecore.base.documentation.edit
+  	</module>
+  	<module>org.eclipse.smartmdsd.ecore.base.basicAttributes</module>
+  	<module>
+  		org.eclipse.smartmdsd.ecore.base.basicAttributes.edit
+  	</module>
+  	<module>org.eclipse.smartmdsd.ecore.base.genericDatasheet</module>
+  	<module>
+  		org.eclipse.smartmdsd.ecore.base.genericDatasheet.edit
+  	</module>
+  	<module>org.eclipse.smartmdsd.ecore.base.mixedport</module>
+  	<module>org.eclipse.smartmdsd.ecore.base.mixedport.edit</module>
+  	<module>org.eclipse.smartmdsd.ecore.base.stateMachine</module>
+  	<module>
+  		org.eclipse.smartmdsd.ecore.base.stateMachine.edit
+  	</module>
+  </modules>
+</project>

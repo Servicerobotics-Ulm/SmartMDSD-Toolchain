@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Open62541XmlCompiler
+Bundle-SymbolicName: org.eclipse.smartmdsd.xtend.open62541.compiler
+Bundle-Version: 3.8.0.qualifier
+Bundle-Vendor: Servicerobotics Ulm
+Automatic-Module-Name: org.eclipse.smartmdsd.xtend.open62541.compiler
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.core.runtime,
+ com.google.inject,
+ org.eclipse.xtext,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtext.util,
+ org.eclipse.xtext.generator,
+ org.apache.log4j
+Export-Package: org.eclipse.smartmdsd.xtend.open62541.compiler

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="componentArchitecture" version="12.0.0.2017041100">
+  <ownedViewpoints name="SystemArchitectureViewpoint" modelFileExtension="componentArch" icon="/org.eclipse.smartmdsd.sirius.utils/icons/system.png">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SystemArchitectureDiagram" titleExpression="[self.getProjectName()+'ComponentArchitecture'/]" initialisation="true" domainClass="componentArchitecture::SystemComponentArchitecture" enablePopupBars="true">
+      <metamodel href="../../org.eclipse.smartmdsd.ecore.system.componentArchitecture/model/componentArchitecture.ecore#/"/>
+      <metamodel href="../../org.eclipse.smartmdsd.ecore.service.roboticMiddleware/model/roboticMiddleware.ecore#/"/>
+      <metamodel href="../../org.eclipse.smartmdsd.ecore.system.compArchSeronetExtension/model/compArchSeronetExtension.ecore#/"/>
+      <metamodel href="../../org.eclipse.smartmdsd.ecore.system.systemParameter/model/systemParameter.ecore#/"/>
+      <defaultLayer name="Default" icon="/org.eclipse.smartmdsd.sirius.utils/icons/system.png">
+        <edgeMappings name="ConnectionEdge" sourceMapping="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@borderedNodeMappings[name='RequiredServiceNode']" targetMapping="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@borderedNodeMappings[name='ProvidedServiceNode']" targetFinderExpression="feature:to" sourceFinderExpression="feature:from" domainClass="componentArchitecture::Connection" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="service:self.getCommObjectName()" iconPath="/org.eclipse.smartmdsd.sirius.utils/icons/commObj_16x16.gif">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="ComponentInstanceContainer" deletionDescription="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DeleteComponentInstanceAndConnections']" semanticCandidatesExpression="feature:components" domainClass="componentArchitecture::ComponentInstance">
+          <borderedNodeMappings name="RequiredServiceNode" semanticCandidatesExpression="feature:ports" domainClass="componentArchitecture::RequiredService">
+            <style xsi:type="style:CustomStyleDescription" showIcon="false" tooltipExpression="InputRequestor" resizeKind="NSEW" id="inreq">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+            <conditionnalStyles predicateExpression="service:self.isJoyningService()">
+              <style xsi:type="style:CustomStyleDescription" showIcon="false" tooltipExpression="OutputRequestor" resizeKind="NSEW" id="outreq">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="service:self.is2WayService()">
+              <style xsi:type="style:CustomStyleDescription" showIcon="false" tooltipExpression="2WayRequestor" resizeKind="NSEW" id="2wreq">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="ProvidedServiceNode" semanticCandidatesExpression="feature:ports" domainClass="componentArchitecture::ProvidedService">
+            <style xsi:type="style:CustomStyleDescription" showIcon="false" tooltipExpression="OutputProvider" resizeKind="NSEW" id="outprov">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+            <conditionnalStyles predicateExpression="service:self.isJoyningService()">
+              <style xsi:type="style:CustomStyleDescription" showIcon="false" tooltipExpression="InputProvider" resizeKind="NSEW" id="inprov">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="service:self.is2WayService()">
+              <style xsi:type="style:CustomStyleDescription" showIcon="false" tooltipExpression="2WayAnswer" resizeKind="NSEW" id="2wansw">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+          </borderedNodeMappings>
+          <subContainerMappings name="ParameterStructInstanceContainer" semanticCandidatesExpression="feature:extensions" doubleClickDescription="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='OpenParamView']" domainClass="systemParameter::ParameterStructInstance">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="ParameterStructInstance">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[thisEObject.name+': '+thisEObject.component.name/]" tooltipExpression="ComponentInstance">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="System Tools" icon="/org.eclipse.smartmdsd.sirius.utils/icons/system.png">
+          <ownedTools xsi:type="tool:ToolDescription" name="ImportComponents" iconPath="/org.eclipse.smartmdsd.sirius.utils/icons/import.gif">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:self.importModels()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="ComponentInstance" containerMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']">
+            <variable name="container">
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="compDefs" candidatesExpression="service:self.getAllVisibleComponentDefinitions()" multiple="true" message="Select one or several ComponentDefinition(s) to instantiate" userDocumentation="ComponentDefinition"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:For" expression="var:compDefs" iteratorName="compDef">
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="componentArchitecture::ComponentInstance" referenceName="components">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="component" valueExpression="var:compDef">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="[compDef.name/]">
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:instance.instantiateAllComponentPorts()"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="Connection" precondition="service:preSource.isCompatibleConnection(preTarget)" edgeMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@edgeMappings[name='ConnectionEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="[source.eContainer().eContainer()/]">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="componentArchitecture::Connection" referenceName="connections" variableName="connection">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="from" valueExpression="var:source">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="to" valueExpression="var:target"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="RequiredService(s)" nodeMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@borderedNodeMappings[name='RequiredServiceNode']">
+            <variable name="container">
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="services" candidatesExpression="service:container.getAllServiceUses()" multiple="true" message="Select one (or several) services to instantiate"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:For" expression="var:services" iteratorName="service">
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="componentArchitecture::RequiredService" referenceName="ports" variableName="required">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="port" valueExpression="var:service"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="ProvidedService(s)" nodeMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@borderedNodeMappings[name='ProvidedServiceNode']">
+            <variable name="container">
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="services" candidatesExpression="service:container.getAllServiceRealizations()" multiple="true" message="Select one (or several) ServiceRealization(s) to instantiate"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:For" expression="var:services" iteratorName="service">
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="componentArchitecture::ProvidedService" referenceName="ports" variableName="provider">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="port" valueExpression="var:service"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:PopupMenu" name="SystemComponentArchitecture">
+            <menuItemDescription xsi:type="tool:ExternalJavaAction" name="OpenComponentInstanceParameter" icon="/org.eclipse.smartmdsd.sirius.system.componentArchitecture.design/icons/Parameter.gif" id="OpenSystemParameterEditor">
+              <parameters name="self" value="var:self"/>
+            </menuItemDescription>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="OpenParamView" mappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@subContainerMappings[name='ParameterStructInstanceContainer']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                <subModelOperations xsi:type="tool:ExternalJavaActionCall" name="OpenParamEditor" icon="/org.eclipse.smartmdsd.sirius.system.design/icons/Parameter.gif" action="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SystemComponentArchitecture']/@menuItemDescription.0"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="ParameterStructInstance" containerMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@subContainerMappings[name='ParameterStructInstanceContainer']">
+            <variable name="container">
+              <subVariables xsi:type="tool:AcceleoVariable" name="parameterInstance" computationExpression="service:container.createAndGetComponentParameterInstance()"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:If" conditionExpression="[parameterInstance&lt;>null/]">
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="systemParameter::ParameterStructInstance" referenceName="extensions">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="parameter" valueExpression="var:parameterInstance">
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:containerView">
+                        <subModelOperations xsi:type="tool:ExternalJavaActionCall" name="OpenCompParamEditor" action="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SystemComponentArchitecture']/@menuItemDescription.0"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="DeleteComponentInstanceAndConnections">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:element.deleteComponentAndRelatedConnections()"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+      <additionalLayers name="SeRoNet" icon="/org.eclipse.smartmdsd.sirius.system.componentArchitecture.design/icons/SeRoNetIcon.png">
+        <edgeMappings name="MWConnectionEdge" sourceMapping="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@edgeMappings[name='ConnectionEdge']" targetMapping="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='MiddlewareSelectionContainer']" targetFinderExpression="feature:middlewareSelection">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="OpcReadServerToPortEdge" sourceMapping="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentInstanceImport']/@subContainerMappings[name='OpcUaReadServerInstanceContainer']" targetMapping="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@borderedNodeMappings[name='ProvidedServiceNode'] //@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@borderedNodeMappings[name='RequiredServiceNode']" targetFinderExpression="service:self.selectOpcUaReadServerPortReference()">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings xsi:type="description_1:ContainerMappingImport" name="ComponentInstanceImport" reusedBorderedNodeMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@borderedNodeMappings[name='ProvidedServiceNode'] //@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@borderedNodeMappings[name='RequiredServiceNode']" reusedContainerMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']/@subContainerMappings[name='ParameterStructInstanceContainer']" importedMapping="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']">
+          <subContainerMappings name="OpcUaDeviceClientInstanceContainer" semanticCandidatesExpression="feature:extensions" domainClass="compArchSeronetExtension::OpcUaDeviceClientInstance">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="OpcUaDeviceClientInstance">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="OpcUaReadServerInstanceContainer" semanticCandidatesExpression="feature:extensions" domainClass="compArchSeronetExtension::OpcUaReadServerInstance">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="OpcUaReadServerInstance">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+        </containerMappings>
+        <containerMappings name="MiddlewareSelectionContainer" semanticCandidatesExpression="feature:eAllContents" domainClass="roboticMiddleware::RoboticMiddleware">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="[self.eClass().name/]" tooltipExpression="MiddlewareSelection">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+          <conditionnalStyles predicateExpression="[self.oclIsTypeOf(roboticMiddleware::OpcUa_SeRoNet)/]">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="['OPC UA SeRoNet Backend'/]" iconPath="/org.eclipse.smartmdsd.sirius.system.componentArchitecture.design/icons/SeRoNetIcon.png" tooltipExpression="OPC UA SeRoNet Backend">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </conditionnalStyles>
+        </containerMappings>
+        <toolSections name="SeRoNet Tools" icon="/org.eclipse.smartmdsd.sirius.system.componentArchitecture.design/icons/SeRoNetIcon.png">
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="OpcUaDeviceClientInstance" label="Plain OPC UA DeviceClient Instance" containerMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentInstanceImport']/@subContainerMappings[name='OpcUaDeviceClientInstanceContainer']">
+            <variable name="container">
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="deviceClient" candidatesExpression="[container.component.elements->filter(seronetExtension::OpcUaDeviceClient)/]" message="Select Plain OPC UA DeviceClient to be refined"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="compArchSeronetExtension::OpcUaDeviceClientInstance" referenceName="extensions">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="deviceClient" valueExpression="var:deviceClient">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="deviceURI" valueExpression="[deviceClient.deviceURI/]"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="OpcUaReadServerInstance" label="Plain OPC UA ReadServer Instance" containerMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentInstanceImport']/@subContainerMappings[name='OpcUaReadServerInstanceContainer']">
+            <variable name="container">
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="readServer" candidatesExpression="[container.component.elements->filter(seronetExtension::OpcUaReadServer)/]" message="Select Plain OPC UA ReadServer to be refined"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="compArchSeronetExtension::OpcUaReadServerInstance" referenceName="extensions">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="readServer" valueExpression="var:readServer">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="portNumber" valueExpression="[readServer.portNumber/]"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolGroup" name="MiddlewareSelection">
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="OpcUa_SeRoNet" label="OPC UA SeRoNet Backend" containerMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='MiddlewareSelectionContainer']" iconPath="/org.eclipse.smartmdsd.sirius.system.componentArchitecture.design/icons/SeRoNetIcon.png">
+              <variable name="container">
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="connection" candidatesExpression="[container.connections/]" message="Select Connection edge"/>
+              </variable>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:connection">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="roboticMiddleware::OpcUa_SeRoNet" referenceName="middlewareSelection"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="DDS_SmartSoft" label="DDS/SmartSoft Backend" containerMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='MiddlewareSelectionContainer']">
+              <variable name="container">
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="connection" candidatesExpression="[container.connections/]" message="Select Connection edge"/>
+              </variable>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:connection">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="roboticMiddleware::DDS_SmartSoft" referenceName="middlewareSelection"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="ACE_SmartSoft" label="ACE/SmartSoft Backend" containerMappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='MiddlewareSelectionContainer']">
+              <variable name="container">
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="connection" candidatesExpression="[container.connections/]" message="Select Connection edge"/>
+              </variable>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:connection">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="roboticMiddleware::ACE_SmartSoft" referenceName="middlewareSelection"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+      <additionalLayers name="BrandingLogos" icon="/org.eclipse.smartmdsd.sirius.utils/icons/comp.png" activeByDefault="true">
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="ComponentLogo" position="NORTH_EAST" preconditionExpression="service:self.hasLogo()" imageExpression="service:self.getLogoPath()" tooltipExpression="['Branding Logo'/]" mappings="//@ownedViewpoints[name='SystemArchitectureViewpoint']/@ownedRepresentations[name='SystemArchitectureDiagram']/@defaultLayer/@containerMappings[name='ComponentInstanceContainer']"/>
+        </decorationDescriptionsSet>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.eclipse.smartmdsd.sirius.system.componentArchitecture.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

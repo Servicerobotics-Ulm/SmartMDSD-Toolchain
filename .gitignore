@@ -1,6 +1,3 @@
-.metadata/
-*.xtendbin
-*.xtextbin
-*._trace
 bin/
+target/
 xtend-gen/

@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="component" version="12.0.0.2017041100">
+  <ownedViewpoints name="ComponentDefinitionViewpoint" modelFileExtension="component" icon="/org.eclipse.smartmdsd.sirius.component.design/icons/component.gif">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ComponentDefinitionDiagram" titleExpression="service:self.getProjectName()" initialisation="true" domainClass="componentDefinition::ComponentDefModel" enablePopupBars="true">
+      <metamodel href="../../org.eclipse.smartmdsd.ecore.component.componentDefinition/model/componentDefinition.ecore#/"/>
+      <metamodel href="../../org.eclipse.smartmdsd.ecore.component.componentParameter/model/componentParameter.ecore#/"/>
+      <metamodel href="../../org.eclipse.smartmdsd.ecore.component.performanceExtension/model/performanceExtension.ecore#/"/>
+      <metamodel href="../../org.eclipse.smartmdsd.ecore.component.seronetExtension/model/seronetExtension.ecore#/"/>
+      <metamodel href="../../org.eclipse.smartmdsd.ecore.service.roboticMiddleware/model/roboticMiddleware.ecore#/"/>
+      <metamodel href="../../org.eclipse.smartmdsd.ecore.component.coordinationExtension/model/coordinationExtension.ecore#/"/>
+      <metamodel href="../../org.eclipse.smartmdsd.ecore.base.mixedport/model/mixedport.ecore#/"/>
+      <filters xsi:type="filter:CompositeFilterDescription" name="CoordinationElementsFilter">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentModesContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='CoordinationSlaveNode'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentParametersContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@edgeMappings[name='CommunicationServiceUsageRealizationEdge']"/>
+      </filters>
+      <defaultLayer name="Default" icon="/org.eclipse.smartmdsd.sirius.component.design/icons/component.gif">
+        <edgeMappings name="InputLinkEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='InputPortNode']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='InputHandlerContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='RequestHandlerContainer']" targetFinderExpression="[thisEObject.eContainer()/]" sourceFinderExpression="feature:inputPort" domainClass="componentDefinition::InputPortLink" useDomainElement="true" reconnections="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ReconnectInputLinkSource']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+          <conditionnalStyles predicateExpression="[thisEObject.optional/]">
+            <style lineStyle="dash" sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <centerLabelStyleDescription>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <edgeMappings name="ActivityOutputEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='OutputPortNode']" targetFinderExpression="var:self" sourceFinderExpression="feature:activity" domainClass="componentDefinition::OutputPort" useDomainElement="true" reconnections="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ReconnectOutputPort']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ObserverEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='InputHandlerContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='RequestHandlerContainer']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='RequestHandlerContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='InputHandlerContainer']" targetFinderExpression="[self.eContainer()/]" sourceFinderExpression="feature:subject" domainClass="componentDefinition::ComponentSubNodeObserver" useDomainElement="true" reconnections="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ReconnectObserverSource'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ReconnectObserverTarget']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="RequestHandlerEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='AnswerPortNode']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='RequestHandlerContainer']" targetFinderExpression="var:self" sourceFinderExpression="feature:answerPort" domainClass="componentDefinition::RequestHandler" useDomainElement="true">
+          <style targetArrow="OutputClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="RequestorLinkEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='InputHandlerContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='RequestHandlerContainer']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='RequestPortNode']" targetFinderExpression="feature:requestPort" sourceFinderExpression="[self.eContainer()/]" domainClass="componentDefinition::RequestPortLink" useDomainElement="true" reconnections="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ReconnectRequestLinkTarget']">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="InputHandlerLink" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='InputPortNode']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='InputHandlerContainer']" targetFinderExpression="var:self" sourceFinderExpression="feature:inputPort" domainClass="componentDefinition::InputHandler" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="['upcall'/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="CoordinationSlaveEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='CoordinationSlaveNode']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentModesContainer']" targetFinderExpression="var:self" sourceFinderExpression="var:self" domainClass="coordinationExtension::CoordinationSlavePort" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="OperationModeBinding" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentModesContainer']/@subContainerMappings[name='PrivateOperationModeContainer']" targetFinderExpression="feature:mode" sourceFinderExpression="[self.eContainer()/]" domainClass="coordinationExtension::OperationModeBinding" useDomainElement="true" reconnections="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ReconnectOperationModeBindingTarget']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="['uses'/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="PrivateOperationModeEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentModesContainer']/@subContainerMappings[name='PublicOperationModeContainer']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentModesContainer']/@subContainerMappings[name='PrivateOperationModeContainer']" targetFinderExpression="feature:activates">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ParametersEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentParametersContainer']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='CoordinationSlaveNode']" targetFinderExpression="feature:slave">
+          <style sourceArrow="InputArrow" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="CommunicationServiceUsageRealizationEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='CoordinationSlaveNode']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='OutputPortNode'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='AnswerPortNode']" targetFinderExpression="feature:componentPort" sourceFinderExpression="[self.eContainer()/]" domainClass="coordinationExtension::CommunicationServiceUsageRealization" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="ComponentContainer" labelDirectEdit="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Names']" semanticCandidatesExpression="feature:component" domainClass="componentDefinition::ComponentDefinition">
+          <borderedNodeMappings name="InputPortNode" deletionDescription="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='InputPortRemoval']" semanticCandidatesExpression="feature:elements" domainClass="componentDefinition::InputPort">
+            <style xsi:type="style:CustomStyleDescription" showIcon="false" tooltipExpression="service:self.getDocumentationString()" resizeKind="NSEW" id="input">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="OutputPortNode" semanticCandidatesExpression="feature:elements" domainClass="componentDefinition::OutputPort">
+            <style xsi:type="style:CustomStyleDescription" showIcon="false" tooltipExpression="OutputPort" resizeKind="NSEW" id="output">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="AnswerPortNode" semanticCandidatesExpression="feature:elements" domainClass="componentDefinition::AnswerPort">
+            <style xsi:type="style:CustomStyleDescription" showIcon="false" tooltipExpression="AnswerPort" resizeKind="NSEW" id="answer">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="RequestPortNode" semanticCandidatesExpression="feature:elements" domainClass="componentDefinition::RequestPort">
+            <style xsi:type="style:CustomStyleDescription" showIcon="false" tooltipExpression="RequestPort" resizeKind="NSEW" id="request">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="CoordinationSlaveNode" semanticCandidatesExpression="feature:elements" domainClass="coordinationExtension::CoordinationSlavePort">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" tooltipExpression="CoordinationSlavePort" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.eclipse.smartmdsd.sirius.component.design/icons/CoordinationSlave.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </borderedNodeMappings>
+          <subContainerMappings name="ActivityContainer" labelDirectEdit="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Names']" semanticCandidatesExpression="feature:elements" domainClass="componentDefinition::Activity">
+            <subContainerMappings name="ActivationConstraintsContainer" semanticCandidatesExpression="feature:extensions" domainClass="performanceExtension::ActivationConstraints">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="['ActivationConstraints'/]" tooltipExpression="ActivationConstraints" widthComputationExpression="9">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <subContainerMappings name="DefaultPeriodicTimerContainer" semanticCandidatesExpression="feature:extensions" domainClass="performanceExtension::DefaultPeriodicTimer">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="['PeriodicTimer'/]" tooltipExpression="DefaultTrigger">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <subContainerMappings name="DefaultObserverContainer" deletionDescription="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DefaultTriggerGroup']/@tools.5" semanticCandidatesExpression="feature:extensions" domainClass="performanceExtension::DefaultObservedElementTrigger">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="['Observer'/]" tooltipExpression="Observer">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <subContainerMappings name="DefaultInputTriggerContainer" deletionDescription="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DefaultTriggerGroup']/@tools.4" semanticCandidatesExpression="feature:extensions" domainClass="performanceExtension::DefaultInputTrigger">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="['InputTrigger'/]">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="Activity">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.2"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="InputHandlerContainer" labelDirectEdit="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Names']" semanticCandidatesExpression="feature:elements" domainClass="componentDefinition::InputHandler">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="InputHandler">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.2"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="RequestHandlerContainer" semanticCandidatesExpression="feature:elements" domainClass="componentDefinition::RequestHandler">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="RequestHandler">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="ComponentModesContainer" semanticCandidatesExpression="feature:elements" domainClass="coordinationExtension::CoordinationSlavePort">
+            <subContainerMappings name="PublicOperationModeContainer" semanticCandidatesExpression="feature:elements" domainClass="coordinationExtension::PublicOperationMode">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="PublicOperationMode">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <subContainerMappings name="PrivateOperationModeContainer" semanticCandidatesExpression="feature:elements" domainClass="coordinationExtension::PrivateOperationMode">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="PrivateOperationMode">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="['ComponentModes'/]" iconPath="/org.eclipse.smartmdsd.sirius.component.design/icons/switch2.png" tooltipExpression="ComponentModes">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="ComponentParametersContainer" semanticCandidatesExpression="feature:elements" doubleClickDescription="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.2/@ownedTools[name='OpenParamView']" domainClass="componentParameter::ComponentParametersRef">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" tooltipExpression="ComponentParameters">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" tooltipExpression="service:self.getDocumentationString()">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.2"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Component Tools" icon="/org.eclipse.smartmdsd.sirius.component.design/icons/component.gif">
+          <ownedTools xsi:type="tool:ToolDescription" name="ImportDomainModels" iconPath="/org.eclipse.smartmdsd.sirius.utils/icons/import.gif">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:self.importModels()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="ComponentDefinition" precondition="[container.component=null/]" containerMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="componentDefinition::ComponentDefinition" referenceName="component">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="service:self.getProjectName()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolGroup" name="InputGroup">
+            <tools xsi:type="tool_1:NodeCreationDescription" name="InputPort" nodeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='InputPortNode']">
+              <variable name="container">
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="serviceDefinition" candidatesExpression="service:self.getAllOneWayServiceRelatedCandidates()" tree="true" rootExpression="service:self.getServiceRepositories()" childrenExpression="service:getAllServices()" message="Select a CommunicationServiceDefinition" userDocumentation="A ComponentService needs to reference a predefined CommunicationServiceDefinition"/>
+              </variable>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="componentDefinition::InputPort" referenceName="elements">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="service" valueExpression="var:serviceDefinition">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="[serviceDefinition.name+'In'/]"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="InputUpcallHandler" containerMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='InputHandlerContainer']">
+              <variable name="container">
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="input" candidatesExpression="service:container.getInputPorts()" message="Select an InputPort to be associated with the new InputHandler" userDocumentation="Select an InputPort to be associated with the new InputHandler"/>
+              </variable>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="componentDefinition::InputHandler" referenceName="elements">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="[input.name+'Handler'/]">
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:instance">
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="componentDefinition::InputPortLink" referenceName="inputLink" variableName="link">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="inputPort" valueExpression="var:input">
+                            <subModelOperations xsi:type="tool:SetValue" featureName="optional" valueExpression="[false/]"/>
+                          </subModelOperations>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolGroup" name="InputLinkGroup">
+            <tools xsi:type="tool_1:EdgeCreationDescription" name="MandatoryInputLink" edgeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@edgeMappings[name='InputLinkEdge']">
+              <sourceVariable name="source"/>
+              <targetVariable name="target"/>
+              <sourceViewVariable name="sourceView"/>
+              <targetViewVariable name="targetView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:target">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="performanceExtension::InputLinkExtension" referenceName="links" variableName="inputLink">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:inputLink">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="inputPort" valueExpression="var:source">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="optional" valueExpression="[false/]">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="oversamplingOk" valueExpression="[true/]">
+                            <subModelOperations xsi:type="tool:SetValue" featureName="undersamplingOk" valueExpression="[true/]"/>
+                          </subModelOperations>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:EdgeCreationDescription" name="OptionalInputLink" edgeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@edgeMappings[name='InputLinkEdge']">
+              <sourceVariable name="source"/>
+              <targetVariable name="target"/>
+              <sourceViewVariable name="sourceView"/>
+              <targetViewVariable name="targetView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:target">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="performanceExtension::InputLinkExtension" referenceName="links" variableName="inputLink">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:inputLink">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="inputPort" valueExpression="var:source">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="optional" valueExpression="[true/]">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="oversamplingOk" valueExpression="[true/]">
+                            <subModelOperations xsi:type="tool:SetValue" featureName="undersamplingOk" valueExpression="[true/]"/>
+                          </subModelOperations>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="OutputPort" nodeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='OutputPortNode']">
+            <variable name="container">
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="serviceDefinition" candidatesExpression="service:self.getAllOneWayServiceRelatedCandidates()" tree="true" rootExpression="service:self.getServiceRepositories()" childrenExpression="service:getAllServices()" message="Select a CommunicationServiceDefinition" userDocumentation="A ComponentService needs to reference a predefined CommunicationServiceDefinition"/>
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="activity" candidatesExpression="service:container.getActivities()" message="Select an Activity that generates data for this new InitiatorService" userDocumentation="Select an Activity that generates data for this new InitiatorService"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="componentDefinition::OutputPort" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="service" valueExpression="var:serviceDefinition">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="activity" valueExpression="var:activity">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="[serviceDefinition.name+'Out'/]"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolGroup" name="RequestorGroup">
+            <tools xsi:type="tool_1:NodeCreationDescription" name="RequestorPort" nodeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='RequestPortNode']">
+              <variable name="container">
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="serviceDefinition" candidatesExpression="service:self.getAllTwoWayServiceRelatedCandidates()" tree="true" rootExpression="service:self.getServiceRepositories()" childrenExpression="service:getAllServices()" message="Select a CommunicationServiceDefinition" userDocumentation="A ComponentService needs to reference a predefined CommunicationServiceDefinition"/>
+              </variable>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="componentDefinition::RequestPort" referenceName="elements">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="service" valueExpression="var:serviceDefinition">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="[serviceDefinition.name+'Req'/]"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:EdgeCreationDescription" name="RequestorPortLink" edgeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@edgeMappings[name='RequestorLinkEdge']">
+              <sourceVariable name="source"/>
+              <targetVariable name="target"/>
+              <sourceViewVariable name="sourceView"/>
+              <targetViewVariable name="targetView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="componentDefinition::RequestPortLink" referenceName="links">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="requestPort" valueExpression="var:target"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolGroup" name="AnswererGroup">
+            <tools xsi:type="tool_1:NodeCreationDescription" name="AnswererPort" nodeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='AnswerPortNode']">
+              <variable name="container">
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="serviceDefinition" candidatesExpression="service:self.getAllTwoWayServiceRelatedCandidates()" tree="true" rootExpression="service:self.getServiceRepositories()" childrenExpression="service:getAllServices()" message="Select a CommunicationServiceDefinition" userDocumentation="A ComponentService needs to reference a predefined CommunicationServiceDefinition"/>
+              </variable>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="componentDefinition::AnswerPort" referenceName="elements">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="service" valueExpression="var:serviceDefinition">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="[serviceDefinition.name+'Answ'/]">
+                        <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="RequestHandler Dialog">
+                          <buttons labelExpression="NO" closeDialogOnClick="true">
+                            <initialOperation/>
+                          </buttons>
+                          <buttons labelExpression="YES" default="true" closeDialogOnClick="true">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                                <subModelOperations xsi:type="tool:CreateInstance" typeName="componentDefinition::RequestHandler" referenceName="elements" variableName="handler">
+                                  <subModelOperations xsi:type="tool:SetValue" featureName="answerPort" valueExpression="var:instance">
+                                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="[instance.name+'Handler'/]"/>
+                                  </subModelOperations>
+                                </subModelOperations>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </buttons>
+                          <page name="Default Page" labelExpression="RequestHandler" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AnswererGroup']/@tools.0/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
+                          <groups name="Default Group" labelExpression="Create a new RequestHandler?" semanticCandidateExpression="var:self"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="RequestHandler" containerMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='RequestHandlerContainer']">
+              <variable name="container">
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="answerPort" candidatesExpression="service:container.getAnswerPorts()" message="Select an AnswerPort for the new RequestHandler" userDocumentation="Select an AnswerPort for the new RequestHandler"/>
+              </variable>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="componentDefinition::RequestHandler" referenceName="elements">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="answerPort" valueExpression="var:answerPort">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="activeQueue" valueExpression="[false/]">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="[answerPort.name+'Handler'/]"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DirectEditLabel" name="Names">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="InputPortRemoval">
+            <element name="element">
+              <subVariables xsi:type="tool:AcceleoVariable" name="container" computationExpression="[element.eContainer()/]"/>
+            </element>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:For" expression="[container.elements->filter(componentDefinition::ComponentSubNode)/]" iteratorName="subNode">
+                <subModelOperations xsi:type="tool:For" expression="[subNode.links->filter(componentDefinition::InputPortLink)/]" iteratorName="inputLink">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="[inputLink.inputPort=element/]">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:inputLink">
+                      <subModelOperations xsi:type="tool:RemoveElement"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:For" expression="[container.elements->filter(InputHandler)/]" iteratorName="handler">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="[handler.inputLink.inputPort=element/]">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="[handler.inputLink/]">
+                      <subModelOperations xsi:type="tool:RemoveElement">
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:handler">
+                          <subModelOperations xsi:type="tool:RemoveElement"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                  <subModelOperations xsi:type="tool:RemoveElement"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="ReconnectOutputPort" reconnectionKind="RECONNECT_SOURCE">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:SetValue" featureName="activity" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="ReconnectInputLinkSource" reconnectionKind="RECONNECT_SOURCE">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:SetValue" featureName="inputPort" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="ReconnectRequestLinkTarget">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:SetValue" featureName="requestPort" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Activity Tools" icon="/org.eclipse.smartmdsd.sirius.utils/icons/task16.gif">
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="Activity" containerMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="componentDefinition::Activity" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="['Activity'+container.elements->size()/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="ObserverLink" precondition="[preTarget&lt;>preSource/]" edgeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@edgeMappings[name='ObserverEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:target">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="componentDefinition::ComponentSubNodeObserver" referenceName="links">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="subject" valueExpression="var:source"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="ActivationConstraints" precondition="[container.extensions->filter(performanceExtension::ActivationConstraints)->size()&lt;1/]" containerMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer']/@subContainerMappings[name='ActivationConstraintsContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="performanceExtension::ActivationConstraints" referenceName="extensions">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="configurable" valueExpression="[true/]">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="minActFreq" valueExpression="[1.0/]">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="maxActFreq" valueExpression="[1.0/]"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolGroup" name="DefaultTriggerGroup">
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="PeriodicTimer" precondition="[container.extensions->filter(performanceExtension::DefaultTrigger)->size()&lt;1/]" containerMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer']/@subContainerMappings[name='DefaultPeriodicTimerContainer']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="performanceExtension::DefaultPeriodicTimer" referenceName="extensions">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="periodicActFreq" valueExpression="[1.0/]"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="InputPortTrigger" precondition="[container.extensions->filter(performanceExtension::DefaultTrigger)->size()&lt;1/]" containerMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer']/@subContainerMappings[name='DefaultInputTriggerContainer']">
+              <variable name="container">
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="inputLink" candidatesExpression="[container.links->filter(componentDefinition::InputPortLink)/]" message="Select an InputPortLink as a DefaultTrigger" userDocumentation="Select an InputPortLink as a DefaultTrigger"/>
+              </variable>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="performanceExtension::DefaultInputTrigger" referenceName="extensions">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="inputLink" valueExpression="var:inputLink">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="prescale" valueExpression="[1/]"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="ObservedElementTrigger" precondition="[container.extensions->filter(performanceExtension::DefaultTrigger)->size()&lt;1/]" containerMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer']/@subContainerMappings[name='DefaultObserverContainer']">
+              <variable name="container">
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="subject" candidatesExpression="[container.links->filter(componentDefinition::ComponentSubNodeObserver)->collect(subject)/]" message="Select an ObservedElement as a DefaultTrigger" userDocumentation="Select an ObservedElement as a DefaultTrigger"/>
+              </variable>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="performanceExtension::DefaultObservedElementTrigger" referenceName="extensions">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="element" valueExpression="var:subject"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:DirectEditLabel" name="ActivationFrequencyEdit">
+              <mask mask="{0}"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:SetValue" featureName="periodicActFreq" valueExpression="var:0"/>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:DeleteElementDescription" name="RemoveDefaultInputTrigger">
+              <element name="element"/>
+              <elementView name="elementView"/>
+              <containerView name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="inputlink" valueExpression="[null/]">
+                    <subModelOperations xsi:type="tool:RemoveElement"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:DeleteElementDescription" name="RemoveDefaultObserver">
+              <element name="element"/>
+              <elementView name="elementView"/>
+              <containerView name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="element" valueExpression="[null/]">
+                    <subModelOperations xsi:type="tool:RemoveElement"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="OperationModeBinding" edgeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@edgeMappings[name='OperationModeBinding']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="coordinationExtension::OperationModeBinding" referenceName="extensions">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="mode" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="ReconnectObserverSource" reconnectionKind="RECONNECT_SOURCE">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:SetValue" featureName="subject" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="ReconnectObserverTarget">
+            <source name="source">
+              <subVariables xsi:type="tool:AcceleoVariable" name="subject" computationExpression="[element.subject/]"/>
+            </source>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:RemoveElement">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:target">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="componentDefinition::ComponentSubNodeObserver" referenceName="links">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="subject" valueExpression="var:subject"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="ReconnectOperationModeBindingTarget">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:SetValue" featureName="mode" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Coordination Tools" icon="/org.eclipse.smartmdsd.sirius.component.design/icons/tools.png">
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="CoordinationSlavePort" nodeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='CoordinationSlaveNode']">
+            <variable name="container">
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="serviceDefinition" candidatesExpression="service:self.getAllCoordinationServiceRelatedCandidates()" tree="true" rootExpression="service:self.getServiceRepositories()" childrenExpression="service:getAllServices()" message="Select a CoordinationServiceDefinition" userDocumentation="A ComponentCoordinationService needs to reference a predefined CoordinationServiceDefinition"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="coordinationExtension::CoordinationSlavePort" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="['CoordinationPort'/]">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="service" valueExpression="var:serviceDefinition"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="PrivateOperationMode" containerMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentModesContainer']/@subContainerMappings[name='PrivateOperationModeContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="coordinationExtension::PrivateOperationMode" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="['active'+container.elements->size()/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolGroup" name="OperationModeGroup">
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="PublicOperationMode" containerMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentModesContainer']/@subContainerMappings[name='PublicOperationModeContainer']">
+              <variable name="container">
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="operationMode" candidatesExpression="service:container.getComponentOperationModes()" message="Select a ComponentOperationMode" userDocumentation="Select a ComponentOperationMode"/>
+              </variable>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="coordinationExtension::PublicOperationMode" referenceName="elements">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="mode" valueExpression="var:operationMode">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="isDefaultInit" valueExpression="[false/]"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:EdgeCreationDescription" name="Activation" edgeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@edgeMappings[name='PrivateOperationModeEdge']">
+              <sourceVariable name="source"/>
+              <targetVariable name="target"/>
+              <sourceViewVariable name="sourceView"/>
+              <targetViewVariable name="targetView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="activates" valueExpression="var:target"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolGroup" name="ParameterGroup">
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="ComponentParameters" containerMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentParametersContainer']">
+              <variable name="container">
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="componentParameter" candidatesExpression="service:self.getComponentParameter()" message="Select ComponentParameter" userDocumentation="Select ComponentParameter"/>
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="coordinationSlave" candidatesExpression="[container.elements->filter(coordinationExtension::CoordinationSlavePort)/]" message="Select a CoordinationSlavePort" userDocumentation="Select a CoordinationSlavePort"/>
+              </variable>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="componentParameter::ComponentParametersRef" referenceName="elements">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="parameter" valueExpression="var:componentParameter">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="slave" valueExpression="var:coordinationSlave"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:EdgeCreationDescription" name="ParametersLink" edgeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@edgeMappings[name='ParametersEdge']">
+              <sourceVariable name="source"/>
+              <targetVariable name="target"/>
+              <sourceViewVariable name="sourceView"/>
+              <targetViewVariable name="targetView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="slave" valueExpression="var:target"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ExternalJavaAction" name="OpenParamView" icon="/org.eclipse.smartmdsd.sirius.utils/icons/parameters16.png" id="OpenComponentParameterEditor">
+            <parameters name="self" value="var:self"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="OpenParamView" mappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentParametersContainer']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                <subModelOperations xsi:type="tool:ExternalJavaActionCall" name="OpenParamViewAction" action="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@toolSections.2/@ownedTools[name='OpenParamView']"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DirectEditLabel" name="PrivateModeNameEdit">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="ActiveQueueDeco" distributionDirection="HORIZONTAL" preconditionExpression="[thisEObject.activeQueue/]" imageExpression="/org.eclipse.smartmdsd.sirius.component.design/icons/ActiveQueue.png" tooltipExpression="['activeQueue'/]" mappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='InputHandlerContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='RequestHandlerContainer']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="BrandingLogo" position="NORTH_EAST" preconditionExpression="service:self.hasLogo()" imageExpression="[self.logo/]" tooltipExpression="['Branding Logo'/]" mappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']"/>
+        </decorationDescriptionsSet>
+      </defaultLayer>
+      <additionalLayers name="SeRoNet" icon="/org.eclipse.smartmdsd.sirius.component.design/icons/SeRoNetIcon.png" activeByDefault="true">
+        <edgeMappings name="OpcStatusServerOutPortEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentContainerImport']/@borderedNodeMappings[name='OpcUaReadServerNode']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='OutputPortNode']" targetFinderExpression="feature:outPort" sourceFinderExpression="var:self" domainClass="seronetExtension::OpcUaReadServer" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="OpcUaClientLinkEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='InputHandlerContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='RequestHandlerContainer']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentContainerImport']/@borderedNodeMappings[name='OpcUaDeviceClientNode']" targetFinderExpression="feature:client" sourceFinderExpression="[self.eContainer()/]" domainClass="seronetExtension::OpcUaClientLink" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="MixedPortROSLinkEdge" sourceMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='InputHandlerContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='RequestHandlerContainer']" targetMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentContainerImport']/@borderedNodeMappings[name='RosMixedPortNode']" targetFinderExpression="feature:mixedportros" sourceFinderExpression="[self.eContainer()/]" domainClass="seronetExtension::MixedPortROSLink" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings xsi:type="description_1:ContainerMappingImport" name="ComponentContainerImport" reusedBorderedNodeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='AnswerPortNode'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='CoordinationSlaveNode'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='RequestPortNode']" reusedContainerMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ActivityContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='InputHandlerContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='RequestHandlerContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentModesContainer'] //@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentParametersContainer']" importedMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']">
+          <borderedNodeMappings name="OpcUaDeviceClientNode" labelDirectEdit="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@toolSections.0/@ownedTools[name='SeRoNetEdition']" semanticCandidatesExpression="feature:elements" domainClass="seronetExtension::OpcUaDeviceClient">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" tooltipExpression="OpcUaDeviceClient" resizeKind="NSEW" workspacePath="/org.eclipse.smartmdsd.sirius.component.design/icons/OpcUaClient.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="OpcUaReadServerNode" labelDirectEdit="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@toolSections.0/@ownedTools[name='SeRoNetEdition']" semanticCandidatesExpression="feature:elements" domainClass="seronetExtension::OpcUaReadServer">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" tooltipExpression="OpcUaReadServer" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.eclipse.smartmdsd.sirius.component.design/icons/OpcUaServer.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings xsi:type="description_1:NodeMappingImport" name="InputPortNodeImport" semanticCandidatesExpression="feature:elements" importedMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='InputPortNode']"/>
+          <borderedNodeMappings xsi:type="description_1:NodeMappingImport" name="OutputPortNodeImport" semanticCandidatesExpression="feature:elements" importedMapping="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='OutputPortNode']"/>
+          <borderedNodeMappings name="RosMixedPortNode" semanticCandidatesExpression="feature:elements" domainClass="seronetExtension::MixedPortROS">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" tooltipExpression="MixedPortROS" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.eclipse.smartmdsd.sirius.component.design/icons/RosPort.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </borderedNodeMappings>
+        </containerMappings>
+        <toolSections name="SeRoNet Tools" icon="/org.eclipse.smartmdsd.sirius.component.design/icons/SeRoNetIcon.png">
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="SeRoNetInputPort" label="SeRoNet-Port (Input)" nodeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='InputPortNode']">
+            <variable name="container">
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="serviceDefinition" candidatesExpression="service:self.getAllOneWayServiceRelatedCandidates()" tree="true" rootExpression="service:self.getServiceRepositories()" childrenExpression="service:getAllServices()" message="Select a CommunicationServiceDefinition" userDocumentation="A ComponentService needs to reference a predefined CommunicationServiceDefinition"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="componentDefinition::InputPort" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="service" valueExpression="var:serviceDefinition">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="[serviceDefinition.name+'In'/]">
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:instance">
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="seronetExtension::SupportedMiddleware" referenceName="extensions" variableName="mw">
+                          <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:mw">
+                            <subModelOperations xsi:type="tool:CreateInstance" typeName="roboticMiddleware::OpcUa_SeRoNet" referenceName="middleware"/>
+                          </subModelOperations>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="SeRoNetOutputPort" label="SeRoNet-Port (Output)" nodeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@borderedNodeMappings[name='OutputPortNode']">
+            <variable name="container">
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="serviceDefinition" candidatesExpression="service:self.getAllOneWayServiceRelatedCandidates()" tree="true" rootExpression="service:self.getServiceRepositories()" childrenExpression="service:getAllServices()" message="Select a CommunicationServiceDefinition" userDocumentation="A ComponentService needs to reference a predefined CommunicationServiceDefinition"/>
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="activity" candidatesExpression="service:container.getActivities()" message="Select an Activity that generates data for this new InitiatorService" userDocumentation="Select an Activity that generates data for this new InitiatorService"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="componentDefinition::OutputPort" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="service" valueExpression="var:serviceDefinition">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="activity" valueExpression="var:activity">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="[serviceDefinition.name+'Out'/]">
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:instance">
+                          <subModelOperations xsi:type="tool:CreateInstance" typeName="seronetExtension::SupportedMiddleware" referenceName="extensions" variableName="mw">
+                            <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:mw">
+                              <subModelOperations xsi:type="tool:CreateInstance" typeName="roboticMiddleware::OpcUa_SeRoNet" referenceName="middleware" variableName="opcua"/>
+                            </subModelOperations>
+                          </subModelOperations>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolGroup" name="DeviceClientGroup">
+            <tools xsi:type="tool_1:NodeCreationDescription" name="PlainOpcUaDeviceClient" label="Plain OPC UA Port (DeviceClient)" nodeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentContainerImport']/@borderedNodeMappings[name='OpcUaDeviceClientNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="seronetExtension::OpcUaDeviceClient" referenceName="elements">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="['OpcUaClient'+container.elements->size()/]">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="deviceURI" valueExpression="['opc.tcp://localhost:4840'/]">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="autoConnect" valueExpression="[true/]">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="rootObjectPath" valueExpression="['Server'/]"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:EdgeCreationDescription" name="OpcUaClientLink" edgeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@edgeMappings[name='OpcUaClientLinkEdge']">
+              <sourceVariable name="source"/>
+              <targetVariable name="target"/>
+              <sourceViewVariable name="sourceView"/>
+              <targetViewVariable name="targetView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="seronetExtension::OpcUaClientLink" referenceName="links">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="client" valueExpression="var:target"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="PlainOpcUaReadServer" label="Plain OPC UA Port (ReadServer)" nodeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentContainerImport']/@borderedNodeMappings[name='OpcUaReadServerNode']">
+            <variable name="container">
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="outPort" candidatesExpression="[container.elements->filter(componentDefinition::OutputPort)/]" message="Select an OutputPort as the data source for the PlainOpcUaStatusPort" userDocumentation="OutputPort providing the data for the Plain OpcUa ReadServer"/>
+            </variable>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="seronetExtension::OpcUaReadServer" referenceName="elements">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="['ua'+outPort.name/]">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="outPort" valueExpression="var:outPort"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DirectEditLabel" name="SeRoNetEdition">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolGroup" name="ROSToolsGroup">
+            <tools xsi:type="tool_1:NodeCreationDescription" name="MixedPortROS" label="ROS MixedPort" nodeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@containerMappings[name='ComponentContainerImport']/@borderedNodeMappings[name='RosMixedPortNode']">
+              <variable name="container">
+                <subVariables xsi:type="tool:SelectModelElementVariable" name="port" candidatesExpression="service:self.getAllRosPorts()" message="Select an existing RosInterface definition" userDocumentation="Select an existing RosInterface definition"/>
+              </variable>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="seronetExtension::MixedPortROS" referenceName="elements">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="port" valueExpression="var:port"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:EdgeCreationDescription" name="MixedPortROSLink" edgeMappings="//@ownedViewpoints[name='ComponentDefinitionViewpoint']/@ownedRepresentations[name='ComponentDefinitionDiagram']/@additionalLayers[name='SeRoNet']/@edgeMappings[name='MixedPortROSLinkEdge']">
+              <sourceVariable name="source"/>
+              <targetVariable name="target"/>
+              <sourceViewVariable name="sourceView"/>
+              <targetViewVariable name="targetView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="MixedPortROSLink" referenceName="links">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="mixedportros" valueExpression="var:target"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.eclipse.smartmdsd.sirius.component.design.Services"/>
+  </ownedViewpoints>
+  <extensions xsi:type="properties:ViewExtensionDescription" name="ComponentProperties">
+    <metamodels href="../../org.eclipse.smartmdsd.ecore.component.seronetExtension/model/seronetExtension.ecore#/"/>
+    <categories name="Default">
+      <pages name="General" labelExpression="General">
+        <groups href="platform:/plugin/org.eclipse.sirius.properties.defaultrules/model/properties.odesign#//@extensions.0/@categories.0/@groups.0"/>
+        <groups href="#//@extensions.0/@categories.0/@groups.0"/>
+        <groups href="#//@extensions.0/@categories.0/@groups.1"/>
+      </pages>
+      <groups name="OpcUaDeviceClient" labelExpression="Extended Properties" domainClass="seronetExtension::OpcUaDeviceClient" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:ButtonDescription" name="OpenXmlFile" labelExpression="Open XML File:" helpExpression="Open an XML file containing the device's information model" buttonLabelExpression="Open XML File">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:self.openXmlFileDialog()"/>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="SupportedMiddlewares" labelExpression="Supported Middlewares" domainClass="componentDefinition::ComponentPort" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:CheckboxDescription" name="SeRoNetOpcUa" label="SeRoNet OPC UA Backend" labelExpression="SeRoNet OPC UA Backend " helpExpression="Activate SeRoNet OPC UA Backend Support" valueExpression="service:self.hasOpcUaMW()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:self.updateOpcUaMW(newValue)"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:CheckboxDescription" name="DDS_SmartSoft" labelExpression="DDS/SmartSoft Backend" helpExpression="Activate DDS/SmartSoft Support" valueExpression="service:self.hasDDSMW()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:self.updateDDSMW(newValue)"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:CheckboxDescription" name="ACE_SmartSoft" labelExpression="ACE/SmartSoft Backend" helpExpression="Activate ACE/SmartSoft Support" valueExpression="service:self.hasACEMW()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:self.updateACEMW(newValue)"/>
+          </initialOperation>
+        </controls>
+      </groups>
+    </categories>
+  </extensions>
+</description:Group>

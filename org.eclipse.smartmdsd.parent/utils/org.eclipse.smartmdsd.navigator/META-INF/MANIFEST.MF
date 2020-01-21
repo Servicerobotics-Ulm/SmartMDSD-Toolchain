@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SmartMDSD-Navigator
+Bundle-SymbolicName: org.eclipse.smartmdsd.navigator;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.smartmdsd.navigator.Activator
+Require-Bundle: com.google.inject,
+ org.eclipse.jface,
+ org.eclipse.ui,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.navigator,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.core.expressions,
+ org.eclipse.jdt.core,
+ org.eclipse.xtext.ui,
+ org.eclipse.sirius.ui,
+ org.eclipse.smartmdsd.ui,
+ org.eclipse.sirius.diagram,
+ org.eclipse.sirius.diagram.ui,
+ org.eclipse.sirius.ext.base
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: org.eclipse.smartmdsd.navigator
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Servicerobotics Ulm

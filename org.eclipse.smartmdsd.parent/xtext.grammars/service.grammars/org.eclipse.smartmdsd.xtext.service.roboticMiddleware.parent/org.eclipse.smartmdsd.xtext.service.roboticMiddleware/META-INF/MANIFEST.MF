@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.eclipse.smartmdsd.xtext.service.roboticMiddleware
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.smartmdsd.xtext.service.roboticMiddleware
+Bundle-Vendor: Servicerobotics Ulm
+Bundle-Version: 3.5.0.qualifier
+Bundle-SymbolicName: org.eclipse.smartmdsd.xtext.service.roboticMiddleware; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.smartmdsd.ecore.service.roboticMiddleware,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.smartmdsd.ecore.base.documentation,
+ org.eclipse.smartmdsd.xtext.base.docuterminals,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.eclipse.smartmdsd.xtext.service.roboticMiddleware.parser.antlr.internal,
+ org.eclipse.smartmdsd.xtext.service.roboticMiddleware.generator,
+ org.eclipse.smartmdsd.xtext.service.roboticMiddleware.services,
+ org.eclipse.smartmdsd.xtext.service.roboticMiddleware.serializer,
+ org.eclipse.smartmdsd.xtext.service.roboticMiddleware.scoping,
+ org.eclipse.smartmdsd.xtext.service.roboticMiddleware.parser.antlr,
+ org.eclipse.smartmdsd.xtext.service.roboticMiddleware.validation,
+ org.eclipse.smartmdsd.xtext.service.roboticMiddleware.formatting2,
+ org.eclipse.smartmdsd.xtext.service.roboticMiddleware
+Import-Package: org.apache.log4j

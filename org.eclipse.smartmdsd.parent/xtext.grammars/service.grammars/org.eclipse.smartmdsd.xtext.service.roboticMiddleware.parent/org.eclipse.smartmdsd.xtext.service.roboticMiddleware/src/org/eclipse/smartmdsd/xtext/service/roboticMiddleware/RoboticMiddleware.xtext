@@ -1,0 +1,56 @@
+//================================================================
+//
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
+//
+//        lotz@hs-ulm.de
+//        stampfer@hs-ulm.de
+//        lutz@hs-ulm.de
+//
+//        Servicerobotik Ulm
+//        Christian Schlegel
+//        Ulm University of Applied Sciences
+//        Prittwitzstr. 10
+//        89075 Ulm
+//        Germany
+//
+//  This file is part of the SmartMDSD Toolchain V3. 
+//
+//================================================================
+grammar org.eclipse.smartmdsd.xtext.service.roboticMiddleware.RoboticMiddleware with org.eclipse.smartmdsd.xtext.base.docuterminals.DocuTerminals
+
+import "http://www.eclipse.org/smartmdsd/service/roboticMiddleware" 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+RoboticMiddleware: 
+	ACE_SmartSoft | OpcUa_SeRoNet | CORBA_SmartSoft | DDS_SmartSoft
+;
+
+FQN:
+	ID ('.' ID)*
+;
+FQNW returns ecore::EString: FQN '.*'? ;
+
+EString returns ecore::EString:
+	STRING;
+EInt returns ecore::EInt:
+	'-'? INT;
+EDouble returns ecore::EDouble:
+	'-'? INT? '.' INT (('E'|'e') '-'? INT)?;
+EBoolean returns ecore::EBoolean:
+	'true' | 'false';
+
+ACE_SmartSoft returns ACE_SmartSoft:
+	{ACE_SmartSoft}
+	'ACE_SmartSoft' ('description' description=EString)?;
+
+OpcUa_SeRoNet returns OpcUa_SeRoNet:
+	{OpcUa_SeRoNet}
+	'OpcUa_SeRoNet' ('description' description=EString)?;
+
+CORBA_SmartSoft returns CORBA_SmartSoft:
+	{CORBA_SmartSoft}
+	'CORBA_SmartSoft' ('description' description=EString)?;
+
+DDS_SmartSoft returns DDS_SmartSoft:
+	{DDS_SmartSoft}
+	'DDS_SmartSoft' ('description' description=EString)?;

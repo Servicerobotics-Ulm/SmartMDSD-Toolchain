@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.smartmdsd.xtext.service.serviceDefinition.ServiceDefinitionGeneratorEP">
+      <generator
+            class="org.eclipse.smartmdsd.xtend.behavior.generator.domainModels.CoordinationInterfaceGenerator">
+      </generator>
+   </extension>
+   <extension
+         point="org.eclipse.smartmdsd.xtend.smartsoft.generator.DomainModelsGeneratorExtension">
+      <DomainModelsGeneratorExtension
+            class="org.eclipse.smartmdsd.xtend.behavior.generator.domainModels.CoordinationDomainModelsExtension">
+      </DomainModelsGeneratorExtension>
+   </extension>
+   <extension
+         point="org.eclipse.smartmdsd.xtext.system.componentArchitecture.ComponentArchitectureGeneratorEP">
+      <generator
+            class="org.eclipse.smartmdsd.xtend.behavior.generator.system.SkillJsonGenerator">
+      </generator>
+   </extension>
+
+</plugin>

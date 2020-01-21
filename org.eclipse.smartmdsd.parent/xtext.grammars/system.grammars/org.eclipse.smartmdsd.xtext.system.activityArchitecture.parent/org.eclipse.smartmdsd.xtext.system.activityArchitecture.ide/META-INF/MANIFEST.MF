@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.eclipse.smartmdsd.xtext.system.activityArchitecture.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.smartmdsd.xtext.system.activityArchitecture.ide
+Bundle-Vendor: Servicerobotics Ulm
+Bundle-Version: 3.6.0.qualifier
+Bundle-SymbolicName: org.eclipse.smartmdsd.xtext.system.activityArchitecture.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.smartmdsd.xtext.system.activityArchitecture,
+ org.eclipse.smartmdsd.ecore.system.activityArchitecture,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.eclipse.smartmdsd.xtext.system.activityArchitecture.ide.contentassist.antlr.internal,
+ org.eclipse.smartmdsd.xtext.system.activityArchitecture.ide.contentassist.antlr

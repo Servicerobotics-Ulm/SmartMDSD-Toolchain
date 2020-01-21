@@ -8,7 +8,7 @@ http://www.eclipse.org/downloads/
 
 2. Extract and execute installer and select "Advanced Mode":
 
-- select "Eclipse Modeling Tools" as the package and "Oxygen" as the Eclipse Version, press "Next"
+- select "Eclipse Modeling Tools" as the package and "2019-12" as the Eclipse Version, press "Next"
 - select one of the provided custom Installer Configuration setups:
 -- (a) org.smartmdsd.infrastructure/org.smartmdsd.installer/SmartMDSD.github.setup (if you want to change the Eclipse Plugins)
 -- (b) org.smartmdsd.infrastructure/org.smartmdsd.installer/SmartMDSD.runtime.setup (if you want to develop Robotics Components and Systems)

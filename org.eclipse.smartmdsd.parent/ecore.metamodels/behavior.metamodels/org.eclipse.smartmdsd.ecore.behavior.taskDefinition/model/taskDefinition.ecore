@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="taskDefinition" nsURI="http://www.eclipse.org/smartmdsd/behavior/taskDefinition"
+    nsPrefix="taskDefinition">
+  <eClassifiers xsi:type="ecore:EClass" name="TaskDefinitionModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repository" eType="#//TaskDefinitionRepository"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskDefinitionRepository">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
+        eType="#//TaskDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="results" lowerBound="1"
+        upperBound="-1" eType="#//TaskResult" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inAttribute" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.smartmdsd.ecore.base.basicAttributes/model/basicAttributes.ecore#//AttributeDefinition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outAttribute" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.smartmdsd.ecore.base.basicAttributes/model/basicAttributes.ecore#//AttributeDefinition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TASK_RESULT_TYPES">
+    <eLiterals name="SUCCESS"/>
+    <eLiterals name="ERROR" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskResult">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="result" eType="#//TASK_RESULT_TYPES"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated componentDatasheet -->
+      <factory
+            uri="http://www.eclipse.org/smartmdsd/component/componentDatasheet"
+            class="org.eclipse.smartmdsd.ecore.component.componentDatasheet.provider.ComponentDatasheetItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated componentDatasheet -->
+      <extender
+            uri="http://www.eclipse.org/smartmdsd/base/genericDatasheet"
+            class="org.eclipse.smartmdsd.ecore.component.componentDatasheet.provider.ComponentDatasheetItemProviderAdapterFactory$GenericDatasheetChildCreationExtender"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,47 @@
+//================================================================
+//
+//  Copyright (C) 2017 Alex Lotz, Dennis Stampfer, Matthias Lutz
+//
+//        lotz@hs-ulm.de
+//        stampfer@hs-ulm.de
+//        lutz@hs-ulm.de
+//
+//        Servicerobotik Ulm
+//        Christian Schlegel
+//        Ulm University of Applied Sciences
+//        Prittwitzstr. 10
+//        89075 Ulm
+//        Germany
+//
+//  This file is part of the SmartMDSD Toolchain V3. 
+//
+//================================================================
+grammar org.eclipse.smartmdsd.xtext.behavior.taskRealization.TaskRealization with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/smartmdsd/base/basicAttributes" as attr
+import "http://www.eclipse.org/smartmdsd/service/skillDefinition" as skillDefinition
+import "http://www.eclipse.org/smartmdsd/behavior/taskDefinition" as taskDefinition
+import "http://www.eclipse.org/smartmdsd/behavior/taskRealization" as taskRealization
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+TaskRealizationModel returns taskRealization::TaskRealizationModel:
+	{taskRealization::TaskRealizationModel}
+	'TaskRealizationModel' name=ID
+	'{'
+		abstCoordInst+=AbstractCoordinationModuleInstance*
+		tasks+=TaskRealization*
+	'}';
+
+FQN:
+	ID ('.'ID)*	
+;
+
+TaskRealization returns taskRealization::TaskRealization:
+	'TaskRealization' taskDef=[taskDefinition::TaskDefinition|FQN]
+	'{'
+		 //FIXME: add implementation
+	'}';
+
+AbstractCoordinationModuleInstance returns taskRealization::AbstractCoordinationModuleInstance:
+	'AbstractCoordinationModuleInstance' name=ID 'coordModuleDef' coordModuleDef=[skillDefinition::CoordinationModuleDefinition|FQN];
+

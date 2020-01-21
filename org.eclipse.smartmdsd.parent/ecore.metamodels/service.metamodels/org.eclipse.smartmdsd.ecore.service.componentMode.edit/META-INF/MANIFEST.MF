@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.smartmdsd.ecore.service.componentMode.edit;singleton:=true
+Automatic-Module-Name: org.eclipse.smartmdsd.ecore.service.componentMode.edit
+Bundle-Version: 3.6.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: org.eclipse.smartmdsd.ecore.service.componentMode.provider.ComponentModeEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.eclipse.smartmdsd.ecore.service.componentMode.provider
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.smartmdsd.ecore.service.componentMode;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

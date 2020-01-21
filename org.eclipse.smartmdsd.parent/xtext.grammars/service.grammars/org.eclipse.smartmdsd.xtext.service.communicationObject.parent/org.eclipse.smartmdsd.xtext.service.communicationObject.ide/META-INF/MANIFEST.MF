@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.eclipse.smartmdsd.xtext.service.communicationObject.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.smartmdsd.xtext.service.communicationObject.ide
+Bundle-Vendor: Servicerobotics Ulm
+Bundle-Version: 3.4.0.qualifier
+Bundle-SymbolicName: org.eclipse.smartmdsd.xtext.service.communicationObject.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.smartmdsd.xtext.service.communicationObject,
+ org.eclipse.smartmdsd.ecore.service.communicationObject,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.eclipse.smartmdsd.xtext.base.docuterminals,
+ org.eclipse.smartmdsd.xtext.base.basicAttributes,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.eclipse.smartmdsd.xtext.service.communicationObject.ide.contentassist.antlr.internal,
+ org.eclipse.smartmdsd.xtext.service.communicationObject.ide.contentassist.antlr

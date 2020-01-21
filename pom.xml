@@ -1,0 +1,128 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.smartmdsd</groupId>
+	<artifactId>org.eclipse.smartmdsd.root</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>SmartMDSD Root POM</name>
+	<description>The SmartMDSD root POM provides the common Maven/Tycho configurations shared by all submodules.</description>
+
+	<licenses>
+		<license>
+			<name>BSD 3-Clause</name>
+			<url>https://spdx.org/licenses/BSD-3-Clause.html</url>
+		</license>
+	</licenses>
+
+	<modules>
+		<!-- The org.eclipse.smartmdsd.parent module consists of all the main SmartMDSD Eclipse plugins -->
+		<module>org.eclipse.smartmdsd.parent</module>
+		<!-- The releng module (short name for Release-Engineering) consist of additional plugins related to branding, packaging, and deployment of the SmartMDSD Toolchain as a product -->
+		<module>releng</module>
+	</modules>
+
+	<properties>
+		<!-- These are the shared version definitions -->
+		<eclipse-platform>2019-12</eclipse-platform>
+		<tycho-version>1.5.1</tycho-version>
+		<maven.compiler.version>3.1.0</maven.compiler.version>
+		<!-- Here are some default property configurations -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- We use the Java compiler version 1.8 for source and target -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+	
+	<build>
+		<!-- override default "src/main/java" source directory layout which is not correct for Eclipse plugins anyways (removes warnings) -->
+		<sourceDirectory>src</sourceDirectory>
+		<testSourceDirectory>src</testSourceDirectory>
+		<!-- Specify the commonly used build plugins (e.g. for building Xtend files) -->
+		<plugins>
+			<plugin>
+				<!-- The Tycho plugin extends Maven to read Eclipse OSGI Manifest.mf configurations -->
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>plugin-source</id>
+						<goals>
+							<goal>plugin-source</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-source-feature-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>source-feature</id>
+						<phase>package</phase>
+						<goals>
+							<goal>source-feature</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>attach-p2-metadata</id>
+						<phase>package</phase>
+						<goals>
+							<goal>p2-metadata</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<!-- This is the default target-platform configuration for the Maven build -->
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<target>
+						<artifact>
+							<groupId>org.eclipse.smartmdsd</groupId>
+							<artifactId>org.eclipse.smartmdsd.targets</artifactId>
+							<version>1.0.0-SNAPSHOT</version>
+							<classifier>smartmdsd-${eclipse-platform}</classifier>
+						</artifact>
+					</target>
+					<environments>
+						<!-- These are the default environments used for building the plugins -->
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
