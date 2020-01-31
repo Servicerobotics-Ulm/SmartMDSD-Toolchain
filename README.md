@@ -4,8 +4,6 @@ This repository provides the sources of the **SmartMDSD Toolchain version 3**.
 
 The SmartMDSD Toolchain is an Eclipse-based Integrated Development Environment (IDE) for software development and system composition in a robotics software business ecosystem. It supports the different roles that act around the development of robotics systems to offer software components and/or use software components to build systems.
 
-The SmartMDSD Toolchain is maintained by the Service Robotics Research Center at the Ulm University of Applied Sciences and is licensed under the [**BSD-3-Clause**](https://opensource.org/licenses/BSD-3-Clause) open-source license.
-
 For more information about the SmartMDSD Toolchain, documentation, and tutorials, please visit the [**Servicerobotik Ulm Wiki**](https://wiki.servicerobotik-ulm.de/smartmdsd-toolchain:start).
 
 Please also read the **[Release Notes](ReleaseNotes.md)** to see what's new in the latest relase.
