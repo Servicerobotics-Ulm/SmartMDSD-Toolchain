@@ -200,7 +200,6 @@ class DomainModelsDatasheetGeneratorImpl extends AbstractGenerator {
 	# baseURI: «ds.baseURI»/DomainModels/«ds.name»
 	# imports: http://robmosys.eu/rdf/composition-structures
 	# imports: http://seronet-projekt.de/models/t2#Navigation
-	# imports: http://spdx.org/licenses/LGPL-2.0-or-later
 	
 	#######################################
 	# Technical Data Sheet
