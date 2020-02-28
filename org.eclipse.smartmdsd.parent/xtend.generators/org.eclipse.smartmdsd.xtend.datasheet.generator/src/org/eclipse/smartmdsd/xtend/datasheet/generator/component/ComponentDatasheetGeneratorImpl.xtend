@@ -142,7 +142,6 @@ class ComponentDatasheetGeneratorImpl extends AbstractGenerator {
 	# baseURI: «ds.baseURI»/ComponentsAndSystems#«ds.component.name»
 	# imports: http://robmosys.eu/rdf/composition-structures
 	# imports: http://seronet-projekt.de/models/t2#Navigation
-	# imports: http://spdx.org/licenses/LGPL-2.0-or-later
 	
 	«FOR dm_ds: ds.allDomainModelDatasheets.sortBy(c|c.name.toString)»
 	# imports: «dm_ds.baseURI»/DomainModels/«dm_ds.name»
