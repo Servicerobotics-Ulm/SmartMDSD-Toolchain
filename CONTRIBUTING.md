@@ -7,7 +7,7 @@ Thanks for your interest in this project.
 Tooling developed in this project is the “SmartMDSD Toolchain”, an
 Eclipse-based Integrated Development Environment (IDE). The model-driven
 SmartMDSD Toolchain provides support and guidance to apply structures and
-best-practices the composition of software building blocks to robotics
+best-practices for the composition of software building blocks to robotics
 systems. This project will maintain the eclipse-based tooling and necessary
 infrastructure (e.g. meta-models, code-generators).
 

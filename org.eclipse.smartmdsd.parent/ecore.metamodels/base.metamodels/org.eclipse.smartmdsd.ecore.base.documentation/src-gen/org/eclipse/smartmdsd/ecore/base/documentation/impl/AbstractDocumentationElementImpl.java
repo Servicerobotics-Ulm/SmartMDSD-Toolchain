@@ -1,4 +1,14 @@
 /**
+ * Copyright (c) 2019 Technische Hochschule Ulm, Servicerobotics Ulm, Germany
+ * 
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *  
+ * SPDX-License-Identifier: EPL-2.0
+ *  
+ * Contributors:
+ *    Alex Lotz, Dennis Stampfer, Matthias Lutz
  */
 package org.eclipse.smartmdsd.ecore.base.documentation.impl;
 
@@ -15,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.smartmdsd.ecore.base.documentation.AbstractDocumentationElement;
 import org.eclipse.smartmdsd.ecore.base.documentation.DocumentationPackage;
+import org.eclipse.smartmdsd.ecore.base.documentation.DocumentationUtility;
 
 /**
  * <!-- begin-user-doc -->
@@ -98,25 +109,21 @@ public abstract class AbstractDocumentationElementImpl extends MinimalEObjectImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getMultilineHtmlDocumentation() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return DocumentationUtility.getMultilineHtmlText(documentation);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getFirstDocumentationLine() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return DocumentationUtility.getFirstLine(documentation);
 	}
 
 	/**

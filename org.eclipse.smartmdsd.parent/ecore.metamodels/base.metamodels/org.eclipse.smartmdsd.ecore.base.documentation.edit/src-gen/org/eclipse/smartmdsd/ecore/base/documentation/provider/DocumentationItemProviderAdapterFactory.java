@@ -1,17 +1,29 @@
 /**
+ * Copyright (c) 2019 Technische Hochschule Ulm, Servicerobotics Ulm, Germany
+ * 
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *  
+ * SPDX-License-Identifier: EPL-2.0
+ *  
+ * Contributors:
+ *    Alex Lotz, Dennis Stampfer, Matthias Lutz
  */
 package org.eclipse.smartmdsd.ecore.base.documentation.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
 import java.util.List;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.domain.EditingDomain;
+
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -27,6 +39,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 import org.eclipse.smartmdsd.ecore.base.documentation.DocumentationPackage;
+
 import org.eclipse.smartmdsd.ecore.base.documentation.util.DocumentationAdapterFactory;
 
 /**

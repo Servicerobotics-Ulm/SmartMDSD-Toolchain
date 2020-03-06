@@ -25,7 +25,7 @@
     <semanticResources>platform:/resource/org.eclipse.smartmdsd.ecore.service.skillDefinition/model/skillDefinition.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_MoEekDIbEeq0zfGbUU0OKA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_MofVUzIbEeq0zfGbUU0OKA" name="skillRealization" repPath="#_MoWycDIbEeq0zfGbUU0OKA" changeId="fee6aea9-9fbf-449d-b507-09826ab7f12b">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_MofVUzIbEeq0zfGbUU0OKA" name="skillRealization" repPath="#_MoWycDIbEeq0zfGbUU0OKA" changeId="446c22ac-15b0-439a-b4c4-a7050108958a">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="skillRealization.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -769,6 +769,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_cqjDujIbEeq0zfGbUU0OKA" description="_cqjDtzIbEeq0zfGbUU0OKA" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_cqjDvDIbEeq0zfGbUU0OKA" showIcon="false">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_cqjDuzIbEeq0zfGbUU0OKA" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
@@ -782,6 +783,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_cqjqxDIbEeq0zfGbUU0OKA" description="_cqjDtzIbEeq0zfGbUU0OKA" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_cqjqxjIbEeq0zfGbUU0OKA" showIcon="false">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_cqjqxTIbEeq0zfGbUU0OKA" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
@@ -795,6 +797,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_cqkR1DIbEeq0zfGbUU0OKA" description="_cqkR0TIbEeq0zfGbUU0OKA" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_cqkR1jIbEeq0zfGbUU0OKA" showIcon="false">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_cqkR1TIbEeq0zfGbUU0OKA" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
@@ -808,6 +811,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_cqk44DIbEeq0zfGbUU0OKA" description="_cqkR0TIbEeq0zfGbUU0OKA" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_cqk44jIbEeq0zfGbUU0OKA" showIcon="false">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_cqk44TIbEeq0zfGbUU0OKA" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
@@ -834,6 +838,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_cqlf8DIbEeq0zfGbUU0OKA" description="_cqjDtzIbEeq0zfGbUU0OKA" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_cqlf8jIbEeq0zfGbUU0OKA" showIcon="false">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_cqlf8TIbEeq0zfGbUU0OKA" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>

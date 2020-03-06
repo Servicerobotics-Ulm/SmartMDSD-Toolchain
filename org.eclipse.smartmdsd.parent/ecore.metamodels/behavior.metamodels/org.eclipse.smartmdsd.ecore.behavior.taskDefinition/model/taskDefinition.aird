@@ -9,7 +9,7 @@
     <semanticResources>platform:/resource/org.eclipse.smartmdsd.ecore.base.documentation/model/documentation.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_3HPaIDK5EeqwY5XzYwayBw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_3M6kUDK5EeqwY5XzYwayBw" name="taskDefinition" repPath="#_3JYvMDK5EeqwY5XzYwayBw" changeId="1d1429dd-9afd-4051-93e5-5295d1e7d699">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_3M6kUDK5EeqwY5XzYwayBw" name="taskDefinition" repPath="#_3JYvMDK5EeqwY5XzYwayBw" changeId="17c838f1-a388-41d7-b92c-731962fa09d5">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="taskDefinition.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -326,6 +326,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_cqeyAzK6EeqwY5XzYwayBw" description="_cqeyADK6EeqwY5XzYwayBw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_cqeyBTK6EeqwY5XzYwayBw" showIcon="false">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_cqeyBDK6EeqwY5XzYwayBw" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
