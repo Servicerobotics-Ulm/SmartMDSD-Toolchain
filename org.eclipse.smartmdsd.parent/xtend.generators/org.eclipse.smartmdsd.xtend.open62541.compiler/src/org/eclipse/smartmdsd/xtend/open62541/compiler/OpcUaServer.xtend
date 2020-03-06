@@ -1,22 +1,15 @@
-//==============================================================================
-//
-//  Copyright (C) 2018 Alex Lotz, Vineet Nagrath, Dennis Stampfer, Matthias Lutz
-//
-//        lotz@hs-ulm.de
-//        nagrath@hs-ulm.de
-//        stampfer@hs-ulm.de
-//        lutz@hs-ulm.de
-//
-//        Servicerobotics Ulm
-//        Christian Schlegel
-//        University of Applied Sciences
-//        Prittwitzstr. 10
-//        89075 Ulm
-//        Germany
-//
-//  This file is part of the SmartSoft MDSD Toolchain. 
-//
-//==============================================================================
+/********************************************************************************
+ * Copyright (c) 2018 Technische Hochschule Ulm, Servicerobotics Ulm, Germany
+ * 
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ * 
+ * SPDX-License-Identifier: EPL-2.0
+ * 
+ * Contributors:
+ *   Alex Lotz, Vineet Nagrath, Dennis Stampfer, Matthias Lutz
+ ********************************************************************************/
 package org.eclipse.smartmdsd.xtend.open62541.compiler
 
 import org.eclipse.smartmdsd.xtend.open62541.compiler.OpcUaXmlParser.SeRoNetENTITY

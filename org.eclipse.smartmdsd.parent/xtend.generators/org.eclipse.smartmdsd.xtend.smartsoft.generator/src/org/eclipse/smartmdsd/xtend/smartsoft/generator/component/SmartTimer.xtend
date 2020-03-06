@@ -1,23 +1,15 @@
-//===============================================================
-//
-//  Copyright (C) 2013 Alex Lotz, Matthias Lutz, Dennis Stampfer
-//  Copyright (C) 2009-2011 Dennis Stampfer, Andreas Steck
-//  Copyright (C) since 2012 Alex lotz
-//
-//        lotz@hs-ulm.de
-//        lutz@hs-ulm.de
-//        stampfer@hs-ulm.de
-//
-//        ZAFH Servicerobotic Ulm
-//        Christian Schlegel
-//        University of Applied Sciences
-//        Prittwitzstr. 10
-//        89075 Ulm
-//        Germany
-//
-//  This file is part of the SmartSoft MDSD Toolchain. 
-//
-//===============================================================
+/********************************************************************************
+ * Copyright (c) 2012 Technische Hochschule Ulm, Servicerobotics Ulm, Germany
+ * 
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ * 
+ * SPDX-License-Identifier: EPL-2.0
+ * 
+ * Contributors:
+ *   Alex Lotz, Matthias Lutz, Dennis Stampfer
+ ********************************************************************************/
 package org.eclipse.smartmdsd.xtend.smartsoft.generator.component
 
 import org.eclipse.xtext.generator.IFileSystemAccess
