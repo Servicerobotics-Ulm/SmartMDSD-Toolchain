@@ -377,6 +377,9 @@ class SmartTask {
 		#define _«task.nameClass.toUpperCase»_HH
 		
 		#include "«task.TaskHeaderFileName»"
+		«FOR ext: activityGeneratorExtensions»
+		«ext.getUserHeaderIncludes(task)»
+		«ENDFOR»
 		
 		class «task.nameClass»  : public «task.nameClass»Core
 		{
@@ -394,6 +397,9 @@ class SmartTask {
 			virtual int on_entry();
 			virtual int on_execute();
 			virtual int on_exit();
+			«FOR ext: activityGeneratorExtensions»
+			«ext.getUserClassMemberPublicDefinition(task)»
+			«ENDFOR»
 		};
 		
 		#endif
@@ -438,7 +444,9 @@ class SmartTask {
 			//   there, use the method «inLink.inputPort.nameInstance»GetUpdate(input) to get a copy of the input object
 		}
 		«ENDFOR»
-		
+		«FOR ext: activityGeneratorExtensions»
+		«ext.getUserSourceImplementation(task)»
+		«ENDFOR»
 		int «task.nameClass»::on_entry()
 		{
 			// do initialization procedures here, which are called once, each time the task is started

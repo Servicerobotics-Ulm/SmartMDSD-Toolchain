@@ -134,4 +134,38 @@ interface ActivityGeneratorExtension {
 	 * @result the update code as a character stream 
 	 */
 	def CharSequence getUpdateValuesImplementation(Activity activity) ''''''
+	
+	/**
+	 * This optional method places provided sniplet into the <b>update method</b> 
+	 * of the activity that is called at the beginning of every activity's
+	 * task cycle and is supposed to update the values of all the input
+	 * variables (i.e. class members). 
+	 * 
+	 * @param activity the calling Activity definition resource
+	 * @result the update code as a character stream 
+	 */
+	def CharSequence getUserHeaderIncludes(Activity activity) ''''''
+	
+	/**
+	 * This optional method places provided sniplet into the <b>update method</b> 
+	 * of the activity that is called at the beginning of every activity's
+	 * task cycle and is supposed to update the values of all the input
+	 * variables (i.e. class members). 
+	 * 
+	 * @param activity the calling Activity definition resource
+	 * @result the update code as a character stream 
+	 */
+	def CharSequence getUserClassMemberPublicDefinition(Activity activity) ''''''
+			
+	/**
+	 * This optional method places provided sniplet into the <b>update method</b> 
+	 * of the activity that is called at the beginning of every activity's
+	 * task cycle and is supposed to update the values of all the input
+	 * variables (i.e. class members). 
+	 * 
+	 * @param activity the calling Activity definition resource
+	 * @result the update code as a character stream 
+	 */		
+	def CharSequence getUserSourceImplementation(Activity activity) ''''''
+		
 }
