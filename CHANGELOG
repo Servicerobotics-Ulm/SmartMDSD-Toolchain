@@ -1,3 +1,8 @@
+SmartMDSD Toolchain v3.13
+	* Extended Code Generation for ROS Mixedport components (see release notes)
+	* A few minor internal cleanups in preparation for the Eclipse Project
+-- Mon, 23 Mar. 2020
+
 SmartMDSD Toolchain v3.12
 	* Fixed bug in Plain OPC UA Code generation that now supports one-dimensional arrays for method calls
 	* Fixed bug in deployment script that now also copies the SmartSoft library

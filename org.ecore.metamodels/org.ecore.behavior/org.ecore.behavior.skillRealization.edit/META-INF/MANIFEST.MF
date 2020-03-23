@@ -29,6 +29,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.ecore.service.skillDefinition;visibility:=reexport,
  org.ecore.service.skillDefinition.edit;visibility:=reexport,
  org.ecore.base.stateMachine;visibility:=reexport,
- org.ecore.base.stateMachine.edit;visibility:=reexport
+ org.ecore.base.stateMachine.edit;visibility:=reexport,
+ org.ecore.base.documentation;visibility:=reexport,
+ org.ecore.base.documentation.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.ecore.behavior.skillRealization.edit

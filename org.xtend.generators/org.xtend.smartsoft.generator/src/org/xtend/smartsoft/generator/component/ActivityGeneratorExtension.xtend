@@ -136,36 +136,35 @@ interface ActivityGeneratorExtension {
 	def CharSequence getUpdateValuesImplementation(Activity activity) ''''''
 	
 	/**
-	 * This optional method places provided sniplet into the <b>update method</b> 
-	 * of the activity that is called at the beginning of every activity's
-	 * task cycle and is supposed to update the values of all the input
-	 * variables (i.e. class members). 
+	 * This optional method allows adding further includes to the user header file of
+	 * the respective Activity. Please note this will only be added if the file
+	 * is created for the first time (i.e. it does not yet exist).
 	 * 
 	 * @param activity the calling Activity definition resource
-	 * @result the update code as a character stream 
+	 * @result the includes for the user-header file 
 	 */
 	def CharSequence getUserHeaderIncludes(Activity activity) ''''''
 	
 	/**
-	 * This optional method places provided sniplet into the <b>update method</b> 
-	 * of the activity that is called at the beginning of every activity's
-	 * task cycle and is supposed to update the values of all the input
-	 * variables (i.e. class members). 
+	 * This optional method allows adding further member specifications of the
+	 * Activity's user class in the header file. 
+	 * Please note this will only be added if the file
+	 * is created for the first time (i.e. it does not yet exist).
 	 * 
 	 * @param activity the calling Activity definition resource
-	 * @result the update code as a character stream 
+	 * @result the member specifications for the user-header file 
 	 */
 	def CharSequence getUserClassMemberPublicDefinition(Activity activity) ''''''
 			
 	/**
-	 * This optional method places provided sniplet into the <b>update method</b> 
-	 * of the activity that is called at the beginning of every activity's
-	 * task cycle and is supposed to update the values of all the input
-	 * variables (i.e. class members). 
+	 * This optional method allows adding further member implementations of the
+	 * Activity's user class in the source file. 
+	 * Please note this will only be added if the file
+	 * is created for the first time (i.e. it does not yet exist).
 	 * 
 	 * @param activity the calling Activity definition resource
-	 * @result the update code as a character stream 
-	 */		
+	 * @result the member implementations for the user-source file 
+	 */	
 	def CharSequence getUserSourceImplementation(Activity activity) ''''''
 		
 }

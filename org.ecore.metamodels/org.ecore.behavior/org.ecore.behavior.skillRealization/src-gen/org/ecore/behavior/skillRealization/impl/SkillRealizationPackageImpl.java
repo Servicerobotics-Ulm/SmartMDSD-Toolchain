@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.ecore.base.basicAttributes.BasicAttributesPackage;
 
+import org.ecore.base.documentation.DocumentationPackage;
 import org.ecore.base.stateMachine.StateMachinePackage;
 
 import org.ecore.behavior.skillRealization.AbstractComponentCoordinationAction;
@@ -202,6 +203,7 @@ public class SkillRealizationPackageImpl extends EPackageImpl implements SkillRe
 		ServiceDefinitionPackage.eINSTANCE.eClass();
 		SkillDefinitionPackage.eINSTANCE.eClass();
 		StateMachinePackage.eINSTANCE.eClass();
+		DocumentationPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theSkillRealizationPackage.createPackageContents();

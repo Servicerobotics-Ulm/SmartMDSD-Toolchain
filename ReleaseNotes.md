@@ -2,6 +2,10 @@
 
 This file contains the release notes for the SmartMDSD Toolchain version 3.x. For each release, it provides important information to users to support them in switching from one specific version the previous version. This includes information and instructions how to migrate content from one version to another.
 
+## v3.13
+
+This update only affects the code-generation for ROS Mixedport components. There, the user-level generation of Activity classes now support generation of additional ROS-related includes and class-member definitions. So if you are using ROS in your components, then we suggest you to backup your implementation of the Activities in your Component (i.e. the Activity classes in the smartsoft/src folder), to temporarily rename the Activity's header and source files and to trigger the Component's code genration by using the menu **SmartMDSD** -> **Run Code-Generation**. After that, merge the contents of the newly generated files with your original files so that the new extensions are included.
+
 ## v3.12
 
 This is a hotfix release where several internal code generation bugs are fixed. We recommend to manually trigger the code generation for your existing projects by selecting the project in the SmartMDSD Project Explorer and using the Eclipse menu: **SmartMDSD** -> **Run Code-Generation**. This will update your src-gen folders so you also might want rebuilding your projects by using the Eclipse menu **SmartMDSD** -> **Build Project** (alternatively, you can use the Eclipse menu: **Project** -> **Build All** to rebuild all your projects in the workspace at once). There are no other changes in the models or user-code required (other than those mentioned in release v3.11).

@@ -8,6 +8,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.ecore.base.basicAttributes.provider.BasicAttributesEditPlugin;
 
+import org.ecore.base.documentation.provider.DocumentationEditPlugin;
 import org.ecore.base.stateMachine.provider.StateMachineEditPlugin;
 
 import org.ecore.service.communicationObject.provider.CommunicationObjectEditPlugin;
@@ -58,7 +59,7 @@ public final class SkillRealizationEditPlugin extends EMFPlugin {
 				CommunicationPatternEditPlugin.INSTANCE, ComponentModeEditPlugin.INSTANCE,
 				CoordinationPatternEditPlugin.INSTANCE, ParameterDefinitionEditPlugin.INSTANCE,
 				ServiceDefinitionEditPlugin.INSTANCE, SkillDefinitionEditPlugin.INSTANCE,
-				StateMachineEditPlugin.INSTANCE, });
+				StateMachineEditPlugin.INSTANCE, DocumentationEditPlugin.INSTANCE, });
 	}
 
 	/**

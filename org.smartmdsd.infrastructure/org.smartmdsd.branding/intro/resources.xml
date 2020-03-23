@@ -14,6 +14,11 @@
        		    id="smartmdsd-introLink" style-id="content-link">
           		<text>Visit SmartMDSD Toolchain Github Repository and file a bug or an issue report in case you find errors. We always are interested in improving the overall quality of our toolchain.</text>
        		</link>
+       		<link label="Service Robotics Ulm: Technical Wiki"
+       			url="https://wiki.servicerobotik-ulm.de/"
+       			id="smartmdsd-introLink" style-id="content-link">
+       			<text>Learn more about the SmartSoft world.</text>
+       		</link>
        	</group>
   	</extensionContent>
 </introContent>
